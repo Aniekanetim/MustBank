@@ -1,0 +1,44 @@
+[WebServer] (node:66080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:66080) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+
+[WebServer] (node:61048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 24 tests using 2 workers
+
+(node:15968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:59132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/24] [chromium] › tests\rewards-api.spec.ts:4:1 › TC01 | a completed task pays 10 credits before notification
+[2/24] [chromium] › tests\rewards-api.spec.ts:15:1 › TC03 | the lower Monday boundary is included
+[3/24] [chromium] › tests\rewards-api.spec.ts:20:1 › TC02 | an empty weekly run creates no payment or notification
+[4/24] [chromium] › tests\rewards-api.spec.ts:25:1 › TC04 | the upper Monday boundary is excluded
+[5/24] [chromium] › tests\rewards-api.spec.ts:30:1 › TC05 | Lagos offset timestamps are compared as UTC instants
+[6/24] [chromium] › tests\rewards-api.spec.ts:36:1 › TC06 | pending and cancelled tasks cannot earn rewards
+[7/24] [chromium] › tests\rewards-api.spec.ts:41:1 › TC07 | duplicate task input earns one reward
+[8/24] [chromium] › tests\rewards-api.spec.ts:47:1 › TC08 | replay after success cannot pay again
+[9/24] [chromium] › tests\rewards-api.spec.ts:52:1 › TC09 | failed notification preserves the payout and pending message
+[10/24] [chromium] › tests\rewards-api.spec.ts:58:1 › TC12 | failed payment sends no success notification
+[11/24] [chromium] › tests\rewards-api.spec.ts:64:1 › TC13 | interrupted local recording rolls back before commit
+[12/24] [chromium] › tests\rewards-api.spec.ts:71:1 › TC14 | the excluded boundary pays once in the following week
+[13/24] [chromium] › tests\rewards-api.spec.ts:77:1 › TC15 | conflicting duplicate owners reject the whole import
+[14/24] [chromium] › tests\rewards-api.spec.ts:84:1 › TC16 | a naive timestamp cannot produce partial import
+[15/24] [chromium] › tests\rewards-api.spec.ts:91:1 › TC17 | overlapping HTTP settlement requests create one payout
+[16/24] [chromium] › tests\rewards-api.spec.ts:97:1 › TC18 | a lost notification acknowledgment cannot repay the task
+[17/24] [chromium] › tests\rewards-api.spec.ts:104:1 › TC19 | invalid scheduled run identity has no payout effects
+[18/24] [chromium] › tests\rewards-api.spec.ts:113:1 › TC20 | a stored task cannot change owner or completion time
+[19/24] [chromium] › tests\rewards-api.spec.ts:122:1 › TC23 | invalid calendar dates and 24-hour rollover reject input
+[20/24] [chromium] › tests\rewards-ui.spec.ts:5:1 › TC10 | notification failure then settlement replay leaves 10 credits
+[21/24] [chromium] › tests\rewards-ui.spec.ts:29:1 › TC21 | a task added through the form pays its stable owner
+[22/24] [chromium] › tests\rewards-ui.spec.ts:42:1 › TC22 | browser reload preserves payment and recovery work
+[23/24] [chromium] › tests\rewards-ui.spec.ts:56:1 › TC24 | narrow-screen recovery works through keyboard controls
+[24/24] [chromium] › tests\rewards-ui.spec.ts:70:1 › TC25 | the original simulated transfer still works without WebMCP
+  24 passed (1.4m)

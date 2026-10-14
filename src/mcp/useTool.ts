@@ -10,6 +10,7 @@ import type { ToolDescriptor } from './types';
 
 export function useTool(tool: ToolDescriptor) {
   useEffect(() => {
+    if (import.meta.env.VITE_ENABLE_WEBMCP !== 'true') return;
     if (!navigator.modelContext) {
       console.warn(`[acmebank] navigator.modelContext missing — cannot register "${tool.name}".`);
       return;

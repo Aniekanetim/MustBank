@@ -9,9 +9,11 @@ import { registerGlobalTools } from './mcp/globalTools';
 // polyfill detects the native impl and steps aside. Elsewhere it
 // installs `navigator.modelContext` (and the `Testing` shim) so the
 // Tool Inspector and our own dev work continue to function.
-initializeWebMCPPolyfill({ installTestingShim: true });
-
-registerGlobalTools();
+// Ordinary browser and API automation do not depend on WebMCP.
+if (import.meta.env.VITE_ENABLE_WEBMCP === 'true') {
+  initializeWebMCPPolyfill({ installTestingShim: true });
+  registerGlobalTools();
+}
 
 const root = createRoot(document.getElementById('root')!);
 root.render(

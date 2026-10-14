@@ -1,0 +1,210 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "<project>\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--grep",
+      "TC10"
+    ],
+    "configFile": "<project>\\playwright.config.ts",
+    "rootDir": "<project>/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "<project>/output/playwright/faulty",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "<project>/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "<project>\\output\\playwright\\faulty",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "<project>\\tests",
+        "snapshotDir": "<project>\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "browserName": "chromium",
+          "channel": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "assessment/evidence/faulty-playwright.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "output/playwright/report-faulty",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "rewards-ui.spec.ts",
+      "file": "rewards-ui.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC10 | notification failure then settlement replay leaves 10 credits",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 13084,
+                  "error": {
+                    "message": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('reward-balance')\nExpected: \"10 credits\"\nReceived: \"20 credits\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('reward-balance') with timeout 5000ms\n  - waiting for getByTestId('reward-balance')\n    12 × locator resolved to <p class=\"balance\" data-testid=\"reward-balance\">20 credits</p>\n       - unexpected value \"20 credits\"\n",
+                    "stack": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('reward-balance')\nExpected: \"10 credits\"\nReceived: \"20 credits\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('reward-balance') with timeout 5000ms\n  - waiting for getByTestId('reward-balance')\n    12 × locator resolved to <p class=\"balance\" data-testid=\"reward-balance\">20 credits</p>\n       - unexpected value \"20 credits\"\n\n    at <project>\\tests\\rewards-ui.spec.ts:24:52",
+                    "location": {
+                      "file": "<project>\\tests\\rewards-ui.spec.ts",
+                      "column": 52,
+                      "line": 24
+                    },
+                    "snippet": "  22 |   await page.screenshot({ path: `assessment/evidence/${mode}-reproduction.png`, fullPage: true });\n  23 |   // Exactly the same business expectation in both modes. The faulty run must fail here.\n> 24 |   await expect(page.getByTestId('reward-balance')).toHaveText('10 credits');\n     |                                                    ^\n  25 |   await expect(page.getByTestId('payout-count')).toHaveText('1');\n  26 |   await expect(page.getByTestId('pending-count')).toHaveText('0');\n  27 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<project>\\tests\\rewards-ui.spec.ts",
+                        "column": 52,
+                        "line": 24
+                      },
+                      "message": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('reward-balance')\nExpected: \"10 credits\"\nReceived: \"20 credits\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('reward-balance') with timeout 5000ms\n  - waiting for getByTestId('reward-balance')\n    12 × locator resolved to <p class=\"balance\" data-testid=\"reward-balance\">20 credits</p>\n       - unexpected value \"20 credits\"\n\n\n  22 |   await page.screenshot({ path: `assessment/evidence/${mode}-reproduction.png`, fullPage: true });\n  23 |   // Exactly the same business expectation in both modes. The faulty run must fail here.\n> 24 |   await expect(page.getByTestId('reward-balance')).toHaveText('10 credits');\n     |                                                    ^\n  25 |   await expect(page.getByTestId('payout-count')).toHaveText('1');\n  26 |   await expect(page.getByTestId('pending-count')).toHaveText('0');\n  27 | });\n    at <project>\\tests\\rewards-ui.spec.ts:24:52"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:26:30.215Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "first-attempt",
+                      "contentType": "application/json",
+                      "body": "ewogICJpZCI6ICIxZDZhYTUwZi00MGQwLTQ3ODgtOGE5YS01YTc1Zjk5ZjUxZTIiLAogICJtb2RlIjogImZhdWx0eSIsCiAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI2OjMyLjY3NVoiLAogICJ3aW5kb3ciOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgInRhc2tzIjogWwogICAgewogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgInVzZXJJZCI6ICJ1c2VyLTAwMSIsCiAgICAgICJ0aXRsZSI6ICJRdWFsaWZ5aW5nIHRhc2siLAogICAgICAiY29tcGxldGVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgInN0YXR1cyI6ICJjb21wbGV0ZWQiCiAgICB9CiAgXSwKICAicGF5b3V0cyI6IFsKICAgIHsKICAgICAgImlkIjogIjM1MTZiMWZjLWRjNzAtNDU4NS05YTkzLTllMDYwYmIxMWM0MiIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAidXNlcklkIjogInVzZXItMDAxIiwKICAgICAgImNyZWRpdHMiOiAxMCwKICAgICAgIndlZWtTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6MjY6MzcuNDc0WiIKICAgIH0KICBdLAogICJub3RpZmljYXRpb25zIjogWwogICAgewogICAgICAiaWQiOiAiOWY0Y2RiMjAtZWQ0Zi00MDdlLWEwZjItYzc2YzhiMjNhYWZkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJzdGF0ZSI6ICJwZW5kaW5nIiwKICAgICAgImF0dGVtcHRzIjogMSwKICAgICAgImxhc3RFcnJvciI6ICJTaW11bGF0ZWQgbm90aWZpY2F0aW9uIHByb3ZpZGVyIHVuYXZhaWxhYmxlIGJlZm9yZSBhY2NlcHRhbmNlLiIKICAgIH0KICBdLAogICJyZWNlaXB0cyI6IFtdLAogICJldmVudHMiOiBbCiAgICB7CiAgICAgICJpZCI6IDE1OCwKICAgICAgImV2ZW50IjogImV4YW1wbGVfY3JlYXRlZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJtb2RlIjogImZhdWx0eSIsCiAgICAgICAgImZpeHR1cmUiOiAiZW1wdHkiCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNjozMi42OTNaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogMTU5LAogICAgICAiZXZlbnQiOiAiZmFpbHVyZV9hcm1lZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJraW5kIjogIm5vdGlmaWNhdGlvbiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI2OjM2Ljk2NFoiCiAgICB9LAogICAgewogICAgICAiaWQiOiAxNjAsCiAgICAgICJldmVudCI6ICJwYXlvdXRfY29tbWl0dGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImNyZWRpdHMiOiAxMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6MjY6MzcuNTA1WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDE2MSwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6MjY6MzcuNTM1WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDE2MiwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9mYWlsZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiZXJyb3IiOiAiU2ltdWxhdGVkIG5vdGlmaWNhdGlvbiBwcm92aWRlciB1bmF2YWlsYWJsZSBiZWZvcmUgYWNjZXB0YW5jZS4iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNjozNy41ODBaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogMTYzLAogICAgICAiZXZlbnQiOiAic2V0dGxlbWVudF9maW5pc2hlZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJlbGlnaWJsZVRhc2tzIjogMSwKICAgICAgICAicGFpZE5vdyI6IDEsCiAgICAgICAgImZhaWx1cmVzIjogWwogICAgICAgICAgewogICAgICAgICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgICAgICAgInN0YWdlIjogIm5vdGlmaWNhdGlvbiIsCiAgICAgICAgICAgICJlcnJvciI6ICJTaW11bGF0ZWQgbm90aWZpY2F0aW9uIHByb3ZpZGVyIHVuYXZhaWxhYmxlIGJlZm9yZSBhY2NlcHRhbmNlLiIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJ3aW5kb3ciOiB7CiAgICAgICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAgICAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogICAgICAgIH0KICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI2OjM3LjU5OVoiCiAgICB9CiAgXSwKICAiYmFsYW5jZXMiOiB7CiAgICAidXNlci0wMDEiOiAxMAogIH0sCiAgInRvdGFsQ3JlZGl0cyI6IDEwLAogICJwZW5kaW5nTm90aWZpY2F0aW9ucyI6IDEsCiAgImFybWVkRmFpbHVyZXMiOiB7CiAgICAibm90aWZpY2F0aW9uIjogMCwKICAgICJwYXlvdXQiOiAwLAogICAgInBlcnNpc3RlbmNlIjogMCwKICAgICJhbWJpZ3VvdXMiOiAwCiAgfQp9"
+                    },
+                    {
+                      "name": "observed-scenario",
+                      "contentType": "application/json",
+                      "body": "ewogICJpZCI6ICIxZDZhYTUwZi00MGQwLTQ3ODgtOGE5YS01YTc1Zjk5ZjUxZTIiLAogICJtb2RlIjogImZhdWx0eSIsCiAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI2OjMyLjY3NVoiLAogICJ3aW5kb3ciOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgInRhc2tzIjogWwogICAgewogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgInVzZXJJZCI6ICJ1c2VyLTAwMSIsCiAgICAgICJ0aXRsZSI6ICJRdWFsaWZ5aW5nIHRhc2siLAogICAgICAiY29tcGxldGVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgInN0YXR1cyI6ICJjb21wbGV0ZWQiCiAgICB9CiAgXSwKICAicGF5b3V0cyI6IFsKICAgIHsKICAgICAgImlkIjogIjM1MTZiMWZjLWRjNzAtNDU4NS05YTkzLTllMDYwYmIxMWM0MiIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAidXNlcklkIjogInVzZXItMDAxIiwKICAgICAgImNyZWRpdHMiOiAxMCwKICAgICAgIndlZWtTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6MjY6MzcuNDc0WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICIzOGFlNGNiYy1kNjEyLTQ1MzEtYmJmZi05NWE3MDMwZjA3ZjIiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgInVzZXJJZCI6ICJ1c2VyLTAwMSIsCiAgICAgICJjcmVkaXRzIjogMTAsCiAgICAgICJ3ZWVrU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI2OjM3LjkyNloiCiAgICB9CiAgXSwKICAibm90aWZpY2F0aW9ucyI6IFsKICAgIHsKICAgICAgImlkIjogIjlmNGNkYjIwLWVkNGYtNDA3ZS1hMGYyLWM3NmM4YjIzYWFmZCIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAic3RhdGUiOiAicGVuZGluZyIsCiAgICAgICJhdHRlbXB0cyI6IDEsCiAgICAgICJsYXN0RXJyb3IiOiAiU2ltdWxhdGVkIG5vdGlmaWNhdGlvbiBwcm92aWRlciB1bmF2YWlsYWJsZSBiZWZvcmUgYWNjZXB0YW5jZS4iCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZGUyMWE5M2UtZjUzZi00OGM5LTg4NDQtNTY4NjNmMGMwYjJiIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJzdGF0ZSI6ICJzZW50IiwKICAgICAgImF0dGVtcHRzIjogMSwKICAgICAgImxhc3RFcnJvciI6IG51bGwKICAgIH0KICBdLAogICJyZWNlaXB0cyI6IFsKICAgIHsKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJhY2NlcHRlZEF0IjogIjIwMjYtMTAtMTRUMTg6MjY6MzcuOTgxWiIKICAgIH0KICBdLAogICJldmVudHMiOiBbCiAgICB7CiAgICAgICJpZCI6IDE1OCwKICAgICAgImV2ZW50IjogImV4YW1wbGVfY3JlYXRlZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJtb2RlIjogImZhdWx0eSIsCiAgICAgICAgImZpeHR1cmUiOiAiZW1wdHkiCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNjozMi42OTNaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogMTU5LAogICAgICAiZXZlbnQiOiAiZmFpbHVyZV9hcm1lZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJraW5kIjogIm5vdGlmaWNhdGlvbiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI2OjM2Ljk2NFoiCiAgICB9LAogICAgewogICAgICAiaWQiOiAxNjAsCiAgICAgICJldmVudCI6ICJwYXlvdXRfY29tbWl0dGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImNyZWRpdHMiOiAxMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6MjY6MzcuNTA1WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDE2MSwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6MjY6MzcuNTM1WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDE2MiwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9mYWlsZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiZXJyb3IiOiAiU2ltdWxhdGVkIG5vdGlmaWNhdGlvbiBwcm92aWRlciB1bmF2YWlsYWJsZSBiZWZvcmUgYWNjZXB0YW5jZS4iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNjozNy41ODBaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogMTYzLAogICAgICAiZXZlbnQiOiAic2V0dGxlbWVudF9maW5pc2hlZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJlbGlnaWJsZVRhc2tzIjogMSwKICAgICAgICAicGFpZE5vdyI6IDEsCiAgICAgICAgImZhaWx1cmVzIjogWwogICAgICAgICAgewogICAgICAgICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgICAgICAgInN0YWdlIjogIm5vdGlmaWNhdGlvbiIsCiAgICAgICAgICAgICJlcnJvciI6ICJTaW11bGF0ZWQgbm90aWZpY2F0aW9uIHByb3ZpZGVyIHVuYXZhaWxhYmxlIGJlZm9yZSBhY2NlcHRhbmNlLiIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJ3aW5kb3ciOiB7CiAgICAgICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAgICAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogICAgICAgIH0KICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI2OjM3LjU5OVoiCiAgICB9LAogICAgewogICAgICAiaWQiOiAxNjQsCiAgICAgICJldmVudCI6ICJwYXlvdXRfY29tbWl0dGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImNyZWRpdHMiOiAxMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6MjY6MzcuOTM5WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDE2NSwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6MjY6MzcuOTY3WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDE2NiwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9zZW50IiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI2OjM4LjAyOFoiCiAgICB9LAogICAgewogICAgICAiaWQiOiAxNjcsCiAgICAgICJldmVudCI6ICJzZXR0bGVtZW50X2ZpbmlzaGVkIiwKICAgICAgInRhc2tJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImVsaWdpYmxlVGFza3MiOiAxLAogICAgICAgICJwYWlkTm93IjogMSwKICAgICAgICAiZmFpbHVyZXMiOiBbXSwKICAgICAgICAid2luZG93IjogewogICAgICAgICAgInNjaGVkdWxlZEZvciI6ICIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLAogICAgICAgICAgInN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICAgICAiZW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNjozOC4wNDFaIgogICAgfQogIF0sCiAgImJhbGFuY2VzIjogewogICAgInVzZXItMDAxIjogMjAKICB9LAogICJ0b3RhbENyZWRpdHMiOiAyMCwKICAicGVuZGluZ05vdGlmaWNhdGlvbnMiOiAxLAogICJhcm1lZEZhaWx1cmVzIjogewogICAgIm5vdGlmaWNhdGlvbiI6IDAsCiAgICAicGF5b3V0IjogMCwKICAgICJwZXJzaXN0ZW5jZSI6IDAsCiAgICAiYW1iaWd1b3VzIjogMAogIH0KfQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "<project>\\output\\playwright\\faulty\\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "<project>\\output\\playwright\\faulty\\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "<project>\\output\\playwright\\faulty\\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<project>\\tests\\rewards-ui.spec.ts",
+                    "column": 52,
+                    "line": 24
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-183d3f0bd3f4c45c87c5",
+          "file": "rewards-ui.spec.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T18:26:26.449Z",
+    "duration": 24059.21,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

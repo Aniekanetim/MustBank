@@ -1,0 +1,118 @@
+{
+  "id": "b25bfd7d-1da3-45dd-8d62-27a7d104e4d9",
+  "mode": "fixed",
+  "createdAt": "2026-10-14T18:27:26.059Z",
+  "window": {
+    "scheduledFor": "2026-10-13T09:00:00.000Z",
+    "start": "2026-10-05T00:00:00.000Z",
+    "end": "2026-10-12T00:00:00.000Z"
+  },
+  "tasks": [
+    {
+      "taskId": "task-001",
+      "userId": "user-001",
+      "title": "Qualifying task",
+      "completedAt": "2026-10-08T12:00:00.000Z",
+      "status": "completed"
+    }
+  ],
+  "payouts": [
+    {
+      "id": "fe21c887-8283-47cd-bac3-2bcd44c4732c",
+      "taskId": "task-001",
+      "userId": "user-001",
+      "credits": 10,
+      "weekStart": "2026-10-05T00:00:00.000Z",
+      "createdAt": "2026-10-14T18:27:31.613Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "84af2c96-1a37-4b8b-8711-22512bca061f",
+      "taskId": "task-001",
+      "state": "pending",
+      "attempts": 1,
+      "lastError": "Simulated notification provider unavailable before acceptance."
+    }
+  ],
+  "receipts": [],
+  "events": [
+    {
+      "id": 269,
+      "event": "example_created",
+      "taskId": null,
+      "detail": {
+        "mode": "fixed",
+        "fixture": "empty"
+      },
+      "createdAt": "2026-10-14T18:27:26.074Z"
+    },
+    {
+      "id": 271,
+      "event": "failure_armed",
+      "taskId": null,
+      "detail": {
+        "kind": "notification"
+      },
+      "createdAt": "2026-10-14T18:27:30.753Z"
+    },
+    {
+      "id": 279,
+      "event": "payout_committed",
+      "taskId": "task-001",
+      "detail": {
+        "credits": 10
+      },
+      "createdAt": "2026-10-14T18:27:31.623Z"
+    },
+    {
+      "id": 280,
+      "event": "notification_attempted",
+      "taskId": "task-001",
+      "detail": {},
+      "createdAt": "2026-10-14T18:27:31.633Z"
+    },
+    {
+      "id": 281,
+      "event": "notification_failed",
+      "taskId": "task-001",
+      "detail": {
+        "error": "Simulated notification provider unavailable before acceptance."
+      },
+      "createdAt": "2026-10-14T18:27:31.660Z"
+    },
+    {
+      "id": 282,
+      "event": "settlement_finished",
+      "taskId": null,
+      "detail": {
+        "eligibleTasks": 1,
+        "paidNow": 1,
+        "failures": [
+          {
+            "taskId": "task-001",
+            "stage": "notification",
+            "error": "Simulated notification provider unavailable before acceptance."
+          }
+        ],
+        "window": {
+          "scheduledFor": "2026-10-13T09:00:00.000Z",
+          "start": "2026-10-05T00:00:00.000Z",
+          "end": "2026-10-12T00:00:00.000Z"
+        }
+      },
+      "createdAt": "2026-10-14T18:27:31.672Z"
+    }
+  ],
+  "balances": {
+    "user-001": 10
+  },
+  "totalCredits": 10,
+  "pendingNotifications": 1,
+  "armedFailures": {
+    "notification": 0,
+    "payout": 0,
+    "persistence": 0,
+    "ambiguous": 0
+  }
+}

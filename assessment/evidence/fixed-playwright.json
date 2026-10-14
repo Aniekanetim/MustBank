@@ -1,0 +1,959 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "<project>\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "<project>\\playwright.config.ts",
+    "rootDir": "<project>/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "<project>/output/playwright/fixed",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "<project>/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "<project>\\output\\playwright\\fixed",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "chromium",
+        "testDir": "<project>\\tests",
+        "snapshotDir": "<project>\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "browserName": "chromium",
+          "channel": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "assessment/evidence/fixed-playwright.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "output/playwright/report-fixed",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "rewards-api.spec.ts",
+      "file": "rewards-api.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC01 | a completed task pays 10 credits before notification",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 588,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:03.448Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-77c31db6c8e203e44f55",
+          "file": "rewards-api.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "TC03 | the lower Monday boundary is included",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 734,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:03.506Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-ee490d31487a6abd1d6b",
+          "file": "rewards-api.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "TC02 | an empty weekly run creates no payment or notification",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 548,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:04.224Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-054c828cd74fde137178",
+          "file": "rewards-api.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "TC04 | the upper Monday boundary is excluded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 434,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:04.392Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-cf432f44163095b5f1ef",
+          "file": "rewards-api.spec.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "TC05 | Lagos offset timestamps are compared as UTC instants",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 728,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:04.823Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-cb6a8f2d051b7a5ae698",
+          "file": "rewards-api.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "TC06 | pending and cancelled tasks cannot earn rewards",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 742,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:04.888Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-84e00bc235f50c9cefbe",
+          "file": "rewards-api.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "TC07 | duplicate task input earns one reward",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1050,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:05.589Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-14f1076ecafeb646373e",
+          "file": "rewards-api.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "TC08 | replay after success cannot pay again",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1573,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:05.670Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-d4ddc7704fd7ff7e283e",
+          "file": "rewards-api.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "TC09 | failed notification preserves the payout and pending message",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2837,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:06.675Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-f703c561d956b6746808",
+          "file": "rewards-api.spec.ts",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "TC12 | failed payment sends no success notification",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3320,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:07.278Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-08a3da3adc06e3c1df72",
+          "file": "rewards-api.spec.ts",
+          "line": 58,
+          "column": 1
+        },
+        {
+          "title": "TC13 | interrupted local recording rolls back before commit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2261,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:09.551Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-9991b5a1e9d63262b959",
+          "file": "rewards-api.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "TC14 | the excluded boundary pays once in the following week",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2487,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:10.636Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-55361b12e6bd8be9c0a3",
+          "file": "rewards-api.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "TC15 | conflicting duplicate owners reject the whole import",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1753,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:11.844Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-17a109351d5aa843c266",
+          "file": "rewards-api.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "TC16 | a naive timestamp cannot produce partial import",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1134,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:13.180Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-9f14267f9534d2edf6b3",
+          "file": "rewards-api.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "TC17 | overlapping HTTP settlement requests create one payout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2599,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:13.629Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-4dc942694069a6de21ee",
+          "file": "rewards-api.spec.ts",
+          "line": 91,
+          "column": 1
+        },
+        {
+          "title": "TC18 | a lost notification acknowledgment cannot repay the task",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3183,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:14.357Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-4e30d06930db52674bb4",
+          "file": "rewards-api.spec.ts",
+          "line": 97,
+          "column": 1
+        },
+        {
+          "title": "TC19 | invalid scheduled run identity has no payout effects",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1689,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:16.267Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-f8e03347b90cf5f76299",
+          "file": "rewards-api.spec.ts",
+          "line": 104,
+          "column": 1
+        },
+        {
+          "title": "TC20 | a stored task cannot change owner or completion time",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2722,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:17.574Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-9a3636b270a9e0c53436",
+          "file": "rewards-api.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "TC23 | invalid calendar dates and 24-hour rollover reject input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2434,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:18.006Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fd346aa23c7c0f1cc452-2e0066bb9ea6f2aec193",
+          "file": "rewards-api.spec.ts",
+          "line": 122,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "rewards-ui.spec.ts",
+      "file": "rewards-ui.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC10 | notification failure then settlement replay leaves 10 credits",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 11504,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:20.380Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "first-attempt",
+                      "contentType": "application/json",
+                      "body": "ewogICJpZCI6ICJiMjViZmQ3ZC0xZGEzLTQ1ZGQtOGQ2Mi0yN2E3ZDEwNGU0ZDkiLAogICJtb2RlIjogImZpeGVkIiwKICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6Mjc6MjYuMDU5WiIsCiAgIndpbmRvdyI6IHsKICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICJzdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgImVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiCiAgfSwKICAidGFza3MiOiBbCiAgICB7CiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAidXNlcklkIjogInVzZXItMDAxIiwKICAgICAgInRpdGxlIjogIlF1YWxpZnlpbmcgdGFzayIsCiAgICAgICJjb21wbGV0ZWRBdCI6ICIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLAogICAgICAic3RhdHVzIjogImNvbXBsZXRlZCIKICAgIH0KICBdLAogICJwYXlvdXRzIjogWwogICAgewogICAgICAiaWQiOiAiZmUyMWM4ODctODI4My00N2NkLWJhYzMtMmJjZDQ0YzQ3MzJjIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJ1c2VySWQiOiAidXNlci0wMDEiLAogICAgICAiY3JlZGl0cyI6IDEwLAogICAgICAid2Vla1N0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNzozMS42MTNaIgogICAgfQogIF0sCiAgIm5vdGlmaWNhdGlvbnMiOiBbCiAgICB7CiAgICAgICJpZCI6ICI4NGFmMmM5Ni0xYTM3LTRiOGItODcxMS0yMjUxMmJjYTA2MWYiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgInN0YXRlIjogInBlbmRpbmciLAogICAgICAiYXR0ZW1wdHMiOiAxLAogICAgICAibGFzdEVycm9yIjogIlNpbXVsYXRlZCBub3RpZmljYXRpb24gcHJvdmlkZXIgdW5hdmFpbGFibGUgYmVmb3JlIGFjY2VwdGFuY2UuIgogICAgfQogIF0sCiAgInJlY2VpcHRzIjogW10sCiAgImV2ZW50cyI6IFsKICAgIHsKICAgICAgImlkIjogMjY5LAogICAgICAiZXZlbnQiOiAiZXhhbXBsZV9jcmVhdGVkIiwKICAgICAgInRhc2tJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgIm1vZGUiOiAiZml4ZWQiLAogICAgICAgICJmaXh0dXJlIjogImVtcHR5IgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6Mjc6MjYuMDc0WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDI3MSwKICAgICAgImV2ZW50IjogImZhaWx1cmVfYXJtZWQiLAogICAgICAidGFza0lkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAia2luZCI6ICJub3RpZmljYXRpb24iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNzozMC43NTNaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogMjc5LAogICAgICAiZXZlbnQiOiAicGF5b3V0X2NvbW1pdHRlZCIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJjcmVkaXRzIjogMTAKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI3OjMxLjYyM1oiCiAgICB9LAogICAgewogICAgICAiaWQiOiAyODAsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI3OjMxLjYzM1oiCiAgICB9LAogICAgewogICAgICAiaWQiOiAyODEsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fZmFpbGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImVycm9yIjogIlNpbXVsYXRlZCBub3RpZmljYXRpb24gcHJvdmlkZXIgdW5hdmFpbGFibGUgYmVmb3JlIGFjY2VwdGFuY2UuIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6Mjc6MzEuNjYwWiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDI4MiwKICAgICAgImV2ZW50IjogInNldHRsZW1lbnRfZmluaXNoZWQiLAogICAgICAidGFza0lkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiZWxpZ2libGVUYXNrcyI6IDEsCiAgICAgICAgInBhaWROb3ciOiAxLAogICAgICAgICJmYWlsdXJlcyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICAgICAgICJzdGFnZSI6ICJub3RpZmljYXRpb24iLAogICAgICAgICAgICAiZXJyb3IiOiAiU2ltdWxhdGVkIG5vdGlmaWNhdGlvbiBwcm92aWRlciB1bmF2YWlsYWJsZSBiZWZvcmUgYWNjZXB0YW5jZS4iCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAid2luZG93IjogewogICAgICAgICAgInNjaGVkdWxlZEZvciI6ICIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLAogICAgICAgICAgInN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICAgICAiZW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNzozMS42NzJaIgogICAgfQogIF0sCiAgImJhbGFuY2VzIjogewogICAgInVzZXItMDAxIjogMTAKICB9LAogICJ0b3RhbENyZWRpdHMiOiAxMCwKICAicGVuZGluZ05vdGlmaWNhdGlvbnMiOiAxLAogICJhcm1lZEZhaWx1cmVzIjogewogICAgIm5vdGlmaWNhdGlvbiI6IDAsCiAgICAicGF5b3V0IjogMCwKICAgICJwZXJzaXN0ZW5jZSI6IDAsCiAgICAiYW1iaWd1b3VzIjogMAogIH0KfQ=="
+                    },
+                    {
+                      "name": "observed-scenario",
+                      "contentType": "application/json",
+                      "body": "ewogICJpZCI6ICJiMjViZmQ3ZC0xZGEzLTQ1ZGQtOGQ2Mi0yN2E3ZDEwNGU0ZDkiLAogICJtb2RlIjogImZpeGVkIiwKICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6Mjc6MjYuMDU5WiIsCiAgIndpbmRvdyI6IHsKICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICJzdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgImVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiCiAgfSwKICAidGFza3MiOiBbCiAgICB7CiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAidXNlcklkIjogInVzZXItMDAxIiwKICAgICAgInRpdGxlIjogIlF1YWxpZnlpbmcgdGFzayIsCiAgICAgICJjb21wbGV0ZWRBdCI6ICIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLAogICAgICAic3RhdHVzIjogImNvbXBsZXRlZCIKICAgIH0KICBdLAogICJwYXlvdXRzIjogWwogICAgewogICAgICAiaWQiOiAiZmUyMWM4ODctODI4My00N2NkLWJhYzMtMmJjZDQ0YzQ3MzJjIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJ1c2VySWQiOiAidXNlci0wMDEiLAogICAgICAiY3JlZGl0cyI6IDEwLAogICAgICAid2Vla1N0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNzozMS42MTNaIgogICAgfQogIF0sCiAgIm5vdGlmaWNhdGlvbnMiOiBbCiAgICB7CiAgICAgICJpZCI6ICI4NGFmMmM5Ni0xYTM3LTRiOGItODcxMS0yMjUxMmJjYTA2MWYiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgInN0YXRlIjogInNlbnQiLAogICAgICAiYXR0ZW1wdHMiOiAyLAogICAgICAibGFzdEVycm9yIjogbnVsbAogICAgfQogIF0sCiAgInJlY2VpcHRzIjogWwogICAgewogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImFjY2VwdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNzozMy42NzJaIgogICAgfQogIF0sCiAgImV2ZW50cyI6IFsKICAgIHsKICAgICAgImlkIjogMjY5LAogICAgICAiZXZlbnQiOiAiZXhhbXBsZV9jcmVhdGVkIiwKICAgICAgInRhc2tJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgIm1vZGUiOiAiZml4ZWQiLAogICAgICAgICJmaXh0dXJlIjogImVtcHR5IgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6Mjc6MjYuMDc0WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDI3MSwKICAgICAgImV2ZW50IjogImZhaWx1cmVfYXJtZWQiLAogICAgICAidGFza0lkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAia2luZCI6ICJub3RpZmljYXRpb24iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNzozMC43NTNaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogMjc5LAogICAgICAiZXZlbnQiOiAicGF5b3V0X2NvbW1pdHRlZCIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJjcmVkaXRzIjogMTAKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI3OjMxLjYyM1oiCiAgICB9LAogICAgewogICAgICAiaWQiOiAyODAsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI3OjMxLjYzM1oiCiAgICB9LAogICAgewogICAgICAiaWQiOiAyODEsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fZmFpbGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImVycm9yIjogIlNpbXVsYXRlZCBub3RpZmljYXRpb24gcHJvdmlkZXIgdW5hdmFpbGFibGUgYmVmb3JlIGFjY2VwdGFuY2UuIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6Mjc6MzEuNjYwWiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDI4MiwKICAgICAgImV2ZW50IjogInNldHRsZW1lbnRfZmluaXNoZWQiLAogICAgICAidGFza0lkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiZWxpZ2libGVUYXNrcyI6IDEsCiAgICAgICAgInBhaWROb3ciOiAxLAogICAgICAgICJmYWlsdXJlcyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICAgICAgICJzdGFnZSI6ICJub3RpZmljYXRpb24iLAogICAgICAgICAgICAiZXJyb3IiOiAiU2ltdWxhdGVkIG5vdGlmaWNhdGlvbiBwcm92aWRlciB1bmF2YWlsYWJsZSBiZWZvcmUgYWNjZXB0YW5jZS4iCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAid2luZG93IjogewogICAgICAgICAgInNjaGVkdWxlZEZvciI6ICIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLAogICAgICAgICAgInN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICAgICAiZW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNzozMS42NzJaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogMjgzLAogICAgICAiZXZlbnQiOiAicGF5b3V0X2FscmVhZHlfY29tcGxldGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI3OjMzLjY0MFoiCiAgICB9LAogICAgewogICAgICAiaWQiOiAyODQsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjI3OjMzLjY1NFoiCiAgICB9LAogICAgewogICAgICAiaWQiOiAyODUsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fc2VudCIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAiZGV0YWlsIjoge30sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODoyNzozMy43MzRaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogMjg2LAogICAgICAiZXZlbnQiOiAic2V0dGxlbWVudF9maW5pc2hlZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJlbGlnaWJsZVRhc2tzIjogMSwKICAgICAgICAicGFpZE5vdyI6IDAsCiAgICAgICAgImZhaWx1cmVzIjogW10sCiAgICAgICAgIndpbmRvdyI6IHsKICAgICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICAgICAgICJzdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAgICAgImVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiCiAgICAgICAgfQogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6Mjc6MzMuNzUzWiIKICAgIH0KICBdLAogICJiYWxhbmNlcyI6IHsKICAgICJ1c2VyLTAwMSI6IDEwCiAgfSwKICAidG90YWxDcmVkaXRzIjogMTAsCiAgInBlbmRpbmdOb3RpZmljYXRpb25zIjogMCwKICAiYXJtZWRGYWlsdXJlcyI6IHsKICAgICJub3RpZmljYXRpb24iOiAwLAogICAgInBheW91dCI6IDAsCiAgICAicGVyc2lzdGVuY2UiOiAwLAogICAgImFtYmlndW91cyI6IDAKICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-183d3f0bd3f4c45c87c5",
+          "file": "rewards-ui.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "TC21 | a task added through the form pays its stable owner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8706,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:21.022Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-81dfa826f0a4cd3600c0",
+          "file": "rewards-ui.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "TC22 | browser reload preserves payment and recovery work",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10538,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:32.742Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-05960b15b6d8fe3b4672",
+          "file": "rewards-ui.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "TC24 | narrow-screen recovery works through keyboard controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 8647,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:35.175Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-48b8c4b167c251493121",
+          "file": "rewards-ui.spec.ts",
+          "line": 56,
+          "column": 1
+        },
+        {
+          "title": "TC25 | the original simulated transfer still works without WebMCP",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2983,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T18:27:43.320Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-bd59fef0668d8c38c452",
+          "file": "rewards-ui.spec.ts",
+          "line": 70,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T18:26:57.281Z",
+    "duration": 84301.67,
+    "expected": 24,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

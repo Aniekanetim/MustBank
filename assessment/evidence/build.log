@@ -1,0 +1,14 @@
+
+> webmcp-acmebank-demo@0.1.0 build
+> tsc -b && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 45 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.66 kB │ gzip:  0.43 kB
+dist/assets/index-BmFHtJaW.css    8.59 kB │ gzip:  2.36 kB
+dist/assets/index-D5qTYC4q.js   242.23 kB │ gzip: 76.68 kB
+
+✓ built in 1.08s

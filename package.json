@@ -3,19 +3,19 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "AcmeBank — a tiny banking SPA that exposes its actions as Web MCP tools, so an in-browser agent can call them like functions instead of clicking through the UI.",
+  "description": "AcmeBank QA Quest: reproduce and prevent duplicate fictional rewards after notification failure.",
   "license": "MIT",
   "author": {
     "name": "Amit Rawat",
     "url": "https://github.com/sahajamit"
   },
-  "homepage": "https://github.com/sahajamit/webmcp-acmebank-demo#readme",
+  "homepage": "https://github.com/Aniekanetim/webmcp-acmebank-demo/tree/quest/rewards-settlement#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahajamit/webmcp-acmebank-demo.git"
+    "url": "https://github.com/Aniekanetim/webmcp-acmebank-demo.git"
   },
   "bugs": {
-    "url": "https://github.com/sahajamit/webmcp-acmebank-demo/issues"
+    "url": "https://github.com/Aniekanetim/webmcp-acmebank-demo/issues"
   },
   "keywords": [
     "webmcp",
@@ -36,22 +36,32 @@
     "ui-testing"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "node scripts/dev.mjs",
+    "dev:ui": "vite",
+    "start": "node server/index.mjs",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "playwright test",
+    "test:service": "node --test tests/service.test.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
   },
   "dependencies": {
     "@mcp-b/webmcp-polyfill": "^2.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2"
+    "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
     "@mcp-b/webmcp-types": "^2.2.0",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^22.20.5",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^6.1.2",
     "typescript": "^5.6.3",
-    "vite": "^5.4.10"
+    "vite": "^8.3.4"
   }
 }

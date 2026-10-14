@@ -2,5 +2,13 @@ node_modules
 dist
 .DS_Store
 *.log
+!assessment/evidence/*.log
 .vite
 *.tsbuildinfo
+data/
+test-results/
+playwright-report/
+output/playwright/
+.env.local
+.env
+.playwright-cli/

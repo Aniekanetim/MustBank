@@ -1,0 +1,58 @@
+[WebServer] (node:43228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:43228) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+
+[WebServer] (node:7328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 1 test using 1 worker
+
+(node:9136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] [chromium] › tests\rewards-ui.spec.ts:5:1 › TC10 | notification failure then settlement replay leaves 10 credits
+  1) [chromium] › tests\rewards-ui.spec.ts:5:1 › TC10 | notification failure then settlement replay leaves 10 credits 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('reward-balance')
+    Expected: "10 credits"
+    Received: "20 credits"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByTestId('reward-balance') with timeout 5000ms
+      - waiting for getByTestId('reward-balance')
+        12 × locator resolved to <p class="balance" data-testid="reward-balance">20 credits</p>
+           - unexpected value "20 credits"
+
+
+      22 |   await page.screenshot({ path: `assessment/evidence/${mode}-reproduction.png`, fullPage: true });
+      23 |   // Exactly the same business expectation in both modes. The faulty run must fail here.
+    > 24 |   await expect(page.getByTestId('reward-balance')).toHaveText('10 credits');
+         |                                                    ^
+      25 |   await expect(page.getByTestId('payout-count')).toHaveText('1');
+      26 |   await expect(page.getByTestId('pending-count')).toHaveText('0');
+      27 | });
+        at <project>\tests\rewards-ui.spec.ts:24:52
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    output\playwright\faulty\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: output\playwright\faulty\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    output\playwright\faulty\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace output\playwright\faulty\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  1 failed
+    [chromium] › tests\rewards-ui.spec.ts:5:1 › TC10 | notification failure then settlement replay leaves 10 credits 

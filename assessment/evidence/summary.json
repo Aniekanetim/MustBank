@@ -1,0 +1,164 @@
+{
+  "generatedAt": "2026-10-14T18:28:24.037Z",
+  "upstreamCommit": "73d83074e7ea0c40f8273455ebcb611b7088fd5a",
+  "environment": {
+    "node": "v22.21.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "chromium": "156.0.8078.4"
+  },
+  "faulty": {
+    "case": "TC10",
+    "expectedAssertionFailure": true,
+    "credits": 20,
+    "payouts": 2,
+    "pendingNotifications": 1
+  },
+  "fixed": {
+    "playwrightPassed": 24,
+    "freshProcessPassed": 1,
+    "totalPassed": 25,
+    "credits": 10,
+    "payouts": 1,
+    "pendingNotifications": 0
+  },
+  "cases": [
+    {
+      "id": "TC01",
+      "title": "a completed task pays 10 credits before notification",
+      "result": "passed"
+    },
+    {
+      "id": "TC02",
+      "title": "an empty weekly run creates no payment or notification",
+      "result": "passed"
+    },
+    {
+      "id": "TC03",
+      "title": "the lower Monday boundary is included",
+      "result": "passed"
+    },
+    {
+      "id": "TC04",
+      "title": "the upper Monday boundary is excluded",
+      "result": "passed"
+    },
+    {
+      "id": "TC05",
+      "title": "Lagos offset timestamps are compared as UTC instants",
+      "result": "passed"
+    },
+    {
+      "id": "TC06",
+      "title": "pending and cancelled tasks cannot earn rewards",
+      "result": "passed"
+    },
+    {
+      "id": "TC07",
+      "title": "duplicate task input earns one reward",
+      "result": "passed"
+    },
+    {
+      "id": "TC08",
+      "title": "replay after success cannot pay again",
+      "result": "passed"
+    },
+    {
+      "id": "TC09",
+      "title": "failed notification preserves the payout and pending message",
+      "result": "passed"
+    },
+    {
+      "id": "TC10",
+      "title": "notification failure then settlement replay leaves 10 credits",
+      "result": "passed"
+    },
+    {
+      "id": "TC11",
+      "title": "Fresh Node process retains payout and recovers notification",
+      "result": "passed"
+    },
+    {
+      "id": "TC12",
+      "title": "failed payment sends no success notification",
+      "result": "passed"
+    },
+    {
+      "id": "TC13",
+      "title": "interrupted local recording rolls back before commit",
+      "result": "passed"
+    },
+    {
+      "id": "TC14",
+      "title": "the excluded boundary pays once in the following week",
+      "result": "passed"
+    },
+    {
+      "id": "TC15",
+      "title": "conflicting duplicate owners reject the whole import",
+      "result": "passed"
+    },
+    {
+      "id": "TC16",
+      "title": "a naive timestamp cannot produce partial import",
+      "result": "passed"
+    },
+    {
+      "id": "TC17",
+      "title": "overlapping HTTP settlement requests create one payout",
+      "result": "passed"
+    },
+    {
+      "id": "TC18",
+      "title": "a lost notification acknowledgment cannot repay the task",
+      "result": "passed"
+    },
+    {
+      "id": "TC19",
+      "title": "invalid scheduled run identity has no payout effects",
+      "result": "passed"
+    },
+    {
+      "id": "TC20",
+      "title": "a stored task cannot change owner or completion time",
+      "result": "passed"
+    },
+    {
+      "id": "TC21",
+      "title": "a task added through the form pays its stable owner",
+      "result": "passed"
+    },
+    {
+      "id": "TC22",
+      "title": "browser reload preserves payment and recovery work",
+      "result": "passed"
+    },
+    {
+      "id": "TC23",
+      "title": "invalid calendar dates and 24-hour rollover reject input",
+      "result": "passed"
+    },
+    {
+      "id": "TC24",
+      "title": "narrow-screen recovery works through keyboard controls",
+      "result": "passed"
+    },
+    {
+      "id": "TC25",
+      "title": "the original simulated transfer still works without WebMCP",
+      "result": "passed"
+    }
+  ],
+  "sourceSha256": {
+    "server/rewards.mjs": "0dc6cb224da1ca262810fb0ed319f476c2b6bbf27c36f1ba2085ad558c23d9bd",
+    "server/index.mjs": "5fbf483b45eeb78b8b421fe6821c8dfdf64ee3ced5fc15bb96116390ca2b0c4d",
+    "src/pages/Rewards.tsx": "e1310addbdb40ae5a1ffe6e32644221a93bcdbbde2d1414a5dd5c8459016538f",
+    "tests/rewards-api.spec.ts": "f93848b3bb1729b9033810faa15b83710307fb3e188e013ad5bc8ec3bbf3cebf",
+    "tests/rewards-ui.spec.ts": "19fd3567b609dd5bab6b77c612e710f0158ae12c4aa9a00d7c083d5d5e3bfd1d",
+    "tests/service.test.mjs": "0b3eb06f1ac3940800bed68904f3dce23514534c67bcc7c08dd0f97918fc69b2",
+    "tests/helpers.ts": "f7aece80bfb36ca6ebcd3a2224957e665d51b23ed36a9024b4f0a679438e4ab9",
+    "playwright.config.ts": "2aee7fb8516c62fbe1da56f644e7a10e60ebc9623f89c324be2750a6148fe264",
+    "scripts/verify.mjs": "a0ad061eb5a4d0b0ec2d6708495a8de28bde18962fcd35f5c7d5a52c403c20a7",
+    "package-lock.json": "ee0221899881401c0137f4ad149b13250a5f0931f6fdd8c15fa59800ea430932"
+  }
+}
