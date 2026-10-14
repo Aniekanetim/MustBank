@@ -1,43 +1,21 @@
+import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { Search } from 'lucide-react';
 import { useBank } from '../store/useBank';
-import { bank, fmtSGD } from '../store/bank';
+import { ActivityTable, EmptyState, PageHeader, recipientName } from '../components/BankUI';
 
 export function TransactionsPage() {
-  const { transactions, recipients, accounts } = useBank();
-
-  return (
-    <>
-      <h1 className="page-title">Transactions</h1>
-      <p className="page-sub">Review simulated transfers, recipients and completion status. Task reward payouts are recorded on the Rewards page.</p>
-
-      <div style={{ marginBottom: 16, display: 'flex', gap: 12 }}>
-        <button className="btn-secondary" onClick={() => bank.reset()}>Reset demo data</button>
-      </div>
-
-      <div className="list">
-        <div className="list-row" style={{ background: 'rgba(255,255,255,0.02)', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4, color: 'var(--text-dim)' }}>
-          <div>Date</div>
-          <div>Detail</div>
-          <div style={{ textAlign: 'right' }}>Amount</div>
-          <div style={{ textAlign: 'right' }}>Status</div>
-        </div>
-        {transactions.map(t => {
-          const from = accounts.find(a => a.id === t.fromAccountId);
-          const to = t.toRecipientId
-            ? recipients.find(r => r.id === t.toRecipientId)?.name ?? '?'
-            : accounts.find(a => a.id === t.toAccountId)?.nickname ?? '?';
-          return (
-            <div key={t.id} className="list-row">
-              <div className="date">{new Date(t.ts).toLocaleString('en-SG', { dateStyle: 'medium', timeStyle: 'short' })}</div>
-              <div>
-                <div>{t.memo ?? 'Transfer'}</div>
-                <div style={{ color: 'var(--text-dim)', fontSize: 12 }}>{from?.nickname} → {to}</div>
-              </div>
-              <div className="amount">−{fmtSGD(t.amount)}</div>
-              <div className="transaction-status">{t.status}</div>
-            </div>
-          );
-        })}
-      </div>
-    </>
-  );
+  const state = useBank(); const [params] = useSearchParams();
+  const [query, setQuery] = useState(''); const [account, setAccount] = useState(params.get('account') ?? 'all'); const [status, setStatus] = useState('all');
+  const transactions = state.transactions.filter(item => (account === 'all' || item.fromAccountId === account || item.toAccountId === account)
+    && (status === 'all' || item.status === status)
+    && `${item.memo ?? ''} ${recipientName(item, state)} ${state.accounts.find(value => value.id === item.fromAccountId)?.nickname ?? ''} ${item.id}`.toLowerCase().includes(query.trim().toLowerCase()));
+  const clear = () => { setQuery(''); setAccount('all'); setStatus('all'); };
+  return <><PageHeader title="Account activity" description="Search your transactions and see where your money goes." />
+    <section className="panel"><div className="filter-bar"><div className="search-field"><label className="sr-only" htmlFor="activity-search">Search activity</label><Search size={18} aria-hidden="true" /><input id="activity-search" type="search" placeholder="Search recipient, description or reference" value={query} onChange={event => setQuery(event.target.value)} /></div>
+      <div className="filter-field"><label htmlFor="activity-account">Account</label><select id="activity-account" value={account} onChange={event => setAccount(event.target.value)}><option value="all">All accounts</option>{state.accounts.map(item => <option value={item.id} key={item.id}>{item.nickname}</option>)}</select></div>
+      <div className="filter-field"><label htmlFor="activity-status">Status</label><select id="activity-status" value={status} onChange={event => setStatus(event.target.value)}><option value="all">All statuses</option><option value="completed">Completed</option><option value="pending">Pending</option><option value="failed">Failed</option></select></div></div>
+      <p className="result-count" role="status">{transactions.length} {transactions.length === 1 ? 'transaction' : 'transactions'} · dates shown in your local time</p>
+      {transactions.length ? <ActivityTable transactions={transactions} state={state} /> : <EmptyState title="No matching activity" description="Try another recipient, account or status." action={<button className="btn-secondary" onClick={clear}>Clear filters</button>} />}
+    </section></>;
 }

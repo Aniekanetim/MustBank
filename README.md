@@ -1,12 +1,12 @@
-# MustBank QA Quest
+# MustBank
 
-A completed task should earn **10 fictional credits once**. This assessment extension demonstrates how a failed notification can cause a duplicate payout, and how payment records prevent that mistake on a retry.
+MustBank is a local banking prototype with customer account, transfer, recipient, activity and rewards flows. Weekly payout processing lives in a separate operations workspace. The customer experience uses normal product language; fixture creation and failure injection are handled outside the app.
 
-Start with [intent.md](assessment/intent.md) for the problem choice, then [directive.md](assessment/directive.md) for the requirements, results and handoff. The [defect report](assessment/defect-report.md) connects the observed failure to the fix.
+This repository is the QA Quest submission project. It uses synthetic accounts, credits and providers, and never moves real money. Start with [intent.md](assessment/intent.md), then [directive.md](assessment/directive.md) for the business requirements, regression evidence and handoff. The [defect report](assessment/defect-report.md) explains why retrying settlement after a notification failure can pay a task twice.
 
-## Run the example
+## Run MustBank
 
-Use **Node 22.13 or later**; verification uses Node **22.21.0**. Node's SQLite module emits an experimental-feature warning on that version. No database server, API key or browser extension is needed.
+Use **Node 22.13 or later**; verification uses **22.21.0**. Node's SQLite module emits an experimental-feature warning on that version. No API key or database server is required.
 
 ```sh
 git clone --branch quest/rewards-settlement https://github.com/Aniekanetim/MustBank.git
@@ -15,43 +15,54 @@ npm ci
 npm run dev
 ```
 
-Open **http://127.0.0.1:5173/rewards**. The development command starts the web page and API. SQLite records live in `data/rewards.sqlite`; the browser stores only the current example's ID. Each new example has separate records, so changing behavior cannot turn an already-paid task into a fresh payment.
+Open **http://127.0.0.1:5173** for personal banking. The command starts the frontend and the API. The operations workspace is **http://127.0.0.1:5173/operations/settlements**.
 
-To see the failure:
-
-1. Choose **Faulty assessment example**, keep **One qualifying task**, then click **Start new example**.
-2. Click **Fail next notification**, then **Run settlement**. Observe 10 credits and one pending notification.
-3. Click **Run settlement** again. Observe **20 credits and two payout records** for one task.
-4. Start a new **Corrected reference** example and repeat. The result stays at **10 credits and one payout**; notification delivery recovers.
-
-**Export example** downloads the current records and event history as JSON. MustBank's account, recipient, transfer and transaction pages provide a fictional banking workspace. Their SGD balances are separate from task reward credits.
-
-Compatible browser data from an earlier storage namespace migrates automatically to `mustbank.state.v1` and `mustbank.quest.example.v1`. Existing balances and the selected reward example are preserved. Persisted rewards records remain in the same SQLite database.
-
-## Verify the result
-
-```sh
-npx playwright install --no-shell chromium
-npm run verify
-```
-
-Stop the development server first: verification starts its own servers on ports 4174 and 5173. It builds the app, checks recovery in a fresh Node process, confirms that the faulty behavior fails TC10 for the duplicate-payment reason, then runs all corrected Playwright cases. The deliberate failed assertion is required evidence; the overall command succeeds only when that failure and the corrected passes are confirmed.
-
-The [evidence summary](assessment/evidence/summary.json), [case results](assessment/test-cases.md), screenshots and raw reports are committed for reviewers. A fresh run updates them. `npm test` runs the corrected Playwright suite; `npm run test:service` runs process recovery. Open the failed-run trace with `npx playwright show-trace assessment/evidence/faulty-trace.zip`.
-
-For one local server serving the built page and API:
+For a single server serving the production build and API:
 
 ```sh
 npm run build
 npm start
 ```
 
-Then open **http://127.0.0.1:4174/rewards**. A static-only host would need a separate API. This fork is a reproducible local demo, with source and evidence available on GitHub.
+Open **http://127.0.0.1:4174**. The root opens the account overview. Rewards records are persisted in `data/rewards.sqlite`; the browser caches only the selected rewards account ID. Account balances and transfers use local browser storage. Compatible previous storage namespaces migrate automatically, preserving balances and payment identity.
 
-## Source and limits
+## Reproduce the selected defect
 
-MustBank adapts MIT-licensed work by [Amit Rawat](https://github.com/sahajamit), starting at commit `73d83074e7ea0c40f8273455ebcb611b7088fd5a`. The copyright notice and commit history are preserved. The rewards module and deliberately faulty mode were added for this Quest; the defect report makes no claim about an upstream incident.
+Keep the built app running, then prepare an isolated faulty rewards account from a second terminal:
 
-The assessment checks use HTTP and ordinary browser controls through Playwright. Account activity and task rewards can be reviewed directly through MustBank's pages.
+```sh
+npm run scenario -- --behavior faulty --fail-notification
+```
 
-All credits and provider responses are simulated. See the [release decision](assessment/release-readiness.md) for scope, gaps and submission tasks. The inherited [MIT license](LICENSE) is preserved.
+The command prints an **Operations URL** and a **Customer URL** for the same rewards account. Open the Operations URL and:
+
+1. Keep the scheduled run at Tuesday **13 October 2026, 09:00 UTC**.
+2. Click **Run settlement**. Observe **10 credits, one payout, one pending confirmation**.
+3. Click **Run settlement** again. Faulty processing produces **20 credits and two payouts** for one activity.
+
+Prepare the corrected reference using the same starting conditions:
+
+```sh
+npm run scenario -- --behavior fixed --fail-notification
+```
+
+Repeat the same two runs in its Operations URL. Credits stay at **10**, payout count stays at **one**, and the pending confirmation is recovered. The Customer URL shows that customer's reward history without fixture controls or processing-version labels. Fixture setup is restricted to localhost; existing accounts and records are preserved separately.
+
+`--fixture boundaries` provides UTC cut-off examples; `--fixture empty` starts with no activities. For the development API, the setup command still uses port 4174 and its printed links open the API's built page. Open the same path at port 5173 when using the development frontend.
+
+## Verify
+
+```sh
+npx playwright install --no-shell chromium
+npm run verify
+```
+
+Verification uses isolated servers on **4184 and 5183**, so it can run alongside the local preview. It builds the app, checks persistence in a fresh Node process, proves that TC10 fails at 20 credits against faulty processing, then runs the complete corrected suite. The intentional failed assertion is required evidence; overall verification succeeds only when the failure and corrected passes are confirmed.
+
+See [case results](assessment/test-cases.md), [summary and source hashes](assessment/evidence/summary.json), screenshots, snapshots and raw reports. `npm test` runs the corrected Playwright suite; `npm run test:service` runs process recovery. Open the recorded failure with `npx playwright show-trace assessment/evidence/faulty-trace.zip`.
+
+## Scope and attribution
+
+The banking UI is a functional local prototype, not a production bank. There is no real payment provider, notification provider, scheduler or production authentication. The customer rewards projection represents fixture customer `user-001`; separate customer and operations screens are not an authorization system. See the [release decision](assessment/release-readiness.md) for limits, including personal review, Loom and recruiter submission details.
+
+MustBank adapts MIT-licensed work by [Amit Rawat](https://github.com/sahajamit), starting at commit `73d83074e7ea0c40f8273455ebcb611b7088fd5a`. The [copyright notice](LICENSE) and commit history are preserved. The controlled rewards defect was introduced for this Quest and is not a claim about an upstream or MUST production incident.

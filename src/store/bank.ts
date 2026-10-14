@@ -6,7 +6,7 @@ export type Account = {
   nickname: string;
   type: 'checking' | 'savings' | 'credit';
   number: string;        // last 4 digits, displayed as "•••• 1234"
-  balance: number;       // SGD, kept as cents to avoid float drift
+  balance: number;       // SGD in units of 1/10000; retain fixture precision
   currency: 'SGD';
 };
 
@@ -23,7 +23,7 @@ export type Transaction = {
   fromAccountId: string;
   toRecipientId?: string;
   toAccountId?: string;
-  amount: number;        // cents
+  amount: number;        // units of 1/10000 SGD
   memo?: string;
   status: 'completed' | 'pending' | 'failed';
 };
@@ -121,7 +121,7 @@ export const bank = {
 
   addRecipient(name: string, bank: string, accountNumber: string): Recipient {
     const recipient: Recipient = {
-      id: `rcp_${Date.now().toString(36)}`,
+      id: `rcp_${crypto.randomUUID()}`,
       name, bank, accountNumber,
     };
     state = { ...state, recipients: [...state.recipients, recipient] };
@@ -133,18 +133,21 @@ export const bank = {
     fromAccountId: string;
     toRecipientId?: string;
     toAccountId?: string;
-    amount: number; // cents
+    amount: number; // units of 1/10000 SGD
     memo?: string;
   }): Transaction {
     const from = state.accounts.find(a => a.id === opts.fromAccountId);
-    if (!from) throw new Error(`No source account: ${opts.fromAccountId}`);
-    if (opts.amount <= 0) throw new Error('Amount must be positive');
-    if (from.type !== 'credit' && from.balance < opts.amount) {
+    if (!from || from.type === 'credit') throw new Error('Choose a checking or savings account.');
+    if (!Number.isSafeInteger(opts.amount) || opts.amount <= 0) throw new Error('Enter a valid amount greater than zero.');
+    if (Boolean(opts.toRecipientId) === Boolean(opts.toAccountId)) throw new Error('Choose one recipient or destination account.');
+    if (opts.toRecipientId && !state.recipients.some(recipient => recipient.id === opts.toRecipientId)) throw new Error('Choose a saved recipient that is still available.');
+    if (opts.toAccountId && (!state.accounts.some(account => account.id === opts.toAccountId) || opts.toAccountId === opts.fromAccountId)) throw new Error('Choose a different destination account.');
+    if (from.balance < opts.amount) {
       throw new Error(`Insufficient funds in ${from.nickname}`);
     }
 
     const tx: Transaction = {
-      id: `t_${Date.now().toString(36)}`,
+      id: `t_${crypto.randomUUID()}`,
       ts: Date.now(),
       fromAccountId: opts.fromAccountId,
       toRecipientId: opts.toRecipientId,
@@ -176,9 +179,9 @@ export function fmtSGD(cents: number): string {
 }
 
 export function parseSGD(input: string | number): number {
-  if (typeof input === 'number') return Math.round(input * 10000);
-  const cleaned = input.replace(/[^0-9.\-]/g, '');
-  const f = parseFloat(cleaned);
-  if (isNaN(f)) throw new Error(`Cannot parse amount: ${input}`);
-  return Math.round(f * 10000);
+  const value = typeof input === 'string' ? input.trim() : String(input);
+  if (!/^\d+(?:\.\d{1,2})?$/.test(value)) throw new Error('Enter an amount with up to two decimal places.');
+  const units = Math.round(Number(value) * 10000);
+  if (!Number.isSafeInteger(units)) throw new Error('Enter a smaller amount.');
+  return units;
 }

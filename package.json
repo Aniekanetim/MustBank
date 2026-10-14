@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "MustBank QA Quest: fictional banking, weekly rewards settlement and notification recovery.",
+  "description": "MustBank personal banking and weekly rewards settlement, with reproducible QA evidence.",
   "license": "MIT",
   "author": {
     "name": "Amit Rawat",
@@ -37,12 +37,14 @@
     "preview": "vite preview",
     "test": "playwright test",
     "test:service": "node --test tests/service.test.mjs",
+    "scenario": "node scripts/scenario.mjs",
     "verify": "node scripts/verify.mjs"
   },
   "engines": {
     "node": ">=22.13.0"
   },
   "dependencies": {
+    "lucide-react": "^1.57.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.18.4"

@@ -51,7 +51,7 @@ export function normalizeTasks(tasks) {
   return [...unique.values()];
 }
 
-const SINGLE_TASK = { taskId: 'task-001', userId: 'user-001', title: 'Complete a marketplace task', completedAt: '2026-10-08T12:00:00Z' };
+const SINGLE_TASK = { taskId: 'task-001', userId: 'user-001', title: 'Paperless statement enrolment', completedAt: '2026-10-08T12:00:00Z' };
 const BOUNDARY_TASKS = [
   { taskId: 'start', userId: 'user-001', title: 'At the included start', completedAt: '2026-10-05T00:00:00Z' },
   { taskId: 'before', userId: 'user-001', title: 'Before the start in Lagos', completedAt: '2026-10-05T00:30:00+01:00' },
@@ -101,7 +101,7 @@ export class RewardsService {
   close() { this.db.close(); }
   scenario(id) {
     const result = this.db.prepare('SELECT * FROM scenarios WHERE id = ?').get(id);
-    if (!result) throw new InputError('Example not found. Start a new example.', 404);
+    if (!result) throw new InputError('Rewards account not found. Open a valid rewards account and try again.', 404);
     return result;
   }
   event(id, event, taskId = null, detail = {}) {
@@ -247,6 +247,17 @@ export class RewardsService {
     const failures = this.dispatch(id);
     this.event(id, 'notification_recovery_finished', null, { failures });
     return { ...this.snapshot(id), recovery: { failures } };
+  }
+  customerSnapshot(id, userId) {
+    const source = this.snapshot(id);
+    const tasks = source.tasks.filter(task => task.userId === userId);
+    const payouts = source.payouts.filter(payout => payout.userId === userId);
+    const taskIds = new Set(tasks.map(task => task.taskId));
+    const notifications = source.notifications.filter(item => taskIds.has(item.taskId)).map(item => ({ ...item, lastError: null }));
+    return { id: source.id, window: source.window, tasks, payouts, notifications,
+      totalCredits: payouts.reduce((sum, payout) => sum + payout.credits, 0),
+      pendingNotifications: notifications.filter(item => item.state === 'pending').length,
+      balances: { [userId]: source.balances[userId] ?? 0 }, events: [] };
   }
   snapshot(id) {
     const scenario = this.scenario(id);

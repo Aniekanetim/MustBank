@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T19:00:27.833Z",
+  "generatedAt": "2026-10-14T23:27:55.964Z",
   "upstreamCommit": "73d83074e7ea0c40f8273455ebcb611b7088fd5a",
   "environment": {
     "node": "v22.21.0",
@@ -15,9 +15,9 @@
     "pendingNotifications": 1
   },
   "fixed": {
-    "playwrightPassed": 26,
+    "playwrightPassed": 33,
     "freshProcessPassed": 1,
-    "totalPassed": 27,
+    "totalPassed": 34,
     "credits": 10,
     "payouts": 1,
     "pendingNotifications": 0
@@ -125,12 +125,12 @@
     },
     {
       "id": "TC21",
-      "title": "a task added through the form pays its stable owner",
+      "title": "an activity recorded in operations pays its stable owner",
       "result": "passed"
     },
     {
       "id": "TC22",
-      "title": "browser reload preserves payment and recovery work",
+      "title": "browser reload preserves payment and notification recovery",
       "result": "passed"
     },
     {
@@ -145,40 +145,79 @@
     },
     {
       "id": "TC25",
-      "title": "a simulated bank transfer completes with a reference",
+      "title": "a reviewed bank transfer completes once with a receipt",
       "result": "passed"
     },
     {
       "id": "TC26",
-      "title": "every banking page presents MustBank and the assessment scope",
+      "title": "banking screens contain product copy and no failure setup controls",
       "result": "passed"
     },
     {
       "id": "TC27",
-      "title": "namespace migration preserves balances and a paid reward identity",
+      "title": "namespace migration preserves account balance and paid reward identity",
+      "result": "passed"
+    },
+    {
+      "id": "TC28",
+      "title": "invalid amounts and insufficient balance cannot create a transfer",
+      "result": "passed"
+    },
+    {
+      "id": "TC29",
+      "title": "editing a review leaves balances untouched until confirmation",
+      "result": "passed"
+    },
+    {
+      "id": "TC30",
+      "title": "saved recipient search opens a transfer with the correct payee",
+      "result": "passed"
+    },
+    {
+      "id": "TC31",
+      "title": "activity filters have a recoverable empty state",
+      "result": "passed"
+    },
+    {
+      "id": "TC32",
+      "title": "personal rewards show only the current customer while operations reconcile all owners",
+      "result": "passed"
+    },
+    {
+      "id": "TC33",
+      "title": "reward statements contain personal payouts and safe CSV cells",
+      "result": "passed"
+    },
+    {
+      "id": "TC34",
+      "title": "customer banking remains readable at 320px with visible primary controls",
       "result": "passed"
     }
   ],
   "sourceSha256": {
-    "server/rewards.mjs": "0dc6cb224da1ca262810fb0ed319f476c2b6bbf27c36f1ba2085ad558c23d9bd",
-    "server/index.mjs": "6d862a4451e7e4f39bbf6ed775d21903e836728620610221bc1a5a4fdfeff669",
-    "src/pages/Rewards.tsx": "2ba538d403f9725b1ced53df0d0a07bd3425cb54275f56c8698217e39a48fd53",
-    "src/pages/Dashboard.tsx": "d2fed92bad3439b3535a8583931258ff290a3380366f5917666f348a5c9aa552",
-    "src/pages/Transactions.tsx": "e85ebab23970c534199a466e0138e295e44bb1ae2bb8a6d14c87a6e7ce978c65",
-    "src/pages/Recipients.tsx": "c640bbb9f65ffafffef5be7338797a3572f9772cd6c74772f1a22c1f731b161b",
-    "src/pages/Transfer.tsx": "8f48b8b4e71546c87ca3a89f42eef62f27ef7b4fc97cb4b14e48e93b61508acc",
+    "server/rewards.mjs": "671aec5e2c9104a53e0339895ddfec54a6969cf303ad7c8eba24fd748ea9027c",
+    "server/index.mjs": "9f0a4604045569124590e47f1e0762c1bd696fa4d79d4de8426061ed44a7030e",
+    "src/pages/Rewards.tsx": "2abf5fd4798ceed2a0308e0269715b37bef70f982ae2e337a89e5ea359cca49b",
+    "src/pages/Settlements.tsx": "76542c872dc3d1dbb350ebaca1cb76c3a6831f2f4715c7cc4e7041930b6d279b",
+    "src/pages/Dashboard.tsx": "9c6736991e475288c105ddf162f80e035cca93ebef8b35f3d27e866767214cc2",
+    "src/pages/Transactions.tsx": "7ff537bf121419a489c2ee717ea63cde7c0f96f256c088291716dd24982987e2",
+    "src/pages/Recipients.tsx": "3486e2f701d59de4d9ce1091a12d097a4c6cfeae846ae57e3af30a959e9a45e0",
+    "src/pages/Transfer.tsx": "77faa74e2b60e3929d482b56ef26bbc761c86323713fad108b1c643e8288b920",
+    "src/hooks/useRewards.ts": "91b8a6f0b64136b67e1a7225808a8c07543b46017c19a7e1c487025c52a7f774",
+    "src/components/BankUI.tsx": "74bc229a99042db9a191ce07507bd6d5fddc390009f50d3267fa9dc8c4c3b6ae",
+    "scripts/scenario.mjs": "800932b9ca30dd28ba418daef6ee772b7adf65173f1c4a28ff32289e83a61422",
     "src/store/storage.ts": "be22b40e682bfd0a644a8ad1d01b96f5161664298517b93c2934edd4bdd1520a",
-    "src/store/bank.ts": "98fea55cf6e82e347ca45e4ddfe44b68ad500a5a39138998e5c4f48e7eeb40d9",
-    "src/App.tsx": "698b5cc7e6a42cb511fd16fac2d51112ee43c32702d68901a9d6b5919e970779",
+    "src/store/bank.ts": "2757ce818d14f9d06ad0c899d9329303337014e037db8bb4f919cfffeb692247",
+    "src/App.tsx": "d1df9f5cfba4762edeba4a47c9ef65ab1fd40a3604041c3ec9a7b94efe06e43f",
     "src/main.tsx": "26298ed870a535e27307145d750c2949c647aab89ce773b74697eaccab7bd28c",
-    "src/styles.css": "225a25ed7a836e68e084532b34373c72b57688a09f99a7a320bae90f8d6dbc0d",
-    "index.html": "150964969b072da75c06ec558cf0a121f271ce4f12d03a21290474097c8e063c",
+    "src/styles.css": "cea6538db75e31e021680b9738a2e33bcfa6764247d6aeda4179266e7a9da3f5",
+    "index.html": "4cdc7dcfacee60d1a591fbc454d66c133710bb402b3033501c4cd1409dee45e6",
     "tests/rewards-api.spec.ts": "f93848b3bb1729b9033810faa15b83710307fb3e188e013ad5bc8ec3bbf3cebf",
-    "tests/rewards-ui.spec.ts": "fb006b00801ec48adc8fae968f7e6f75db8dd79ba6664f63afeb3ad50dc6fe0d",
+    "tests/rewards-ui.spec.ts": "6e976fbc05e16148d28ee0ebe0ecab2d61bcd6a6bf533ac3475ec2d925337491",
     "tests/service.test.mjs": "20986d74e63410532ceb73aa4f7004107aabebaa5d19a6ea3d9acc19c83246d9",
-    "tests/helpers.ts": "ab95220ad9de8a6a3f0bf2a4396116f3bdb399feab592b96450e02da48e45b33",
-    "playwright.config.ts": "92463add5ec68c82d3eb6f50777f91deda2a81158e20da99d11757a89c0cee72",
-    "scripts/verify.mjs": "b75533fc37b613565412721e1e8926ce2204544f6df8f27dc408e2e326c1a66e",
-    "package-lock.json": "fce823c83d21fa26d1e9c20c29aff44c57a2213be4207325320c22a09b7ee073"
+    "tests/helpers.ts": "d3772f852195daf985eca9c2d5aeba35a04aa44bdfaa84b5ddfae1a52e8a78c1",
+    "playwright.config.ts": "05c1ce19a1adfd290fad59f359dca85549cf7b2f133bc67fe73fdbc5023add62",
+    "scripts/verify.mjs": "2aa6589358b4a9059ea367188517339ed480c3061e849a3a570edc730fa95430",
+    "package-lock.json": "82473554a2d5a1d162553190702399bc377d5eb6d7ebc48c82c9fd19dcf9e6c9"
   }
 }

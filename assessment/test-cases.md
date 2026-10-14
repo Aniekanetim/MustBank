@@ -2,7 +2,7 @@
 
 All reward cases use synthetic tasks. Unless stated otherwise: task `task-001`, owner `user-001`, status completed, completion `2026-10-08T12:00:00Z`, scheduled run `2026-10-13T09:00:00Z`. Each case creates a fresh isolated example; none relies on earlier cases' records.
 
-The final outcomes are in [summary.json](evidence/summary.json). TC01–TC10 and TC12–TC27 use Playwright's HTTP client or Chromium browser. TC11 opens persisted records in a fresh Node process. The table gives inputs and expected results; the raw reports record execution.
+The final outcomes are in [summary.json](evidence/summary.json). TC01–TC10 and TC12–TC34 use Playwright's HTTP client or Chromium browser. TC11 opens persisted records in a fresh Node process. The table gives inputs and expected results; the raw reports record execution. Failure conditions are prepared through local fixture tooling or the API, outside the banking UI.
 
 | Case | Input / action | Expected corrected outcome | Final result |
 |---|---|---|---|
@@ -26,13 +26,20 @@ The final outcomes are in [summary.json](evidence/summary.json). TC01–TC10 and
 | TC18 | Provider accepts but acknowledgment is lost; replay | First pending with receipt; recovery leaves one receipt and one payout | Pass |
 | TC19 | Tuesday 10:00 UTC or Wednesday 09:00 UTC run | Reject with HTTP 400; zero payment effects | Pass |
 | TC20 | Change stored owner or completion time after payment | Reject both; original owner retains one 10-credit payout | Pass |
-| TC21 | Add a second owner's task through the form, then settle | Total 20; each owner has 10 | Pass |
+| TC21 | Record a second owner's activity in operations, then settle | Total 20; each owner has 10 | Pass |
 | TC22 | Reload browser after failed notification; retry notifications | Persisted payout survives; delivery recovers without payment | Pass |
 | TC23 | 30 February or `24:00:00` completion | Reject invalid timestamps; no saved tasks | Pass |
-| TC24 | 380px screen; keyboard activation of failure, payment and recovery controls | 10 credits; delivery recovered; no whole-page horizontal overflow | Pass |
-| TC25 | Simulated SGD 10 transfer through ordinary controls | Confirmation shows transfer succeeded with a reference | Pass |
-| TC26 | Visit rewards, dashboard, transfer, recipients and transactions | Every page identifies MustBank and the fictional assessment scope | Pass |
-| TC27 | Open compatible data from a prior namespace, then replay a paid reward | Original balance and example retained; still one payout and 10 credits; storage migrated | Pass |
+| TC24 | Prepare notification failure; use settlement and recovery controls by keyboard at 380px | 10 credits; delivery recovered; no whole-page horizontal overflow | Pass |
+| TC25 | Enter SGD 10, review details, then confirm once | Review leaves balance unchanged; receipt records one transfer and $472.35 remaining | Pass |
+| TC26 | Visit overview, transfers, recipients, activity and rewards | MustBank title and normal product copy; no assessment language or customer settlement controls | Pass |
+| TC27 | Open compatible data from a prior namespace, then replay a paid reward | Original balance and rewards account retained; still one payout and 10 credits; storage migrated | Pass |
+| TC28 | Enter `10abc`, zero, or more than the available balance | Clear validation; no transfer or balance change | Pass |
+| TC29 | Review SGD 20, return to edit, then review SGD 30 | Correct updated review; no transfer committed before confirmation | Pass |
+| TC30 | Save a recipient, search for them, then choose Send money | Transfer opens with the saved recipient selected | Pass |
+| TC31 | Filter activity by account, search for an absent entry, then clear filters | Matching records first; recoverable empty state; all records restored | Pass |
+| TC32 | Settle one task for each of two owners; open personal rewards | Customer sees only their own 10 credits and records; operations reconciles 20; customer response omits processing mode and failure state | Pass |
+| TC33 | Export rewards with a formula-like activity title and another owner's payout | CSV contains only the current customer's payout and safely quotes the formula-like cell | Pass |
+| TC34 | Visit all five customer pages at 320px | Primary controls remain visible; no whole-page horizontal overflow | Pass |
 
 ## Core regression evidence
 

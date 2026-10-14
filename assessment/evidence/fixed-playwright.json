@@ -55,7 +55,7 @@
         "testMatch": "**/*.spec.ts",
         "timeout": 30000,
         "use": {
-          "baseURL": "http://127.0.0.1:5173",
+          "baseURL": "http://127.0.0.1:5183",
           "trace": "retain-on-failure",
           "screenshot": "only-on-failure",
           "viewport": {
@@ -125,12 +125,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 543,
+                  "duration": 561,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:02.306Z",
+                  "startTime": "2026-10-14T23:25:06.285Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -159,12 +159,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 662,
+                  "duration": 670,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:02.295Z",
+                  "startTime": "2026-10-14T23:25:06.273Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -193,12 +193,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 430,
+                  "duration": 339,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:02.981Z",
+                  "startTime": "2026-10-14T23:25:06.958Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -227,12 +227,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 439,
+                  "duration": 356,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:03.087Z",
+                  "startTime": "2026-10-14T23:25:07.062Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -261,12 +261,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 473,
+                  "duration": 416,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:03.450Z",
+                  "startTime": "2026-10-14T23:25:07.331Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -295,12 +295,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 525,
+                  "duration": 426,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:03.580Z",
+                  "startTime": "2026-10-14T23:25:07.455Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -329,12 +329,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 497,
+                  "duration": 419,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:03.963Z",
+                  "startTime": "2026-10-14T23:25:07.781Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -363,12 +363,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 621,
+                  "duration": 665,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:04.140Z",
+                  "startTime": "2026-10-14T23:25:07.915Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -397,12 +397,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 617,
+                  "duration": 835,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:04.498Z",
+                  "startTime": "2026-10-14T23:25:08.232Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -431,12 +431,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1086,
+                  "duration": 1008,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:04.797Z",
+                  "startTime": "2026-10-14T23:25:08.612Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -465,12 +465,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1922,
+                  "duration": 2693,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:05.154Z",
+                  "startTime": "2026-10-14T23:25:09.099Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -499,12 +499,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 2729,
+                  "duration": 2992,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:05.915Z",
+                  "startTime": "2026-10-14T23:25:09.656Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -533,12 +533,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2130,
+                  "duration": 882,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:07.108Z",
+                  "startTime": "2026-10-14T23:25:11.825Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -567,12 +567,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1168,
+                  "duration": 525,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:08.826Z",
+                  "startTime": "2026-10-14T23:25:12.681Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -601,12 +601,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2374,
+                  "duration": 1811,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:09.293Z",
+                  "startTime": "2026-10-14T23:25:12.826Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -635,12 +635,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 2661,
+                  "duration": 2745,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:10.027Z",
+                  "startTime": "2026-10-14T23:25:13.237Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -669,12 +669,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1083,
+                  "duration": 1427,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:11.707Z",
+                  "startTime": "2026-10-14T23:25:14.668Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -703,12 +703,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1192,
+                  "duration": 1583,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:12.722Z",
+                  "startTime": "2026-10-14T23:25:16.015Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -737,12 +737,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1056,
+                  "duration": 1288,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:12.936Z",
+                  "startTime": "2026-10-14T23:25:16.195Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -776,26 +776,26 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 10953,
+                  "duration": 9953,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:13.964Z",
+                  "startTime": "2026-10-14T23:25:17.559Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "first-attempt",
                       "contentType": "application/json",
-                      "body": "ewogICJpZCI6ICI1NWFlNTJhMi03ZTYzLTQxZjYtOWQyNC1hMWZkZmNkY2RlNmMiLAogICJtb2RlIjogImZpeGVkIiwKICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6NTk6MTcuMzg1WiIsCiAgIndpbmRvdyI6IHsKICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICJzdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgImVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiCiAgfSwKICAidGFza3MiOiBbCiAgICB7CiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAidXNlcklkIjogInVzZXItMDAxIiwKICAgICAgInRpdGxlIjogIlF1YWxpZnlpbmcgdGFzayIsCiAgICAgICJjb21wbGV0ZWRBdCI6ICIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLAogICAgICAic3RhdHVzIjogImNvbXBsZXRlZCIKICAgIH0KICBdLAogICJwYXlvdXRzIjogWwogICAgewogICAgICAiaWQiOiAiNWJiZDYwY2QtNTRiZC00ZmQ1LWJlZjUtMGUxNzk0Y2ZiNmNkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJ1c2VySWQiOiAidXNlci0wMDEiLAogICAgICAiY3JlZGl0cyI6IDEwLAogICAgICAid2Vla1N0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODo1OToyMy4xNTVaIgogICAgfQogIF0sCiAgIm5vdGlmaWNhdGlvbnMiOiBbCiAgICB7CiAgICAgICJpZCI6ICJlMjFlZGI2Mi1kYTAyLTRkMmEtODAzZC0wNjhmNDcxZDVkZTEiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgInN0YXRlIjogInBlbmRpbmciLAogICAgICAiYXR0ZW1wdHMiOiAxLAogICAgICAibGFzdEVycm9yIjogIlNpbXVsYXRlZCBub3RpZmljYXRpb24gcHJvdmlkZXIgdW5hdmFpbGFibGUgYmVmb3JlIGFjY2VwdGFuY2UuIgogICAgfQogIF0sCiAgInJlY2VpcHRzIjogW10sCiAgImV2ZW50cyI6IFsKICAgIHsKICAgICAgImlkIjogNTcyLAogICAgICAiZXZlbnQiOiAiZXhhbXBsZV9jcmVhdGVkIiwKICAgICAgInRhc2tJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgIm1vZGUiOiAiZml4ZWQiLAogICAgICAgICJmaXh0dXJlIjogImVtcHR5IgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6NTk6MTcuNDk3WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDU3NCwKICAgICAgImV2ZW50IjogImZhaWx1cmVfYXJtZWQiLAogICAgICAidGFza0lkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAia2luZCI6ICJub3RpZmljYXRpb24iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODo1OToyMi4xNTJaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogNTc1LAogICAgICAiZXZlbnQiOiAicGF5b3V0X2NvbW1pdHRlZCIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJjcmVkaXRzIjogMTAKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjU5OjIzLjE2NVoiCiAgICB9LAogICAgewogICAgICAiaWQiOiA1NzYsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjU5OjIzLjE3NloiCiAgICB9LAogICAgewogICAgICAiaWQiOiA1NzcsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fZmFpbGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImVycm9yIjogIlNpbXVsYXRlZCBub3RpZmljYXRpb24gcHJvdmlkZXIgdW5hdmFpbGFibGUgYmVmb3JlIGFjY2VwdGFuY2UuIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6NTk6MjMuMjA1WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDU3OCwKICAgICAgImV2ZW50IjogInNldHRsZW1lbnRfZmluaXNoZWQiLAogICAgICAidGFza0lkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiZWxpZ2libGVUYXNrcyI6IDEsCiAgICAgICAgInBhaWROb3ciOiAxLAogICAgICAgICJmYWlsdXJlcyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICAgICAgICJzdGFnZSI6ICJub3RpZmljYXRpb24iLAogICAgICAgICAgICAiZXJyb3IiOiAiU2ltdWxhdGVkIG5vdGlmaWNhdGlvbiBwcm92aWRlciB1bmF2YWlsYWJsZSBiZWZvcmUgYWNjZXB0YW5jZS4iCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAid2luZG93IjogewogICAgICAgICAgInNjaGVkdWxlZEZvciI6ICIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLAogICAgICAgICAgInN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICAgICAiZW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODo1OToyMy4yMTVaIgogICAgfQogIF0sCiAgImJhbGFuY2VzIjogewogICAgInVzZXItMDAxIjogMTAKICB9LAogICJ0b3RhbENyZWRpdHMiOiAxMCwKICAicGVuZGluZ05vdGlmaWNhdGlvbnMiOiAxLAogICJhcm1lZEZhaWx1cmVzIjogewogICAgIm5vdGlmaWNhdGlvbiI6IDAsCiAgICAicGF5b3V0IjogMCwKICAgICJwZXJzaXN0ZW5jZSI6IDAsCiAgICAiYW1iaWd1b3VzIjogMAogIH0KfQ=="
+                      "body": "ewogICJpZCI6ICJiZDBmNmM4OS0yMTEwLTRmZGUtYjUwNi1lZDE4YmQ3NTQxNjEiLAogICJtb2RlIjogImZpeGVkIiwKICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMjM6MjU6MjAuMjM3WiIsCiAgIndpbmRvdyI6IHsKICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICJzdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgImVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiCiAgfSwKICAidGFza3MiOiBbCiAgICB7CiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAidXNlcklkIjogInVzZXItMDAxIiwKICAgICAgInRpdGxlIjogIlBhcGVybGVzcyBzdGF0ZW1lbnQgZW5yb2xtZW50IiwKICAgICAgImNvbXBsZXRlZEF0IjogIjIwMjYtMTAtMDhUMTI6MDA6MDAuMDAwWiIsCiAgICAgICJzdGF0dXMiOiAiY29tcGxldGVkIgogICAgfQogIF0sCiAgInBheW91dHMiOiBbCiAgICB7CiAgICAgICJpZCI6ICIzZTE5MDc2Ni1kY2NlLTQ3NDQtYWZlNC03YWNlYzI3NWVjM2QiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgInVzZXJJZCI6ICJ1c2VyLTAwMSIsCiAgICAgICJjcmVkaXRzIjogMTAsCiAgICAgICJ3ZWVrU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDIzOjI1OjI2LjI2NloiCiAgICB9CiAgXSwKICAibm90aWZpY2F0aW9ucyI6IFsKICAgIHsKICAgICAgImlkIjogIjkyNWNlMGFhLWQxNWEtNDM5OS05ZGExLTZlMzFmNjA5ZjFjOCIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAic3RhdGUiOiAicGVuZGluZyIsCiAgICAgICJhdHRlbXB0cyI6IDEsCiAgICAgICJsYXN0RXJyb3IiOiAiU2ltdWxhdGVkIG5vdGlmaWNhdGlvbiBwcm92aWRlciB1bmF2YWlsYWJsZSBiZWZvcmUgYWNjZXB0YW5jZS4iCiAgICB9CiAgXSwKICAicmVjZWlwdHMiOiBbXSwKICAiZXZlbnRzIjogWwogICAgewogICAgICAiaWQiOiA5NjcsCiAgICAgICJldmVudCI6ICJleGFtcGxlX2NyZWF0ZWQiLAogICAgICAidGFza0lkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAibW9kZSI6ICJmaXhlZCIsCiAgICAgICAgImZpeHR1cmUiOiAiZW1wdHkiCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQyMzoyNToyMC4zNjhaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogOTY4LAogICAgICAiZXZlbnQiOiAiZmFpbHVyZV9hcm1lZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJraW5kIjogIm5vdGlmaWNhdGlvbiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDIzOjI1OjIwLjY5M1oiCiAgICB9LAogICAgewogICAgICAiaWQiOiA5NzAsCiAgICAgICJldmVudCI6ICJwYXlvdXRfY29tbWl0dGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImNyZWRpdHMiOiAxMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMjM6MjU6MjYuMjgwWiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDk3MSwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMjM6MjU6MjYuMjkxWiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDk3MiwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9mYWlsZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiZXJyb3IiOiAiU2ltdWxhdGVkIG5vdGlmaWNhdGlvbiBwcm92aWRlciB1bmF2YWlsYWJsZSBiZWZvcmUgYWNjZXB0YW5jZS4iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQyMzoyNToyNi4zMzRaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogOTczLAogICAgICAiZXZlbnQiOiAic2V0dGxlbWVudF9maW5pc2hlZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJlbGlnaWJsZVRhc2tzIjogMSwKICAgICAgICAicGFpZE5vdyI6IDEsCiAgICAgICAgImZhaWx1cmVzIjogWwogICAgICAgICAgewogICAgICAgICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgICAgICAgInN0YWdlIjogIm5vdGlmaWNhdGlvbiIsCiAgICAgICAgICAgICJlcnJvciI6ICJTaW11bGF0ZWQgbm90aWZpY2F0aW9uIHByb3ZpZGVyIHVuYXZhaWxhYmxlIGJlZm9yZSBhY2NlcHRhbmNlLiIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJ3aW5kb3ciOiB7CiAgICAgICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAgICAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogICAgICAgIH0KICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDIzOjI1OjI2LjM0OVoiCiAgICB9CiAgXSwKICAiYmFsYW5jZXMiOiB7CiAgICAidXNlci0wMDEiOiAxMAogIH0sCiAgInRvdGFsQ3JlZGl0cyI6IDEwLAogICJwZW5kaW5nTm90aWZpY2F0aW9ucyI6IDEsCiAgImFybWVkRmFpbHVyZXMiOiB7CiAgICAibm90aWZpY2F0aW9uIjogMCwKICAgICJwYXlvdXQiOiAwLAogICAgInBlcnNpc3RlbmNlIjogMCwKICAgICJhbWJpZ3VvdXMiOiAwCiAgfQp9"
                     },
                     {
                       "name": "observed-scenario",
                       "contentType": "application/json",
-                      "body": "ewogICJpZCI6ICI1NWFlNTJhMi03ZTYzLTQxZjYtOWQyNC1hMWZkZmNkY2RlNmMiLAogICJtb2RlIjogImZpeGVkIiwKICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6NTk6MTcuMzg1WiIsCiAgIndpbmRvdyI6IHsKICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICJzdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgImVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiCiAgfSwKICAidGFza3MiOiBbCiAgICB7CiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAidXNlcklkIjogInVzZXItMDAxIiwKICAgICAgInRpdGxlIjogIlF1YWxpZnlpbmcgdGFzayIsCiAgICAgICJjb21wbGV0ZWRBdCI6ICIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLAogICAgICAic3RhdHVzIjogImNvbXBsZXRlZCIKICAgIH0KICBdLAogICJwYXlvdXRzIjogWwogICAgewogICAgICAiaWQiOiAiNWJiZDYwY2QtNTRiZC00ZmQ1LWJlZjUtMGUxNzk0Y2ZiNmNkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJ1c2VySWQiOiAidXNlci0wMDEiLAogICAgICAiY3JlZGl0cyI6IDEwLAogICAgICAid2Vla1N0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODo1OToyMy4xNTVaIgogICAgfQogIF0sCiAgIm5vdGlmaWNhdGlvbnMiOiBbCiAgICB7CiAgICAgICJpZCI6ICJlMjFlZGI2Mi1kYTAyLTRkMmEtODAzZC0wNjhmNDcxZDVkZTEiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgInN0YXRlIjogInNlbnQiLAogICAgICAiYXR0ZW1wdHMiOiAyLAogICAgICAibGFzdEVycm9yIjogbnVsbAogICAgfQogIF0sCiAgInJlY2VpcHRzIjogWwogICAgewogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImFjY2VwdGVkQXQiOiAiMjAyNi0xMC0xNFQxODo1OToyNC42ODhaIgogICAgfQogIF0sCiAgImV2ZW50cyI6IFsKICAgIHsKICAgICAgImlkIjogNTcyLAogICAgICAiZXZlbnQiOiAiZXhhbXBsZV9jcmVhdGVkIiwKICAgICAgInRhc2tJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgIm1vZGUiOiAiZml4ZWQiLAogICAgICAgICJmaXh0dXJlIjogImVtcHR5IgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6NTk6MTcuNDk3WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDU3NCwKICAgICAgImV2ZW50IjogImZhaWx1cmVfYXJtZWQiLAogICAgICAidGFza0lkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAia2luZCI6ICJub3RpZmljYXRpb24iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODo1OToyMi4xNTJaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogNTc1LAogICAgICAiZXZlbnQiOiAicGF5b3V0X2NvbW1pdHRlZCIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJjcmVkaXRzIjogMTAKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjU5OjIzLjE2NVoiCiAgICB9LAogICAgewogICAgICAiaWQiOiA1NzYsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjU5OjIzLjE3NloiCiAgICB9LAogICAgewogICAgICAiaWQiOiA1NzcsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fZmFpbGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImVycm9yIjogIlNpbXVsYXRlZCBub3RpZmljYXRpb24gcHJvdmlkZXIgdW5hdmFpbGFibGUgYmVmb3JlIGFjY2VwdGFuY2UuIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6NTk6MjMuMjA1WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDU3OCwKICAgICAgImV2ZW50IjogInNldHRsZW1lbnRfZmluaXNoZWQiLAogICAgICAidGFza0lkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiZWxpZ2libGVUYXNrcyI6IDEsCiAgICAgICAgInBhaWROb3ciOiAxLAogICAgICAgICJmYWlsdXJlcyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICAgICAgICJzdGFnZSI6ICJub3RpZmljYXRpb24iLAogICAgICAgICAgICAiZXJyb3IiOiAiU2ltdWxhdGVkIG5vdGlmaWNhdGlvbiBwcm92aWRlciB1bmF2YWlsYWJsZSBiZWZvcmUgYWNjZXB0YW5jZS4iCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAid2luZG93IjogewogICAgICAgICAgInNjaGVkdWxlZEZvciI6ICIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLAogICAgICAgICAgInN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICAgICAiZW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODo1OToyMy4yMTVaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogNTg2LAogICAgICAiZXZlbnQiOiAicGF5b3V0X2FscmVhZHlfY29tcGxldGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjU5OjI0LjY1M1oiCiAgICB9LAogICAgewogICAgICAiaWQiOiA1ODcsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDE4OjU5OjI0LjY3OFoiCiAgICB9LAogICAgewogICAgICAiaWQiOiA1ODgsCiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fc2VudCIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAiZGV0YWlsIjoge30sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQxODo1OToyNC43MTFaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogNTg5LAogICAgICAiZXZlbnQiOiAic2V0dGxlbWVudF9maW5pc2hlZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJlbGlnaWJsZVRhc2tzIjogMSwKICAgICAgICAicGFpZE5vdyI6IDAsCiAgICAgICAgImZhaWx1cmVzIjogW10sCiAgICAgICAgIndpbmRvdyI6IHsKICAgICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICAgICAgICJzdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAgICAgImVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiCiAgICAgICAgfQogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMTg6NTk6MjQuNzIxWiIKICAgIH0KICBdLAogICJiYWxhbmNlcyI6IHsKICAgICJ1c2VyLTAwMSI6IDEwCiAgfSwKICAidG90YWxDcmVkaXRzIjogMTAsCiAgInBlbmRpbmdOb3RpZmljYXRpb25zIjogMCwKICAiYXJtZWRGYWlsdXJlcyI6IHsKICAgICJub3RpZmljYXRpb24iOiAwLAogICAgInBheW91dCI6IDAsCiAgICAicGVyc2lzdGVuY2UiOiAwLAogICAgImFtYmlndW91cyI6IDAKICB9Cn0="
+                      "body": "ewogICJpZCI6ICJiZDBmNmM4OS0yMTEwLTRmZGUtYjUwNi1lZDE4YmQ3NTQxNjEiLAogICJtb2RlIjogImZpeGVkIiwKICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMjM6MjU6MjAuMjM3WiIsCiAgIndpbmRvdyI6IHsKICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICJzdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgImVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiCiAgfSwKICAidGFza3MiOiBbCiAgICB7CiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAidXNlcklkIjogInVzZXItMDAxIiwKICAgICAgInRpdGxlIjogIlBhcGVybGVzcyBzdGF0ZW1lbnQgZW5yb2xtZW50IiwKICAgICAgImNvbXBsZXRlZEF0IjogIjIwMjYtMTAtMDhUMTI6MDA6MDAuMDAwWiIsCiAgICAgICJzdGF0dXMiOiAiY29tcGxldGVkIgogICAgfQogIF0sCiAgInBheW91dHMiOiBbCiAgICB7CiAgICAgICJpZCI6ICIzZTE5MDc2Ni1kY2NlLTQ3NDQtYWZlNC03YWNlYzI3NWVjM2QiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgInVzZXJJZCI6ICJ1c2VyLTAwMSIsCiAgICAgICJjcmVkaXRzIjogMTAsCiAgICAgICJ3ZWVrU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDIzOjI1OjI2LjI2NloiCiAgICB9CiAgXSwKICAibm90aWZpY2F0aW9ucyI6IFsKICAgIHsKICAgICAgImlkIjogIjkyNWNlMGFhLWQxNWEtNDM5OS05ZGExLTZlMzFmNjA5ZjFjOCIsCiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAic3RhdGUiOiAic2VudCIsCiAgICAgICJhdHRlbXB0cyI6IDIsCiAgICAgICJsYXN0RXJyb3IiOiBudWxsCiAgICB9CiAgXSwKICAicmVjZWlwdHMiOiBbCiAgICB7CiAgICAgICJ0YXNrSWQiOiAidGFzay0wMDEiLAogICAgICAiYWNjZXB0ZWRBdCI6ICIyMDI2LTEwLTE0VDIzOjI1OjI3LjMwNVoiCiAgICB9CiAgXSwKICAiZXZlbnRzIjogWwogICAgewogICAgICAiaWQiOiA5NjcsCiAgICAgICJldmVudCI6ICJleGFtcGxlX2NyZWF0ZWQiLAogICAgICAidGFza0lkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAibW9kZSI6ICJmaXhlZCIsCiAgICAgICAgImZpeHR1cmUiOiAiZW1wdHkiCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQyMzoyNToyMC4zNjhaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogOTY4LAogICAgICAiZXZlbnQiOiAiZmFpbHVyZV9hcm1lZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJraW5kIjogIm5vdGlmaWNhdGlvbiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDIzOjI1OjIwLjY5M1oiCiAgICB9LAogICAgewogICAgICAiaWQiOiA5NzAsCiAgICAgICJldmVudCI6ICJwYXlvdXRfY29tbWl0dGVkIiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImNyZWRpdHMiOiAxMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMjM6MjU6MjYuMjgwWiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDk3MSwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMjM6MjU6MjYuMjkxWiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDk3MiwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9mYWlsZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiZXJyb3IiOiAiU2ltdWxhdGVkIG5vdGlmaWNhdGlvbiBwcm92aWRlciB1bmF2YWlsYWJsZSBiZWZvcmUgYWNjZXB0YW5jZS4iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQyMzoyNToyNi4zMzRaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogOTczLAogICAgICAiZXZlbnQiOiAic2V0dGxlbWVudF9maW5pc2hlZCIsCiAgICAgICJ0YXNrSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJlbGlnaWJsZVRhc2tzIjogMSwKICAgICAgICAicGFpZE5vdyI6IDEsCiAgICAgICAgImZhaWx1cmVzIjogWwogICAgICAgICAgewogICAgICAgICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgICAgICAgInN0YWdlIjogIm5vdGlmaWNhdGlvbiIsCiAgICAgICAgICAgICJlcnJvciI6ICJTaW11bGF0ZWQgbm90aWZpY2F0aW9uIHByb3ZpZGVyIHVuYXZhaWxhYmxlIGJlZm9yZSBhY2NlcHRhbmNlLiIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJ3aW5kb3ciOiB7CiAgICAgICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAgICAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogICAgICAgIH0KICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDIzOjI1OjI2LjM0OVoiCiAgICB9LAogICAgewogICAgICAiaWQiOiA5NzQsCiAgICAgICJldmVudCI6ICJwYXlvdXRfYWxyZWFkeV9jb21wbGV0ZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMjM6MjU6MjcuMjc0WiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDk3NSwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAidGFza0lkIjogInRhc2stMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTRUMjM6MjU6MjcuMjkwWiIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDk3NiwKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9zZW50IiwKICAgICAgInRhc2tJZCI6ICJ0YXNrLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE0VDIzOjI1OjI3LjMyN1oiCiAgICB9LAogICAgewogICAgICAiaWQiOiA5NzcsCiAgICAgICJldmVudCI6ICJzZXR0bGVtZW50X2ZpbmlzaGVkIiwKICAgICAgInRhc2tJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImVsaWdpYmxlVGFza3MiOiAxLAogICAgICAgICJwYWlkTm93IjogMCwKICAgICAgICAiZmFpbHVyZXMiOiBbXSwKICAgICAgICAid2luZG93IjogewogICAgICAgICAgInNjaGVkdWxlZEZvciI6ICIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLAogICAgICAgICAgInN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICAgICAiZW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNFQyMzoyNToyNy4zNDBaIgogICAgfQogIF0sCiAgImJhbGFuY2VzIjogewogICAgInVzZXItMDAxIjogMTAKICB9LAogICJ0b3RhbENyZWRpdHMiOiAxMCwKICAicGVuZGluZ05vdGlmaWNhdGlvbnMiOiAwLAogICJhcm1lZEZhaWx1cmVzIjogewogICAgIm5vdGlmaWNhdGlvbiI6IDAsCiAgICAicGF5b3V0IjogMCwKICAgICJwZXJzaXN0ZW5jZSI6IDAsCiAgICAiYW1iaWd1b3VzIjogMAogIH0KfQ=="
                     }
                   ]
                 }
@@ -809,7 +809,41 @@
           "column": 1
         },
         {
-          "title": "TC21 | a task added through the form pays its stable owner",
+          "title": "TC21 | an activity recorded in operations pays its stable owner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 19438,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:25:17.655Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-6fee7868cedfeefe8dba",
+          "file": "rewards-ui.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "TC22 | browser reload preserves payment and notification recovery",
           "ok": true,
           "tags": [],
           "tests": [
@@ -824,12 +858,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 11304,
+                  "duration": 21600,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:14.060Z",
+                  "startTime": "2026-10-14T23:25:28.507Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -837,43 +871,9 @@
               "status": "expected"
             }
           ],
-          "id": "21dfa5e80d7ad2a661b8-81dfa826f0a4cd3600c0",
+          "id": "21dfa5e80d7ad2a661b8-a69b6bb61dfb8c149d93",
           "file": "rewards-ui.spec.ts",
-          "line": 29,
-          "column": 1
-        },
-        {
-          "title": "TC22 | browser reload preserves payment and recovery work",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 13589,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-10-14T18:59:26.477Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "21dfa5e80d7ad2a661b8-05960b15b6d8fe3b4672",
-          "file": "rewards-ui.spec.ts",
-          "line": 42,
+          "line": 41,
           "column": 1
         },
         {
@@ -889,15 +889,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 9350,
+                  "duration": 16079,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:27.158Z",
+                  "startTime": "2026-10-14T23:25:38.798Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -907,11 +907,11 @@
           ],
           "id": "21dfa5e80d7ad2a661b8-48b8c4b167c251493121",
           "file": "rewards-ui.spec.ts",
-          "line": 56,
+          "line": 51,
           "column": 1
         },
         {
-          "title": "TC25 | a simulated bank transfer completes with a reference",
+          "title": "TC25 | a reviewed bank transfer completes once with a receipt",
           "ok": true,
           "tags": [],
           "tests": [
@@ -926,12 +926,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 8123,
+                  "duration": 11536,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:36.796Z",
+                  "startTime": "2026-10-14T23:25:50.167Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -939,13 +939,13 @@
               "status": "expected"
             }
           ],
-          "id": "21dfa5e80d7ad2a661b8-8948c0a4cf0b19499eab",
+          "id": "21dfa5e80d7ad2a661b8-c69868e784b8b547fe64",
           "file": "rewards-ui.spec.ts",
-          "line": 70,
+          "line": 62,
           "column": 1
         },
         {
-          "title": "TC26 | every banking page presents MustBank and the assessment scope",
+          "title": "TC26 | banking screens contain product copy and no failure setup controls",
           "ok": true,
           "tags": [],
           "tests": [
@@ -960,12 +960,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 4712,
+                  "duration": 12690,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:40.134Z",
+                  "startTime": "2026-10-14T23:25:54.936Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -973,18 +973,52 @@
               "status": "expected"
             }
           ],
-          "id": "21dfa5e80d7ad2a661b8-6ff6bf693441b6f3295e",
+          "id": "21dfa5e80d7ad2a661b8-6aaaa5ce46b909915b71",
           "file": "rewards-ui.spec.ts",
-          "line": 79,
+          "line": 76,
           "column": 1
         },
         {
-          "title": "TC27 | namespace migration preserves balances and a paid reward identity",
+          "title": "TC27 | namespace migration preserves account balance and paid reward identity",
           "ok": true,
           "tags": [],
           "tests": [
             {
-              "timeout": 45000,
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22979,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:26:02.236Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-0ea5ea3fa6cb4c497552",
+          "file": "rewards-ui.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "TC28 | invalid amounts and insufficient balance cannot create a transfer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "chromium",
@@ -994,12 +1028,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 4512,
+                  "duration": 8508,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-14T18:59:44.886Z",
+                  "startTime": "2026-10-14T23:26:07.728Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1007,9 +1041,213 @@
               "status": "expected"
             }
           ],
-          "id": "21dfa5e80d7ad2a661b8-9f66395d6f620f55a39e",
+          "id": "21dfa5e80d7ad2a661b8-fc4d71af52501d0593a8",
           "file": "rewards-ui.spec.ts",
-          "line": 94,
+          "line": 111,
+          "column": 1
+        },
+        {
+          "title": "TC29 | editing a review leaves balances untouched until confirmation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 9072,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:26:16.292Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-b1a50531359e9ae78d99",
+          "file": "rewards-ui.spec.ts",
+          "line": 121,
+          "column": 1
+        },
+        {
+          "title": "TC30 | saved recipient search opens a transfer with the correct payee",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 9026,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:26:25.404Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-0c4b9a308514a182adcb",
+          "file": "rewards-ui.spec.ts",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "title": "TC31 | activity filters have a recoverable empty state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7140,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:26:25.566Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-880dc1e5387ab705e700",
+          "file": "rewards-ui.spec.ts",
+          "line": 137,
+          "column": 1
+        },
+        {
+          "title": "TC32 | personal rewards show only the current customer while operations reconcile all owners",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14763,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:26:32.753Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-7484641c7f4da8771ae9",
+          "file": "rewards-ui.spec.ts",
+          "line": 144,
+          "column": 1
+        },
+        {
+          "title": "TC33 | reward statements contain personal payouts and safe CSV cells",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 20962,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:26:34.470Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-6ce6d4b51c994a350479",
+          "file": "rewards-ui.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "TC34 | customer banking remains readable at 320px with visible primary controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7194,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T23:26:47.564Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "21dfa5e80d7ad2a661b8-e3c6e1bb6d6536c6ecf4",
+          "file": "rewards-ui.spec.ts",
+          "line": 164,
           "column": 1
         }
       ]
@@ -1017,9 +1255,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-14T18:58:55.508Z",
-    "duration": 89332.811,
-    "expected": 26,
+    "startTime": "2026-10-14T23:25:01.569Z",
+    "duration": 152988.894,
+    "expected": 33,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

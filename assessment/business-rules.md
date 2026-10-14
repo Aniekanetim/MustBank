@@ -14,6 +14,8 @@ The rule is simple: **one qualifying task earns one reward**. Notification deliv
 
 ## Corrected flow
 
+Customers view their own rewards, payout history and statements. Operations records activities, runs weekly settlement and recovers pending notifications. The customer view represents fixture customer `user-001`; the prototype has no production identity or permission system. Fixture creation and injected failure conditions are prepared through local tooling rather than banking controls.
+
 ```mermaid
 flowchart TD
     A[Use original scheduled run] --> B[Validate and normalize task records]

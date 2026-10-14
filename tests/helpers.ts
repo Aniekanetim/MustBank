@@ -1,6 +1,6 @@
 import { expect, type APIRequestContext, type Page } from '@playwright/test';
 export const RUN = '2026-10-13T09:00:00Z';
-export const TASK = { taskId: 'task-001', userId: 'user-001', title: 'Qualifying task', completedAt: '2026-10-08T12:00:00Z' };
+export const TASK = { taskId: 'task-001', userId: 'user-001', title: 'Paperless statement enrolment', completedAt: '2026-10-08T12:00:00Z' };
 export type TaskInput = typeof TASK & { status?: 'completed' | 'pending' | 'cancelled' };
 export type Scenario = { id: string; totalCredits: number; pendingNotifications: number;
   balances: Record<string, number>; tasks: { taskId: string }[];
@@ -27,7 +27,7 @@ export async function fault(request: APIRequestContext, id: string, kind: string
 }
 export async function openExample(page: Page, id: string) {
   await page.addInitScript(exampleId => localStorage.setItem('mustbank.quest.example.v1', exampleId), id);
-  await page.goto('/rewards');
+  await page.goto('/operations/settlements');
   await expect(page.getByTestId('reward-balance')).toHaveText('0 credits');
   await expect(page.getByRole('button', { name: 'Run settlement', exact: true })).toBeEnabled();
 }

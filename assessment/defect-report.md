@@ -6,9 +6,9 @@
 
 Use this fork's assessment branch, Node 22.21.0, and Chromium as recorded in [summary.json](evidence/summary.json). The failure is in the new rewards module, not the original bank transfer implementation. Follow the [README setup](../README.md).
 
-1. Open `/rewards`. Choose **Faulty assessment example** and **One qualifying task**, then **Start new example**.
-2. Keep scheduled run `2026-10-13T09:00:00Z`. The single task completed on 8 October is inside the window.
-3. Click **Fail next notification**, then **Run settlement**. Payment succeeds; delivery fails. Observe 10 credits, one payout and one pending notification.
+1. With the built local app running, run `npm run scenario -- --behavior faulty --fail-notification` in a second terminal. This creates an isolated rewards account and prepares the delivery failure outside the banking UI.
+2. Open its printed **Operations URL**. Keep scheduled run `2026-10-13T09:00:00Z`. The single activity completed on 8 October is inside the window.
+3. Click **Run settlement**. Payment succeeds; delivery fails. Observe 10 credits, one payout and one pending confirmation.
 4. Click **Run settlement** again with the same scheduled time.
 
 | Expected | Observed in faulty mode |
@@ -29,8 +29,8 @@ The faulty branch in [server/rewards.mjs](../server/rewards.mjs) uses `processed
 
 The corrected branch treats the payout as payment completion, protected by a unique `(scenario_id, task_id)` index. It saves the payout and pending notification work in one SQLite transaction. After commit, delivery can succeed or stay pending; neither path changes whether the task was paid. Replaying settlement skips existing payouts and dispatches pending messages. Notification-only retry also leaves the ledger untouched.
 
-TC10 uses **the same controls and expected 10-credit result** in both modes. It fails against faulty behavior at 20 credits and passes against the corrected reference at 10. The [corrected snapshot](evidence/fixed-scenario.json) shows one payout and recovered delivery. TC08, TC11–TC13, TC17, TC18 and TC22 check successful replay, persistence, rollback, overlapping requests, acknowledgment loss and browser recovery.
+Prepare the corrected reference with `npm run scenario -- --behavior fixed --fail-notification`, open its Operations URL, and repeat the same two settlement actions. TC10 uses **the same controls and expected 10-credit result** in both modes. It fails against faulty behavior at 20 credits and passes against the corrected reference at 10. The [corrected snapshot](evidence/fixed-scenario.json) shows one payout and recovered delivery. TC08, TC11–TC13, TC17, TC18 and TC22 check successful replay, persistence, rollback, overlapping requests, acknowledgment loss and browser recovery.
 
 ## Release blockers
 
-Block release if a repeated task adds a payout, notification failure changes an existing balance, payment failure produces a success message, or persisted payment loses recovery work. Require the corrected cases to pass and controlled TC10 failure to remain reproducible. `npm run verify` checks both; [CI](../.github/workflows/quest.yml) repeats it. Faulty mode is retained only as labeled assessment evidence and must never become production payment behavior.
+Block release if a repeated task adds a payout, notification failure changes an existing balance, payment failure produces a success message, or persisted payment loses recovery work. Require the corrected cases to pass and controlled TC10 failure to remain reproducible. `npm run verify` checks both; [CI](../.github/workflows/quest.yml) repeats it. Faulty behavior is retained in local fixture tooling and documented evidence. It has no customer-facing switch and must never become production payment behavior.

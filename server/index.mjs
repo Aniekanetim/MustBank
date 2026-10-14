@@ -28,10 +28,13 @@ const server = createServer(async (request, response) => {
     const path = new URL(request.url, 'http://localhost').pathname;
     if (path === '/api/health' && request.method === 'GET') return json(response, { status: 'ok', storage: 'sqlite', schemaVersion: 1 });
     if (path === '/api/scenarios' && request.method === 'POST') return json(response, service.create(await body(request)), 201);
-    const match = path.match(/^\/api\/scenarios\/([a-zA-Z0-9_-]+)(?:\/(tasks|settle|faults|retry-notifications))?$/);
+    const match = path.match(/^\/api\/scenarios\/([a-zA-Z0-9_-]+)(?:\/(tasks|settle|faults|retry-notifications|customer))?$/);
     if (match) {
       const [, id, action] = match;
       if (!action && request.method === 'GET') return json(response, service.snapshot(id));
+      // The local personal-banking fixture represents customer user-001.
+      // This projection minimises customer data; production authentication is outside the prototype.
+      if (action === 'customer' && request.method === 'GET') return json(response, service.customerSnapshot(id, 'user-001'));
       if (request.method === 'POST') {
         const input = await body(request);
         if (action === 'tasks') return json(response, service.addTasks(id, input.tasks));
