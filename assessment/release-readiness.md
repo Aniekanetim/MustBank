@@ -1,6 +1,6 @@
 # Release decision and handoff
 
-**Ready with known limitations for a local assessment demonstration.** The corrected flow preserves a single payout during notification recovery. All 25 corrected checks passed in the recorded local run. Deliberately faulty mode remains labeled evidence. This is not a production financial release decision.
+**Ready with known limitations for a local assessment demonstration.** The corrected flow preserves a single payout during notification recovery. All 27 corrected checks passed in the recorded local run. Deliberately faulty mode remains labeled evidence. This is not a production financial release decision.
 
 ## Release checklist
 
@@ -9,7 +9,8 @@ Use [summary.json](evidence/summary.json) and source hashes to match the impleme
 - [x] Final build and complete local `npm run verify` succeeded.
 - [x] Faulty TC10 fails specifically at 20 credits, with two payouts.
 - [x] Corrected TC10 finishes at 10 credits, one payout, no pending message.
-- [x] All 25 corrected cases pass, including fresh-process recovery and rollback.
+- [x] All 27 corrected cases pass, including fresh-process recovery and rollback.
+- [x] All five banking pages identify MustBank; storage migration retains account balances and the paid reward example.
 - [x] Fixtures are synthetic and the MIT license is preserved; no CV or private project data is included.
 - [x] Dependency audit reports zero advisories for the locked packages at the time of verification; [raw audit](evidence/dependency-audit.json). This is a dependency check, not a production security assessment.
 - [ ] Review requirements, defect and evidence personally before the candidate's final release judgement.

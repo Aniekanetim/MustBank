@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T18:28:24.037Z",
+  "generatedAt": "2026-10-14T19:00:27.833Z",
   "upstreamCommit": "73d83074e7ea0c40f8273455ebcb611b7088fd5a",
   "environment": {
     "node": "v22.21.0",
@@ -15,9 +15,9 @@
     "pendingNotifications": 1
   },
   "fixed": {
-    "playwrightPassed": 24,
+    "playwrightPassed": 26,
     "freshProcessPassed": 1,
-    "totalPassed": 25,
+    "totalPassed": 27,
     "credits": 10,
     "payouts": 1,
     "pendingNotifications": 0
@@ -145,20 +145,40 @@
     },
     {
       "id": "TC25",
-      "title": "the original simulated transfer still works without WebMCP",
+      "title": "a simulated bank transfer completes with a reference",
+      "result": "passed"
+    },
+    {
+      "id": "TC26",
+      "title": "every banking page presents MustBank and the assessment scope",
+      "result": "passed"
+    },
+    {
+      "id": "TC27",
+      "title": "namespace migration preserves balances and a paid reward identity",
       "result": "passed"
     }
   ],
   "sourceSha256": {
     "server/rewards.mjs": "0dc6cb224da1ca262810fb0ed319f476c2b6bbf27c36f1ba2085ad558c23d9bd",
-    "server/index.mjs": "5fbf483b45eeb78b8b421fe6821c8dfdf64ee3ced5fc15bb96116390ca2b0c4d",
-    "src/pages/Rewards.tsx": "e1310addbdb40ae5a1ffe6e32644221a93bcdbbde2d1414a5dd5c8459016538f",
+    "server/index.mjs": "6d862a4451e7e4f39bbf6ed775d21903e836728620610221bc1a5a4fdfeff669",
+    "src/pages/Rewards.tsx": "2ba538d403f9725b1ced53df0d0a07bd3425cb54275f56c8698217e39a48fd53",
+    "src/pages/Dashboard.tsx": "d2fed92bad3439b3535a8583931258ff290a3380366f5917666f348a5c9aa552",
+    "src/pages/Transactions.tsx": "e85ebab23970c534199a466e0138e295e44bb1ae2bb8a6d14c87a6e7ce978c65",
+    "src/pages/Recipients.tsx": "c640bbb9f65ffafffef5be7338797a3572f9772cd6c74772f1a22c1f731b161b",
+    "src/pages/Transfer.tsx": "8f48b8b4e71546c87ca3a89f42eef62f27ef7b4fc97cb4b14e48e93b61508acc",
+    "src/store/storage.ts": "be22b40e682bfd0a644a8ad1d01b96f5161664298517b93c2934edd4bdd1520a",
+    "src/store/bank.ts": "98fea55cf6e82e347ca45e4ddfe44b68ad500a5a39138998e5c4f48e7eeb40d9",
+    "src/App.tsx": "698b5cc7e6a42cb511fd16fac2d51112ee43c32702d68901a9d6b5919e970779",
+    "src/main.tsx": "26298ed870a535e27307145d750c2949c647aab89ce773b74697eaccab7bd28c",
+    "src/styles.css": "225a25ed7a836e68e084532b34373c72b57688a09f99a7a320bae90f8d6dbc0d",
+    "index.html": "150964969b072da75c06ec558cf0a121f271ce4f12d03a21290474097c8e063c",
     "tests/rewards-api.spec.ts": "f93848b3bb1729b9033810faa15b83710307fb3e188e013ad5bc8ec3bbf3cebf",
-    "tests/rewards-ui.spec.ts": "19fd3567b609dd5bab6b77c612e710f0158ae12c4aa9a00d7c083d5d5e3bfd1d",
-    "tests/service.test.mjs": "0b3eb06f1ac3940800bed68904f3dce23514534c67bcc7c08dd0f97918fc69b2",
-    "tests/helpers.ts": "f7aece80bfb36ca6ebcd3a2224957e665d51b23ed36a9024b4f0a679438e4ab9",
-    "playwright.config.ts": "2aee7fb8516c62fbe1da56f644e7a10e60ebc9623f89c324be2750a6148fe264",
-    "scripts/verify.mjs": "a0ad061eb5a4d0b0ec2d6708495a8de28bde18962fcd35f5c7d5a52c403c20a7",
-    "package-lock.json": "ee0221899881401c0137f4ad149b13250a5f0931f6fdd8c15fa59800ea430932"
+    "tests/rewards-ui.spec.ts": "fb006b00801ec48adc8fae968f7e6f75db8dd79ba6664f63afeb3ad50dc6fe0d",
+    "tests/service.test.mjs": "20986d74e63410532ceb73aa4f7004107aabebaa5d19a6ea3d9acc19c83246d9",
+    "tests/helpers.ts": "ab95220ad9de8a6a3f0bf2a4396116f3bdb399feab592b96450e02da48e45b33",
+    "playwright.config.ts": "92463add5ec68c82d3eb6f50777f91deda2a81158e20da99d11757a89c0cee72",
+    "scripts/verify.mjs": "b75533fc37b613565412721e1e8926ce2204544f6df8f27dc408e2e326c1a66e",
+    "package-lock.json": "fce823c83d21fa26d1e9c20c29aff44c57a2213be4207325320c22a09b7ee073"
   }
 }

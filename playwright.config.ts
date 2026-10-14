@@ -13,6 +13,6 @@ export default defineConfig({
     { command: 'node server/index.mjs', url: 'http://127.0.0.1:4174/api/health', reuseExistingServer: false,
       env: { REWARDS_DB: 'data/playwright.sqlite', PORT: '4174', HOST: '127.0.0.1' }, timeout: 60000 },
     { command: 'node node_modules/vite/bin/vite.js --host 127.0.0.1', url: 'http://127.0.0.1:5173', reuseExistingServer: false,
-      env: { VITE_ENABLE_WEBMCP: 'false' }, timeout: 60000 },
+      timeout: 60000 },
   ],
 });

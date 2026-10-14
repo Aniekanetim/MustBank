@@ -1,6 +1,5 @@
-// In-memory bank state. Persisted to localStorage so a refresh keeps the
-// demo conversation going. Tiny pub-sub so React + WebMCP tools can both
-// drive the UI without a heavier state lib.
+// Fictional account state, persisted for repeatable banking assessments.
+import { readStoredValue } from './storage';
 
 export type Account = {
   id: string;
@@ -27,7 +26,6 @@ export type Transaction = {
   amount: number;        // cents
   memo?: string;
   status: 'completed' | 'pending' | 'failed';
-  channel: 'ui' | 'agent';
 };
 
 export type BankState = {
@@ -36,15 +34,10 @@ export type BankState = {
   transactions: Transaction[];
 };
 
-const STORAGE_KEY = 'acmebank.state.v1';
+const STORAGE_KEY = 'mustbank.state.v1';
 
-// Pinned reference moment — 6 May 2026, 3:42 PM SGT. Aligned with the
-// state captured in docs/screenshot.png so the screenshot, README sample
-// responses, and the live app all show the same dates/times. Seed
-// timestamps are computed relative to this fixed moment, not to
-// Date.now(), so README claims stay accurate forever. New transfers made
-// through the UI still stamp with the real Date.now() — pinning only
-// applies to the original seed data.
+// Fixed fixture time keeps the initial account activity reproducible.
+// New simulated transfers use their actual execution time.
 const REFERENCE_NOW = new Date('2026-05-06T15:42:00+08:00').getTime();
 
 const SEED: BankState = {
@@ -60,18 +53,28 @@ const SEED: BankState = {
     { id: 'rcp_powerco', name: 'SP Group (utilities)', bank: 'Standard Chartered', accountNumber: '7800' },
   ],
   transactions: [
-    { id: 't_1', ts: REFERENCE_NOW - 1000 * 60 * 60 * 6,         fromAccountId: 'acc_chk', toRecipientId: 'rcp_powerco', amount:  187_4500, memo: 'Apr utilities',     status: 'completed', channel: 'ui' },
-    { id: 't_2', ts: REFERENCE_NOW - 1000 * 60 * 60 * 24 * 1,    fromAccountId: 'acc_chk', toRecipientId: 'rcp_meena',   amount:   42_0000, memo: 'Dinner split',      status: 'completed', channel: 'ui' },
-    { id: 't_3', ts: REFERENCE_NOW - 1000 * 60 * 60 * 24 * 2,    fromAccountId: 'acc_sav', toAccountId: 'acc_chk',       amount:  500_0000, memo: 'Top up checking',   status: 'completed', channel: 'ui' },
-    { id: 't_4', ts: REFERENCE_NOW - 1000 * 60 * 60 * 24 * 3,    fromAccountId: 'acc_chk', toRecipientId: 'rcp_landlord',amount: 2_400_0000,memo: 'Rent — May',        status: 'completed', channel: 'ui' },
-    { id: 't_5', ts: REFERENCE_NOW - 1000 * 60 * 60 * 24 * 5,    fromAccountId: 'acc_chk', toRecipientId: 'rcp_arjun',   amount:   18_5000, memo: 'Cab share',         status: 'completed', channel: 'ui' },
+    { id: 't_1', ts: REFERENCE_NOW - 1000 * 60 * 60 * 6,         fromAccountId: 'acc_chk', toRecipientId: 'rcp_powerco', amount:  187_4500, memo: 'Apr utilities',     status: 'completed' },
+    { id: 't_2', ts: REFERENCE_NOW - 1000 * 60 * 60 * 24 * 1,    fromAccountId: 'acc_chk', toRecipientId: 'rcp_meena',   amount:   42_0000, memo: 'Dinner split',      status: 'completed' },
+    { id: 't_3', ts: REFERENCE_NOW - 1000 * 60 * 60 * 24 * 2,    fromAccountId: 'acc_sav', toAccountId: 'acc_chk',       amount:  500_0000, memo: 'Top up checking',   status: 'completed' },
+    { id: 't_4', ts: REFERENCE_NOW - 1000 * 60 * 60 * 24 * 3,    fromAccountId: 'acc_chk', toRecipientId: 'rcp_landlord',amount: 2_400_0000,memo: 'Rent — May',        status: 'completed' },
+    { id: 't_5', ts: REFERENCE_NOW - 1000 * 60 * 60 * 24 * 5,    fromAccountId: 'acc_chk', toRecipientId: 'rcp_arjun',   amount:   18_5000, memo: 'Cab share',         status: 'completed' },
   ],
 };
 
 function load(): BankState {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw) as BankState;
+    const raw = readStoredValue(STORAGE_KEY, '.state.v1', value => {
+      const parsed = JSON.parse(value) as BankState;
+      return Array.isArray(parsed.accounts) && Array.isArray(parsed.recipients) && Array.isArray(parsed.transactions)
+        && parsed.accounts.some(account => account.id === 'acc_chk');
+    });
+    if (raw) {
+      const parsed = JSON.parse(raw) as BankState;
+      const normalized = { ...parsed, transactions: parsed.transactions.map(({ id, ts, fromAccountId, toRecipientId, toAccountId, amount, memo, status }) =>
+        ({ id, ts, fromAccountId, toRecipientId, toAccountId, amount, memo, status })) };
+      save(normalized);
+      return normalized;
+    }
   } catch {}
   return structuredClone(SEED);
 }
@@ -132,7 +135,6 @@ export const bank = {
     toAccountId?: string;
     amount: number; // cents
     memo?: string;
-    channel: 'ui' | 'agent';
   }): Transaction {
     const from = state.accounts.find(a => a.id === opts.fromAccountId);
     if (!from) throw new Error(`No source account: ${opts.fromAccountId}`);
@@ -150,7 +152,6 @@ export const bank = {
       amount: opts.amount,
       memo: opts.memo,
       status: 'completed',
-      channel: opts.channel,
     };
 
     const accounts = state.accounts.map(a => {

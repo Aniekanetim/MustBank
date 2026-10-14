@@ -2,7 +2,7 @@
 
 All reward cases use synthetic tasks. Unless stated otherwise: task `task-001`, owner `user-001`, status completed, completion `2026-10-08T12:00:00Z`, scheduled run `2026-10-13T09:00:00Z`. Each case creates a fresh isolated example; none relies on earlier cases' records.
 
-The final outcomes are in [summary.json](evidence/summary.json). TC01–TC10 and TC12–TC25 use Playwright's HTTP client or Chromium browser. TC11 opens persisted records in a fresh Node process. The table gives inputs and expected results; the raw reports record execution.
+The final outcomes are in [summary.json](evidence/summary.json). TC01–TC10 and TC12–TC27 use Playwright's HTTP client or Chromium browser. TC11 opens persisted records in a fresh Node process. The table gives inputs and expected results; the raw reports record execution.
 
 | Case | Input / action | Expected corrected outcome | Final result |
 |---|---|---|---|
@@ -30,7 +30,9 @@ The final outcomes are in [summary.json](evidence/summary.json). TC01–TC10 and
 | TC22 | Reload browser after failed notification; retry notifications | Persisted payout survives; delivery recovers without payment | Pass |
 | TC23 | 30 February or `24:00:00` completion | Reject invalid timestamps; no saved tasks | Pass |
 | TC24 | 380px screen; keyboard activation of failure, payment and recovery controls | 10 credits; delivery recovered; no whole-page horizontal overflow | Pass |
-| TC25 | Original simulated SGD 10 transfer through ordinary controls | Confirmation shows transfer succeeded with a reference | Pass |
+| TC25 | Simulated SGD 10 transfer through ordinary controls | Confirmation shows transfer succeeded with a reference | Pass |
+| TC26 | Visit rewards, dashboard, transfer, recipients and transactions | Every page identifies MustBank and the fictional assessment scope | Pass |
+| TC27 | Open compatible data from a prior namespace, then replay a paid reward | Original balance and example retained; still one payout and 10 credits; storage migrated | Pass |
 
 ## Core regression evidence
 

@@ -9,7 +9,7 @@ Record in Aniekan's own voice after reviewing the work. Show the actual app and 
 | 1:00–2:00 | A messaging failure can become a payment defect | Fresh faulty example; fail notification; settle twice; show 10 → 20 and two payouts |
 | 2:00–2:45 | The completion marker explains the extra payment | QA-001: payment exists but the marker waits for delivery |
 | 2:45–3:35 | Durable payment identity makes recovery safe | Fresh corrected example; repeat steps; 10 stays 10 and delivery recovers |
-| 3:35–4:20 | The regression makes the rule a release check | TC10 failure/pass, 25-case summary and process check; mention boundaries, duplicates and rollback |
+| 3:35–4:20 | The regression makes the rule a release check | TC10 failure/pass, 27-case summary and process check; mention boundaries, duplicates and rollback |
 | 4:20–4:55 | A reviewer can reproduce the decision and see its limits | Directive links, local readiness, provider/distributed gaps, AI assistance and personal review |
 
 Possible opening: “I chose a retry failure because the first symptom looks like a notification problem, but retrying can change the user's reward balance. The rule is one task, one 10-credit payout.”

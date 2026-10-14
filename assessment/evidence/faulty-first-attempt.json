@@ -1,7 +1,7 @@
 {
-  "id": "1d6aa50f-40d0-4788-8a9a-5a75f99f51e2",
+  "id": "034a2358-97b2-47e2-b2ce-1a9b69d91dc8",
   "mode": "faulty",
-  "createdAt": "2026-10-14T18:26:32.675Z",
+  "createdAt": "2026-10-14T18:58:34.174Z",
   "window": {
     "scheduledFor": "2026-10-13T09:00:00.000Z",
     "start": "2026-10-05T00:00:00.000Z",
@@ -18,17 +18,17 @@
   ],
   "payouts": [
     {
-      "id": "3516b1fc-dc70-4585-9a93-9e060bb11c42",
+      "id": "a910307c-0ea8-4418-97c8-873feb768d67",
       "taskId": "task-001",
       "userId": "user-001",
       "credits": 10,
       "weekStart": "2026-10-05T00:00:00.000Z",
-      "createdAt": "2026-10-14T18:26:37.474Z"
+      "createdAt": "2026-10-14T18:58:38.763Z"
     }
   ],
   "notifications": [
     {
-      "id": "9f4cdb20-ed4f-407e-a0f2-c76c8b23aafd",
+      "id": "2604ad35-ee83-47b7-95b3-cc9e58bbcfcf",
       "taskId": "task-001",
       "state": "pending",
       "attempts": 1,
@@ -38,51 +38,51 @@
   "receipts": [],
   "events": [
     {
-      "id": 158,
+      "id": 461,
       "event": "example_created",
       "taskId": null,
       "detail": {
         "mode": "faulty",
         "fixture": "empty"
       },
-      "createdAt": "2026-10-14T18:26:32.693Z"
+      "createdAt": "2026-10-14T18:58:34.189Z"
     },
     {
-      "id": 159,
+      "id": 462,
       "event": "failure_armed",
       "taskId": null,
       "detail": {
         "kind": "notification"
       },
-      "createdAt": "2026-10-14T18:26:36.964Z"
+      "createdAt": "2026-10-14T18:58:38.357Z"
     },
     {
-      "id": 160,
+      "id": 463,
       "event": "payout_committed",
       "taskId": "task-001",
       "detail": {
         "credits": 10
       },
-      "createdAt": "2026-10-14T18:26:37.505Z"
+      "createdAt": "2026-10-14T18:58:38.774Z"
     },
     {
-      "id": 161,
+      "id": 464,
       "event": "notification_attempted",
       "taskId": "task-001",
       "detail": {},
-      "createdAt": "2026-10-14T18:26:37.535Z"
+      "createdAt": "2026-10-14T18:58:38.796Z"
     },
     {
-      "id": 162,
+      "id": 465,
       "event": "notification_failed",
       "taskId": "task-001",
       "detail": {
         "error": "Simulated notification provider unavailable before acceptance."
       },
-      "createdAt": "2026-10-14T18:26:37.580Z"
+      "createdAt": "2026-10-14T18:58:38.836Z"
     },
     {
-      "id": 163,
+      "id": 466,
       "event": "settlement_finished",
       "taskId": null,
       "detail": {
@@ -101,7 +101,7 @@
           "end": "2026-10-12T00:00:00.000Z"
         }
       },
-      "createdAt": "2026-10-14T18:26:37.599Z"
+      "createdAt": "2026-10-14T18:58:38.849Z"
     }
   ],
   "balances": {

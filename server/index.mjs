@@ -55,6 +55,6 @@ const server = createServer(async (request, response) => {
   }
 });
 server.on('close', () => service.close());
-server.listen(Number(process.env.PORT ?? 4174), process.env.HOST ?? '127.0.0.1', () => console.log(`AcmeBank rewards API listening on ${process.env.PORT ?? 4174}`));
+server.listen(Number(process.env.PORT ?? 4174), process.env.HOST ?? '127.0.0.1', () => console.log(`MustBank rewards API listening on ${process.env.PORT ?? 4174}`));
 process.on('SIGINT', () => server.close());
 process.on('SIGTERM', () => server.close());

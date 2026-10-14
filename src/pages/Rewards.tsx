@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
+import { readStoredValue } from '../store/storage';
 
 type Task = { taskId: string; userId: string; title: string; completedAt: string; status: string };
 type Snapshot = {
@@ -11,7 +12,7 @@ type Snapshot = {
   events: { id: number; event: string; taskId: string | null; createdAt: string; detail: Record<string, unknown> }[];
   run?: { paidNow: number; failures: unknown[] }; recovery?: { failures: unknown[] };
 };
-const STORED_EXAMPLE = 'acmebank.quest.example.v1';
+const STORED_EXAMPLE = 'mustbank.quest.example.v1';
 const DEFAULT_RUN = '2026-10-13T09:00:00Z';
 const utc = (value: string) => value.replace('T', ' ').replace('.000Z', ' UTC').replace('Z', ' UTC');
 
@@ -50,7 +51,7 @@ export function RewardsPage() {
   }
   useEffect(() => {
     let cancelled = false;
-    const saved = localStorage.getItem(STORED_EXAMPLE);
+    const saved = readStoredValue(STORED_EXAMPLE, '.quest.example.v1', value => /^[a-f0-9-]{36}$/.test(value));
     async function load() {
       let value: Snapshot;
       try { value = saved ? await api(`/api/scenarios/${saved}`) : await api('/api/scenarios', {}); }
@@ -83,7 +84,7 @@ export function RewardsPage() {
   }
   function exportEvidence() {
     const url = URL.createObjectURL(new Blob([JSON.stringify(snapshot, null, 2)], { type: 'application/json' }));
-    const link = document.createElement('a'); link.href = url; link.download = `acmebank-example-${snapshot!.id}.json`; link.click();
+    const link = document.createElement('a'); link.href = url; link.download = `mustbank-example-${snapshot!.id}.json`; link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   return (

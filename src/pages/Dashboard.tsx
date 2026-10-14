@@ -7,11 +7,11 @@ export function Dashboard() {
 
   return (
     <>
-      <h1 className="page-title">Good morning</h1>
-      <p className="page-sub">Here's where your money is, right now.</p>
+      <h1 className="page-title">Account overview</h1>
+      <p className="page-sub">Review your simulated balances and recent transfers.</p>
 
       <div className="banner">
-        <strong>Try it:</strong> open the WebMCP Tool Inspector side panel and type <em>"What's my balance across all accounts?"</em> — the agent will call <code>getAccounts</code> directly. No screen scraping.
+        <strong>Assessment sandbox:</strong> these accounts use fictional funds. Task rewards and weekly settlements are available on the Rewards page.
       </div>
 
       <div className="cards">
@@ -34,9 +34,7 @@ export function Dashboard() {
               <div className="date">{new Date(t.ts).toLocaleDateString('en-SG', { month: 'short', day: 'numeric' })}</div>
               <div>{t.memo ?? 'Transfer'} <span style={{ color: 'var(--text-dim)' }}>· from {fromAcct?.nickname}</span></div>
               <div className="amount">−{fmtSGD(t.amount)}</div>
-              <div className={`channel${t.channel === 'agent' ? ' agent' : ''}`}>
-                {t.channel === 'agent' ? 'via agent' : 'manual'}
-              </div>
+              <div className="transaction-status">{t.status}</div>
             </div>
           );
         })}

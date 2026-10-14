@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { mkdir } from 'node:fs/promises';
-import { create, openExample, type Scenario } from './helpers';
+import { create, openExample, settle, type Scenario } from './helpers';
 
 test('TC10 | notification failure then settlement replay leaves 10 credits', async ({ page, request }, testInfo) => {
   const mode = process.env.QUEST_BEHAVIOR === 'faulty' ? 'faulty' : 'fixed';
@@ -67,11 +67,53 @@ test('TC24 | narrow-screen recovery works through keyboard controls', async ({ p
   await page.screenshot({ path: 'assessment/evidence/narrow-screen.png', fullPage: true });
 });
 
-test('TC25 | the original simulated transfer still works without WebMCP', async ({ page }) => {
+test('TC25 | a simulated bank transfer completes with a reference', async ({ page }) => {
   await page.goto('/transfer');
   await expect(page.getByRole('heading', { name: 'Transfer money', exact: true })).toBeVisible();
   await page.getByPlaceholder('0.00', { exact: true }).fill('10.00');
   await page.getByPlaceholder('Optional note', { exact: true }).fill('Regression smoke check');
   await page.getByRole('button', { name: 'Send transfer', exact: true }).click();
   await expect(page.getByText(/Sent .*10\.00.*Reference/)).toBeVisible();
+});
+
+test('TC26 | every banking page presents MustBank and the assessment scope', async ({ page }) => {
+  test.setTimeout(60000);
+  await page.goto('/rewards');
+  for (const [link, heading] of [['Rewards', 'Rewards and settlements'], ['Dashboard', 'Account overview'],
+    ['Transfer', 'Transfer money'], ['Recipients', 'Saved recipients'], ['Transactions', 'Transactions']]) {
+    await page.getByRole('link', { name: link, exact: true }).click();
+    await expect(page.getByRole('heading', { name: heading, exact: true })).toBeVisible();
+    await expect(page).toHaveTitle('MustBank · Quest assessment');
+    const navigation = page.getByRole('complementary', { name: 'Application navigation' });
+    await expect(navigation.getByText('MustBank', { exact: true })).toBeVisible();
+    await expect(navigation.getByText('Quest assessment', { exact: false })).toBeVisible();
+  }
+  await page.screenshot({ path: 'assessment/evidence/mustbank-transactions.png', fullPage: true });
+});
+
+test('TC27 | namespace migration preserves balances and a paid reward identity', async ({ page, request }) => {
+  test.setTimeout(45000);
+  const scenario = await create(request); await settle(request, scenario.id);
+  await page.addInitScript(exampleId => {
+    // A compatible previous namespace models an installation before rebranding.
+    localStorage.setItem('previousbank.quest.example.v1', exampleId);
+    localStorage.setItem('previousbank.state.v1', JSON.stringify({
+      accounts: [{ id: 'acc_chk', nickname: 'Everyday Checking', type: 'checking', number: '4071', balance: 123_0000, currency: 'SGD' }],
+      recipients: [], transactions: [],
+    }));
+  }, scenario.id);
+  await page.goto('/rewards');
+  await expect(page.getByTestId('reward-balance')).toHaveText('10 credits');
+  await page.getByRole('button', { name: 'Run settlement', exact: true }).click();
+  await expect(page.getByRole('status')).toContainText('0 new payouts');
+  await expect(page.getByTestId('payout-count')).toHaveText('1');
+  await expect(page.getByTestId('reward-balance')).toHaveText('10 credits');
+  await page.getByRole('link', { name: 'Dashboard', exact: true }).click();
+  await expect(page.getByText('$123.00', { exact: true })).toBeVisible();
+  const state = await page.evaluate(() => ({
+    example: localStorage.getItem('mustbank.quest.example.v1'), bank: JSON.parse(localStorage.getItem('mustbank.state.v1')!),
+    previousExample: localStorage.getItem('previousbank.quest.example.v1'), previousBank: localStorage.getItem('previousbank.state.v1'),
+  }));
+  expect(state.example).toBe(scenario.id); expect(state.bank.accounts[0].balance).toBe(123_0000);
+  expect(state.previousExample).toBeNull(); expect(state.previousBank).toBeNull();
 });

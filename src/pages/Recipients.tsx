@@ -1,17 +1,12 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { useBank } from '../store/useBank';
 import { bank } from '../store/bank';
-import { useTool } from '../mcp/useTool';
-import { makeAddRecipientTool } from '../mcp/recipientTool';
 
 export function RecipientsPage() {
   const { recipients } = useBank();
   const [name, setName] = useState('');
   const [bankName, setBankName] = useState('');
   const [accNum, setAccNum] = useState('');
-
-  const addRecipientTool = useMemo(() => makeAddRecipientTool(), []);
-  useTool(addRecipientTool);
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -23,7 +18,7 @@ export function RecipientsPage() {
   return (
     <>
       <h1 className="page-title">Saved recipients</h1>
-      <p className="page-sub">Payees you can send to. While you're here, the agent can also add new recipients via <code>addRecipient</code> — with your approval.</p>
+      <p className="page-sub">Manage the fictional payees available for your transfer tests.</p>
 
       <h2 className="section-title">Existing</h2>
       <div className="list">
@@ -42,16 +37,16 @@ export function RecipientsPage() {
       <h2 className="section-title" style={{ marginTop: 28 }}>Add new</h2>
       <form className="form" onSubmit={submit}>
         <div className="form-row">
-          <label>Name</label>
-          <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="e.g. Priya Menon" />
+          <label htmlFor="recipient-name">Name</label>
+          <input id="recipient-name" type="text" value={name} onChange={e => setName(e.target.value)} placeholder="e.g. Priya Menon" />
         </div>
         <div className="form-row">
-          <label>Bank</label>
-          <input type="text" value={bankName} onChange={e => setBankName(e.target.value)} placeholder="e.g. DBS Bank" />
+          <label htmlFor="recipient-bank">Bank</label>
+          <input id="recipient-bank" type="text" value={bankName} onChange={e => setBankName(e.target.value)} placeholder="e.g. DBS Bank" />
         </div>
         <div className="form-row">
-          <label>Account number (last 4)</label>
-          <input type="text" value={accNum} onChange={e => setAccNum(e.target.value)} maxLength={4} placeholder="1234" />
+          <label htmlFor="recipient-account">Account number (last 4)</label>
+          <input id="recipient-account" type="text" value={accNum} onChange={e => setAccNum(e.target.value)} maxLength={4} placeholder="1234" />
         </div>
         <button type="submit" className="btn-primary">Save recipient</button>
       </form>

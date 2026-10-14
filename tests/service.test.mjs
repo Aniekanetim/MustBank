@@ -7,7 +7,7 @@ import { spawnSync } from 'node:child_process';
 import { RewardsService } from '../server/rewards.mjs';
 
 test('TC11 | a fresh Node process retains payout identity and recovers notification', () => {
-  const folder = mkdtempSync(join(tmpdir(), 'acmebank-recovery-'));
+  const folder = mkdtempSync(join(tmpdir(), 'mustbank-recovery-'));
   const database = join(folder, 'rewards.sqlite');
   const service = new RewardsService(database);
   let closed = false;
@@ -23,7 +23,7 @@ test('TC11 | a fresh Node process retains payout identity and recovers notificat
     if (!closed) service.close();
     const target = resolve(folder);
     const withinTemp = relative(resolve(tmpdir()), target);
-    assert.ok(withinTemp && !withinTemp.startsWith('..') && !isAbsolute(withinTemp) && withinTemp.startsWith('acmebank-recovery-'), 'Cleanup must stay inside the created temporary fixture.');
+    assert.ok(withinTemp && !withinTemp.startsWith('..') && !isAbsolute(withinTemp) && withinTemp.startsWith('mustbank-recovery-'), 'Cleanup must stay inside the created temporary fixture.');
     rmSync(folder, { recursive: true, force: true });
   }
 });

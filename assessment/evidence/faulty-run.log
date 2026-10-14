@@ -1,15 +1,15 @@
-[WebServer] (node:43228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:41256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
-[WebServer] (node:43228) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+[WebServer] (node:41256) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 
-[WebServer] (node:7328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:57052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
 
 Running 1 test using 1 worker
 
-(node:9136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:67144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
@@ -26,7 +26,7 @@ Running 1 test using 1 worker
     Call log:
       - Expect "toHaveText" getByTestId('reward-balance') with timeout 5000ms
       - waiting for getByTestId('reward-balance')
-        12 × locator resolved to <p class="balance" data-testid="reward-balance">20 credits</p>
+        14 × locator resolved to <p class="balance" data-testid="reward-balance">20 credits</p>
            - unexpected value "20 credits"
 
 

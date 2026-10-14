@@ -18,9 +18,9 @@ The duplicate payout is the best candidate for deeper investigation: its impact 
 
 ## Why this project
 
-AcmeBank supplies a small, inspectable React application with simulated banking flows. The fork adds the Quest's fictional rewards rules rather than pretending they already existed upstream. Its small size makes it practical for a reviewer to run, inspect and reproduce the same failure.
+MustBank is a small, inspectable React application with fictional banking flows, adapted from an MIT-licensed sample. Its rewards module implements the Quest's rules explicitly. The project is small enough for a reviewer to run, inspect and reproduce the same failure.
 
-The extension uses a persistent local API so a reload or fresh process can verify that payment identity survives. Playwright exercises ordinary UI controls and HTTP requests; WebMCP is optional. The intentionally faulty implementation and corrected reference sit behind separate examples, with the same core business assertion applied to both.
+The project uses a persistent local API so a reload or fresh process can verify that payment identity survives. Playwright exercises ordinary UI controls and HTTP requests. The intentionally faulty implementation and corrected reference sit behind separate examples, with the same core business assertion applied to both.
 
 ## What successful work will communicate
 

@@ -1,10 +1,10 @@
 TAP version 13
-# (node:51428) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (node:18764) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 # (Use `node --trace-warnings ...` to show where the warning was created)
 # Subtest: TC11 | a fresh Node process retains payout identity and recovers notification
 ok 1 - TC11 | a fresh Node process retains payout identity and recovers notification
   ---
-  duration_ms: 1583.6044
+  duration_ms: 2009.5856
   type: 'test'
   ...
 1..1
@@ -15,4 +15,4 @@ ok 1 - TC11 | a fresh Node process retains payout identity and recovers notifica
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 1812.3092
+# duration_ms 2384.6255

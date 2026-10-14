@@ -26,7 +26,7 @@ export async function fault(request: APIRequestContext, id: string, kind: string
   expect(response.status()).toBe(200);
 }
 export async function openExample(page: Page, id: string) {
-  await page.addInitScript(exampleId => localStorage.setItem('acmebank.quest.example.v1', exampleId), id);
+  await page.addInitScript(exampleId => localStorage.setItem('mustbank.quest.example.v1', exampleId), id);
   await page.goto('/rewards');
   await expect(page.getByTestId('reward-balance')).toHaveText('0 credits');
   await expect(page.getByRole('button', { name: 'Run settlement', exact: true })).toBeEnabled();

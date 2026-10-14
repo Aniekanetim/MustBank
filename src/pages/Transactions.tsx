@@ -7,7 +7,7 @@ export function TransactionsPage() {
   return (
     <>
       <h1 className="page-title">Transactions</h1>
-      <p className="page-sub">All movements across your accounts. Rows tagged <em>via agent</em> were initiated by a Web MCP tool call.</p>
+      <p className="page-sub">Review simulated transfers, recipients and completion status. Task reward payouts are recorded on the Rewards page.</p>
 
       <div style={{ marginBottom: 16, display: 'flex', gap: 12 }}>
         <button className="btn-secondary" onClick={() => bank.reset()}>Reset demo data</button>
@@ -18,7 +18,7 @@ export function TransactionsPage() {
           <div>Date</div>
           <div>Detail</div>
           <div style={{ textAlign: 'right' }}>Amount</div>
-          <div style={{ textAlign: 'right' }}>Channel</div>
+          <div style={{ textAlign: 'right' }}>Status</div>
         </div>
         {transactions.map(t => {
           const from = accounts.find(a => a.id === t.fromAccountId);
@@ -33,9 +33,7 @@ export function TransactionsPage() {
                 <div style={{ color: 'var(--text-dim)', fontSize: 12 }}>{from?.nickname} → {to}</div>
               </div>
               <div className="amount">−{fmtSGD(t.amount)}</div>
-              <div className={`channel${t.channel === 'agent' ? ' agent' : ''}`}>
-                {t.channel === 'agent' ? 'via agent' : 'manual'}
-              </div>
+              <div className="transaction-status">{t.status}</div>
             </div>
           );
         })}

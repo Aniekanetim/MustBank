@@ -1,8 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { useBank } from '../store/useBank';
 import { bank, fmtSGD, parseSGD } from '../store/bank';
-import { useTool } from '../mcp/useTool';
-import { makeTransferFundsTool } from '../mcp/transferTool';
 
 export function TransferPage() {
   const { accounts, recipients } = useBank();
@@ -11,11 +9,6 @@ export function TransferPage() {
   const [amount, setAmount] = useState('');
   const [memo, setMemo] = useState('');
   const [feedback, setFeedback] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null);
-
-  // Per-page WebMCP tool — only registered while user is on this page.
-  // The tool descriptor doesn't depend on local state, so it's stable.
-  const transferTool = useMemo(() => makeTransferFundsTool(), []);
-  useTool(transferTool);
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -26,7 +19,6 @@ export function TransferPage() {
         toRecipientId: toId,
         amount: parseSGD(amount),
         memo: memo || undefined,
-        channel: 'ui',
       });
       setFeedback({ kind: 'ok', text: `Sent ${fmtSGD(tx.amount)}. Reference ${tx.id}.` });
       setAmount('');
@@ -39,16 +31,16 @@ export function TransferPage() {
   return (
     <>
       <h1 className="page-title">Transfer money</h1>
-      <p className="page-sub">Send to a saved recipient. While you're on this page, the WebMCP tool <code>transferFunds</code> is registered — leave the page and it un-registers.</p>
+      <p className="page-sub">Send fictional funds from an account to a saved recipient.</p>
 
       <div className="banner">
-        <strong>Agent demo:</strong> in the Tool Inspector, run <em>"Send $50 to Meena for dinner"</em>. The agent will call <code>findRecipient</code> + <code>transferFunds</code>. A confirm modal will pop — your approval is required before money moves.
+        <strong>Assessment sandbox:</strong> this transfer changes simulated account balances. No real money moves.
       </div>
 
       <form className="form" onSubmit={submit}>
         <div className="form-row">
-          <label>From</label>
-          <select value={fromId} onChange={e => setFromId(e.target.value)}>
+          <label htmlFor="transfer-from">From</label>
+          <select id="transfer-from" value={fromId} onChange={e => setFromId(e.target.value)}>
             {accounts.map(a => (
               <option key={a.id} value={a.id}>
                 {a.nickname} (•••• {a.number}) — {fmtSGD(a.balance)}
@@ -58,8 +50,8 @@ export function TransferPage() {
         </div>
 
         <div className="form-row">
-          <label>To recipient</label>
-          <select value={toId} onChange={e => setToId(e.target.value)}>
+          <label htmlFor="transfer-to">To recipient</label>
+          <select id="transfer-to" value={toId} onChange={e => setToId(e.target.value)}>
             {recipients.map(r => (
               <option key={r.id} value={r.id}>
                 {r.name} — {r.bank} •••• {r.accountNumber}
@@ -69,9 +61,10 @@ export function TransferPage() {
         </div>
 
         <div className="form-row">
-          <label>Amount (SGD)</label>
+          <label htmlFor="transfer-amount">Amount (SGD)</label>
           <input
             type="text"
+            id="transfer-amount"
             inputMode="decimal"
             placeholder="0.00"
             value={amount}
@@ -80,9 +73,10 @@ export function TransferPage() {
         </div>
 
         <div className="form-row">
-          <label>Memo</label>
+          <label htmlFor="transfer-memo">Memo</label>
           <input
             type="text"
+            id="transfer-memo"
             placeholder="Optional note"
             value={memo}
             onChange={e => setMemo(e.target.value)}
