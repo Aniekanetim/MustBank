@@ -26,6 +26,8 @@ test('TC10 | Retrying after notification failure preserves the approved payroll'
   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);
   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');
   expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);
+  expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);
+  expect(result.notifications[0].id).toBe(first.notifications[0].id);
 });
 test('TC23 | Record, approve and process earnings through the interface', async ({ page, request }) => {
   const w = await create(request, 'empty'); await page.goto(`/earnings?workspace=${w.id}`);

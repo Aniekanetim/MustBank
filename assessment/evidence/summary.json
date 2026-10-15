@@ -1,6 +1,6 @@
 {
   "application": "MustPayroll",
-  "generatedAt": "2026-10-15T12:50:25.433Z",
+  "generatedAt": "2026-10-15T16:05:49.860Z",
   "upstreamCommit": "73d83074e7ea0c40f8273455ebcb611b7088fd5a",
   "environment": {
     "node": "v22.21.0",
@@ -202,13 +202,15 @@
     "vite.config.ts": "33737d5e054ad38722cfb16a3c56e1997ab9c4a7113a3371476e00af22a32391",
     "scripts/scenario.mjs": "7898eea73633d0987a642393b409981653a114113dd2667cd2d1deb545594f14",
     "scripts/process-probe.mjs": "ac51139912993a4afba3890ccb098d56832d4c24cbc6aa1d44f1477af29ba09d",
-    "scripts/verify.mjs": "c1600d680ee4b707d555e182cc7d25771d5875877d1e693e8a73349f7c71b065",
+    "scripts/verify.mjs": "566207c2c592b4294018f637058236f9b5e282ee9f75d95ea64a78135456dc24",
+    "scripts/report-evidence.mjs": "96d9b20dc2ad40e38bbf652bed73a11379da51f33641d82457b5a65c1a2ffe25",
+    "scripts/check-reviewer-access.mjs": "b1307037c19ca9f801ec3b5be01f6ddaab2c92c7b58fe1d78d2615dcc0bedd91",
     "tests/helpers.ts": "8005751dff0d8c3fab6f47559b0f349b0b9fda0a7e651a9c32f59e9e0f7900ab",
     "tests/payroll-api.spec.ts": "9bb121b0ac5d8224d46fbf79a224b45bc40a51cefded4aca0d0a66dd2a9f7f55",
-    "tests/payroll-ui.spec.ts": "507e1262dd34390ce40e4bae4c9a1e38a3394ed0a0c444e2737cb4bcaf51bd4b",
+    "tests/payroll-ui.spec.ts": "6916e5ee081b86b2e163752c420ab204c0dd7c2353abc7b8776e88a557ae1687",
     "tests/service.test.mjs": "10e0bf8232a2e3ff514041ffb02203d948a2024c3f6e596e0d69fd3836bb577a",
     "playwright.config.ts": "c7dce5417ed57896a5e9102ba581c8b8f77c350c1183455b043db7619b35c2bd",
-    "package.json": "0009bc819e7fa6cb289ee92dd981fe604119f169f7d87fa5e25674666c563c53",
+    "package.json": "234d2d6b7289a15af9a897a3213c1a021db3c4fa652881835bf6482d7757326f",
     "package-lock.json": "e82f4439fe426f52bf29e1baec22174aa7656b9b140c3e0571c39c9b2f9ec7b8"
   }
 }

@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-10-15T16:05:49.860Z",
+  "currency": "NGN",
+  "case": "TC10",
+  "rule": "One employee-period payment; notification recovery preserves that payment.",
+  "faulty": {
+    "first": {
+      "workspaceId": "d2488907-4f56-4ac4-8cdb-49bcbef859fe",
+      "employeeId": "emp-001",
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "approvedMinor": 15000000,
+      "recordedMinor": 15000000,
+      "paymentIds": [
+        "2e1737bf-d6f0-4f3c-be3e-36ee17a4660c"
+      ],
+      "pendingNotifications": 1,
+      "providerAcceptances": 0
+    },
+    "retry": {
+      "workspaceId": "d2488907-4f56-4ac4-8cdb-49bcbef859fe",
+      "employeeId": "emp-001",
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "approvedMinor": 15000000,
+      "recordedMinor": 30000000,
+      "paymentIds": [
+        "d44e30a6-15aa-4727-9bf5-6dc34fcedcff",
+        "2e1737bf-d6f0-4f3c-be3e-36ee17a4660c"
+      ],
+      "pendingNotifications": 1,
+      "providerAcceptances": 1
+    },
+    "excessRecordedMinor": 15000000
+  },
+  "fixed": {
+    "first": {
+      "workspaceId": "25418089-f25d-415b-b05b-484e9bbdaf0a",
+      "employeeId": "emp-001",
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "approvedMinor": 15000000,
+      "recordedMinor": 15000000,
+      "paymentIds": [
+        "b1f0c135-9a82-4af3-86d3-cc803936f2be"
+      ],
+      "pendingNotifications": 1,
+      "providerAcceptances": 0
+    },
+    "retry": {
+      "workspaceId": "25418089-f25d-415b-b05b-484e9bbdaf0a",
+      "employeeId": "emp-001",
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "approvedMinor": 15000000,
+      "recordedMinor": 15000000,
+      "paymentIds": [
+        "b1f0c135-9a82-4af3-86d3-cc803936f2be"
+      ],
+      "pendingNotifications": 0,
+      "providerAcceptances": 1
+    },
+    "originalPaymentUnchanged": true,
+    "originalMessageRecovered": true
+  },
+  "corroboration": {
+    "freshProcessCase": "TC11",
+    "otherChecks": [
+      "TC01",
+      "TC02",
+      "TC03",
+      "TC04",
+      "TC05",
+      "TC06",
+      "TC07",
+      "TC08",
+      "TC09",
+      "TC11",
+      "TC12",
+      "TC13",
+      "TC14",
+      "TC15",
+      "TC16",
+      "TC17",
+      "TC18",
+      "TC19",
+      "TC20",
+      "TC21",
+      "TC22",
+      "TC23",
+      "TC24",
+      "TC25",
+      "TC26",
+      "TC27",
+      "TC28",
+      "TC29",
+      "TC30",
+      "TC31",
+      "TC32",
+      "TC33"
+    ]
+  },
+  "limits": [
+    "Local ledger only; no real bank movement.",
+    "Provider acceptance is simulated; real inbox delivery is unverified.",
+    "No production support baseline or measured ticket reduction is available."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "pending-post-publication-check",
+  "checkedAt": null,
+  "credentialsSent": false,
+  "allAccessible": false,
+  "checks": [],
+  "note": "Run npm run reviewer:access after publishing the updated documents. This placeholder is not evidence of successful access.",
+  "exclusions": ["Final Loom not supplied.", "Genuine portfolio-case URLs not supplied."]
+}

@@ -38,7 +38,9 @@
     "test": "playwright test",
     "test:service": "node --test tests/service.test.mjs",
     "scenario": "node scripts/scenario.mjs",
-    "verify": "node scripts/verify.mjs"
+    "verify": "node scripts/verify.mjs",
+    "evidence:report": "node scripts/report-evidence.mjs",
+    "reviewer:access": "node scripts/check-reviewer-access.mjs"
   },
   "engines": {
     "node": ">=22.13.0"

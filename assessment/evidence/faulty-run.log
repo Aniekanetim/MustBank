@@ -1,15 +1,15 @@
-[WebServer] (node:320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:49412) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
-[WebServer] (node:320) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+[WebServer] (node:49412) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 
-[WebServer] (node:75732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:69844) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
 
 Running 1 test using 1 worker
 
-(node:24080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:43644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
@@ -28,8 +28,8 @@ Running 1 test using 1 worker
     > 27 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');
          |                                                                                                  ^
       28 |   expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);
-      29 | });
-      30 | test('TC23 | Record, approve and process earnings through the interface', async ({ page, request }) => {
+      29 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);
+      30 |   expect(result.notifications[0].id).toBe(first.notifications[0].id);
         at <project>\tests\payroll-ui.spec.ts:27:98
 
     attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────

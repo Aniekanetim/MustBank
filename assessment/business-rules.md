@@ -22,6 +22,42 @@
 
 The fault under investigation changes step 2: it treats successful notification as proof that payroll is complete. After notification failure, a payment exists but the completion marker is absent. Retrying therefore records a second payment. See the [defect report](defect-report.md).
 
+## Decision flow
+
+```mermaid
+flowchart TD
+  A[Select original Tuesday 09:00 UTC pay date] --> B[Validate earning IDs, employees, amounts and explicit-offset timestamps]
+  B --> C[Select earnings inside the half-open UTC period]
+  C --> E{Any pending earnings in the period?}
+  E -->|Yes| F[Block processing; leave period open]
+  E -->|No| D{Any approved earnings?}
+  D -->|No| V[Block empty payroll; leave period open]
+  D -->|Yes| G[Exclude rejected earnings and aggregate approved pay per employee]
+  G --> H{Valid first run or existing locked run?}
+  H -->|First run| I[Freeze employee totals and earning IDs]
+  H -->|Existing run| J[Reuse original period and frozen totals]
+  I --> K{Employee-period payment exists?}
+  J --> K
+  K -->|Yes| L{Pending message exists?}
+  K -->|No| M{Payment write succeeds?}
+  M -->|No| N[Leave employee unpaid; retry original run]
+  M -->|Yes| O[Commit payment and pending message atomically]
+  O -->|Interrupted before commit| N
+  O -->|Committed| L
+  L -->|No| U[Preserve payment; no message work needed]
+  L -->|Yes| P{Provider acknowledges acceptance?}
+  P -->|Yes| Q[Mark existing message sent]
+  P -->|No| R[Keep payment intact and message pending]
+  R --> S[Operator retries existing notification or original pay run]
+  S --> L
+  N --> T[Operator retries the original pay run]
+  T --> H
+```
+
+This diagram shows the corrected flow. On an existing run, frozen entries are reused. Pending approvals and an empty approved total block creation of a first run. Validation errors reject the request without importing a partial batch. A rejected earning is excluded; approved earnings must still produce a non-empty total before processing.
+
+The retry trigger is an explicit product action in this reference, not an autonomous worker. The faulty branch instead checks the notification-dependent completion marker at the payment-exists decision. [Observed proof](evidence/business-proof.md) shows why that distinction creates the duplicate. [Operations handoff](operations-runbook.md) explains which recovery action to choose.
+
 ## Account and administration assumptions
 
 Employees and their masked destinations are seeded and cannot be changed through this application. Reassignment, account closure, bank-detail changes, inactive employees, permissions and admin overrides are outside scope. Payment records retain the employee name and destination captured at payment time. Earnings cannot be added to a processed period; adjustments require a later open period. Approved earnings cannot be edited or withdrawn. The schedule, currency and period policy are fixed.

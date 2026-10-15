@@ -1,19 +1,19 @@
-[WebServer] (node:57376) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:24968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
-[WebServer] (node:57376) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+[WebServer] (node:24968) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 
-[WebServer] (node:76732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:76668) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
 
 Running 32 tests using 2 workers
 
-(node:65696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:68464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
-(node:63680) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:57044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
@@ -38,15 +38,15 @@ Running 32 tests using 2 workers
 [19/32] [chromium] › tests\payroll-api.spec.ts:88:1 › TC21 | Isolated workspaces do not share earnings or payment identity
 [20/32] [chromium] › tests\payroll-api.spec.ts:93:1 › TC22 | Approval is explicit and replaying approval is harmless
 [21/32] [chromium] › tests\payroll-ui.spec.ts:10:1 › TC10 | Retrying after notification failure preserves the approved payroll
-[22/32] [chromium] › tests\payroll-ui.spec.ts:30:1 › TC23 | Record, approve and process earnings through the interface
-[23/32] [chromium] › tests\payroll-ui.spec.ts:45:1 › TC24 | Cancelling payroll confirmation leaves the ledger and period unchanged
-[24/32] [chromium] › tests\payroll-ui.spec.ts:52:1 › TC25 | Receipt survives reload and can be copied and downloaded
-[25/32] [chromium] › tests\payroll-ui.spec.ts:63:1 › TC26 | Payment filter and CSV export contain the same employee records
-[26/32] [chromium] › tests\payroll-ui.spec.ts:69:1 › TC27 | Changing pay period separates approval and payment totals
-[27/32] [chromium] › tests\payroll-ui.spec.ts:76:1 › TC28 | Core screens reflow at 320 pixels without page overflow
-[28/32] [chromium] › tests\payroll-ui.spec.ts:86:1 › TC29 | Keyboard navigation reaches content and payroll confirmation
-[29/32] [chromium] › tests\payroll-ui.spec.ts:97:1 › TC30 | Employee details lead to the correct earning destination
-[30/32] [chromium] › tests\payroll-ui.spec.ts:102:1 › TC31 | Payroll screens use product language and show standard totals
-[31/32] [chromium] › tests\payroll-ui.spec.ts:109:1 › TC32 | Notification recovery is visible and leaves the receipt unchanged
-[32/32] [chromium] › tests\payroll-ui.spec.ts:117:1 › TC33 | Separate tabs retain their workspace and pay period after reload
-  32 passed (1.6m)
+[22/32] [chromium] › tests\payroll-ui.spec.ts:32:1 › TC23 | Record, approve and process earnings through the interface
+[23/32] [chromium] › tests\payroll-ui.spec.ts:47:1 › TC24 | Cancelling payroll confirmation leaves the ledger and period unchanged
+[24/32] [chromium] › tests\payroll-ui.spec.ts:54:1 › TC25 | Receipt survives reload and can be copied and downloaded
+[25/32] [chromium] › tests\payroll-ui.spec.ts:65:1 › TC26 | Payment filter and CSV export contain the same employee records
+[26/32] [chromium] › tests\payroll-ui.spec.ts:71:1 › TC27 | Changing pay period separates approval and payment totals
+[27/32] [chromium] › tests\payroll-ui.spec.ts:78:1 › TC28 | Core screens reflow at 320 pixels without page overflow
+[28/32] [chromium] › tests\payroll-ui.spec.ts:88:1 › TC29 | Keyboard navigation reaches content and payroll confirmation
+[29/32] [chromium] › tests\payroll-ui.spec.ts:99:1 › TC30 | Employee details lead to the correct earning destination
+[30/32] [chromium] › tests\payroll-ui.spec.ts:104:1 › TC31 | Payroll screens use product language and show standard totals
+[31/32] [chromium] › tests\payroll-ui.spec.ts:111:1 › TC32 | Notification recovery is visible and leaves the receipt unchanged
+[32/32] [chromium] › tests\payroll-ui.spec.ts:119:1 › TC33 | Separate tabs retain their workspace and pay period after reload
+  32 passed (1.1m)

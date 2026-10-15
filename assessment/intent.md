@@ -17,6 +17,8 @@ These are plausible failures in the defined local model. No production incident 
 
 The first problem has the highest priority because recovery itself creates an incorrect financial record. The other problems remain in the regression scope to establish the correct amount, period and event order.
 
+With no incident telemetry, this ranking uses the consequence of failure first, a plausible trigger in the modeled workflow second, and implementation/verification effort as a tie-breaker. It does not calculate expected loss from invented probabilities. The duplicate-payment failure is selected because an ordinary recovery action can compound an already successful payment; the lower-ranked failures are still release concerns, not acceptable defects.
+
 ## Why a focused payroll application
 
 Payroll gives the reviewer a continuous business journey: approved earnings, a pay period, employee payments, confirmation and recovery. MustPayroll exposes that journey without requiring unrelated bank transfers or account management. Employees can have several earning records, so the implementation must aggregate them and protect the employee-period payment, rather than merely rename the previous task-based rewards example.
@@ -26,3 +28,5 @@ The application is a local, inspectable project adapted from an MIT-licensed fou
 ## What the deliverables should communicate
 
 The reader should understand **the rule, the failure, the cause, the prevention, the verification and the release decision**, in that order. [directive.md](directive.md) links each claim to the runnable project and evidence. AI assistance is disclosed; Aniekan's personal review and recorded explanation remain necessary for submission.
+
+The practical outcome is safe recovery: an operator can resolve a pending notification through the product while the original employee payment remains unchanged. The [observed comparison](evidence/business-proof.md) establishes that result in the local fixture. A real reduction in repeated support requests would need a baseline and comparable follow-up data; no such result is claimed here.

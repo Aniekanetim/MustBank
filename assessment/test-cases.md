@@ -38,7 +38,8 @@ The [verification summary](evidence/summary.json) records the environment and so
 | TC30 | Directory → Daniel → Record earnings | Correct masked destination and Daniel preselected in form | Passed |
 | TC31 | Open standard overview and employee directory | ₦435,000 total; payroll language; no banking/assessment labels in rendered overview | Passed |
 | TC32 | Pending notification → recover through UI | Original payment unchanged; pending count zero; recovery action disabled when complete | Passed |
-
 | TC33 | Separate tabs: different workspaces, navigation, date change and reload | Each tab retains its workspace and selected pay period; no cross-tab payroll substitution | Passed |
 
 See [the expected faulty failure](evidence/faulty-run.log), [corrected run](evidence/fixed-run.log), [process check](evidence/process-recovery.log) and [JSON report](evidence/fixed-playwright.json) for actual execution output. Test counts describe checks, not a reviewer-assigned assessment score. Remaining integration and accessibility gaps are recorded in [release readiness](release-readiness.md).
+
+For the central business outcome, start with the [generated before/after comparison](evidence/business-proof.md). TC10 asserts the same amount, preserved payment object and original message identity; a correction that deletes and recreates the payment cannot pass as safe recovery.

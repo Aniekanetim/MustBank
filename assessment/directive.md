@@ -4,6 +4,8 @@
 
 Demonstrate that recovering a notification failure cannot pay an employee twice for the same approved payroll period. The employee is owed ₦150,000. After the payment succeeds and its notification fails, retrying payroll must retain the original payment and recover delivery.
 
+Start with [intent.md](intent.md) for the choice, [the business rule and flow](business-rules.md) for the expectation, and [the generated before/after proof](evidence/business-proof.md) for the observed result. The remaining links support reproduction, release judgment and handoff.
+
 ## Scope
 
 MustPayroll is a local application for a synthetic company, Northstar Studio. The journey covers employee destinations, approved earnings, weekly pay periods, pay-run confirmation, payment records, receipts and notification recovery. The application was adapted from an MIT-licensed sample; the current payroll service and controlled defect were introduced for this assessment.
@@ -29,8 +31,8 @@ The selected defect is PAY-001. Boundary handling, timezone conversion, duplicat
 | Corrected flow passes with payment identity preserved | Observed: one ₦150,000 payment and recovered notification |
 | Required cases and final run | 32 Playwright browser/API checks plus one fresh-process check pass |
 | Defect report, release blockers, gaps and handoff | Complete for the local reference scope |
-| Personal ownership review and final Loom | Pending Aniekan's review and recording |
-| Submission destination, exact deadline/timezone and full weighted rubric | Await recruiter/invitation clarification; not inferred |
+| Personal ownership review and final Loom | Application review reported in progress; specific checks/sign-off and final recording remain pending |
+| Submission destination, exact deadline/timezone and full weighted rubric | Conditional form fields reported by candidate; exact submission field and invitation terms remain unconfirmed |
 
 ## Results and handoff appendix
 
@@ -44,16 +46,32 @@ The repository remains at its existing URL so its history and draft review remai
 | Business rule, flow and assumptions | [Payroll rules](business-rules.md) |
 | Actionable defect, cause and proposed correction | [PAY-001](defect-report.md) |
 | Environment, source SHA-256 fingerprints and results | [Verification summary](evidence/summary.json) |
+| Readable business result and causal comparison | [Generated proof](evidence/business-proof.md) · [machine-readable comparison](evidence/business-proof.json) |
 | First payment with failed notification | [Faulty first attempt](evidence/faulty-first-attempt.json) · [corrected first attempt](evidence/fixed-first-attempt.json) |
 | State after retry | [Faulty workspace](evidence/faulty-workspace.json) · [corrected workspace](evidence/fixed-workspace.json) |
 | Regression evidence | [Expected failure](evidence/faulty-run.log) · [corrected run](evidence/fixed-run.log) · [fresh-process result](evidence/process-recovery.log) |
 | Machine-readable reports | [Faulty report](evidence/faulty-playwright.json) · [corrected report](evidence/fixed-playwright.json) |
 | Visual proof and trace | [Faulty payroll](evidence/faulty-reproduction.png) · [corrected payroll](evidence/fixed-reproduction.png) · [failure trace](evidence/faulty-trace.zip) |
 | Release decision and remaining gaps | [Release readiness](release-readiness.md) |
+| Operational recovery and support handoff | [Recovery runbook](operations-runbook.md) |
+| AI delegation and candidate ownership | [Activity record](ai-accountability.md) · [guided personal review](personal-review.md) |
+| Transcript expectations checked against actual brief | [Expectation review](expectation-review.md) |
+| Anonymous reviewer access | [Checked project/evidence links](evidence/reviewer-access.json) |
 | Customer-facing workflow verification | [Interface review](ui-review.md) |
 | Reviewable change | [Draft pull request](https://github.com/Aniekanetim/MustBank/pull/1) |
-| Final Loom | Pending recording; replace this entry with an accessible link before submission |
+| Recording preparation | [Loom script](loom-script.md), targeting 4:30 with a 30-second buffer |
+| Final Loom | Pending candidate recording; replace this entry with an accessible link before submission |
 
 To verify independently, follow README, install Chromium, and run npm run verify. To inspect manually, start the local server and prepare separate faulty and fixed examples with npm run scenario. Use each printed workspace URL; do not reuse a previously processed workspace for a first-attempt demonstration. The fixture and ledger stay local. No confidential employer information or real employee data is included.
 
 AI assistance through Codex supported implementation, test design, execution and drafting. Automated results are identified as such. Aniekan's personal review and recorded explanation are not represented as completed. This fictional Quest case does not replace any separately requested genuine portfolio cases. The 76/100 threshold is the employer's pass requirement, not a self-assigned result.
+
+## Final submission checks
+
+- Complete the personal review record with actual actions and a bounded release judgment.
+- Record and check the Loom's actual duration, replace the pending link above and verify reviewer access to it.
+- Use the assessment's appropriate repository/link/upload field when the conditional form exposes it. The saved initial form shows a PDF CV input and CV-text area; that stage does not establish the final Quest submission field. Do not infer the upload destination from it.
+- Confirm the deadline/timezone, any compensation terms and any additional role-specific brief or rubric shown by the invitation/form. No follow-up message is assumed necessary if those details are supplied there.
+- Provide two to four genuine past cases separately if the broader application requests them. This synthetic exercise cannot establish those incidents or their results.
+
+The public repository provides the runnable work and linked evidence. A live hosted payroll service is not required by the supplied brief, and this unauthenticated local application should not be deployed as a public financial service merely to make it clickable.

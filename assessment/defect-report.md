@@ -37,6 +37,8 @@ In [the payroll service](../server/payroll.mjs), faulty processing checks a comp
 
 The corrected implementation checks the durable employee-period payment identity, reinforces it with a unique index, and commits payment plus pending notification work atomically. Notification attempts occur after commit. Retry finds the original payment and recovers the existing message. It does not create another payment.
 
+The [generated causal comparison](evidence/business-proof.md) reads the actual first-attempt and retry attachments. It confirms identical earning inputs, payment commit before the failed notification, two distinct faulty payment IDs for the same employee-period, and preservation of the complete corrected payment and original message identity. It fails to generate a successful report if those observed conditions do not hold.
+
 Prepare the corrected example with the same earning and failure:
 
 ~~~sh
@@ -50,3 +52,5 @@ Repeat the same actions and expectation. The result is one ₦150,000 payment, u
 [TC10](../tests/payroll-ui.spec.ts) performs the UI actions and applies the same ₦150,000 assertion to both implementations. [Faulty state](evidence/faulty-workspace.json), [corrected state](evidence/fixed-workspace.json), [faulty screenshot](evidence/faulty-reproduction.png), [corrected screenshot](evidence/fixed-reproduction.png), [expected assertion failure](evidence/faulty-run.log) and [failure trace](evidence/faulty-trace.zip) make the result reviewable. The [summary](evidence/summary.json) records the assessed source fingerprints and environment.
 
 Block release if retry changes an existing payment identity or amount, two fixed payments share an employee-period key, failed notification removes payment, failed payment emits a message, pre-commit interruption leaves an orphan, or period totals fail reconciliation. TC08–TC17 cover these paths, including fresh-process recovery. External banking and distributed workers require additional integration evidence before production use.
+
+After the correction, use the [operations runbook](operations-runbook.md) to choose between notification recovery and an unpaid-entry retry. Escalate a mismatch with original references and state evidence; a manual database edit is not the demonstrated fix.

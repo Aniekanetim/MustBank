@@ -2,6 +2,8 @@
 
 Prepare two fresh local workspaces before recording, using the faulty and fixed scenario commands in README with --fail-notification. Keep their URLs in separate tabs. Do not show setup switches as normal payroll features. Review the evidence personally before explaining it.
 
+Use the [recording script](loom-script.md) for a 4:30 target with a 30-second buffer. Complete the [personal review](personal-review.md), replace its ownership placeholder with confirmed actions, rehearse and verify actual duration. The transcript's illustrative story about correcting an AI boundary operator is not this project's history.
+
 | Time | Idea to communicate | Show |
 |---|---|---|
 | 0:00–0:40 | One employee is owed ₦150,000 for approved earnings in one period. Recovery must not change that amount. Explain why duplicate pay outranks the other plausible failures. | intent.md and employee breakdown |

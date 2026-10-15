@@ -3,6 +3,7 @@ import { readFile, writeFile, mkdir, copyFile } from 'node:fs/promises';
 import { resolve, relative } from 'node:path';
 import { createHash } from 'node:crypto';
 import { chromium } from '@playwright/test';
+import { reportEvidence } from './report-evidence.mjs';
 
 const root = process.cwd(), evidence = resolve('assessment/evidence');
 await mkdir(evidence, { recursive: true });
@@ -43,7 +44,7 @@ await save(core, 'first-attempt', 'fixed-first-attempt.json');
 if (greenState.paidMinor !== 15000000 || greenState.payments.length !== 1 || greenState.pendingNotifications !== 0) throw new Error('Corrected evidence did not demonstrate safe recovery.');
 await writeFile(resolve(evidence, 'fixed-playwright.json'), JSON.stringify(scrub(green), null, 2));
 const browser = await chromium.launch({ channel: 'chromium' }), browserVersion = browser.version(); await browser.close();
-const sourceFiles = ['server/payroll.mjs', 'server/index.mjs', 'src/App.tsx', 'src/payroll.tsx', 'src/styles.css', 'src/main.tsx', 'src/components/ConfirmDialog.tsx', 'index.html', 'vite.config.ts', 'scripts/scenario.mjs', 'scripts/process-probe.mjs', 'scripts/verify.mjs', 'tests/helpers.ts', 'tests/payroll-api.spec.ts', 'tests/payroll-ui.spec.ts', 'tests/service.test.mjs', 'playwright.config.ts', 'package.json', 'package-lock.json'];
+const sourceFiles = ['server/payroll.mjs', 'server/index.mjs', 'src/App.tsx', 'src/payroll.tsx', 'src/styles.css', 'src/main.tsx', 'src/components/ConfirmDialog.tsx', 'index.html', 'vite.config.ts', 'scripts/scenario.mjs', 'scripts/process-probe.mjs', 'scripts/verify.mjs', 'scripts/report-evidence.mjs', 'scripts/check-reviewer-access.mjs', 'tests/helpers.ts', 'tests/payroll-api.spec.ts', 'tests/payroll-ui.spec.ts', 'tests/service.test.mjs', 'playwright.config.ts', 'package.json', 'package-lock.json'];
 const hashes = {}; for (const file of sourceFiles) hashes[file] = createHash('sha256').update(await readFile(file)).digest('hex');
 const summary = { application: 'MustPayroll', generatedAt: new Date().toISOString(), upstreamCommit: '73d83074e7ea0c40f8273455ebcb611b7088fd5a',
   environment: { node: process.version, platform: process.platform, architecture: process.arch, chromium: browserVersion },
@@ -51,4 +52,5 @@ const summary = { application: 'MustPayroll', generatedAt: new Date().toISOStrin
   fixed: { playwrightPassed: greenSpecs.length, freshProcessPassed: 1, totalPassed: greenSpecs.length + 1, paidMinor: greenState.paidMinor, payments: greenState.payments.length, pendingNotifications: greenState.pendingNotifications },
   cases: greenSpecs.map(s => ({ id: s.title.split(' | ')[0], title: s.title.split(' | ')[1], result: 'passed' })).concat([{ id: 'TC11', title: 'Fresh process preserves employee-period payment identity', result: 'passed' }]).sort((a,b) => a.id.localeCompare(b.id)), sourceSha256: hashes };
 await writeFile(resolve(evidence, 'summary.json'), JSON.stringify(summary, null, 2));
+await reportEvidence(evidence);
 console.log(`\nVerified: faulty payroll doubles ₦150,000 to ₦300,000; corrected payroll retains one ₦150,000 payment. ${summary.fixed.totalPassed} checks passed. Evidence: ${relative(root, evidence)}.`);
