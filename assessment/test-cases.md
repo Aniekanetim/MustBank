@@ -1,8 +1,8 @@
 # Payroll test cases and results
 
-The assessed application is MustPayroll. Unless specified otherwise, each case creates an isolated fixed workspace, one approved ₦150,000 earning for emp-001 on 8 October 2026, and the 13 October 09:00 UTC pay date. Its period is [5 October 00:00 UTC, 12 October 00:00 UTC). All amounts below describe synthetic local ledger records.
+The assessed application is MustPayroll. Unless specified otherwise, each case creates an isolated workspace in the application build under test, one approved ₦150,000 earning for emp-001 on 8 October 2026, and the 13 October 09:00 UTC pay date. Its period is [5 October 00:00 UTC, 12 October 00:00 UTC). All amounts below describe synthetic local ledger records.
 
-The [verification summary](evidence/summary.json) records the environment and source fingerprints. TC01–TC09 and TC12–TC22 exercise HTTP APIs. TC10 and TC23–TC33 exercise Chromium UI journeys. TC11 closes the database and spawns a fresh Node process. There are 33 corrected checks and no automatic retries.
+The [verification summary](evidence/summary.json) records the environment and source fingerprints. TC01–TC09, TC12–TC22 and TC34 exercise HTTP APIs. TC10 and TC23–TC33 exercise Chromium UI journeys. TC11 closes the database and spawns a fresh Node process. The same 34 checks execute against each build with unchanged business expectations and no automatic retries. The [faulty record](test-records/faulty.md) and [fixed record](test-records/fixed.md) report every result separately. The table below defines the inputs and positive expectations; its result column describes the fixed run.
 
 | Case | Input and action | Expected outcome | Corrected result |
 |---|---|---|---|
@@ -40,6 +40,10 @@ The [verification summary](evidence/summary.json) records the environment and so
 | TC32 | Pending notification → recover through UI | Original payment unchanged; pending count zero; recovery action disabled when complete | Passed |
 | TC33 | Separate tabs: different workspaces, navigation, date change and reload | Each tab retains its workspace and selected pay period; no cross-tab payroll substitution | Passed |
 
+| TC34 | Read served build identity, then request the opposite implementation through workspace creation | ID/source fingerprint match the tested package; opposite implementation is rejected with HTTP 400 | Passed in both builds |
+
 See [the expected faulty failure](evidence/faulty-run.log), [corrected run](evidence/fixed-run.log), [process check](evidence/process-recovery.log) and [JSON report](evidence/fixed-playwright.json) for actual execution output. Test counts describe checks, not a reviewer-assigned assessment score. Remaining integration and accessibility gaps are recorded in [release readiness](release-readiness.md).
 
 For the central business outcome, start with the [generated before/after comparison](evidence/business-proof.md). TC10 asserts the same amount, preserved payment object and original message identity; a correction that deletes and recreates the payment cannot pass as safe recovery.
+
+The faulty full run has five failing cases: TC10 (UI retry duplicates pay), TC11 (restart retry duplicates pay), TC13 (interruption leaves an orphan payment), TC14 (lost acknowledgement leaves a duplicate payment and a pending notification; simulated provider acceptance remains one), and TC16 (overlapping requests after delivery failure duplicate pay). Its other 29 checks pass. The fixed run passes all 34. These are execution results, not deliberately changed expectations or skipped tests.

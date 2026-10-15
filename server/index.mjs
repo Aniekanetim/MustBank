@@ -2,7 +2,10 @@ import { createServer } from 'node:http';
 import { existsSync, mkdirSync, readFileSync, statSync } from 'node:fs';
 import { dirname, extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { InputError, PayrollService } from './payroll.mjs';
+import { InputError, PayrollService, BUILD_VARIANT } from './payroll.mjs';
+import { BUILD_INFO } from './build-info.mjs';
+
+if (BUILD_INFO.variant !== BUILD_VARIANT) throw new Error('Build metadata and payment implementation disagree.');
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const database = resolve(process.env.PAYROLL_DB ?? resolve(root, 'data', 'payroll.sqlite'));
@@ -26,7 +29,7 @@ function json(response, value, status = 200) {
 const server = createServer(async (request, response) => {
   try {
     const path = new URL(request.url, 'http://localhost').pathname;
-    if (path === '/api/health' && request.method === 'GET') return json(response, { status: 'ok', storage: 'sqlite', application: 'MustPayroll', schemaVersion: 2 });
+    if (path === '/api/health' && request.method === 'GET') return json(response, { status: 'ok', storage: 'sqlite', application: 'MustPayroll', schemaVersion: 2, build: BUILD_INFO });
     if (path === '/api/workspaces' && request.method === 'POST') return json(response, service.create(await body(request)), 201);
     const match = path.match(/^\/api\/workspaces\/([a-zA-Z0-9_-]+)(?:\/(earnings|run|faults|retry-notifications)(?:\/([a-zA-Z0-9_-]+)\/approve)?)?$/);
     if (match) {
@@ -56,6 +59,6 @@ const server = createServer(async (request, response) => {
   }
 });
 server.on('close', () => service.close());
-server.listen(Number(process.env.PORT ?? 4174), process.env.HOST ?? '127.0.0.1', () => console.log(`MustPayroll listening on ${process.env.PORT ?? 4174}`));
+server.listen(Number(process.env.PORT ?? BUILD_INFO.defaultPort), process.env.HOST ?? '127.0.0.1', () => console.log(`MustPayroll ${BUILD_INFO.id} listening on ${process.env.PORT ?? BUILD_INFO.defaultPort}`));
 process.on('SIGINT', () => server.close());
 process.on('SIGTERM', () => server.close());

@@ -7,9 +7,11 @@ async function screenshot(page: Page, path: string) {
   await page.screenshot({ path, fullPage: true });
 }
 
+test.use({ video: 'on' });
 test('TC10 | Retrying after notification failure preserves the approved payroll', async ({ page, request }, info) => {
-  const behavior = process.env.QUEST_BEHAVIOR === 'faulty' ? 'faulty' : 'fixed';
-  const w = await create(request, 'single', behavior); await fault(request, w.id);
+  const health = await (await request.get('/api/health')).json();
+  const behavior = health.build.variant;
+  const w = await create(request, 'single'); await fault(request, w.id);
   await page.goto(`/pay-runs?workspace=${w.id}`);
   await page.getByRole('button', { name: 'Review and process payroll' }).click();
   await page.getByRole('dialog').getByRole('button', { name: 'Process payroll', exact: true }).click();

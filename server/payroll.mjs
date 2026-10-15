@@ -1,5 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { DatabaseSync } from 'node:sqlite';
+import { paymentPolicy } from './payment-policy.mjs';
+export const BUILD_VARIANT = paymentPolicy.name;
 
 export const DEFAULT_RUN = '2026-10-13T09:00:00.000Z';
 export class InputError extends Error {
@@ -60,6 +62,7 @@ export class PayrollService {
   workspace(id) {
     const row = this.db.prepare('SELECT * FROM workspaces WHERE id=?').get(id);
     if (!row) throw new InputError('Workspace not found. Open an existing workspace or return to the overview.', 404);
+    if (row.behavior !== BUILD_VARIANT) throw new InputError('This workspace belongs to the other build. Open it in the matching application.', 409);
     return row;
   }
   transaction(work) {
@@ -70,7 +73,8 @@ export class PayrollService {
   event(id, event, employeeId = null, detail = {}) {
     this.db.prepare('INSERT INTO events(workspace_id,event,employee_id,detail,created_at) VALUES(?,?,?,?,?)').run(id, event, employeeId, JSON.stringify(detail), new Date().toISOString());
   }
-  create({ behavior = 'fixed', fixture = 'standard' } = {}) {
+  create({ behavior = BUILD_VARIANT, fixture = 'standard' } = {}) {
+    if (behavior !== BUILD_VARIANT) throw new InputError('This build has a fixed implementation. Use the other build for that behavior.');
     if (!['fixed', 'faulty'].includes(behavior) || !['standard', 'single', 'boundaries', 'empty'].includes(fixture)) throw new InputError('Choose a supported behavior and starting fixture.');
     const id = randomUUID();
     this.transaction(() => {
@@ -135,7 +139,7 @@ export class PayrollService {
       if (this.consume(id, 'ambiguous_fault')) error = 'Delivery confirmation unavailable. Retry with the original message identity.';
     }
     this.db.prepare('UPDATE notifications SET attempts=attempts+1,state=?,last_error=? WHERE id=?').run(error ? 'pending' : 'sent', error, messageId);
-    if (!error && this.workspace(id).behavior === 'faulty') this.db.prepare('INSERT OR IGNORE INTO processed_entries VALUES(?,?,?)').run(id, n.period_start, n.employee_id);
+    if (!error) paymentPolicy.afterNotification(this, id, n);
     this.event(id, error ? 'notification_failed' : 'notification_sent', n.employee_id, { messageId, error });
   }
   retryNotifications(id) {
@@ -161,25 +165,15 @@ export class PayrollService {
     }
     const entries = this.db.prepare('SELECT r.*,e.name,e.bank,e.account_ending FROM run_entries r JOIN employees e ON e.workspace_id=r.workspace_id AND e.id=r.employee_id WHERE r.workspace_id=? AND r.period_start=? ORDER BY r.employee_id').all(id, period.start);
     for (const entry of entries) {
-      const table = workspace.behavior === 'fixed' ? 'payments' : 'processed_entries';
-      if (this.db.prepare(`SELECT 1 FROM ${table} WHERE workspace_id=? AND period_start=? AND employee_id=?`).get(id, period.start, entry.employee_id)) continue;
+      if (paymentPolicy.wasPaid(this, id, period.start, entry.employee_id)) continue;
       if (this.consume(id, 'payout_fault')) { this.event(id, 'payment_failed', entry.employee_id, { reason: 'Payment was not recorded. Retry the pay run.' }); continue; }
       const interrupt = this.consume(id, 'persistence_fault');
       const paymentId = randomUUID(), notificationId = randomUUID();
       const savePayment = () => this.db.prepare('INSERT INTO payments VALUES(?,?,?,?,?,?,?,?,?,?)').run(paymentId, id, period.start, entry.employee_id, entry.amount_minor, workspace.behavior, entry.name, entry.bank, entry.account_ending, new Date().toISOString());
       const saveMessage = () => this.db.prepare('INSERT INTO notifications(id,payment_id) VALUES(?,?)').run(notificationId, paymentId);
-      if (workspace.behavior === 'fixed') {
-        try {
-          this.transaction(() => { savePayment(); if (interrupt) throw new Error('Interrupted before notification work was saved.'); saveMessage(); });
-          this.event(id, 'payment_committed', entry.employee_id, { paymentId, amountMinor: entry.amount_minor });
-        } catch (error) { this.event(id, 'payment_rolled_back', entry.employee_id, { reason: error.message }); }
-      } else {
-        // CONTROLLED DEFECT: completion is recorded only after notification succeeds.
-        savePayment(); this.event(id, 'payment_committed', entry.employee_id, { paymentId, amountMinor: entry.amount_minor });
-        if (!interrupt) { saveMessage(); this.deliver(id, notificationId); }
-      }
+      paymentPolicy.commitEntry(this, { id, entry, paymentId, notificationId, interrupt, savePayment, saveMessage });
     }
-    if (workspace.behavior === 'fixed') this.retryNotifications(id);
+    if (paymentPolicy.dispatchAfterRun) this.retryNotifications(id);
     this.event(id, 'pay_run_finished', null, { scheduledFor: period.scheduledFor });
     return this.snapshot(id, scheduledFor);
   }

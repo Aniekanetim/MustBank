@@ -1,4 +1,5 @@
 * text=auto eol=lf
 *.png -text
 *.zip -text
+*.webm -text
 *.log whitespace=-blank-at-eol

@@ -1,0 +1,70 @@
+{
+  "application": "MustPayroll",
+  "generatedAt": "2026-10-15T16:47:45.015Z",
+  "sourceFingerprint": "39fee999f9f33b3147330a27645f5cb8f73b0b5f1e47dcc9415aedc4d0a26be0",
+  "sourceSha256": {
+    "index.html": "d3d6185099b812f7e26769d0e41f5eb4c4824e995f643be7b0ff66a9dea72188",
+    "package-lock.json": "e82f4439fe426f52bf29e1baec22174aa7656b9b140c3e0571c39c9b2f9ec7b8",
+    "package.json": "f32777d2372170306eb8935580582bbb03f2fce220099def2e834d0b6d9bf1c4",
+    "playwright.config.ts": "381d395c9aec1e40c575646dabfb188cfa8a7f4a1a33bfd2e186ebacb9878fe3",
+    "scripts/build-inputs.mjs": "dc3480274ab1ec3e7e40a4ab0898da6a5fcab0ca0bc6dcc65bbdcbcb098b04d7",
+    "scripts/build-pair.mjs": "ee0802ee4d9b32b31fd46835f7c36ab6f47f18adb8c4ff0369eb2cd86f2de1f4",
+    "scripts/check-reviewer-access.mjs": "17005dd199e16f00b873a6828cefb07f8ceeb17ee9c91572f69f16d559c95006",
+    "scripts/process-probe.mjs": "e85e63461d196508d5fb97d556fc8ab3ebbf65260c9c6a0947c4c62fe2526e17",
+    "scripts/report-evidence.mjs": "96d9b20dc2ad40e38bbf652bed73a11379da51f33641d82457b5a65c1a2ffe25",
+    "scripts/scenario.mjs": "8065f553316aadd2078cf725c100efef95c0b878fd0bbacfa9f1f91a31db85ad",
+    "scripts/start-build.mjs": "cc75c16827ab2321bdbd83d9e36186b407f1e9811ffe06da925a0b0fa6b8623c",
+    "scripts/test-records.mjs": "3c2f108e3b093bdae5dfeba3f8dfd4ad0750dfabdf80fd52cbce7226a3fedd10",
+    "scripts/verify.mjs": "64072e6b263e4b24e86d636a4b4f2bdcc3b189aee4318ab116b3265bd6370371",
+    "scripts/zip.mjs": "06cd57a0c3c797af29139009de0667d29e621d1af7787e72d4ecc77b32d9514c",
+    "server/build-info.mjs": "ecb712a710914300ae7371508333a1aa123757e6fb8884997a0849b16662b6af",
+    "server/index.mjs": "0656e331fbcec0ad7e8e8c85c50e2a51f1be8f814ba8fa4e0eb40691f290b745",
+    "server/payment-policy.mjs": "58f950cfc3a961d1c648e6bd01ac6a9a9bc90d6571c35824732afe8282b666dc",
+    "server/payroll.mjs": "91663d6961e60a9727a60651f55f6867e61a1844aaf40af3467042d18aadfdc8",
+    "server/policies/faulty.mjs": "23959256e6a00a91e355e560b24c98ce89cede1727a44c8da59fb9f7adc909ea",
+    "server/policies/fixed.mjs": "75a930551600e1321ddbe7ee94128dd1caad708d6bf2962bb4ab3268d85ee2d0",
+    "src/App.tsx": "409586c2d4750cd084a8f196d8aae82fa72b349df2928e96254f40815000f829",
+    "src/components/ConfirmDialog.tsx": "571885a78ff3494d4a3c8eecd317b8fb3b5af3cfe2362a4afededb0892d886a1",
+    "src/main.tsx": "26298ed870a535e27307145d750c2949c647aab89ce773b74697eaccab7bd28c",
+    "src/payroll.tsx": "cf786432d6ddd3b3b1d002e719520da210a85040b464db15734cfc7f853083db",
+    "src/styles.css": "69d908b5ed5e880b2a44ecf51e244e3d1898a01913094e092c9edcc8520b0994",
+    "src/vite-env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+    "tests/helpers.ts": "30f0224c03cabe31b5e574ebb2c384f6448399695d5a4b62f9892b4a603bda32",
+    "tests/payroll-api.spec.ts": "b732de31b5652031c3b381eda5e17f7d40ae25c00b1cfe7cdd6d104aa8729454",
+    "tests/payroll-ui.spec.ts": "fa7ca848cd5b4c5a60eee2ca004b27cc5cf3c71db745236779186cbf48a9e2d2",
+    "tests/service.test.mjs": "25f424f70e7f6c162e5b1ac11c57254166fe1d895338ef949121c974086a1de4",
+    "tsconfig.json": "2729130b72c949fd0340c22b32870eebbea4fed1d6b75417512bff06091bd9a1",
+    "vite.config.ts": "33737d5e054ad38722cfb16a3c56e1997ab9c4a7113a3371476e00af22a32391"
+  },
+  "testSuiteSha256": "691abf948dd81e01b7b310a627a24ea759afc8a125700a52eef54762996e15a0",
+  "testSha256": {
+    "tests/helpers.ts": "30f0224c03cabe31b5e574ebb2c384f6448399695d5a4b62f9892b4a603bda32",
+    "tests/payroll-api.spec.ts": "b732de31b5652031c3b381eda5e17f7d40ae25c00b1cfe7cdd6d104aa8729454",
+    "tests/payroll-ui.spec.ts": "fa7ca848cd5b4c5a60eee2ca004b27cc5cf3c71db745236779186cbf48a9e2d2",
+    "tests/service.test.mjs": "25f424f70e7f6c162e5b1ac11c57254166fe1d895338ef949121c974086a1de4",
+    "scripts/process-probe.mjs": "e85e63461d196508d5fb97d556fc8ab3ebbf65260c9c6a0947c4c62fe2526e17",
+    "playwright.config.ts": "381d395c9aec1e40c575646dabfb188cfa8a7f4a1a33bfd2e186ebacb9878fe3"
+  },
+  "builds": {
+    "faulty": {
+      "buildId": "mustpayroll-0.2.0-faulty-39fee999f9f3",
+      "variant": "faulty",
+      "port": 4175,
+      "directory": "output/builds/mustpayroll-0.2.0-faulty-39fee999f9f3",
+      "archive": "assessment/builds/MustPayroll-faulty.zip",
+      "archiveSha256": "acf1a4a5c43dece7c706eaf793e9d96a01ff794f9f79bbc2190aee6c8f424a66",
+      "manifest": "assessment/builds/faulty-manifest.json",
+      "manifestSha256": "3dc0280f7eb90972378b5f8fd7f751682b00391dd85abfab4a4b99d7b51c4aa3"
+    },
+    "fixed": {
+      "buildId": "mustpayroll-0.2.0-fixed-39fee999f9f3",
+      "variant": "fixed",
+      "port": 4176,
+      "directory": "output/builds/mustpayroll-0.2.0-fixed-39fee999f9f3",
+      "archive": "assessment/builds/MustPayroll-fixed.zip",
+      "archiveSha256": "b3ea42d7e7cd7ca1a74b1fc4e26283b96cf8b7da20b201cc8c09570d3d168e86",
+      "manifest": "assessment/builds/fixed-manifest.json",
+      "manifestSha256": "a6955e20233f1f83b8910aacbb6ee4a9d06be7fe26991ebec3e911d8f08275a5"
+    }
+  }
+}

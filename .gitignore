@@ -9,6 +9,8 @@ data/
 test-results/
 playwright-report/
 output/playwright/
+output/builds/
+output/package-smoke/
 .env.local
 .env
 .playwright-cli/

@@ -2,7 +2,7 @@
 
 **The employee is owed ₦150,000.00. The faulty retry records ₦300,000.00; the correction retains the original ₦150,000.00 payment.**
 
-Generated from the actual TC10 attachments by scripts/report-evidence.mjs. It rejects mismatched inputs, an incorrect failure, changed payment identity or an unrecovered corrected message. Run timestamp: 2026-10-15T16:05:49.860Z.
+Generated from the actual TC10 attachments by scripts/report-evidence.mjs. It rejects mismatched inputs, an incorrect failure, changed payment identity or an unrecovered corrected message. Run timestamp: 2026-10-15T16:49:34.480Z.
 
 | Observed stage | Approved pay | Recorded pay | Payments | Pending notifications |
 |---|---|---|---|---|
@@ -15,7 +15,7 @@ The first attempts have identical earning inputs. Payment commits before notific
 
 On retry, the faulty version creates a different payment ID for the same employee and period. The original payment still exists, so recorded pay exceeds approved pay by ₦150,000.00. This is observed excess in a synthetic ledger, not actual financial loss.
 
-The corrected retry preserves the complete original payment object and recovers the original message. Its payment reference is b1f0c135-9a82-4af3-86d3-cc803936f2be. Message state changes from pending to sent, with one simulated provider acceptance.
+The corrected retry preserves the complete original payment object and recovers the original message. Its payment reference is 51454ead-f5d8-4c44-bdeb-ede0e9e44687. Message state changes from pending to sent, with one simulated provider acceptance.
 
 ## Check the evidence
 

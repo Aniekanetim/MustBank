@@ -25,5 +25,7 @@ jobs:
           name: mustpayroll-quest-evidence
           path: |
             assessment/evidence/
+            assessment/builds/
+            assessment/test-records/
             output/playwright/
           retention-days: 14

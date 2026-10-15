@@ -2,7 +2,7 @@
 
 Target 4 minutes 30 seconds, leaving 30 seconds for navigation. Rehearse and check the actual recording length; a script does not establish duration. Complete the personal review first. Replace the ownership placeholder with facts before recording. The final Loom URL is still pending.
 
-Prepare fresh faulty and fixed workspace tabs, the generated business-proof page, PAY-001 and the completed verification log. Run tests before recording so the video can show the actual saved results without waiting for the suite.
+Start both packaged applications and prepare a fresh workspace tab in each, the generated business-proof page, PAY-001 and the completed verification log. Run tests before recording so the video can show the actual saved results without waiting for the suite.
 
 ## 0:00–0:35 — The rule and choice
 
@@ -34,9 +34,9 @@ Show the short causal explanation in PAY-001, rather than reading the whole sour
 
 “The corrected example uses the same earning inputs, amount and notification failure. After the first payment, I retry the original run. The result remains one ₦150,000 payment with the original reference. The existing message is recovered.
 
-The same business assertion fails for the faulty version and passes for the correction. The recorded verification also covers aggregation, approvals, UTC boundaries, timezone conversion, duplicate input, partial failure, rollback and fresh-process recovery.”
+These are two separate application builds. The same 34 checks produce two records: the faulty build has five failures; the fixed build passes all 34. The same business assertion fails before correction and passes afterwards. The recorded verification also covers aggregation, approvals, UTC boundaries, timezone conversion, duplicate input, partial failure, rollback and fresh-process recovery.”
 
-Show corrected recovery, then the generated comparison and actual verification output.
+Show corrected recovery, then the two build-linked test records, their browser recordings and the generated comparison.
 
 ## 3:15–4:00 — AI and personal ownership
 

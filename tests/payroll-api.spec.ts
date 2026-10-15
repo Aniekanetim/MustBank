@@ -1,5 +1,17 @@
 import { test, expect } from '@playwright/test';
 import { create, post, run, fault, earning } from './helpers';
+import { readFileSync } from 'node:fs';
+
+test('TC34 | Served build matches its package and cannot switch implementation', async ({ request }, info) => {
+  const pair = JSON.parse(readFileSync('assessment/builds/pair.json', 'utf8'));
+  const variant = process.env.QUEST_BEHAVIOR === 'faulty' ? 'faulty' : 'fixed';
+  const health = await (await request.get('/api/health')).json();
+  await info.attach('served-build', { body: JSON.stringify(health), contentType: 'application/json' });
+  expect(health.build.id).toBe(pair.builds[variant].buildId);
+  expect(health.build.sourceSha256).toBe(pair.sourceFingerprint);
+  const response = await request.post('/api/workspaces', { data: { fixture: 'single', behavior: variant === 'faulty' ? 'fixed' : 'faulty' } });
+  expect(response.status()).toBe(400);
+});
 
 test('TC01 | Approved earnings aggregate into one payment per employee', async ({ request }) => {
   const w = await create(request, 'standard'), result = await run(request, w.id);
@@ -47,24 +59,29 @@ test('TC12 | Notification-only recovery never changes payment identity', async (
   const w = await create(request); await fault(request, w.id); const first = await run(request, w.id), next = await post(request, w.id, 'retry-notifications');
   expect(next.payments).toEqual(first.payments); expect(next.pendingNotifications).toBe(0); expect(next.providerAccepted).toBe(1);
 });
-test('TC13 | Interruption rolls back payment and outbox together', async ({ request }) => {
+test('TC13 | Interruption rolls back payment and outbox together', async ({ request }, info) => {
   const w = await create(request); await fault(request, w.id, 'persistence'); const first = await run(request, w.id);
+  await info.attach('observed-TC13', { body: JSON.stringify(first), contentType: 'application/json' });
   expect(first.payments).toHaveLength(0); expect(first.notifications).toHaveLength(0); expect(first.events.some((e: any) => e.event === 'payment_rolled_back')).toBeTruthy();
   const next = await run(request, w.id); expect(next.paidMinor).toBe(15000000); expect(next.payments).toHaveLength(1);
 });
-test('TC14 | Lost provider acknowledgement recovers without duplicate acceptance', async ({ request }) => {
+test('TC14 | Lost provider acknowledgement recovers without duplicate acceptance', async ({ request }, info) => {
   const w = await create(request); await fault(request, w.id, 'ambiguous'); const first = await run(request, w.id);
   expect(first.providerAccepted).toBe(1); expect(first.pendingNotifications).toBe(1);
-  const next = await run(request, w.id); expect(next.providerAccepted).toBe(1); expect(next.pendingNotifications).toBe(0); expect(next.payments).toHaveLength(1);
+  const next = await run(request, w.id);
+  await info.attach('observed-TC14', { body: JSON.stringify(next), contentType: 'application/json' });
+  expect(next.providerAccepted).toBe(1); expect(next.pendingNotifications).toBe(0); expect(next.payments).toHaveLength(1);
 });
 test('TC15 | A processed period rejects new earnings and preserves approved totals', async ({ request }) => {
   const w = await create(request); await run(request, w.id);
   const response = await request.post(`/api/workspaces/${w.id}/earnings`, { data: { earnings: [earning({ earningId: 'late' })] } }); expect(response.status()).toBe(409);
   const next = await run(request, w.id); expect(next.expectedMinor).toBe(15000000); expect(next.paidMinor).toBe(15000000);
 });
-test('TC16 | Eight overlapping requests in one server record one payment', async ({ request }) => {
+test('TC16 | Eight overlapping requests in one server record one payment', async ({ request }, info) => {
   const w = await create(request); await fault(request, w.id); await Promise.all(Array.from({ length: 8 }, () => run(request, w.id)));
-  const result = await (await request.get(`/api/workspaces/${w.id}`)).json(); expect(result.paidMinor).toBe(15000000); expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);
+  const result = await (await request.get(`/api/workspaces/${w.id}`)).json();
+  await info.attach('observed-TC16', { body: JSON.stringify(result), contentType: 'application/json' });
+  expect(result.paidMinor).toBe(15000000); expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);
 });
 test('TC17 | The same employee can receive a separate payment in another period', async ({ request }) => {
   const w = await create(request); await run(request, w.id);

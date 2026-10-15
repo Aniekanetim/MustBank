@@ -12,7 +12,12 @@ const files = ['README.md', 'assessment/intent.md', 'assessment/directive.md', '
   'assessment/defect-report.md', 'assessment/release-readiness.md', 'assessment/operations-runbook.md',
   'assessment/ai-accountability.md', 'assessment/personal-review.md', 'assessment/loom-script.md',
   'assessment/evidence/summary.json', 'assessment/evidence/business-proof.md', 'assessment/evidence/business-proof.json',
-  'assessment/evidence/faulty-reproduction.png', 'assessment/evidence/fixed-reproduction.png', 'tests/payroll-ui.spec.ts'];
+  'assessment/evidence/faulty-reproduction.png', 'assessment/evidence/fixed-reproduction.png', 'tests/payroll-ui.spec.ts',
+  'assessment/builds/pair.json', 'assessment/builds/faulty-manifest.json', 'assessment/builds/fixed-manifest.json',
+  'assessment/builds/MustPayroll-faulty.zip', 'assessment/builds/MustPayroll-fixed.zip', 'assessment/builds/fix.patch',
+  'assessment/test-records/README.md', 'assessment/test-records/faulty.md', 'assessment/test-records/fixed.md',
+  'assessment/test-records/faulty.json', 'assessment/test-records/fixed.json',
+  'assessment/test-records/faulty-TC10.webm', 'assessment/test-records/fixed-TC10.webm'];
 const archive = `https://codeload.github.com/${repo}/zip/${isCommit ? ref : 'refs/heads/' + ref}`;
 const checks = await Promise.all(files.map(file => ({ file, url: raw + file })).concat([{ file: 'runnable project archive', url: archive }]).map(async item => {
   try {
@@ -21,7 +26,8 @@ const checks = await Promise.all(files.map(file => ({ file, url: raw + file })).
     let valid = response.ok && bytes.length > 0;
     if (item.file.endsWith('.json')) { try { JSON.parse(bytes.toString()); } catch { valid = false; } }
     if (item.file.endsWith('.png')) valid &&= bytes.subarray(0, 8).toString('hex') === '89504e470d0a1a0a';
-    if (item.file === 'runnable project archive') valid &&= bytes.subarray(0, 4).toString('hex') === '504b0304';
+    if (item.file === 'runnable project archive' || item.file.endsWith('.zip')) valid &&= bytes.subarray(0, 4).toString('hex') === '504b0304';
+    if (item.file.endsWith('.webm')) valid &&= bytes.subarray(0, 4).toString('hex') === '1a45dfa3';
     return { ...item, status: response.status, accessibleWithoutCredentials: valid, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') };
   } catch (error) { return { ...item, accessibleWithoutCredentials: false, error: error.message }; }
 }));

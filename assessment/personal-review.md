@@ -2,11 +2,11 @@
 
 **Status: application review in progress, as reported by Aniekan.** No specific defect reproduction, code or document review, or final sign-off has been confirmed. This guide records the next checks; its unchecked items are not a completed sign-off. Automated results are already linked in the directive.
 
-Start the application using README. Prepare two fresh workspaces:
+Start both packaged applications using README. Prepare a fresh workspace in each build:
 
 ~~~sh
-npm run scenario -- --behavior faulty --fail-notification
-npm run scenario -- --behavior fixed --fail-notification
+npm run scenario -- --build faulty --fail-notification
+npm run scenario -- --build fixed --fail-notification
 ~~~
 
 Keep the printed URLs in separate tabs. In each, review the employee amount, process once and retry the same pay run. Use the [defect report](defect-report.md) for the exact sequence.

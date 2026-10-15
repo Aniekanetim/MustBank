@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-15T16:05:49.860Z",
+  "generatedAt": "2026-10-15T16:49:34.480Z",
   "currency": "NGN",
   "case": "TC10",
   "rule": "One employee-period payment; notification recovery preserves that payment.",
   "faulty": {
     "first": {
-      "workspaceId": "d2488907-4f56-4ac4-8cdb-49bcbef859fe",
+      "workspaceId": "5f741b8f-51a7-48e7-891b-fdf377847716",
       "employeeId": "emp-001",
       "periodStart": "2026-10-05T00:00:00.000Z",
       "approvedMinor": 15000000,
       "recordedMinor": 15000000,
       "paymentIds": [
-        "2e1737bf-d6f0-4f3c-be3e-36ee17a4660c"
+        "70981f00-6ee2-467e-99c2-17f444e138aa"
       ],
       "pendingNotifications": 1,
       "providerAcceptances": 0
     },
     "retry": {
-      "workspaceId": "d2488907-4f56-4ac4-8cdb-49bcbef859fe",
+      "workspaceId": "5f741b8f-51a7-48e7-891b-fdf377847716",
       "employeeId": "emp-001",
       "periodStart": "2026-10-05T00:00:00.000Z",
       "approvedMinor": 15000000,
       "recordedMinor": 30000000,
       "paymentIds": [
-        "d44e30a6-15aa-4727-9bf5-6dc34fcedcff",
-        "2e1737bf-d6f0-4f3c-be3e-36ee17a4660c"
+        "d9a03d2e-f114-4121-8025-4434c56d9202",
+        "70981f00-6ee2-467e-99c2-17f444e138aa"
       ],
       "pendingNotifications": 1,
       "providerAcceptances": 1
@@ -33,25 +33,25 @@
   },
   "fixed": {
     "first": {
-      "workspaceId": "25418089-f25d-415b-b05b-484e9bbdaf0a",
+      "workspaceId": "2e054206-bf5d-49a6-b8e9-d11c4c56f3e8",
       "employeeId": "emp-001",
       "periodStart": "2026-10-05T00:00:00.000Z",
       "approvedMinor": 15000000,
       "recordedMinor": 15000000,
       "paymentIds": [
-        "b1f0c135-9a82-4af3-86d3-cc803936f2be"
+        "51454ead-f5d8-4c44-bdeb-ede0e9e44687"
       ],
       "pendingNotifications": 1,
       "providerAcceptances": 0
     },
     "retry": {
-      "workspaceId": "25418089-f25d-415b-b05b-484e9bbdaf0a",
+      "workspaceId": "2e054206-bf5d-49a6-b8e9-d11c4c56f3e8",
       "employeeId": "emp-001",
       "periodStart": "2026-10-05T00:00:00.000Z",
       "approvedMinor": 15000000,
       "recordedMinor": 15000000,
       "paymentIds": [
-        "b1f0c135-9a82-4af3-86d3-cc803936f2be"
+        "51454ead-f5d8-4c44-bdeb-ede0e9e44687"
       ],
       "pendingNotifications": 0,
       "providerAcceptances": 1
@@ -93,7 +93,8 @@
       "TC30",
       "TC31",
       "TC32",
-      "TC33"
+      "TC33",
+      "TC34"
     ]
   },
   "limits": [
