@@ -19,7 +19,7 @@ The selected defect is PAY-001. Boundary handling, timezone conversion, duplicat
 1. Identify at least three plausible failures, rank their impact, likelihood or uncertainty and effort, and explain why PAY-001 takes priority. See [intent.md](intent.md).
 2. Define an equally concrete alternative to the suggested rewards flow. The [payroll rules](business-rules.md) establish eligibility, UTC boundaries, amounts, approval, immutable IDs, locked periods and account/admin assumptions.
 3. Deliver two separately runnable payroll builds: one preserving the defect and one containing the correction. Execute the same full test suite against both. Keep a separate test record for each, tied to its exact build ID and runtime file hashes.
-4. Record at least eight cases with inputs, expected outcomes and results, including the happy path, cut-off, timezone, duplicates, retries and partial failure. The current [case register](test-cases.md) contains 34 checks.
+4. Document at least eight cases covering the happy path, cut-off, timezone, duplicates, retries and partial failure. Execute every core case against both builds with identical preconditions, steps, inputs and expected results. Record each build's actual results, status and evidence in its own completed eight-case sheet. The current [case register](test-cases.md) contains these eight core cases within a 34-check suite, which also runs against both builds.
 5. Produce an actionable [defect and root-cause report](defect-report.md), release-blocking checks, final verification evidence, remaining gaps and a [release decision](release-readiness.md).
 6. Provide accessible work links and a Loom of no more than five minutes. Aniekan must review and explain the final work; the reviewer assigns the assessment score.
 
@@ -32,7 +32,8 @@ The selected defect is PAY-001. Boundary handling, timezone conversion, duplicat
 | Two executed test records | Complete; full 34-case suite against each application folder, with logs, state evidence and separate TC10 videos |
 | Controlled defect fails the original business expectation | Observed: two payments totaling ₦300,000 instead of ₦150,000 |
 | Corrected flow passes with payment identity preserved | Observed: one ₦150,000 payment and recovered notification |
-| Required cases and final run | Faulty: 29 passed, 5 failed. Fixed: 34 passed, 0 failed. Same 33 Playwright checks plus one fresh-process check in each run |
+| Same eight core cases executed against each build | Buggy: 6 passed, 2 failed (TC10 and TC13). Fixed: 8 passed, 0 failed. Inputs and expected results unchanged |
+| Extended suite and final run | Buggy: 29 passed, 5 failed. Fixed: 34 passed, 0 failed. Same 33 Playwright checks plus one fresh-process check in each run |
 | Defect report, release blockers, gaps and handoff | Complete for the local reference scope |
 | Personal ownership review and final Loom | Application review reported in progress; specific checks/sign-off and final recording remain pending |
 | Submission destination, exact deadline/timezone and full weighted rubric | Conditional form fields reported by candidate; exact submission field and invitation terms remain unconfirmed |
@@ -49,6 +50,7 @@ The repository remains at its existing URL so its history and draft review remai
 | Runnable project and exact setup | [README](../README.md) · [repository branch](https://github.com/Aniekanetim/MustBank/tree/quest/rewards-settlement) |
 | Test project | [Playwright cases](../tests/payroll-api.spec.ts) · [UI regression](../tests/payroll-ui.spec.ts) · [fresh-process check](../tests/service.test.mjs) |
 | Cases, inputs, expected outcomes and results | [Test register](test-cases.md) |
+| Same eight core cases, separate completed results | [Buggy eight-case sheet](../qa/executions/buggy/core-results.csv) · [fixed eight-case sheet](../qa/executions/fixed/core-results.csv) |
 | Business rule, flow and assumptions | [Payroll rules](business-rules.md) |
 | Actionable defect, cause and proposed correction | [PAY-001](defect-report.md) |
 | Environment, source SHA-256 fingerprints and results | [Verification summary](evidence/summary.json) |
