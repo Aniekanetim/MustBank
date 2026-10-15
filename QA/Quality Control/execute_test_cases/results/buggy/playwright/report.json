@@ -1,0 +1,1401 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "<project>\\QA\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "Quality Control/execute_test_cases/playwright.config.ts"
+    ],
+    "configFile": "<project>\\QA\\Quality Control\\execute_test_cases\\playwright.config.ts",
+    "rootDir": "<project>/QA/Quality Control/execute_test_cases/test/specs",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "<project>/QA/data/playwright/faulty",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "<project>/QA/Quality Control/execute_test_cases/test/specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "<project>\\QA\\data\\playwright\\faulty",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "chromium",
+        "testDir": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs",
+        "snapshotDir": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4184",
+          "trace": "off",
+          "screenshot": "off",
+          "video": "off",
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "browserName": "chromium",
+          "channel": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "<project>\\QA\\Quality Control\\execute_test_cases\\results\\buggy\\playwright\\report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "payroll-api.spec.ts",
+      "file": "payroll-api.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC34 | Served build matches its package and cannot switch implementation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 588,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:52.661Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "served-build",
+                      "contentType": "application/json",
+                      "body": "eyJzdGF0dXMiOiJvayIsInN0b3JhZ2UiOiJzcWxpdGUiLCJhcHBsaWNhdGlvbiI6Ik11c3RQYXlyb2xsIiwic2NoZW1hVmVyc2lvbiI6MiwiYnVpbGQiOnsiaWQiOiJtdXN0cGF5cm9sbC0wLjIuMC1mYXVsdHktYzBmMDU5ZGMzZjU5IiwidmFyaWFudCI6ImZhdWx0eSIsImRlZmF1bHRQb3J0Ijo0MTc1LCJzb3VyY2VTaGEyNTYiOiJjMGYwNTlkYzNmNTlkYWYwNDZhYTZiYTc0MTc5NmI2NTY4YWJmMGZkNTE3Mjc1MmE1OTFjODAwMTAxOTYwZjQxIn19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-4d24243cf39487a13e99",
+          "file": "payroll-api.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "TC01 | Approved earnings aggregate into one payment per employee",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 649,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:52.523Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-eee79c057f1ea82aaf33",
+          "file": "payroll-api.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "TC02 | Opening Monday midnight is included",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 231,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:53.387Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-90f6fa36f622922c6d21",
+          "file": "payroll-api.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "TC03 | Following Monday midnight belongs to the next period",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 457,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:53.411Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-cd5d899152a9b5ae1f89",
+          "file": "payroll-api.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "TC04 | Lagos offset is normalized before period selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 343,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:53.672Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-8f3d74de2e5df49ad7e9",
+          "file": "payroll-api.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "TC05 | Reimporting an identical earning never increases pay",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 266,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:53.917Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-cff63f9cf463521efc4d",
+          "file": "payroll-api.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "TC06 | Conflicting duplicate rolls back the entire import",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 172,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:54.060Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-6f75d60b00d8ee23e0b3",
+          "file": "payroll-api.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "TC07 | Pending approval blocks payment and leaves the period open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 138,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:54.218Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-750ac7333c1c0fa7a88b",
+          "file": "payroll-api.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "TC08 | Failed payment creates no notification and can be retried",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 323,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:54.276Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-f765a49bd2ad623b4076",
+          "file": "payroll-api.spec.ts",
+          "line": 48,
+          "column": 1
+        },
+        {
+          "title": "TC09 | Notification failure preserves the successful payment",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 443,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:54.384Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-10d55309b942bcd3bcb6",
+          "file": "payroll-api.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "TC12 | Notification-only recovery never changes payment identity",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 517,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:54.637Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-19c417841d11549bb009",
+          "file": "payroll-api.spec.ts",
+          "line": 58,
+          "column": 1
+        },
+        {
+          "title": "TC13 | Interruption rolls back payment and outbox together",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 363,
+                  "error": {
+                    "message": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T22:47:55.187Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"a89a15a2-6c0f-44f2-b67c-a2e1c47d41eb\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]",
+                    "stack": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T22:47:55.187Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"a89a15a2-6c0f-44f2-b67c-a2e1c47d41eb\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:65:26",
+                    "location": {
+                      "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
+                      "column": 26,
+                      "line": 65
+                    },
+                    "snippet": "  63 |   const w = await create(request); await fault(request, w.id, 'persistence'); const first = await run(request, w.id);\n  64 |   await info.attach('observed-TC13', { body: JSON.stringify(first), contentType: 'application/json' });\n> 65 |   expect(first.payments).toHaveLength(0); expect(first.notifications).toHaveLength(0); expect(first.events.some((e: any) => e.event === 'payment_rolled_back')).toBeTruthy();\n     |                          ^\n  66 |   const next = await run(request, w.id); expect(next.paidMinor).toBe(15000000); expect(next.payments).toHaveLength(1);\n  67 | });\n  68 | test('TC14 | Lost provider acknowledgement recovers without duplicate acceptance', async ({ request }, info) => {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
+                        "column": 26,
+                        "line": 65
+                      },
+                      "message": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T22:47:55.187Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"a89a15a2-6c0f-44f2-b67c-a2e1c47d41eb\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]\n\n  63 |   const w = await create(request); await fault(request, w.id, 'persistence'); const first = await run(request, w.id);\n  64 |   await info.attach('observed-TC13', { body: JSON.stringify(first), contentType: 'application/json' });\n> 65 |   expect(first.payments).toHaveLength(0); expect(first.notifications).toHaveLength(0); expect(first.events.some((e: any) => e.event === 'payment_rolled_back')).toBeTruthy();\n     |                          ^\n  66 |   const next = await run(request, w.id); expect(next.paidMinor).toBe(15000000); expect(next.payments).toHaveLength(1);\n  67 | });\n  68 | test('TC14 | Lost provider acknowledgement recovers without duplicate acceptance', async ({ request }, info) => {\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:65:26"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:54.864Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "observed-TC13",
+                      "contentType": "application/json",
+                      "body": "eyJpZCI6Ijc1ODE2ZDM5LTQ4NDEtNGY5OS04ZjI1LWMxNmE4NjQwMGRmNCIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6MX1dLCJwYXltZW50cyI6W3siaWQiOiJhODlhMTVhMi02YzBmLTQ0ZjItYjY3Yy1hMmUxYzQ3ZDQxZWIiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1NS4xODdaIn1dLCJub3RpZmljYXRpb25zIjpbXSwicnVucyI6W3sicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJwZXJpb2RFbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiLCJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU1LjE1OFoiLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMH1dLCJsb2NrZWQiOnRydWUsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJwZW5kaW5nQXBwcm92YWxzIjowLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MCwiZXZlbnRzIjpbeyJldmVudCI6ImVhcm5pbmdzX3JlY29yZGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImNvdW50IjoxfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1NC45MzFaIn0seyJldmVudCI6ImZhaWx1cmVfYXJtZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsia2luZCI6InBlcnNpc3RlbmNlIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjI6NDc6NTUuMDczWiJ9LHsiZXZlbnQiOiJwYXltZW50X2NvbW1pdHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7InBheW1lbnRJZCI6ImE4OWExNWEyLTZjMGYtNDRmMi1iNjdjLWEyZTFjNDdkNDFlYiIsImFtb3VudE1pbm9yIjoxNTAwMDAwMH0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjI6NDc6NTUuMTk4WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU1LjIxMFoifV19"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "<project>\\QA\\data\\playwright\\faulty\\payroll-api-TC13-Interrupt-01ef8-payment-and-outbox-together-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
+                    "column": 26,
+                    "line": 65
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-58eba721a9ec48afd3d2",
+          "file": "payroll-api.spec.ts",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "TC14 | Lost provider acknowledgement recovers without duplicate acceptance",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 569,
+                  "error": {
+                    "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
+                    "stack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:73:76",
+                    "location": {
+                      "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
+                      "column": 76,
+                      "line": 73
+                    },
+                    "snippet": "  71 |   const next = await run(request, w.id);\n  72 |   await info.attach('observed-TC14', { body: JSON.stringify(next), contentType: 'application/json' });\n> 73 |   expect(next.providerAccepted).toBe(1); expect(next.pendingNotifications).toBe(0); expect(next.payments).toHaveLength(1);\n     |                                                                            ^\n  74 | });\n  75 | test('TC15 | A processed period rejects new earnings and preserves approved totals', async ({ request }) => {\n  76 |   const w = await create(request); await run(request, w.id);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
+                        "column": 76,
+                        "line": 73
+                      },
+                      "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1\n\n  71 |   const next = await run(request, w.id);\n  72 |   await info.attach('observed-TC14', { body: JSON.stringify(next), contentType: 'application/json' });\n> 73 |   expect(next.providerAccepted).toBe(1); expect(next.pendingNotifications).toBe(0); expect(next.payments).toHaveLength(1);\n     |                                                                            ^\n  74 | });\n  75 | test('TC15 | A processed period rejects new earnings and preserves approved totals', async ({ request }) => {\n  76 |   const w = await create(request); await run(request, w.id);\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:73:76"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:55.187Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "observed-TC14",
+                      "contentType": "application/json",
+                      "body": "eyJpZCI6IjdlNjkwOWIyLTFlZjktNDEzYS04NzQ1LTRiZDk5NGUzNDcwYyIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6Mn1dLCJwYXltZW50cyI6W3siaWQiOiI2NDdjM2I0Yy01NWNhLTRlMDktYjNjMy00MmI2MDRiZjE3NmIiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1NS41ODFaIn0seyJpZCI6ImQwNWZhNDhiLTFiNzMtNDExMC1iOTFjLTQyNjRhZDJjMTIwNCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsImJhbmsiOiJNZXJpZGlhbiBCYW5rIiwiYWNjb3VudEVuZGluZyI6IjQ4MjEiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU1LjQ2OVoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiZTljMThhOGQtNTllYS00NDY4LWJmNWYtMWNiOTRmMzg3OWZjIiwicGF5bWVudElkIjoiNjQ3YzNiNGMtNTVjYS00ZTA5LWIzYzMtNDJiNjA0YmYxNzZiIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsInN0YXRlIjoic2VudCIsImF0dGVtcHRzIjoxLCJsYXN0RXJyb3IiOm51bGx9LHsiaWQiOiJiOTFhNzZlYi04MzJmLTQ2YWQtYWQ0YS04OTM0NDJmOGE2NzYiLCJwYXltZW50SWQiOiJkMDVmYTQ4Yi0xYjczLTQxMTAtYjkxYy00MjY0YWQyYzEyMDQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwic3RhdGUiOiJwZW5kaW5nIiwiYXR0ZW1wdHMiOjEsImxhc3RFcnJvciI6IkRlbGl2ZXJ5IGNvbmZpcm1hdGlvbiB1bmF2YWlsYWJsZS4gUmV0cnkgd2l0aCB0aGUgb3JpZ2luYWwgbWVzc2FnZSBpZGVudGl0eS4ifV0sInJ1bnMiOlt7InBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwicGVyaW9kRW5kIjoiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIiwic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1NS4zODhaIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDB9XSwibG9ja2VkIjp0cnVlLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwicGVuZGluZ0FwcHJvdmFscyI6MCwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjEsImV2ZW50cyI6W3siZXZlbnQiOiJlYXJuaW5nc19yZWNvcmRlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJjb3VudCI6MX0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjI6NDc6NTUuMzMwWiJ9LHsiZXZlbnQiOiJmYWlsdXJlX2FybWVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImtpbmQiOiJhbWJpZ3VvdXMifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1NS4zNjdaIn0seyJldmVudCI6InBheW1lbnRfY29tbWl0dGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsicGF5bWVudElkIjoiZDA1ZmE0OGItMWI3My00MTEwLWI5MWMtNDI2NGFkMmMxMjA0IiwiYW1vdW50TWlub3IiOjE1MDAwMDAwfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1NS40ODJaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6e30sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjI6NDc6NTUuNTAzWiJ9LHsiZXZlbnQiOiJub3RpZmljYXRpb25fZmFpbGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiYjkxYTc2ZWItODMyZi00NmFkLWFkNGEtODkzNDQyZjhhNjc2IiwiZXJyb3IiOiJEZWxpdmVyeSBjb25maXJtYXRpb24gdW5hdmFpbGFibGUuIFJldHJ5IHdpdGggdGhlIG9yaWdpbmFsIG1lc3NhZ2UgaWRlbnRpdHkuIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjI6NDc6NTUuNTQ2WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU1LjU1OFoifSx7ImV2ZW50IjoicGF5bWVudF9jb21taXR0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6eyJwYXltZW50SWQiOiI2NDdjM2I0Yy01NWNhLTRlMDktYjNjMy00MmI2MDRiZjE3NmIiLCJhbW91bnRNaW5vciI6MTUwMDAwMDB9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU1LjU5NloifSx7ImV2ZW50Ijoibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7fSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1NS42OTdaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9zZW50IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiZTljMThhOGQtNTllYS00NDY4LWJmNWYtMWNiOTRmMzg3OWZjIiwiZXJyb3IiOm51bGx9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU1LjcyOVoifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1NS43NDZaIn1dfQ=="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "<project>\\QA\\data\\playwright\\faulty\\payroll-api-TC14-Lost-prov-79d31-ithout-duplicate-acceptance-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
+                    "column": 76,
+                    "line": 73
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-44ecd9c8fd97926fd5e2",
+          "file": "payroll-api.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "TC15 | A processed period rejects new earnings and preserves approved totals",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 256,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:58.794Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-97d8e64bfedb972ed4ec",
+          "file": "payroll-api.spec.ts",
+          "line": 75,
+          "column": 1
+        },
+        {
+          "title": "TC16 | Eight overlapping requests in one server record one payment",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 694,
+                  "error": {
+                    "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 15000000\nReceived: 30000000",
+                    "stack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 15000000\nReceived: 30000000\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:84:28",
+                    "location": {
+                      "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
+                      "column": 28,
+                      "line": 84
+                    },
+                    "snippet": "  82 |   const result = await (await request.get(`/api/workspaces/${w.id}`)).json();\n  83 |   await info.attach('observed-TC16', { body: JSON.stringify(result), contentType: 'application/json' });\n> 84 |   expect(result.paidMinor).toBe(15000000); expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);\n     |                            ^\n  85 | });\n  86 | test('TC17 | The same employee can receive a separate payment in another period', async ({ request }) => {\n  87 |   const w = await create(request); await run(request, w.id);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
+                        "column": 28,
+                        "line": 84
+                      },
+                      "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 15000000\nReceived: 30000000\n\n  82 |   const result = await (await request.get(`/api/workspaces/${w.id}`)).json();\n  83 |   await info.attach('observed-TC16', { body: JSON.stringify(result), contentType: 'application/json' });\n> 84 |   expect(result.paidMinor).toBe(15000000); expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);\n     |                            ^\n  85 | });\n  86 | test('TC17 | The same employee can receive a separate payment in another period', async ({ request }) => {\n  87 |   const w = await create(request); await run(request, w.id);\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:84:28"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:59.004Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "observed-TC16",
+                      "contentType": "application/json",
+                      "body": "eyJpZCI6IjJlMDA0YzcxLWQ5OTEtNDJkZC1hNTUyLWJmN2MzNDBiMmZiNCIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6Mn1dLCJwYXltZW50cyI6W3siaWQiOiJjMDA3ODZjZS0xYTA5LTRlMDQtYWNhMS0yZjc0YTU5YjBiNWIiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1OS41NDVaIn0seyJpZCI6ImM3OTUyNDZmLTMzMDctNDYxZC05OWM5LTlhNGI5NDkwZTk2ZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsImJhbmsiOiJNZXJpZGlhbiBCYW5rIiwiYWNjb3VudEVuZGluZyI6IjQ4MjEiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU5LjQ0N1oifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiM2Y4NmNmMWYtNzNlNS00NzE5LWEwMmYtMTE1YWExZjViYTFmIiwicGF5bWVudElkIjoiYzAwNzg2Y2UtMWEwOS00ZTA0LWFjYTEtMmY3NGE1OWIwYjViIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsInN0YXRlIjoic2VudCIsImF0dGVtcHRzIjoxLCJsYXN0RXJyb3IiOm51bGx9LHsiaWQiOiIyMzkzNWE3NS03OTA3LTRhODYtODU4Ni02YjlkNWYxYmU3NjgiLCJwYXltZW50SWQiOiJjNzk1MjQ2Zi0zMzA3LTQ2MWQtOTljOS05YTRiOTQ5MGU5NmQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwic3RhdGUiOiJwZW5kaW5nIiwiYXR0ZW1wdHMiOjEsImxhc3RFcnJvciI6Ik5vdGlmaWNhdGlvbiBkZWxpdmVyeSB1bmF2YWlsYWJsZS4gUmV0cnkgdGhlIG5vdGlmaWNhdGlvbi4ifV0sInJ1bnMiOlt7InBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwicGVyaW9kRW5kIjoiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIiwic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1OS40MjdaIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDB9XSwibG9ja2VkIjp0cnVlLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwicGVuZGluZ0FwcHJvdmFscyI6MCwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjEsImV2ZW50cyI6W3siZXZlbnQiOiJlYXJuaW5nc19yZWNvcmRlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJjb3VudCI6MX0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjI6NDc6NTkuMTcwWiJ9LHsiZXZlbnQiOiJmYWlsdXJlX2FybWVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImtpbmQiOiJub3RpZmljYXRpb24ifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1OS4yMjlaIn0seyJldmVudCI6InBheW1lbnRfY29tbWl0dGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsicGF5bWVudElkIjoiYzc5NTI0NmYtMzMwNy00NjFkLTk5YzktOWE0Yjk0OTBlOTZkIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1OS40NTdaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6e30sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjI6NDc6NTkuNDg4WiJ9LHsiZXZlbnQiOiJub3RpZmljYXRpb25fZmFpbGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiMjM5MzVhNzUtNzkwNy00YTg2LTg1ODYtNmI5ZDVmMWJlNzY4IiwiZXJyb3IiOiJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjI6NDc6NTkuNTE4WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU5LjUzMFoifSx7ImV2ZW50IjoicGF5bWVudF9jb21taXR0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6eyJwYXltZW50SWQiOiJjMDA3ODZjZS0xYTA5LTRlMDQtYWNhMS0yZjc0YTU5YjBiNWIiLCJhbW91bnRNaW5vciI6MTUwMDAwMDB9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU5LjU2M1oifSx7ImV2ZW50Ijoibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7fSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1OS41ODRaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9zZW50IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiM2Y4NmNmMWYtNzNlNS00NzE5LWEwMmYtMTE1YWExZjViYTFmIiwiZXJyb3IiOm51bGx9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU5LjYzN1oifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1OS42NTBaIn0seyJldmVudCI6InBheV9ydW5fZmluaXNoZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjI6NDc6NTkuNjY2WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU5LjY4M1oifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1OS42OTdaIn0seyJldmVudCI6InBheV9ydW5fZmluaXNoZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjI6NDc6NTkuNzEwWiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIyOjQ3OjU5LjcyNFoifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMjo0Nzo1OS43MzlaIn1dfQ=="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "<project>\\QA\\data\\playwright\\faulty\\payroll-api-TC16-Eight-ove-c0335-e-server-record-one-payment-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
+                    "column": 28,
+                    "line": 84
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-ae6b1d88d614e8fc39d8",
+          "file": "payroll-api.spec.ts",
+          "line": 80,
+          "column": 1
+        },
+        {
+          "title": "TC17 | The same employee can receive a separate payment in another period",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 794,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:59.155Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-c5d1cc27d4625ac4e9ff",
+          "file": "payroll-api.spec.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "TC18 | Invalid dates and ambiguous timestamps are rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 234,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:01.718Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-bf1a121061c014945eec",
+          "file": "payroll-api.spec.ts",
+          "line": 91,
+          "column": 1
+        },
+        {
+          "title": "TC19 | Amounts use positive bounded whole kobo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 262,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:47:59.981Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-153c9a43793cc347c40c",
+          "file": "payroll-api.spec.ts",
+          "line": 96,
+          "column": 1
+        },
+        {
+          "title": "TC20 | Unknown employees cannot acquire earnings or payments",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 49,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:00.283Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-0a112e7159316e4881cc",
+          "file": "payroll-api.spec.ts",
+          "line": 101,
+          "column": 1
+        },
+        {
+          "title": "TC21 | Isolated workspaces do not share earnings or payment identity",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 361,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:00.359Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-61f43deb4bf9b3dd4e2e",
+          "file": "payroll-api.spec.ts",
+          "line": 105,
+          "column": 1
+        },
+        {
+          "title": "TC22 | Approval is explicit and replaying approval is harmless",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 227,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:00.755Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2773c42ecf68f72f6713-ecebeb2b463e27e7051d",
+          "file": "payroll-api.spec.ts",
+          "line": 110,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "payroll-ui.spec.ts",
+      "file": "payroll-ui.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC10 | Retrying after notification failure preserves the approved payroll",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3802,
+                  "error": {
+                    "message": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"",
+                    "stack": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts:32:98",
+                    "location": {
+                      "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts",
+                      "column": 98,
+                      "line": 32
+                    },
+                    "snippet": "  30 |\n  31 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);\n> 32 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');\n     |                                                                                                  ^\n  33 |   expect(result.payments).toHaveLength(1);\n  34 |   expect(result.pendingNotifications).toBe(0);\n  35 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts",
+                        "column": 98,
+                        "line": 32
+                      },
+                      "message": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"\n\n  30 |\n  31 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);\n> 32 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');\n     |                                                                                                  ^\n  33 |   expect(result.payments).toHaveLength(1);\n  34 |   expect(result.pendingNotifications).toBe(0);\n  35 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts:32:98"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:01.061Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "first-attempt",
+                      "contentType": "application/json",
+                      "body": "ewogICJpZCI6ICIzM2Y3ZGExZi0yNDdhLTQ0NmYtOGM0NS01YTQwN2RhMzA2ZjMiLAogICJjb21wYW55IjogIk5vcnRoc3RhciBTdHVkaW8iLAogICJjdXJyZW5jeSI6ICJOR04iLAogICJwZXJpb2QiOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgImVtcGxveWVlcyI6IFsKICAgIHsKICAgICAgImlkIjogImVtcC0wMDEiLAogICAgICAibmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicm9sZSI6ICJQcm9kdWN0IGRlc2lnbmVyIiwKICAgICAgImRlcGFydG1lbnQiOiAiRGVzaWduIiwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMiIsCiAgICAgICJuYW1lIjogIkRhbmllbCBNZW5zYWgiLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBlbmdpbmVlciIsCiAgICAgICJkZXBhcnRtZW50IjogIkVuZ2luZWVyaW5nIiwKICAgICAgImJhbmsiOiAiVW5pb24gQ29hc3QgQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjMwNjgiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMyIsCiAgICAgICJuYW1lIjogIlphcmEgQmVsbG8iLAogICAgICAicm9sZSI6ICJPcGVyYXRpb25zIGFzc29jaWF0ZSIsCiAgICAgICJkZXBhcnRtZW50IjogIk9wZXJhdGlvbnMiLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNzI5MCIKICAgIH0KICBdLAogICJlYXJuaW5ncyI6IFsKICAgIHsKICAgICAgImVhcm5pbmdJZCI6ICJlYXJuLTAwMSIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2Vla2x5IHByb2plY3QgZWFybmluZ3MiLAogICAgICAiZWFybmVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgImFtb3VudE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJzdGF0dXMiOiAiYXBwcm92ZWQiCiAgICB9CiAgXSwKICAiZW50cmllcyI6IFsKICAgIHsKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJleHBlY3RlZE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJwYWlkTWlub3IiOiAxNTAwMDAwMCwKICAgICAgImVhcm5pbmdJZHMiOiBbCiAgICAgICAgImVhcm4tMDAxIgogICAgICBdLAogICAgICAicGF5bWVudENvdW50IjogMQogICAgfQogIF0sCiAgInBheW1lbnRzIjogWwogICAgewogICAgICAiaWQiOiAiNGUwNGQ1MjQtN2U3OC00Y2NjLWFkYmUtYWQzZTU1ZWNkYzczIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNDgyMSIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMjo0ODowNi42MDNaIgogICAgfQogIF0sCiAgIm5vdGlmaWNhdGlvbnMiOiBbCiAgICB7CiAgICAgICJpZCI6ICI5OTZiNDU4ZS1kMWVjLTRjZGMtOTBkNi1mNjIzNDUzOGM3ODgiLAogICAgICAicGF5bWVudElkIjogIjRlMDRkNTI0LTdlNzgtNGNjYy1hZGJlLWFkM2U1NWVjZGM3MyIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZW1wbG95ZWVOYW1lIjogIkFtYXJhIE9rYWZvciIsCiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAic3RhdGUiOiAicGVuZGluZyIsCiAgICAgICJhdHRlbXB0cyI6IDEsCiAgICAgICJsYXN0RXJyb3IiOiAiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIKICAgIH0KICBdLAogICJydW5zIjogWwogICAgewogICAgICAicGVyaW9kU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgInBlcmlvZEVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiLAogICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMjo0ODowNi41NTlaIiwKICAgICAgImV4cGVjdGVkTWlub3IiOiAxNTAwMDAwMAogICAgfQogIF0sCiAgImxvY2tlZCI6IHRydWUsCiAgImV4cGVjdGVkTWlub3IiOiAxNTAwMDAwMCwKICAicGFpZE1pbm9yIjogMTUwMDAwMDAsCiAgInBlbmRpbmdBcHByb3ZhbHMiOiAwLAogICJwZW5kaW5nTm90aWZpY2F0aW9ucyI6IDEsCiAgInByb3ZpZGVyQWNjZXB0ZWQiOiAwLAogICJldmVudHMiOiBbCiAgICB7CiAgICAgICJldmVudCI6ICJlYXJuaW5nc19yZWNvcmRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiY291bnQiOiAxCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMjo0ODowNS4zNTBaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogImZhaWx1cmVfYXJtZWQiLAogICAgICAiZW1wbG95ZWVJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImtpbmQiOiAibm90aWZpY2F0aW9uIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjI6NDg6MDUuNDY0WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXltZW50X2NvbW1pdHRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJwYXltZW50SWQiOiAiNGUwNGQ1MjQtN2U3OC00Y2NjLWFkYmUtYWQzZTU1ZWNkYzczIiwKICAgICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjI6NDg6MDYuNjE4WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIyOjQ4OjA2LjY1OVoiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAibm90aWZpY2F0aW9uX2ZhaWxlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJtZXNzYWdlSWQiOiAiOTk2YjQ1OGUtZDFlYy00Y2RjLTkwZDYtZjYyMzQ1MzhjNzg4IiwKICAgICAgICAiZXJyb3IiOiAiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIyOjQ4OjA2LjcxMVoiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAicGF5X3J1bl9maW5pc2hlZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIyOjQ4OjA2LjcyN1oiCiAgICB9CiAgXQp9"
+                    },
+                    {
+                      "name": "observed-workspace",
+                      "contentType": "application/json",
+                      "body": "ewogICJpZCI6ICIzM2Y3ZGExZi0yNDdhLTQ0NmYtOGM0NS01YTQwN2RhMzA2ZjMiLAogICJjb21wYW55IjogIk5vcnRoc3RhciBTdHVkaW8iLAogICJjdXJyZW5jeSI6ICJOR04iLAogICJwZXJpb2QiOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgImVtcGxveWVlcyI6IFsKICAgIHsKICAgICAgImlkIjogImVtcC0wMDEiLAogICAgICAibmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicm9sZSI6ICJQcm9kdWN0IGRlc2lnbmVyIiwKICAgICAgImRlcGFydG1lbnQiOiAiRGVzaWduIiwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMiIsCiAgICAgICJuYW1lIjogIkRhbmllbCBNZW5zYWgiLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBlbmdpbmVlciIsCiAgICAgICJkZXBhcnRtZW50IjogIkVuZ2luZWVyaW5nIiwKICAgICAgImJhbmsiOiAiVW5pb24gQ29hc3QgQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjMwNjgiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMyIsCiAgICAgICJuYW1lIjogIlphcmEgQmVsbG8iLAogICAgICAicm9sZSI6ICJPcGVyYXRpb25zIGFzc29jaWF0ZSIsCiAgICAgICJkZXBhcnRtZW50IjogIk9wZXJhdGlvbnMiLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNzI5MCIKICAgIH0KICBdLAogICJlYXJuaW5ncyI6IFsKICAgIHsKICAgICAgImVhcm5pbmdJZCI6ICJlYXJuLTAwMSIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2Vla2x5IHByb2plY3QgZWFybmluZ3MiLAogICAgICAiZWFybmVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgImFtb3VudE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJzdGF0dXMiOiAiYXBwcm92ZWQiCiAgICB9CiAgXSwKICAiZW50cmllcyI6IFsKICAgIHsKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJleHBlY3RlZE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJwYWlkTWlub3IiOiAzMDAwMDAwMCwKICAgICAgImVhcm5pbmdJZHMiOiBbCiAgICAgICAgImVhcm4tMDAxIgogICAgICBdLAogICAgICAicGF5bWVudENvdW50IjogMgogICAgfQogIF0sCiAgInBheW1lbnRzIjogWwogICAgewogICAgICAiaWQiOiAiMmVhOTQ4NGMtYTQwZS00NDU1LWJmYjEtZTI4OWJjZWU1YmQwIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNDgyMSIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMjo0ODowNy4yNjFaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogIjRlMDRkNTI0LTdlNzgtNGNjYy1hZGJlLWFkM2U1NWVjZGM3MyIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZW1wbG95ZWVOYW1lIjogIkFtYXJhIE9rYWZvciIsCiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMCwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiLAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjI6NDg6MDYuNjAzWiIKICAgIH0KICBdLAogICJub3RpZmljYXRpb25zIjogWwogICAgewogICAgICAiaWQiOiAiZjEzMTkzNWYtYjdhZS00YzQyLWEyZGQtNzI2NTBhM2U0MTlmIiwKICAgICAgInBheW1lbnRJZCI6ICIyZWE5NDg0Yy1hNDBlLTQ0NTUtYmZiMS1lMjg5YmNlZTViZDAiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImVtcGxveWVlTmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicGVyaW9kU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgInN0YXRlIjogInNlbnQiLAogICAgICAiYXR0ZW1wdHMiOiAxLAogICAgICAibGFzdEVycm9yIjogbnVsbAogICAgfSwKICAgIHsKICAgICAgImlkIjogIjk5NmI0NThlLWQxZWMtNGNkYy05MGQ2LWY2MjM0NTM4Yzc4OCIsCiAgICAgICJwYXltZW50SWQiOiAiNGUwNGQ1MjQtN2U3OC00Y2NjLWFkYmUtYWQzZTU1ZWNkYzczIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJzdGF0ZSI6ICJwZW5kaW5nIiwKICAgICAgImF0dGVtcHRzIjogMSwKICAgICAgImxhc3RFcnJvciI6ICJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIgogICAgfQogIF0sCiAgInJ1bnMiOiBbCiAgICB7CiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAicGVyaW9kRW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIyOjQ4OjA2LjU1OVoiLAogICAgICAiZXhwZWN0ZWRNaW5vciI6IDE1MDAwMDAwCiAgICB9CiAgXSwKICAibG9ja2VkIjogdHJ1ZSwKICAiZXhwZWN0ZWRNaW5vciI6IDE1MDAwMDAwLAogICJwYWlkTWlub3IiOiAzMDAwMDAwMCwKICAicGVuZGluZ0FwcHJvdmFscyI6IDAsCiAgInBlbmRpbmdOb3RpZmljYXRpb25zIjogMSwKICAicHJvdmlkZXJBY2NlcHRlZCI6IDEsCiAgImV2ZW50cyI6IFsKICAgIHsKICAgICAgImV2ZW50IjogImVhcm5pbmdzX3JlY29yZGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJjb3VudCI6IDEKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIyOjQ4OjA1LjM1MFoiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAiZmFpbHVyZV9hcm1lZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAia2luZCI6ICJub3RpZmljYXRpb24iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMjo0ODowNS40NjRaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogInBheW1lbnRfY29tbWl0dGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgInBheW1lbnRJZCI6ICI0ZTA0ZDUyNC03ZTc4LTRjY2MtYWRiZS1hZDNlNTVlY2RjNzMiLAogICAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMjo0ODowNi42MThaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjI6NDg6MDYuNjU5WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fZmFpbGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgIm1lc3NhZ2VJZCI6ICI5OTZiNDU4ZS1kMWVjLTRjZGMtOTBkNi1mNjIzNDUzOGM3ODgiLAogICAgICAgICJlcnJvciI6ICJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjI6NDg6MDYuNzExWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXlfcnVuX2ZpbmlzaGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjI6NDg6MDYuNzI3WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXltZW50X2NvbW1pdHRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJwYXltZW50SWQiOiAiMmVhOTQ4NGMtYTQwZS00NDU1LWJmYjEtZTI4OWJjZWU1YmQwIiwKICAgICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjI6NDg6MDcuMjcxWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIyOjQ4OjA3LjI5N1oiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAibm90aWZpY2F0aW9uX3NlbnQiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAibWVzc2FnZUlkIjogImYxMzE5MzVmLWI3YWUtNGM0Mi1hMmRkLTcyNjUwYTNlNDE5ZiIsCiAgICAgICAgImVycm9yIjogbnVsbAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjI6NDg6MDcuMzQ1WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXlfcnVuX2ZpbmlzaGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjI6NDg6MDcuMzU0WiIKICAgIH0KICBdCn0="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "<project>\\QA\\data\\playwright\\faulty\\payroll-ui-TC10-Retrying-a-8ba15-serves-the-approved-payroll-chromium\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts",
+                    "column": 98,
+                    "line": 32
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-72d2814b50aec8b00dd7",
+          "file": "payroll-ui.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "TC23 | Record, approve and process earnings through the interface",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3736,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:02.073Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-2f83ed11c543ddd9ac89",
+          "file": "payroll-ui.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "TC24 | Cancelling payroll confirmation leaves the ledger and period unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1180,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:07.703Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-63e56bfbe82c1531450d",
+          "file": "payroll-ui.spec.ts",
+          "line": 57,
+          "column": 1
+        },
+        {
+          "title": "TC25 | Receipt survives reload and can be copied and downloaded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2677,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:08.928Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-c258e9f7231e9d4f4fb4",
+          "file": "payroll-ui.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "TC26 | Payment filter and CSV export contain the same employee records",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3766,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:13.338Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-f589846a61befd81f8f8",
+          "file": "payroll-ui.spec.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "TC27 | Changing pay period separates approval and payment totals",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1132,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:11.638Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-314e62d49e3dfd6dc9d3",
+          "file": "payroll-ui.spec.ts",
+          "line": 100,
+          "column": 1
+        },
+        {
+          "title": "TC28 | Core screens reflow at 320 pixels without page overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4596,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:12.806Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-05f8820e47060222adb4",
+          "file": "payroll-ui.spec.ts",
+          "line": 112,
+          "column": 1
+        },
+        {
+          "title": "TC29 | Keyboard navigation reaches content and payroll confirmation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1624,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:17.444Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-29ac612408d123feca10",
+          "file": "payroll-ui.spec.ts",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "title": "TC30 | Employee details lead to the correct earning destination",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1721,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:17.811Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-36e5d741fd462da9edb6",
+          "file": "payroll-ui.spec.ts",
+          "line": 151,
+          "column": 1
+        },
+        {
+          "title": "TC31 | Payroll screens use product language and show standard totals",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1043,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:19.107Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-cdc4e7dbcfbe9eb4598b",
+          "file": "payroll-ui.spec.ts",
+          "line": 163,
+          "column": 1
+        },
+        {
+          "title": "TC32 | Notification recovery is visible and leaves the receipt unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1279,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:19.667Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-c390d3dc3c18ebe84144",
+          "file": "payroll-ui.spec.ts",
+          "line": 173,
+          "column": 1
+        },
+        {
+          "title": "TC33 | Separate tabs retain their workspace and pay period after reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2679,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T22:48:20.194Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fc4b6c35a6c8c78127b1-2d63f2735edbe9bcd899",
+          "file": "payroll-ui.spec.ts",
+          "line": 188,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-15T22:47:49.275Z",
+    "duration": 34400.746999999996,
+    "expected": 29,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

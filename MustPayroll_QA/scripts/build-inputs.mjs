@@ -1,3 +1,0 @@
-export const TEST_FILES = ['quality-control/tests/helpers.ts', 'quality-control/tests/payroll-api.spec.ts', 'quality-control/tests/payroll-ui.spec.ts', 'quality-control/tests/service.test.mjs', 'quality-control/scripts/process-probe.mjs', 'quality-control/playwright.config.ts', 'quality-control/test-cases/catalog.json'];
-export const SOURCE_FILES = ['package.json', 'package-lock.json', 'tsconfig.json', 'scripts/build-inputs.mjs', 'scripts/build-pair.mjs', 'scripts/start-build.mjs', 'scripts/scenario.mjs', 'quality-control/scripts/verify.mjs', 'quality-control/scripts/test-records.mjs', 'quality-control/scripts/test-suite.mjs', ...TEST_FILES];
-export const APPLICATIONS = { faulty: '../MustBank/Mustpayroll_buggy', fixed: '../MustBank/MustPayroll_fixed' };

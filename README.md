@@ -6,7 +6,7 @@ MustPayroll models approved earnings, weekly pay runs and notification recovery 
 |---|---|
 | [MustBank/Mustpayroll_buggy](MustBank/Mustpayroll_buggy) | Complete application preserving the controlled defect |
 | [MustBank/MustPayroll_fixed](MustBank/MustPayroll_fixed) | Complete application containing the correction |
-| [MustPayroll_QA](MustPayroll_QA/README.md) | Separate quality-assurance and quality-control work, connected by directive.md |
+| [QA](QA/README.md) | Separate Quality assurance and Quality Control work, connected by directive.md |
 
 ## Run either application
 
@@ -21,14 +21,14 @@ Starting uses the committed compiled interface and Node built-ins. To rebuild an
 
 ## Assessment work
 
-Start with [intent.md](MustPayroll_QA/quality-assurance/intent.md) and [directive.md](MustPayroll_QA/directive.md). The directive links the business rules and flow, runnable test project, cases/results, defect report, release checklist, verification evidence and handoff.
+Start with [intent.md](QA/Quality%20assurance/intent/intent.md) and [directive.md](QA/directive.md). The directive links the business rules and flow, runnable test project, cases/results, defect report, release checklist, verification evidence and handoff.
 
 | Build | Eight completed cases | Execution record |
 |---|---|---|
-| Buggy | [Core results](MustPayroll_QA/quality-control/executions/buggy/core-results.csv) | [Results and logs](MustPayroll_QA/quality-control/executions/buggy/README.md) |
-| Fixed | [Core results](MustPayroll_QA/quality-control/executions/fixed/core-results.csv) | [Results and logs](MustPayroll_QA/quality-control/executions/fixed/README.md) |
+| Buggy | [Core results](QA/Quality%20Control/execute_test_cases/results/buggy/core-results.csv) | [Results and logs](QA/Quality%20Control/execute_test_cases/results/buggy/README.md) |
+| Fixed | [Core results](QA/Quality%20Control/execute_test_cases/results/fixed/core-results.csv) | [Results and logs](QA/Quality%20Control/execute_test_cases/results/fixed/README.md) |
 
-The same eight core cases and full 34-check suite run against both builds. Follow [SETUP.md](MustPayroll_QA/SETUP.md) to prepare the fixture and execute the tests. The required candidate Loom is still pending in directive.md.
+The same eight core cases and full 34-check suite run against both builds. Follow [SETUP.md](QA/SETUP.md) to prepare the fixture and execute the tests. The required candidate Loom is still pending in directive.md.
 
 ## Scope and provenance
 

@@ -1,0 +1,620 @@
+{
+  "application": "MustPayroll",
+  "columns": [
+    "TC ID",
+    "Test Scenario",
+    "Test Case",
+    "Test Steps",
+    "Test Data",
+    "Expected Result",
+    "Actual Result",
+    "Status",
+    "Comment / Screenshot"
+  ],
+  "coreIds": [
+    "TC01",
+    "TC03",
+    "TC04",
+    "TC05",
+    "TC08",
+    "TC09",
+    "TC10",
+    "TC13"
+  ],
+  "cases": [
+    {
+      "id": "TC01",
+      "scenario": "Approved payroll",
+      "title": "Aggregate approved earnings once per employee",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: standard.",
+      "data": "Amara: NGN120,000 + NGN30,000; Daniel: NGN200,000; Zara: NGN85,000. All approved.",
+      "steps": [
+        "Create a standard workspace.",
+        "Process the 13 October pay run.",
+        "Read the payment ledger and notification states."
+      ],
+      "expected": "Exactly three payments total NGN435,000. Amara receives one NGN150,000 payment. Every payment notification is sent.",
+      "priority": "Critical",
+      "requirement": "Approved earnings and aggregation",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC02",
+      "scenario": "Opening cut-off",
+      "title": "Include an earning exactly at the opening boundary",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: empty.",
+      "data": "earn-001; emp-001; 2026-10-05T00:00:00Z; 15000000 kobo; approved.",
+      "steps": [
+        "Import the approved earning at opening Monday midnight.",
+        "Process the 13 October run.",
+        "Read recorded pay."
+      ],
+      "expected": "The opening-boundary earning is included; recorded pay is NGN150,000.",
+      "priority": "High",
+      "requirement": "UTC period selection",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC03",
+      "scenario": "Closing cut-off",
+      "title": "Defer the excluded closing-boundary earning to the next period",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: boundaries.",
+      "data": "Opening boundary: NGN10,000; before opening: NGN20,000; just before closing: NGN30,000; exactly 2026-10-12T00:00:00Z: NGN40,000.",
+      "steps": [
+        "Create the boundaries workspace.",
+        "Process the 13 October run and inspect selected earning IDs.",
+        "Process the 20 October run.",
+        "Compare the period totals and payment count."
+      ],
+      "expected": "The first run pays NGN40,000 from start + last only. The NGN40,000 closing-boundary earning is paid in the next period; two payment records exist across both periods.",
+      "priority": "Critical",
+      "requirement": "UTC period selection",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC04",
+      "scenario": "Timezone conversion",
+      "title": "Normalize Lagos timestamps before selecting earnings",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: empty.",
+      "data": "outside: 2026-10-05T00:30:00+01:00; inside: 2026-10-05T01:00:00+01:00. Each approved for 15000000 kobo.",
+      "steps": [
+        "Import both offset-aware earnings.",
+        "Process the 13 October run.",
+        "Inspect earning IDs included in the employee payment."
+      ],
+      "expected": "Only inside qualifies. outside normalizes to the preceding Sunday; inside normalizes to opening Monday midnight. Total recorded pay is NGN150,000.",
+      "priority": "Critical",
+      "requirement": "Explicit timezone normalization",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC05",
+      "scenario": "Duplicate input",
+      "title": "Do not increase payroll when an identical earning is reimported",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "Existing earn-001, emp-001, approved, 2026-10-08T12:00:00Z, 15000000 kobo. Import two identical copies.",
+      "steps": [
+        "Reimport the same earning twice using its original ID and values.",
+        "Process the pay run.",
+        "Count earnings and inspect recorded pay."
+      ],
+      "expected": "One earning record remains; one payment records NGN150,000.",
+      "priority": "Critical",
+      "requirement": "Immutable earning identity",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC06",
+      "scenario": "Conflicting import",
+      "title": "Roll back a whole import containing a conflicting duplicate",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "Batch: new earning ID new, then existing earn-001 with amount changed to 1 kobo.",
+      "steps": [
+        "Submit both records in one import request.",
+        "Inspect the HTTP status.",
+        "Reload the earning list."
+      ],
+      "expected": "HTTP 409. The new record is rolled back and the original earning remains unchanged; the list still has one earning.",
+      "priority": "High",
+      "requirement": "Atomic import validation",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC07",
+      "scenario": "Approval gate",
+      "title": "Block payroll while an earning awaits approval",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: empty.",
+      "data": "One pending earn-001 for NGN150,000.",
+      "steps": [
+        "Import the pending earning.",
+        "Attempt to process the period.",
+        "Inspect the ledger, notifications and period lock."
+      ],
+      "expected": "HTTP 409. The period remains open; no payment or notification exists.",
+      "priority": "Critical",
+      "requirement": "Approval before payment",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC08",
+      "scenario": "Payment failure",
+      "title": "Create no notification when payment fails, then recover safely",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "One approved NGN150,000 earning; one-shot payout failure before ledger write.",
+      "steps": [
+        "Arm the payout fault through the local fixture API.",
+        "Process the pay run.",
+        "Inspect payments, notifications and provider acceptance.",
+        "Retry the original run and inspect the ledger."
+      ],
+      "expected": "First attempt: zero payment, zero notification and zero provider acceptance. Retry: one NGN150,000 payment.",
+      "priority": "Critical",
+      "requirement": "Payment before notification",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC09",
+      "scenario": "Notification partial failure",
+      "title": "Retain a successful payment when notification delivery fails",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "One approved NGN150,000 earning; one-shot notification failure before provider acceptance.",
+      "steps": [
+        "Arm the notification fault through the local fixture API.",
+        "Process the pay run once.",
+        "Inspect the ledger, pending notification and event order."
+      ],
+      "expected": "The NGN150,000 payment remains recorded. One notification is pending, no provider acceptance exists, and payment_committed occurs before notification_attempted.",
+      "priority": "Critical",
+      "requirement": "Notification does not reverse payment",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC10",
+      "scenario": "Pay-run retry",
+      "title": "Preserve one payment when retrying after notification failure",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "One approved NGN150,000 earning; one-shot notification failure. UI path: Pay runs.",
+      "steps": [
+        "Arm the notification fault and open the printed workspace pay-run URL.",
+        "Select Review and process payroll, then confirm Process payroll.",
+        "Record the first payment reference and pending message ID.",
+        "Select Retry pay run and confirm.",
+        "Compare pay amount, payment count, original payment object and message identity."
+      ],
+      "expected": "Exactly one NGN150,000 payment remains, with the complete original payment object unchanged. The original notification ID is retained and its pending work is recovered.",
+      "priority": "Critical",
+      "requirement": "PAY-001 duplicate-payment regression",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC11",
+      "scenario": "Process restart",
+      "title": "Preserve payment identity when recovery runs in a fresh process",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "One approved NGN150,000 earning; persistent temporary SQLite file; notification failure.",
+      "steps": [
+        "Process with notification failure and record the payment reference.",
+        "Close the service database.",
+        "Spawn a fresh Node process against that same file and workspace.",
+        "Retry the original pay run and inspect the result."
+      ],
+      "expected": "The fresh process retains exactly one NGN150,000 payment with the original ID and recovers the pending notification.",
+      "priority": "Critical",
+      "requirement": "Durable payment identity",
+      "framework": "Node fresh process",
+      "automation": "Quality Control/execute_test_cases/test/service.test.mjs"
+    },
+    {
+      "id": "TC12",
+      "scenario": "Notification-only recovery",
+      "title": "Recover delivery without changing any payment object",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "Successful NGN150,000 payment with one pending notification.",
+      "steps": [
+        "Cause notification failure after a successful payment.",
+        "Invoke retry-notifications without rerunning payroll.",
+        "Compare complete payment objects and provider acceptance."
+      ],
+      "expected": "Payment objects remain unchanged, pending notification count becomes zero, and provider acceptance is exactly one.",
+      "priority": "Critical",
+      "requirement": "Independent notification recovery",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC13",
+      "scenario": "Persistence interruption",
+      "title": "Commit payment and notification work atomically",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "One approved NGN150,000 earning; one-shot interruption after payment insert and before notification-work insert.",
+      "steps": [
+        "Arm the persistence fault.",
+        "Process once and inspect both tables and rollback event.",
+        "Retry the original run after the fault is consumed.",
+        "Inspect the recovered payment count and amount."
+      ],
+      "expected": "Interrupted transaction leaves zero payments and zero notifications and records payment_rolled_back. Retry creates exactly one NGN150,000 payment.",
+      "priority": "Critical",
+      "requirement": "Atomic payment and outbox",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC14",
+      "scenario": "Lost acknowledgment",
+      "title": "Recover an ambiguous delivery result without another payment",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "One approved NGN150,000 earning; provider accepts once but one acknowledgment is lost.",
+      "steps": [
+        "Arm the ambiguous acknowledgment fault.",
+        "Process once; inspect provider acceptance and pending delivery.",
+        "Retry the original pay run.",
+        "Inspect acceptance count, pending work and payment count."
+      ],
+      "expected": "First attempt has one provider acceptance and one pending notification. Retry leaves one provider acceptance, one payment and zero pending notifications.",
+      "priority": "Critical",
+      "requirement": "Recovery after ambiguous delivery",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC15",
+      "scenario": "Locked period",
+      "title": "Reject new earnings in a period already processed",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "Approved NGN150,000 paid once; attempt to import a new earning ID late in that same period.",
+      "steps": [
+        "Process the original period.",
+        "Attempt to import the new in-period earning.",
+        "Retry the original pay run and compare totals."
+      ],
+      "expected": "Import returns HTTP 409. Approved and recorded payroll remain NGN150,000.",
+      "priority": "High",
+      "requirement": "Frozen period input",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC16",
+      "scenario": "Overlapping requests",
+      "title": "Record one payment across eight requests to one server",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "One approved NGN150,000 earning; first notification attempt fails; eight overlapping HTTP run requests.",
+      "steps": [
+        "Arm the notification fault.",
+        "Send eight run requests concurrently to the same Node server.",
+        "Wait for all responses and inspect workspace state."
+      ],
+      "expected": "One NGN150,000 payment remains and the notification is recovered. This verifies one server, not distributed-worker execution.",
+      "priority": "Critical",
+      "requirement": "Retry and overlap safety",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC17",
+      "scenario": "Next-period payment",
+      "title": "Allow a distinct payment for the same employee in the next period",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "First period NGN150,000; next earning ID next, earned 2026-10-12T00:00:00Z, NGN50,000.",
+      "steps": [
+        "Process the 13 October run.",
+        "Import the next-period earning.",
+        "Process the 20 October run.",
+        "Inspect selected-period total and cross-period records."
+      ],
+      "expected": "Next-period recorded pay is NGN50,000. Two pay runs and two employee-period payment records exist.",
+      "priority": "High",
+      "requirement": "Employee-period payment key",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC18",
+      "scenario": "Timestamp validation",
+      "title": "Reject ambiguous dates and invalid pay schedules",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: empty.",
+      "data": "No offset: 2026-10-08T12:00:00; invalid date: 2026-02-30T12:00:00Z; invalid hour: 2026-10-08T25:00:00Z; Wednesday run: 2026-10-14T09:00:00Z.",
+      "steps": [
+        "Submit an earning with each invalid timestamp.",
+        "Attempt the Wednesday pay run.",
+        "Inspect each HTTP response."
+      ],
+      "expected": "Every invalid request returns HTTP 400.",
+      "priority": "High",
+      "requirement": "Explicit valid timestamps and schedule",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC19",
+      "scenario": "Amount validation",
+      "title": "Require positive bounded whole-kobo amounts",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: empty.",
+      "data": "Invalid amountMinor values: 0, -1, 1.5, 100000001, string 15000000. Valid minimum: 1 kobo.",
+      "steps": [
+        "Attempt to import each invalid amount.",
+        "Import a one-kobo approved earning.",
+        "Process payroll and inspect its amount."
+      ],
+      "expected": "Invalid imports return HTTP 400. One kobo is accepted and pays NGN0.01.",
+      "priority": "High",
+      "requirement": "Integer monetary units",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC20",
+      "scenario": "Employee validation",
+      "title": "Reject unknown employees and empty approved payroll",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: empty.",
+      "data": "Unknown employeeId unknown; no approved earnings.",
+      "steps": [
+        "Attempt an earning for the unknown employee.",
+        "Attempt to process the empty approved period.",
+        "Inspect response statuses."
+      ],
+      "expected": "Unknown-employee import returns HTTP 400; empty approved payroll returns HTTP 409.",
+      "priority": "High",
+      "requirement": "Known employee and nonempty payroll",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC21",
+      "scenario": "Workspace isolation",
+      "title": "Keep identical fixture IDs isolated between workspaces",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single in two workspaces.",
+      "data": "Same employee and earning IDs in workspaces A and B.",
+      "steps": [
+        "Create A and B independently.",
+        "Process A.",
+        "Confirm B has no payments.",
+        "Process B."
+      ],
+      "expected": "A does not alter B. B can independently record its own NGN150,000 payment.",
+      "priority": "High",
+      "requirement": "Fixture isolation",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC22",
+      "scenario": "Approval replay",
+      "title": "Make approval replay harmless and reject rejected earnings",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: empty.",
+      "data": "Pending earn-001: NGN150,000; rejected earning rejected: NGN50,000.",
+      "steps": [
+        "Import both records.",
+        "Approve earn-001 twice.",
+        "Attempt approval of the rejected earning.",
+        "Process payroll and inspect contributing IDs."
+      ],
+      "expected": "Approval replay is harmless; rejected approval returns HTTP 409. Only earn-001 contributes; total is NGN150,000.",
+      "priority": "High",
+      "requirement": "Explicit approval transitions",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    },
+    {
+      "id": "TC23",
+      "scenario": "Earnings-to-payment UI",
+      "title": "Record, approve and pay a precise amount through the UI",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: empty.",
+      "data": "Amara; description Approved project delivery; amount NGN150,000.25; pending approval.",
+      "steps": [
+        "Open Earnings and enter the description and amount.",
+        "Record the earning, then approve it.",
+        "Open Pay runs, review the amount and confirm processing.",
+        "Inspect recorded payroll."
+      ],
+      "expected": "The confirmation and resulting ledger both use NGN150,000.25.",
+      "priority": "High",
+      "requirement": "End-to-end payroll entry",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC24",
+      "scenario": "Cancel confirmation",
+      "title": "Leave payroll unchanged when confirmation is cancelled",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "Pay-run confirmation opened; Escape pressed.",
+      "steps": [
+        "Open the processing dialog.",
+        "Confirm initial focus is on Cancel.",
+        "Press Escape.",
+        "Inspect focus, lock and ledger state."
+      ],
+      "expected": "Dialog closes, focus returns to its trigger, the period stays open and no payment is created.",
+      "priority": "High",
+      "requirement": "Confirmation before mutation",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC25",
+      "scenario": "Payment receipt",
+      "title": "Keep receipts stable across reload, copy and download",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "One successful NGN150,000 payment; clipboard permissions granted for the local test.",
+      "steps": [
+        "Process payroll and open its receipt.",
+        "Reload the receipt page.",
+        "Copy the reference and read the clipboard.",
+        "Download the receipt and inspect its contents."
+      ],
+      "expected": "Receipt reference remains visible and unchanged. Clipboard contains that reference; downloaded receipt names Amara Okafor.",
+      "priority": "Medium",
+      "requirement": "Durable receipt and handoff",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC26",
+      "scenario": "Filtered export",
+      "title": "Export only the employee records shown by the filter",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: standard.",
+      "data": "Processed standard payroll; Employee filter Daniel Mensah.",
+      "steps": [
+        "Open Payments and filter to Daniel.",
+        "Confirm one visible record.",
+        "Export the filtered payments and inspect the CSV."
+      ],
+      "expected": "One record is shown. Export contains Daniel and 200000.00, and excludes Amara.",
+      "priority": "Medium",
+      "requirement": "Consistent filtered export",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC27",
+      "scenario": "Period navigation",
+      "title": "Show the selected period without mixing payroll totals",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: standard.",
+      "data": "13 October period paid NGN435,000; one pending next-period earning.",
+      "steps": [
+        "Open Overview after processing the first period.",
+        "Select pay date 20 October.",
+        "Inspect period label, recorded pay and pending approvals."
+      ],
+      "expected": "Next-period label is 12–18 October 2026, recorded pay is NGN0.00, and one approval is pending.",
+      "priority": "High",
+      "requirement": "Period-specific display",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC28",
+      "scenario": "Mobile workflow",
+      "title": "Keep seven payroll routes usable at 320 pixels",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: standard.",
+      "data": "Standard period processed with one notification failure; viewport 320 x 800.",
+      "steps": [
+        "Set viewport to 320 x 800.",
+        "Open Overview, Employees, employee details, Earnings, Pay runs, Payments and Notifications.",
+        "Inspect page width and Pay runs navigation on each."
+      ],
+      "expected": "No route has horizontal page overflow; Pay runs navigation remains in the viewport.",
+      "priority": "Medium",
+      "requirement": "Responsive core workflow",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC29",
+      "scenario": "Keyboard workflow",
+      "title": "Support skip navigation and payroll dialog keyboard control",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "Overview loaded; keyboard navigation only for the tested sequence.",
+      "steps": [
+        "Tab to Skip to content and activate it.",
+        "Focus and activate Review pay run.",
+        "Open payroll confirmation with Enter.",
+        "Tab through dialog controls, then press Escape."
+      ],
+      "expected": "Skip link focuses main; route change focuses the page title; Cancel is first, Process payroll follows, and Escape restores trigger focus.",
+      "priority": "High",
+      "requirement": "Keyboard access",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC30",
+      "scenario": "Employee context",
+      "title": "Carry the selected employee into earning entry",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "Employee Daniel Mensah; masked account ending 3068.",
+      "steps": [
+        "Open Employees and choose Daniel.",
+        "Inspect his name and masked destination.",
+        "Select Record earnings."
+      ],
+      "expected": "Daniel details and destination are correct; the earning form preselects emp-002.",
+      "priority": "Medium",
+      "requirement": "Employee-context continuity",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC31",
+      "scenario": "Product identity",
+      "title": "Show payroll totals and professional product language",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: standard.",
+      "data": "Three employees; approved payroll NGN435,000.",
+      "steps": [
+        "Open Overview.",
+        "Inspect its title, payroll total and rendered text.",
+        "Open Employees and capture the directory."
+      ],
+      "expected": "Overview shows Payroll overview and NGN435,000. No old banking, WebMCP or assessment labels appear in its rendered body.",
+      "priority": "Medium",
+      "requirement": "Payroll product framing",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC32",
+      "scenario": "Notification recovery UI",
+      "title": "Recover a pending message while retaining the original receipt",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.",
+      "data": "One successful payment with notification failure.",
+      "steps": [
+        "Open Notifications and inspect the delivery error.",
+        "Select Retry pending notifications.",
+        "Compare full payment objects and pending count.",
+        "Inspect the recovery button after completion."
+      ],
+      "expected": "The payment is unchanged, pending count is zero and the completed recovery action is disabled.",
+      "priority": "High",
+      "requirement": "Visible recovery without repayment",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC33",
+      "scenario": "Multiple tabs",
+      "title": "Retain each tab workspace and chosen pay date",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single A; standard B.",
+      "data": "A selects 20 October; B remains on 13 October.",
+      "steps": [
+        "Open A, change its date, and navigate away and back.",
+        "Open B in a second tab.",
+        "Reload both tabs and inspect their period selectors and totals.",
+        "Switch A back to 13 October and compare A with B."
+      ],
+      "expected": "A keeps its own date and workspace. A shows NGN150,000 for its original period; B independently retains NGN435,000 and 13 October.",
+      "priority": "High",
+      "requirement": "Tab-specific workspace and date",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+    },
+    {
+      "id": "TC34",
+      "scenario": "Build identity",
+      "title": "Prove the running app is the selected build and cannot switch policy",
+      "preconditions": "An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: build metadata.",
+      "data": "Expected build ID/source fingerprint from pair.json; opposite implementation requested via workspace creation.",
+      "steps": [
+        "Read /api/health and compare build identity with pair.json.",
+        "Try to create a workspace specifying the opposite behavior.",
+        "Inspect the rejection status."
+      ],
+      "expected": "Served build ID and source fingerprint match the selected folder; policy-switch request returns HTTP 400.",
+      "priority": "High",
+      "requirement": "Execution-to-build traceability",
+      "framework": "Playwright",
+      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+    }
+  ]
+}
