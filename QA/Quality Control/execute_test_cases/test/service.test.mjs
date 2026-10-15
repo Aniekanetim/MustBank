@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve, relative, isAbsolute } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
-const buildRoot = resolve(process.env.PAYROLL_TEST_BUILD_DIR ?? '../MustBank/MustPayroll_fixed');
+const buildRoot = resolve(process.env.PAYROLL_TEST_BUILD_DIR ?? '../../../MustBank/MustPayroll_fixed');
 const { PayrollService } = await import(pathToFileURL(join(buildRoot, 'server/payroll.mjs')).href);
 
 test('TC11 | Fresh process preserves employee-period payment identity', () => {
@@ -15,7 +15,7 @@ test('TC11 | Fresh process preserves employee-period payment identity', () => {
     const w = service.create({ fixture: 'single' }); service.setFault(w.id, 'notification');
     const first = service.execute(w.id); assert.equal(first.paidMinor, 15000000); assert.equal(first.pendingNotifications, 1);
     service.close(); closed = true;
-    const child = spawnSync(process.execPath, ['Quality Control/execute_test_cases/scripts/process-probe.mjs', database, w.id], { encoding: 'utf8', timeout: 15000 });
+    const child = spawnSync(process.execPath, ['scripts/process-probe.mjs', database, w.id], { encoding: 'utf8', timeout: 15000 });
     assert.equal(child.status, 0, child.stderr); const result = JSON.parse(child.stdout);
     if (process.env.PAYROLL_PROCESS_RECORD) writeFileSync(process.env.PAYROLL_PROCESS_RECORD, JSON.stringify({ first, afterRestart: result }, null, 2));
     assert.equal(result.paidMinor, 15000000); assert.equal(result.payments.length, 1); assert.equal(result.pendingNotifications, 0);

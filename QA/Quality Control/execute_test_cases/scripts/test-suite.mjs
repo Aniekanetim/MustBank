@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const quote = value => `"${String(value ?? '').replaceAll('"', '""')}"`;
 const serialize = rows => '\uFEFF' + rows.map(row => row.map(quote).join(',')).join('\r\n') + '\r\n';
 export async function loadCatalogue() {
-  const catalogue = JSON.parse(await readFile('Quality Control/test_cases/catalog.json', 'utf8'));
+  const catalogue = JSON.parse(await readFile('../test_cases/catalog.json', 'utf8'));
   assert.equal(catalogue.cases.length, 34);
   assert.equal(catalogue.coreIds.length, 8);
   assert.equal(new Set(catalogue.cases.map(c => c.id)).size, 34);
@@ -41,9 +41,9 @@ async function table(path, title, catalogue, cases, run) {
 }
 export async function writeTestDesign() {
   const catalogue = await loadCatalogue();
-  await mkdir('Quality Control/test_cases', { recursive: true });
-  await table('Quality Control/test_cases/payroll-test-suite.csv', 'MustPayroll full test design: 34 checks. Execution results are recorded separately per build.', catalogue, catalogue.cases);
-  await table('Quality Control/test_cases/core-payroll-regression.csv', 'MustPayroll core assessment test design: 8 cases. Execution results are recorded separately per build.', catalogue, catalogue.cases.filter(c => catalogue.coreIds.includes(c.id)));
+  await mkdir('../test_cases', { recursive: true });
+  await table('../test_cases/payroll-test-suite.csv', 'MustPayroll full test design: 34 checks. Execution results are recorded separately per build.', catalogue, catalogue.cases);
+  await table('../test_cases/core-payroll-regression.csv', 'MustPayroll core assessment test design: 8 cases. Execution results are recorded separately per build.', catalogue, catalogue.cases.filter(c => catalogue.coreIds.includes(c.id)));
   return catalogue;
 }
 export async function writeExecutedTables(build, run, catalogue) {

@@ -16,7 +16,7 @@
 
 ## Execution environment
 
-Application: [fixed build](../../../../../MustBank/MustPayroll_fixed). Build version: mustpayroll-0.2.0-fixed-ae0d6c08a187. Executed: 2026-10-15T22:49:00.651Z. Node v22.21.0, Chromium 156.0.8078.4, win32/x64. The isolated test URL was http://127.0.0.1:4184. The normal application port is 4176.
+Application: [fixed build](../../../../../MustBank/MustPayroll_fixed). Build version: mustpayroll-0.2.0-fixed-ae0d6c08a187. Executed: 2026-10-15T23:11:25.910Z. Node v22.21.0, Chromium 156.0.8078.4, win32/x64. The isolated test URL was http://127.0.0.1:4184. The normal application port is 4176.
 
 ## Execution evidence
 
@@ -28,4 +28,4 @@ Application: [fixed build](../../../../../MustBank/MustPayroll_fixed). Build ver
 
 The employee is owed NGN150,000. After notification failure and payroll retry, this build records NGN150,000.00 across 1 payment(s), with 0 pending notification(s). The expectation is unchanged between builds.
 
-From QA, npm run verify rebuilds the apps and repeats the same suite against both. Results are automated; they do not claim candidate manual sign-off. See [execution comparison](../README.md), [defect report](../../../bug_report/PAY-001.md) and [release checklist](../../../../Quality%20assurance/release_readiness/README.md).
+From QA/Quality Control/execute_test_cases, npm run verify rebuilds the apps and repeats the same suite against both. Results are automated; they do not claim candidate manual sign-off. See [execution comparison](../README.md), [defect report](../../../bug_report/PAY-001.md) and [release checklist](../../../../Quality%20assurance/release_readiness/README.md).

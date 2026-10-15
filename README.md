@@ -28,7 +28,7 @@ Start with [intent.md](QA/Quality%20assurance/intent/intent.md) and [directive.m
 | Buggy | [Core results](QA/Quality%20Control/execute_test_cases/results/buggy/core-results.csv) | [Results and logs](QA/Quality%20Control/execute_test_cases/results/buggy/README.md) |
 | Fixed | [Core results](QA/Quality%20Control/execute_test_cases/results/fixed/core-results.csv) | [Results and logs](QA/Quality%20Control/execute_test_cases/results/fixed/README.md) |
 
-The same eight core cases and full 34-check suite run against both builds. Follow [SETUP.md](QA/SETUP.md) to prepare the fixture and execute the tests. The required candidate Loom is still pending in directive.md.
+The same eight core cases and full 34-check suite run against both builds. Follow [Execution guide](QA/Quality%20Control/execute_test_cases/README.md) to prepare the fixture and execute the tests. The required candidate Loom is still pending in directive.md.
 
 ## Scope and provenance
 

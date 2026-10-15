@@ -37,7 +37,7 @@
       "priority": "Critical",
       "requirement": "Approved earnings and aggregation",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC02",
@@ -54,7 +54,7 @@
       "priority": "High",
       "requirement": "UTC period selection",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC03",
@@ -72,7 +72,7 @@
       "priority": "Critical",
       "requirement": "UTC period selection",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC04",
@@ -89,7 +89,7 @@
       "priority": "Critical",
       "requirement": "Explicit timezone normalization",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC05",
@@ -106,7 +106,7 @@
       "priority": "Critical",
       "requirement": "Immutable earning identity",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC06",
@@ -123,7 +123,7 @@
       "priority": "High",
       "requirement": "Atomic import validation",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC07",
@@ -140,7 +140,7 @@
       "priority": "Critical",
       "requirement": "Approval before payment",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC08",
@@ -158,7 +158,7 @@
       "priority": "Critical",
       "requirement": "Payment before notification",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC09",
@@ -175,7 +175,7 @@
       "priority": "Critical",
       "requirement": "Notification does not reverse payment",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC10",
@@ -194,7 +194,7 @@
       "priority": "Critical",
       "requirement": "PAY-001 duplicate-payment regression",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC11",
@@ -212,7 +212,7 @@
       "priority": "Critical",
       "requirement": "Durable payment identity",
       "framework": "Node fresh process",
-      "automation": "Quality Control/execute_test_cases/test/service.test.mjs"
+      "automation": "test/service.test.mjs"
     },
     {
       "id": "TC12",
@@ -229,7 +229,7 @@
       "priority": "Critical",
       "requirement": "Independent notification recovery",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC13",
@@ -247,7 +247,7 @@
       "priority": "Critical",
       "requirement": "Atomic payment and outbox",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC14",
@@ -265,7 +265,7 @@
       "priority": "Critical",
       "requirement": "Recovery after ambiguous delivery",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC15",
@@ -282,7 +282,7 @@
       "priority": "High",
       "requirement": "Frozen period input",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC16",
@@ -299,7 +299,7 @@
       "priority": "Critical",
       "requirement": "Retry and overlap safety",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC17",
@@ -317,7 +317,7 @@
       "priority": "High",
       "requirement": "Employee-period payment key",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC18",
@@ -334,7 +334,7 @@
       "priority": "High",
       "requirement": "Explicit valid timestamps and schedule",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC19",
@@ -351,7 +351,7 @@
       "priority": "High",
       "requirement": "Integer monetary units",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC20",
@@ -368,7 +368,7 @@
       "priority": "High",
       "requirement": "Known employee and nonempty payroll",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC21",
@@ -386,7 +386,7 @@
       "priority": "High",
       "requirement": "Fixture isolation",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC22",
@@ -404,7 +404,7 @@
       "priority": "High",
       "requirement": "Explicit approval transitions",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     },
     {
       "id": "TC23",
@@ -422,7 +422,7 @@
       "priority": "High",
       "requirement": "End-to-end payroll entry",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC24",
@@ -440,7 +440,7 @@
       "priority": "High",
       "requirement": "Confirmation before mutation",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC25",
@@ -458,7 +458,7 @@
       "priority": "Medium",
       "requirement": "Durable receipt and handoff",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC26",
@@ -475,7 +475,7 @@
       "priority": "Medium",
       "requirement": "Consistent filtered export",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC27",
@@ -492,7 +492,7 @@
       "priority": "High",
       "requirement": "Period-specific display",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC28",
@@ -509,7 +509,7 @@
       "priority": "Medium",
       "requirement": "Responsive core workflow",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC29",
@@ -527,7 +527,7 @@
       "priority": "High",
       "requirement": "Keyboard access",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC30",
@@ -544,7 +544,7 @@
       "priority": "Medium",
       "requirement": "Employee-context continuity",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC31",
@@ -561,7 +561,7 @@
       "priority": "Medium",
       "requirement": "Payroll product framing",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC32",
@@ -579,7 +579,7 @@
       "priority": "High",
       "requirement": "Visible recovery without repayment",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC33",
@@ -597,7 +597,7 @@
       "priority": "High",
       "requirement": "Tab-specific workspace and date",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-ui.spec.ts"
+      "automation": "test/specs/payroll-ui.spec.ts"
     },
     {
       "id": "TC34",
@@ -614,7 +614,7 @@
       "priority": "High",
       "requirement": "Execution-to-build traceability",
       "framework": "Playwright",
-      "automation": "Quality Control/execute_test_cases/test/specs/payroll-api.spec.ts"
+      "automation": "test/specs/payroll-api.spec.ts"
     }
   ]
 }

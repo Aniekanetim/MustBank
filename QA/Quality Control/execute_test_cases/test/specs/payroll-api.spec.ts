@@ -3,7 +3,7 @@ import { create, post, run, fault, earning } from '../helpers';
 import { readFileSync } from 'node:fs';
 
 test('TC34 | Served build matches its package and cannot switch implementation', async ({ request }, info) => {
-  const pair = JSON.parse(readFileSync('config/builds.json', 'utf8'));
+  const pair = JSON.parse(readFileSync('results/builds.json', 'utf8'));
   const variant = process.env.QUEST_BEHAVIOR === 'faulty' ? 'faulty' : 'fixed';
   const health = await (await request.get('/api/health')).json();
   await info.attach('served-build', { body: JSON.stringify(health), contentType: 'application/json' });

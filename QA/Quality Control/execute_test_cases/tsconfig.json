@@ -15,7 +15,7 @@
     "noUnusedParameters": true
   },
   "include": [
-    "Quality Control/execute_test_cases/test",
-    "Quality Control/execute_test_cases/playwright.config.ts"
+    "test",
+    "playwright.config.ts"
   ]
 }

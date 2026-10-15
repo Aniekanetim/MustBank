@@ -1,12 +1,12 @@
 {
   "application": "MustPayroll",
   "variant": "faulty",
-  "generatedAt": "2026-10-15T22:49:00.613Z",
+  "generatedAt": "2026-10-15T23:11:25.866Z",
   "buildId": "mustpayroll-0.2.0-faulty-c0f059dc3f59",
-  "directory": "../MustBank/Mustpayroll_buggy",
-  "executionDirectory": "Quality Control/execute_test_cases/results/buggy",
+  "directory": "../../../MustBank/Mustpayroll_buggy",
+  "executionDirectory": "results/buggy",
   "sourceFingerprint": "c0f059dc3f59daf046aa6ba741796b6568abf0fd5172752a591c800101960f41",
-  "testSuiteSha256": "3f46f5031d8f9d32f44438d9fb1f3f48000a38d1abf3b1a656f784342a684b25",
+  "testSuiteSha256": "cda71406bb0714da29a585814a44a58764ac4f90a1e19d30e69ed87583336f4d",
   "environment": {
     "node": "v22.21.0",
     "platform": "win32",
@@ -31,7 +31,7 @@
     "playwright": 1,
     "freshProcess": 1
   },
-  "playwrightReportSha256": "a93f27459e0ca2d9ae30f0790690fa764e1c0916ba49f70ab84530c9eccd1fae",
+  "playwrightReportSha256": "8ad0701bab858954dafa8f4a940589774a035c82dba955b69bc8714435c607db",
   "total": 34,
   "passed": 29,
   "failed": 5,
@@ -141,7 +141,7 @@
       "id": "TC13",
       "title": "Interruption rolls back payment and outbox together",
       "result": "failed",
-      "error": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T22:47:55.187Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"a89a15a2-6c0f-44f2-b67c-a2e1c47d41eb\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]",
+      "error": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T23:10:10.890Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"cc701e75-970e-4f24-bc98-8bb2c261ffee\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]",
       "framework": "Playwright",
       "actual": "After interruption: 1 payment(s), 0 notification(s). Rollback event recorded: false."
     },

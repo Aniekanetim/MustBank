@@ -6,8 +6,8 @@ import { createHash } from 'node:crypto';
 import { chromium } from '@playwright/test';
 import { writeTestRecords } from './test-records.mjs';
 
-const root = resolve('..');
-await mkdir('Quality Control/execute_test_cases/results', { recursive: true });
+const root = resolve('../../..');
+await mkdir('results', { recursive: true });
 const npmCli = process.env.npm_execpath;
 if (!npmCli) throw new Error('Run this through npm run verify.');
 const clean = value => value.replace(/\u001b\[[0-9;]*m/g, '').split(root).join('<project>').split(root.replaceAll('\\', '/')).join('<project>');
@@ -37,13 +37,13 @@ async function verifyBuild(build) {
 }
 
 assert.equal(await run('build', [npmCli, 'run', 'build:pair']), 0, 'Build failed.');
-const pair = JSON.parse(await readFile('config/builds.json', 'utf8'));
+const pair = JSON.parse(await readFile('results/builds.json', 'utf8'));
 const runs = {};
 for (const variant of ['faulty', 'fixed']) {
   const build = pair.builds[variant]; await verifyBuild(build);
   const execution = resolve(build.executionDirectory);
   for (const folder of ['playwright', 'process', 'evidence']) await mkdir(resolve(execution, folder), { recursive: true });
-  const processExit = await run(`${variant}-process`, ['--test', 'Quality Control/execute_test_cases/test/service.test.mjs'], {
+  const processExit = await run(`${variant}-process`, ['--test', 'test/service.test.mjs'], {
     PAYROLL_TEST_BUILD_DIR: resolve(build.directory), PAYROLL_PROCESS_RECORD: resolve(execution, 'process/observation.json'),
   }, resolve(execution, 'process/console.log'));
   const processObservation = JSON.parse(await readFile(resolve(execution, 'process/observation.json'), 'utf8'));
@@ -51,7 +51,7 @@ for (const variant of ['faulty', 'fixed']) {
   assert.equal(processObservation.first.paidMinor, 15000000);
   assert.equal(processObservation.afterRestart.paidMinor, variant === 'faulty' ? 30000000 : 15000000);
   assert.equal(processObservation.afterRestart.payments.length, variant === 'faulty' ? 2 : 1);
-  const playwrightExit = await run(`${variant}-run`, ['node_modules/@playwright/test/cli.js', 'test', '--config', 'Quality Control/execute_test_cases/playwright.config.ts'], { QUEST_BEHAVIOR: variant }, resolve(execution, 'playwright/console.log'));
+  const playwrightExit = await run(`${variant}-run`, ['node_modules/@playwright/test/cli.js', 'test', '--config', 'playwright.config.ts'], { QUEST_BEHAVIOR: variant }, resolve(execution, 'playwright/console.log'));
   const report = JSON.parse(await readFile(resolve(execution, 'playwright/report.json'), 'utf8'));
   const all = report.suites.flatMap(specs);
   assert.equal(all.length, 33, 'The complete browser/API suite must execute against each build.');

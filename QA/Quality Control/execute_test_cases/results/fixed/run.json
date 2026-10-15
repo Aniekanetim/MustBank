@@ -1,12 +1,12 @@
 {
   "application": "MustPayroll",
   "variant": "fixed",
-  "generatedAt": "2026-10-15T22:49:00.651Z",
+  "generatedAt": "2026-10-15T23:11:25.910Z",
   "buildId": "mustpayroll-0.2.0-fixed-ae0d6c08a187",
-  "directory": "../MustBank/MustPayroll_fixed",
-  "executionDirectory": "Quality Control/execute_test_cases/results/fixed",
+  "directory": "../../../MustBank/MustPayroll_fixed",
+  "executionDirectory": "results/fixed",
   "sourceFingerprint": "ae0d6c08a187ccdbfed9c70db2eb7912df3776035ccc71deaa39c8ae09b5ebad",
-  "testSuiteSha256": "3f46f5031d8f9d32f44438d9fb1f3f48000a38d1abf3b1a656f784342a684b25",
+  "testSuiteSha256": "cda71406bb0714da29a585814a44a58764ac4f90a1e19d30e69ed87583336f4d",
   "environment": {
     "node": "v22.21.0",
     "platform": "win32",
@@ -31,7 +31,7 @@
     "playwright": 0,
     "freshProcess": 0
   },
-  "playwrightReportSha256": "a1646936f4fbba8c003bc13cf0dc306402a0cb4acae1ccf8796a28e11ccd8bad",
+  "playwrightReportSha256": "2655bc8f9324984adc44d36324ceef8681728b908ac279981b5794521ca2ee7d",
   "total": 34,
   "passed": 34,
   "failed": 0,

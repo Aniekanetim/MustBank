@@ -2,7 +2,7 @@ import { defineConfig } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 const mode = process.env.QUEST_BEHAVIOR === 'faulty' ? 'faulty' : 'fixed';
-const pair = JSON.parse(readFileSync('config/builds.json', 'utf8'));
+const pair = JSON.parse(readFileSync('results/builds.json', 'utf8'));
 const build = pair.builds[mode];
 
 export default defineConfig({

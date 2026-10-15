@@ -58,9 +58,9 @@ This decision is based on automated QC results and does not represent candidate 
 
 ## Results/handoff appendix
 
-1. Follow [SETUP.md](SETUP.md) to install dependencies and start the two local applications. The [repository branch](https://github.com/Aniekanetim/MustBank/tree/quest/rewards-settlement) contains both applications and the runnable test project.
-2. From QA, run npm run verify to rebuild each app and execute the shared suite against each. Inspect both completed result tables and execution logs. Unexpected failures, skips, timeouts or retries block verification.
-3. For manual reproduction, follow PAY-001 and prepare a fresh workspace in each build with the scenario commands in SETUP.md. Keep the original pay date and compare payment references before and after recovery.
+1. Follow [Execution guide](Quality%20Control/execute_test_cases/README.md) to install dependencies and start the two local applications. The [repository branch](https://github.com/Aniekanetim/MustBank/tree/quest/rewards-settlement) contains both applications and the runnable test project.
+2. From QA/Quality Control/execute_test_cases, run npm run verify to rebuild each app and execute the shared suite against each. Inspect both completed result tables and execution logs. Unexpected failures, skips, timeouts or retries block verification.
+3. For manual reproduction, follow PAY-001 and prepare a fresh workspace in each build with the scenario commands in the execution guide. Keep the original pay date and compare payment references before and after recovery.
 4. If a successful payment has a pending message, use Notifications to retry delivery. Preserve the original payment reference and amount. If no payment exists, retry the original pay run and verify that previously successful entries remain unchanged.
 5. If recorded pay differs from approved pay or an employee-period has duplicate payments, stop processing that workspace/period. Record the workspace, employee, original period, payment references/count/amount, notification state, attempted recovery and result. Hand the mismatch to engineering/QA for investigation and reconciliation. A manual database edit is not the demonstrated fix.
 6. Use the [QA release checklist](Quality%20assurance/release_readiness/README.md) and the decision above for handoff. Passing this local reference does not approve real banking, tax, authentication or distributed-worker behavior.
