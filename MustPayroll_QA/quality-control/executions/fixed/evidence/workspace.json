@@ -1,0 +1,169 @@
+{
+  "id": "37e177d1-db16-4fe6-b50a-45073bb2281f",
+  "company": "Northstar Studio",
+  "currency": "NGN",
+  "period": {
+    "scheduledFor": "2026-10-13T09:00:00.000Z",
+    "start": "2026-10-05T00:00:00.000Z",
+    "end": "2026-10-12T00:00:00.000Z"
+  },
+  "employees": [
+    {
+      "id": "emp-001",
+      "name": "Amara Okafor",
+      "role": "Product designer",
+      "department": "Design",
+      "bank": "Meridian Bank",
+      "accountEnding": "4821"
+    },
+    {
+      "id": "emp-002",
+      "name": "Daniel Mensah",
+      "role": "Software engineer",
+      "department": "Engineering",
+      "bank": "Union Coast Bank",
+      "accountEnding": "3068"
+    },
+    {
+      "id": "emp-003",
+      "name": "Zara Bello",
+      "role": "Operations associate",
+      "department": "Operations",
+      "bank": "Meridian Bank",
+      "accountEnding": "7290"
+    }
+  ],
+  "earnings": [
+    {
+      "earningId": "earn-001",
+      "employeeId": "emp-001",
+      "description": "Weekly project earnings",
+      "earnedAt": "2026-10-08T12:00:00.000Z",
+      "amountMinor": 15000000,
+      "status": "approved"
+    }
+  ],
+  "entries": [
+    {
+      "employeeId": "emp-001",
+      "expectedMinor": 15000000,
+      "paidMinor": 15000000,
+      "earningIds": [
+        "earn-001"
+      ],
+      "paymentCount": 1
+    }
+  ],
+  "payments": [
+    {
+      "id": "e3d96f31-d794-4dcd-bcae-c652a552a91f",
+      "employeeId": "emp-001",
+      "employeeName": "Amara Okafor",
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "amountMinor": 15000000,
+      "bank": "Meridian Bank",
+      "accountEnding": "4821",
+      "createdAt": "2026-10-15T19:34:10.743Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "bf4e92a3-fddb-4630-a0c5-890d64e8fa14",
+      "paymentId": "e3d96f31-d794-4dcd-bcae-c652a552a91f",
+      "employeeId": "emp-001",
+      "employeeName": "Amara Okafor",
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "state": "sent",
+      "attempts": 2,
+      "lastError": null
+    }
+  ],
+  "runs": [
+    {
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "periodEnd": "2026-10-12T00:00:00.000Z",
+      "scheduledFor": "2026-10-13T09:00:00.000Z",
+      "createdAt": "2026-10-15T19:34:10.725Z",
+      "expectedMinor": 15000000
+    }
+  ],
+  "locked": true,
+  "expectedMinor": 15000000,
+  "paidMinor": 15000000,
+  "pendingApprovals": 0,
+  "pendingNotifications": 0,
+  "providerAccepted": 1,
+  "events": [
+    {
+      "event": "earnings_recorded",
+      "employeeId": null,
+      "detail": {
+        "count": 1
+      },
+      "createdAt": "2026-10-15T19:34:09.229Z"
+    },
+    {
+      "event": "failure_armed",
+      "employeeId": null,
+      "detail": {
+        "kind": "notification"
+      },
+      "createdAt": "2026-10-15T19:34:09.276Z"
+    },
+    {
+      "event": "payment_committed",
+      "employeeId": "emp-001",
+      "detail": {
+        "paymentId": "e3d96f31-d794-4dcd-bcae-c652a552a91f",
+        "amountMinor": 15000000
+      },
+      "createdAt": "2026-10-15T19:34:10.758Z"
+    },
+    {
+      "event": "notification_attempted",
+      "employeeId": "emp-001",
+      "detail": {},
+      "createdAt": "2026-10-15T19:34:10.772Z"
+    },
+    {
+      "event": "notification_failed",
+      "employeeId": "emp-001",
+      "detail": {
+        "messageId": "bf4e92a3-fddb-4630-a0c5-890d64e8fa14",
+        "error": "Notification delivery unavailable. Retry the notification."
+      },
+      "createdAt": "2026-10-15T19:34:10.888Z"
+    },
+    {
+      "event": "pay_run_finished",
+      "employeeId": null,
+      "detail": {
+        "scheduledFor": "2026-10-13T09:00:00.000Z"
+      },
+      "createdAt": "2026-10-15T19:34:10.900Z"
+    },
+    {
+      "event": "notification_attempted",
+      "employeeId": "emp-001",
+      "detail": {},
+      "createdAt": "2026-10-15T19:34:11.193Z"
+    },
+    {
+      "event": "notification_sent",
+      "employeeId": "emp-001",
+      "detail": {
+        "messageId": "bf4e92a3-fddb-4630-a0c5-890d64e8fa14",
+        "error": null
+      },
+      "createdAt": "2026-10-15T19:34:11.224Z"
+    },
+    {
+      "event": "pay_run_finished",
+      "employeeId": null,
+      "detail": {
+        "scheduledFor": "2026-10-13T09:00:00.000Z"
+      },
+      "createdAt": "2026-10-15T19:34:11.241Z"
+    }
+  ]
+}

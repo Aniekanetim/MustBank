@@ -1,6 +1,6 @@
 {
   "application": "MustPayroll",
-  "generatedAt": "2026-10-15T19:18:03.182Z",
+  "generatedAt": "2026-10-15T19:32:45.739Z",
   "sourceSha256": {
     "../MustBank/Mustpayroll_buggy/LICENSE": "8cbc3f617d1df0c131e67257c25968f73316431b0391fed3a6d0163c889769a8",
     "../MustBank/Mustpayroll_buggy/README.md": "4f10e4d6433611440dd16995e8c09f708bd85bfbf78ae9702a921cd10ffc031c",
@@ -39,22 +39,22 @@
     "../MustBank/MustPayroll_fixed/tsconfig.json": "91b3a700b970f3a36ae5b692b6834ad6065b5d9b1ebda529c4db0aaf194d78b4",
     "../MustBank/MustPayroll_fixed/vite.config.ts": "b9259870fe9d17dd19e2259e6f1f2a4d7dd86418d85414509bf5e641ff66e0f0",
     "package-lock.json": "b59ae0d50c4ad28208fb11e14b4d8d5532169df2b2f17349b3aab18a6de782ba",
-    "package.json": "56f19cc2bd28789ac275c9575210adc382ae7b97f96131c66fb010f16dc3d970",
-    "playwright.config.ts": "81e710cc241fa682cd53426b9ae189eeca0cfe71999cec879d6972527798b51d",
-    "scripts/build-inputs.mjs": "5dfce3b265fe7e1e80ce78a5cb7299375baa4e02eafe169c2b2e9d1f908f0e0f",
-    "scripts/build-pair.mjs": "360cdb8632e1866084fa420fd2a6bcb7521468fed4faba20b8605c8e1edf973d",
-    "scripts/process-probe.mjs": "970a9f9e4b626546057a1c1ef8da4baffba01997a34a4aee56beb8250ef0ce6d",
+    "package.json": "69ec05343b48e7c60c09c48b08e65c3c7b8892b4564e95be4c1a9aca619e990d",
+    "quality-control/playwright.config.ts": "9f93c7548cb982f26e964bddbff8d4d39dd87006f7f0f26a0c427bc7052e974a",
+    "quality-control/scripts/process-probe.mjs": "970a9f9e4b626546057a1c1ef8da4baffba01997a34a4aee56beb8250ef0ce6d",
+    "quality-control/scripts/test-records.mjs": "c3d76bbbd0471189d58dfaff77885aa82d615a848997778db4e06b1288b7e00f",
+    "quality-control/scripts/test-suite.mjs": "0a71c5e4e1e4e768a3feacf9d9610c85624fc80e79e451d6b14c9cf8c24daa0c",
+    "quality-control/scripts/verify.mjs": "367f943c71991bbbdbbea01a8e7e3574ef16fa3e7179b44bc5de90aaf2a7f8e9",
+    "quality-control/test-cases/catalog.json": "a0a0a752805817678d126b78a58cda177621d52e866978dc61fafa12380c3ac4",
+    "quality-control/tests/helpers.ts": "30f0224c03cabe31b5e574ebb2c384f6448399695d5a4b62f9892b4a603bda32",
+    "quality-control/tests/payroll-api.spec.ts": "3073ceff2034d3412cf4ce6da2e0d6a795561bef04be8cf10f336e583b0c40c8",
+    "quality-control/tests/payroll-ui.spec.ts": "637f2437a118a4968e14c76ed64b525606de609f204f111f84f0959574180822",
+    "quality-control/tests/service.test.mjs": "088661bec32e95d8180c5cb8a9c6bce413fa76e0a08590b213e46488b4b6cd92",
+    "scripts/build-inputs.mjs": "dd2311becc1f4481fe0111aeeef7f35a8585071db7583294dfaf9f0e41254a87",
+    "scripts/build-pair.mjs": "b264f8c9ea2b0caa62a90e92bd743ddd802c403e0c9ca23c94239a8a7988a497",
     "scripts/scenario.mjs": "420bcbce700352ae31f332ad73397be66f28e73ec037187ebfd818d2b3655575",
     "scripts/start-build.mjs": "73c8defd6cbfd35e6aeca82823cf911341375cb6ec6f2661023419e4801a2c35",
-    "scripts/test-records.mjs": "8d01f67e22894fa75c8e5aab6849d53a5df25e93e9ac9c9e60555805f7361e3a",
-    "scripts/test-suite.mjs": "17257d7987548566080ad32b071d876219be08740627ae0cc93264374cb2c778",
-    "scripts/verify.mjs": "61ba593b7190af8b4452aecc24ad2b3bca0c630f482193ce9bdcb96a6e1d81b1",
-    "test-cases/catalog.json": "d3945f44bf8504b51a1ca110bf2270b4df46a3610ac1e79af7f3ee815d964ed0",
-    "tests/helpers.ts": "30f0224c03cabe31b5e574ebb2c384f6448399695d5a4b62f9892b4a603bda32",
-    "tests/payroll-api.spec.ts": "3073ceff2034d3412cf4ce6da2e0d6a795561bef04be8cf10f336e583b0c40c8",
-    "tests/payroll-ui.spec.ts": "637f2437a118a4968e14c76ed64b525606de609f204f111f84f0959574180822",
-    "tests/service.test.mjs": "a2fac6db70d04ccf1341db7da5a159df0d5e04610024c5f724ff090902a1209c",
-    "tsconfig.json": "a97113c6d71b815f4d9c93bef5cb66beb3db7a3e3d35caca3417ae05deab6995"
+    "tsconfig.json": "ad38dfb461c827bb2e708df164e00b1e2e0f3c70a5e9164b90d7aca62b6884ab"
   },
   "builds": {
     "faulty": {
@@ -62,33 +62,33 @@
       "variant": "faulty",
       "port": 4175,
       "directory": "../MustBank/Mustpayroll_buggy",
-      "executionDirectory": "executions/buggy",
+      "executionDirectory": "quality-control/executions/buggy",
       "sourceFingerprint": "c0f059dc3f59daf046aa6ba741796b6568abf0fd5172752a591c800101960f41",
       "runtimeSha256": "ecae6720563a3a6f215fa4af9f33838eb6871f9109260acc485bd10a81db4fd9",
       "manifest": "../MustBank/Mustpayroll_buggy/build-manifest.json",
-      "manifestSha256": "e02c09277db6e50ce85b02b3c1f4c4c75420aa1c5df060586fcec962bf9986f0"
+      "manifestSha256": "5f0c80ae75f6c98f88a532c307d8288f609ee528982e57d074df0c3f9aa3d464"
     },
     "fixed": {
       "buildId": "mustpayroll-0.2.0-fixed-ae0d6c08a187",
       "variant": "fixed",
       "port": 4176,
       "directory": "../MustBank/MustPayroll_fixed",
-      "executionDirectory": "executions/fixed",
+      "executionDirectory": "quality-control/executions/fixed",
       "sourceFingerprint": "ae0d6c08a187ccdbfed9c70db2eb7912df3776035ccc71deaa39c8ae09b5ebad",
       "runtimeSha256": "ca73d4d610877f4d413ece2f3e418c722f162b68ab4814d4a8965a3f966f5fcf",
       "manifest": "../MustBank/MustPayroll_fixed/build-manifest.json",
-      "manifestSha256": "e2b66ee77c0e03c2ebfb6c3742b094e48e8fea14a73a9314721f351616674cfb"
+      "manifestSha256": "205cf7a974ce9a3b20abdcd7e1bdbd68bbcc760102602e1340cc8f24e4ff42c1"
     }
   },
   "testSha256": {
-    "tests/helpers.ts": "30f0224c03cabe31b5e574ebb2c384f6448399695d5a4b62f9892b4a603bda32",
-    "tests/payroll-api.spec.ts": "3073ceff2034d3412cf4ce6da2e0d6a795561bef04be8cf10f336e583b0c40c8",
-    "tests/payroll-ui.spec.ts": "637f2437a118a4968e14c76ed64b525606de609f204f111f84f0959574180822",
-    "tests/service.test.mjs": "a2fac6db70d04ccf1341db7da5a159df0d5e04610024c5f724ff090902a1209c",
-    "scripts/process-probe.mjs": "970a9f9e4b626546057a1c1ef8da4baffba01997a34a4aee56beb8250ef0ce6d",
-    "playwright.config.ts": "81e710cc241fa682cd53426b9ae189eeca0cfe71999cec879d6972527798b51d",
-    "test-cases/catalog.json": "d3945f44bf8504b51a1ca110bf2270b4df46a3610ac1e79af7f3ee815d964ed0"
+    "quality-control/tests/helpers.ts": "30f0224c03cabe31b5e574ebb2c384f6448399695d5a4b62f9892b4a603bda32",
+    "quality-control/tests/payroll-api.spec.ts": "3073ceff2034d3412cf4ce6da2e0d6a795561bef04be8cf10f336e583b0c40c8",
+    "quality-control/tests/payroll-ui.spec.ts": "637f2437a118a4968e14c76ed64b525606de609f204f111f84f0959574180822",
+    "quality-control/tests/service.test.mjs": "088661bec32e95d8180c5cb8a9c6bce413fa76e0a08590b213e46488b4b6cd92",
+    "quality-control/scripts/process-probe.mjs": "970a9f9e4b626546057a1c1ef8da4baffba01997a34a4aee56beb8250ef0ce6d",
+    "quality-control/playwright.config.ts": "9f93c7548cb982f26e964bddbff8d4d39dd87006f7f0f26a0c427bc7052e974a",
+    "quality-control/test-cases/catalog.json": "a0a0a752805817678d126b78a58cda177621d52e866978dc61fafa12380c3ac4"
   },
-  "testSuiteSha256": "136b668803ef756597ec8fc5a8492c09161733c927f1caf285865351af3ddebb",
-  "sourceFingerprint": "e7692d773447f591abeb01e5cda1f04d8da5f4d7e115196d74fbf946bffda34e"
+  "testSuiteSha256": "1b021ffbc0c3210a07ce3fd7c63ebd219391edf0ddd069a0c3a04db84b31b058",
+  "sourceFingerprint": "2739db8f161f7d557c5495d19f12b96bbc2c9163c9569afa38b9e54afaa1709f"
 }

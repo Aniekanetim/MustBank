@@ -1,12 +1,12 @@
 # MustPayroll
 
-MustPayroll models approved earnings, weekly pay runs and notification recovery using synthetic employees and a local payment ledger. The buggy and fixed applications are independent projects; the QA work sits outside their container.
+MustPayroll models approved earnings, weekly pay runs and notification recovery using synthetic employees and a local payment ledger. The buggy and fixed applications are independent projects; quality assurance and quality control sit outside their container.
 
 | Location | Purpose |
 |---|---|
 | [MustBank/Mustpayroll_buggy](MustBank/Mustpayroll_buggy) | Complete application preserving the controlled defect |
 | [MustBank/MustPayroll_fixed](MustBank/MustPayroll_fixed) | Complete application containing the correction |
-| [MustPayroll_QA](MustPayroll_QA/README.md) | Test cases, automation, separate execution results and assessment documents |
+| [MustPayroll_QA](MustPayroll_QA/README.md) | Separate quality-assurance and quality-control work, connected by directive.md |
 
 ## Run either application
 
@@ -21,12 +21,12 @@ Starting uses the committed compiled interface and Node built-ins. To rebuild an
 
 ## Assessment work
 
-Start with [intent.md](MustPayroll_QA/assessment/intent.md) and [directive.md](MustPayroll_QA/assessment/directive.md). The directive links the business rules and flow, runnable test project, cases/results, defect report, release checklist, verification evidence and handoff.
+Start with [intent.md](MustPayroll_QA/quality-assurance/intent.md) and [directive.md](MustPayroll_QA/directive.md). The directive links the business rules and flow, runnable test project, cases/results, defect report, release checklist, verification evidence and handoff.
 
 | Build | Eight completed cases | Execution record |
 |---|---|---|
-| Buggy | [Core results](MustPayroll_QA/executions/buggy/core-results.csv) | [Results and logs](MustPayroll_QA/executions/buggy/README.md) |
-| Fixed | [Core results](MustPayroll_QA/executions/fixed/core-results.csv) | [Results and logs](MustPayroll_QA/executions/fixed/README.md) |
+| Buggy | [Core results](MustPayroll_QA/quality-control/executions/buggy/core-results.csv) | [Results and logs](MustPayroll_QA/quality-control/executions/buggy/README.md) |
+| Fixed | [Core results](MustPayroll_QA/quality-control/executions/fixed/core-results.csv) | [Results and logs](MustPayroll_QA/quality-control/executions/fixed/README.md) |
 
 The same eight core cases and full 34-check suite run against both builds. Follow [SETUP.md](MustPayroll_QA/SETUP.md) to prepare the fixture and execute the tests. The required candidate Loom is still pending in directive.md.
 

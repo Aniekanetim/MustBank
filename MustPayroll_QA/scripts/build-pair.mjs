@@ -16,7 +16,7 @@ for (const [variant, directory] of Object.entries(APPLICATIONS)) {
   if (manifest.variant !== variant) throw new Error('Application identity differs from requested build.');
   const manifestPath = `${directory}/build-manifest.json`;
   pair.builds[variant] = { buildId: manifest.id, variant, port: manifest.defaultPort, directory,
-    executionDirectory: `executions/${variant === 'faulty' ? 'buggy' : 'fixed'}`,
+    executionDirectory: `quality-control/executions/${variant === 'faulty' ? 'buggy' : 'fixed'}`,
     sourceFingerprint: manifest.sourceFingerprint, runtimeSha256: manifest.runtimeSha256, manifest: manifestPath, manifestSha256: sha(bytes) };
   for (const [file, hash] of Object.entries(manifest.sourceSha256)) pair.sourceSha256[`${directory}/${file}`] = hash;
 }

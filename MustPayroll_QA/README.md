@@ -1,38 +1,27 @@
-# MustPayroll QA project
+# MustPayroll quality work
 
-This project contains the runnable test suite, shared case definitions and separate test execution records for the [buggy application](../MustBank/Mustpayroll_buggy) and [fixed application](../MustBank/MustPayroll_fixed). It sits outside MustBank.
+Quality assurance defines the process, risk priorities and acceptance conditions used to prevent defects. Quality control designs and executes product checks, records defects and verifies corrections. Both operate throughout development; QC findings provide evidence for the QA release gates.
 
-## Required submission work
+## Project organization
 
-| Work | Location |
-|---|---|
-| Problem choice and prioritization | [intent.md](assessment/intent.md) |
-| Objective, scope, requirements, completion criteria, results and handoff | [directive.md](assessment/directive.md) |
-| Business rules, mapped flow and assumptions | [Business rules](assessment/business-rules.md) |
-| Runnable test project and fixtures | [Setup](SETUP.md), [tests](tests), [execution scripts](scripts) |
-| Eight core cases and full 34-check suite | [Core cases](test-cases/core-payroll-regression.csv), [complete suite](test-cases/payroll-test-suite.csv) |
-| Separate actual results and execution evidence | [Buggy execution](executions/buggy/README.md), [fixed execution](executions/fixed/README.md) |
-| Actionable defect and root cause | [PAY-001](assessment/defect-report.md) |
-| Release checklist, remaining gaps and readiness decision | [Release readiness](assessment/release-readiness.md) |
-| Candidate Loom, no more than five minutes | Link remains pending in directive.md |
+| Area | Purpose | Existing work |
+|---|---|---|
+| Quality assurance | Establish risks, business acceptance criteria and release conditions | [Intent and priorities](quality-assurance/intent.md), [business rules and flow](quality-assurance/business-rules.md), [release-gate checklist](quality-assurance/release-readiness.md) |
+| Quality control | Design and run checks, inspect outcomes and investigate product failures | [Cases](quality-control/test-cases), [automation](quality-control/tests), [execution scripts](quality-control/scripts), [buggy results](quality-control/executions/buggy/README.md), [fixed results](quality-control/executions/fixed/README.md), [defect report](quality-control/defect-report.md) |
+| Submission and handoff | Connect the approach, findings, actual release judgment, gaps and ownership | [directive.md](directive.md) |
+| Shared tooling | Install dependencies, locate/build/start the applications and prepare fixtures | [SETUP.md](SETUP.md), [application scripts](scripts), [configuration](config) |
 
-## Test organization
+The release checklist defines what must be true. The directive records whether the QC evidence meets those conditions and what remains unverified. Test-case definitions live under quality-control because they specify checks of the product against the QA acceptance rules.
 
-The same eight core cases run against each application with unchanged preconditions, steps, inputs and expected results. Each execution folder contains its own completed CSV tables, run record, Playwright report/log, fresh-process result/log and relevant state evidence.
+## Follow the work
 
-| Case | Coverage | Buggy | Fixed |
-|---|---|---|---|
-| TC01 | Approved payroll aggregation | Pass | Pass |
-| TC03 | Closing UTC boundary | Pass | Pass |
-| TC04 | Timezone conversion | Pass | Pass |
-| TC05 | Duplicate earning input | Pass | Pass |
-| TC08 | Failed payment and retry | Pass | Pass |
-| TC09 | Notification failure preserves payment | Pass | Pass |
-| TC10 | Payroll retry cannot create another payment | Fail | Pass |
-| TC13 | Partial persistence failure rolls back payment and message | Fail | Pass |
+1. Read quality-assurance/intent.md for the selected risk and prioritization.
+2. Review quality-assurance/business-rules.md and release-readiness.md for the expected behavior and release criteria.
+3. Inspect the shared cases, both execution records and PAY-001 under quality-control.
+4. Read directive.md for the resulting release decision, remaining gaps and handoff.
 
-These eight are included in the full suite of 33 Playwright checks and one Node fresh-process check. The full suite covers additional boundaries and recovery paths. It runs against both builds.
+The same eight core cases and full 34-check suite execute against both independent applications with unchanged inputs, steps and expected results. Each execution has completed CSVs, a test record, raw Playwright results/log, a fresh-process result/log and relevant defect evidence. [Compare the executions](quality-control/executions/README.md).
 
-CSV columns follow the supplied reference: TC ID, Test Scenario, Test Case, Test Steps, Test Data, Expected Result, Actual Result, Status, and Comment / Screenshot. Design tables have blank actual results and Not Run. Completed execution tables contain actual automated results. Case IDs link the design, automation and recorded result.
+The case tables retain the supplied nine-column format. Definitions have blank actual results and Not Run. Execution tables contain actual automated outcomes. The [core suite](quality-control/test-cases/core-payroll-regression.csv) contains eight cases; the [complete suite](quality-control/test-cases/payroll-test-suite.csv) contains 33 Playwright checks and one Node fresh-process check.
 
-Follow SETUP.md, then run npm run verify from this directory. See the [execution comparison](executions/README.md) for the final outcome. Results do not imply candidate manual sign-off.
+All npm commands run from MustPayroll_QA. Follow SETUP.md, then use npm run verify. Use npm run qc:design to refresh the case tables after a catalogue change. Test results are automated and do not imply candidate manual sign-off. The required Loom remains pending in directive.md.

@@ -1,0 +1,47 @@
+﻿"MustPayroll core assessment test design: 8 cases. Execution results are recorded separately per build.","","","","","","","",""
+"TC ID","Test Scenario","Test Case","Test Steps","Test Data","Expected Result","Actual Result","Status","Comment / Screenshot"
+"TC01","Approved payroll","Aggregate approved earnings once per employee","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: standard.
+
+1. Create a standard workspace.
+2. Process the 13 October pay run.
+3. Read the payment ledger and notification states.","Amara: NGN120,000 + NGN30,000; Daniel: NGN200,000; Zara: NGN85,000. All approved.","Exactly three payments total NGN435,000. Amara receives one NGN150,000 payment. Every payment notification is sent.","","Not Run","Core assessment case; Priority: Critical; Requirement: Approved earnings and aggregation; Playwright; quality-control/tests/payroll-api.spec.ts; Actual results are recorded separately for each execution."
+"TC03","Closing cut-off","Defer the excluded closing-boundary earning to the next period","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: boundaries.
+
+1. Create the boundaries workspace.
+2. Process the 13 October run and inspect selected earning IDs.
+3. Process the 20 October run.
+4. Compare the period totals and payment count.","Opening boundary: NGN10,000; before opening: NGN20,000; just before closing: NGN30,000; exactly 2026-10-12T00:00:00Z: NGN40,000.","The first run pays NGN40,000 from start + last only. The NGN40,000 closing-boundary earning is paid in the next period; two payment records exist across both periods.","","Not Run","Core assessment case; Priority: Critical; Requirement: UTC period selection; Playwright; quality-control/tests/payroll-api.spec.ts; Actual results are recorded separately for each execution."
+"TC04","Timezone conversion","Normalize Lagos timestamps before selecting earnings","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: empty.
+
+1. Import both offset-aware earnings.
+2. Process the 13 October run.
+3. Inspect earning IDs included in the employee payment.","outside: 2026-10-05T00:30:00+01:00; inside: 2026-10-05T01:00:00+01:00. Each approved for 15000000 kobo.","Only inside qualifies. outside normalizes to the preceding Sunday; inside normalizes to opening Monday midnight. Total recorded pay is NGN150,000.","","Not Run","Core assessment case; Priority: Critical; Requirement: Explicit timezone normalization; Playwright; quality-control/tests/payroll-api.spec.ts; Actual results are recorded separately for each execution."
+"TC05","Duplicate input","Do not increase payroll when an identical earning is reimported","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.
+
+1. Reimport the same earning twice using its original ID and values.
+2. Process the pay run.
+3. Count earnings and inspect recorded pay.","Existing earn-001, emp-001, approved, 2026-10-08T12:00:00Z, 15000000 kobo. Import two identical copies.","One earning record remains; one payment records NGN150,000.","","Not Run","Core assessment case; Priority: Critical; Requirement: Immutable earning identity; Playwright; quality-control/tests/payroll-api.spec.ts; Actual results are recorded separately for each execution."
+"TC08","Payment failure","Create no notification when payment fails, then recover safely","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.
+
+1. Arm the payout fault through the local fixture API.
+2. Process the pay run.
+3. Inspect payments, notifications and provider acceptance.
+4. Retry the original run and inspect the ledger.","One approved NGN150,000 earning; one-shot payout failure before ledger write.","First attempt: zero payment, zero notification and zero provider acceptance. Retry: one NGN150,000 payment.","","Not Run","Core assessment case; Priority: Critical; Requirement: Payment before notification; Playwright; quality-control/tests/payroll-api.spec.ts; Actual results are recorded separately for each execution."
+"TC09","Notification partial failure","Retain a successful payment when notification delivery fails","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.
+
+1. Arm the notification fault through the local fixture API.
+2. Process the pay run once.
+3. Inspect the ledger, pending notification and event order.","One approved NGN150,000 earning; one-shot notification failure before provider acceptance.","The NGN150,000 payment remains recorded. One notification is pending, no provider acceptance exists, and payment_committed occurs before notification_attempted.","","Not Run","Core assessment case; Priority: Critical; Requirement: Notification does not reverse payment; Playwright; quality-control/tests/payroll-api.spec.ts; Actual results are recorded separately for each execution."
+"TC10","Pay-run retry","Preserve one payment when retrying after notification failure","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.
+
+1. Arm the notification fault and open the printed workspace pay-run URL.
+2. Select Review and process payroll, then confirm Process payroll.
+3. Record the first payment reference and pending message ID.
+4. Select Retry pay run and confirm.
+5. Compare pay amount, payment count, original payment object and message identity.","One approved NGN150,000 earning; one-shot notification failure. UI path: Pay runs.","Exactly one NGN150,000 payment remains, with the complete original payment object unchanged. The original notification ID is retained and its pending work is recovered.","","Not Run","Core assessment case; Priority: Critical; Requirement: PAY-001 duplicate-payment regression; Playwright; quality-control/tests/payroll-ui.spec.ts; Actual results are recorded separately for each execution."
+"TC13","Persistence interruption","Commit payment and notification work atomically","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.
+
+1. Arm the persistence fault.
+2. Process once and inspect both tables and rollback event.
+3. Retry the original run after the fault is consumed.
+4. Inspect the recovered payment count and amount.","One approved NGN150,000 earning; one-shot interruption after payment insert and before notification-work insert.","Interrupted transaction leaves zero payments and zero notifications and records payment_rolled_back. Retry creates exactly one NGN150,000 payment.","","Not Run","Core assessment case; Priority: Critical; Requirement: Atomic payment and outbox; Playwright; quality-control/tests/payroll-api.spec.ts; Actual results are recorded separately for each execution."

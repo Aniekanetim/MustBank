@@ -11,17 +11,17 @@
     "node": ">=22.13.0"
   },
   "name": "mustpayroll-qa",
-  "description": "External test design, automation, separate build executions and Quest handoff.",
+  "description": "MustPayroll quality assurance, quality control and assessment handoff.",
   "scripts": {
     "build:pair": "node scripts/build-pair.mjs",
     "start:pair": "node scripts/start-build.mjs both",
     "start:buggy": "node scripts/start-build.mjs buggy",
     "start:fixed": "node scripts/start-build.mjs fixed",
-    "test": "playwright test",
-    "test:service": "node --test tests/service.test.mjs",
-    "qa:design": "node scripts/test-suite.mjs",
+    "test": "playwright test --config quality-control/playwright.config.ts",
+    "test:service": "node --test quality-control/tests/service.test.mjs",
     "scenario": "node scripts/scenario.mjs",
-    "verify": "tsc --noEmit && node scripts/verify.mjs"
+    "verify": "tsc --noEmit && node quality-control/scripts/verify.mjs",
+    "qc:design": "node quality-control/scripts/test-suite.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1",

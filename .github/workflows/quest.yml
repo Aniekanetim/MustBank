@@ -33,6 +33,6 @@ jobs:
         with:
           name: mustpayroll-test-results
           path: |
-            MustPayroll_QA/test-cases/
-            MustPayroll_QA/executions/
+            MustPayroll_QA/quality-control/test-cases/
+            MustPayroll_QA/quality-control/executions/
           retention-days: 14
