@@ -1,6 +1,6 @@
 # MustPayroll fixed application
 
-Build: mustpayroll-0.2.0-fixed-0dcbfc9d3580
+Build: mustpayroll-0.2.0-fixed-836ba86495ff
 
 This is an independent application folder containing its backend, compiled interface and one payment implementation. Requires Node.js 22.13 or later; no dependency installation is needed.
 
@@ -12,6 +12,6 @@ The employee is owed NGN150,000. The fixed retry preserves the original NGN150,0
 
 The API rejects requests to switch implementation. This app stores its own database in data/payroll.sqlite. Rebuilding updates application files without removing that database.
 
-Inspect server/payment-policy.mjs for this implementation. Shared editable frontend source and the full test suite are at the repository root. [Test record](../../assessment/test-records/fixed.md).
+Inspect server/payment-policy.mjs for this implementation. Shared editable frontend source and the full test suite are at the repository root. [Test record](../../qa/executions/fixed/README.md).
 
 Payment records are synthetic local ledger entries. This is not a live payroll service. Source and MIT attribution: https://github.com/Aniekanetim/MustBank

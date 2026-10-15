@@ -14,3 +14,6 @@ output/playwright/
 .env.local
 .env
 .playwright-cli/
+qa/executions/*/playwright/artifacts/
+qa/executions/*/playwright/html-report/
+!qa/executions/**/*.log

@@ -1,68 +1,47 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
+import { writeTestDesign, writeExecutedTables, observedResult } from './test-suite.mjs';
 
 export async function writeTestRecords(pair, runs, environment) {
-  const directory = resolve('assessment/test-records');
-  await mkdir(directory, { recursive: true });
-  const escape = text => String(text).replaceAll('|', '\\|').replaceAll('\n', '<br>');
+  const catalogue = await writeTestDesign();
+  const catalogueSha256 = createHash('sha256').update(await readFile('qa/test-cases/catalog.json')).digest('hex');
   for (const variant of ['faulty', 'fixed']) {
-    const run = runs[variant], build = pair.builds[variant];
-    const reportBytes = await readFile(`assessment/evidence/${variant}-playwright.json`);
+    const run = runs[variant], build = pair.builds[variant], directory = resolve(build.executionDirectory);
+    await mkdir(directory, { recursive: true });
+    const core = run.cases.filter(c => catalogue.coreIds.includes(c.id));
+    const playwright = run.cases.filter(c => c.id !== 'TC11');
+    const counts = cases => ({ total: cases.length, passed: cases.filter(c => c.result === 'passed').length, failed: cases.filter(c => c.result === 'failed').length });
+    const reportBytes = await readFile(resolve(directory, 'playwright/report.json'));
     const record = { application: 'MustPayroll', variant, generatedAt: new Date().toISOString(),
-      buildId: build.buildId, directory: build.directory, runtimeSha256: build.runtimeSha256,
-      manifestSha256: build.manifestSha256, sourceFingerprint: pair.sourceFingerprint,
-      testSuiteSha256: pair.testSuiteSha256, environment, servedBuild: run.servedBuild,
-      commands: { browserAndApi: `QUEST_BEHAVIOR=${variant} npx playwright test`, freshProcess: `PAYROLL_TEST_BUILD_DIR=${build.directory} node --test tests/service.test.mjs` },
+      buildId: build.buildId, directory: build.directory, executionDirectory: build.executionDirectory,
+      runtimeSha256: build.runtimeSha256, manifestSha256: build.manifestSha256,
+      sourceFingerprint: pair.sourceFingerprint, testSuiteSha256: pair.testSuiteSha256, catalogueSha256, environment,
+      testedUrl: 'http://127.0.0.1:4184', servedBuild: run.servedBuild,
+      commands: { completeVerification: 'npm run verify', browserAndApi: `QUEST_BEHAVIOR=${variant} npx playwright test`, freshProcess: `PAYROLL_TEST_BUILD_DIR=${build.directory} node --test tests/service.test.mjs` },
       exitCodes: { playwright: run.playwrightExit, freshProcess: run.processExit },
       playwrightReportSha256: createHash('sha256').update(reportBytes).digest('hex'),
-      total: run.cases.length, passed: run.cases.filter(c => c.result === 'passed').length,
-      failed: run.cases.filter(c => c.result === 'failed').length, cases: run.cases,
+      ...counts(run.cases), playwright: counts(playwright), freshProcess: counts(run.cases.filter(c => c.id === 'TC11')), core: counts(core),
+      cases: run.cases.map(result => { const definition = catalogue.cases.find(c => c.id === result.id); return { ...result, framework: definition.framework, actual: observedResult(run, definition) }; }),
       primaryObservation: { approvedMinor: run.state.expectedMinor, recordedMinor: run.state.paidMinor, payments: run.state.payments.length, pendingNotifications: run.state.pendingNotifications },
-      freshProcessObservation: run.processObservation,
-      relatedObservations: run.observations,
     };
-    await writeFile(resolve(directory, `${variant}.json`), JSON.stringify(record, null, 2) + '\n');
-    const decision = variant === 'faulty'
-      ? 'BLOCK RELEASE. The original payment is duplicated after a notification failure. The persistence-interruption case also exposes a payment without durable notification work.'
-      : 'PASS the assessed local reference scope. The original payment survives recovery, notification work is durable, and every check in the same suite passes. Production payroll approval is outside this result.';
-    const text = `# ${variant === 'faulty' ? 'Before correction: faulty build' : 'After correction: fixed build'} test record\n\n` +
-      `**${record.passed} passed; ${record.failed} failed; ${record.total} executed. ${decision}**\n\n` +
-      `Build: ${record.buildId}. Tested on ${record.generatedAt} using ${environment.node} / Chromium ${environment.chromium} on ${environment.platform}. These are automated execution results, not a claim of candidate manual sign-off.\n\n` +
-      `## Build and test identity\n\n` +
-      `- Application: [independent folder](../../${record.directory}); [runtime manifest](../../${record.directory}/build-manifest.json). Open a terminal in that folder and run npm start.\n` +
-      `- Runtime SHA-256: ${record.runtimeSha256}. This fingerprints the manifest's ordered application-file hashes; local database files are excluded.\n` +
-      `- Shared source fingerprint: ${record.sourceFingerprint}.\n` +
-      `- Shared test-suite fingerprint: ${record.testSuiteSha256}. Both records execute the same cases and positive business expectations.\n` +
-      `- The served-build attachment matches this build ID and source fingerprint. TC34 also verifies that its API cannot switch to the opposite implementation.\n\n` +
-      `## Reproduction and observed result\n\n` +
-      `Input: one approved earning of NGN150,000 for Amara Okafor in the 5–12 October 2026 UTC period. Inject one notification failure before provider acceptance, process payroll, then retry the same pay run. Expected: retain exactly one NGN150,000 payment and recover its original pending notification.\n\n` +
-      `Observed after retry: NGN${(run.state.paidMinor / 100).toLocaleString('en-US', { minimumFractionDigits: 2 })}, ${run.state.payments.length} payment(s), ${run.state.pendingNotifications} pending notification(s). The same TC10 assertion ${variant === 'faulty' ? 'fails on the excess payment amount' : 'passes and verifies that the entire original payment object and notification ID are retained'}.\n\n` +
-      `Watch the [actual TC10 browser recording](${variant}-TC10.webm), inspect the [final screenshot](../evidence/${variant}-reproduction.png), or read the [first attempt](../evidence/${variant}-first-attempt.json) and [state after retry](../evidence/${variant}-workspace.json). The browser recording is evidence from automation; the candidate's final Loom is a separate deliverable.\n\n` +
-      `## Every executed case\n\n` +
-      `Inputs and expected outcomes are in the [case register](../test-cases.md). Results below come from the Playwright report and the independent fresh-process check; no test is skipped or marked as an expected failure.\n\n` +
-      `| Case | Check | Result | Failure observed |\n|---|---|---|---|\n` +
-      run.cases.map(c => {
-        const detail = c.result === 'passed' ? '—' : {
-          TC10: 'Expected NGN150,000 and one payment; observed NGN300,000 and two payments.',
-          TC11: `Expected one payment after restart; observed ${run.processObservation.afterRestart.payments.length} payments totaling NGN${run.processObservation.afterRestart.paidMinor / 100}.`,
-          TC13: `Expected no committed payment after interruption; observed ${run.observations.TC13.payments.length} payment and ${run.observations.TC13.notifications.length} notifications.`,
-          TC14: `Expected one payment and no pending notification; observed ${run.observations.TC14.payments.length} payments and ${run.observations.TC14.pendingNotifications} pending notification. Provider acceptances remain ${run.observations.TC14.providerAccepted}.`,
-          TC16: `Expected NGN150,000 once; observed NGN${run.observations.TC16.paidMinor / 100} across ${run.observations.TC16.payments.length} payments.`,
-        }[c.id] ?? c.error;
-        return `| ${c.id} | ${escape(c.title)} | ${c.result.toUpperCase()} | ${escape(detail)} |`;
-      }).join('\n') + '\n\n' +
-      `## Execution records and handoff\n\n` +
-      `- [Browser/API report](../evidence/${variant}-playwright.json), [console log](../evidence/${variant}-run.log).\n` +
-      `- [Fresh-process console log](../evidence/${variant}-process.log), [before/restart state](../evidence/${variant}-process.json).\n` +
-      `- Related observed states: [TC13 interrupted persistence](../evidence/${variant}-TC13.json), [TC14 lost acknowledgement](../evidence/${variant}-TC14.json), [TC16 overlapping requests](../evidence/${variant}-TC16.json).\n` +
-      `- [Structured test record](${variant}.json), [comparison](README.md), [PAY-001 defect report](../defect-report.md).\n` +
-      `- Reproduce both runs from source with npm ci, npx playwright install --no-shell chromium, then npm run verify. The verifier updates both plain application folders without deleting their databases, checks their file hashes, executes the full suite against each, and regenerates both records. A failed corrected check or an unexpected faulty result fails verification.\n\n` +
-      `No real funds, bank API or employee data were used. Browser coverage is Chromium. Single-server overlap is tested; distributed workers, real providers, permissions, taxes and statutory compliance are unverified.\n`;
-    await writeFile(resolve(directory, `${variant}.md`), text);
+    await writeFile(resolve(directory, 'run.json'), JSON.stringify(record, null, 2) + '\n');
+    await writeExecutedTables(build, run, catalogue);
+    const decision = variant === 'faulty' ? 'BLOCK RELEASE: retry records another employee payment; persistence interruption also leaves an orphan payment.' : 'PASS the assessed local reference scope; production payroll approval remains outside this evidence.';
+    const text = `# ${variant === 'faulty' ? 'Buggy' : 'Fixed'} build execution\n\n**${record.passed} passed, ${record.failed} failed, ${record.total} executed. ${decision}**\n\n` +
+      `| Execution scope | Total | Passed | Failed |\n|---|---|---|---|\n| Playwright browser/API | ${record.playwright.total} | ${record.playwright.passed} | ${record.playwright.failed} |\n| Node fresh-process recovery | 1 | ${record.freshProcess.passed} | ${record.freshProcess.failed} |\n| Eight core assessment cases (subset) | 8 | ${record.core.passed} | ${record.core.failed} |\n\n` +
+      `## Suite tables\n\n- [Eight core cases with actual results](core-results.csv).\n- [All 34 cases with steps, data, expectations, actual results and status](test-results.csv).\n- [Shared test design](../../test-cases/payroll-test-suite.csv), [core design](../../test-cases/core-payroll-regression.csv).\n\n` +
+      `## Exact build and environment\n\nBuild: ${record.buildId}. Application folder: [${record.directory}](../../../${record.directory}). Execution time: ${record.generatedAt}. Runtime: ${environment.node}, Chromium ${environment.chromium}, ${environment.platform}/${environment.architecture}.\n\n` +
+      `The isolated automated server used http://127.0.0.1:4184. The manual app's default port is ${build.port}. The [served-build evidence](evidence/served-build.json) matches this build ID and source fingerprint; TC34 verifies the opposite implementation is rejected. Application runtime SHA-256: ${record.runtimeSha256}. Shared test-suite SHA-256: ${record.testSuiteSha256}. Case-design SHA-256: ${catalogueSha256}.\n\n` +
+      `## Open the Playwright execution\n\nFrom the repository root:\n\n~~~sh\nnpx playwright show-report ${build.executionDirectory}/playwright/html-report\n~~~\n\n` +
+      `- [HTML report](playwright/html-report/index.html), [raw JSON report](playwright/report.json), [console log](playwright/console.log).\n- [Per-test traces, videos and screenshots](playwright/artifacts).\n- [PAY-001 browser recording](evidence/PAY-001.webm), [final screenshot](evidence/reproduction.png).\n- [First attempt](evidence/first-attempt.json), [after retry](evidence/workspace.json).\n- Related states: [TC13 interruption](evidence/TC13.json), [TC14 lost acknowledgement](evidence/TC14.json), [TC16 overlapping requests](evidence/TC16.json).\n- The separate Node check has its own [console log](process/console.log) and [before/restart state](process/observation.json).\n\n` +
+      `HTML reports and bulk per-test artifacts are generated locally and retained in CI artifacts. CSV results, raw JSON, logs and the selected regression evidence are committed with this record. The CI artifact contains the same execution-folder structure.\n\n` +
+      `## Business outcome and handoff\n\nOne approved earning owes Amara NGN150,000. After a one-shot notification failure and a retry, this build records NGN${(run.state.paidMinor / 100).toLocaleString('en-US', { minimumFractionDigits: 2 })} across ${run.state.payments.length} payment(s), with ${run.state.pendingNotifications} pending notification(s). The expectation remains one original payment and recovered delivery in both executions.\n\n` +
+      `Run npm run verify to rebuild both folders and execute the same suite against each. No skips, timeouts or retries are accepted as business-defect proof. See [comparison](../README.md), [PAY-001](../../../assessment/defect-report.md) and [release decision](../../../assessment/release-readiness.md). Results are automated, not a claim of candidate manual sign-off. All employees, payment records and provider responses are synthetic.\n`;
+    await writeFile(resolve(directory, 'README.md'), text);
   }
-  await writeFile(resolve(directory, 'README.md'), `# Two builds, two test records\n\nThe buggy application preserves the defect. The fixed application contains its correction. Each is a separate plain folder with one payment implementation, its own build ID and its own database. Both run without installing application dependencies.\n\n| Build | Executed test record | TC10 recording | Result |\n|---|---|---|---|\n` + ['faulty', 'fixed'].map(variant => {
-    const c = runs[variant].cases;
-    return `| [${variant === 'faulty' ? 'buggy' : 'fixed'} application folder](../../${pair.builds[variant].directory}) | [${variant} record](${variant}.md) | [Browser video](${variant}-TC10.webm) | ${c.filter(x => x.result === 'passed').length} pass / ${c.filter(x => x.result === 'failed').length} fail |`;
-  }).join('\n') + `\n\nThe same 34 checks run against both applications: 33 browser/API checks and one fresh-process persistence check. Business assertions are unchanged between runs. [Build identities](../builds/pair.json) and runtime file hashes connect each result to the runnable folder. [The correction patch](../builds/fix.patch) shows the change in payment policy.\n\nRead the [case register](../test-cases.md) for inputs and expectations, and [business proof](../evidence/business-proof.md) for the causal before/after comparison. Start either folder with npm start on Node.js 22.13 or later, then follow its README.\n`);
+  await writeFile('qa/executions/README.md', '# Payroll execution comparison\n\nThe same suite, case IDs and positive business expectations run against two independent application folders.\n\n| Build | Execution folder | Eight-case result sheet | Full result sheet | Total outcome |\n|---|---|---|---|---|\n' + ['faulty', 'fixed'].map(variant => {
+    const folder = variant === 'faulty' ? 'buggy' : 'fixed', cases = runs[variant].cases;
+    return `| [${folder} app](../../builds/${folder}) | [${folder} execution](${folder}/README.md) | [Core eight](${folder}/core-results.csv) | [All 34](${folder}/test-results.csv) | ${cases.filter(c => c.result === 'passed').length} pass / ${cases.filter(c => c.result === 'failed').length} fail |`;
+  }).join('\n') + '\n\nEach execution contains its Playwright HTML/JSON reports, console log, per-test artifacts, curated evidence, a separate Node fresh-process result, build identity and standard result tables. The eight-case subset is included in the 34 checks. Read [QA project organization](../README.md) and [business proof](../../assessment/evidence/business-proof.md).\n');
 }

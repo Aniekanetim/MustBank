@@ -4,8 +4,8 @@ These are separate, unpacked application folders. Each contains its own backend,
 
 | Application | Folder | Default URL | Existing test record |
 |---|---|---|---|
-| Buggy | [buggy](buggy) | http://127.0.0.1:4175/overview | [Before correction](../assessment/test-records/faulty.md) |
-| Fixed | [fixed](fixed) | http://127.0.0.1:4176/overview | [After correction](../assessment/test-records/fixed.md) |
+| Buggy | [buggy](buggy) | http://127.0.0.1:4175/overview | [Before correction](../qa/executions/buggy/README.md) |
+| Fixed | [fixed](fixed) | http://127.0.0.1:4176/overview | [After correction](../qa/executions/fixed/README.md) |
 
 Open a terminal in either folder and run:
 

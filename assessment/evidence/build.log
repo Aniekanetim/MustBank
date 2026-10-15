@@ -15,10 +15,10 @@ dist/index.html                   0.82 kB │ gzip:  0.51 kB
 dist/assets/index-Dr8isaYH.css   15.99 kB │ gzip:  3.94 kB
 dist/assets/index-BJQB3nRz.js   220.37 kB │ gzip: 70.25 kB
 
-✓ built in 2.78s
-buggy: mustpayroll-0.2.0-faulty-0dcbfc9d3580
+✓ built in 1.71s
+buggy: mustpayroll-0.2.0-faulty-836ba86495ff
   builds/buggy
   http://127.0.0.1:4175/overview
-fixed: mustpayroll-0.2.0-fixed-0dcbfc9d3580
+fixed: mustpayroll-0.2.0-fixed-836ba86495ff
   builds/fixed
   http://127.0.0.1:4176/overview

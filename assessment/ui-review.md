@@ -6,15 +6,15 @@ The interface now follows one payroll-operations journey. Employees establish th
 
 | Journey or design concern | Evidence |
 |---|---|
-| Overview distinguishes approved payroll, recorded pay, pending approvals and pending notifications | [Overview screenshot](evidence/payroll-overview.png), TC27 and TC31 |
-| Employee directory leads to a masked destination and employee-specific earning entry | [Employee screenshot](evidence/payroll-employees.png), TC30 |
-| Record → approve → review → confirm reaches the expected payroll amount | [Pay-run screenshot](evidence/payroll-pay-run.png), TC23 |
+| Overview distinguishes approved payroll, recorded pay, pending approvals and pending notifications | [Overview screenshot](../qa/executions/fixed/evidence/payroll-overview.png), TC27 and TC31 |
+| Employee directory leads to a masked destination and employee-specific earning entry | [Employee screenshot](../qa/executions/fixed/evidence/payroll-employees.png), TC30 |
+| Record → approve → review → confirm reaches the expected payroll amount | [Pay-run screenshot](../qa/executions/fixed/evidence/payroll-pay-run.png), TC23 |
 | Processing is a deliberate confirmed action; Escape restores focus without changing the ledger | TC24 and TC29 |
-| Payment receipt is retrievable after reload, with copy and download actions | [Receipt screenshot](evidence/payroll-receipt.png), TC25 |
+| Payment receipt is retrievable after reload, with copy and download actions | [Receipt screenshot](../qa/executions/fixed/evidence/payroll-receipt.png), TC25 |
 | Payment filters and exports agree | TC26 |
-| Failed delivery is visible without calling the payment failed | [Pending notification screenshot](evidence/payroll-notification-pending.png), TC32 |
-| Duplicate-payment behavior is surfaced as a mismatch requiring reconciliation | [Faulty screenshot](evidence/faulty-reproduction.png), TC10 |
-| At 320px, payroll entries use stacked cards with visible approved/recorded totals and persistent navigation | [Mobile screenshot](evidence/payroll-mobile.png), TC28 |
+| Failed delivery is visible without calling the payment failed | [Pending notification screenshot](../qa/executions/fixed/evidence/payroll-notification-pending.png), TC32 |
+| Duplicate-payment behavior is surfaced as a mismatch requiring reconciliation | [Faulty screenshot](../qa/executions/buggy/evidence/reproduction.png), TC10 |
+| At 320px, payroll entries use stacked cards with visible approved/recorded totals and persistent navigation | [Mobile screenshot](../qa/executions/fixed/evidence/payroll-mobile.png), TC28 |
 | Keyboard skip link, title focus, dialog order and restoration work | TC29 |
 | Separate browser tabs retain their workspace and pay period after navigation and reload | TC33 |
 

@@ -1,6 +1,6 @@
 # Release decision
 
-**Ready with known limitations for local assessment review.** The corrected payroll flow passes 33 Playwright browser/API checks and one fresh-process check. The selected business assertion fails against the intentionally faulty implementation and passes against the correction. [Fixed build and test record](test-records/fixed.md). The separate [faulty build and test record](test-records/faulty.md) executes the same 34 checks: 29 pass and five fail for the recorded defect paths. [Evidence summary](evidence/summary.json).
+**Ready with known limitations for local assessment review.** The corrected payroll flow passes 33 Playwright browser/API checks and one fresh-process check. The selected business assertion fails against the intentionally faulty implementation and passes against the correction. [Fixed build and test record](../qa/executions/fixed/README.md). The separate [faulty build and test record](../qa/executions/buggy/README.md) executes the same 34 checks: 29 pass and five fail for the recorded defect paths. [Evidence summary](evidence/summary.json).
 
 The faulty behavior is **not ready**: a notification failure followed by payroll retry records ₦300,000 against ₦150,000 of approved earnings. Keep it confined to the controlled reproduction. Neither implementation is approved for live payroll use.
 

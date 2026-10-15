@@ -2,12 +2,16 @@
 
 MustPayroll reviews approved earnings, processes weekly pay runs and recovers payment notifications using synthetic employees and a local payment ledger. It connects to no real bank or payroll provider.
 
+## QA project
+
+Start with the [QA project guide](qa/README.md). The [eight-case core suite](qa/test-cases/core-payroll-regression.csv) and [complete 34-check suite](qa/test-cases/payroll-test-suite.csv) use standard test-management columns. Open the [buggy execution](qa/executions/buggy/README.md) or [fixed execution](qa/executions/fixed/README.md) for its results table, Playwright report, logs, artifacts and build identity.
+
 ## Run the applications independently
 
 | Application | Plain folder | Local URL | Executed test record |
 |---|---|---|---|
-| Buggy | [builds/buggy](builds/buggy) | http://127.0.0.1:4175/overview | [Before correction](assessment/test-records/faulty.md) |
-| Fixed | [builds/fixed](builds/fixed) | http://127.0.0.1:4176/overview | [After correction](assessment/test-records/fixed.md) |
+| Buggy | [builds/buggy](builds/buggy) | http://127.0.0.1:4175/overview | [Before correction](qa/executions/buggy/README.md) |
+| Fixed | [builds/fixed](builds/fixed) | http://127.0.0.1:4176/overview | [After correction](qa/executions/fixed/README.md) |
 
 Each folder contains its own backend, payment implementation, compiled interface and package.json. Use Node.js 22.13 or later. No dependency installation is needed to run either folder.
 

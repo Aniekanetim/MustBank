@@ -10,8 +10,8 @@ The earlier setup put two behaviours inside one application and ran only the cen
 |---|---|
 | Application containing the defects | [Buggy application folder](../builds/buggy), [manifest](builds/faulty-manifest.json) |
 | Application containing the correction | [Fixed application folder](../builds/fixed), [manifest](builds/fixed-manifest.json) |
-| Test record proving the defects | [Faulty full-suite record](test-records/faulty.md), raw reports/logs/state and TC10 video linked within |
-| Test record proving the correction | [Fixed full-suite record](test-records/fixed.md), raw reports/logs/state and TC10 video linked within |
+| Test record proving the defects | [Faulty full-suite record](../qa/executions/buggy/README.md), raw reports/logs/state and TC10 video linked within |
+| Test record proving the correction | [Fixed full-suite record](../qa/executions/fixed/README.md), raw reports/logs/state and TC10 video linked within |
 | Same test expectations before and after | Matching test-suite fingerprint in both records; 34 identical checks; no skips or expected-failure annotations |
 | Exact correction and artifact identity | [Payment-policy patch](builds/fix.patch), [build pair and runtime file hashes](builds/pair.json) |
 

@@ -42,6 +42,7 @@
     "preview": "vite preview",
     "test": "playwright test",
     "test:service": "node --test tests/service.test.mjs",
+    "qa:design": "node scripts/test-suite.mjs",
     "scenario": "node scripts/scenario.mjs",
     "verify": "node scripts/verify.mjs",
     "evidence:report": "node scripts/report-evidence.mjs",

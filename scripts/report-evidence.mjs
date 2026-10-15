@@ -5,10 +5,9 @@ import { fileURLToPath } from 'node:url';
 
 export async function reportEvidence(directory = resolve('assessment/evidence')) {
   const load = async name => JSON.parse(await readFile(resolve(directory, name), 'utf8'));
-  const [summary, redFirst, red, greenFirst, green] = await Promise.all([
-    load('summary.json'), load('faulty-first-attempt.json'), load('faulty-workspace.json'),
-    load('fixed-first-attempt.json'), load('fixed-workspace.json'),
-  ]);
+  const summary = await load('summary.json');
+  const state = async (variant, file) => JSON.parse(await readFile(resolve(summary.builds[variant].executionDirectory, 'evidence', file), 'utf8'));
+  const [redFirst, red, greenFirst, green] = await Promise.all([state('faulty', 'first-attempt.json'), state('faulty', 'workspace.json'), state('fixed', 'first-attempt.json'), state('fixed', 'workspace.json')]);
   assert.equal(summary.application, 'MustPayroll');
   assert.deepEqual(redFirst.earnings, greenFirst.earnings, 'Both implementations must use the same business inputs.');
   for (const first of [redFirst, greenFirst]) {
@@ -51,11 +50,11 @@ export async function reportEvidence(directory = resolve('assessment/evidence'))
     `On retry, the faulty version creates a different payment ID for the same employee and period. The original payment still exists, so recorded pay exceeds approved pay by ${money(proof.faulty.excessRecordedMinor)}. This is observed excess in a synthetic ledger, not actual financial loss.\n\n` +
     `The corrected retry preserves the complete original payment object and recovers the original message. Its payment reference is ${green.payments[0].id}. Message state changes from pending to sent, with one simulated provider acceptance.\n\n` +
     `## Check the evidence\n\n` +
-    `- First attempts: [faulty](faulty-first-attempt.json), [corrected](fixed-first-attempt.json).\n` +
-    `- After retry: [faulty](faulty-workspace.json), [corrected](fixed-workspace.json).\n` +
+    `- First attempts: [faulty](../../qa/executions/buggy/evidence/first-attempt.json), [corrected](../../qa/executions/fixed/evidence/first-attempt.json).\n` +
+    `- After retry: [faulty](../../qa/executions/buggy/evidence/workspace.json), [corrected](../../qa/executions/fixed/evidence/workspace.json).\n` +
     `- Machine-readable comparison: [business proof](business-proof.json).\n` +
-    `- Same assertion: [expected failure](faulty-run.log), [corrected suite](fixed-run.log).\n` +
-    `- Independent persistence checks: [faulty](faulty-process.log), [fixed](fixed-process.log).\n` +
+    `- Same assertion: [expected failure](../../qa/executions/buggy/playwright/console.log), [corrected suite](../../qa/executions/fixed/playwright/console.log).\n` +
+    `- Independent persistence checks: [faulty](../../qa/executions/buggy/process/console.log), [fixed](../../qa/executions/fixed/process/console.log).\n` +
     `- Other business boundaries: [case register](../test-cases.md), [environment and source fingerprints](summary.json).\n\n` +
     `## What this establishes\n\n` +
     `The correction prevents the selected duplicate-payment failure in the assessed fixtures and gives an operator a recovery path through the product. No manual database edit is required for the verified recovery. A failing corrected regression blocks this reference release.\n\n` +

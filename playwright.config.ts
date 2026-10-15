@@ -7,9 +7,9 @@ const build = pair.builds[mode];
 export default defineConfig({
   testDir: './tests', testMatch: '**/*.spec.ts', fullyParallel: true,
   workers: 2, retries: 0, timeout: 30000,
-  outputDir: `output/playwright/${mode}`,
-  reporter: [['line'], ['json', { outputFile: `assessment/evidence/${mode}-playwright.json` }],
-    ['html', { outputFolder: `output/playwright/report-${mode}`, open: 'never' }]],
+  outputDir: `${build.executionDirectory}/playwright/artifacts`,
+  reporter: [['line'], ['json', { outputFile: `${build.executionDirectory}/playwright/report.json` }],
+    ['html', { outputFolder: `${build.executionDirectory}/playwright/html-report`, open: 'never' }]],
   use: { baseURL: 'http://127.0.0.1:4184', trace: 'retain-on-failure', screenshot: 'only-on-failure', viewport: { width: 1280, height: 900 } },
   projects: [{ name: 'chromium', use: { browserName: 'chromium', channel: 'chromium' } }],
   webServer: [

@@ -6,7 +6,7 @@ Application locations: [buggy folder](../builds/buggy) and [fixed folder](../bui
 
 Demonstrate that recovering a notification failure cannot pay an employee twice for the same approved payroll period. The employee is owed ₦150,000. After the payment succeeds and its notification fails, retrying payroll must retain the original payment and recover delivery.
 
-Start with the [two builds and two test records](test-records/README.md), then [intent.md](intent.md) for the choice, [the business rule and flow](business-rules.md) for the expectation, and [the generated before/after proof](evidence/business-proof.md) for the observed result. The remaining links support reproduction, release judgment and handoff.
+Start with the [two builds and two test records](../qa/executions/README.md), then [intent.md](intent.md) for the choice, [the business rule and flow](business-rules.md) for the expectation, and [the generated before/after proof](evidence/business-proof.md) for the observed result. The remaining links support reproduction, release judgment and handoff.
 
 ## Scope
 
@@ -43,8 +43,8 @@ The repository remains at its existing URL so its history and draft review remai
 
 | Work or evidence | Accessible link |
 |---|---|
-| Faulty application and execution record | [Buggy application folder](../builds/buggy) · [faulty record](test-records/faulty.md) · [video](test-records/faulty-TC10.webm) |
-| Fixed application and execution record | [Fixed application folder](../builds/fixed) · [fixed record](test-records/fixed.md) · [video](test-records/fixed-TC10.webm) |
+| Faulty application and execution record | [Buggy application folder](../builds/buggy) · [faulty record](../qa/executions/buggy/README.md) · [video](../qa/executions/buggy/evidence/PAY-001.webm) |
+| Fixed application and execution record | [Fixed application folder](../builds/fixed) · [fixed record](../qa/executions/fixed/README.md) · [video](../qa/executions/fixed/evidence/PAY-001.webm) |
 | Build comparison and exact correction | [Pair manifests and hashes](builds/pair.json) · [payment-policy patch](builds/fix.patch) |
 | Runnable project and exact setup | [README](../README.md) · [repository branch](https://github.com/Aniekanetim/MustBank/tree/quest/rewards-settlement) |
 | Test project | [Playwright cases](../tests/payroll-api.spec.ts) · [UI regression](../tests/payroll-ui.spec.ts) · [fresh-process check](../tests/service.test.mjs) |
@@ -53,11 +53,11 @@ The repository remains at its existing URL so its history and draft review remai
 | Actionable defect, cause and proposed correction | [PAY-001](defect-report.md) |
 | Environment, source SHA-256 fingerprints and results | [Verification summary](evidence/summary.json) |
 | Readable business result and causal comparison | [Generated proof](evidence/business-proof.md) · [machine-readable comparison](evidence/business-proof.json) |
-| First payment with failed notification | [Faulty first attempt](evidence/faulty-first-attempt.json) · [corrected first attempt](evidence/fixed-first-attempt.json) |
-| State after retry | [Faulty workspace](evidence/faulty-workspace.json) · [corrected workspace](evidence/fixed-workspace.json) |
-| Regression evidence | [Expected failure](evidence/faulty-run.log) · [corrected run](evidence/fixed-run.log) · [faulty fresh-process result](evidence/faulty-process.log) · [fixed fresh-process result](evidence/fixed-process.log) |
-| Machine-readable reports | [Faulty report](evidence/faulty-playwright.json) · [corrected report](evidence/fixed-playwright.json) |
-| Visual proof and trace | [Faulty payroll](evidence/faulty-reproduction.png) · [corrected payroll](evidence/fixed-reproduction.png) · [failure trace](evidence/faulty-trace.zip) |
+| First payment with failed notification | [Faulty first attempt](../qa/executions/buggy/evidence/first-attempt.json) · [corrected first attempt](../qa/executions/fixed/evidence/first-attempt.json) |
+| State after retry | [Faulty workspace](../qa/executions/buggy/evidence/workspace.json) · [corrected workspace](../qa/executions/fixed/evidence/workspace.json) |
+| Regression evidence | [Expected failure](../qa/executions/buggy/playwright/console.log) · [corrected run](../qa/executions/fixed/playwright/console.log) · [faulty fresh-process result](../qa/executions/buggy/process/console.log) · [fixed fresh-process result](../qa/executions/fixed/process/console.log) |
+| Machine-readable reports | [Faulty report](../qa/executions/buggy/playwright/report.json) · [corrected report](../qa/executions/fixed/playwright/report.json) |
+| Visual proof and trace | [Faulty payroll](../qa/executions/buggy/evidence/reproduction.png) · [corrected payroll](../qa/executions/fixed/evidence/reproduction.png) · [failure trace](../qa/executions/buggy/evidence/PAY-001-trace.zip) |
 | Release decision and remaining gaps | [Release readiness](release-readiness.md) |
 | Operational recovery and support handoff | [Recovery runbook](operations-runbook.md) |
 | AI delegation and candidate ownership | [Activity record](ai-accountability.md) · [guided personal review](personal-review.md) |

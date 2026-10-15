@@ -8,16 +8,12 @@ const ref = index < 0 ? 'quest/rewards-settlement' : process.argv[index + 1];
 if (!ref || !/^[a-zA-Z0-9/_-]{1,100}$/.test(ref)) throw new Error('Use a commit SHA or branch name.');
 const repo = 'Aniekanetim/MustBank';
 const raw = `https://raw.githubusercontent.com/${repo}/${ref}/`;
-const files = ['README.md', 'assessment/intent.md', 'assessment/directive.md', 'assessment/test-cases.md',
-  'assessment/defect-report.md', 'assessment/release-readiness.md', 'assessment/operations-runbook.md',
-  'assessment/ai-accountability.md', 'assessment/personal-review.md', 'assessment/loom-script.md',
-  'assessment/evidence/summary.json', 'assessment/evidence/business-proof.md', 'assessment/evidence/business-proof.json',
-  'assessment/evidence/faulty-reproduction.png', 'assessment/evidence/fixed-reproduction.png', 'tests/payroll-ui.spec.ts',
-  'assessment/builds/pair.json', 'assessment/builds/faulty-manifest.json', 'assessment/builds/fixed-manifest.json',
-  'assessment/builds/fix.patch', 'builds/README.md',
-  'assessment/test-records/README.md', 'assessment/test-records/faulty.md', 'assessment/test-records/fixed.md',
-  'assessment/test-records/faulty.json', 'assessment/test-records/fixed.json',
-  'assessment/test-records/faulty-TC10.webm', 'assessment/test-records/fixed-TC10.webm'];
+const files = ['README.md', 'qa/README.md', 'qa/executions/README.md', 'qa/test-cases/payroll-test-suite.csv', 'qa/test-cases/core-payroll-regression.csv',
+  'assessment/intent.md', 'assessment/directive.md', 'assessment/test-cases.md', 'assessment/defect-report.md',
+  'assessment/release-readiness.md', 'assessment/operations-runbook.md', 'assessment/ai-accountability.md', 'assessment/personal-review.md',
+  'assessment/loom-script.md', 'assessment/evidence/summary.json', 'assessment/evidence/business-proof.md', 'assessment/evidence/business-proof.json',
+  'assessment/builds/pair.json', 'assessment/builds/faulty-manifest.json', 'assessment/builds/fixed-manifest.json', 'assessment/builds/fix.patch', 'builds/README.md'];
+for (const folder of ['buggy', 'fixed']) for (const file of ['README.md', 'run.json', 'core-results.csv', 'test-results.csv', 'playwright/report.json', 'playwright/console.log', 'process/console.log', 'process/observation.json', 'evidence/reproduction.png', 'evidence/PAY-001.webm']) files.push(`qa/executions/${folder}/${file}`);
 const expectedHashes = {};
 for (const folder of ['buggy', 'fixed']) {
   const manifestPath = `builds/${folder}/build-manifest.json`;
@@ -33,6 +29,7 @@ const checks = await Promise.all(files.map(file => ({ file, url: raw + file })).
     let valid = response.ok && bytes.length > 0;
     if (item.file.endsWith('.json')) { try { JSON.parse(bytes.toString()); } catch { valid = false; } }
     if (item.file.endsWith('.png')) valid &&= bytes.subarray(0, 8).toString('hex') === '89504e470d0a1a0a';
+    if (item.file.endsWith('.csv')) valid &&= bytes.toString('utf8').includes('\"TC ID\",\"Test Scenario\",\"Test Case\"');
     if (item.file.endsWith('.webm')) valid &&= bytes.subarray(0, 4).toString('hex') === '1a45dfa3';
     const sha256 = createHash('sha256').update(bytes).digest('hex');
     if (expectedHashes[item.file]) valid &&= sha256 === expectedHashes[item.file];
