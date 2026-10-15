@@ -12,7 +12,7 @@
 !/MustBank/Mustpayroll_buggy/dist/
 !/MustBank/MustPayroll_fixed/dist/
 **/*.log
-!/MustPayroll_QA/executions/**/*.log
+!/MustPayroll_QA/quality-control/executions/**/*.log
 **/*.tsbuildinfo
 **/.vite/
 **/.env
