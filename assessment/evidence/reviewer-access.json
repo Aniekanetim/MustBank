@@ -1,21 +1,21 @@
 {
-  "checkedAt": "2026-10-15T16:52:42.607Z",
-  "ref": "7ec9d0a576b143d74a5f467f122d88637f7a8cba",
+  "checkedAt": "2026-10-15T17:29:23.016Z",
+  "ref": "b10a755b4dd3b3073a61843cf47d3d7308915d74",
   "repository": "https://github.com/Aniekanetim/MustBank",
   "credentialsSent": false,
   "allAccessible": true,
   "checks": [
     {
       "file": "README.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/README.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/README.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 7653,
-      "sha256": "ee3c375207746b9cfe1c44ece25ea0ff70e73891e2f6ae9c7c16c58a8a58e28b"
+      "bytes": 5238,
+      "sha256": "9b5cdf5fcc7deb71bba5f32f63c6f477c5ac905da61341c3c85d7798af28050d"
     },
     {
       "file": "assessment/intent.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/intent.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/intent.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
       "bytes": 4207,
@@ -23,39 +23,39 @@
     },
     {
       "file": "assessment/directive.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/directive.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/directive.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 9353,
-      "sha256": "cb1869829cb88842a5e0d8ed164f011ca4e344e3320aede3da92efa307663b38"
+      "bytes": 9704,
+      "sha256": "ddb85e5376844c53348bff21812fbaedf4ca019c719023bac3eef0ae58b1b697"
     },
     {
       "file": "assessment/test-cases.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/test-cases.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/test-cases.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 7535,
-      "sha256": "e113a22d2daf1929584ac5ceb5bc2fe00ad80829d1080813fc7e2acfe787fdae"
+      "bytes": 7591,
+      "sha256": "76b9496e5d4a642e2c1581146f5451068476a8913448ef9b43e281b767e469dd"
     },
     {
       "file": "assessment/defect-report.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/defect-report.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/defect-report.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 4962,
-      "sha256": "eb3f7b6391bb53d05cce1371a1986b9c73cdaf60865731078851899882cb72d7"
+      "bytes": 4968,
+      "sha256": "16e6ffc1cc9eaf478e48c253d89f2845a46d683c40db4b59a17e105e7cd1df80"
     },
     {
       "file": "assessment/release-readiness.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/release-readiness.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/release-readiness.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
       "bytes": 5100,
-      "sha256": "7d926fab5fa1e86d6bfa57cc2299088d12630736e4640043f232b7647ec013b9"
+      "sha256": "2d018d2899a7a7b0b353381a4a47ebf2dda25847209a6719e43367cb3ee0b5c2"
     },
     {
       "file": "assessment/operations-runbook.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/operations-runbook.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/operations-runbook.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
       "bytes": 4487,
@@ -63,55 +63,55 @@
     },
     {
       "file": "assessment/ai-accountability.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/ai-accountability.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/ai-accountability.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 3765,
-      "sha256": "0a0a86b4e80b0ba1b418c2ec78247fe3892edc7ba9073b5bf2c7f75f571dde4e"
+      "bytes": 3774,
+      "sha256": "f8818b56fff31b7458397dcd7df0e98584aed6916d4f0ab2b126c25bbc81105c"
     },
     {
       "file": "assessment/personal-review.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/personal-review.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/personal-review.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 2245,
-      "sha256": "9681069b9f1c6e45d07b7ea4c3254a6b4d17c82382eb05a22aff3da8fc2757fb"
+      "bytes": 2236,
+      "sha256": "c257b99ee56e52d232ebf9e0e3afa24ca3290ca0fddc7d098446a524edc234a1"
     },
     {
       "file": "assessment/loom-script.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/loom-script.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/loom-script.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 4387,
-      "sha256": "66690f75f3b705fc352b4931482d9472cd515a8ae48ac2f03f2b40d687474a21"
+      "bytes": 4382,
+      "sha256": "a274e95ad31a0a1d404309f602872b728f98755e166293e7687760c9c97c89b3"
     },
     {
       "file": "assessment/evidence/summary.json",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/evidence/summary.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/evidence/summary.json",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 9603,
-      "sha256": "c28f6ae7ab8124c453f922120002e518a34c9fbcd06182a2cd9ec69dc18d096d"
+      "bytes": 9314,
+      "sha256": "f2a1e48c074c55b14a524cbb9da11f413b3676c963ec40ad699972db483bab74"
     },
     {
       "file": "assessment/evidence/business-proof.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/evidence/business-proof.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/evidence/business-proof.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 2666,
-      "sha256": "787d5d357b0b5d4ba7377ec7449d02e14355362c68f86f6cf8a96d20656df92e"
+      "bytes": 2674,
+      "sha256": "702d735ad5bbc6f3bf8a716deb9e37cb234300a2986e7e3b34ee70a489693196"
     },
     {
       "file": "assessment/evidence/business-proof.json",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/evidence/business-proof.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/evidence/business-proof.json",
       "status": 200,
       "accessibleWithoutCredentials": true,
       "bytes": 2625,
-      "sha256": "f0e336712bf3fa2d724c68fc3bc211efd4bd40bf6fbf9f20db08ac93690644de"
+      "sha256": "e7538ec97387295920cb21ec72071d23910fcfe074aa4e29cc9b68c579b82d2c"
     },
     {
       "file": "assessment/evidence/faulty-reproduction.png",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/evidence/faulty-reproduction.png",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/evidence/faulty-reproduction.png",
       "status": 200,
       "accessibleWithoutCredentials": true,
       "bytes": 89628,
@@ -119,7 +119,7 @@
     },
     {
       "file": "assessment/evidence/fixed-reproduction.png",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/evidence/fixed-reproduction.png",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/evidence/fixed-reproduction.png",
       "status": 200,
       "accessibleWithoutCredentials": true,
       "bytes": 86045,
@@ -127,123 +127,323 @@
     },
     {
       "file": "tests/payroll-ui.spec.ts",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/tests/payroll-ui.spec.ts",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/tests/payroll-ui.spec.ts",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 12836,
-      "sha256": "fa7ca848cd5b4c5a60eee2ca004b27cc5cf3c71db745236779186cbf48a9e2d2"
+      "bytes": 12830,
+      "sha256": "3f9e1d985e6f361579c3f2494e0eda17b74f02a4f5a92dae78ba07d74be6fc47"
     },
     {
       "file": "assessment/builds/pair.json",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/builds/pair.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/builds/pair.json",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 4984,
-      "sha256": "0c0aa15552b6ede1f98faac34f78f03cbfaf96f8ef832e10299de76f7b0101d9"
+      "bytes": 4695,
+      "sha256": "7558d257472401a5b8093e33d4a2868978ff3a68ef0da8518a60dd8cdc851574"
     },
     {
       "file": "assessment/builds/faulty-manifest.json",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/builds/faulty-manifest.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/builds/faulty-manifest.json",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 1469,
-      "sha256": "3dc0280f7eb90972378b5f8fd7f751682b00391dd85abfab4a4b99d7b51c4aa3"
+      "bytes": 1556,
+      "sha256": "b40376a9333ac6cbdf615403266a73776060fbbca7398c51dcdb46fc8877867d"
     },
     {
       "file": "assessment/builds/fixed-manifest.json",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/builds/fixed-manifest.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/builds/fixed-manifest.json",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 1467,
-      "sha256": "a6955e20233f1f83b8910aacbb6ee4a9d06be7fe26991ebec3e911d8f08275a5"
-    },
-    {
-      "file": "assessment/builds/MustPayroll-faulty.zip",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/builds/MustPayroll-faulty.zip",
-      "status": 200,
-      "accessibleWithoutCredentials": true,
-      "bytes": 85909,
-      "sha256": "acf1a4a5c43dece7c706eaf793e9d96a01ff794f9f79bbc2190aee6c8f424a66"
-    },
-    {
-      "file": "assessment/builds/MustPayroll-fixed.zip",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/builds/MustPayroll-fixed.zip",
-      "status": 200,
-      "accessibleWithoutCredentials": true,
-      "bytes": 85916,
-      "sha256": "b3ea42d7e7cd7ca1a74b1fc4e26283b96cf8b7da20b201cc8c09570d3d168e86"
+      "bytes": 1554,
+      "sha256": "3773d43fc8fa0d193518583e01a24a179e69a8ac8fc66880824c4fd04e8c30da"
     },
     {
       "file": "assessment/builds/fix.patch",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/builds/fix.patch",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/builds/fix.patch",
       "status": 200,
       "accessibleWithoutCredentials": true,
       "bytes": 2003,
       "sha256": "c0f3ac7efb7a8f73e34a246198fc14985d82fe7bd0437cd711d95bf810f0d1b7"
     },
     {
-      "file": "assessment/test-records/README.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/test-records/README.md",
+      "file": "builds/README.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/README.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 1232,
-      "sha256": "6b3d1aee3560250ea1ca4c9b7bc1169e6d848520efa447bf6f5b0231443c0174"
+      "bytes": 1914,
+      "sha256": "81ad7c18523f3cec5802b9bab744a1c45bdca5c0b686c0e7812e952dbbed629e"
+    },
+    {
+      "file": "assessment/test-records/README.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/test-records/README.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 1227,
+      "sha256": "7fad86f66e85d3821a6ca232334f42e05450ac9380a2c57ca8aa135ea8912ab7"
     },
     {
       "file": "assessment/test-records/faulty.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/test-records/faulty.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/test-records/faulty.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 6648,
-      "sha256": "d6b328599a939f4c63cac2bb7126959c16a5c130b44b84296fe12cb3a84126b8"
+      "bytes": 6848,
+      "sha256": "fc999d6cbb7f3c1e3ef9c3c1c299ce1368b16146b1121de03791ac838c7bc920"
     },
     {
       "file": "assessment/test-records/fixed.md",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/test-records/fixed.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/test-records/fixed.md",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 6308,
-      "sha256": "6653b54155c596d7da5755834111441d3787660c898069f323468e7a56d74e2e"
+      "bytes": 6510,
+      "sha256": "62a0169309d1f9b22694ed4419b03321319f65c11de73215035d1ee5ee26b0db"
     },
     {
       "file": "assessment/test-records/faulty.json",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/test-records/faulty.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/test-records/faulty.json",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 34185,
-      "sha256": "74173169bea31b0a71cd382cd25fd31b534ed35c754acb9f8177956334c98e5c"
+      "bytes": 34120,
+      "sha256": "ae04f5bbf507b199e9547e0c69c37568534ed1584434f70315b0526c73bd5a34"
     },
     {
       "file": "assessment/test-records/fixed.json",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/test-records/fixed.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/test-records/fixed.json",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 29628,
-      "sha256": "b4db91c3775c1cadbb471e032e78b23b16f197b7d32479bc6dfa7f76e67162dd"
+      "bytes": 29565,
+      "sha256": "b156e142915f897a4745014e005d4681727559856ee07cc8ad79065ad11b62f3"
     },
     {
       "file": "assessment/test-records/faulty-TC10.webm",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/test-records/faulty-TC10.webm",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/test-records/faulty-TC10.webm",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 417240,
-      "sha256": "0115fdba47efc2d3f6f927ca210e6695b7a37b54bcc176d12134852763cdab2e"
+      "bytes": 741464,
+      "sha256": "aa19651eb9250ab08d6377125c15f3ba34ccf311efb75fc8a968603ec359b258"
     },
     {
       "file": "assessment/test-records/fixed-TC10.webm",
-      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/7ec9d0a576b143d74a5f467f122d88637f7a8cba/assessment/test-records/fixed-TC10.webm",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/assessment/test-records/fixed-TC10.webm",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 485931,
-      "sha256": "f4b81999ddba32ea28be227a9e0f3774ad6129bf36f21c8f6d134837f6d791e2"
+      "bytes": 452145,
+      "sha256": "fa731ebfbe1c07a23575dc45bc1194c2ad5bbd8bdfc192a4d69f2238c9791fe6"
     },
     {
-      "file": "runnable project archive",
-      "url": "https://codeload.github.com/Aniekanetim/MustBank/zip/7ec9d0a576b143d74a5f467f122d88637f7a8cba",
+      "file": "builds/buggy/build-manifest.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/build-manifest.json",
       "status": 200,
       "accessibleWithoutCredentials": true,
-      "bytes": 2759581,
-      "sha256": "187da006efa40a6adb3cb5b4ab8ae19278af611319e6f6b7847ca165740ca790"
+      "bytes": 1556,
+      "sha256": "b40376a9333ac6cbdf615403266a73776060fbbca7398c51dcdb46fc8877867d",
+      "expectedSha256": "b40376a9333ac6cbdf615403266a73776060fbbca7398c51dcdb46fc8877867d"
+    },
+    {
+      "file": "builds/buggy/dist/assets/index-BJQB3nRz.js",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/dist/assets/index-BJQB3nRz.js",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 220372,
+      "sha256": "a847f2ddcc3c47fa035d2134a02e20f064fa25ebad509dc05994cebddb45387c",
+      "expectedSha256": "a847f2ddcc3c47fa035d2134a02e20f064fa25ebad509dc05994cebddb45387c"
+    },
+    {
+      "file": "builds/buggy/dist/assets/index-Dr8isaYH.css",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/dist/assets/index-Dr8isaYH.css",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 15994,
+      "sha256": "b6deead8611ad7d9e8c5f7a9ad3dc8143a1fe94bc9f177e3d8e8ce917c8f271a",
+      "expectedSha256": "b6deead8611ad7d9e8c5f7a9ad3dc8143a1fe94bc9f177e3d8e8ce917c8f271a"
+    },
+    {
+      "file": "builds/buggy/dist/index.html",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/dist/index.html",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 827,
+      "sha256": "77fa240ba29ab88a06e87bd5f4c88e5a54ab38c5bbe35dca3ff19747c9f49f56",
+      "expectedSha256": "77fa240ba29ab88a06e87bd5f4c88e5a54ab38c5bbe35dca3ff19747c9f49f56"
+    },
+    {
+      "file": "builds/buggy/LICENSE",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/LICENSE",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 1067,
+      "sha256": "8cbc3f617d1df0c131e67257c25968f73316431b0391fed3a6d0163c889769a8",
+      "expectedSha256": "8cbc3f617d1df0c131e67257c25968f73316431b0391fed3a6d0163c889769a8"
+    },
+    {
+      "file": "builds/buggy/package.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/package.json",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 262,
+      "sha256": "a7f7d9e7cdf89b14be1fe3debafd60a8ad4191a1d9eabcdfa72cc21a0623ddee",
+      "expectedSha256": "a7f7d9e7cdf89b14be1fe3debafd60a8ad4191a1d9eabcdfa72cc21a0623ddee"
+    },
+    {
+      "file": "builds/buggy/README.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/README.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 1162,
+      "sha256": "d949e5355dee93467fdb14d3084a10774aaef1f4e8dba86ff9d9003048f4ce96",
+      "expectedSha256": "d949e5355dee93467fdb14d3084a10774aaef1f4e8dba86ff9d9003048f4ce96"
+    },
+    {
+      "file": "builds/buggy/scripts/scenario.mjs",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/scripts/scenario.mjs",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 1885,
+      "sha256": "8065f553316aadd2078cf725c100efef95c0b878fd0bbacfa9f1f91a31db85ad",
+      "expectedSha256": "8065f553316aadd2078cf725c100efef95c0b878fd0bbacfa9f1f91a31db85ad"
+    },
+    {
+      "file": "builds/buggy/server/build-info.mjs",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/server/build-info.mjs",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 211,
+      "sha256": "44c372dfa376ccc1940cf15b1e3c005de7aca899a62d32bfdb1a0247f5380ebe",
+      "expectedSha256": "44c372dfa376ccc1940cf15b1e3c005de7aca899a62d32bfdb1a0247f5380ebe"
+    },
+    {
+      "file": "builds/buggy/server/index.mjs",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/server/index.mjs",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 4379,
+      "sha256": "0656e331fbcec0ad7e8e8c85c50e2a51f1be8f814ba8fa4e0eb40691f290b745",
+      "expectedSha256": "0656e331fbcec0ad7e8e8c85c50e2a51f1be8f814ba8fa4e0eb40691f290b745"
+    },
+    {
+      "file": "builds/buggy/server/payment-policy.mjs",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/server/payment-policy.mjs",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 939,
+      "sha256": "23959256e6a00a91e355e560b24c98ce89cede1727a44c8da59fb9f7adc909ea",
+      "expectedSha256": "23959256e6a00a91e355e560b24c98ce89cede1727a44c8da59fb9f7adc909ea"
+    },
+    {
+      "file": "builds/buggy/server/payroll.mjs",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/buggy/server/payroll.mjs",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 18652,
+      "sha256": "b10314eac942c2fc82ffaa19b4523749049b6b7d6034102fa339cc1da8844b49",
+      "expectedSha256": "b10314eac942c2fc82ffaa19b4523749049b6b7d6034102fa339cc1da8844b49"
+    },
+    {
+      "file": "builds/fixed/build-manifest.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/build-manifest.json",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 1554,
+      "sha256": "3773d43fc8fa0d193518583e01a24a179e69a8ac8fc66880824c4fd04e8c30da",
+      "expectedSha256": "3773d43fc8fa0d193518583e01a24a179e69a8ac8fc66880824c4fd04e8c30da"
+    },
+    {
+      "file": "builds/fixed/dist/assets/index-BJQB3nRz.js",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/dist/assets/index-BJQB3nRz.js",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 220372,
+      "sha256": "a847f2ddcc3c47fa035d2134a02e20f064fa25ebad509dc05994cebddb45387c",
+      "expectedSha256": "a847f2ddcc3c47fa035d2134a02e20f064fa25ebad509dc05994cebddb45387c"
+    },
+    {
+      "file": "builds/fixed/dist/assets/index-Dr8isaYH.css",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/dist/assets/index-Dr8isaYH.css",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 15994,
+      "sha256": "b6deead8611ad7d9e8c5f7a9ad3dc8143a1fe94bc9f177e3d8e8ce917c8f271a",
+      "expectedSha256": "b6deead8611ad7d9e8c5f7a9ad3dc8143a1fe94bc9f177e3d8e8ce917c8f271a"
+    },
+    {
+      "file": "builds/fixed/dist/index.html",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/dist/index.html",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 827,
+      "sha256": "77fa240ba29ab88a06e87bd5f4c88e5a54ab38c5bbe35dca3ff19747c9f49f56",
+      "expectedSha256": "77fa240ba29ab88a06e87bd5f4c88e5a54ab38c5bbe35dca3ff19747c9f49f56"
+    },
+    {
+      "file": "builds/fixed/LICENSE",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/LICENSE",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 1067,
+      "sha256": "8cbc3f617d1df0c131e67257c25968f73316431b0391fed3a6d0163c889769a8",
+      "expectedSha256": "8cbc3f617d1df0c131e67257c25968f73316431b0391fed3a6d0163c889769a8"
+    },
+    {
+      "file": "builds/fixed/package.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/package.json",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 261,
+      "sha256": "86ba171f53e58b860b34d5b9e73c15cee00216cd374d6afe29eb064eba82e544",
+      "expectedSha256": "86ba171f53e58b860b34d5b9e73c15cee00216cd374d6afe29eb064eba82e544"
+    },
+    {
+      "file": "builds/fixed/README.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/README.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 1193,
+      "sha256": "e3eee1c1017f16731888f1aca1566d7e31a213c6ffc0f2e4dad69d129a842b30",
+      "expectedSha256": "e3eee1c1017f16731888f1aca1566d7e31a213c6ffc0f2e4dad69d129a842b30"
+    },
+    {
+      "file": "builds/fixed/scripts/scenario.mjs",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/scripts/scenario.mjs",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 1885,
+      "sha256": "8065f553316aadd2078cf725c100efef95c0b878fd0bbacfa9f1f91a31db85ad",
+      "expectedSha256": "8065f553316aadd2078cf725c100efef95c0b878fd0bbacfa9f1f91a31db85ad"
+    },
+    {
+      "file": "builds/fixed/server/build-info.mjs",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/server/build-info.mjs",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 209,
+      "sha256": "1050a23195a305980beadf95f99627089c37a4235e882d9b7980b6c34b1e62ea",
+      "expectedSha256": "1050a23195a305980beadf95f99627089c37a4235e882d9b7980b6c34b1e62ea"
+    },
+    {
+      "file": "builds/fixed/server/index.mjs",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/server/index.mjs",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 4379,
+      "sha256": "0656e331fbcec0ad7e8e8c85c50e2a51f1be8f814ba8fa4e0eb40691f290b745",
+      "expectedSha256": "0656e331fbcec0ad7e8e8c85c50e2a51f1be8f814ba8fa4e0eb40691f290b745"
+    },
+    {
+      "file": "builds/fixed/server/payment-policy.mjs",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/server/payment-policy.mjs",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 944,
+      "sha256": "75a930551600e1321ddbe7ee94128dd1caad708d6bf2962bb4ab3268d85ee2d0",
+      "expectedSha256": "75a930551600e1321ddbe7ee94128dd1caad708d6bf2962bb4ab3268d85ee2d0"
+    },
+    {
+      "file": "builds/fixed/server/payroll.mjs",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/b10a755b4dd3b3073a61843cf47d3d7308915d74/builds/fixed/server/payroll.mjs",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 18652,
+      "sha256": "b10314eac942c2fc82ffaa19b4523749049b6b7d6034102fa339cc1da8844b49",
+      "expectedSha256": "b10314eac942c2fc82ffaa19b4523749049b6b7d6034102fa339cc1da8844b49"
     }
   ],
   "exclusions": [
