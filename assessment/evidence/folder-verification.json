@@ -1,0 +1,689 @@
+{
+  "checkedAt": "2026-10-15T17:10:10.965618+00:00",
+  "check": "Standalone folders match previously tested runtime files; notification/retry smoke check executed against each folder server. The full 34-case suite was not rerun for this unchanged-file copy.",
+  "records": [
+    {
+      "variant": "faulty",
+      "directory": "builds/buggy",
+      "buildId": "mustpayroll-0.2.0-faulty-39fee999f9f3",
+      "runtimeFileHashesVerified": true,
+      "manifestSha256": "3dc0280f7eb90972378b5f8fd7f751682b00391dd85abfab4a4b99d7b51c4aa3",
+      "first": {
+        "id": "290b19b4-81b3-4992-ace9-550c5bc1d68e",
+        "company": "Northstar Studio",
+        "currency": "NGN",
+        "period": {
+          "scheduledFor": "2026-10-13T09:00:00.000Z",
+          "start": "2026-10-05T00:00:00.000Z",
+          "end": "2026-10-12T00:00:00.000Z"
+        },
+        "employees": [
+          {
+            "id": "emp-001",
+            "name": "Amara Okafor",
+            "role": "Product designer",
+            "department": "Design",
+            "bank": "Meridian Bank",
+            "accountEnding": "4821"
+          },
+          {
+            "id": "emp-002",
+            "name": "Daniel Mensah",
+            "role": "Software engineer",
+            "department": "Engineering",
+            "bank": "Union Coast Bank",
+            "accountEnding": "3068"
+          },
+          {
+            "id": "emp-003",
+            "name": "Zara Bello",
+            "role": "Operations associate",
+            "department": "Operations",
+            "bank": "Meridian Bank",
+            "accountEnding": "7290"
+          }
+        ],
+        "earnings": [
+          {
+            "earningId": "earn-001",
+            "employeeId": "emp-001",
+            "description": "Weekly project earnings",
+            "earnedAt": "2026-10-08T12:00:00.000Z",
+            "amountMinor": 15000000,
+            "status": "approved"
+          }
+        ],
+        "entries": [
+          {
+            "employeeId": "emp-001",
+            "expectedMinor": 15000000,
+            "paidMinor": 15000000,
+            "earningIds": [
+              "earn-001"
+            ],
+            "paymentCount": 1
+          }
+        ],
+        "payments": [
+          {
+            "id": "ba8eeac6-5d15-49df-911a-ed86ee240399",
+            "employeeId": "emp-001",
+            "employeeName": "Amara Okafor",
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "amountMinor": 15000000,
+            "bank": "Meridian Bank",
+            "accountEnding": "4821",
+            "createdAt": "2026-10-15T17:10:10.376Z"
+          }
+        ],
+        "notifications": [
+          {
+            "id": "dd6cd582-1a1f-485a-a97b-906548f29db1",
+            "paymentId": "ba8eeac6-5d15-49df-911a-ed86ee240399",
+            "employeeId": "emp-001",
+            "employeeName": "Amara Okafor",
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "state": "pending",
+            "attempts": 1,
+            "lastError": "Notification delivery unavailable. Retry the notification."
+          }
+        ],
+        "runs": [
+          {
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "periodEnd": "2026-10-12T00:00:00.000Z",
+            "scheduledFor": "2026-10-13T09:00:00.000Z",
+            "createdAt": "2026-10-15T17:10:10.365Z",
+            "expectedMinor": 15000000
+          }
+        ],
+        "locked": true,
+        "expectedMinor": 15000000,
+        "paidMinor": 15000000,
+        "pendingApprovals": 0,
+        "pendingNotifications": 1,
+        "providerAccepted": 0,
+        "events": [
+          {
+            "event": "earnings_recorded",
+            "employeeId": null,
+            "detail": {
+              "count": 1
+            },
+            "createdAt": "2026-10-15T17:10:10.319Z"
+          },
+          {
+            "event": "failure_armed",
+            "employeeId": null,
+            "detail": {
+              "kind": "notification"
+            },
+            "createdAt": "2026-10-15T17:10:10.347Z"
+          },
+          {
+            "event": "payment_committed",
+            "employeeId": "emp-001",
+            "detail": {
+              "paymentId": "ba8eeac6-5d15-49df-911a-ed86ee240399",
+              "amountMinor": 15000000
+            },
+            "createdAt": "2026-10-15T17:10:10.386Z"
+          },
+          {
+            "event": "notification_attempted",
+            "employeeId": "emp-001",
+            "detail": {},
+            "createdAt": "2026-10-15T17:10:10.406Z"
+          },
+          {
+            "event": "notification_failed",
+            "employeeId": "emp-001",
+            "detail": {
+              "messageId": "dd6cd582-1a1f-485a-a97b-906548f29db1",
+              "error": "Notification delivery unavailable. Retry the notification."
+            },
+            "createdAt": "2026-10-15T17:10:10.433Z"
+          },
+          {
+            "event": "pay_run_finished",
+            "employeeId": null,
+            "detail": {
+              "scheduledFor": "2026-10-13T09:00:00.000Z"
+            },
+            "createdAt": "2026-10-15T17:10:10.443Z"
+          }
+        ]
+      },
+      "afterRetry": {
+        "id": "290b19b4-81b3-4992-ace9-550c5bc1d68e",
+        "company": "Northstar Studio",
+        "currency": "NGN",
+        "period": {
+          "scheduledFor": "2026-10-13T09:00:00.000Z",
+          "start": "2026-10-05T00:00:00.000Z",
+          "end": "2026-10-12T00:00:00.000Z"
+        },
+        "employees": [
+          {
+            "id": "emp-001",
+            "name": "Amara Okafor",
+            "role": "Product designer",
+            "department": "Design",
+            "bank": "Meridian Bank",
+            "accountEnding": "4821"
+          },
+          {
+            "id": "emp-002",
+            "name": "Daniel Mensah",
+            "role": "Software engineer",
+            "department": "Engineering",
+            "bank": "Union Coast Bank",
+            "accountEnding": "3068"
+          },
+          {
+            "id": "emp-003",
+            "name": "Zara Bello",
+            "role": "Operations associate",
+            "department": "Operations",
+            "bank": "Meridian Bank",
+            "accountEnding": "7290"
+          }
+        ],
+        "earnings": [
+          {
+            "earningId": "earn-001",
+            "employeeId": "emp-001",
+            "description": "Weekly project earnings",
+            "earnedAt": "2026-10-08T12:00:00.000Z",
+            "amountMinor": 15000000,
+            "status": "approved"
+          }
+        ],
+        "entries": [
+          {
+            "employeeId": "emp-001",
+            "expectedMinor": 15000000,
+            "paidMinor": 30000000,
+            "earningIds": [
+              "earn-001"
+            ],
+            "paymentCount": 2
+          }
+        ],
+        "payments": [
+          {
+            "id": "d7734556-bfe1-49f3-808b-59016c9d7f61",
+            "employeeId": "emp-001",
+            "employeeName": "Amara Okafor",
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "amountMinor": 15000000,
+            "bank": "Meridian Bank",
+            "accountEnding": "4821",
+            "createdAt": "2026-10-15T17:10:10.460Z"
+          },
+          {
+            "id": "ba8eeac6-5d15-49df-911a-ed86ee240399",
+            "employeeId": "emp-001",
+            "employeeName": "Amara Okafor",
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "amountMinor": 15000000,
+            "bank": "Meridian Bank",
+            "accountEnding": "4821",
+            "createdAt": "2026-10-15T17:10:10.376Z"
+          }
+        ],
+        "notifications": [
+          {
+            "id": "8e9d574d-37ed-4466-b887-1b7723c3921f",
+            "paymentId": "d7734556-bfe1-49f3-808b-59016c9d7f61",
+            "employeeId": "emp-001",
+            "employeeName": "Amara Okafor",
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "state": "sent",
+            "attempts": 1,
+            "lastError": null
+          },
+          {
+            "id": "dd6cd582-1a1f-485a-a97b-906548f29db1",
+            "paymentId": "ba8eeac6-5d15-49df-911a-ed86ee240399",
+            "employeeId": "emp-001",
+            "employeeName": "Amara Okafor",
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "state": "pending",
+            "attempts": 1,
+            "lastError": "Notification delivery unavailable. Retry the notification."
+          }
+        ],
+        "runs": [
+          {
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "periodEnd": "2026-10-12T00:00:00.000Z",
+            "scheduledFor": "2026-10-13T09:00:00.000Z",
+            "createdAt": "2026-10-15T17:10:10.365Z",
+            "expectedMinor": 15000000
+          }
+        ],
+        "locked": true,
+        "expectedMinor": 15000000,
+        "paidMinor": 30000000,
+        "pendingApprovals": 0,
+        "pendingNotifications": 1,
+        "providerAccepted": 1,
+        "events": [
+          {
+            "event": "earnings_recorded",
+            "employeeId": null,
+            "detail": {
+              "count": 1
+            },
+            "createdAt": "2026-10-15T17:10:10.319Z"
+          },
+          {
+            "event": "failure_armed",
+            "employeeId": null,
+            "detail": {
+              "kind": "notification"
+            },
+            "createdAt": "2026-10-15T17:10:10.347Z"
+          },
+          {
+            "event": "payment_committed",
+            "employeeId": "emp-001",
+            "detail": {
+              "paymentId": "ba8eeac6-5d15-49df-911a-ed86ee240399",
+              "amountMinor": 15000000
+            },
+            "createdAt": "2026-10-15T17:10:10.386Z"
+          },
+          {
+            "event": "notification_attempted",
+            "employeeId": "emp-001",
+            "detail": {},
+            "createdAt": "2026-10-15T17:10:10.406Z"
+          },
+          {
+            "event": "notification_failed",
+            "employeeId": "emp-001",
+            "detail": {
+              "messageId": "dd6cd582-1a1f-485a-a97b-906548f29db1",
+              "error": "Notification delivery unavailable. Retry the notification."
+            },
+            "createdAt": "2026-10-15T17:10:10.433Z"
+          },
+          {
+            "event": "pay_run_finished",
+            "employeeId": null,
+            "detail": {
+              "scheduledFor": "2026-10-13T09:00:00.000Z"
+            },
+            "createdAt": "2026-10-15T17:10:10.443Z"
+          },
+          {
+            "event": "payment_committed",
+            "employeeId": "emp-001",
+            "detail": {
+              "paymentId": "d7734556-bfe1-49f3-808b-59016c9d7f61",
+              "amountMinor": 15000000
+            },
+            "createdAt": "2026-10-15T17:10:10.469Z"
+          },
+          {
+            "event": "notification_attempted",
+            "employeeId": "emp-001",
+            "detail": {},
+            "createdAt": "2026-10-15T17:10:10.489Z"
+          },
+          {
+            "event": "notification_sent",
+            "employeeId": "emp-001",
+            "detail": {
+              "messageId": "8e9d574d-37ed-4466-b887-1b7723c3921f",
+              "error": null
+            },
+            "createdAt": "2026-10-15T17:10:10.537Z"
+          },
+          {
+            "event": "pay_run_finished",
+            "employeeId": null,
+            "detail": {
+              "scheduledFor": "2026-10-13T09:00:00.000Z"
+            },
+            "createdAt": "2026-10-15T17:10:10.554Z"
+          }
+        ]
+      }
+    },
+    {
+      "variant": "fixed",
+      "directory": "builds/fixed",
+      "buildId": "mustpayroll-0.2.0-fixed-39fee999f9f3",
+      "runtimeFileHashesVerified": true,
+      "manifestSha256": "a6955e20233f1f83b8910aacbb6ee4a9d06be7fe26991ebec3e911d8f08275a5",
+      "first": {
+        "id": "8eddda23-6f24-478c-88cb-d4f19851590b",
+        "company": "Northstar Studio",
+        "currency": "NGN",
+        "period": {
+          "scheduledFor": "2026-10-13T09:00:00.000Z",
+          "start": "2026-10-05T00:00:00.000Z",
+          "end": "2026-10-12T00:00:00.000Z"
+        },
+        "employees": [
+          {
+            "id": "emp-001",
+            "name": "Amara Okafor",
+            "role": "Product designer",
+            "department": "Design",
+            "bank": "Meridian Bank",
+            "accountEnding": "4821"
+          },
+          {
+            "id": "emp-002",
+            "name": "Daniel Mensah",
+            "role": "Software engineer",
+            "department": "Engineering",
+            "bank": "Union Coast Bank",
+            "accountEnding": "3068"
+          },
+          {
+            "id": "emp-003",
+            "name": "Zara Bello",
+            "role": "Operations associate",
+            "department": "Operations",
+            "bank": "Meridian Bank",
+            "accountEnding": "7290"
+          }
+        ],
+        "earnings": [
+          {
+            "earningId": "earn-001",
+            "employeeId": "emp-001",
+            "description": "Weekly project earnings",
+            "earnedAt": "2026-10-08T12:00:00.000Z",
+            "amountMinor": 15000000,
+            "status": "approved"
+          }
+        ],
+        "entries": [
+          {
+            "employeeId": "emp-001",
+            "expectedMinor": 15000000,
+            "paidMinor": 15000000,
+            "earningIds": [
+              "earn-001"
+            ],
+            "paymentCount": 1
+          }
+        ],
+        "payments": [
+          {
+            "id": "96f2ddd4-7f60-460a-bc26-d59fca62297d",
+            "employeeId": "emp-001",
+            "employeeName": "Amara Okafor",
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "amountMinor": 15000000,
+            "bank": "Meridian Bank",
+            "accountEnding": "4821",
+            "createdAt": "2026-10-15T17:10:10.735Z"
+          }
+        ],
+        "notifications": [
+          {
+            "id": "88e56fcb-4c3c-4468-b2d2-d2394018613c",
+            "paymentId": "96f2ddd4-7f60-460a-bc26-d59fca62297d",
+            "employeeId": "emp-001",
+            "employeeName": "Amara Okafor",
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "state": "pending",
+            "attempts": 1,
+            "lastError": "Notification delivery unavailable. Retry the notification."
+          }
+        ],
+        "runs": [
+          {
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "periodEnd": "2026-10-12T00:00:00.000Z",
+            "scheduledFor": "2026-10-13T09:00:00.000Z",
+            "createdAt": "2026-10-15T17:10:10.722Z",
+            "expectedMinor": 15000000
+          }
+        ],
+        "locked": true,
+        "expectedMinor": 15000000,
+        "paidMinor": 15000000,
+        "pendingApprovals": 0,
+        "pendingNotifications": 1,
+        "providerAccepted": 0,
+        "events": [
+          {
+            "event": "earnings_recorded",
+            "employeeId": null,
+            "detail": {
+              "count": 1
+            },
+            "createdAt": "2026-10-15T17:10:10.668Z"
+          },
+          {
+            "event": "failure_armed",
+            "employeeId": null,
+            "detail": {
+              "kind": "notification"
+            },
+            "createdAt": "2026-10-15T17:10:10.705Z"
+          },
+          {
+            "event": "payment_committed",
+            "employeeId": "emp-001",
+            "detail": {
+              "paymentId": "96f2ddd4-7f60-460a-bc26-d59fca62297d",
+              "amountMinor": 15000000
+            },
+            "createdAt": "2026-10-15T17:10:10.746Z"
+          },
+          {
+            "event": "notification_attempted",
+            "employeeId": "emp-001",
+            "detail": {},
+            "createdAt": "2026-10-15T17:10:10.758Z"
+          },
+          {
+            "event": "notification_failed",
+            "employeeId": "emp-001",
+            "detail": {
+              "messageId": "88e56fcb-4c3c-4468-b2d2-d2394018613c",
+              "error": "Notification delivery unavailable. Retry the notification."
+            },
+            "createdAt": "2026-10-15T17:10:10.789Z"
+          },
+          {
+            "event": "pay_run_finished",
+            "employeeId": null,
+            "detail": {
+              "scheduledFor": "2026-10-13T09:00:00.000Z"
+            },
+            "createdAt": "2026-10-15T17:10:10.800Z"
+          }
+        ]
+      },
+      "afterRetry": {
+        "id": "8eddda23-6f24-478c-88cb-d4f19851590b",
+        "company": "Northstar Studio",
+        "currency": "NGN",
+        "period": {
+          "scheduledFor": "2026-10-13T09:00:00.000Z",
+          "start": "2026-10-05T00:00:00.000Z",
+          "end": "2026-10-12T00:00:00.000Z"
+        },
+        "employees": [
+          {
+            "id": "emp-001",
+            "name": "Amara Okafor",
+            "role": "Product designer",
+            "department": "Design",
+            "bank": "Meridian Bank",
+            "accountEnding": "4821"
+          },
+          {
+            "id": "emp-002",
+            "name": "Daniel Mensah",
+            "role": "Software engineer",
+            "department": "Engineering",
+            "bank": "Union Coast Bank",
+            "accountEnding": "3068"
+          },
+          {
+            "id": "emp-003",
+            "name": "Zara Bello",
+            "role": "Operations associate",
+            "department": "Operations",
+            "bank": "Meridian Bank",
+            "accountEnding": "7290"
+          }
+        ],
+        "earnings": [
+          {
+            "earningId": "earn-001",
+            "employeeId": "emp-001",
+            "description": "Weekly project earnings",
+            "earnedAt": "2026-10-08T12:00:00.000Z",
+            "amountMinor": 15000000,
+            "status": "approved"
+          }
+        ],
+        "entries": [
+          {
+            "employeeId": "emp-001",
+            "expectedMinor": 15000000,
+            "paidMinor": 15000000,
+            "earningIds": [
+              "earn-001"
+            ],
+            "paymentCount": 1
+          }
+        ],
+        "payments": [
+          {
+            "id": "96f2ddd4-7f60-460a-bc26-d59fca62297d",
+            "employeeId": "emp-001",
+            "employeeName": "Amara Okafor",
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "amountMinor": 15000000,
+            "bank": "Meridian Bank",
+            "accountEnding": "4821",
+            "createdAt": "2026-10-15T17:10:10.735Z"
+          }
+        ],
+        "notifications": [
+          {
+            "id": "88e56fcb-4c3c-4468-b2d2-d2394018613c",
+            "paymentId": "96f2ddd4-7f60-460a-bc26-d59fca62297d",
+            "employeeId": "emp-001",
+            "employeeName": "Amara Okafor",
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "state": "sent",
+            "attempts": 2,
+            "lastError": null
+          }
+        ],
+        "runs": [
+          {
+            "periodStart": "2026-10-05T00:00:00.000Z",
+            "periodEnd": "2026-10-12T00:00:00.000Z",
+            "scheduledFor": "2026-10-13T09:00:00.000Z",
+            "createdAt": "2026-10-15T17:10:10.722Z",
+            "expectedMinor": 15000000
+          }
+        ],
+        "locked": true,
+        "expectedMinor": 15000000,
+        "paidMinor": 15000000,
+        "pendingApprovals": 0,
+        "pendingNotifications": 0,
+        "providerAccepted": 1,
+        "events": [
+          {
+            "event": "earnings_recorded",
+            "employeeId": null,
+            "detail": {
+              "count": 1
+            },
+            "createdAt": "2026-10-15T17:10:10.668Z"
+          },
+          {
+            "event": "failure_armed",
+            "employeeId": null,
+            "detail": {
+              "kind": "notification"
+            },
+            "createdAt": "2026-10-15T17:10:10.705Z"
+          },
+          {
+            "event": "payment_committed",
+            "employeeId": "emp-001",
+            "detail": {
+              "paymentId": "96f2ddd4-7f60-460a-bc26-d59fca62297d",
+              "amountMinor": 15000000
+            },
+            "createdAt": "2026-10-15T17:10:10.746Z"
+          },
+          {
+            "event": "notification_attempted",
+            "employeeId": "emp-001",
+            "detail": {},
+            "createdAt": "2026-10-15T17:10:10.758Z"
+          },
+          {
+            "event": "notification_failed",
+            "employeeId": "emp-001",
+            "detail": {
+              "messageId": "88e56fcb-4c3c-4468-b2d2-d2394018613c",
+              "error": "Notification delivery unavailable. Retry the notification."
+            },
+            "createdAt": "2026-10-15T17:10:10.789Z"
+          },
+          {
+            "event": "pay_run_finished",
+            "employeeId": null,
+            "detail": {
+              "scheduledFor": "2026-10-13T09:00:00.000Z"
+            },
+            "createdAt": "2026-10-15T17:10:10.800Z"
+          },
+          {
+            "event": "notification_attempted",
+            "employeeId": "emp-001",
+            "detail": {},
+            "createdAt": "2026-10-15T17:10:10.821Z"
+          },
+          {
+            "event": "notification_sent",
+            "employeeId": "emp-001",
+            "detail": {
+              "messageId": "88e56fcb-4c3c-4468-b2d2-d2394018613c",
+              "error": null
+            },
+            "createdAt": "2026-10-15T17:10:10.855Z"
+          },
+          {
+            "event": "pay_run_finished",
+            "employeeId": null,
+            "detail": {
+              "scheduledFor": "2026-10-13T09:00:00.000Z"
+            },
+            "createdAt": "2026-10-15T17:10:10.872Z"
+          }
+        ]
+      }
+    }
+  ],
+  "readyForManualReview": [
+    {
+      "application": "buggy",
+      "payRun": "http://127.0.0.1:4175/pay-runs?workspace=0b28772e-0d05-4e34-a466-c7ad208bff52"
+    },
+    {
+      "application": "fixed",
+      "payRun": "http://127.0.0.1:4176/pay-runs?workspace=7e4b1f7d-506f-4769-bd48-f42e5cfd5630"
+    }
+  ]
+}

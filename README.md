@@ -1,5 +1,7 @@
 # MustPayroll
 
+The current applications are available as **two separate plain folders**: [buggy](builds/buggy) and [fixed](builds/fixed). See [how to run each independently](builds/README.md). No archive extraction or dependency installation is needed for these folders. Their file hashes and a direct run are recorded in [folder verification](assessment/evidence/folder-verification.json). Earlier archive-format instructions below remain until the candidate approves the cleanup proposal.
+
 MustPayroll is a focused payroll application for reviewing approved earnings, processing weekly pay runs and recovering payment notifications. The application uses synthetic employees and a local payment ledger. It connects to no bank, payroll provider or live financial system.
 
 The QA investigation follows one failure: **a payment succeeds, its notification fails, and retrying payroll pays the employee again.** The same business assertion fails against deliberately faulty behavior and passes against the corrected implementation.

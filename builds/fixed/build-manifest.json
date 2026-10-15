@@ -1,0 +1,22 @@
+{
+  "id": "mustpayroll-0.2.0-fixed-39fee999f9f3",
+  "variant": "fixed",
+  "defaultPort": 4176,
+  "sourceSha256": "39fee999f9f33b3147330a27645f5cb8f73b0b5f1e47dcc9415aedc4d0a26be0",
+  "generatedAt": "2026-10-15T16:47:45.015Z",
+  "sourceFingerprint": "39fee999f9f33b3147330a27645f5cb8f73b0b5f1e47dcc9415aedc4d0a26be0",
+  "testSuiteSha256": "691abf948dd81e01b7b310a627a24ea759afc8a125700a52eef54762996e15a0",
+  "fileSha256": {
+    "dist/assets/index-BJQB3nRz.js": "a847f2ddcc3c47fa035d2134a02e20f064fa25ebad509dc05994cebddb45387c",
+    "dist/assets/index-Dr8isaYH.css": "b6deead8611ad7d9e8c5f7a9ad3dc8143a1fe94bc9f177e3d8e8ce917c8f271a",
+    "dist/index.html": "77fa240ba29ab88a06e87bd5f4c88e5a54ab38c5bbe35dca3ff19747c9f49f56",
+    "LICENSE": "8cbc3f617d1df0c131e67257c25968f73316431b0391fed3a6d0163c889769a8",
+    "package.json": "86ba171f53e58b860b34d5b9e73c15cee00216cd374d6afe29eb064eba82e544",
+    "README.md": "281f62c25ed3bbf522bcd75cfcc31312599dec19c6df2d2fba7860d967190406",
+    "scripts/scenario.mjs": "8065f553316aadd2078cf725c100efef95c0b878fd0bbacfa9f1f91a31db85ad",
+    "server/build-info.mjs": "30b39deecdd54d0969f77cb06a770c2a605cc8a622a17641372d8b3bfb8a0a81",
+    "server/index.mjs": "0656e331fbcec0ad7e8e8c85c50e2a51f1be8f814ba8fa4e0eb40691f290b745",
+    "server/payment-policy.mjs": "75a930551600e1321ddbe7ee94128dd1caad708d6bf2962bb4ab3268d85ee2d0",
+    "server/payroll.mjs": "91663d6961e60a9727a60651f55f6867e61a1844aaf40af3467042d18aadfdc8"
+  }
+}

@@ -1,5 +1,7 @@
 # Two builds, two test records
 
+The runnable applications are now available in [the buggy folder](../../builds/buggy) and [the fixed folder](../../builds/fixed). Both have the same runtime file hashes and build IDs recorded below. [Folder verification](../evidence/folder-verification.json) confirms those hashes and a direct smoke run; the full suite was not rerun solely for this unchanged-file copy. Earlier archive-format references remain pending candidate approval of cleanup.
+
 The faulty application preserves the defect. The fixed application contains its correction. Each package contains one payment implementation, has its own build ID and database, and runs without installing application dependencies.
 
 | Build | Executed test record | TC10 recording | Result |

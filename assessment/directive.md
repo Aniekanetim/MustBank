@@ -1,5 +1,7 @@
 # Prevent duplicate employee payment during payroll recovery
 
+Current application locations: [buggy folder](../builds/buggy) and [fixed folder](../builds/fixed), with [independent run instructions](../builds/README.md). Their runtime files match the assessed build identities; [folder verification](evidence/folder-verification.json) records direct execution. Earlier archive-format references are retained pending approval of the cleanup proposal.
+
 ## Objective
 
 Demonstrate that recovering a notification failure cannot pay an employee twice for the same approved payroll period. The employee is owed ₦150,000. After the payment succeeds and its notification fails, retrying payroll must retain the original payment and recover delivery.
