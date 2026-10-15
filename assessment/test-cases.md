@@ -2,7 +2,7 @@
 
 All reward cases use synthetic tasks. Unless stated otherwise: task `task-001`, owner `user-001`, status completed, completion `2026-10-08T12:00:00Z`, scheduled run `2026-10-13T09:00:00Z`. Each case creates a fresh isolated example; none relies on earlier cases' records.
 
-The final outcomes are in [summary.json](evidence/summary.json). TC01–TC10 and TC12–TC34 use Playwright's HTTP client or Chromium browser. TC11 opens persisted records in a fresh Node process. The table gives inputs and expected results; the raw reports record execution. Failure conditions are prepared through local fixture tooling or the API, outside the banking UI.
+The final outcomes are in [summary.json](evidence/summary.json). TC01–TC10 and TC12–TC46 use Playwright's HTTP client or Chromium browser. TC11 opens persisted records in a fresh Node process. The table gives inputs and expected results; the raw reports record execution. Failure conditions are prepared through local fixture tooling or the API, outside the banking UI.
 
 | Case | Input / action | Expected corrected outcome | Final result |
 |---|---|---|---|
@@ -34,12 +34,24 @@ The final outcomes are in [summary.json](evidence/summary.json). TC01–TC10 and
 | TC26 | Visit overview, transfers, recipients, activity and rewards | MustBank title and normal product copy; no assessment language or customer settlement controls | Pass |
 | TC27 | Open compatible data from a prior namespace, then replay a paid reward | Original balance and rewards account retained; still one payout and 10 credits; storage migrated | Pass |
 | TC28 | Enter `10abc`, zero, or more than the available balance | Clear validation; no transfer or balance change | Pass |
-| TC29 | Review SGD 20, return to edit, then review SGD 30 | Correct updated review; no transfer committed before confirmation | Pass |
+| TC29 | Review SGD 10, return to edit, then exit to overview | Amount retained; account balances unchanged before confirmation | Pass |
 | TC30 | Save a recipient, search for them, then choose Send money | Transfer opens with the saved recipient selected | Pass |
-| TC31 | Filter activity by account, search for an absent entry, then clear filters | Matching records first; recoverable empty state; all records restored | Pass |
+| TC31 | Search for an absent entry, clear filters, then select Failed | Recoverable empty state; five records restored; unmatched status remains clear | Pass |
 | TC32 | Settle one task for each of two owners; open personal rewards | Customer sees only their own 10 credits and records; operations reconciles 20; customer response omits processing mode and failure state | Pass |
 | TC33 | Export rewards with a formula-like activity title and another owner's payout | CSV contains only the current customer's payout and safely quotes the formula-like cell | Pass |
-| TC34 | Visit all five customer pages at 320px | Primary controls remain visible; no whole-page horizontal overflow | Pass |
+| TC34 | Navigate all five customer pages at 320px | Navigation works; no whole-page horizontal overflow | Pass |
+| TC35 | Start a generic transfer, enter 10 and review without choosing a payee | No recipient preselected; corrective error focuses recipient; no payment | Pass |
+| TC36 | Draft 175 from savings with a description, add and review a new recipient, return and reload | Account, amount and description retained; new recipient selected; no payment before confirmation | Pass |
+| TC37 | Cancel recipient creation; open and cancel draft discard, then confirm discard | Cancellation preserves inputs; Escape restores focus; confirmed discard clears the draft | Pass |
+| TC38 | Complete payment, leave receipt, reopen from activity, reload, copy and download | Same reference and balance snapshot; clipboard and receipt contain correct evidence | Pass |
+| TC39 | Complete payment; review and save a recipient name, bank and account change | Future recipient changes; earlier receipt retains original destination and balance | Pass |
+| TC40 | Cancel recipient removal, then confirm it; open an earlier payment | Confirmation required; removed payee absent from future selection; old receipt retained | Pass |
+| TC41 | View the same internal transfer from savings and checking; open receipt and return | Savings shows −500 / money out; checking +500 / money in; return preserves account filter | Pass |
+| TC42 | Freeze 15 Oct; include 8 Oct activity and exact 12 Oct boundary; settle 13 Oct | Old activity delayed until paid; boundary activity due 20 Oct; credits stay separate from SGD | Pass |
+| TC43 | View rewards at 320px, then review a transfer | Activity table begins within the first 800px; no page overflow; confirmation clears fixed navigation | Pass |
+| TC44 | Select payee, enter amount, review, edit and confirm with keyboard | Correct focus at each stage; payment receipt heading receives focus | Pass |
+| TC45 | Complete a transfer, navigate browser back/forward, reload receipt and start another | One recorded payment; same receipt; fresh transfer has no implicit payee or old amount | Pass |
+| TC46 | Review a transfer while another tab edits its recipient | Destination choice invalidated; amount and description preserved; stale review cannot proceed | Pass |
 
 ## Core regression evidence
 

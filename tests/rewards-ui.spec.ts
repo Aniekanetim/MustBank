@@ -61,6 +61,7 @@ test('TC24 | narrow-screen recovery works through keyboard controls', async ({ p
 
 test('TC25 | a reviewed bank transfer completes once with a receipt', async ({ page }) => {
   await page.goto('/transfer'); await page.getByLabel('Amount (SGD)', { exact: true }).fill('10.00');
+  await page.getByLabel('Recipient', { exact: true }).selectOption('rcp_meena');
   await page.getByLabel('Payment description', { exact: false }).fill('Dinner payment');
   await page.getByRole('button', { name: 'Review transfer', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Review your transfer', exact: true })).toBeVisible();
@@ -120,6 +121,7 @@ test('TC28 | invalid amounts and insufficient balance cannot create a transfer',
 
 test('TC29 | editing a review leaves balances untouched until confirmation', async ({ page }) => {
   await page.goto('/transfer'); await page.getByLabel('Amount (SGD)', { exact: true }).fill('10.00');
+  await page.getByLabel('Recipient', { exact: true }).selectOption('rcp_meena');
   await page.getByRole('button', { name: 'Review transfer', exact: true }).click();
   await page.getByRole('button', { name: 'Edit details', exact: true }).click(); await expect(page.getByLabel('Amount (SGD)', { exact: true })).toHaveValue('10.00');
   await page.getByRole('link', { name: 'Overview', exact: true }).click(); await expect(page.getByTestId('available-balance')).toHaveText('$2,622.35');
@@ -128,6 +130,8 @@ test('TC29 | editing a review leaves balances untouched until confirmation', asy
 test('TC30 | saved recipient search opens a transfer with the correct payee', async ({ page }) => {
   await page.goto('/recipients'); await page.getByRole('button', { name: 'Add recipient', exact: true }).click();
   await page.getByLabel('Recipient name', { exact: true }).fill('Amelia Tan'); await page.getByLabel('Account number', { exact: true }).fill('12345678');
+  await page.getByLabel('Bank', { exact: true }).selectOption('DBS Bank');
+  await page.getByRole('button', { name: 'Review recipient', exact: true }).click();
   await page.getByRole('button', { name: 'Save recipient', exact: true }).click(); await expect(page.getByRole('status')).toContainText('Amelia Tan');
   await page.getByLabel('Search recipients', { exact: true }).fill('Amelia');
   await page.getByRole('link', { name: 'Send money to Amelia Tan', exact: true }).click(); await expect(page.getByLabel('Recipient', { exact: true })).toContainText('Amelia Tan');
@@ -168,5 +172,5 @@ test('TC34 | customer banking remains readable at 320px with visible primary con
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   }
   await expect(page.getByTestId('reward-balance')).toHaveText(/credits$/);
-  await page.screenshot({ path: 'assessment/evidence/customer-mobile.png', fullPage: true });
+  await page.screenshot({ path: 'assessment/evidence/customer-mobile-navigation.png', fullPage: true });
 });

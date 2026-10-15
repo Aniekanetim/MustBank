@@ -53,11 +53,11 @@ export function normalizeTasks(tasks) {
 
 const SINGLE_TASK = { taskId: 'task-001', userId: 'user-001', title: 'Paperless statement enrolment', completedAt: '2026-10-08T12:00:00Z' };
 const BOUNDARY_TASKS = [
-  { taskId: 'start', userId: 'user-001', title: 'At the included start', completedAt: '2026-10-05T00:00:00Z' },
-  { taskId: 'before', userId: 'user-001', title: 'Before the start in Lagos', completedAt: '2026-10-05T00:30:00+01:00' },
-  { taskId: 'sunday', userId: 'user-001', title: 'Sunday completion', completedAt: '2026-10-11T23:59:59Z' },
-  { taskId: 'end', userId: 'user-001', title: 'At the excluded end', completedAt: '2026-10-12T00:00:00Z' },
-  { taskId: 'pending', userId: 'user-002', title: 'Incomplete task', completedAt: '2026-10-08T12:00:00Z', status: 'pending' },
+  { taskId: 'start', userId: 'user-001', title: 'Paperless statement enrolment', completedAt: '2026-10-05T00:00:00Z' },
+  { taskId: 'before', userId: 'user-001', title: 'Savings goal setup', completedAt: '2026-10-05T00:30:00+01:00' },
+  { taskId: 'sunday', userId: 'user-001', title: 'Notification preferences updated', completedAt: '2026-10-11T23:59:59Z' },
+  { taskId: 'end', userId: 'user-001', title: 'Direct debit registration', completedAt: '2026-10-12T00:00:00Z' },
+  { taskId: 'pending', userId: 'user-002', title: 'Card autopay setup', completedAt: '2026-10-08T12:00:00Z', status: 'pending' },
 ];
 
 export class RewardsService {
@@ -266,7 +266,7 @@ export class RewardsService {
       FROM tasks WHERE scenario_id = ? ORDER BY completed_at,task_id`).all(id);
     const payouts = this.db.prepare(`SELECT id,task_id AS taskId,user_id AS userId,credits,week_start AS weekStart,created_at AS createdAt
       FROM payouts WHERE scenario_id = ? ORDER BY created_at,id`).all(id);
-    const notifications = this.db.prepare(`SELECT n.id,p.task_id AS taskId,n.state,n.attempts,n.last_error AS lastError
+    const notifications = this.db.prepare(`SELECT n.id,n.payout_id AS payoutId,p.task_id AS taskId,n.state,n.attempts,n.last_error AS lastError
       FROM notification_work n JOIN payouts p ON p.id = n.payout_id WHERE p.scenario_id = ? ORDER BY p.created_at,n.id`).all(id);
     const receipts = this.db.prepare('SELECT task_id AS taskId,accepted_at AS acceptedAt FROM provider_receipts WHERE scenario_id = ?').all(id);
     const events = this.db.prepare('SELECT id,event,task_id AS taskId,detail,created_at AS createdAt FROM events WHERE scenario_id = ? ORDER BY id').all(id)

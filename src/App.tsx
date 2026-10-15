@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { NavLink, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { ArrowLeft, ArrowLeftRight, Gift, Landmark, LayoutDashboard, ListChecks, Users, WalletCards } from 'lucide-react';
 import { Dashboard } from './pages/Dashboard';
@@ -7,16 +7,23 @@ import { RecipientsPage } from './pages/Recipients';
 import { TransactionsPage } from './pages/Transactions';
 import { RewardsPage } from './pages/Rewards';
 import { SettlementsPage } from './pages/Settlements';
+import { ReceiptPage } from './pages/Receipt';
+import { RecipientDetailsPage } from './pages/RecipientDetails';
 
 export default function App() {
   const location = useLocation();
   const operations = location.pathname.startsWith('/operations');
+  const previousPath = useRef(location.pathname);
   useEffect(() => { document.title = operations ? 'MustBank | Operations' : 'MustBank | Personal banking'; }, [operations]);
+  useEffect(() => {
+    if (previousPath.current !== location.pathname) document.getElementById('page-title')?.focus();
+    previousPath.current = location.pathname;
+  }, [location.pathname]);
   const navigation = operations ? [{ to: '/operations/settlements', label: 'Reward settlements', icon: ListChecks }] : [
     { to: '/dashboard', label: 'Overview', icon: LayoutDashboard }, { to: '/transfer', label: 'Transfers', icon: ArrowLeftRight },
     { to: '/recipients', label: 'Recipients', icon: Users }, { to: '/transactions', label: 'Activity', icon: ListChecks }, { to: '/rewards', label: 'Rewards', icon: Gift },
   ];
-  return <div className="app-shell"><a className="skip-link" href="#main-content">Skip to content</a>
+  return <div className={`app-shell${operations ? ' operations-shell' : ''}`}><a className="skip-link" href="#main-content">Skip to content</a>
     <aside className="sidebar" aria-label="Application navigation">
       <NavLink to={operations ? '/operations/settlements' : '/dashboard'} className="brand" aria-label="MustBank home"><Landmark size={26} strokeWidth={1.8} aria-hidden="true" /><span>MustBank</span></NavLink>
       <p className="nav-caption">{operations ? 'Operations' : 'Your bank'}</p>
@@ -25,8 +32,10 @@ export default function App() {
     </aside><div className="main-shell"><div className="topbar"><span>{operations ? 'Operations workspace' : 'Personal banking'}</span><span className="topbar-meta">MustBank</span></div>
       <main id="main-content" className="main" tabIndex={-1}><Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} /><Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/transfer" element={<TransferPage />} /><Route path="/recipients" element={<RecipientsPage />} />
+        <Route path="/transfer" element={<TransferPage key={location.key} />} /><Route path="/recipients" element={<RecipientsPage />} />
+        <Route path="/recipients/:id" element={<RecipientDetailsPage key={location.pathname} />} />
         <Route path="/transactions" element={<TransactionsPage />} /><Route path="/rewards" element={<RewardsPage />} />
+        <Route path="/transactions/:id" element={<ReceiptPage key={location.pathname} />} />
         <Route path="/operations" element={<Navigate to="/operations/settlements" replace />} /><Route path="/operations/settlements" element={<SettlementsPage />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes></main></div></div>;

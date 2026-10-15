@@ -29,14 +29,14 @@ The [business rules and flow](business-rules.md) explain assumptions and sequenc
 |---|---|
 | A reviewer can reproduce the selected failure | [Run instructions](../README.md) and [defect report](defect-report.md) |
 | The same assertion fails against faulty behavior and passes after correction | TC10 reports, first-attempt records and final snapshots below |
-| At least eight cases cover happy path, boundaries, timezone, duplicate input, retry and partial failure | [34 cases and results](test-cases.md) |
+| At least eight cases cover happy path, boundaries, timezone, duplicate input, retry and partial failure | [46 cases and results](test-cases.md) |
 | Payment identity survives a fresh process | TC11 and [process recovery log](evidence/process-recovery.log) |
 | Root cause, fix, release blockers and remaining gaps are actionable | [Defect report](defect-report.md) and [release checklist](release-readiness.md) |
 | Required submission artifacts are accessible | This directive, [intent.md](intent.md), project/evidence links, and the candidate's Loom link |
 
 ## Results and handoff appendix
 
-The final local run **passed all 34 corrected checks**: 33 Playwright cases plus one fresh-process check. [summary.json](evidence/summary.json) records runtime versions and source hashes. Faulty replay produces **20 credits, two payouts and one pending notification**. Corrected replay keeps **10 credits and one payout**, with **zero pending notifications** after recovery. The unchanged TC10 assertion fails against the faulty example and passes against the correction.
+The final local run **passed all 46 corrected checks**: 45 Playwright cases plus one fresh-process check. [summary.json](evidence/summary.json) records runtime versions and source hashes. Faulty replay produces **20 credits, two payouts and one pending notification**. Corrected replay keeps **10 credits and one payout**, with **zero pending notifications** after recovery. The unchanged TC10 assertion fails against the faulty example and passes against the correction.
 
 | Deliverable | Accessible work and evidence |
 |---|---|
@@ -46,7 +46,7 @@ The final local run **passed all 34 corrected checks**: 33 Playwright cases plus
 | Passing regression | [First payment](evidence/fixed-first-attempt.json) · [after replay](evidence/fixed-scenario.json) · [screenshot](evidence/fixed-reproduction.png) |
 | Defect and root cause | [QA-001 defect report](defect-report.md) |
 | Release readiness | [Decision, checklist and gaps](release-readiness.md) |
-| Banking workspace | [UI review](ui-review.md) · [overview](evidence/customer-overview.png) · [rewards](evidence/customer-rewards.png) · [transfer receipt](evidence/transfer-receipt.png) · [mobile](evidence/customer-mobile.png). TC25–TC34 cover transfer review, product copy, migration, validation, recipients, filters, personal rewards and exports. |
+| Banking workspace | [UI review and audit corrections](ui-review.md) · [overview](evidence/customer-overview.png) · [rewards](evidence/customer-rewards.png) · [transfer receipt](evidence/transfer-receipt.png) · [mobile](evidence/customer-mobile.png). TC25–TC46 cover review, explicit destination choice, preserved drafts, durable local receipts, recipient lifecycle, money direction, reward timing, keyboard paths and exports. |
 | CI | [GitHub Actions runs](https://github.com/Aniekanetim/MustBank/actions) · the workflow repeats the complete evidence check |
 | Loom, maximum five minutes | **Pending candidate recording.** Use the [walkthrough outline](loom-outline.md); insert the accessible Loom URL here before submission. |
 

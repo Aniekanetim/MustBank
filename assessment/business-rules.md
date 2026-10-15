@@ -10,6 +10,7 @@ The rule is simple: **one qualifying task earns one reward**. Notification deliv
 - Each scenario is a separate program. A task ID identifies one immutable task within that program; identical imports do not add another task. Different examples can reuse fixture IDs because their ledgers are independent.
 - Owner, status and completion time cannot change after import. Account closure, owner migration, late status changes, reversals and admin overrides are not implemented. These require agreed product rules before adding them.
 - The amount is fixed at 10 test credits. Admin settings cannot change the amount or schedule. No exchange rates, real funds or external payment provider are involved.
+- Customer-facing credit policy: credits are program points, separate from SGD balances; this prototype provides no redemption or cash conversion. This states the implemented program limit and does not add a currency value to the assessment's credits.
 - The simulated notification provider has a stable `(program, task)` acceptance identity. It can fail before acceptance or lose the acknowledgment after acceptance. This does not establish a real provider's delivery guarantees.
 
 ## Corrected flow
@@ -36,3 +37,13 @@ flowchart TD
 In the faulty flow, the completion marker is written only after notification succeeds. When delivery fails, the payout exists but the marker does not. The next settlement consults that marker and pays again. The corrected flow consults the durable payout identity and retries only pending messages.
 
 Payment and pending notification work commit atomically in SQLite. The unique payout key provides an additional guard against a second record. The UI reads persisted state; refreshing the browser cannot reset payment identity. A fresh-process check verifies recovery after a graceful close and reopen. An injected transaction interruption verifies rollback before commit. Neither claims a power-loss or distributed-provider test.
+
+## Customer journey rules
+
+A generic transfer starts without a recipient selected. An explicit Send money action can preselect its recipient. The current draft is saved in that browser tab, including account, recipient, amount and description; adding or cancelling a recipient from the transfer returns to the draft. Discarding requires confirmation. Drafts do not commit a payment.
+
+Confirmation records a stable payment reference, timestamp, recipient snapshot and balance after payment. A repeated confirmation of the same local request identity returns its existing record rather than deducting again. The receipt is accessible from account activity after navigation or reload. This is a local browser ledger guard, not a claim of distributed payment idempotency.
+
+Recipient edits require review. Removal archives the payee from future selections while retaining previous receipts. Earlier payments keep the recipient name, bank and account ending captured when they were recorded. A changed or removed destination invalidates an open draft's recipient choice while preserving its other inputs.
+
+Customer reward dates are derived from each activity's UTC settlement week. An activity at the excluded Monday boundary receives the following Tuesday's settlement date, one week later. Unpaid completed activities display their scheduled date and a delayed state when that date has passed. A historical processing window is labeled as a settlement period, never as the current calendar period. These labels do not change the service's explicit scheduled-run identity or introduce a background scheduler.

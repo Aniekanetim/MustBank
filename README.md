@@ -26,6 +26,10 @@ npm start
 
 Open **http://127.0.0.1:4174**. The root opens the account overview. Rewards records are persisted in `data/rewards.sqlite`; the browser caches only the selected rewards account ID. Account balances and transfers use local browser storage. Compatible previous storage namespaces migrate automatically, preserving balances and payment identity.
 
+Transfers require a deliberate recipient choice and keep a draft in the current tab. Adding or cancelling a recipient returns to that draft. Completed payments have a permanent local receipt under `/transactions/:id`, with reference copying and a text download. Recipient changes require review, and removing a recipient retains earlier receipts. New recipient numbers are kept in the local prototype store; lists and receipts mask them to the account ending. Use synthetic details only.
+
+Rewards distinguish program credits from SGD, surface scheduled or delayed payments, and show activities before compact payout history. This program has no redemption or cash conversion. Mobile personal banking uses a fixed bottom navigation bar with space reserved beneath page controls.
+
 ## Reproduce the selected defect
 
 Keep the built app running, then prepare an isolated faulty rewards account from a second terminal:

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T23:27:55.964Z",
+  "generatedAt": "2026-10-15T01:00:41.147Z",
   "upstreamCommit": "73d83074e7ea0c40f8273455ebcb611b7088fd5a",
   "environment": {
     "node": "v22.21.0",
@@ -15,9 +15,9 @@
     "pendingNotifications": 1
   },
   "fixed": {
-    "playwrightPassed": 33,
+    "playwrightPassed": 45,
     "freshProcessPassed": 1,
-    "totalPassed": 34,
+    "totalPassed": 46,
     "credits": 10,
     "payouts": 1,
     "pendingNotifications": 0
@@ -192,32 +192,99 @@
       "id": "TC34",
       "title": "customer banking remains readable at 320px with visible primary controls",
       "result": "passed"
+    },
+    {
+      "id": "TC35",
+      "title": "a new transfer requires an explicit recipient choice",
+      "result": "passed"
+    },
+    {
+      "id": "TC36",
+      "title": "adding a recipient resumes the saved amount account and description",
+      "result": "passed"
+    },
+    {
+      "id": "TC37",
+      "title": "cancelling recipient creation and cancelling discard preserve the draft",
+      "result": "passed"
+    },
+    {
+      "id": "TC38",
+      "title": "receipts survive navigation and reload and can be copied and downloaded",
+      "result": "passed"
+    },
+    {
+      "id": "TC39",
+      "title": "reviewed recipient edits cannot rewrite an earlier receipt",
+      "result": "passed"
+    },
+    {
+      "id": "TC40",
+      "title": "removing a recipient requires confirmation and keeps historical payments",
+      "result": "passed"
+    },
+    {
+      "id": "TC41",
+      "title": "internal transfers show account-specific direction and keep filters on return",
+      "result": "passed"
+    },
+    {
+      "id": "TC42",
+      "title": "rewards explain credit limits and distinguish overdue and next-week payments",
+      "result": "passed"
+    },
+    {
+      "id": "TC43",
+      "title": "mobile rewards prioritise activities and transfer actions stay above navigation",
+      "result": "passed"
+    },
+    {
+      "id": "TC44",
+      "title": "transfer review edit and confirmation work through keyboard controls",
+      "result": "passed"
+    },
+    {
+      "id": "TC45",
+      "title": "receipt history navigation and reload do not repeat a payment",
+      "result": "passed"
+    },
+    {
+      "id": "TC46",
+      "title": "recipient changes in another tab require a fresh destination choice",
+      "result": "passed"
     }
   ],
   "sourceSha256": {
-    "server/rewards.mjs": "671aec5e2c9104a53e0339895ddfec54a6969cf303ad7c8eba24fd748ea9027c",
+    "server/rewards.mjs": "46ea2e5f2e68f261b956bdd16eab1737fd3fb4d37192ffca6c058fd96d79670e",
     "server/index.mjs": "9f0a4604045569124590e47f1e0762c1bd696fa4d79d4de8426061ed44a7030e",
-    "src/pages/Rewards.tsx": "2abf5fd4798ceed2a0308e0269715b37bef70f982ae2e337a89e5ea359cca49b",
+    "src/pages/Rewards.tsx": "8df5354c264fadf5d50bea9d9ad100f4d4f6c19d5d6ee04b918e1c0d32482787",
     "src/pages/Settlements.tsx": "76542c872dc3d1dbb350ebaca1cb76c3a6831f2f4715c7cc4e7041930b6d279b",
     "src/pages/Dashboard.tsx": "9c6736991e475288c105ddf162f80e035cca93ebef8b35f3d27e866767214cc2",
-    "src/pages/Transactions.tsx": "7ff537bf121419a489c2ee717ea63cde7c0f96f256c088291716dd24982987e2",
-    "src/pages/Recipients.tsx": "3486e2f701d59de4d9ce1091a12d097a4c6cfeae846ae57e3af30a959e9a45e0",
-    "src/pages/Transfer.tsx": "77faa74e2b60e3929d482b56ef26bbc761c86323713fad108b1c643e8288b920",
-    "src/hooks/useRewards.ts": "91b8a6f0b64136b67e1a7225808a8c07543b46017c19a7e1c487025c52a7f774",
-    "src/components/BankUI.tsx": "74bc229a99042db9a191ce07507bd6d5fddc390009f50d3267fa9dc8c4c3b6ae",
+    "src/pages/Transactions.tsx": "c13e629c8a8184397a98e162791b427291db122441e53dac7821d90a935bbc9a",
+    "src/pages/Recipients.tsx": "3a149ba994d141b883dd34f0884d8b6c278405085e62ca0945814fda73968115",
+    "src/pages/Transfer.tsx": "82892789610ae09f76124670e113d3e680d55c85218ba3abe2561142b805cd22",
+    "src/pages/Receipt.tsx": "32d3925217ec3a26c5dea5938030434d71eabd2a9185fab0143a1a97d1a743a1",
+    "src/pages/RecipientDetails.tsx": "bb023fe2f6de847ef59d6faea2de6937ade1e1d547485e8b08d8eea8cc6a3f79",
+    "src/hooks/useRewards.ts": "4930e2c0a674db523d566a4a8a4c029e681b854e6516f342e4b7c095c88840a1",
+    "src/components/BankUI.tsx": "60ca5ec2228a6dc7c89d8c96d832499a6e4dc95fb67ccc85a8d4d53b542be56c",
+    "src/components/RecipientEditor.tsx": "4c53def2347cafe258865aa1b5258c20e8bb2f99aefd87004abdb5e8a0effc27",
+    "src/components/ConfirmDialog.tsx": "67132bdbc4bb63932066008ac157827c64aba9938ab164a2eaedd17f5a41bdbf",
     "scripts/scenario.mjs": "800932b9ca30dd28ba418daef6ee772b7adf65173f1c4a28ff32289e83a61422",
     "src/store/storage.ts": "be22b40e682bfd0a644a8ad1d01b96f5161664298517b93c2934edd4bdd1520a",
-    "src/store/bank.ts": "2757ce818d14f9d06ad0c899d9329303337014e037db8bb4f919cfffeb692247",
-    "src/App.tsx": "d1df9f5cfba4762edeba4a47c9ef65ab1fd40a3604041c3ec9a7b94efe06e43f",
+    "src/store/bank.ts": "7ef5e080553a4735eaa67fbc7043293e5543e23b86a3a289f6dd15f58b32c34e",
+    "src/store/transferDraft.ts": "dfb65d7ff8980714e3b9cb2cb0a3a55d36c1b545100645cab65bd2316b517757",
+    "src/store/rewardSchedule.ts": "f919364c69c5b20a1b84ace7917dbf3f65afa537e76e50ae2ebce7530be46d76",
+    "src/App.tsx": "2895ad088b1a256aa2ee7367a65317eed73ec14db4831dbc34617d49356292b5",
     "src/main.tsx": "26298ed870a535e27307145d750c2949c647aab89ce773b74697eaccab7bd28c",
-    "src/styles.css": "cea6538db75e31e021680b9738a2e33bcfa6764247d6aeda4179266e7a9da3f5",
+    "src/styles.css": "7ebfdec6bec47ee754019f44f72a05f79a90958eb99f7ea36de1e06e79443b15",
     "index.html": "4cdc7dcfacee60d1a591fbc454d66c133710bb402b3033501c4cd1409dee45e6",
     "tests/rewards-api.spec.ts": "f93848b3bb1729b9033810faa15b83710307fb3e188e013ad5bc8ec3bbf3cebf",
-    "tests/rewards-ui.spec.ts": "6e976fbc05e16148d28ee0ebe0ecab2d61bcd6a6bf533ac3475ec2d925337491",
+    "tests/rewards-ui.spec.ts": "7a95c1a08b6ae11b6fb35cf0fdb39183080501fef353897ce4a1b62de774e49c",
+    "tests/journey.spec.ts": "0b214fa60b523e90f3abd05c39f0b4c4897aa4766c2f79f958a7e78163e37a3a",
     "tests/service.test.mjs": "20986d74e63410532ceb73aa4f7004107aabebaa5d19a6ea3d9acc19c83246d9",
     "tests/helpers.ts": "d3772f852195daf985eca9c2d5aeba35a04aa44bdfaa84b5ddfae1a52e8a78c1",
     "playwright.config.ts": "05c1ce19a1adfd290fad59f359dca85549cf7b2f133bc67fe73fdbc5023add62",
-    "scripts/verify.mjs": "2aa6589358b4a9059ea367188517339ed480c3061e849a3a570edc730fa95430",
+    "scripts/verify.mjs": "533da3e7022a97e92a7572c85bfaadf310695d80f28cf1d54ca0a6930275f2cb",
     "package-lock.json": "82473554a2d5a1d162553190702399bc377d5eb6d7ebc48c82c9fd19dcf9e6c9"
   }
 }

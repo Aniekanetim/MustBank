@@ -53,7 +53,7 @@ const greenCode = await run('fixed-run', ['node_modules/@playwright/test/cli.js'
 const green = JSON.parse(await readFile(resolve(evidence, 'fixed-playwright.json'), 'utf8'));
 const greenSpecs = green.suites.flatMap(specs);
 const failures = greenSpecs.filter(spec => spec.tests.some(test => test.results.some(result => result.status !== 'passed')));
-if (greenCode !== 0 || failures.length || greenSpecs.length !== 33 || green.errors?.length) throw new Error('The fixed regression suite did not pass completely.');
+if (greenCode !== 0 || failures.length || greenSpecs.length !== 45 || green.errors?.length) throw new Error('The fixed regression suite did not pass completely.');
 const core = greenSpecs.find(spec => spec.title.startsWith('TC10'));
 const greenState = await saveAttachment(core, 'observed-scenario', 'fixed-scenario.json');
 await saveAttachment(core, 'first-attempt', 'fixed-first-attempt.json');
@@ -63,8 +63,8 @@ await writeFile(resolve(evidence, 'fixed-playwright.json'), JSON.stringify(scrub
 const browser = await chromium.launch({ channel: 'chromium' });
 const browserVersion = browser.version();
 await browser.close();
-const sourceFiles = ['server/rewards.mjs', 'server/index.mjs', 'src/pages/Rewards.tsx', 'src/pages/Settlements.tsx', 'src/pages/Dashboard.tsx', 'src/pages/Transactions.tsx', 'src/pages/Recipients.tsx', 'src/pages/Transfer.tsx', 'src/hooks/useRewards.ts', 'src/components/BankUI.tsx', 'scripts/scenario.mjs', 'src/store/storage.ts', 'src/store/bank.ts', 'src/App.tsx', 'src/main.tsx', 'src/styles.css', 'index.html', 'tests/rewards-api.spec.ts',
-  'tests/rewards-ui.spec.ts', 'tests/service.test.mjs', 'tests/helpers.ts', 'playwright.config.ts', 'scripts/verify.mjs', 'package-lock.json'];
+const sourceFiles = ['server/rewards.mjs', 'server/index.mjs', 'src/pages/Rewards.tsx', 'src/pages/Settlements.tsx', 'src/pages/Dashboard.tsx', 'src/pages/Transactions.tsx', 'src/pages/Recipients.tsx', 'src/pages/Transfer.tsx', 'src/pages/Receipt.tsx', 'src/pages/RecipientDetails.tsx', 'src/hooks/useRewards.ts', 'src/components/BankUI.tsx', 'src/components/RecipientEditor.tsx', 'src/components/ConfirmDialog.tsx', 'scripts/scenario.mjs', 'src/store/storage.ts', 'src/store/bank.ts', 'src/store/transferDraft.ts', 'src/store/rewardSchedule.ts', 'src/App.tsx', 'src/main.tsx', 'src/styles.css', 'index.html', 'tests/rewards-api.spec.ts',
+  'tests/rewards-ui.spec.ts', 'tests/journey.spec.ts', 'tests/service.test.mjs', 'tests/helpers.ts', 'playwright.config.ts', 'scripts/verify.mjs', 'package-lock.json'];
 const hashes = {};
 for (const file of sourceFiles) hashes[file] = createHash('sha256').update(await readFile(file)).digest('hex');
 const summary = { generatedAt: new Date().toISOString(), upstreamCommit: '73d83074e7ea0c40f8273455ebcb611b7088fd5a',

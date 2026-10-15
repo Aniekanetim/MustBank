@@ -1,57 +1,65 @@
-# MustBank interface review
+# MustBank customer journey verification
 
-**Ready with known limitations for the local prototype.** The customer journey now reads as personal banking. Customers review balances, send money, manage recipients, inspect activity and track their own rewards. Weekly settlement and notification recovery belong to the operations workspace. Failure preparation stays in local tooling.
+The customer journey now preserves payment intent from entry to completion, keeps receipts accessible afterwards, and separates personal banking from reward operations. The controlled settlement defect remains reproducible through local fixture tooling.
 
-This review covers the rendered customer pages, transfer review and receipt, and the operations recovery flow. The implementation uses React, TypeScript, native controls, shared CSS tokens and Lucide icons. No separate repository design standard or component library was found. The review applied accessibility, layout, writing, typography, color and UI principles in that order.
+This document records the implementation against the 15 October UX audit. The target is a complete, professional journey within the local prototype's scope. A perfect usability score is not claimed without user research, assistive-technology testing and real-device evidence.
 
-## Flow and accepted screenshots
+## Audit findings and corrections
 
-1. **Account overview — clear entry point.** Deposit balances are combined in the available total; credit-card debt is labeled separately. Make a transfer is the primary action. Account activity and rewards are reachable from the overview and navigation.
+| Finding | Resulting behavior | Evidence |
+|---|---|---|
+| Payment destination selected implicitly | A generic transfer starts at Choose a recipient. An explicit Send money action can select its payee. | TC35 |
+| Recipient detour loses entered work | Adding or cancelling a recipient returns to the account, amount and description saved in that tab. Reload preserves the draft; discarding requires confirmation. | TC36–TC37 |
+| Receipt cannot be retrieved later | Every payment opens a permanent local details URL from activity, with timestamp, reference, recipient snapshot, balance after payment, copy and download. | TC38 and TC45 |
+| Saved recipients cannot be corrected or removed | Edits require review; removal requires confirmation and keeps earlier receipts. A changed destination invalidates an open recipient choice without discarding the amount or description. | TC39–TC40 and TC46 |
+| Account activity obscures money direction | Internal transfers show money out and a negative amount for the source account; money in and a positive amount for the destination. Returning from a receipt retains the activity filter. | TC41 |
+| Reward meaning and timing are unclear | Credits are explicitly separate from SGD and have no cash conversion/redemption. Each activity has a scheduled payment date; overdue and future payments are distinguished. Historical records use Settlement period. | TC42 |
+| Mobile rewards bury the useful information | Compact balances and payment status precede activities; payout history has a compact empty state. Bottom navigation reserves space beneath controls. | TC43–TC44 |
 
-   ![Account overview](evidence/customer-overview.png)
+## Verified flow and screenshots
 
-2. **Transfer details and review — explicit decision before payment.** Account, recipient and amount have visible labels. Invalid or unaffordable amounts show a corrective message. Review displays the recipient, amount and fee, with an Edit details action. TC25 and TC29 confirm that review does not commit a transfer.
+1. **Overview — clear entry.** Deposit balances and credit-card debt remain separate. Account activity and the transfer entry are easy to find.
+
+   ![Overview](evidence/customer-overview.png)
+
+2. **Transfer details — deliberate and resumable.** No generic payee default. A draft is saved in the tab; changing or removing its destination asks for a new choice while retaining the other inputs.
 
    ![Transfer details](evidence/transfer-details.png)
 
-   ![Transfer review](evidence/transfer-review.png)
+3. **Recipient creation — returns to the task.** Account details are reviewed before saving. Transfer entry from the recipient detour resumes the preserved draft with the new payee selected. Saved recipients have management and payment-history paths.
 
-3. **Transfer receipt — clear completion and next action.** The receipt identifies the recipient, reference and remaining balance. View activity leads to the transaction record. TC25 verifies one committed transfer and the expected balance.
+   ![Recipient management](evidence/recipient-details.png)
 
-   ![Transfer receipt](evidence/transfer-receipt.png)
+4. **Review and receipt — intent becomes a lasting record.** Review shows the recipient, fee, description and resulting balance. Confirmation creates one local payment reference. Later edits and removal cannot rewrite its recipient snapshot; reloading or browser history does not resubmit the transfer.
 
-4. **Personal rewards — payment state separated from eligibility.** Rewards balance represents paid credits; Awaiting settlement represents qualifying activities still to be paid. Payout history communicates payment and confirmation states separately. TC32 verifies that the personal view contains only fixture customer `user-001`; TC33 checks the personal CSV export.
+   ![Transfer review after recipient creation](evidence/transfer-review.png)
 
-   ![Personal rewards](evidence/customer-rewards.png)
+   ![Persistent payment receipt](evidence/transfer-receipt.png)
 
-5. **Operations recovery — ordinary business actions.** Run settlement and Retry notifications expose the operational task without processing-version or failure-injection switches. The corrected recovery leaves one payout and recovers its message. TC10, TC21 and TC22 cover settlement, multiple owners and persisted recovery.
+5. **Activity — navigable evidence.** Payment titles open the receipt. Account-specific debit/credit signs communicate direction, and returning keeps the filter context.
+
+   ![Account activity](evidence/mustbank-transactions.png)
+
+6. **Rewards and operations — clear states for each actor.** Personal rewards show the customer's points, payment dates, delayed states and statement. Operations still runs settlement and recovers confirmations. The unchanged core regression demonstrates 20 credits under faulty replay and 10 under the correction.
+
+   ![Customer rewards](evidence/customer-rewards.png)
 
    ![Corrected settlement recovery](evidence/fixed-reproduction.png)
 
-6. **Narrow-screen banking — readable within the checked widths.** All five customer pages were checked at 320px; the operations recovery was checked at 380px. Navigation wraps, account metrics stack and essential row information remains visible. These checks found no whole-page horizontal overflow. TC24 uses keyboard activation for settlement and notification recovery.
+7. **Mobile — priorities and controls remain accessible.** The 320px rewards view exposes its first activity title above the fixed navigation. The transfer confirmation control scrolls clear of the navigation. The operations recovery is checked at 380px.
 
    ![Rewards at 320px](evidence/customer-mobile.png)
 
-Recipient creation, search and transfer preselection also pass TC30. Activity filters and Clear filters recover an empty result in TC31. Their behavior is covered by the automated checks; these flows do not have a separate screenshot sequence in this report.
+   ![Transfer review at 320px](evidence/transfer-mobile-review.png)
 
-## Findings resolved
+## Coverage and limits
 
-The initial [rewards screen](evidence/ui-before-rewards.png) mixed customer banking, assessment explanation and failure setup. The following changes address the main causes, ordered by user impact. These are completed fixes, not open defects.
+The implementation uses React, TypeScript, native form controls and dialogs, shared CSS tokens and Lucide icons. No separate repository design standard was found. Accessibility, layout, writing, typography, color and UI principles informed the implementation.
 
-| Impact | Cause and evidence | Resolution |
-|---|---|---|
-| High | Mixed actors and assessment copy made the customer's next action unclear; baseline screenshot and `src/App.tsx:17` / `src/pages/Rewards.tsx:16` | Separate personal banking from operations; remove assessment and fixture controls from customer copy. TC26 checks all five pages. |
-| High | A money transfer needs an explicit review before commitment; `src/pages/Transfer.tsx:20` and `src/pages/Transfer.tsx:50` | Details → review → confirmation → receipt, with editable details and corrective validation. TC25, TC28 and TC29 verify the effects. |
-| Medium | A paid-credit total labeled as earned could be confused with an eligible activity awaiting payment; `src/pages/Rewards.tsx:18` | Label the total Rewards balance and describe it as paid credits; keep Awaiting settlement separate. |
-| Medium | Garbled separators and loading text impaired comprehension; transfer/rewards/operations source and the observed form snapshot | Correct UTF-8 text and inspect the rendered form again. |
-| Medium | Dense desktop information needed a narrow-screen reading order; `src/styles.css:213` | Stack sections and retain essential dates and status in the row content when supplementary columns collapse. TC24 and TC34 check overflow. |
+Native confirmation dialogs support Escape and focus restoration. Validation binds errors to fields and focuses the first invalid input. Transfer review/edit/confirmation is checked with keyboard controls. Route headings receive focus, status is communicated by text as well as color, inputs remain 16px, and bottom navigation has minimum touch targets and safe-area padding.
 
-## Accessibility and evidence limits
+The recorded checks exercise these specific journeys; they do not establish complete WCAG conformance or a measured 10/10 usability result. Screen-reader behavior, native zoom, RTL, real mobile devices and other browsers remain unverified. Chromium captures are local evidence; in-app browser automation remains unavailable on this host.
 
-The inspected implementation uses native labeled inputs, visible focus styles, a skip link, status text alongside color, inline corrective errors, semantic table headings, and focus on the transfer stage heading. Primary buttons and form controls have a minimum height of 44px. No motion-dependent state or autoplay was introduced.
+Account data and receipts remain browser-local. New recipient details use synthetic account numbers and are masked in lists/receipts. Drafts live in session storage for the current tab. This is not a production persistence, authorization or distributed transaction guarantee. Reward payouts keep their independent SQLite ledger and existing assessment rules.
 
-Computed contrast for the declared solid color pairs is 6.18:1 for the primary button, 13.17:1 for body text, 5.89:1 for secondary text, and at least 5.38:1 for checked status labels. These measurements and the rendered inspection support the selected colors; they do not establish full accessibility conformance.
-
-The complete `npm run verify` evidence records 33 corrected Playwright cases and one fresh-process check. The same TC10 assertion fails against controlled faulty processing at 20 credits and passes against the correction at 10. Screenshots in this report were captured and inspected during this implementation review; the baseline is explicitly identified as the before state.
-
-In-app browser automation could not initialize on this host, so the existing Playwright Chromium workflow supplied the captures. Complete keyboard traversal, screen-reader behavior, native zoom, RTL, Firefox, WebKit and real mobile devices remain unverified. The customer projection is a fixture view, not production authorization. See the [release decision](release-readiness.md) for functional and deployment limits.
+See [case inputs/results](test-cases.md), [recorded source hashes](evidence/summary.json), and the bounded [release decision](release-readiness.md).

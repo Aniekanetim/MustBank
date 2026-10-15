@@ -14,7 +14,8 @@ export type Recipient = {
   id: string;
   name: string;
   bank: string;
-  accountNumber: string; // last 4 digits
+  accountNumber: string; // full number for new records; legacy records may contain only the last four digits
+  archivedAt?: number;
 };
 
 export type Transaction = {
@@ -26,6 +27,9 @@ export type Transaction = {
   amount: number;        // units of 1/10000 SGD
   memo?: string;
   status: 'completed' | 'pending' | 'failed';
+  recipientSnapshot?: { name: string; bank: string; accountNumber: string };
+  balanceAfter?: number;
+  fee?: number;
 };
 
 export type BankState = {
@@ -61,6 +65,19 @@ const SEED: BankState = {
   ],
 };
 
+export const accountEnding = (number: string) => number.slice(-4);
+export const recipientFingerprint = (recipient: Recipient) => JSON.stringify([recipient.id, recipient.name, recipient.bank, recipient.accountNumber]);
+export const activeRecipients = (value: BankState) => value.recipients.filter(recipient => !recipient.archivedAt);
+
+function hydrate(value: BankState): BankState {
+  return { ...value, transactions: value.transactions.map(transaction => {
+    const recipient = value.recipients.find(item => item.id === transaction.toRecipientId);
+    return { ...transaction, recipientSnapshot: transaction.recipientSnapshot ?? (recipient ? {
+      name: recipient.name, bank: recipient.bank, accountNumber: accountEnding(recipient.accountNumber),
+    } : undefined) };
+  }) };
+}
+
 function load(): BankState {
   try {
     const raw = readStoredValue(STORAGE_KEY, '.state.v1', value => {
@@ -70,13 +87,12 @@ function load(): BankState {
     });
     if (raw) {
       const parsed = JSON.parse(raw) as BankState;
-      const normalized = { ...parsed, transactions: parsed.transactions.map(({ id, ts, fromAccountId, toRecipientId, toAccountId, amount, memo, status }) =>
-        ({ id, ts, fromAccountId, toRecipientId, toAccountId, amount, memo, status })) };
+      const normalized = hydrate(parsed);
       save(normalized);
       return normalized;
     }
   } catch {}
-  return structuredClone(SEED);
+  return hydrate(structuredClone(SEED));
 }
 
 function save(state: BankState) {
@@ -92,6 +108,19 @@ function emit() {
   for (const l of listeners) l(state);
 }
 
+function readLatest() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (raw) state = hydrate(JSON.parse(raw) as BankState);
+}
+
+window.addEventListener('storage', event => {
+  if (event.key !== STORAGE_KEY || !event.newValue) return;
+  try {
+    state = hydrate(JSON.parse(event.newValue) as BankState);
+    for (const listener of listeners) listener(state);
+  } catch { /* Ignore malformed external storage without replacing valid state. */ }
+});
+
 export const bank = {
   get(): BankState { return state; },
 
@@ -101,7 +130,7 @@ export const bank = {
   },
 
   reset() {
-    state = structuredClone(SEED);
+    state = hydrate(structuredClone(SEED));
     emit();
   },
 
@@ -111,8 +140,8 @@ export const bank = {
 
   findRecipient(query: string): Recipient[] {
     const q = query.trim().toLowerCase();
-    if (!q) return state.recipients;
-    return state.recipients.filter(r =>
+    if (!q) return activeRecipients(state);
+    return activeRecipients(state).filter(r =>
       r.name.toLowerCase().includes(q) ||
       r.bank.toLowerCase().includes(q) ||
       r.accountNumber.includes(q)
@@ -120,6 +149,9 @@ export const bank = {
   },
 
   addRecipient(name: string, bank: string, accountNumber: string): Recipient {
+    readLatest();
+    const duplicate = activeRecipients(state).find(item => item.bank === bank && item.accountNumber === accountNumber);
+    if (duplicate) throw new Error(`This account is already saved as ${duplicate.name}.`);
     const recipient: Recipient = {
       id: `rcp_${crypto.randomUUID()}`,
       name, bank, accountNumber,
@@ -129,25 +161,58 @@ export const bank = {
     return recipient;
   },
 
+  updateRecipient(id: string, details: Pick<Recipient, 'name' | 'bank' | 'accountNumber'>): Recipient {
+    readLatest();
+    const previous = state.recipients.find(item => item.id === id && !item.archivedAt);
+    if (!previous) throw new Error('This recipient is no longer available. Choose another recipient.');
+    const duplicate = activeRecipients(state).find(item => item.id !== id && item.bank === details.bank && item.accountNumber === details.accountNumber);
+    if (duplicate) throw new Error(`This account is already saved as ${duplicate.name}.`);
+    const updated = { ...previous, ...details };
+    state = { ...state, recipients: state.recipients.map(item => item.id === id ? updated : item) };
+    emit();
+    return updated;
+  },
+
+  removeRecipient(id: string) {
+    readLatest();
+    state = { ...state, recipients: state.recipients.map(item => item.id === id ? { ...item, archivedAt: Date.now() } : item) };
+    emit();
+  },
+
   transfer(opts: {
     fromAccountId: string;
     toRecipientId?: string;
     toAccountId?: string;
     amount: number; // units of 1/10000 SGD
     memo?: string;
+    requestId?: string;
+    expectedRecipient?: string;
   }): Transaction {
+    readLatest();
+    const existing = opts.requestId && state.transactions.find(item => item.id === opts.requestId);
+    if (existing) {
+      if (existing.fromAccountId !== opts.fromAccountId || existing.toRecipientId !== opts.toRecipientId
+          || existing.toAccountId !== opts.toAccountId || existing.amount !== opts.amount || existing.memo !== opts.memo) {
+        throw new Error('These payment details changed. Start a new transfer.');
+      }
+      return existing;
+    }
     const from = state.accounts.find(a => a.id === opts.fromAccountId);
     if (!from || from.type === 'credit') throw new Error('Choose a checking or savings account.');
     if (!Number.isSafeInteger(opts.amount) || opts.amount <= 0) throw new Error('Enter a valid amount greater than zero.');
     if (Boolean(opts.toRecipientId) === Boolean(opts.toAccountId)) throw new Error('Choose one recipient or destination account.');
-    if (opts.toRecipientId && !state.recipients.some(recipient => recipient.id === opts.toRecipientId)) throw new Error('Choose a saved recipient that is still available.');
+    const recipient = activeRecipients(state).find(item => item.id === opts.toRecipientId);
+    if (opts.toRecipientId && !recipient) throw new Error('Choose a saved recipient that is still available.');
+    if (recipient && opts.expectedRecipient && recipientFingerprint(recipient) !== opts.expectedRecipient) {
+      throw new Error('The recipient details changed. Review the transfer again before sending.');
+    }
     if (opts.toAccountId && (!state.accounts.some(account => account.id === opts.toAccountId) || opts.toAccountId === opts.fromAccountId)) throw new Error('Choose a different destination account.');
     if (from.balance < opts.amount) {
       throw new Error(`Insufficient funds in ${from.nickname}`);
     }
 
     const tx: Transaction = {
-      id: `t_${crypto.randomUUID()}`,
+      id: opts.requestId ?? `t_${crypto.randomUUID()}`,
       ts: Date.now(),
       fromAccountId: opts.fromAccountId,
       toRecipientId: opts.toRecipientId,
@@ -155,6 +220,9 @@ export const bank = {
       amount: opts.amount,
       memo: opts.memo,
       status: 'completed',
+      recipientSnapshot: recipient ? { name: recipient.name, bank: recipient.bank, accountNumber: accountEnding(recipient.accountNumber) } : undefined,
+      balanceAfter: from.balance - opts.amount,
+      fee: 0,
     };
 
     const accounts = state.accounts.map(a => {
