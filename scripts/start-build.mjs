@@ -3,13 +3,13 @@ import { resolve, sep } from 'node:path';
 import { createHash } from 'node:crypto';
 import { spawn } from 'node:child_process';
 
-const choice = process.argv[2] ?? 'both';
+const choice = process.argv[2] === 'buggy' ? 'faulty' : process.argv[2] ?? 'both';
 if (!['faulty', 'fixed', 'both'].includes(choice)) throw new Error('Choose faulty, fixed or both.');
 const pair = JSON.parse(await readFile('assessment/builds/pair.json', 'utf8'));
 const children = [];
 for (const variant of choice === 'both' ? ['faulty', 'fixed'] : [choice]) {
-  const item = pair.builds[variant], directory = resolve(item.directory), outputRoot = resolve('output/builds') + sep;
-  if (!directory.startsWith(outputRoot)) throw new Error('Build path must stay inside output/builds.');
+  const item = pair.builds[variant], directory = resolve(item.directory), expectedRoot = resolve('builds', variant === 'faulty' ? 'buggy' : 'fixed');
+  if (directory !== expectedRoot) throw new Error('Build path must match its independent application folder.');
   const manifest = JSON.parse(await readFile(resolve(directory, 'build-manifest.json'), 'utf8'));
   for (const [file, expected] of Object.entries(manifest.fileSha256)) {
     const path = resolve(directory, file); if (!path.startsWith(directory + sep)) throw new Error('Invalid manifest path.');

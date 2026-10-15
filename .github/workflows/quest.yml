@@ -27,5 +27,6 @@ jobs:
             assessment/evidence/
             assessment/builds/
             assessment/test-records/
+            builds/
             output/playwright/
           retention-days: 14

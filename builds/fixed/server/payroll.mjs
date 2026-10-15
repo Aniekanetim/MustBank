@@ -75,7 +75,7 @@ export class PayrollService {
   }
   create({ behavior = BUILD_VARIANT, fixture = 'standard' } = {}) {
     if (behavior !== BUILD_VARIANT) throw new InputError('This build has a fixed implementation. Use the other build for that behavior.');
-    if (!['fixed', 'faulty'].includes(behavior) || !['standard', 'single', 'boundaries', 'empty'].includes(fixture)) throw new InputError('Choose a supported behavior and starting fixture.');
+    if (!['standard', 'single', 'boundaries', 'empty'].includes(fixture)) throw new InputError('Choose a supported starting fixture.');
     const id = randomUUID();
     this.transaction(() => {
       this.db.prepare('INSERT INTO workspaces(id,behavior,created_at) VALUES(?,?,?)').run(id, behavior, new Date().toISOString());

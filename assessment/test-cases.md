@@ -42,7 +42,7 @@ The [verification summary](evidence/summary.json) records the environment and so
 
 | TC34 | Read served build identity, then request the opposite implementation through workspace creation | ID/source fingerprint match the tested package; opposite implementation is rejected with HTTP 400 | Passed in both builds |
 
-See [the expected faulty failure](evidence/faulty-run.log), [corrected run](evidence/fixed-run.log), [process check](evidence/process-recovery.log) and [JSON report](evidence/fixed-playwright.json) for actual execution output. Test counts describe checks, not a reviewer-assigned assessment score. Remaining integration and accessibility gaps are recorded in [release readiness](release-readiness.md).
+See [the expected faulty failure](evidence/faulty-run.log), [corrected run](evidence/fixed-run.log), [faulty process check](evidence/faulty-process.log), [fixed process check](evidence/fixed-process.log) and [JSON report](evidence/fixed-playwright.json) for actual execution output. Test counts describe checks, not a reviewer-assigned assessment score. Remaining integration and accessibility gaps are recorded in [release readiness](release-readiness.md).
 
 For the central business outcome, start with the [generated before/after comparison](evidence/business-proof.md). TC10 asserts the same amount, preserved payment object and original message identity; a correction that deletes and recreates the payment cannot pass as safe recovery.
 

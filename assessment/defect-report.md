@@ -6,13 +6,13 @@
 
 Amara Okafor has one approved earning of ₦150,000 inside the 5–11 October 2026 UTC period. The pay date is 13 October at 09:00 UTC. The employee is owed one ₦150,000 payment. Notification recovery must preserve it.
 
-Start the two separate application builds using the [README](../README.md), then prepare the failing example:
+Start the two independent application folders using the [README](../README.md), then prepare the failing example:
 
 ~~~sh
 npm run scenario -- --build faulty --fail-notification
 ~~~
 
-Open the printed pay-run URL. This workspace belongs to the separately packaged faulty application on port 4175. Its completion logic is fixed in that executable; the workspace does not select the implementation. The one-shot notification fault occurs before provider acceptance.
+Open the printed pay-run URL. This workspace belongs to the independent buggy application on port 4175. Its completion logic is fixed in that executable; the workspace does not select the implementation. The one-shot notification fault occurs before provider acceptance.
 
 ## Reproduce
 
@@ -55,4 +55,4 @@ Block release if retry changes an existing payment identity or amount, two fixed
 
 After the correction, use the [operations runbook](operations-runbook.md) to choose between notification recovery and an unpaid-entry retry. Escalate a mismatch with original references and state evidence; a manual database edit is not the demonstrated fix.
 
-The [faulty build and its full test record](test-records/faulty.md) and [fixed build and its full test record](test-records/fixed.md) contain the package links, actual results and TC10 videos. Both execute the same 34 checks. The [policy patch](builds/fix.patch) isolates the correction. TC13 additionally exposes the non-atomic persistence weakness in the faulty build: an interruption leaves a payment without saved notification work. Its fixed transaction rolls both writes back.
+The [faulty build and its full test record](test-records/faulty.md) and [fixed build and its full test record](test-records/fixed.md) contain the application-folder links, actual results and TC10 videos. Both execute the same 34 checks. The [policy patch](builds/fix.patch) isolates the correction. TC13 additionally exposes the non-atomic persistence weakness in the faulty build: an interruption leaves a payment without saved notification work. Its fixed transaction rolls both writes back.

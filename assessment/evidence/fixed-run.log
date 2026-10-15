@@ -1,21 +1,21 @@
-[WebServer] (node:45976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:61212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
-[WebServer] (node:45976) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+[WebServer] (node:61212) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 
 
 Running 33 tests using 2 workers
 
-(node:19088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:42200) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
-(node:64464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:44772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
-[1/33] [chromium] › tests\payroll-api.spec.ts:16:1 › TC01 | Approved earnings aggregate into one payment per employee
-[2/33] [chromium] › tests\payroll-api.spec.ts:5:1 › TC34 | Served build matches its package and cannot switch implementation
+[1/33] [chromium] › tests\payroll-api.spec.ts:5:1 › TC34 | Served build matches its package and cannot switch implementation
+[2/33] [chromium] › tests\payroll-api.spec.ts:16:1 › TC01 | Approved earnings aggregate into one payment per employee
 [3/33] [chromium] › tests\payroll-api.spec.ts:22:1 › TC02 | Opening Monday midnight is included
 [4/33] [chromium] › tests\payroll-api.spec.ts:26:1 › TC03 | Following Monday midnight belongs to the next period
 [5/33] [chromium] › tests\payroll-api.spec.ts:31:1 › TC04 | Lagos offset is normalized before period selection
@@ -35,11 +35,11 @@ Running 33 tests using 2 workers
 [19/33] [chromium] › tests\payroll-api.spec.ts:101:1 › TC20 | Unknown employees cannot acquire earnings or payments
 [20/33] [chromium] › tests\payroll-api.spec.ts:105:1 › TC21 | Isolated workspaces do not share earnings or payment identity
 [21/33] [chromium] › tests\payroll-api.spec.ts:110:1 › TC22 | Approval is explicit and replaying approval is harmless
-(node:63836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:45824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
-(node:76492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:51500) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
@@ -55,4 +55,4 @@ Running 33 tests using 2 workers
 [31/33] [chromium] › tests\payroll-ui.spec.ts:106:1 › TC31 | Payroll screens use product language and show standard totals
 [32/33] [chromium] › tests\payroll-ui.spec.ts:113:1 › TC32 | Notification recovery is visible and leaves the receipt unchanged
 [33/33] [chromium] › tests\payroll-ui.spec.ts:121:1 › TC33 | Separate tabs retain their workspace and pay period after reload
-  33 passed (50.4s)
+  33 passed (1.1m)

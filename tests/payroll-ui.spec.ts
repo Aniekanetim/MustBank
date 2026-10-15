@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
-import { create, post, run, fault } from './helpers';
+import { create, run, fault } from './helpers';
 
 async function screenshot(page: Page, path: string) {
   await page.evaluate(() => window.scrollTo(0, 0));

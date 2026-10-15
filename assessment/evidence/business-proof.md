@@ -2,7 +2,7 @@
 
 **The employee is owed ₦150,000.00. The faulty retry records ₦300,000.00; the correction retains the original ₦150,000.00 payment.**
 
-Generated from the actual TC10 attachments by scripts/report-evidence.mjs. It rejects mismatched inputs, an incorrect failure, changed payment identity or an unrecovered corrected message. Run timestamp: 2026-10-15T16:49:34.480Z.
+Generated from the actual TC10 attachments by scripts/report-evidence.mjs. It rejects mismatched inputs, an incorrect failure, changed payment identity or an unrecovered corrected message. Run timestamp: 2026-10-15T17:26:18.855Z.
 
 | Observed stage | Approved pay | Recorded pay | Payments | Pending notifications |
 |---|---|---|---|---|
@@ -15,7 +15,7 @@ The first attempts have identical earning inputs. Payment commits before notific
 
 On retry, the faulty version creates a different payment ID for the same employee and period. The original payment still exists, so recorded pay exceeds approved pay by ₦150,000.00. This is observed excess in a synthetic ledger, not actual financial loss.
 
-The corrected retry preserves the complete original payment object and recovers the original message. Its payment reference is 51454ead-f5d8-4c44-bdeb-ede0e9e44687. Message state changes from pending to sent, with one simulated provider acceptance.
+The corrected retry preserves the complete original payment object and recovers the original message. Its payment reference is bf230294-33ac-4cac-8436-75040bd4d6ef. Message state changes from pending to sent, with one simulated provider acceptance.
 
 ## Check the evidence
 
@@ -23,7 +23,7 @@ The corrected retry preserves the complete original payment object and recovers 
 - After retry: [faulty](faulty-workspace.json), [corrected](fixed-workspace.json).
 - Machine-readable comparison: [business proof](business-proof.json).
 - Same assertion: [expected failure](faulty-run.log), [corrected suite](fixed-run.log).
-- Independent persistence check: [TC11 fresh-process result](process-recovery.log).
+- Independent persistence checks: [faulty](faulty-process.log), [fixed](fixed-process.log).
 - Other business boundaries: [case register](../test-cases.md), [environment and source fingerprints](summary.json).
 
 ## What this establishes

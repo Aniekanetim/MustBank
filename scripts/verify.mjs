@@ -29,11 +29,12 @@ async function save(spec, name, file) {
   const bytes = item.body ? Buffer.from(item.body, 'base64') : await readFile(item.path);
   await writeFile(resolve(evidence, file), bytes); return JSON.parse(bytes.toString());
 }
-async function verifyPackage(build) {
+async function verifyBuild(build) {
   const manifestBytes = await readFile(build.manifest);
   assert.equal(sha(manifestBytes), build.manifestSha256);
-  assert.equal(sha(await readFile(build.archive)), build.archiveSha256);
   const manifest = JSON.parse(manifestBytes);
+  assert.equal(sha(await readFile(resolve(build.directory, 'build-manifest.json'))), build.manifestSha256);
+  assert.equal(sha(JSON.stringify(manifest.fileSha256)), build.runtimeSha256);
   for (const [file, hash] of Object.entries(manifest.fileSha256)) assert.equal(sha(await readFile(resolve(build.directory, file))), hash, `${build.variant} runtime changed: ${file}`);
 }
 
@@ -41,7 +42,7 @@ assert.equal(await run('build', [npmCli, 'run', 'build:pair']), 0, 'Build failed
 const pair = JSON.parse(await readFile('assessment/builds/pair.json', 'utf8'));
 const runs = {};
 for (const variant of ['faulty', 'fixed']) {
-  const build = pair.builds[variant]; await verifyPackage(build);
+  const build = pair.builds[variant]; await verifyBuild(build);
   const processExit = await run(`${variant}-process`, ['--test', 'tests/service.test.mjs'], {
     PAYROLL_TEST_BUILD_DIR: resolve(build.directory), PAYROLL_PROCESS_RECORD: resolve(evidence, `${variant}-process.json`),
   });
@@ -93,11 +94,10 @@ for (const variant of ['faulty', 'fixed']) {
   cases.sort((a, b) => a.id.localeCompare(b.id));
   runs[variant] = { state, processObservation, processExit, playwrightExit, cases, servedBuild, observations };
   await writeFile(resolve(evidence, `${variant}-playwright.json`), JSON.stringify(scrub(report), null, 2));
-  await verifyPackage(build);
+  await verifyBuild(build);
 }
 assert.deepEqual(runs.faulty.cases.map(c => c.id), runs.fixed.cases.map(c => c.id));
 for (const [file, hash] of Object.entries(pair.sourceSha256)) assert.equal(sha(await readFile(file)), hash, `Source changed while testing: ${file}`);
-await copyFile(resolve(evidence, 'fixed-process.log'), resolve(evidence, 'process-recovery.log'));
 const browser = await chromium.launch({ channel: 'chromium' }), browserVersion = browser.version(); await browser.close();
 const environment = { node: process.version, platform: process.platform, architecture: process.arch, chromium: browserVersion };
 const summary = { application: 'MustPayroll', generatedAt: new Date().toISOString(), upstreamCommit: '73d83074e7ea0c40f8273455ebcb611b7088fd5a', environment,

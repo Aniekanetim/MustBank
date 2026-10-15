@@ -16,7 +16,7 @@ The faulty behavior is **not ready**: a notification failure followed by payroll
 | Atomic payment/outbox persistence and restart recovery | TC11, TC13 pass within the documented failure model |
 | Review, cancellation, receipts, export and tab identity | TC23–TC27, TC30, TC33 pass |
 | Responsive and keyboard workflow | TC28–TC29 pass in desktop Chromium emulation |
-| Two builds and traceable execution | Separate executable packages, runtime manifests and hashes; matching test-suite fingerprint in both test records; TC34 confirms served build and prevents switching |
+| Two builds and traceable execution | Separate application folders, runtime manifests and hashes; matching test-suite fingerprint in both test records; TC34 confirms served build and prevents switching |
 | Evidence belongs to current payroll project | Payroll reports and screenshots replace previous banking evidence |
 | Candidate ownership and final submission | Aniekan's review, Loom recording and submission details remain pending |
 

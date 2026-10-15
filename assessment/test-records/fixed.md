@@ -2,14 +2,14 @@
 
 **34 passed; 0 failed; 34 executed. PASS the assessed local reference scope. The original payment survives recovery, notification work is durable, and every check in the same suite passes. Production payroll approval is outside this result.**
 
-Build: mustpayroll-0.2.0-fixed-39fee999f9f3. Tested on 2026-10-15T16:49:34.527Z using v22.21.0 / Chromium 156.0.8078.4 on win32. These are automated execution results, not a claim of candidate manual sign-off.
+Build: mustpayroll-0.2.0-fixed-0dcbfc9d3580. Tested on 2026-10-15T17:26:18.900Z using v22.21.0 / Chromium 156.0.8078.4 on win32. These are automated execution results, not a claim of candidate manual sign-off.
 
 ## Build and test identity
 
-- Application: [download this build](../builds/MustPayroll-fixed.zip); [runtime manifest](../builds/fixed-manifest.json).
-- Package SHA-256: b3ea42d7e7cd7ca1a74b1fc4e26283b96cf8b7da20b201cc8c09570d3d168e86.
-- Shared source fingerprint: 39fee999f9f33b3147330a27645f5cb8f73b0b5f1e47dcc9415aedc4d0a26be0.
-- Shared test-suite fingerprint: 691abf948dd81e01b7b310a627a24ea759afc8a125700a52eef54762996e15a0. Both records execute the same cases and positive business expectations.
+- Application: [independent folder](../../builds/fixed); [runtime manifest](../../builds/fixed/build-manifest.json). Open a terminal in that folder and run npm start.
+- Runtime SHA-256: 5f6cee8527c120240eecdfeb08482f22ba2eac3894669ff365de0937248584cc. This fingerprints the manifest's ordered application-file hashes; local database files are excluded.
+- Shared source fingerprint: 0dcbfc9d35808c7a396f49bf2ce3cb3f0e26bebbde0e3885a50e4bd147731419.
+- Shared test-suite fingerprint: eeb787a6d6eff160316d237854ee8b573d032b130b2e145eb6dc2df868e74003. Both records execute the same cases and positive business expectations.
 - The served-build attachment matches this build ID and source fingerprint. TC34 also verifies that its API cannot switch to the opposite implementation.
 
 ## Reproduction and observed result
@@ -67,6 +67,6 @@ Inputs and expected outcomes are in the [case register](../test-cases.md). Resul
 - [Fresh-process console log](../evidence/fixed-process.log), [before/restart state](../evidence/fixed-process.json).
 - Related observed states: [TC13 interrupted persistence](../evidence/fixed-TC13.json), [TC14 lost acknowledgement](../evidence/fixed-TC14.json), [TC16 overlapping requests](../evidence/fixed-TC16.json).
 - [Structured test record](fixed.json), [comparison](README.md), [PAY-001 defect report](../defect-report.md).
-- Reproduce both runs from source with npm ci, npx playwright install --no-shell chromium, then npm run verify. The verifier builds both packages, checks their hashes, executes the full suite against each, and regenerates both records. A failed corrected check or an unexpected faulty result fails verification.
+- Reproduce both runs from source with npm ci, npx playwright install --no-shell chromium, then npm run verify. The verifier updates both plain application folders without deleting their databases, checks their file hashes, executes the full suite against each, and regenerates both records. A failed corrected check or an unexpected faulty result fails verification.
 
 No real funds, bank API or employee data were used. Browser coverage is Chromium. Single-server overlap is tested; distributed workers, real providers, permissions, taxes and statutory compliance are unverified.

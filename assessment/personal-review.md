@@ -2,7 +2,7 @@
 
 **Status: application review in progress, as reported by Aniekan.** No specific defect reproduction, code or document review, or final sign-off has been confirmed. This guide records the next checks; its unchecked items are not a completed sign-off. Automated results are already linked in the directive.
 
-Start both packaged applications using README. Prepare a fresh workspace in each build:
+Start both applications using README. Prepare a fresh workspace in each build:
 
 ~~~sh
 npm run scenario -- --build faulty --fail-notification

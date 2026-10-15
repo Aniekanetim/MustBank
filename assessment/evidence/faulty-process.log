@@ -1,10 +1,10 @@
 TAP version 13
-# (node:15204) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (node:67480) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 # (Use `node --trace-warnings ...` to show where the warning was created)
 # Subtest: TC11 | Fresh process preserves employee-period payment identity
 not ok 1 - TC11 | Fresh process preserves employee-period payment identity
   ---
-  duration_ms: 585.196
+  duration_ms: 874.7198
   type: 'test'
   location: 'C:\\Users\\User\\Desktop\\Personal\\Codex\\Must\\MustBank\\tests\\service.test.mjs:11:1'
   failureType: 'testCodeFailure'
@@ -35,4 +35,4 @@ not ok 1 - TC11 | Fresh process preserves employee-period payment identity
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 744.1478
+# duration_ms 1187.8688

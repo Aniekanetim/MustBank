@@ -1,9 +1,8 @@
 import { spawn } from 'node:child_process';
-import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
-import { resolve, dirname, relative } from 'node:path';
+import { readFile, writeFile, mkdir, readdir, unlink } from 'node:fs/promises';
+import { resolve, dirname, relative, sep } from 'node:path';
 import { createHash } from 'node:crypto';
 import { SOURCE_FILES, TEST_FILES } from './build-inputs.mjs';
-import { writeZip } from './zip.mjs';
 
 const root = process.cwd(), npmCli = process.env.npm_execpath;
 if (!npmCli) throw new Error('Run npm run build:pair.');
@@ -32,23 +31,33 @@ const pair = { application: 'MustPayroll', generatedAt, sourceFingerprint, sourc
 for (const variant of ['faulty', 'fixed']) {
   const buildId = `mustpayroll-${version}-${variant}-${sourceFingerprint.slice(0, 12)}`;
   const port = variant === 'faulty' ? 4175 : 4176;
-  const directory = `output/builds/${buildId}`;
+  const folder = variant === 'faulty' ? 'buggy' : 'fixed';
+  const directory = `builds/${folder}`;
   const info = { id: buildId, variant, defaultPort: port, sourceSha256: sourceFingerprint };
   const files = { ...common,
     'server/payment-policy.mjs': await readFile(`server/policies/${variant}.mjs`),
     'server/build-info.mjs': `export const BUILD_INFO = ${JSON.stringify(info, null, 2)};\n`,
     'package.json': JSON.stringify({ name: `mustpayroll-${variant}`, version, private: true, type: 'module', license: 'MIT', engines: { node: '>=22.13.0' }, scripts: { start: 'node server/index.mjs', scenario: 'node scripts/scenario.mjs' } }, null, 2) + '\n',
-    'README.md': `# MustPayroll ${variant} build\n\nBuild: ${buildId}\n\nRequires Node.js 22.13 or later. No dependency installation is needed for this prebuilt application.\n\nRun npm start, then open http://127.0.0.1:${port}/overview.\n\nTo prepare the reproduction, run npm run scenario -- --fail-notification and open its printed URL. Process once, then retry the original pay run.\n\nThis package contains only the ${variant} payment implementation. Its API rejects requests to switch implementation. The other build is a separate download with a separate database.\n\nPayment records are synthetic local ledger entries. This is not a live payroll service. Source, test records and MIT attribution: https://github.com/Aniekanetim/MustBank\n`,
+    'README.md': `# MustPayroll ${folder} application\n\nBuild: ${buildId}\n\nThis is an independent application folder containing its backend, compiled interface and one payment implementation. Requires Node.js 22.13 or later; no dependency installation is needed.\n\nOpen a terminal in this folder, run npm start, then visit http://127.0.0.1:${port}/overview.\n\nTo prepare the reproduction, run npm run scenario -- --fail-notification in another terminal in this folder. Open the printed URL, process once, then retry the original pay run.\n\nThe employee is owed NGN150,000. ${variant === 'faulty' ? 'The buggy retry records NGN300,000 across two payments.' : 'The fixed retry preserves the original NGN150,000 payment and recovers its notification.'}\n\nThe API rejects requests to switch implementation. This app stores its own database in data/payroll.sqlite. Rebuilding updates application files without removing that database.\n\nInspect server/payment-policy.mjs for this implementation. Shared editable frontend source and the full test suite are at the repository root. [Test record](../../assessment/test-records/${variant}.md).\n\nPayment records are synthetic local ledger entries. This is not a live payroll service. Source and MIT attribution: https://github.com/Aniekanetim/MustBank\n`,
   };
   const fileSha256 = Object.fromEntries(Object.entries(files).sort(([a], [b]) => a.localeCompare(b)).map(([file, bytes]) => [file, sha(bytes)]));
-  const manifest = { ...info, generatedAt, sourceFingerprint, testSuiteSha256, fileSha256 };
+  const runtimeSha256 = sha(JSON.stringify(fileSha256));
+  const manifest = { ...info, generatedAt, sourceFingerprint, testSuiteSha256, runtimeSha256, fileSha256 };
   files['build-manifest.json'] = JSON.stringify(manifest, null, 2) + '\n';
+  // Prune only files named by the previous build manifest. Preserve local data.
+  let previous;
+  try { previous = JSON.parse(await readFile(resolve(directory, 'build-manifest.json'), 'utf8')); }
+  catch (error) { if (error.code !== 'ENOENT') throw error; }
+  for (const file of Object.keys(previous?.fileSha256 ?? {})) {
+    const target = resolve(directory, file);
+    if (!target.startsWith(resolve(directory) + sep) || file.startsWith('data/')) throw new Error('Invalid previous build path.');
+    if (!(file in files)) await unlink(target).catch(error => { if (error.code !== 'ENOENT') throw error; });
+  }
   for (const [file, bytes] of Object.entries(files)) { const path = resolve(directory, file); await mkdir(dirname(path), { recursive: true }); await writeFile(path, bytes); }
-  const archive = `assessment/builds/MustPayroll-${variant}.zip`, manifestPath = `assessment/builds/${variant}-manifest.json`;
-  await writeZip(archive, files);
+  const manifestPath = `assessment/builds/${variant}-manifest.json`;
   await writeFile(manifestPath, files['build-manifest.json']);
-  pair.builds[variant] = { buildId, variant, port, directory, archive, archiveSha256: sha(await readFile(archive)), manifest: manifestPath, manifestSha256: sha(files['build-manifest.json']) };
-  console.log(`${variant}: ${buildId}\n  ${archive}\n  http://127.0.0.1:${port}/overview`);
+  pair.builds[variant] = { buildId, variant, port, directory, runtimeSha256, manifest: manifestPath, manifestSha256: sha(files['build-manifest.json']) };
+  console.log(`${folder}: ${buildId}\n  ${directory}\n  http://127.0.0.1:${port}/overview`);
 }
 const before = (await readFile('server/policies/faulty.mjs', 'utf8')).trimEnd().split('\n');
 const after = (await readFile('server/policies/fixed.mjs', 'utf8')).trimEnd().split('\n');

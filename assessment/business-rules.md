@@ -68,6 +68,6 @@ Workspaces isolate examples, but they are not an authentication boundary. The se
 
 Employees → review destination. Earnings → record and approve. Pay runs → choose period, review employee totals and confirm. Payments → reconcile records and retrieve receipts. Notifications → recover delivery while retaining the payment record.
 
-The interface displays period boundaries in UTC, distinguishes recorded pay from approved pay, and signals a mismatch when duplicate records exceed the approved total. Processing confirmation can be cancelled before any ledger change. Previous receipts remain retrievable after navigation and reload. Failure preparation uses local tooling. The faulty and fixed applications are separate executable packages; implementation is not selected inside the product or workspace.
+The interface displays period boundaries in UTC, distinguishes recorded pay from approved pay, and signals a mismatch when duplicate records exceed the approved total. Processing confirmation can be cancelled before any ledger change. Previous receipts remain retrievable after navigation and reload. Failure preparation uses local tooling. The faulty and fixed applications are separate application folders; implementation is not selected inside the product or workspace.
 
 Each browser tab retains its workspace and selected pay date after navigation and reload. Opening another example cannot silently substitute its payroll records into the first tab. This is navigation state, not authentication.

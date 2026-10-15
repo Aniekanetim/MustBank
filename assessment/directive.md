@@ -1,6 +1,6 @@
 # Prevent duplicate employee payment during payroll recovery
 
-Current application locations: [buggy folder](../builds/buggy) and [fixed folder](../builds/fixed), with [independent run instructions](../builds/README.md). Their runtime files match the assessed build identities; [folder verification](evidence/folder-verification.json) records direct execution. Earlier archive-format references are retained pending approval of the cleanup proposal.
+Application locations: [buggy folder](../builds/buggy) and [fixed folder](../builds/fixed), with [independent run instructions](../builds/README.md). The full verification builds and tests these folders directly. Their runtime file hashes and served build IDs tie each result to its application.
 
 ## Objective
 
@@ -18,7 +18,7 @@ The selected defect is PAY-001. Boundary handling, timezone conversion, duplicat
 
 1. Identify at least three plausible failures, rank their impact, likelihood or uncertainty and effort, and explain why PAY-001 takes priority. See [intent.md](intent.md).
 2. Define an equally concrete alternative to the suggested rewards flow. The [payroll rules](business-rules.md) establish eligibility, UTC boundaries, amounts, approval, immutable IDs, locked periods and account/admin assumptions.
-3. Deliver two separately runnable payroll builds: one preserving the defect and one containing the correction. Execute the same full test suite against both. Keep a separate test record for each, tied to its exact build ID and package hash.
+3. Deliver two separately runnable payroll builds: one preserving the defect and one containing the correction. Execute the same full test suite against both. Keep a separate test record for each, tied to its exact build ID and runtime file hashes.
 4. Record at least eight cases with inputs, expected outcomes and results, including the happy path, cut-off, timezone, duplicates, retries and partial failure. The current [case register](test-cases.md) contains 34 checks.
 5. Produce an actionable [defect and root-cause report](defect-report.md), release-blocking checks, final verification evidence, remaining gaps and a [release decision](release-readiness.md).
 6. Provide accessible work links and a Loom of no more than five minutes. Aniekan must review and explain the final work; the reviewer assigns the assessment score.
@@ -28,8 +28,8 @@ The selected defect is PAY-001. Boundary handling, timezone conversion, duplicat
 | Criterion | Result |
 |---|---|
 | Alternatives prioritized; payroll flow and business rule explicit | Complete in intent and business rules |
-| Two independently runnable application builds | Complete; faulty and fixed ZIP packages each contain one implementation |
-| Two executed test records | Complete; full 34-case suite against each package, with logs, state evidence and separate TC10 videos |
+| Two independently runnable application builds | Complete; builds/buggy and builds/fixed each contain one implementation |
+| Two executed test records | Complete; full 34-case suite against each application folder, with logs, state evidence and separate TC10 videos |
 | Controlled defect fails the original business expectation | Observed: two payments totaling ₦300,000 instead of ₦150,000 |
 | Corrected flow passes with payment identity preserved | Observed: one ₦150,000 payment and recovered notification |
 | Required cases and final run | Faulty: 29 passed, 5 failed. Fixed: 34 passed, 0 failed. Same 33 Playwright checks plus one fresh-process check in each run |
@@ -43,8 +43,8 @@ The repository remains at its existing URL so its history and draft review remai
 
 | Work or evidence | Accessible link |
 |---|---|
-| Faulty application and execution record | [Download faulty build](builds/MustPayroll-faulty.zip) · [faulty record](test-records/faulty.md) · [video](test-records/faulty-TC10.webm) |
-| Fixed application and execution record | [Download fixed build](builds/MustPayroll-fixed.zip) · [fixed record](test-records/fixed.md) · [video](test-records/fixed-TC10.webm) |
+| Faulty application and execution record | [Buggy application folder](../builds/buggy) · [faulty record](test-records/faulty.md) · [video](test-records/faulty-TC10.webm) |
+| Fixed application and execution record | [Fixed application folder](../builds/fixed) · [fixed record](test-records/fixed.md) · [video](test-records/fixed-TC10.webm) |
 | Build comparison and exact correction | [Pair manifests and hashes](builds/pair.json) · [payment-policy patch](builds/fix.patch) |
 | Runnable project and exact setup | [README](../README.md) · [repository branch](https://github.com/Aniekanetim/MustBank/tree/quest/rewards-settlement) |
 | Test project | [Playwright cases](../tests/payroll-api.spec.ts) · [UI regression](../tests/payroll-ui.spec.ts) · [fresh-process check](../tests/service.test.mjs) |
@@ -55,7 +55,7 @@ The repository remains at its existing URL so its history and draft review remai
 | Readable business result and causal comparison | [Generated proof](evidence/business-proof.md) · [machine-readable comparison](evidence/business-proof.json) |
 | First payment with failed notification | [Faulty first attempt](evidence/faulty-first-attempt.json) · [corrected first attempt](evidence/fixed-first-attempt.json) |
 | State after retry | [Faulty workspace](evidence/faulty-workspace.json) · [corrected workspace](evidence/fixed-workspace.json) |
-| Regression evidence | [Expected failure](evidence/faulty-run.log) · [corrected run](evidence/fixed-run.log) · [fresh-process result](evidence/process-recovery.log) |
+| Regression evidence | [Expected failure](evidence/faulty-run.log) · [corrected run](evidence/fixed-run.log) · [faulty fresh-process result](evidence/faulty-process.log) · [fixed fresh-process result](evidence/fixed-process.log) |
 | Machine-readable reports | [Faulty report](evidence/faulty-playwright.json) · [corrected report](evidence/fixed-playwright.json) |
 | Visual proof and trace | [Faulty payroll](evidence/faulty-reproduction.png) · [corrected payroll](evidence/fixed-reproduction.png) · [failure trace](evidence/faulty-trace.zip) |
 | Release decision and remaining gaps | [Release readiness](release-readiness.md) |
@@ -68,7 +68,7 @@ The repository remains at its existing URL so its history and draft review remai
 | Recording preparation | [Loom script](loom-script.md), targeting 4:30 with a 30-second buffer |
 | Final Loom | Pending candidate recording; replace this entry with an accessible link before submission |
 
-To verify independently, follow README, install Chromium, and run npm run verify. To inspect manually, start both packaged applications and prepare a fresh example in each with npm run scenario. Use each printed workspace URL; do not reuse a previously processed workspace for a first-attempt demonstration. The fixture and ledger stay local. No confidential employer information or real employee data is included.
+To verify independently, follow README, install Chromium, and run npm run verify. To inspect manually, start both applications and prepare a fresh example in each with npm run scenario. Use each printed workspace URL; do not reuse a previously processed workspace for a first-attempt demonstration. The fixture and ledger stay local. No confidential employer information or real employee data is included.
 
 AI assistance through Codex supported implementation, test design, execution and drafting. Automated results are identified as such. Aniekan's personal review and recorded explanation are not represented as completed. This fictional Quest case does not replace any separately requested genuine portfolio cases. The 76/100 threshold is the employer's pass requirement, not a self-assigned result.
 

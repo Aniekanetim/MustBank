@@ -55,7 +55,7 @@ export async function reportEvidence(directory = resolve('assessment/evidence'))
     `- After retry: [faulty](faulty-workspace.json), [corrected](fixed-workspace.json).\n` +
     `- Machine-readable comparison: [business proof](business-proof.json).\n` +
     `- Same assertion: [expected failure](faulty-run.log), [corrected suite](fixed-run.log).\n` +
-    `- Independent persistence check: [TC11 fresh-process result](process-recovery.log).\n` +
+    `- Independent persistence checks: [faulty](faulty-process.log), [fixed](fixed-process.log).\n` +
     `- Other business boundaries: [case register](../test-cases.md), [environment and source fingerprints](summary.json).\n\n` +
     `## What this establishes\n\n` +
     `The correction prevents the selected duplicate-payment failure in the assessed fixtures and gives an operator a recovery path through the product. No manual database edit is required for the verified recovery. A failing corrected regression blocks this reference release.\n\n` +

@@ -10,7 +10,7 @@ export async function writeTestRecords(pair, runs, environment) {
     const run = runs[variant], build = pair.builds[variant];
     const reportBytes = await readFile(`assessment/evidence/${variant}-playwright.json`);
     const record = { application: 'MustPayroll', variant, generatedAt: new Date().toISOString(),
-      buildId: build.buildId, archive: build.archive, archiveSha256: build.archiveSha256,
+      buildId: build.buildId, directory: build.directory, runtimeSha256: build.runtimeSha256,
       manifestSha256: build.manifestSha256, sourceFingerprint: pair.sourceFingerprint,
       testSuiteSha256: pair.testSuiteSha256, environment, servedBuild: run.servedBuild,
       commands: { browserAndApi: `QUEST_BEHAVIOR=${variant} npx playwright test`, freshProcess: `PAYROLL_TEST_BUILD_DIR=${build.directory} node --test tests/service.test.mjs` },
@@ -30,8 +30,8 @@ export async function writeTestRecords(pair, runs, environment) {
       `**${record.passed} passed; ${record.failed} failed; ${record.total} executed. ${decision}**\n\n` +
       `Build: ${record.buildId}. Tested on ${record.generatedAt} using ${environment.node} / Chromium ${environment.chromium} on ${environment.platform}. These are automated execution results, not a claim of candidate manual sign-off.\n\n` +
       `## Build and test identity\n\n` +
-      `- Application: [download this build](../builds/MustPayroll-${variant}.zip); [runtime manifest](../builds/${variant}-manifest.json).\n` +
-      `- Package SHA-256: ${record.archiveSha256}.\n` +
+      `- Application: [independent folder](../../${record.directory}); [runtime manifest](../../${record.directory}/build-manifest.json). Open a terminal in that folder and run npm start.\n` +
+      `- Runtime SHA-256: ${record.runtimeSha256}. This fingerprints the manifest's ordered application-file hashes; local database files are excluded.\n` +
       `- Shared source fingerprint: ${record.sourceFingerprint}.\n` +
       `- Shared test-suite fingerprint: ${record.testSuiteSha256}. Both records execute the same cases and positive business expectations.\n` +
       `- The served-build attachment matches this build ID and source fingerprint. TC34 also verifies that its API cannot switch to the opposite implementation.\n\n` +
@@ -57,12 +57,12 @@ export async function writeTestRecords(pair, runs, environment) {
       `- [Fresh-process console log](../evidence/${variant}-process.log), [before/restart state](../evidence/${variant}-process.json).\n` +
       `- Related observed states: [TC13 interrupted persistence](../evidence/${variant}-TC13.json), [TC14 lost acknowledgement](../evidence/${variant}-TC14.json), [TC16 overlapping requests](../evidence/${variant}-TC16.json).\n` +
       `- [Structured test record](${variant}.json), [comparison](README.md), [PAY-001 defect report](../defect-report.md).\n` +
-      `- Reproduce both runs from source with npm ci, npx playwright install --no-shell chromium, then npm run verify. The verifier builds both packages, checks their hashes, executes the full suite against each, and regenerates both records. A failed corrected check or an unexpected faulty result fails verification.\n\n` +
+      `- Reproduce both runs from source with npm ci, npx playwright install --no-shell chromium, then npm run verify. The verifier updates both plain application folders without deleting their databases, checks their file hashes, executes the full suite against each, and regenerates both records. A failed corrected check or an unexpected faulty result fails verification.\n\n` +
       `No real funds, bank API or employee data were used. Browser coverage is Chromium. Single-server overlap is tested; distributed workers, real providers, permissions, taxes and statutory compliance are unverified.\n`;
     await writeFile(resolve(directory, `${variant}.md`), text);
   }
-  await writeFile(resolve(directory, 'README.md'), `# Two builds, two test records\n\nThe faulty application preserves the defect. The fixed application contains its correction. Each package contains one payment implementation, has its own build ID and database, and runs without installing application dependencies.\n\n| Build | Executed test record | TC10 recording | Result |\n|---|---|---|---|\n` + ['faulty', 'fixed'].map(variant => {
+  await writeFile(resolve(directory, 'README.md'), `# Two builds, two test records\n\nThe buggy application preserves the defect. The fixed application contains its correction. Each is a separate plain folder with one payment implementation, its own build ID and its own database. Both run without installing application dependencies.\n\n| Build | Executed test record | TC10 recording | Result |\n|---|---|---|---|\n` + ['faulty', 'fixed'].map(variant => {
     const c = runs[variant].cases;
-    return `| [${variant} application](../builds/MustPayroll-${variant}.zip) | [${variant} record](${variant}.md) | [Browser video](${variant}-TC10.webm) | ${c.filter(x => x.result === 'passed').length} pass / ${c.filter(x => x.result === 'failed').length} fail |`;
-  }).join('\n') + `\n\nThe same 34 checks run against both applications: 33 browser/API checks and one fresh-process persistence check. Business assertions are unchanged between runs. [Build identities](../builds/pair.json) and package hashes connect each result to the runnable artifact. [The correction patch](../builds/fix.patch) shows the change in payment policy.\n\nRead the [case register](../test-cases.md) for inputs and expectations, and [business proof](../evidence/business-proof.md) for the causal before/after comparison. Start either downloaded package with npm start on Node.js 22.13 or later, then follow its README.\n`);
+    return `| [${variant === 'faulty' ? 'buggy' : 'fixed'} application folder](../../${pair.builds[variant].directory}) | [${variant} record](${variant}.md) | [Browser video](${variant}-TC10.webm) | ${c.filter(x => x.result === 'passed').length} pass / ${c.filter(x => x.result === 'failed').length} fail |`;
+  }).join('\n') + `\n\nThe same 34 checks run against both applications: 33 browser/API checks and one fresh-process persistence check. Business assertions are unchanged between runs. [Build identities](../builds/pair.json) and runtime file hashes connect each result to the runnable folder. [The correction patch](../builds/fix.patch) shows the change in payment policy.\n\nRead the [case register](../test-cases.md) for inputs and expectations, and [business proof](../evidence/business-proof.md) for the causal before/after comparison. Start either folder with npm start on Node.js 22.13 or later, then follow its README.\n`);
 }

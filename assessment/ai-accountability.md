@@ -11,7 +11,7 @@ The employer asks what was delegated to AI and what the candidate verified. This
 | Product framing | Requested professional product language, then proposed payroll as a clearer setting and authorized the refocus | Adapted task rewards into aggregated employee-period payroll and updated the application |
 | Communication | Asked for ideas to follow a clear sequence without distorting the underlying point | Drafted the documents and linked the evidence in that sequence |
 | Transcript review | Directed that the supplied transcript be the source of truth, with payroll replacing the earlier project | Aligned the deliverables with that direction |
-| Corrected AI interpretation | Identified that two behaviours inside one application and only one faulty regression record did not meet the intended deliverables; explicitly required two builds and two test records | Separated the executable packages, locked each payment policy, ran the same full suite against each and generated two build-linked records and videos |
+| Corrected AI interpretation | Identified that two behaviours inside one application and only one faulty regression record did not meet the intended deliverables; explicitly required two builds and two test records | Separated the runnable application folders, locked each payment policy, ran the same full suite against each and generated two build-linked records and videos |
 | Current personal review | Reports reviewing the application | Prepared guided checks; has not attributed specific manual execution or code review to the candidate |
 
 These are supported human decisions. They are not evidence that Aniekan wrote the code, independently found its root cause, personally executed every test or has already signed off the result.

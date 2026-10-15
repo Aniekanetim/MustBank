@@ -2,18 +2,18 @@
 
 The supplied **Quest Expectation - Full Transcript.txt is the working source of truth**, as directed by Aniekan. Its earlier project example is replaced by MustPayroll. The central demonstration stays the same: build the faulty system, run a test that exposes its failure, correct the system, and run the same test again to establish the fix.
 
-The earlier setup put two behaviours inside one application and ran only the central regression against the faulty behaviour. Aniekan identified the gap. The revised delivery contains **two independently runnable application builds and two full execution records**. Each package has one payment implementation and its own database; a workspace cannot switch the implementation.
+The earlier setup put two behaviours inside one application and ran only the central regression against the faulty behaviour. Aniekan identified the gap. The revised delivery contains **two independently runnable application builds and two full execution records**. Each app folder has one payment implementation and its own database; a workspace cannot switch the implementation.
 
 ## What the reviewer receives
 
 | Deliverable | Evidence |
 |---|---|
-| Application containing the defects | [Faulty executable ZIP](builds/MustPayroll-faulty.zip), [manifest](builds/faulty-manifest.json) |
-| Application containing the correction | [Fixed executable ZIP](builds/MustPayroll-fixed.zip), [manifest](builds/fixed-manifest.json) |
+| Application containing the defects | [Buggy application folder](../builds/buggy), [manifest](builds/faulty-manifest.json) |
+| Application containing the correction | [Fixed application folder](../builds/fixed), [manifest](builds/fixed-manifest.json) |
 | Test record proving the defects | [Faulty full-suite record](test-records/faulty.md), raw reports/logs/state and TC10 video linked within |
 | Test record proving the correction | [Fixed full-suite record](test-records/fixed.md), raw reports/logs/state and TC10 video linked within |
 | Same test expectations before and after | Matching test-suite fingerprint in both records; 34 identical checks; no skips or expected-failure annotations |
-| Exact correction and artifact identity | [Payment-policy patch](builds/fix.patch), [build pair and package hashes](builds/pair.json) |
+| Exact correction and artifact identity | [Payment-policy patch](builds/fix.patch), [build pair and runtime file hashes](builds/pair.json) |
 
 ## Requirement-to-evidence map
 
@@ -24,7 +24,7 @@ The earlier setup put two behaviours inside one application and ran only the cen
 | Map input, decisions, payment, notification and recovery | Explicit [flow and decision map](business-rules.md#decision-flow) |
 | At least eight cases with concrete inputs and expectations | [34-case register](test-cases.md): normal flow, cut-off, timezone, duplicates, retry, partial failure, persistence and user journeys |
 | A reproducible fixture with durable state and controlled failures | Synthetic employee/earnings fixtures, SQLite, one-shot failure injection outside the product UI |
-| Faulty build first, fixed build second, same test before/after | Two ZIP packages and two execution records above; same NGN150,000 expectation in both |
+| Faulty build first, fixed build second, same test before/after | Two independent application folders and two execution records above; same NGN150,000 expectation in both |
 | Show the business effect of the failure | Faulty retry records NGN300,000 for one approved NGN150,000 employee-period; fixed retry retains the original payment and recovers notification |
 | Root cause and actionable defect report | [PAY-001](defect-report.md), evidence and proposed correction; the faulty notification marker incorrectly decides payment completion |
 | Prevent recurrence with a release gate | npm run verify checks the full faulty failure set and every fixed check, build identity and artifact hashes |
@@ -32,7 +32,7 @@ The earlier setup put two behaviours inside one application and ran only the cen
 | Operational recovery and release handoff | [Runbook](operations-runbook.md), [release checklist and known limits](release-readiness.md) |
 | Explain AI delegation and human accountability | [Activity record](ai-accountability.md) includes Aniekan's correction of the deliverable interpretation; [personal review](personal-review.md) records unconfirmed execution/sign-off honestly |
 | intent.md and final directive.md | [Intent](intent.md), [directive with results/handoff links](directive.md) |
-| Accessible work for independent review | Public repository, downloadable source and both runnable builds; [anonymous access check](evidence/reviewer-access.json) |
+| Accessible work for independent review | Public repository with editable source and both independent app folders; [anonymous access check](evidence/reviewer-access.json) |
 | A candidate Loom no longer than five minutes | [Recording script](loom-script.md) prepared; final candidate-owned video still pending. Automated test recordings do not replace it |
 
 ## Boundaries and remaining work
@@ -50,4 +50,4 @@ Aniekan reports reviewing the application. Specific manual checks, the final rel
 | Quest Expectation - Full Transcript.txt | 11b621cb5df09dd34ff02009dd17c98f6d6a8149ba29e345efdb0ea3fa9da68d |
 | AI-Native Product QA Engineer (Business Flows & Operational Quality) at MUST Company.mhtml | a13199f650ed42d918ded39e00a83f4790d01787091d077ba7396aca21cb25da |
 
-The raw source files remain outside the public application packages. Their hashes identify the reviewed snapshots without publishing personal local paths or the candidate's CV.
+The raw source files remain outside the public application folders. Their hashes identify the reviewed snapshots without publishing personal local paths or the candidate's CV.

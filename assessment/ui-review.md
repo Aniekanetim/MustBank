@@ -18,6 +18,6 @@ The interface now follows one payroll-operations journey. Employees establish th
 | Keyboard skip link, title focus, dialog order and restoration work | TC29 |
 | Separate browser tabs retain their workspace and pay period after navigation and reload | TC33 |
 
-The application retains the established navy, white and teal design language, with native controls, consistent labels, restrained motion and reduced-motion handling. Status labels use text in addition to color. Fault preparation remains outside the product UI. Each separately packaged application contains its own fixed implementation. The current rendered overview contains no old banking or assessment labels.
+The application retains the established navy, white and teal design language, with native controls, consistent labels, restrained motion and reduced-motion handling. Status labels use text in addition to color. Fault preparation remains outside the product UI. Each independent application folder contains its own fixed implementation. The current rendered overview contains no old banking or assessment labels.
 
 Screenshots were inspected at desktop and mobile sizes. This review is bounded to the implemented local workflow and automated Chromium checks. Real users, other browser engines, real mobile devices, screen readers, and full accessibility conformance remain unverified. No claim of a perfect usability grade is made.

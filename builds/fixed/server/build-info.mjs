@@ -1,6 +1,6 @@
 export const BUILD_INFO = {
-  "id": "mustpayroll-0.2.0-fixed-39fee999f9f3",
+  "id": "mustpayroll-0.2.0-fixed-0dcbfc9d3580",
   "variant": "fixed",
   "defaultPort": 4176,
-  "sourceSha256": "39fee999f9f33b3147330a27645f5cb8f73b0b5f1e47dcc9415aedc4d0a26be0"
+  "sourceSha256": "0dcbfc9d35808c7a396f49bf2ce3cb3f0e26bebbde0e3885a50e4bd147731419"
 };
