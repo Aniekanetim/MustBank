@@ -1,5 +1,6 @@
 {
-  "generatedAt": "2026-10-15T01:00:41.147Z",
+  "application": "MustPayroll",
+  "generatedAt": "2026-10-15T12:50:25.433Z",
   "upstreamCommit": "73d83074e7ea0c40f8273455ebcb611b7088fd5a",
   "environment": {
     "node": "v22.21.0",
@@ -10,281 +11,204 @@
   "faulty": {
     "case": "TC10",
     "expectedAssertionFailure": true,
-    "credits": 20,
-    "payouts": 2,
+    "paidMinor": 30000000,
+    "payments": 2,
     "pendingNotifications": 1
   },
   "fixed": {
-    "playwrightPassed": 45,
+    "playwrightPassed": 32,
     "freshProcessPassed": 1,
-    "totalPassed": 46,
-    "credits": 10,
-    "payouts": 1,
+    "totalPassed": 33,
+    "paidMinor": 15000000,
+    "payments": 1,
     "pendingNotifications": 0
   },
   "cases": [
     {
       "id": "TC01",
-      "title": "a completed task pays 10 credits before notification",
+      "title": "Approved earnings aggregate into one payment per employee",
       "result": "passed"
     },
     {
       "id": "TC02",
-      "title": "an empty weekly run creates no payment or notification",
+      "title": "Opening Monday midnight is included",
       "result": "passed"
     },
     {
       "id": "TC03",
-      "title": "the lower Monday boundary is included",
+      "title": "Following Monday midnight belongs to the next period",
       "result": "passed"
     },
     {
       "id": "TC04",
-      "title": "the upper Monday boundary is excluded",
+      "title": "Lagos offset is normalized before period selection",
       "result": "passed"
     },
     {
       "id": "TC05",
-      "title": "Lagos offset timestamps are compared as UTC instants",
+      "title": "Reimporting an identical earning never increases pay",
       "result": "passed"
     },
     {
       "id": "TC06",
-      "title": "pending and cancelled tasks cannot earn rewards",
+      "title": "Conflicting duplicate rolls back the entire import",
       "result": "passed"
     },
     {
       "id": "TC07",
-      "title": "duplicate task input earns one reward",
+      "title": "Pending approval blocks payment and leaves the period open",
       "result": "passed"
     },
     {
       "id": "TC08",
-      "title": "replay after success cannot pay again",
+      "title": "Failed payment creates no notification and can be retried",
       "result": "passed"
     },
     {
       "id": "TC09",
-      "title": "failed notification preserves the payout and pending message",
+      "title": "Notification failure preserves the successful payment",
       "result": "passed"
     },
     {
       "id": "TC10",
-      "title": "notification failure then settlement replay leaves 10 credits",
+      "title": "Retrying after notification failure preserves the approved payroll",
       "result": "passed"
     },
     {
       "id": "TC11",
-      "title": "Fresh Node process retains payout and recovers notification",
+      "title": "Fresh process preserves employee-period payment identity",
       "result": "passed"
     },
     {
       "id": "TC12",
-      "title": "failed payment sends no success notification",
+      "title": "Notification-only recovery never changes payment identity",
       "result": "passed"
     },
     {
       "id": "TC13",
-      "title": "interrupted local recording rolls back before commit",
+      "title": "Interruption rolls back payment and outbox together",
       "result": "passed"
     },
     {
       "id": "TC14",
-      "title": "the excluded boundary pays once in the following week",
+      "title": "Lost provider acknowledgement recovers without duplicate acceptance",
       "result": "passed"
     },
     {
       "id": "TC15",
-      "title": "conflicting duplicate owners reject the whole import",
+      "title": "A processed period rejects new earnings and preserves approved totals",
       "result": "passed"
     },
     {
       "id": "TC16",
-      "title": "a naive timestamp cannot produce partial import",
+      "title": "Eight overlapping requests in one server record one payment",
       "result": "passed"
     },
     {
       "id": "TC17",
-      "title": "overlapping HTTP settlement requests create one payout",
+      "title": "The same employee can receive a separate payment in another period",
       "result": "passed"
     },
     {
       "id": "TC18",
-      "title": "a lost notification acknowledgment cannot repay the task",
+      "title": "Invalid dates and ambiguous timestamps are rejected",
       "result": "passed"
     },
     {
       "id": "TC19",
-      "title": "invalid scheduled run identity has no payout effects",
+      "title": "Amounts use positive bounded whole kobo",
       "result": "passed"
     },
     {
       "id": "TC20",
-      "title": "a stored task cannot change owner or completion time",
+      "title": "Unknown employees cannot acquire earnings or payments",
       "result": "passed"
     },
     {
       "id": "TC21",
-      "title": "an activity recorded in operations pays its stable owner",
+      "title": "Isolated workspaces do not share earnings or payment identity",
       "result": "passed"
     },
     {
       "id": "TC22",
-      "title": "browser reload preserves payment and notification recovery",
+      "title": "Approval is explicit and replaying approval is harmless",
       "result": "passed"
     },
     {
       "id": "TC23",
-      "title": "invalid calendar dates and 24-hour rollover reject input",
+      "title": "Record, approve and process earnings through the interface",
       "result": "passed"
     },
     {
       "id": "TC24",
-      "title": "narrow-screen recovery works through keyboard controls",
+      "title": "Cancelling payroll confirmation leaves the ledger and period unchanged",
       "result": "passed"
     },
     {
       "id": "TC25",
-      "title": "a reviewed bank transfer completes once with a receipt",
+      "title": "Receipt survives reload and can be copied and downloaded",
       "result": "passed"
     },
     {
       "id": "TC26",
-      "title": "banking screens contain product copy and no failure setup controls",
+      "title": "Payment filter and CSV export contain the same employee records",
       "result": "passed"
     },
     {
       "id": "TC27",
-      "title": "namespace migration preserves account balance and paid reward identity",
+      "title": "Changing pay period separates approval and payment totals",
       "result": "passed"
     },
     {
       "id": "TC28",
-      "title": "invalid amounts and insufficient balance cannot create a transfer",
+      "title": "Core screens reflow at 320 pixels without page overflow",
       "result": "passed"
     },
     {
       "id": "TC29",
-      "title": "editing a review leaves balances untouched until confirmation",
+      "title": "Keyboard navigation reaches content and payroll confirmation",
       "result": "passed"
     },
     {
       "id": "TC30",
-      "title": "saved recipient search opens a transfer with the correct payee",
+      "title": "Employee details lead to the correct earning destination",
       "result": "passed"
     },
     {
       "id": "TC31",
-      "title": "activity filters have a recoverable empty state",
+      "title": "Payroll screens use product language and show standard totals",
       "result": "passed"
     },
     {
       "id": "TC32",
-      "title": "personal rewards show only the current customer while operations reconcile all owners",
+      "title": "Notification recovery is visible and leaves the receipt unchanged",
       "result": "passed"
     },
     {
       "id": "TC33",
-      "title": "reward statements contain personal payouts and safe CSV cells",
-      "result": "passed"
-    },
-    {
-      "id": "TC34",
-      "title": "customer banking remains readable at 320px with visible primary controls",
-      "result": "passed"
-    },
-    {
-      "id": "TC35",
-      "title": "a new transfer requires an explicit recipient choice",
-      "result": "passed"
-    },
-    {
-      "id": "TC36",
-      "title": "adding a recipient resumes the saved amount account and description",
-      "result": "passed"
-    },
-    {
-      "id": "TC37",
-      "title": "cancelling recipient creation and cancelling discard preserve the draft",
-      "result": "passed"
-    },
-    {
-      "id": "TC38",
-      "title": "receipts survive navigation and reload and can be copied and downloaded",
-      "result": "passed"
-    },
-    {
-      "id": "TC39",
-      "title": "reviewed recipient edits cannot rewrite an earlier receipt",
-      "result": "passed"
-    },
-    {
-      "id": "TC40",
-      "title": "removing a recipient requires confirmation and keeps historical payments",
-      "result": "passed"
-    },
-    {
-      "id": "TC41",
-      "title": "internal transfers show account-specific direction and keep filters on return",
-      "result": "passed"
-    },
-    {
-      "id": "TC42",
-      "title": "rewards explain credit limits and distinguish overdue and next-week payments",
-      "result": "passed"
-    },
-    {
-      "id": "TC43",
-      "title": "mobile rewards prioritise activities and transfer actions stay above navigation",
-      "result": "passed"
-    },
-    {
-      "id": "TC44",
-      "title": "transfer review edit and confirmation work through keyboard controls",
-      "result": "passed"
-    },
-    {
-      "id": "TC45",
-      "title": "receipt history navigation and reload do not repeat a payment",
-      "result": "passed"
-    },
-    {
-      "id": "TC46",
-      "title": "recipient changes in another tab require a fresh destination choice",
+      "title": "Separate tabs retain their workspace and pay period after reload",
       "result": "passed"
     }
   ],
   "sourceSha256": {
-    "server/rewards.mjs": "46ea2e5f2e68f261b956bdd16eab1737fd3fb4d37192ffca6c058fd96d79670e",
-    "server/index.mjs": "9f0a4604045569124590e47f1e0762c1bd696fa4d79d4de8426061ed44a7030e",
-    "src/pages/Rewards.tsx": "8df5354c264fadf5d50bea9d9ad100f4d4f6c19d5d6ee04b918e1c0d32482787",
-    "src/pages/Settlements.tsx": "76542c872dc3d1dbb350ebaca1cb76c3a6831f2f4715c7cc4e7041930b6d279b",
-    "src/pages/Dashboard.tsx": "9c6736991e475288c105ddf162f80e035cca93ebef8b35f3d27e866767214cc2",
-    "src/pages/Transactions.tsx": "c13e629c8a8184397a98e162791b427291db122441e53dac7821d90a935bbc9a",
-    "src/pages/Recipients.tsx": "3a149ba994d141b883dd34f0884d8b6c278405085e62ca0945814fda73968115",
-    "src/pages/Transfer.tsx": "82892789610ae09f76124670e113d3e680d55c85218ba3abe2561142b805cd22",
-    "src/pages/Receipt.tsx": "32d3925217ec3a26c5dea5938030434d71eabd2a9185fab0143a1a97d1a743a1",
-    "src/pages/RecipientDetails.tsx": "bb023fe2f6de847ef59d6faea2de6937ade1e1d547485e8b08d8eea8cc6a3f79",
-    "src/hooks/useRewards.ts": "4930e2c0a674db523d566a4a8a4c029e681b854e6516f342e4b7c095c88840a1",
-    "src/components/BankUI.tsx": "60ca5ec2228a6dc7c89d8c96d832499a6e4dc95fb67ccc85a8d4d53b542be56c",
-    "src/components/RecipientEditor.tsx": "4c53def2347cafe258865aa1b5258c20e8bb2f99aefd87004abdb5e8a0effc27",
-    "src/components/ConfirmDialog.tsx": "67132bdbc4bb63932066008ac157827c64aba9938ab164a2eaedd17f5a41bdbf",
-    "scripts/scenario.mjs": "800932b9ca30dd28ba418daef6ee772b7adf65173f1c4a28ff32289e83a61422",
-    "src/store/storage.ts": "be22b40e682bfd0a644a8ad1d01b96f5161664298517b93c2934edd4bdd1520a",
-    "src/store/bank.ts": "7ef5e080553a4735eaa67fbc7043293e5543e23b86a3a289f6dd15f58b32c34e",
-    "src/store/transferDraft.ts": "dfb65d7ff8980714e3b9cb2cb0a3a55d36c1b545100645cab65bd2316b517757",
-    "src/store/rewardSchedule.ts": "f919364c69c5b20a1b84ace7917dbf3f65afa537e76e50ae2ebce7530be46d76",
-    "src/App.tsx": "2895ad088b1a256aa2ee7367a65317eed73ec14db4831dbc34617d49356292b5",
+    "server/payroll.mjs": "b1592a7c77e6a4b2084337cd6d723156dc0f6033dabb7b1ead3c297a66ec3944",
+    "server/index.mjs": "e7a8be66952ea31be724a582e1e802acb905a69d3e61d7001609358b3a76ccfb",
+    "src/App.tsx": "409586c2d4750cd084a8f196d8aae82fa72b349df2928e96254f40815000f829",
+    "src/payroll.tsx": "cf786432d6ddd3b3b1d002e719520da210a85040b464db15734cfc7f853083db",
+    "src/styles.css": "69d908b5ed5e880b2a44ecf51e244e3d1898a01913094e092c9edcc8520b0994",
     "src/main.tsx": "26298ed870a535e27307145d750c2949c647aab89ce773b74697eaccab7bd28c",
-    "src/styles.css": "7ebfdec6bec47ee754019f44f72a05f79a90958eb99f7ea36de1e06e79443b15",
-    "index.html": "4cdc7dcfacee60d1a591fbc454d66c133710bb402b3033501c4cd1409dee45e6",
-    "tests/rewards-api.spec.ts": "f93848b3bb1729b9033810faa15b83710307fb3e188e013ad5bc8ec3bbf3cebf",
-    "tests/rewards-ui.spec.ts": "7a95c1a08b6ae11b6fb35cf0fdb39183080501fef353897ce4a1b62de774e49c",
-    "tests/journey.spec.ts": "0b214fa60b523e90f3abd05c39f0b4c4897aa4766c2f79f958a7e78163e37a3a",
-    "tests/service.test.mjs": "20986d74e63410532ceb73aa4f7004107aabebaa5d19a6ea3d9acc19c83246d9",
-    "tests/helpers.ts": "d3772f852195daf985eca9c2d5aeba35a04aa44bdfaa84b5ddfae1a52e8a78c1",
-    "playwright.config.ts": "05c1ce19a1adfd290fad59f359dca85549cf7b2f133bc67fe73fdbc5023add62",
-    "scripts/verify.mjs": "533da3e7022a97e92a7572c85bfaadf310695d80f28cf1d54ca0a6930275f2cb",
-    "package-lock.json": "82473554a2d5a1d162553190702399bc377d5eb6d7ebc48c82c9fd19dcf9e6c9"
+    "src/components/ConfirmDialog.tsx": "571885a78ff3494d4a3c8eecd317b8fb3b5af3cfe2362a4afededb0892d886a1",
+    "index.html": "d3d6185099b812f7e26769d0e41f5eb4c4824e995f643be7b0ff66a9dea72188",
+    "vite.config.ts": "33737d5e054ad38722cfb16a3c56e1997ab9c4a7113a3371476e00af22a32391",
+    "scripts/scenario.mjs": "7898eea73633d0987a642393b409981653a114113dd2667cd2d1deb545594f14",
+    "scripts/process-probe.mjs": "ac51139912993a4afba3890ccb098d56832d4c24cbc6aa1d44f1477af29ba09d",
+    "scripts/verify.mjs": "c1600d680ee4b707d555e182cc7d25771d5875877d1e693e8a73349f7c71b065",
+    "tests/helpers.ts": "8005751dff0d8c3fab6f47559b0f349b0b9fda0a7e651a9c32f59e9e0f7900ab",
+    "tests/payroll-api.spec.ts": "9bb121b0ac5d8224d46fbf79a224b45bc40a51cefded4aca0d0a66dd2a9f7f55",
+    "tests/payroll-ui.spec.ts": "507e1262dd34390ce40e4bae4c9a1e38a3394ed0a0c444e2737cb4bcaf51bd4b",
+    "tests/service.test.mjs": "10e0bf8232a2e3ff514041ffb02203d948a2024c3f6e596e0d69fd3836bb577a",
+    "playwright.config.ts": "c7dce5417ed57896a5e9102ba581c8b8f77c350c1183455b043db7619b35c2bd",
+    "package.json": "0009bc819e7fa6cb289ee92dd981fe604119f169f7d87fa5e25674666c563c53",
+    "package-lock.json": "e82f4439fe426f52bf29e1baec22174aa7656b9b140c3e0571c39c9b2f9ec7b8"
   }
 }

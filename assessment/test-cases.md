@@ -1,65 +1,44 @@
-# Test cases and results
+# Payroll test cases and results
 
-All reward cases use synthetic tasks. Unless stated otherwise: task `task-001`, owner `user-001`, status completed, completion `2026-10-08T12:00:00Z`, scheduled run `2026-10-13T09:00:00Z`. Each case creates a fresh isolated example; none relies on earlier cases' records.
+The assessed application is MustPayroll. Unless specified otherwise, each case creates an isolated fixed workspace, one approved ₦150,000 earning for emp-001 on 8 October 2026, and the 13 October 09:00 UTC pay date. Its period is [5 October 00:00 UTC, 12 October 00:00 UTC). All amounts below describe synthetic local ledger records.
 
-The final outcomes are in [summary.json](evidence/summary.json). TC01–TC10 and TC12–TC46 use Playwright's HTTP client or Chromium browser. TC11 opens persisted records in a fresh Node process. The table gives inputs and expected results; the raw reports record execution. Failure conditions are prepared through local fixture tooling or the API, outside the banking UI.
+The [verification summary](evidence/summary.json) records the environment and source fingerprints. TC01–TC09 and TC12–TC22 exercise HTTP APIs. TC10 and TC23–TC33 exercise Chromium UI journeys. TC11 closes the database and spawns a fresh Node process. There are 33 corrected checks and no automatic retries.
 
-| Case | Input / action | Expected corrected outcome | Final result |
+| Case | Input and action | Expected outcome | Corrected result |
 |---|---|---|---|
-| TC01 | Settle one qualifying task | 10 credits; one payout to its owner; notification attempted after commit and sent | Pass |
-| TC02 | No tasks | Zero credits, payouts and notifications | Pass |
-| TC03 | Completion exactly 5 Oct 00:00 UTC | Included; 10 credits | Pass |
-| TC04 | Completion exactly 12 Oct 00:00 UTC | Excluded; no notification | Pass |
-| TC05 | 5 Oct 00:30 and 01:00 at +01:00 | First is before UTC start; second is at start; total 10 | Pass |
-| TC06 | Pending and cancelled tasks inside window | Neither paid or notified | Pass |
-| TC07 | Import identical task three times | One stored task and one 10-credit payout | Pass |
-| TC08 | Replay after a successful run | One payout, one provider receipt, still 10 credits | Pass |
-| TC09 | Fail notification before provider acceptance | Payment stays at 10; one pending message; no acceptance receipt | Pass |
-| **TC10** | **Fail notification, settle, then replay the same settlement in the UI** | **First: 10 credits and pending delivery. Replay: still 10, one payout, delivery recovered** | **Pass; same assertion fails in faulty mode** |
-| TC11 | Close service after payment + failed notification; reopen in a new process and replay | Original payout retained; 10 credits, notification recovered | Pass |
-| TC12 | Fail payment before writing, then retry | First: zero credits and no notification. Retry: 10 credits | Pass |
-| TC13 | Interrupt payment transaction before saving notification work | Both records roll back before commit. Retry makes one payout | Pass |
-| TC14 | Upper-boundary task; run current week then 20 Oct twice | Zero first week; exactly 10 in next week after replay | Pass |
-| TC15 | Same imported task ID has two owners | Reject entire batch with HTTP 400; no tasks or credits | Pass |
-| TC16 | Valid task plus task with no timezone offset | Reject entire batch with HTTP 400; no partial import | Pass |
-| TC17 | Eight overlapping HTTP settlement requests to one server | One payout, one provider receipt, 10 credits | Pass |
-| TC18 | Provider accepts but acknowledgment is lost; replay | First pending with receipt; recovery leaves one receipt and one payout | Pass |
-| TC19 | Tuesday 10:00 UTC or Wednesday 09:00 UTC run | Reject with HTTP 400; zero payment effects | Pass |
-| TC20 | Change stored owner or completion time after payment | Reject both; original owner retains one 10-credit payout | Pass |
-| TC21 | Record a second owner's activity in operations, then settle | Total 20; each owner has 10 | Pass |
-| TC22 | Reload browser after failed notification; retry notifications | Persisted payout survives; delivery recovers without payment | Pass |
-| TC23 | 30 February or `24:00:00` completion | Reject invalid timestamps; no saved tasks | Pass |
-| TC24 | Prepare notification failure; use settlement and recovery controls by keyboard at 380px | 10 credits; delivery recovered; no whole-page horizontal overflow | Pass |
-| TC25 | Enter SGD 10, review details, then confirm once | Review leaves balance unchanged; receipt records one transfer and $472.35 remaining | Pass |
-| TC26 | Visit overview, transfers, recipients, activity and rewards | MustBank title and normal product copy; no assessment language or customer settlement controls | Pass |
-| TC27 | Open compatible data from a prior namespace, then replay a paid reward | Original balance and rewards account retained; still one payout and 10 credits; storage migrated | Pass |
-| TC28 | Enter `10abc`, zero, or more than the available balance | Clear validation; no transfer or balance change | Pass |
-| TC29 | Review SGD 10, return to edit, then exit to overview | Amount retained; account balances unchanged before confirmation | Pass |
-| TC30 | Save a recipient, search for them, then choose Send money | Transfer opens with the saved recipient selected | Pass |
-| TC31 | Search for an absent entry, clear filters, then select Failed | Recoverable empty state; five records restored; unmatched status remains clear | Pass |
-| TC32 | Settle one task for each of two owners; open personal rewards | Customer sees only their own 10 credits and records; operations reconciles 20; customer response omits processing mode and failure state | Pass |
-| TC33 | Export rewards with a formula-like activity title and another owner's payout | CSV contains only the current customer's payout and safely quotes the formula-like cell | Pass |
-| TC34 | Navigate all five customer pages at 320px | Navigation works; no whole-page horizontal overflow | Pass |
-| TC35 | Start a generic transfer, enter 10 and review without choosing a payee | No recipient preselected; corrective error focuses recipient; no payment | Pass |
-| TC36 | Draft 175 from savings with a description, add and review a new recipient, return and reload | Account, amount and description retained; new recipient selected; no payment before confirmation | Pass |
-| TC37 | Cancel recipient creation; open and cancel draft discard, then confirm discard | Cancellation preserves inputs; Escape restores focus; confirmed discard clears the draft | Pass |
-| TC38 | Complete payment, leave receipt, reopen from activity, reload, copy and download | Same reference and balance snapshot; clipboard and receipt contain correct evidence | Pass |
-| TC39 | Complete payment; review and save a recipient name, bank and account change | Future recipient changes; earlier receipt retains original destination and balance | Pass |
-| TC40 | Cancel recipient removal, then confirm it; open an earlier payment | Confirmation required; removed payee absent from future selection; old receipt retained | Pass |
-| TC41 | View the same internal transfer from savings and checking; open receipt and return | Savings shows −500 / money out; checking +500 / money in; return preserves account filter | Pass |
-| TC42 | Freeze 15 Oct; include 8 Oct activity and exact 12 Oct boundary; settle 13 Oct | Old activity delayed until paid; boundary activity due 20 Oct; credits stay separate from SGD | Pass |
-| TC43 | View rewards at 320px, then review a transfer | Activity table begins within the first 800px; no page overflow; confirmation clears fixed navigation | Pass |
-| TC44 | Select payee, enter amount, review, edit and confirm with keyboard | Correct focus at each stage; payment receipt heading receives focus | Pass |
-| TC45 | Complete a transfer, navigate browser back/forward, reload receipt and start another | One recorded payment; same receipt; fresh transfer has no implicit payee or old amount | Pass |
-| TC46 | Review a transfer while another tab edits its recipient | Destination choice invalidated; amount and description preserved; stale review cannot proceed | Pass |
+| TC01 | Standard fixture: Amara 120,000 + 30,000; Daniel 200,000; Zara 85,000; process | Three payments totaling ₦435,000; Amara has one ₦150,000 payment; notifications sent | Passed |
+| TC02 | Earning at opening Monday 5 October 00:00Z | Included; ₦150,000 recorded | Passed |
+| TC03 | Boundary fixture: 10,000 at opening boundary, 20,000 before it, 30,000 just before closing, 40,000 at closing; process both periods | First period ₦40,000 from start + last; closing-boundary ₦40,000 paid in next period | Passed |
+| TC04 | Earnings at 5 October 00:30+01:00 and 01:00+01:00 | First normalizes to prior Sunday and is excluded; second included; ₦150,000 total | Passed |
+| TC05 | Import the identical earning twice, then process | One earning; one ₦150,000 payment | Passed |
+| TC06 | Import new earning followed by existing ID with changed amount | HTTP 409; entire batch rolled back; original record preserved | Passed |
+| TC07 | Only pending earning; attempt processing | HTTP 409; period stays open; no payment or notification | Passed |
+| TC08 | One-shot payment failure before write; process and retry | First attempt has no payment/message/provider acceptance; retry records one ₦150,000 payment | Passed |
+| TC09 | One-shot notification failure before acceptance | Payment remains ₦150,000; one pending message; payment commit precedes notification attempt | Passed |
+| TC10 | UI: process, notification fails, retry the original pay run | One payment remains ₦150,000; notification recovers | Passed; identical assertion fails at ₦300,000 in faulty example |
+| TC11 | Payment succeeds and message fails; close database, reopen in fresh Node process and retry | Same payment ID and ₦150,000 amount; no pending notification | Passed |
+| TC12 | After notification failure, use notification-only recovery | Payment objects remain identical; message sent; one provider acceptance | Passed |
+| TC13 | Interrupt between payment insert and outbox insert; retry | First transaction leaves neither record; retry records one payment with message work | Passed |
+| TC14 | Provider accepts but acknowledgment is lost; retry | One provider acceptance, one payment, no pending notification | Passed |
+| TC15 | Process period, then attempt a new earning inside it | HTTP 409; approved and recorded totals remain ₦150,000 | Passed |
+| TC16 | Eight overlapping processing requests to one Node server, with first notification failure | One ₦150,000 payment; notification recovered | Passed; not a distributed-worker test |
+| TC17 | Pay employee this period, then add ₦50,000 next period and process it | Separate employee-period payment; two records across periods; next-period total ₦50,000 | Passed |
+| TC18 | Timestamp without offset, impossible date/hour, and a Wednesday pay date | HTTP 400 for invalid inputs | Passed |
+| TC19 | Zero, negative, fractional-kobo, excessive and string amounts; then one kobo | Invalid amounts rejected; valid minimum pays ₦0.01 | Passed |
+| TC20 | Unknown employee earning; empty approved period | Earning rejected; empty processing rejected; no invented employee payment | Passed |
+| TC21 | Same earning/employee IDs in two isolated workspaces | Processing one does not alter the other; each can independently pay ₦150,000 | Passed |
+| TC22 | Approve pending earning twice; attempt approval of rejected earning | Approval replay harmless; rejected approval refused; only approved ₦150,000 contributes | Passed |
+| TC23 | UI: record pending ₦150,000.25, approve, review and confirm | Correct amount in confirmation and ledger | Passed |
+| TC24 | UI: open processing confirmation, then Escape | Dialog closes, focus returns, period and ledger unchanged | Passed |
+| TC25 | Open receipt, reload, copy reference and download receipt | Stable reference, correct employee and retrievable receipt | Passed |
+| TC26 | Process standard fixture, filter Daniel and export | One visible record; CSV contains Daniel's ₦200,000 and excludes Amara | Passed |
+| TC27 | Switch overview from processed 13 October to 20 October | Correct next period; recorded pay zero; one pending approval | Passed |
+| TC28 | Open seven core routes at 320px | No horizontal page overflow; payroll navigation remains reachable | Passed |
+| TC29 | Keyboard skip link, navigate to pay run, open dialog, Tab and Escape | Main/title focus, confirmation order and focus restoration work | Passed |
+| TC30 | Directory → Daniel → Record earnings | Correct masked destination and Daniel preselected in form | Passed |
+| TC31 | Open standard overview and employee directory | ₦435,000 total; payroll language; no banking/assessment labels in rendered overview | Passed |
+| TC32 | Pending notification → recover through UI | Original payment unchanged; pending count zero; recovery action disabled when complete | Passed |
 
-## Core regression evidence
+| TC33 | Separate tabs: different workspaces, navigation, date change and reload | Each tab retains its workspace and selected pay period; no cross-tab payroll substitution | Passed |
 
-| Run | First attempt | After settlement replay | Interpretation |
-|---|---|---|---|
-| Faulty | 10 credits, one payout, one pending message | 20 credits, two payouts, one pending message | TC10 fails the unchanged 10-credit assertion |
-| Corrected | 10 credits, one payout, one pending message | 10 credits, one payout, zero pending messages | TC10 passes; recovery adds no payout |
-
-The faulty flow sends a new message for the second payout; its earlier failed message remains pending. The corrected flow retries the original pending work. These are actual states from this extension, not evidence copied from an earlier demo.
-
-See the [faulty report](evidence/faulty-playwright.json), [corrected report](evidence/fixed-playwright.json), [process recovery log](evidence/process-recovery.log), and [before/after artifacts](directive.md#results-and-handoff-appendix). Automatic test retries are disabled. TC17 covers arrivals handled by one Node process; distributed concurrency remains unverified.
+See [the expected faulty failure](evidence/faulty-run.log), [corrected run](evidence/fixed-run.log), [process check](evidence/process-recovery.log) and [JSON report](evidence/fixed-playwright.json) for actual execution output. Test counts describe checks, not a reviewer-assigned assessment score. Remaining integration and accessibility gaps are recorded in [release readiness](release-readiness.md).

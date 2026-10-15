@@ -1,58 +1,51 @@
-[WebServer] (node:55832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
-[WebServer] (node:55832) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+[WebServer] (node:320) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 
-[WebServer] (node:76644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:75732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
 
 Running 1 test using 1 worker
 
-(node:55104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:24080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
-[1/1] [chromium] › tests\rewards-ui.spec.ts:5:1 › TC10 | notification failure then settlement replay leaves 10 credits
-  1) [chromium] › tests\rewards-ui.spec.ts:5:1 › TC10 | notification failure then settlement replay leaves 10 credits 
+[1/1] [chromium] › tests\payroll-ui.spec.ts:10:1 › TC10 | Retrying after notification failure preserves the approved payroll
+  1) [chromium] › tests\payroll-ui.spec.ts:10:1 › TC10 | Retrying after notification failure preserves the approved payroll 
 
-    Error: expect(locator).toHaveText(expected) failed
+    Error: One approved employee-period payment must remain ₦150,000.00 after recovery.
 
-    Locator:  getByTestId('reward-balance')
-    Expected: "10 credits"
-    Received: "20 credits"
-    Timeout:  5000ms
+    expect(received).toBe(expected) // Object.is equality
 
-    Call log:
-      - Expect "toHaveText" getByTestId('reward-balance') with timeout 5000ms
-      - waiting for getByTestId('reward-balance')
-        13 × locator resolved to <strong class="money" data-testid="reward-balance">20 credits</strong>
-           - unexpected value "20 credits"
+    Expected: "₦150,000.00"
+    Received: "₦300,000.00"
 
-
-      20 |   await page.screenshot({ path: `assessment/evidence/${mode}-reproduction.png`, fullPage: true });
-      21 |   // The business expectation stays identical across both processing implementations.
-    > 22 |   await expect(page.getByTestId('reward-balance')).toHaveText('10 credits');
-         |                                                    ^
-      23 |   await expect(page.getByTestId('payout-count')).toHaveText('1');
-      24 |   await expect(page.getByTestId('pending-count')).toHaveText('0');
-      25 | });
-        at <project>\tests\rewards-ui.spec.ts:22:52
+      25 |   await screenshot(page, `assessment/evidence/${behavior}-reproduction.png`);
+      26 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);
+    > 27 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');
+         |                                                                                                  ^
+      28 |   expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);
+      29 | });
+      30 | test('TC23 | Record, approve and process earnings through the interface', async ({ page, request }) => {
+        at <project>\tests\payroll-ui.spec.ts:27:98
 
     attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
-    output\playwright\faulty\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\test-failed-1.png
+    output\playwright\faulty\payroll-ui-TC10-Retrying-a-8ba15-serves-the-approved-payroll-chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: output\playwright\faulty\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\error-context.md
+    Error Context: output\playwright\faulty\payroll-ui-TC10-Retrying-a-8ba15-serves-the-approved-payroll-chromium\error-context.md
 
     attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
-    output\playwright\faulty\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\trace.zip
+    output\playwright\faulty\payroll-ui-TC10-Retrying-a-8ba15-serves-the-approved-payroll-chromium\trace.zip
     Usage:
 
-        npx playwright show-trace output\playwright\faulty\rewards-ui-TC10-notificati-65a0a-nt-replay-leaves-10-credits-chromium\trace.zip
+        npx playwright show-trace output\playwright\faulty\payroll-ui-TC10-Retrying-a-8ba15-serves-the-approved-payroll-chromium\trace.zip
 
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
 
   1 failed
-    [chromium] › tests\rewards-ui.spec.ts:5:1 › TC10 | notification failure then settlement replay leaves 10 credits 
+    [chromium] › tests\payroll-ui.spec.ts:10:1 › TC10 | Retrying after notification failure preserves the approved payroll 

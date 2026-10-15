@@ -1,55 +1,59 @@
-# Final directive: prevent a duplicate reward on recovery
+# Prevent duplicate employee payment during payroll recovery
 
 ## Objective
 
-Prove that a notification failure cannot cause a second payout when the same weekly settlement is retried. A qualifying task must leave the user with **10 credits and one payment record**, with notification recovery handled separately.
+Demonstrate that recovering a notification failure cannot pay an employee twice for the same approved payroll period. The employee is owed ₦150,000. After the payment succeeds and its notification fails, retrying payroll must retain the original payment and recover delivery.
 
 ## Scope
 
-MustBank is a fictional banking assessment adapted from an MIT-licensed sample. It includes a browser UI, a Node/SQLite API, a deliberately faulty rewards example, a corrected reference, and automated regression checks. Each rewards example is an isolated program. All records, credits and notification responses are synthetic.
+MustPayroll is a local application for a synthetic company, Northstar Studio. The journey covers employee destinations, approved earnings, weekly pay periods, pay-run confirmation, payment records, receipts and notification recovery. The application was adapted from an MIT-licensed sample; the current payroll service and controlled defect were introduced for this assessment.
 
-The selected defect was introduced for reproducibility. It is not a report of a MUST product failure or an upstream incident. Live banking, real notification delivery, Web3 integrations and production deployment are outside this assessment.
-
-The customer app presents account overview, transfers, recipients, activity and personal rewards. Operations handles settlement and notification recovery at `/operations/settlements`. Fixture creation and failure injection stay in local tooling. The customer reward projection uses fixture customer `user-001`; separating the screens does not establish production authentication or authorization.
+The selected defect is PAY-001. Boundary handling, timezone conversion, duplicate imports, approval, partial failure and persistence are adjacent regression concerns. Taxes, statutory deductions, salaried proration, leave, employee or account changes, real funds, external banking, authentication and distributed processing are outside scope.
 
 ## Requirements
 
-1. Settlement is identified by its **Tuesday 09:00 UTC scheduled run**, including on retries.
-2. For the 13 October 2026 run, qualifying completions fall in **5 October 00:00 UTC inclusive to 12 October 00:00 UTC exclusive**. Other weeks follow the same rule.
-3. Only completed tasks qualify. Every unique task ID earns **10 credits once per isolated program**, even across repeated inputs and runs.
-4. A notification may be attempted only after a payout commits. Notification failure cannot remove that payout or make the task eligible for payment again.
-5. The corrected reference saves payment identity and pending notification work together. Retrying settlement or notification delivery recovers messages without adding payments.
-6. Inputs use explicit UTC offsets and immutable task ownership, status and completion time. Conflicting records are rejected; reward amount and schedule are fixed.
+1. Identify at least three plausible failures, rank their impact, likelihood or uncertainty and effort, and explain why PAY-001 takes priority. See [intent.md](intent.md).
+2. Define an equally concrete alternative to the suggested rewards flow. The [payroll rules](business-rules.md) establish eligibility, UTC boundaries, amounts, approval, immutable IDs, locked periods and account/admin assumptions.
+3. Implement a runnable fixture with faulty and corrected behavior. The same regression assertion must fail because of duplicate pay in the faulty version and pass in the corrected version.
+4. Record at least eight cases with inputs, expected outcomes and results, including the happy path, cut-off, timezone, duplicates, retries and partial failure. The current [case register](test-cases.md) contains 33 checks.
+5. Produce an actionable [defect and root-cause report](defect-report.md), release-blocking checks, final verification evidence, remaining gaps and a [release decision](release-readiness.md).
+6. Provide accessible work links and a Loom of no more than five minutes. Aniekan must review and explain the final work; the reviewer assigns the assessment score.
 
-The [business rules and flow](business-rules.md) explain assumptions and sequence. The [intent](intent.md) ranks alternatives and explains the choice.
+## Completion criteria and current position
 
-## Completion criteria
-
-| Criterion | Verification artifact |
+| Criterion | Result |
 |---|---|
-| A reviewer can reproduce the selected failure | [Run instructions](../README.md) and [defect report](defect-report.md) |
-| The same assertion fails against faulty behavior and passes after correction | TC10 reports, first-attempt records and final snapshots below |
-| At least eight cases cover happy path, boundaries, timezone, duplicate input, retry and partial failure | [46 cases and results](test-cases.md) |
-| Payment identity survives a fresh process | TC11 and [process recovery log](evidence/process-recovery.log) |
-| Root cause, fix, release blockers and remaining gaps are actionable | [Defect report](defect-report.md) and [release checklist](release-readiness.md) |
-| Required submission artifacts are accessible | This directive, [intent.md](intent.md), project/evidence links, and the candidate's Loom link |
+| Alternatives prioritized; payroll flow and business rule explicit | Complete in intent and business rules |
+| Minimal reproducible application and automated regression | Complete; local setup commands in README |
+| Controlled defect fails the original business expectation | Observed: two payments totaling ₦300,000 instead of ₦150,000 |
+| Corrected flow passes with payment identity preserved | Observed: one ₦150,000 payment and recovered notification |
+| Required cases and final run | 32 Playwright browser/API checks plus one fresh-process check pass |
+| Defect report, release blockers, gaps and handoff | Complete for the local reference scope |
+| Personal ownership review and final Loom | Pending Aniekan's review and recording |
+| Submission destination, exact deadline/timezone and full weighted rubric | Await recruiter/invitation clarification; not inferred |
 
 ## Results and handoff appendix
 
-The final local run **passed all 46 corrected checks**: 45 Playwright cases plus one fresh-process check. [summary.json](evidence/summary.json) records runtime versions and source hashes. Faulty replay produces **20 credits, two payouts and one pending notification**. Corrected replay keeps **10 credits and one payout**, with **zero pending notifications** after recovery. The unchanged TC10 assertion fails against the faulty example and passes against the correction.
+The repository remains at its existing URL so its history and draft review remain available. The current product and evidence concern payroll; previous banking results do not establish payroll correctness.
 
-| Deliverable | Accessible work and evidence |
+| Work or evidence | Accessible link |
 |---|---|
-| Runnable project | [Fork assessment branch](https://github.com/Aniekanetim/MustBank/tree/quest/rewards-settlement) · [setup and reproduction](../README.md) |
-| Cases and results | [Test cases](test-cases.md) · [corrected Playwright report](evidence/fixed-playwright.json) · [process check](evidence/process-recovery.log) |
-| Failing regression | [Faulty report](evidence/faulty-playwright.json) · [first payment](evidence/faulty-first-attempt.json) · [after replay](evidence/faulty-scenario.json) · [screenshot](evidence/faulty-reproduction.png) · [trace](evidence/faulty-trace.zip) |
-| Passing regression | [First payment](evidence/fixed-first-attempt.json) · [after replay](evidence/fixed-scenario.json) · [screenshot](evidence/fixed-reproduction.png) |
-| Defect and root cause | [QA-001 defect report](defect-report.md) |
-| Release readiness | [Decision, checklist and gaps](release-readiness.md) |
-| Banking workspace | [UI review and audit corrections](ui-review.md) · [overview](evidence/customer-overview.png) · [rewards](evidence/customer-rewards.png) · [transfer receipt](evidence/transfer-receipt.png) · [mobile](evidence/customer-mobile.png). TC25–TC46 cover review, explicit destination choice, preserved drafts, durable local receipts, recipient lifecycle, money direction, reward timing, keyboard paths and exports. |
-| CI | [GitHub Actions runs](https://github.com/Aniekanetim/MustBank/actions) · the workflow repeats the complete evidence check |
-| Loom, maximum five minutes | **Pending candidate recording.** Use the [walkthrough outline](loom-outline.md); insert the accessible Loom URL here before submission. |
+| Runnable project and exact setup | [README](../README.md) · [repository branch](https://github.com/Aniekanetim/MustBank/tree/quest/rewards-settlement) |
+| Test project | [Playwright cases](../tests/payroll-api.spec.ts) · [UI regression](../tests/payroll-ui.spec.ts) · [fresh-process check](../tests/service.test.mjs) |
+| Cases, inputs, expected outcomes and results | [Test register](test-cases.md) |
+| Business rule, flow and assumptions | [Payroll rules](business-rules.md) |
+| Actionable defect, cause and proposed correction | [PAY-001](defect-report.md) |
+| Environment, source SHA-256 fingerprints and results | [Verification summary](evidence/summary.json) |
+| First payment with failed notification | [Faulty first attempt](evidence/faulty-first-attempt.json) · [corrected first attempt](evidence/fixed-first-attempt.json) |
+| State after retry | [Faulty workspace](evidence/faulty-workspace.json) · [corrected workspace](evidence/fixed-workspace.json) |
+| Regression evidence | [Expected failure](evidence/faulty-run.log) · [corrected run](evidence/fixed-run.log) · [fresh-process result](evidence/process-recovery.log) |
+| Machine-readable reports | [Faulty report](evidence/faulty-playwright.json) · [corrected report](evidence/fixed-playwright.json) |
+| Visual proof and trace | [Faulty payroll](evidence/faulty-reproduction.png) · [corrected payroll](evidence/fixed-reproduction.png) · [failure trace](evidence/faulty-trace.zip) |
+| Release decision and remaining gaps | [Release readiness](release-readiness.md) |
+| Customer-facing workflow verification | [Interface review](ui-review.md) |
+| Reviewable change | [Draft pull request](https://github.com/Aniekanetim/MustBank/pull/1) |
+| Final Loom | Pending recording; replace this entry with an accessible link before submission |
 
-To take over, run `npm ci`, install Chromium as described in the README, and run `npm run verify`. Read QA-001 alongside the two TC10 snapshots. For an interactive review, start the built app, prepare each rewards account using the README's `npm run scenario` commands, and open its Operations URL. Repeat settlement twice in each account, then inspect its Customer URL. A new account preserves earlier records separately.
+To verify independently, follow README, install Chromium, and run npm run verify. To inspect manually, start the local server and prepare separate faulty and fixed examples with npm run scenario. Use each printed workspace URL; do not reuse a previously processed workspace for a first-attempt demonstration. The fixture and ledger stay local. No confidential employer information or real employee data is included.
 
-Codex assisted with implementation, test execution and this draft documentation. The recorded runs are tool-executed evidence, not a claim that Aniekan personally ran them. Before submitting, Aniekan must review the requirements and evidence, make his own release judgement and record the Loom walkthrough. Submission destination, deadline/timezone, compensation terms and the full weighted rubric still require recruiter confirmation. The brief says **76/100 passes**; the reviewer assigns that score. The separate portfolio request for 2–4 genuine work cases also remains outside this fictional Quest package.
+AI assistance through Codex supported implementation, test design, execution and drafting. Automated results are identified as such. Aniekan's personal review and recorded explanation are not represented as completed. This fictional Quest case does not replace any separately requested genuine portfolio cases. The 76/100 threshold is the employer's pass requirement, not a self-assigned result.

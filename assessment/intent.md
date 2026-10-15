@@ -1,27 +1,28 @@
 # Why this problem
 
-**The chosen failure is a second payout after a notification failure.** One task deserves 10 credits. The first settlement pays it, but the notification fails. An operator retries settlement to recover delivery, and a faulty completion rule pays the task again. The user now has 20 credits for work that should earn 10.
+**The selected failure is a duplicate employee payment after a notification failure.** An employee has ₦150,000 of approved earnings. Payroll records the payment, but sending its confirmation fails. An operator retries the pay run. Faulty completion logic records another ₦150,000 payment, although nothing else is owed.
 
-This is a useful QA problem because the first failure can look like a messaging issue while recovery creates a payment error. It lets the assessment show the full chain: identify the business consequence, reproduce the trigger, explain the rule, isolate the cause, and check that recovery preserves the correct balance.
+The business rule comes first: one employee receives one payment for the total approved earnings in one pay period. A message reports that payment; it cannot decide whether the payment exists. This makes a notification failure an effective test of payment recovery.
 
-## Alternatives considered
+## Alternatives and priority
 
-These possible failures were ranked before implementation. Likelihood describes plausible triggers rather than observed incident frequency. No live product data or production incident history was available.
+These are plausible failures in the defined local model. No production incident history or frequency data is available.
 
-| Rank | Possible failure | User/business impact | Likelihood or uncertainty | Relative effort |
+| Rank | Possible failure | User and operational impact | Likelihood or uncertainty | Effort |
 |---|---|---|---|---|
-| 1 | Notification failure followed by settlement replay creates a second payout | Incorrect balance and duplicate liability; recovery can amplify the error | Plausible when a worker or operator retries after partial failure; frequency unknown | Medium: preserve payment identity and test partial recovery |
-| 2 | UTC cut-off or timezone conversion assigns a task to the wrong week | Missing, delayed or incorrectly timed rewards | Boundary inputs are predictable; affected volume unknown | Low: normalize instants and test both boundaries |
-| 3 | Success notification is sent before payment succeeds | User believes a reward exists when no payment was recorded | Plausible if delivery and payment ordering are wrong; frequency unknown | Low to medium: enforce ordering and test payment failure |
+| 1 | Retrying after notification failure records another employee payment | Employee-period total exceeds approved pay; operators must identify and reconcile the duplicate | Retries are a plausible response to partial failure; actual frequency is unknown | Medium: preserve payment identity, separate delivery and verify persistence |
+| 2 | A timezone or cut-off error places earnings in the wrong period | Pay is missing, delayed or included too early; employee and payroll totals disagree | Boundary inputs are predictable; affected volume is unknown | Low to medium: explicit UTC rules and boundary fixtures |
+| 3 | Notification is sent before a payment succeeds | Employee receives a confirmation unsupported by a payment record | Plausible if ordering is wrong; actual frequency is unknown | Low to medium: require committed payment before message work |
+| 4 | Duplicate earning imports increase approved payroll | Payroll pays twice for one earning record | Imports and repeated requests are plausible; actual frequency is unknown | Low: stable earning IDs and transactional conflict rejection |
 
-The duplicate payout is the best candidate for deeper investigation: its impact reaches the ledger, and an otherwise reasonable retry causes it. Boundary and ordering failures remain in the regression scope because they help establish what a correct settlement means.
+The first problem has the highest priority because recovery itself creates an incorrect financial record. The other problems remain in the regression scope to establish the correct amount, period and event order.
 
-## Why this project
+## Why a focused payroll application
 
-MustBank is a small, inspectable React application with fictional banking flows, adapted from an MIT-licensed sample. Its rewards module implements the Quest's rules explicitly. The project is small enough for a reviewer to run, inspect and reproduce the same failure.
+Payroll gives the reviewer a continuous business journey: approved earnings, a pay period, employee payments, confirmation and recovery. MustPayroll exposes that journey without requiring unrelated bank transfers or account management. Employees can have several earning records, so the implementation must aggregate them and protect the employee-period payment, rather than merely rename the previous task-based rewards example.
 
-The project uses a persistent local API so a reload or fresh process can verify that payment identity survives. Playwright exercises ordinary UI controls and HTTP requests. The intentionally faulty implementation and corrected reference sit behind separate examples, with the same core business assertion applied to both.
+The application is a local, inspectable project adapted from an MIT-licensed foundation. All names, amounts and destinations are synthetic. The defect is deliberately introduced for this investigation. It is not presented as an upstream discovery, live MUST behavior or an incident Aniekan handled at work.
 
-## What successful work will communicate
+## What the deliverables should communicate
 
-The reader should move from **why this failure matters**, to **what the rule requires**, to **what actually happened**, and finally to **why the fix is sufficient within the tested scope**. The final directive links each claim to the runnable project, results and evidence. AI-assisted implementation and checks are disclosed in the handoff; Aniekan's review and recorded walkthrough remain part of the final submission.
+The reader should understand **the rule, the failure, the cause, the prevention, the verification and the release decision**, in that order. [directive.md](directive.md) links each claim to the runnable project and evidence. AI assistance is disclosed; Aniekan's personal review and recorded explanation remain necessary for submission.

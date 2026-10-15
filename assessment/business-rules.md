@@ -1,49 +1,37 @@
-# Business rule and flow
+# Payroll rule and flow
 
-The rule is simple: **one qualifying task earns one reward**. Notification delivery communicates the reward; it does not decide whether that reward already exists.
+**One employee receives one payment for the total approved earnings in one pay period.** Sending or recovering a notification must not create another payment or reverse the successful payment.
 
-## Inputs and assumptions
+## Establish the period and amount
 
-- A run uses its scheduled Tuesday 09:00 UTC identity, rather than the wall-clock time of a retry. Scheduling is simulated by an explicit run action; no background scheduler is implemented.
-- The window starts on the previous Monday at 00:00 UTC and ends the following Monday at 00:00 UTC, excluding the end. For 13 October 2026: `[2026-10-05T00:00:00Z, 2026-10-12T00:00:00Z)`.
-- Completion timestamps require `Z` or an explicit offset and are normalized to UTC before comparison. Pending and cancelled records are excluded even if their supplied timestamp is inside the window.
-- Each scenario is a separate program. A task ID identifies one immutable task within that program; identical imports do not add another task. Different examples can reuse fixture IDs because their ledgers are independent.
-- Owner, status and completion time cannot change after import. Account closure, owner migration, late status changes, reversals and admin overrides are not implemented. These require agreed product rules before adding them.
-- The amount is fixed at 10 test credits. Admin settings cannot change the amount or schedule. No exchange rates, real funds or external payment provider are involved.
-- Customer-facing credit policy: credits are program points, separate from SGD balances; this prototype provides no redemption or cash conversion. This states the implemented program limit and does not add a currency value to the assessment's credits.
-- The simulated notification provider has a stable `(program, task)` acceptance identity. It can fail before acceptance or lose the acknowledgment after acceptance. This does not establish a real provider's delivery guarantees.
+1. Payroll uses a scheduled Tuesday at 09:00 UTC. Retrying uses the original scheduled pay date. The demo runs on an explicit operator action; it has no background scheduler or enforcement of real-time execution.
+2. The period starts on the previous Monday at 00:00 UTC, inclusive, and ends on the following Monday at 00:00 UTC, exclusive. The 13 October 2026 run covers [5 October 00:00 UTC, 12 October 00:00 UTC).
+3. An earning belongs to the period containing its earning timestamp, not its import timestamp. Timestamps require Z or an explicit offset and are normalized to UTC. For example, 5 October 00:30 at +01:00 is 4 October 23:30 UTC and is excluded from that period.
+4. Each earning has an immutable ID, employee, description, timestamp and positive amount in whole kobo. An identical reimport is harmless. Conflicting use of an ID rejects the entire import transaction. Each record is limited to ₦1,000,000; employee totals can combine multiple records.
+5. Only approved earnings contribute to pay. Pending earnings in the selected period block processing until approved. Rejected earnings contribute nothing. Pending earnings in another period do not block this period.
+6. The amount paid is the sum of approved earnings for each employee. This model has no deductions or tax calculation; there is no separate calculated net-pay promise.
 
-## Corrected flow
+## Process and recover
 
-Customers view their own rewards, payout history and statements. Operations records activities, runs weekly settlement and recovers pending notifications. The customer view represents fixture customer `user-001`; the prototype has no production identity or permission system. Fixture creation and injected failure conditions are prepared through local tooling rather than banking controls.
+1. The first valid processing request freezes the period's employee totals and earning IDs. Empty approved payroll and pending approvals cannot create a pay run.
+2. The corrected implementation checks the durable key (workspace, period start, employee). A unique database index also protects that identity. A different period can pay the same employee again.
+3. The payment and pending notification work commit in one SQLite transaction. An interruption before commit leaves both absent. A payment failure creates no notification.
+4. Only after commit does the service attempt notification. Failure leaves the payment intact and the notification pending.
+5. Retrying payroll recovers unpaid entries and pending messages. Notification-only recovery dispatches existing message work without creating payments.
+6. The simulated notification provider accepts one identity per workspace, period and employee. A lost acknowledgment can be retried without a second acceptance. This is a fixture guarantee, not a claim about a real provider or real inbox delivery.
 
-```mermaid
-flowchart TD
-    A[Use original scheduled run] --> B[Validate and normalize task records]
-    B --> C{Completed and inside UTC window?}
-    C -->|No| D[Exclude task from this run]
-    C -->|Yes| E{Payout already recorded?}
-    E -->|Yes| I[Recover pending notification]
-    E -->|No| F[Record payout and pending notification in one transaction]
-    F --> G{Transaction commits?}
-    G -->|No| H[Keep both records absent; retry payment later]
-    G -->|Yes| I
-    I --> J{Provider accepts and acknowledges?}
-    J -->|Yes| K[Mark notification sent]
-    J -->|No| L[Keep payout intact and notification pending]
-    L --> I
-```
+The fault under investigation changes step 2: it treats successful notification as proof that payroll is complete. After notification failure, a payment exists but the completion marker is absent. Retrying therefore records a second payment. See the [defect report](defect-report.md).
 
-In the faulty flow, the completion marker is written only after notification succeeds. When delivery fails, the payout exists but the marker does not. The next settlement consults that marker and pays again. The corrected flow consults the durable payout identity and retries only pending messages.
+## Account and administration assumptions
 
-Payment and pending notification work commit atomically in SQLite. The unique payout key provides an additional guard against a second record. The UI reads persisted state; refreshing the browser cannot reset payment identity. A fresh-process check verifies recovery after a graceful close and reopen. An injected transaction interruption verifies rollback before commit. Neither claims a power-loss or distributed-provider test.
+Employees and their masked destinations are seeded and cannot be changed through this application. Reassignment, account closure, bank-detail changes, inactive employees, permissions and admin overrides are outside scope. Payment records retain the employee name and destination captured at payment time. Earnings cannot be added to a processed period; adjustments require a later open period. Approved earnings cannot be edited or withdrawn. The schedule, currency and period policy are fixed.
 
-## Customer journey rules
+Workspaces isolate examples, but they are not an authentication boundary. The server must remain local. One Node process performs synchronous SQLite operations. Eight overlapping HTTP requests test that process; they do not establish distributed-worker safety. A fresh-process test establishes graceful close/reopen recovery, not power-loss durability. The ledger records local payments and does not prove money movement through an external bank.
 
-A generic transfer starts without a recipient selected. An explicit Send money action can preselect its recipient. The current draft is saved in that browser tab, including account, recipient, amount and description; adding or cancelling a recipient from the transfer returns to the draft. Discarding requires confirmation. Drafts do not commit a payment.
+## User journey
 
-Confirmation records a stable payment reference, timestamp, recipient snapshot and balance after payment. A repeated confirmation of the same local request identity returns its existing record rather than deducting again. The receipt is accessible from account activity after navigation or reload. This is a local browser ledger guard, not a claim of distributed payment idempotency.
+Employees → review destination. Earnings → record and approve. Pay runs → choose period, review employee totals and confirm. Payments → reconcile records and retrieve receipts. Notifications → recover delivery while retaining the payment record.
 
-Recipient edits require review. Removal archives the payee from future selections while retaining previous receipts. Earlier payments keep the recipient name, bank and account ending captured when they were recorded. A changed or removed destination invalidates an open draft's recipient choice while preserving its other inputs.
+The interface displays period boundaries in UTC, distinguishes recorded pay from approved pay, and signals a mismatch when duplicate records exceed the approved total. Processing confirmation can be cancelled before any ledger change. Previous receipts remain retrievable after navigation and reload. Failure preparation and implementation selection use local tooling, outside the product interface.
 
-Customer reward dates are derived from each activity's UTC settlement week. An activity at the excluded Monday boundary receives the following Tuesday's settlement date, one week later. Unpaid completed activities display their scheduled date and a delayed state when that date has passed. A historical processing window is labeled as a settlement period, never as the current calendar period. These labels do not change the service's explicit scheduled-run identity or introduce a background scheduler.
+Each browser tab retains its workspace and selected pay date after navigation and reload. Opening another example cannot silently substitute its payroll records into the first tab. This is navigation state, not authentication.

@@ -1,4 +1,4 @@
-name: MustBank Quest evidence
+name: MustPayroll Quest evidence
 on:
   push:
     branches: [main, quest/rewards-settlement]
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
-          name: mustbank-quest-evidence
+          name: mustpayroll-quest-evidence
           path: |
             assessment/evidence/
             output/playwright/

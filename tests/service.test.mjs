@@ -4,26 +4,23 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve, relative, isAbsolute } from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { RewardsService } from '../server/rewards.mjs';
+import { PayrollService } from '../server/payroll.mjs';
 
-test('TC11 | a fresh Node process retains payout identity and recovers notification', () => {
-  const folder = mkdtempSync(join(tmpdir(), 'mustbank-recovery-'));
-  const database = join(folder, 'rewards.sqlite');
-  const service = new RewardsService(database);
-  let closed = false;
+test('TC11 | Fresh process preserves employee-period payment identity', () => {
+  const folder = mkdtempSync(join(tmpdir(), 'mustpayroll-recovery-')), database = join(folder, 'payroll.sqlite');
+  const service = new PayrollService(database); let closed = false;
   try {
-    const scenario = service.create(); service.setFault(scenario.id, 'notification');
-    assert.equal(service.settle(scenario.id).totalCredits, 10);
+    const w = service.create({ fixture: 'single' }); service.setFault(w.id, 'notification');
+    const first = service.execute(w.id); assert.equal(first.paidMinor, 15000000); assert.equal(first.pendingNotifications, 1);
     service.close(); closed = true;
-    const child = spawnSync(process.execPath, ['scripts/process-probe.mjs', database, scenario.id], { encoding: 'utf8', timeout: 15000 });
-    assert.equal(child.status, 0, child.stderr);
-    const result = JSON.parse(child.stdout);
-    assert.equal(result.totalCredits, 10); assert.equal(result.payouts.length, 1); assert.equal(result.pendingNotifications, 0);
+    const child = spawnSync(process.execPath, ['scripts/process-probe.mjs', database, w.id], { encoding: 'utf8', timeout: 15000 });
+    assert.equal(child.status, 0, child.stderr); const result = JSON.parse(child.stdout);
+    assert.equal(result.paidMinor, 15000000); assert.equal(result.payments.length, 1); assert.equal(result.pendingNotifications, 0);
+    assert.equal(result.payments[0].id, first.payments[0].id);
   } finally {
     if (!closed) service.close();
-    const target = resolve(folder);
-    const withinTemp = relative(resolve(tmpdir()), target);
-    assert.ok(withinTemp && !withinTemp.startsWith('..') && !isAbsolute(withinTemp) && withinTemp.startsWith('mustbank-recovery-'), 'Cleanup must stay inside the created temporary fixture.');
+    const withinTemp = relative(resolve(tmpdir()), resolve(folder));
+    assert.ok(withinTemp && !withinTemp.startsWith('..') && !isAbsolute(withinTemp) && withinTemp.startsWith('mustpayroll-recovery-'));
     rmSync(folder, { recursive: true, force: true });
   }
 });

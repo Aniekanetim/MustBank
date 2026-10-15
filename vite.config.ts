@@ -6,6 +6,6 @@ export default defineConfig({
   server: {
     port: 5173,
     strictPort: true,
-    proxy: { '/api': `http://127.0.0.1:${process.env.REWARDS_API_PORT ?? '4174'}` },
+    proxy: { '/api': `http://127.0.0.1:${process.env.PAYROLL_API_PORT ?? '4174'}` },
   },
 });

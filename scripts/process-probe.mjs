@@ -1,5 +1,4 @@
-import { RewardsService } from '../server/rewards.mjs';
+import { PayrollService } from '../server/payroll.mjs';
 const [path, id] = process.argv.slice(2);
-const service = new RewardsService(path);
-try { console.log(JSON.stringify(service.settle(id))); }
-finally { service.close(); }
+const service = new PayrollService(path);
+try { console.log(JSON.stringify(service.execute(id))); } finally { service.close(); }

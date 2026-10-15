@@ -1,9 +1,9 @@
 {
-  "name": "mustbank-quest",
+  "name": "mustpayroll-quest",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
-  "description": "MustBank personal banking and weekly rewards settlement, with reproducible QA evidence.",
+  "description": "MustPayroll approved earnings, pay runs and safe payment recovery, with reproducible QA evidence.",
   "license": "MIT",
   "author": {
     "name": "Amit Rawat",
@@ -18,7 +18,7 @@
     "url": "https://github.com/Aniekanetim/MustBank/issues"
   },
   "keywords": [
-    "banking",
+    "payroll",
     "settlement",
     "payouts",
     "notifications",

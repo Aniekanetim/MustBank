@@ -1,72 +1,61 @@
-# MustBank
+# MustPayroll
 
-MustBank is a local banking prototype with customer account, transfer, recipient, activity and rewards flows. Weekly payout processing lives in a separate operations workspace. The customer experience uses normal product language; fixture creation and failure injection are handled outside the app.
+MustPayroll is a focused payroll application for reviewing approved earnings, processing weekly pay runs and recovering payment notifications. The application uses synthetic employees and a local payment ledger. It connects to no bank, payroll provider or live financial system.
 
-This repository is the QA Quest submission project. It uses synthetic accounts, credits and providers, and never moves real money. Start with [intent.md](assessment/intent.md), then [directive.md](assessment/directive.md) for the business requirements, regression evidence and handoff. The [defect report](assessment/defect-report.md) explains why retrying settlement after a notification failure can pay a task twice.
+The QA investigation follows one failure: **a payment succeeds, its notification fails, and retrying payroll pays the employee again.** The same business assertion fails against deliberately faulty behavior and passes against the corrected implementation.
 
-## Run MustBank
+## Run locally
 
-Use **Node 22.13 or later**; verification uses **22.21.0**. Node's SQLite module emits an experimental-feature warning on that version. No API key or database server is required.
+Use Node.js 22.13 or later and npm.
 
-```sh
-git clone --branch quest/rewards-settlement https://github.com/Aniekanetim/MustBank.git
-cd MustBank
+~~~sh
 npm ci
-npm run dev
-```
-
-Open **http://127.0.0.1:5173** for personal banking. The command starts the frontend and the API. The operations workspace is **http://127.0.0.1:5173/operations/settlements**.
-
-For a single server serving the production build and API:
-
-```sh
 npm run build
 npm start
-```
+~~~
 
-Open **http://127.0.0.1:4174**. The root opens the account overview. Rewards records are persisted in `data/rewards.sqlite`; the browser caches only the selected rewards account ID. Account balances and transfers use local browser storage. Compatible previous storage namespaces migrate automatically, preserving balances and payment identity.
+Open http://127.0.0.1:4174/overview. A new browser creates a workspace with three employees and ₦435,000 of approved earnings for the 13 October 2026 pay date. An additional pending earning belongs to the following period. The database is stored separately from the earlier banking prototype, in data/payroll.sqlite.
 
-Transfers require a deliberate recipient choice and keep a draft in the current tab. Adding or cancelling a recipient returns to that draft. Completed payments have a permanent local receipt under `/transactions/:id`, with reference copying and a text download. Recipient changes require review, and removing a recipient retains earlier receipts. New recipient numbers are kept in the local prototype store; lists and receipts mask them to the account ending. Use synthetic details only.
+For development, use npm run dev. Vite serves the interface on port 5173 and proxies the API to port 4174. PAYROLL_DB, PORT, HOST and PAYROLL_API_PORT can override local defaults. Keep this unauthenticated application bound to localhost.
 
-Rewards distinguish program credits from SGD, surface scheduled or delayed payments, and show activities before compact payout history. This program has no redemption or cash conversion. Mobile personal banking uses a fixed bottom navigation bar with space reserved beneath page controls.
+## Follow the payroll journey
+
+1. Review the employee directory and masked payment destinations.
+2. Record earnings with an employee, earning date, NGN amount and approval status. Approve pending records before processing their period.
+3. Open Pay runs. Review the selected period, approved total and employee breakdown, then confirm processing.
+4. Inspect payment records and open a receipt. Export payments or download a receipt for handoff.
+5. If notification delivery is pending, recover it from Notifications. Successful payments remain recorded.
+
+The UI uses normal payroll language. Fault injection and implementation selection remain in local setup tooling.
 
 ## Reproduce the selected defect
 
-Keep the built app running, then prepare an isolated faulty rewards account from a second terminal:
+With the server running, prepare two isolated examples:
 
-```sh
+~~~sh
 npm run scenario -- --behavior faulty --fail-notification
-```
-
-The command prints an **Operations URL** and a **Customer URL** for the same rewards account. Open the Operations URL and:
-
-1. Keep the scheduled run at Tuesday **13 October 2026, 09:00 UTC**.
-2. Click **Run settlement**. Observe **10 credits, one payout, one pending confirmation**.
-3. Click **Run settlement** again. Faulty processing produces **20 credits and two payouts** for one activity.
-
-Prepare the corrected reference using the same starting conditions:
-
-```sh
 npm run scenario -- --behavior fixed --fail-notification
-```
+~~~
 
-Repeat the same two runs in its Operations URL. Credits stay at **10**, payout count stays at **one**, and the pending confirmation is recovered. The Customer URL shows that customer's reward history without fixture controls or processing-version labels. Fixture setup is restricted to localhost; existing accounts and records are preserved separately.
+Each command prints a workspace URL. In each workspace, process the pay run once, then select Retry pay run and confirm. The employee is owed ₦150,000. The faulty version records ₦300,000 across two payments; the corrected version retains one ₦150,000 payment and recovers notification delivery. These are deliberately introduced reference behaviors, not defects discovered in the upstream project or a live MUST product.
 
-`--fixture boundaries` provides UTC cut-off examples; `--fixture empty` starts with no activities. For the development API, the setup command still uses port 4174 and its printed links open the API's built page. Open the same path at port 5173 when using the development frontend.
+Optional starting fixtures: single, standard, boundaries and empty. The scenario script accepts --fixture. It only connects to a localhost HTTP service.
 
-## Verify
+## Verify and inspect evidence
 
-```sh
+~~~sh
 npx playwright install --no-shell chromium
 npm run verify
-```
+~~~
 
-Verification uses isolated servers on **4184 and 5183**, so it can run alongside the local preview. It builds the app, checks persistence in a fresh Node process, proves that TC10 fails at 20 credits against faulty processing, then runs the complete corrected suite. The intentional failed assertion is required evidence; overall verification succeeds only when the failure and corrected passes are confirmed.
+Verification builds the application, checks recovery in a fresh Node process, requires the selected regression to fail for the intended duplicate-payment reason, then runs the corrected browser/API suite. It generates a [source fingerprint and results summary](assessment/evidence/summary.json), JSON reports, logs, screenshots and a failure trace. An expected failure in the faulty example is part of the verification; a failure in the corrected suite blocks completion. No automatic test retries are configured.
 
-See [case results](assessment/test-cases.md), [summary and source hashes](assessment/evidence/summary.json), screenshots, snapshots and raw reports. `npm test` runs the corrected Playwright suite; `npm run test:service` runs process recovery. Open the recorded failure with `npx playwright show-trace assessment/evidence/faulty-trace.zip`.
+Start with [intent.md](assessment/intent.md), then [directive.md](assessment/directive.md). Supporting documents contain the [business rules](assessment/business-rules.md), [test cases and outcomes](assessment/test-cases.md), [defect and root cause](assessment/defect-report.md), [release decision](assessment/release-readiness.md), [interface verification](assessment/ui-review.md) and [five-minute Loom outline](assessment/loom-outline.md).
 
-## Scope and attribution
+## Scope and provenance
 
-The banking UI is a functional local prototype, not a production bank. There is no real payment provider, notification provider, scheduler or production authentication. The customer rewards projection represents fixture customer `user-001`; separate customer and operations screens are not an authorization system. See the [release decision](assessment/release-readiness.md) for limits, including personal review, Loom and recruiter submission details.
+The payroll model pays the sum of approved project earnings. Taxes, deductions, salaried proration, leave, benefits, employee changes, external banking, authentication and statutory compliance are outside this exercise. NGN provides a concrete display currency; this is not payroll or legal advice. The simulated provider records notification acceptance, not verified delivery to a real inbox.
 
-MustBank adapts MIT-licensed work by [Amit Rawat](https://github.com/sahajamit), starting at commit `73d83074e7ea0c40f8273455ebcb611b7088fd5a`. The [copyright notice](LICENSE) and commit history are preserved. The controlled rewards defect was introduced for this Quest and is not a claim about an upstream or MUST production incident.
+The project began from the MIT-licensed sample by Amit Rawat, pinned at upstream commit 73d83074e7ea0c40f8273455ebcb611b7088fd5a. Its original [license notice](LICENSE) is preserved. Payroll logic, local persistence, the redesigned interface and assessment evidence were added in this fork. The existing repository URL and branch name are retained to preserve its review history; the current product is MustPayroll.
+
+AI assistance was used for implementation, test design, investigation and document drafting. Aniekan must personally review the evidence, explain the decisions and record the final Loom. No live incident, measured customer loss, employer data or reviewer-assigned score is claimed.

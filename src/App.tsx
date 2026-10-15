@@ -1,42 +1,125 @@
-import { useEffect, useRef } from 'react';
-import { NavLink, Route, Routes, Navigate, useLocation } from 'react-router-dom';
-import { ArrowLeft, ArrowLeftRight, Gift, Landmark, LayoutDashboard, ListChecks, Users, WalletCards } from 'lucide-react';
-import { Dashboard } from './pages/Dashboard';
-import { TransferPage } from './pages/Transfer';
-import { RecipientsPage } from './pages/Recipients';
-import { TransactionsPage } from './pages/Transactions';
-import { RewardsPage } from './pages/Rewards';
-import { SettlementsPage } from './pages/Settlements';
-import { ReceiptPage } from './pages/Receipt';
-import { RecipientDetailsPage } from './pages/RecipientDetails';
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
+import { NavLink, Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
+import { ArrowRight, ArrowLeft, Building2, CalendarDays, Check, CheckCircle2, Download, FileCheck2, LayoutDashboard, Mail, ReceiptText, Users, Wallet } from 'lucide-react';
+import { PayrollProvider, usePayroll, PAY_DATES, money, date, time, periodLabel, amountMinor, download, csvCell, type Payment } from './payroll';
+import { ConfirmDialog } from './components/ConfirmDialog';
 
-export default function App() {
-  const location = useLocation();
-  const operations = location.pathname.startsWith('/operations');
-  const previousPath = useRef(location.pathname);
-  useEffect(() => { document.title = operations ? 'MustBank | Operations' : 'MustBank | Personal banking'; }, [operations]);
-  useEffect(() => {
-    if (previousPath.current !== location.pathname) document.getElementById('page-title')?.focus();
-    previousPath.current = location.pathname;
-  }, [location.pathname]);
-  const navigation = operations ? [{ to: '/operations/settlements', label: 'Reward settlements', icon: ListChecks }] : [
-    { to: '/dashboard', label: 'Overview', icon: LayoutDashboard }, { to: '/transfer', label: 'Transfers', icon: ArrowLeftRight },
-    { to: '/recipients', label: 'Recipients', icon: Users }, { to: '/transactions', label: 'Activity', icon: ListChecks }, { to: '/rewards', label: 'Rewards', icon: Gift },
-  ];
-  return <div className={`app-shell${operations ? ' operations-shell' : ''}`}><a className="skip-link" href="#main-content">Skip to content</a>
-    <aside className="sidebar" aria-label="Application navigation">
-      <NavLink to={operations ? '/operations/settlements' : '/dashboard'} className="brand" aria-label="MustBank home"><Landmark size={26} strokeWidth={1.8} aria-hidden="true" /><span>MustBank</span></NavLink>
-      <p className="nav-caption">{operations ? 'Operations' : 'Your bank'}</p>
-      <nav aria-label={operations ? 'Operations' : 'Personal banking'}>{navigation.map(({ to, label, icon: Icon }) => <NavLink key={to} to={to} className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}><Icon size={19} strokeWidth={1.7} aria-hidden="true" />{label}</NavLink>)}</nav>
-      <div className="sidebar-footer">{operations ? <NavLink className="nav-item" to="/dashboard"><ArrowLeft size={18} aria-hidden="true" />Return to banking</NavLink> : <div className="account-context"><WalletCards size={21} aria-hidden="true" /><div><strong>Personal banking</strong><span>Singapore dollar accounts</span></div></div>}</div>
-    </aside><div className="main-shell"><div className="topbar"><span>{operations ? 'Operations workspace' : 'Personal banking'}</span><span className="topbar-meta">MustBank</span></div>
-      <main id="main-content" className="main" tabIndex={-1}><Routes>
-        <Route path="/" element={<Navigate to="/dashboard" replace />} /><Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/transfer" element={<TransferPage key={location.key} />} /><Route path="/recipients" element={<RecipientsPage />} />
-        <Route path="/recipients/:id" element={<RecipientDetailsPage key={location.pathname} />} />
-        <Route path="/transactions" element={<TransactionsPage />} /><Route path="/rewards" element={<RewardsPage />} />
-        <Route path="/transactions/:id" element={<ReceiptPage key={location.pathname} />} />
-        <Route path="/operations" element={<Navigate to="/operations/settlements" replace />} /><Route path="/operations/settlements" element={<SettlementsPage />} />
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
-      </Routes></main></div></div>;
+const navigation = [
+  { to: '/overview', label: 'Overview', icon: LayoutDashboard }, { to: '/employees', label: 'Employees', icon: Users },
+  { to: '/earnings', label: 'Earnings', icon: FileCheck2 }, { to: '/pay-runs', label: 'Pay runs', icon: CalendarDays },
+  { to: '/payments', label: 'Payments', icon: Wallet }, { to: '/notifications', label: 'Notifications', icon: Mail },
+];
+function Header({ title, description, action }: { title: string; description: string; action?: ReactNode }) {
+  return <header className="page-header"><div><p className="eyebrow">Payroll workspace</p><h1 id="page-title" tabIndex={-1}>{title}</h1><p className="page-description">{description}</p></div>{action && <div className="header-actions">{action}</div>}</header>;
 }
+function Badge({ state }: { state: string }) {
+  return <span className={`badge ${['paid', 'sent', 'approved', 'ready'].includes(state) ? 'positive' : ['mismatch', 'rejected'].includes(state) ? 'negative' : 'waiting'}`}><span aria-hidden="true" />{state === 'mismatch' ? 'Payment mismatch' : state.charAt(0).toUpperCase() + state.slice(1)}</span>;
+}
+function Empty({ title, description, action }: { title: string; description: string; action?: ReactNode }) {
+  return <div className="empty"><ReceiptText size={28} aria-hidden="true" /><h3>{title}</h3><p>{description}</p>{action}</div>;
+}
+function Panel({ title, description, action, children }: { title: string; description?: string; action?: ReactNode; children: ReactNode }) {
+  return <section className="panel"><div className="panel-heading"><div><h2>{title}</h2>{description && <p>{description}</p>}</div>{action}</div>{children}</section>;
+}
+function Metrics({ items }: { items: { label: string; value: string; note: string }[] }) {
+  return <dl className="metrics">{items.map(item => <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd><p>{item.note}</p></div>)}</dl>;
+}
+function PayDate() {
+  const { payDate, setPayDate, busy } = usePayroll();
+  return <label className="pay-date">Pay date <select value={payDate} disabled={busy} onChange={e => setPayDate(e.target.value)}>{PAY_DATES.map(v => <option key={v} value={v}>{date(`${v}T09:00:00Z`)}</option>)}</select></label>;
+}
+function EmployeeName({ id }: { id: string }) {
+  const employee = usePayroll().data!.employees.find(e => e.id === id)!;
+  return <div className="person"><span className="avatar" aria-hidden="true">{employee.name.split(' ').map(n => n[0]).join('')}</span><div><Link className="strong-link" to={`/employees/${id}`}>{employee.name}</Link><span className="secondary">{employee.role}</span></div></div>;
+}
+function Entries() {
+  const { data } = usePayroll(); if (!data) return null;
+  if (!data.entries.length) return <Empty title="No approved earnings in this period" description="Record earnings and approve them before running payroll." action={<Link className="btn-secondary" to="/earnings">Review earnings</Link>} />;
+  return <><div className="table-wrap desktop-payroll" tabIndex={0} role="region" aria-label="Payroll breakdown"><table><caption className="sr-only">Expected and recorded payments by employee</caption><thead><tr><th scope="col">Employee</th><th scope="col">Earnings</th><th scope="col" className="numeric">Approved pay</th><th scope="col" className="numeric">Recorded pay</th><th scope="col">Payment status</th></tr></thead><tbody>{data.entries.map(entry => <tr key={entry.employeeId}><td><EmployeeName id={entry.employeeId} /></td><td>{entry.earningIds.length} {entry.earningIds.length === 1 ? 'record' : 'records'}</td><td className="numeric">{money(entry.expectedMinor)}</td><td className="numeric">{money(entry.paidMinor)}</td><td><Badge state={entry.paidMinor > entry.expectedMinor || entry.paymentCount > 1 ? 'mismatch' : entry.paymentCount === 1 ? 'paid' : 'unpaid'} /></td></tr>)}</tbody></table></div><ul className="mobile-payroll">{data.entries.map(entry => <li key={entry.employeeId}><EmployeeName id={entry.employeeId} /><dl className="mobile-amounts"><div><dt>Approved pay</dt><dd>{money(entry.expectedMinor)}</dd></div><div><dt>Recorded pay</dt><dd>{money(entry.paidMinor)}</dd></div></dl><Badge state={entry.paidMinor > entry.expectedMinor || entry.paymentCount > 1 ? 'mismatch' : entry.paymentCount === 1 ? 'paid' : 'unpaid'} /></li>)}</ul></>;
+}
+function Overview() {
+  const { data } = usePayroll(); if (!data) return null;
+  return <><Header title="Payroll overview" description="Keep approved earnings, payments and delivery in view." action={<Link className="btn-primary" to="/pay-runs">Review pay run <ArrowRight size={16} aria-hidden="true" /></Link>} />
+    <div className="period-bar"><div><CalendarDays size={20} aria-hidden="true" /><div><strong>{periodLabel(data.period.start, data.period.end)}</strong><span className="secondary">Pay date: {date(data.period.scheduledFor)} · 09:00 UTC</span></div></div><PayDate /></div>
+    <Metrics items={[{ label: 'Approved payroll', value: money(data.expectedMinor), note: `${data.entries.length} employee${data.entries.length === 1 ? '' : 's'} in this period` }, { label: 'Payments recorded', value: money(data.paidMinor), note: 'For the selected pay period' }, { label: 'Pending approvals', value: String(data.pendingApprovals), note: 'Resolve before processing' }, { label: 'Pending notifications', value: String(data.pendingNotifications), note: 'Across all pay periods' }]} />
+    {data.pendingNotifications > 0 && <div className="callout warning"><Mail size={20} aria-hidden="true" /><div><strong>Payments and notifications have separate statuses</strong><p>{data.pendingNotifications} payment {data.pendingNotifications === 1 ? 'notification needs' : 'notifications need'} delivery. Recorded payments remain intact.</p><Link className="text-link" to="/notifications">Review pending notifications <ArrowRight size={15} aria-hidden="true" /></Link></div></div>}
+    <Panel title="This period’s payroll" description="Approved earnings are combined into one payment per employee." action={<Link className="text-link" to="/pay-runs">View pay run <ArrowRight size={16} aria-hidden="true" /></Link>}><Entries /></Panel>
+    <div className="two-columns"><Panel title="Before you process" description="A short path from earnings to payment."><ol className="steps"><li><span>1</span><div><strong>Review earnings</strong><p>Check the employee, amount and earning date.</p></div></li><li><span>2</span><div><strong>Approve the period</strong><p>Resolve every pending earning in the selected period.</p></div></li><li><span>3</span><div><strong>Confirm and process</strong><p>Review totals, then record payments and send notifications.</p></div></li></ol></Panel><Panel title="Payroll policy" description="Weekly project earnings, paid in Nigerian naira."><dl className="detail-list"><div><dt>Period</dt><dd>Monday to Sunday, UTC</dd></div><div><dt>Pay date</dt><dd>Tuesday, 09:00 UTC</dd></div><div><dt>Pay calculation</dt><dd>Total approved earnings</dd></div><div><dt>Adjustments</dt><dd>Record in a later open period</dd></div></dl></Panel></div>
+  </>;
+}
+function Employees() {
+  const { data } = usePayroll(); if (!data) return null;
+  return <><Header title="Employees" description="Review payment destinations before processing payroll." /><Panel title={`${data.employees.length} employees`} description="Payment records retain the destination used when they were created."><div className="employee-grid">{data.employees.map(e => <Link className="employee-card" to={`/employees/${e.id}`} key={e.id}><span className="avatar large" aria-hidden="true">{e.name.split(' ').map(n => n[0]).join('')}</span><div><h2>{e.name}</h2><p>{e.role}</p><span className="secondary">{e.department}</span></div><ArrowRight size={18} aria-hidden="true" /></Link>)}</div></Panel></>;
+}
+function EmployeeDetail() {
+  const { id } = useParams(), { data } = usePayroll(); if (!data) return null;
+  const employee = data.employees.find(e => e.id === id);
+  if (!employee) return <><Header title="Employee not found" description="Choose an employee from the directory." /><Link className="btn-secondary" to="/employees">View employees</Link></>;
+  const earnings = data.earnings.filter(e => e.employeeId === id), payments = data.payments.filter(p => p.employeeId === id);
+  return <><Link className="back-link" to="/employees"><ArrowLeft size={16} aria-hidden="true" />Employees</Link><Header title={employee.name} description={`${employee.role} · ${employee.department}`} action={<Link className="btn-primary" to={`/earnings?employee=${id}`}>Record earnings</Link>} /><div className="two-columns"><Panel title="Payment destination"><dl className="detail-list"><div><dt>Bank</dt><dd>{employee.bank}</dd></div><div><dt>Account ending</dt><dd>•••• {employee.accountEnding}</dd></div><div><dt>Currency</dt><dd>NGN · Nigerian naira</dd></div><div><dt>Destination status</dt><dd><Badge state="ready" /></dd></div></dl></Panel><Panel title="Earnings and payment history"><Metrics items={[{ label: 'Earning records', value: String(earnings.length), note: 'Across all periods' }, { label: 'Payments recorded', value: money(payments.reduce((sum, p) => sum + p.amountMinor, 0)), note: `${payments.length} payment records` }]} /></Panel></div><Panel title="Recent payments"><PaymentsTable payments={payments} /></Panel></>;
+}
+function Earnings() {
+  const { data, act, busy } = usePayroll(); const params = new URLSearchParams(useLocation().search);
+  const [form, setForm] = useState({ employeeId: params.get('employee') ?? 'emp-001', description: '', amount: '', earnedAt: data ? new Date(Date.parse(data.period.start) + 3 * 86400000 + 12 * 3600000).toISOString().slice(0, 16) : '2026-10-08T12:00', status: 'pending' });
+  const [error, setError] = useState(''), [filter, setFilter] = useState('all'); if (!data) return null;
+  async function submit(event: FormEvent) {
+    event.preventDefault(); setError('');
+    try {
+      const ok = await act('earnings', { earnings: [{ earningId: `earn-${crypto.randomUUID()}`, employeeId: form.employeeId, description: form.description, amountMinor: amountMinor(form.amount), earnedAt: `${form.earnedAt}:00Z`, status: form.status }] }, 'Earnings recorded. Review pending approvals before running payroll.');
+      if (ok) setForm({ ...form, description: '', amount: '' });
+    } catch (e) { setError((e as Error).message); }
+  }
+  const earnings = data.earnings.filter(e => filter === 'all' || e.status === filter);
+  return <><Header title="Earnings" description="Record the work earned, then approve it for the correct pay period." /><div className="earnings-layout"><Panel title="Record earnings" description="Use the earning date, rather than the date you entered the record."><form className="form-body" onSubmit={submit}>
+    <label>Employee<select value={form.employeeId} onChange={e => setForm({ ...form, employeeId: e.target.value })}>{data.employees.map(e => <option key={e.id} value={e.id}>{e.name}</option>)}</select></label>
+    <label>Description<input required maxLength={160} value={form.description} placeholder="Weekly project earnings" onChange={e => setForm({ ...form, description: e.target.value })} /></label>
+    <label>Amount (NGN)<input required inputMode="decimal" value={form.amount} placeholder="150000.00" aria-describedby="amount-hint" onChange={e => setForm({ ...form, amount: e.target.value })} /><small id="amount-hint">₦0.01 to ₦1,000,000.00 per earning record.</small></label>
+    <label>Earning date and time (UTC)<input type="datetime-local" required value={form.earnedAt} onChange={e => setForm({ ...form, earnedAt: e.target.value })} /></label>
+    <label>Approval status<select value={form.status} onChange={e => setForm({ ...form, status: e.target.value })}><option value="pending">Pending approval</option><option value="approved">Approved</option></select></label>
+    {error && <p role="alert" className="field-error">{error}</p>}<button className="btn-primary" disabled={busy}>{busy ? 'Recording…' : 'Record earnings'}</button><p className="form-note">A processed pay period is locked. Add adjustments to a later open period.</p>
+  </form></Panel><Panel title="Earning records" description="Dates are shown in UTC." action={<label className="filter-label">Status<select value={filter} onChange={e => setFilter(e.target.value)}><option value="all">All statuses</option><option value="approved">Approved</option><option value="pending">Pending</option><option value="rejected">Rejected</option></select></label>}>
+    {earnings.length ? <ul className="record-list">{earnings.map(e => <li key={e.earningId}><div><EmployeeName id={e.employeeId} /><strong className="record-title">{e.description}</strong><span className="secondary">{date(e.earnedAt)} · {time(e.earnedAt)} UTC</span><code>{e.earningId}</code></div><div className="record-end"><strong className="money">{money(e.amountMinor)}</strong><Badge state={e.status} />{e.status === 'pending' && <button className="btn-secondary compact" disabled={busy} onClick={() => void act(`earnings/${e.earningId}/approve`, {}, 'Earnings approved.')} aria-label={`Approve ${e.description} for ${data.employees.find(person => person.id === e.employeeId)?.name}`}>Approve earnings</button>}</div></li>)}</ul> : <Empty title="No matching earnings" description="Choose another status or record earnings using the form." />}
+  </Panel></div></>;
+}
+function PayRuns() {
+  const { data, payDate, setPayDate, act, busy } = usePayroll(), [confirm, setConfirm] = useState(false); if (!data) return null;
+  const mismatch = data.entries.some(e => e.paidMinor > e.expectedMinor || e.paymentCount > 1), remaining = Math.max(0, data.expectedMinor - data.paidMinor);
+  return <><Header title="Pay runs" description="Review the period and employee totals before processing payroll." action={<PayDate />} />
+    <ol className="journey" aria-label="Payroll steps"><li className={data.pendingApprovals > 0 || !data.expectedMinor ? "current" : "done"}>{data.expectedMinor > 0 && !data.pendingApprovals && <Check size={15} aria-hidden="true" />}Review earnings</li><li className={data.locked ? "done" : !data.pendingApprovals && data.expectedMinor ? "current" : ""}>Confirm payroll</li><li className={data.locked ? "current" : ""}>Review payments</li></ol>
+    <div className="run-summary"><div><p className="eyebrow">Selected pay period</p><h2>{periodLabel(data.period.start, data.period.end)}</h2><p>Pay date: {date(data.period.scheduledFor)} · 09:00 UTC</p><span className="policy-note">Includes the opening Monday at 00:00 UTC. Excludes the following Monday at 00:00 UTC.</span></div><Badge state={mismatch ? 'mismatch' : data.locked ? remaining > 0 ? 'incomplete' : 'paid' : 'review'} /></div>
+    <Metrics items={[{ label: 'Approved pay', value: money(data.expectedMinor), note: `${data.entries.length} employee${data.entries.length === 1 ? '' : 's'}` }, { label: 'Recorded pay', value: money(data.paidMinor), note: 'Successful ledger entries' }, { label: 'Unpaid amount', value: money(remaining), note: 'For this period' }]} />
+    {mismatch && <div role="alert" className="callout danger"><strong>Recorded payments do not match approved payroll.</strong><p>Stop further processing and reconcile payment records before release.</p></div>}
+    {data.locked && remaining > 0 && !mismatch && <div className="callout warning"><strong>Some payments remain unrecorded.</strong><p>Retry the pay run to recover outstanding employee payments. Existing payment records must remain unchanged.</p></div>}
+    {data.pendingApprovals > 0 && <div className="callout warning"><strong>{data.pendingApprovals} pending {data.pendingApprovals === 1 ? 'approval' : 'approvals'} in this period</strong><p>Approve pending earnings before processing. <Link className="text-link" to="/earnings">Review earnings</Link></p></div>}
+    <Panel title="Employee breakdown" description="Each employee’s approved earnings form one payment for this period."><Entries /><div className="panel-footer"><p>{data.locked ? 'This period is locked. Retrying uses the original approved totals and payment identity.' : 'Processing locks this period. Corrections must be recorded in a later open period.'}</p><button className="btn-primary" disabled={busy || mismatch || data.pendingApprovals > 0 || data.expectedMinor === 0} onClick={() => setConfirm(true)}>{busy ? 'Processing…' : data.locked ? 'Retry pay run' : 'Review and process payroll'}<ArrowRight size={16} aria-hidden="true" /></button></div></Panel>
+    <Panel title="Pay run history" description="Open a processed period to review its payment records.">{data.runs.length ? <ul className="history-list">{data.runs.map(r => <li key={r.periodStart}><div><strong>{periodLabel(r.periodStart, r.periodEnd)}</strong><span className="secondary">Pay date: {date(r.scheduledFor)}</span></div><strong className="money">{money(r.expectedMinor)}</strong><button className="btn-secondary compact" disabled={busy} onClick={() => { setPayDate(r.scheduledFor.slice(0, 10)); window.scrollTo({ top: 0 }); }}>Review period</button></li>)}</ul> : <Empty title="No pay runs yet" description="Review the employee breakdown and process the first pay run." />}</Panel>
+    <ConfirmDialog open={confirm} title={data.locked ? 'Retry this pay run?' : 'Process this payroll?'} description={`${data.entries.length} employee${data.entries.length === 1 ? '' : 's'}. Approved total ${money(data.expectedMinor)}. Pay date ${date(`${payDate}T09:00:00Z`)}. ${data.locked ? 'Existing payments must remain unchanged; only outstanding work should be recovered.' : 'The period will be locked when processing starts.'}`} confirmLabel={data.locked ? 'Retry pay run' : 'Process payroll'} onCancel={() => setConfirm(false)} onConfirm={() => { setConfirm(false); void act('run', { scheduledFor: data.period.scheduledFor }, 'Pay run finished. Review payment records and notification status.'); }} />
+  </>;
+}
+function PaymentsTable({ payments }: { payments: Payment[] }) {
+  if (!payments.length) return <Empty title="No payments recorded" description="Payments appear after an approved pay run is processed." action={<Link className="btn-secondary" to="/pay-runs">Review pay run</Link>} />;
+  return <div className="table-wrap" tabIndex={0} role="region" aria-label="Payment records"><table><caption className="sr-only">Recorded employee payments</caption><thead><tr><th scope="col">Employee</th><th scope="col">Pay period starts</th><th scope="col">Recorded</th><th scope="col" className="numeric">Amount</th><th scope="col">Receipt</th></tr></thead><tbody>{payments.map(p => <tr key={p.id}><td><strong>{p.employeeName}</strong><span className="secondary">{p.bank} · •••• {p.accountEnding}</span></td><td>{date(p.periodStart)}</td><td>{date(p.createdAt)}<span className="secondary">{time(p.createdAt)} UTC</span></td><td className="numeric money">{money(p.amountMinor)}</td><td><Link className="text-link" to={`/payments/${p.id}`} aria-label={`View receipt for ${p.employeeName}, ${p.id}`}>View receipt <ArrowRight size={15} aria-hidden="true" /></Link></td></tr>)}</tbody></table></div>;
+}
+function Payments() {
+  const { data } = usePayroll(), [employee, setEmployee] = useState('all'); if (!data) return null;
+  const payments = data.payments.filter(p => employee === 'all' || p.employeeId === employee);
+  function exportPayments() { download('mustpayroll-payments.csv', [['Reference', 'Employee', 'Period start (UTC)', 'Amount (NGN)', 'Bank', 'Account ending', 'Recorded (UTC)'], ...payments.map(p => [p.id, p.employeeName, p.periodStart, (p.amountMinor / 100).toFixed(2), p.bank, p.accountEnding, p.createdAt])].map(row => row.map(csvCell).join(',')).join('\r\n'), 'text/csv'); }
+  return <><Header title="Payments" description="Trace each recorded payment to its employee, period and receipt." action={<button className="btn-secondary" onClick={exportPayments}><Download size={17} aria-hidden="true" />Export payments</button>} /><Panel title={`${payments.length} payment records`} action={<label className="filter-label">Employee<select value={employee} onChange={e => setEmployee(e.target.value)}><option value="all">All employees</option>{data.employees.map(e => <option key={e.id} value={e.id}>{e.name}</option>)}</select></label>}><PaymentsTable payments={payments} /></Panel></>;
+}
+function Receipt() {
+  const { id } = useParams(), { data } = usePayroll(), [copied, setCopied] = useState(''); if (!data) return null;
+  const p = data.payments.find(p => p.id === id), notification = data.notifications.find(n => n.paymentId === id);
+  if (!p) return <><Header title="Payment not found" description="Open a receipt from the payment records." /><Link className="btn-secondary" to="/payments">View payments</Link></>;
+  const text = `MustPayroll payment receipt\nReference: ${p.id}\nEmployee: ${p.employeeName}\nAmount: ${money(p.amountMinor)}\nPay period starts: ${date(p.periodStart)}\nBank: ${p.bank}\nAccount ending: ${p.accountEnding}\nRecorded: ${p.createdAt}\nPayment: Recorded\nNotification: ${notification?.state ?? 'Unavailable'}\n`;
+  return <><Link className="back-link" to="/payments"><ArrowLeft size={16} aria-hidden="true" />Payments</Link><Header title="Payment receipt" description="The payment record and notification delivery are tracked separately." /><section className="receipt"><CheckCircle2 size={36} className="receipt-icon" aria-hidden="true" /><p className="eyebrow">Payment recorded</p><h2 className="receipt-amount">{money(p.amountMinor)}</h2><p>{p.employeeName}</p><dl className="detail-list"><div><dt>Reference</dt><dd className="reference">{p.id}</dd></div><div><dt>Pay period starts</dt><dd>{date(p.periodStart)}</dd></div><div><dt>Bank</dt><dd>{p.bank} · •••• {p.accountEnding}</dd></div><div><dt>Recorded</dt><dd>{date(p.createdAt)} · {time(p.createdAt)} UTC</dd></div><div><dt>Notification</dt><dd><Badge state={notification?.state ?? 'unavailable'} /></dd></div></dl><div className="form-actions"><button className="btn-secondary" onClick={() => { void navigator.clipboard.writeText(p.id).then(() => setCopied('Reference copied.')).catch(() => setCopied('Copy unavailable. Download the receipt to keep the reference.')); }}>Copy reference</button><button className="btn-primary" onClick={() => download(`mustpayroll-receipt-${p.id}.txt`, text)}><Download size={16} aria-hidden="true" />Download receipt</button></div><p role="status">{copied}</p></section></>;
+}
+function Notifications() {
+  const { data, busy, act } = usePayroll(); if (!data) return null;
+  return <><Header title="Notifications" description="Recover delivery without changing recorded payments." action={<button className="btn-primary" disabled={busy || data.pendingNotifications === 0} onClick={() => void act('retry-notifications', {}, 'Notification recovery finished. Recorded payments are unchanged.')}><Mail size={17} aria-hidden="true" />{busy ? 'Retrying…' : 'Retry pending notifications'}</button>} /><Metrics items={[{ label: 'Pending delivery', value: String(data.pendingNotifications), note: 'Payments remain recorded' }, { label: 'Sent', value: String(data.notifications.filter(n => n.state === 'sent').length), note: 'Provider acknowledged acceptance' }]} /><Panel title="Delivery history" description="Only successfully recorded payments create notification work.">{data.notifications.length ? <ul className="record-list">{data.notifications.map(n => <li key={n.id}><div><strong>{n.employeeName}</strong><span className="secondary">Pay period starts {date(n.periodStart)} · {n.attempts} delivery {n.attempts === 1 ? 'attempt' : 'attempts'}</span>{n.lastError && <p className="delivery-error">{n.lastError}</p>}<Link className="text-link" to={`/payments/${n.paymentId}`}>View payment receipt <ArrowRight size={15} aria-hidden="true" /></Link></div><Badge state={n.state} /></li>)}</ul> : <Empty title="No notifications yet" description="Process an approved pay run to create payment notifications." action={<Link className="btn-secondary" to="/pay-runs">Review pay run</Link>} />}</Panel></>;
+}
+function Shell() {
+  const { data, busy, error, notice, reload } = usePayroll(), location = useLocation(), previous = useRef(location.pathname);
+  useEffect(() => { document.title = `MustPayroll | ${navigation.find(n => location.pathname.startsWith(n.to))?.label ?? 'Payroll'}`; if (previous.current !== location.pathname) document.getElementById('page-title')?.focus(); previous.current = location.pathname; }, [location.pathname, data]);
+  return <div className="app-shell"><a className="skip-link" href="#main-content">Skip to content</a><aside className="sidebar"><NavLink className="brand" to="/overview" aria-label="MustPayroll home"><Building2 size={26} strokeWidth={1.8} aria-hidden="true" /><span>MustPayroll</span></NavLink><p className="nav-caption">WORKSPACE</p><nav aria-label="Payroll">{navigation.map(({ to, label, icon: Icon }) => <NavLink className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} key={to} to={to}><Icon size={19} strokeWidth={1.7} aria-hidden="true" /><span>{label}</span>{to === '/notifications' && Boolean(data?.pendingNotifications) && <span className="nav-count">{data!.pendingNotifications}</span>}</NavLink>)}</nav><div className="sidebar-footer"><span className="company-mark" aria-hidden="true">N</span><div><strong>Northstar Studio</strong><span>Payroll operations</span></div></div></aside><div className="main-shell"><div className="topbar"><span>Northstar Studio <span className="topbar-separator">/</span> Payroll</span><span className="topbar-meta">NGN <span aria-hidden="true">·</span> UTC</span></div><main id="main-content" className="main" tabIndex={-1} aria-busy={busy}><div className="status-region" role="status">{notice && <div className="callout success"><CheckCircle2 size={19} aria-hidden="true" />{notice}</div>}</div>{error && <div className="callout danger" role="alert"><p>{error}</p><button className="btn-secondary compact" onClick={() => void reload()}>Refresh payroll</button></div>}{!data ? <div className="loading"><h1 id="page-title">{error ? 'Payroll unavailable' : 'Loading payroll…'}</h1><p>{error ? 'Use a valid workspace link and refresh payroll.' : 'Loading employees, earnings and payment records.'}</p></div> : <Routes><Route path="/" element={<Navigate to="/overview" replace />} /><Route path="/overview" element={<Overview />} /><Route path="/employees" element={<Employees />} /><Route path="/employees/:id" element={<EmployeeDetail />} /><Route path="/earnings" element={<Earnings />} /><Route path="/pay-runs" element={<PayRuns />} /><Route path="/payments" element={<Payments />} /><Route path="/payments/:id" element={<Receipt />} /><Route path="/notifications" element={<Notifications />} /><Route path="*" element={<Navigate to="/overview" replace />} /></Routes>}</main></div></div>;
+}
+export default function App() { return <PayrollProvider><Shell /></PayrollProvider>; }

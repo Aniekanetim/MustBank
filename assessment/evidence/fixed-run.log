@@ -1,65 +1,52 @@
-[WebServer] (node:70580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:57376) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
-[WebServer] (node:70580) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+[WebServer] (node:57376) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 
-[WebServer] (node:52468) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:76732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
 
-Running 45 tests using 2 workers
+Running 32 tests using 2 workers
 
-(node:68212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:65696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
-(node:76124) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:63680) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
-[1/45] [chromium] › tests\journey.spec.ts:20:1 › TC35 | a new transfer requires an explicit recipient choice
-[2/45] [chromium] › tests\journey.spec.ts:30:1 › TC36 | adding a recipient resumes the saved amount account and description
-[3/45] [chromium] › tests\journey.spec.ts:54:1 › TC37 | cancelling recipient creation and cancelling discard preserve the draft
-[4/45] [chromium] › tests\journey.spec.ts:72:1 › TC38 | receipts survive navigation and reload and can be copied and downloaded
-[5/45] [chromium] › tests\journey.spec.ts:89:1 › TC39 | reviewed recipient edits cannot rewrite an earlier receipt
-[6/45] [chromium] › tests\journey.spec.ts:108:1 › TC40 | removing a recipient requires confirmation and keeps historical payments
-[7/45] [chromium] › tests\journey.spec.ts:121:1 › TC41 | internal transfers show account-specific direction and keep filters on return
-[8/45] [chromium] › tests\journey.spec.ts:133:1 › TC42 | rewards explain credit limits and distinguish overdue and next-week payments
-[9/45] [chromium] › tests\journey.spec.ts:150:1 › TC43 | mobile rewards prioritise activities and transfer actions stay above navigation
-[10/45] [chromium] › tests\journey.spec.ts:166:1 › TC44 | transfer review edit and confirmation work through keyboard controls
-[11/45] [chromium] › tests\journey.spec.ts:179:1 › TC45 | receipt history navigation and reload do not repeat a payment
-[12/45] [chromium] › tests\journey.spec.ts:190:1 › TC46 | recipient changes in another tab require a fresh destination choice
-[13/45] [chromium] › tests\rewards-api.spec.ts:4:1 › TC01 | a completed task pays 10 credits before notification
-[14/45] [chromium] › tests\rewards-api.spec.ts:15:1 › TC03 | the lower Monday boundary is included
-[15/45] [chromium] › tests\rewards-api.spec.ts:20:1 › TC02 | an empty weekly run creates no payment or notification
-[16/45] [chromium] › tests\rewards-api.spec.ts:25:1 › TC04 | the upper Monday boundary is excluded
-[17/45] [chromium] › tests\rewards-api.spec.ts:30:1 › TC05 | Lagos offset timestamps are compared as UTC instants
-[18/45] [chromium] › tests\rewards-api.spec.ts:36:1 › TC06 | pending and cancelled tasks cannot earn rewards
-[19/45] [chromium] › tests\rewards-api.spec.ts:41:1 › TC07 | duplicate task input earns one reward
-[20/45] [chromium] › tests\rewards-api.spec.ts:47:1 › TC08 | replay after success cannot pay again
-[21/45] [chromium] › tests\rewards-api.spec.ts:52:1 › TC09 | failed notification preserves the payout and pending message
-[22/45] [chromium] › tests\rewards-api.spec.ts:58:1 › TC12 | failed payment sends no success notification
-[23/45] [chromium] › tests\rewards-api.spec.ts:64:1 › TC13 | interrupted local recording rolls back before commit
-[24/45] [chromium] › tests\rewards-api.spec.ts:71:1 › TC14 | the excluded boundary pays once in the following week
-[25/45] [chromium] › tests\rewards-api.spec.ts:77:1 › TC15 | conflicting duplicate owners reject the whole import
-[26/45] [chromium] › tests\rewards-api.spec.ts:84:1 › TC16 | a naive timestamp cannot produce partial import
-[27/45] [chromium] › tests\rewards-api.spec.ts:91:1 › TC17 | overlapping HTTP settlement requests create one payout
-[28/45] [chromium] › tests\rewards-api.spec.ts:97:1 › TC18 | a lost notification acknowledgment cannot repay the task
-[29/45] [chromium] › tests\rewards-api.spec.ts:104:1 › TC19 | invalid scheduled run identity has no payout effects
-[30/45] [chromium] › tests\rewards-api.spec.ts:113:1 › TC20 | a stored task cannot change owner or completion time
-[31/45] [chromium] › tests\rewards-api.spec.ts:122:1 › TC23 | invalid calendar dates and 24-hour rollover reject input
-[32/45] [chromium] › tests\rewards-ui.spec.ts:5:1 › TC10 | notification failure then settlement replay leaves 10 credits
-[33/45] [chromium] › tests\rewards-ui.spec.ts:27:1 › TC21 | an activity recorded in operations pays its stable owner
-[34/45] [chromium] › tests\rewards-ui.spec.ts:41:1 › TC22 | browser reload preserves payment and notification recovery
-[35/45] [chromium] › tests\rewards-ui.spec.ts:51:1 › TC24 | narrow-screen recovery works through keyboard controls
-[36/45] [chromium] › tests\rewards-ui.spec.ts:62:1 › TC25 | a reviewed bank transfer completes once with a receipt
-[37/45] [chromium] › tests\rewards-ui.spec.ts:77:1 › TC26 | banking screens contain product copy and no failure setup controls
-[38/45] [chromium] › tests\rewards-ui.spec.ts:94:1 › TC27 | namespace migration preserves account balance and paid reward identity
-[39/45] [chromium] › tests\rewards-ui.spec.ts:112:1 › TC28 | invalid amounts and insufficient balance cannot create a transfer
-[40/45] [chromium] › tests\rewards-ui.spec.ts:122:1 › TC29 | editing a review leaves balances untouched until confirmation
-[41/45] [chromium] › tests\rewards-ui.spec.ts:130:1 › TC30 | saved recipient search opens a transfer with the correct payee
-[42/45] [chromium] › tests\rewards-ui.spec.ts:141:1 › TC31 | activity filters have a recoverable empty state
-[43/45] [chromium] › tests\rewards-ui.spec.ts:148:1 › TC32 | personal rewards show only the current customer while operations reconcile all owners
-[44/45] [chromium] › tests\rewards-ui.spec.ts:159:1 › TC33 | reward statements contain personal payouts and safe CSV cells
-[45/45] [chromium] › tests\rewards-ui.spec.ts:168:1 › TC34 | customer banking remains readable at 320px with visible primary controls
-  45 passed (4.3m)
+[1/32] [chromium] › tests\payroll-api.spec.ts:10:1 › TC02 | Opening Monday midnight is included
+[2/32] [chromium] › tests\payroll-api.spec.ts:4:1 › TC01 | Approved earnings aggregate into one payment per employee
+[3/32] [chromium] › tests\payroll-api.spec.ts:14:1 › TC03 | Following Monday midnight belongs to the next period
+[4/32] [chromium] › tests\payroll-api.spec.ts:19:1 › TC04 | Lagos offset is normalized before period selection
+[5/32] [chromium] › tests\payroll-api.spec.ts:23:1 › TC05 | Reimporting an identical earning never increases pay
+[6/32] [chromium] › tests\payroll-api.spec.ts:27:1 › TC06 | Conflicting duplicate rolls back the entire import
+[7/32] [chromium] › tests\payroll-api.spec.ts:31:1 › TC07 | Pending approval blocks payment and leaves the period open
+[8/32] [chromium] › tests\payroll-api.spec.ts:36:1 › TC08 | Failed payment creates no notification and can be retried
+[9/32] [chromium] › tests\payroll-api.spec.ts:41:1 › TC09 | Notification failure preserves the successful payment
+[10/32] [chromium] › tests\payroll-api.spec.ts:46:1 › TC12 | Notification-only recovery never changes payment identity
+[11/32] [chromium] › tests\payroll-api.spec.ts:50:1 › TC13 | Interruption rolls back payment and outbox together
+[12/32] [chromium] › tests\payroll-api.spec.ts:55:1 › TC14 | Lost provider acknowledgement recovers without duplicate acceptance
+[13/32] [chromium] › tests\payroll-api.spec.ts:60:1 › TC15 | A processed period rejects new earnings and preserves approved totals
+[14/32] [chromium] › tests\payroll-api.spec.ts:65:1 › TC16 | Eight overlapping requests in one server record one payment
+[15/32] [chromium] › tests\payroll-api.spec.ts:69:1 › TC17 | The same employee can receive a separate payment in another period
+[16/32] [chromium] › tests\payroll-api.spec.ts:74:1 › TC18 | Invalid dates and ambiguous timestamps are rejected
+[17/32] [chromium] › tests\payroll-api.spec.ts:79:1 › TC19 | Amounts use positive bounded whole kobo
+[18/32] [chromium] › tests\payroll-api.spec.ts:84:1 › TC20 | Unknown employees cannot acquire earnings or payments
+[19/32] [chromium] › tests\payroll-api.spec.ts:88:1 › TC21 | Isolated workspaces do not share earnings or payment identity
+[20/32] [chromium] › tests\payroll-api.spec.ts:93:1 › TC22 | Approval is explicit and replaying approval is harmless
+[21/32] [chromium] › tests\payroll-ui.spec.ts:10:1 › TC10 | Retrying after notification failure preserves the approved payroll
+[22/32] [chromium] › tests\payroll-ui.spec.ts:30:1 › TC23 | Record, approve and process earnings through the interface
+[23/32] [chromium] › tests\payroll-ui.spec.ts:45:1 › TC24 | Cancelling payroll confirmation leaves the ledger and period unchanged
+[24/32] [chromium] › tests\payroll-ui.spec.ts:52:1 › TC25 | Receipt survives reload and can be copied and downloaded
+[25/32] [chromium] › tests\payroll-ui.spec.ts:63:1 › TC26 | Payment filter and CSV export contain the same employee records
+[26/32] [chromium] › tests\payroll-ui.spec.ts:69:1 › TC27 | Changing pay period separates approval and payment totals
+[27/32] [chromium] › tests\payroll-ui.spec.ts:76:1 › TC28 | Core screens reflow at 320 pixels without page overflow
+[28/32] [chromium] › tests\payroll-ui.spec.ts:86:1 › TC29 | Keyboard navigation reaches content and payroll confirmation
+[29/32] [chromium] › tests\payroll-ui.spec.ts:97:1 › TC30 | Employee details lead to the correct earning destination
+[30/32] [chromium] › tests\payroll-ui.spec.ts:102:1 › TC31 | Payroll screens use product language and show standard totals
+[31/32] [chromium] › tests\payroll-ui.spec.ts:109:1 › TC32 | Notification recovery is visible and leaves the receipt unchanged
+[32/32] [chromium] › tests\payroll-ui.spec.ts:117:1 › TC33 | Separate tabs retain their workspace and pay period after reload
+  32 passed (1.6m)

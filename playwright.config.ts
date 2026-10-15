@@ -11,8 +11,8 @@ export default defineConfig({
   projects: [{ name: 'chromium', use: { browserName: 'chromium', channel: 'chromium' } }],
   webServer: [
     { command: 'node server/index.mjs', url: 'http://127.0.0.1:4184/api/health', reuseExistingServer: false,
-      env: { REWARDS_DB: 'data/playwright.sqlite', PORT: '4184', HOST: '127.0.0.1' }, timeout: 60000 },
+      env: { PAYROLL_DB: 'data/payroll-playwright.sqlite', PORT: '4184', HOST: '127.0.0.1' }, timeout: 60000 },
     { command: 'node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 5183', url: 'http://127.0.0.1:5183', reuseExistingServer: false,
-      env: { REWARDS_API_PORT: '4184' }, timeout: 60000 },
+      env: { PAYROLL_API_PORT: '4184' }, timeout: 60000 },
   ],
 });

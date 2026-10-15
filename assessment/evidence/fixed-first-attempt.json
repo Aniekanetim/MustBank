@@ -1,119 +1,146 @@
 {
-  "id": "0501f16f-2fd7-4e74-a31a-83711039ed12",
-  "mode": "fixed",
-  "createdAt": "2026-10-15T00:57:36.255Z",
-  "window": {
+  "id": "21a714cc-6620-4b2b-84bf-69fbe1f9b862",
+  "company": "Northstar Studio",
+  "currency": "NGN",
+  "period": {
     "scheduledFor": "2026-10-13T09:00:00.000Z",
     "start": "2026-10-05T00:00:00.000Z",
     "end": "2026-10-12T00:00:00.000Z"
   },
-  "tasks": [
+  "employees": [
     {
-      "taskId": "task-001",
-      "userId": "user-001",
-      "title": "Paperless statement enrolment",
-      "completedAt": "2026-10-08T12:00:00.000Z",
-      "status": "completed"
+      "id": "emp-001",
+      "name": "Amara Okafor",
+      "role": "Product designer",
+      "department": "Design",
+      "bank": "Meridian Bank",
+      "accountEnding": "4821"
+    },
+    {
+      "id": "emp-002",
+      "name": "Daniel Mensah",
+      "role": "Software engineer",
+      "department": "Engineering",
+      "bank": "Union Coast Bank",
+      "accountEnding": "3068"
+    },
+    {
+      "id": "emp-003",
+      "name": "Zara Bello",
+      "role": "Operations associate",
+      "department": "Operations",
+      "bank": "Meridian Bank",
+      "accountEnding": "7290"
     }
   ],
-  "payouts": [
+  "earnings": [
     {
-      "id": "e55afad2-33bf-49f9-983e-66d7058bdebd",
-      "taskId": "task-001",
-      "userId": "user-001",
-      "credits": 10,
-      "weekStart": "2026-10-05T00:00:00.000Z",
-      "createdAt": "2026-10-15T00:57:42.403Z"
+      "earningId": "earn-001",
+      "employeeId": "emp-001",
+      "description": "Weekly project earnings",
+      "earnedAt": "2026-10-08T12:00:00.000Z",
+      "amountMinor": 15000000,
+      "status": "approved"
+    }
+  ],
+  "entries": [
+    {
+      "employeeId": "emp-001",
+      "expectedMinor": 15000000,
+      "paidMinor": 15000000,
+      "earningIds": [
+        "earn-001"
+      ],
+      "paymentCount": 1
+    }
+  ],
+  "payments": [
+    {
+      "id": "724d23cb-768d-4766-9a41-f5c90efd642a",
+      "employeeId": "emp-001",
+      "employeeName": "Amara Okafor",
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "amountMinor": 15000000,
+      "bank": "Meridian Bank",
+      "accountEnding": "4821",
+      "createdAt": "2026-10-15T12:49:06.069Z"
     }
   ],
   "notifications": [
     {
-      "id": "cf045b94-7154-45a3-8d83-f48bfcf3e674",
-      "payoutId": "e55afad2-33bf-49f9-983e-66d7058bdebd",
-      "taskId": "task-001",
+      "id": "fd650f6b-71aa-489e-bd5a-c95a06165d9b",
+      "paymentId": "724d23cb-768d-4766-9a41-f5c90efd642a",
+      "employeeId": "emp-001",
+      "employeeName": "Amara Okafor",
+      "periodStart": "2026-10-05T00:00:00.000Z",
       "state": "pending",
       "attempts": 1,
-      "lastError": "Simulated notification provider unavailable before acceptance."
+      "lastError": "Notification delivery unavailable. Retry the notification."
     }
   ],
-  "receipts": [],
+  "runs": [
+    {
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "periodEnd": "2026-10-12T00:00:00.000Z",
+      "scheduledFor": "2026-10-13T09:00:00.000Z",
+      "createdAt": "2026-10-15T12:49:06.040Z",
+      "expectedMinor": 15000000
+    }
+  ],
+  "locked": true,
+  "expectedMinor": 15000000,
+  "paidMinor": 15000000,
+  "pendingApprovals": 0,
+  "pendingNotifications": 1,
+  "providerAccepted": 0,
   "events": [
     {
-      "id": 1330,
-      "event": "example_created",
-      "taskId": null,
+      "event": "earnings_recorded",
+      "employeeId": null,
       "detail": {
-        "mode": "fixed",
-        "fixture": "empty"
+        "count": 1
       },
-      "createdAt": "2026-10-15T00:57:36.289Z"
+      "createdAt": "2026-10-15T12:49:00.494Z"
     },
     {
-      "id": 1332,
       "event": "failure_armed",
-      "taskId": null,
+      "employeeId": null,
       "detail": {
         "kind": "notification"
       },
-      "createdAt": "2026-10-15T00:57:37.000Z"
+      "createdAt": "2026-10-15T12:49:00.880Z"
     },
     {
-      "id": 1333,
-      "event": "payout_committed",
-      "taskId": "task-001",
+      "event": "payment_committed",
+      "employeeId": "emp-001",
       "detail": {
-        "credits": 10
+        "paymentId": "724d23cb-768d-4766-9a41-f5c90efd642a",
+        "amountMinor": 15000000
       },
-      "createdAt": "2026-10-15T00:57:42.424Z"
+      "createdAt": "2026-10-15T12:49:06.083Z"
     },
     {
-      "id": 1334,
       "event": "notification_attempted",
-      "taskId": "task-001",
+      "employeeId": "emp-001",
       "detail": {},
-      "createdAt": "2026-10-15T00:57:42.434Z"
+      "createdAt": "2026-10-15T12:49:06.093Z"
     },
     {
-      "id": 1335,
       "event": "notification_failed",
-      "taskId": "task-001",
+      "employeeId": "emp-001",
       "detail": {
-        "error": "Simulated notification provider unavailable before acceptance."
+        "messageId": "fd650f6b-71aa-489e-bd5a-c95a06165d9b",
+        "error": "Notification delivery unavailable. Retry the notification."
       },
-      "createdAt": "2026-10-15T00:57:42.467Z"
+      "createdAt": "2026-10-15T12:49:06.119Z"
     },
     {
-      "id": 1336,
-      "event": "settlement_finished",
-      "taskId": null,
+      "event": "pay_run_finished",
+      "employeeId": null,
       "detail": {
-        "eligibleTasks": 1,
-        "paidNow": 1,
-        "failures": [
-          {
-            "taskId": "task-001",
-            "stage": "notification",
-            "error": "Simulated notification provider unavailable before acceptance."
-          }
-        ],
-        "window": {
-          "scheduledFor": "2026-10-13T09:00:00.000Z",
-          "start": "2026-10-05T00:00:00.000Z",
-          "end": "2026-10-12T00:00:00.000Z"
-        }
+        "scheduledFor": "2026-10-13T09:00:00.000Z"
       },
-      "createdAt": "2026-10-15T00:57:42.478Z"
+      "createdAt": "2026-10-15T12:49:06.131Z"
     }
-  ],
-  "balances": {
-    "user-001": 10
-  },
-  "totalCredits": 10,
-  "pendingNotifications": 1,
-  "armedFailures": {
-    "notification": 0,
-    "payout": 0,
-    "persistence": 0,
-    "ambiguous": 0
-  }
+  ]
 }

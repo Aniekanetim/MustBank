@@ -1,36 +1,52 @@
-# QA-001: settlement replay duplicates a paid reward
+# PAY-001: Payroll retry creates a second employee payment
 
-**Notification failure leaves a task eligible for payment again in the deliberately faulty assessment mode.** The first settlement commits 10 credits. Retrying the same settlement produces a second payout, taking the balance to 20 instead of 10.
+**Severity: P1 — release blocker for the affected payment flow.** A retry can make recorded pay exceed approved earnings. The severity describes the consequence of the controlled local defect; no real employee, loss or production incident is claimed.
 
-## Environment and reproduction
+## Rule and preconditions
 
-Use this fork's assessment branch, Node 22.21.0, and Chromium as recorded in [summary.json](evidence/summary.json). The failure is in the new rewards module, not the original bank transfer implementation. Follow the [README setup](../README.md).
+Amara Okafor has one approved earning of ₦150,000 inside the 5–11 October 2026 UTC period. The pay date is 13 October at 09:00 UTC. The employee is owed one ₦150,000 payment. Notification recovery must preserve it.
 
-1. With the built local app running, run `npm run scenario -- --behavior faulty --fail-notification` in a second terminal. This creates an isolated rewards account and prepares the delivery failure outside the banking UI.
-2. Open its printed **Operations URL**. Keep scheduled run `2026-10-13T09:00:00Z`. The single activity completed on 8 October is inside the window.
-3. Click **Run settlement**. Payment succeeds; delivery fails. Observe 10 credits, one payout and one pending confirmation.
-4. Click **Run settlement** again with the same scheduled time.
+Start the local application using the [README](../README.md), then prepare the failing example:
 
-| Expected | Observed in faulty mode |
-|---|---|
-| One 10-credit payout; recover the existing notification | Two payouts totaling 20 credits; a new notification succeeds while the original failed message stays pending |
+~~~sh
+npm run scenario -- --behavior faulty --fail-notification
+~~~
 
-## Impact and severity
+Open the printed pay-run URL. The workspace is isolated, synthetic and deliberately configured with faulty completion logic. The one-shot notification fault occurs before provider acceptance.
 
-Severity is **high / P1** for the represented business rule: recovery changes the balance incorrectly and can create duplicate liability. The trigger is a partial failure followed by an ordinary retry. This blocks release of the faulty rewards behavior. There is no evidence of real financial loss, affected production users or incident frequency; all records here are simulated.
+## Reproduce
 
-## Root cause
+1. Check that approved pay is ₦150,000 and recorded pay is ₦0.
+2. Select Review and process payroll, then Process payroll in the confirmation dialog.
+3. Inspect Payments and Notifications. One ₦150,000 payment exists; its notification is pending.
+4. Return to Pay runs, select Retry pay run and confirm.
+5. Inspect the employee breakdown and payment records.
 
-The faulty branch in [server/rewards.mjs](../server/rewards.mjs) uses `processed_tasks` to decide whether a task is already settled. The marker is written in `deliver()` only after notification success. Payment commits earlier, creating an inconsistent state: **payment exists, completion marker absent**. The retry consults the absent marker rather than the durable payout and creates a second record. Faulty mode intentionally omits the corrected payout uniqueness guard.
+| Observation | Expected | Faulty behavior |
+|---|---|---|
+| Payment count after retry | 1 | 2 |
+| Recorded employee pay | ₦150,000 | ₦300,000 |
+| Approved employee pay | ₦150,000 | ₦150,000 |
+| Pending notification work after retry | 0 | 1 |
 
-[First-attempt records](evidence/faulty-first-attempt.json) contain the payment and failed delivery. [Replay records](evidence/faulty-scenario.json) contain two payouts for the same task. The [screenshot](evidence/faulty-reproduction.png), [trace](evidence/faulty-trace.zip) and [TC10 report](evidence/faulty-playwright.json) show the UI and failed 10-credit assertion.
+The interface surfaces the resulting payment mismatch. The release must still be blocked: detecting an incorrect payment after it is recorded is not prevention.
 
-## Fix and verification
+## Cause and correction
 
-The corrected branch treats the payout as payment completion, protected by a unique `(scenario_id, task_id)` index. It saves the payout and pending notification work in one SQLite transaction. After commit, delivery can succeed or stay pending; neither path changes whether the task was paid. Replaying settlement skips existing payouts and dispatches pending messages. Notification-only retry also leaves the ledger untouched.
+In [the payroll service](../server/payroll.mjs), faulty processing checks a completion marker written only after notification success. The first payment commits, but delivery failure leaves the marker absent. Retry sees the entry as unprocessed and records another payment.
 
-Prepare the corrected reference with `npm run scenario -- --behavior fixed --fail-notification`, open its Operations URL, and repeat the same two settlement actions. TC10 uses **the same controls and expected 10-credit result** in both modes. It fails against faulty behavior at 20 credits and passes against the corrected reference at 10. The [corrected snapshot](evidence/fixed-scenario.json) shows one payout and recovered delivery. TC08, TC11–TC13, TC17, TC18 and TC22 check successful replay, persistence, rollback, overlapping requests, acknowledgment loss and browser recovery.
+The corrected implementation checks the durable employee-period payment identity, reinforces it with a unique index, and commits payment plus pending notification work atomically. Notification attempts occur after commit. Retry finds the original payment and recovers the existing message. It does not create another payment.
 
-## Release blockers
+Prepare the corrected example with the same earning and failure:
 
-Block release if a repeated task adds a payout, notification failure changes an existing balance, payment failure produces a success message, or persisted payment loses recovery work. Require the corrected cases to pass and controlled TC10 failure to remain reproducible. `npm run verify` checks both; [CI](../.github/workflows/quest.yml) repeats it. Faulty behavior is retained in local fixture tooling and documented evidence. It has no customer-facing switch and must never become production payment behavior.
+~~~sh
+npm run scenario -- --behavior fixed --fail-notification
+~~~
+
+Repeat the same actions and expectation. The result is one ₦150,000 payment, unchanged approved pay and no pending notification after recovery.
+
+## Evidence and release blockers
+
+[TC10](../tests/payroll-ui.spec.ts) performs the UI actions and applies the same ₦150,000 assertion to both implementations. [Faulty state](evidence/faulty-workspace.json), [corrected state](evidence/fixed-workspace.json), [faulty screenshot](evidence/faulty-reproduction.png), [corrected screenshot](evidence/fixed-reproduction.png), [expected assertion failure](evidence/faulty-run.log) and [failure trace](evidence/faulty-trace.zip) make the result reviewable. The [summary](evidence/summary.json) records the assessed source fingerprints and environment.
+
+Block release if retry changes an existing payment identity or amount, two fixed payments share an employee-period key, failed notification removes payment, failed payment emits a message, pre-commit interruption leaves an orphan, or period totals fail reconciliation. TC08–TC17 cover these paths, including fresh-process recovery. External banking and distributed workers require additional integration evidence before production use.

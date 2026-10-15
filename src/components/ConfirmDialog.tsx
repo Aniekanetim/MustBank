@@ -12,6 +12,6 @@ export function ConfirmDialog({ open, title, description, confirmLabel, cancelLa
     onCancel={event => { event.preventDefault(); onCancel(); }}>
     <h2 id="confirm-title">{title}</h2><p id="confirm-description">{description}</p>
     <div className="form-actions"><button className="btn-secondary" onClick={onCancel} autoFocus>{cancelLabel}</button>
-      <button className="btn-danger" onClick={onConfirm}>{confirmLabel}</button></div>
+      <button className="btn-primary" onClick={onConfirm}>{confirmLabel}</button></div>
   </dialog>;
 }
