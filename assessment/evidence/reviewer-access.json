@@ -1,9 +1,150 @@
 {
-  "status": "pending-post-publication-check",
-  "checkedAt": null,
+  "checkedAt": "2026-10-15T16:08:30.467Z",
+  "ref": "65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b",
+  "repository": "https://github.com/Aniekanetim/MustBank",
   "credentialsSent": false,
-  "allAccessible": false,
-  "checks": [],
-  "note": "Run npm run reviewer:access after publishing the updated documents. This placeholder is not evidence of successful access.",
-  "exclusions": ["Final Loom not supplied.", "Genuine portfolio-case URLs not supplied."]
+  "allAccessible": true,
+  "checks": [
+    {
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/README.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 6078,
+      "sha256": "13f53ac0ca6aca0bfbe4500feab98db9d08dd7b70cc53f252c0f2108d90ccb6a"
+    },
+    {
+      "file": "assessment/intent.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/intent.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 4207,
+      "sha256": "a1240bcda150d610b4ad2bf43b9b343e1389a64af69f234f5ea48f5e63c02fa8"
+    },
+    {
+      "file": "assessment/directive.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/directive.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 8393,
+      "sha256": "a1caa081462efbac64adba65dd1c088b15014be6245e16d4e5cd4998c35c8f7a"
+    },
+    {
+      "file": "assessment/test-cases.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/test-cases.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 6495,
+      "sha256": "6818a3b986d7a3f9503b77c7d00666f3107d7e1d5342c0dde2bf8e099f4ce037"
+    },
+    {
+      "file": "assessment/defect-report.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/defect-report.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 4346,
+      "sha256": "1fed91e5ee05dcc94305b66844c15ffabb3d19bf8eeb341cf59edc8af6c83e24"
+    },
+    {
+      "file": "assessment/release-readiness.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/release-readiness.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 4794,
+      "sha256": "ff6556ea26c9ce4b99366cef728359f37b5de89d034d9830d0c34dc330a27296"
+    },
+    {
+      "file": "assessment/operations-runbook.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/operations-runbook.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 4487,
+      "sha256": "5e1efcad199acdd405c800cf5a19d0bf2c7f1e61bd3de04efb4cb3e0157054a9"
+    },
+    {
+      "file": "assessment/ai-accountability.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/ai-accountability.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 3416,
+      "sha256": "a975e48072be6d18e6067c2f2fcb16739e0a631e9bdf189c21874ce2e1a7ae3e"
+    },
+    {
+      "file": "assessment/personal-review.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/personal-review.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 2229,
+      "sha256": "8e64a2eff174608002e88ee2e859ec328354c8db75a910bc32bc90f5b8c285a1"
+    },
+    {
+      "file": "assessment/loom-script.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/loom-script.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 4188,
+      "sha256": "0561493734930599957dde6099b964a1fd6dd6567462c066a2fd2386b7c8215f"
+    },
+    {
+      "file": "assessment/evidence/summary.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/evidence/summary.json",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 7059,
+      "sha256": "430b834cc519008d113da0cc3407bb85c5ab1123e178bf7657659b64d5c7c015"
+    },
+    {
+      "file": "assessment/evidence/business-proof.md",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/evidence/business-proof.md",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 2666,
+      "sha256": "91a1e30aef232ec443b6bb69e4ea8e6173c42ba59b7b4d1bd67ac94684bef6e9"
+    },
+    {
+      "file": "assessment/evidence/business-proof.json",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/evidence/business-proof.json",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 2611,
+      "sha256": "e3492c6f866e519ca1cca2dbb8d73904bb21785e2f13f6b0a4d9fe822108d3b6"
+    },
+    {
+      "file": "assessment/evidence/faulty-reproduction.png",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/evidence/faulty-reproduction.png",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 89628,
+      "sha256": "439edf54c563fd5a0ec206ff22fdbee36afb83152ba55e304dbe8669b8fc70ba"
+    },
+    {
+      "file": "assessment/evidence/fixed-reproduction.png",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/assessment/evidence/fixed-reproduction.png",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 86045,
+      "sha256": "e67fed3f7068eae61c8d3993947130ede5584ab51dfa13d6de5fa1ce00813ab8"
+    },
+    {
+      "file": "tests/payroll-ui.spec.ts",
+      "url": "https://raw.githubusercontent.com/Aniekanetim/MustBank/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b/tests/payroll-ui.spec.ts",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 12793,
+      "sha256": "6916e5ee081b86b2e163752c420ab204c0dd7c2353abc7b8776e88a557ae1687"
+    },
+    {
+      "file": "runnable project archive",
+      "url": "https://codeload.github.com/Aniekanetim/MustBank/zip/65a9f4e1555411cfcdb8811aa7d79e9fc6c6f97b",
+      "status": 200,
+      "accessibleWithoutCredentials": true,
+      "bytes": 1395774,
+      "sha256": "91f4597c9bbc2c9a66c4813953fff22492b9f414da287a03dcd6527ce45a24a7"
+    }
+  ],
+  "exclusions": [
+    "No final Loom URL supplied.",
+    "No genuine portfolio-case URLs supplied.",
+    "Access at this timestamp is not a guarantee of future hosting availability."
+  ]
 }
