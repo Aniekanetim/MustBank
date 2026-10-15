@@ -1,69 +1,47 @@
 # MustPayroll
 
-MustPayroll reviews approved earnings, processes weekly pay runs and recovers payment notifications using synthetic employees and a local payment ledger. It connects to no real bank or payroll provider.
+MustPayroll models approved earnings, weekly pay runs and notification recovery using synthetic employees and a local payment ledger. The buggy and fixed applications are complete, separate projects. The QA project sits beside their container.
 
-## QA project
-
-Start with the [QA project guide](qa/README.md). The [eight-case core suite](qa/test-cases/core-payroll-regression.csv) and [complete 34-check suite](qa/test-cases/payroll-test-suite.csv) use standard test-management columns. Open the [buggy execution](qa/executions/buggy/README.md) or [fixed execution](qa/executions/fixed/README.md) for its results table, Playwright report, logs, artifacts and build identity.
-
-## Run the applications independently
-
-| Application | Plain folder | Local URL | Executed test record |
-|---|---|---|---|
-| Buggy | [builds/buggy](builds/buggy) | http://127.0.0.1:4175/overview | [Before correction](qa/executions/buggy/README.md) |
-| Fixed | [builds/fixed](builds/fixed) | http://127.0.0.1:4176/overview | [After correction](qa/executions/fixed/README.md) |
-
-Each folder contains its own backend, payment implementation, compiled interface and package.json. Use Node.js 22.13 or later. No dependency installation is needed to run either folder.
-
-From the repository root, start the buggy app in one terminal:
-
-~~~sh
-npm --prefix builds/buggy start
+~~~text
+MustBank/
+  Mustpayroll_buggy/       Independent application with the controlled defect
+  MustPayroll_fixed/      Independent application with the correction
+MustPayroll_QA/
+  test-cases/             Shared eight-case core and 34-check full suite
+  tests/                  Shared Playwright and fresh-process checks
+  scripts/                Test execution, fixtures and report generation
+  executions/buggy/       Actual results and reports for the buggy application
+  executions/fixed/       Actual results and reports for the fixed application
+  assessment/             intent.md, directive.md, defect report and handoff
+  supporting-media/       Optional historical screenshots and recordings
 ~~~
 
-Start the fixed app in another terminal:
+## Run either application
 
-~~~sh
-npm --prefix builds/fixed start
-~~~
+Requires Node.js 22.13 or later. Each application includes its own source, server, compiled interface, dependency lockfile, build tooling and database location. Starting it uses no external dependencies or files from its sibling or the QA project.
 
-Each app keeps its own database at data/payroll.sqlite inside its folder. The API rejects attempts to switch implementation. The UI uses ordinary payroll language; failure preparation stays in local setup tooling.
+| Application | Start from this repository root | Address |
+|---|---|---|
+| [Buggy application](MustBank/Mustpayroll_buggy) | npm --prefix MustBank/Mustpayroll_buggy start | http://127.0.0.1:4175/overview |
+| [Fixed application](MustBank/MustPayroll_fixed) | npm --prefix MustBank/MustPayroll_fixed start | http://127.0.0.1:4176/overview |
 
-## Confirm the failure and correction
+Each application can also be copied to another location and started there with npm start. No dependency installation is required to serve its compiled interface. Its own README explains independent rebuilding and development. Each writes only to its own data/payroll.sqlite by default.
 
-With both apps running, prepare one fresh example in each:
+## Review and reproduce the QA work
 
-~~~sh
-npm --prefix builds/buggy run scenario -- --fail-notification
-npm --prefix builds/fixed run scenario -- --fail-notification
-~~~
+Start with the [QA guide](MustPayroll_QA/README.md), [setup instructions](MustPayroll_QA/SETUP.md) and [directive](MustPayroll_QA/assessment/directive.md).
 
-Open each command's printed pay-run URL. The employee is owed NGN150,000. Process payroll once, observe the successful payment and pending notification, then retry that same pay run. The buggy app records two payments totaling NGN300,000. The fixed app preserves the original NGN150,000 payment and recovers its original message. These defects were introduced for the local example; they are not incidents discovered in the upstream sample or a live MUST product.
+| Target | Eight completed cases | Full execution |
+|---|---|---|
+| Buggy | [Core results](MustPayroll_QA/executions/buggy/core-results.csv) | [Run record and reports](MustPayroll_QA/executions/buggy/README.md) |
+| Fixed | [Core results](MustPayroll_QA/executions/fixed/core-results.csv) | [Run record and reports](MustPayroll_QA/executions/fixed/README.md) |
 
-## Build, test and review
+The same eight core cases run against each application with unchanged inputs and expectations. The full shared suite contains 33 Playwright checks and one separate fresh-process check per application. Run the complete verification from MustPayroll_QA after following its setup instructions.
 
-The shared editable source is in src/, server/ and tests/. To rebuild both folders and execute the same full suite against each:
-
-~~~sh
-npm ci
-npx playwright install --no-shell chromium
-npm run verify
-~~~
-
-Verification updates builds/buggy and builds/fixed while preserving their databases. It checks the exact runtime file hashes and served build IDs, executes 33 browser/API checks and one fresh-process check against each folder, and regenerates two test records with logs, state evidence and real TC10 browser videos. The known faulty failures must occur for the documented business reasons; all 34 fixed checks must pass. Unexpected failures, skips and timeouts fail verification.
-
-For a build without running tests, use npm run build:pair. The root commands npm run start:pair, npm run start:buggy and npm run start:fixed validate the generated files before launching. Development uses npm run dev, with the corrected API on port 4174 and Vite on 5173. Keep the unauthenticated servers on localhost.
-
-Start with [intent.md](assessment/intent.md), then [directive.md](assessment/directive.md). Follow the [payroll rules](assessment/business-rules.md), [case register](assessment/test-cases.md), [defect and cause](assessment/defect-report.md), [generated business proof](assessment/evidence/business-proof.md), [release decision](assessment/release-readiness.md) and [recovery runbook](assessment/operations-runbook.md). The [AI record](assessment/ai-accountability.md), [personal review](assessment/personal-review.md) and [Loom script](assessment/loom-script.md) support the candidate's own handoff.
-
-The supplied transcript is the working source of truth, adapted to payroll. The final candidate Loom and personal sign-off remain pending; automation recordings do not replace them.
-
-After publishing, run npm run reviewer:access to check documents, recordings and every file needed to run both app folders without sending credentials. Add -- --ref followed by a full commit SHA to pin the check. The [access report](assessment/evidence/reviewer-access.json) excludes the final Loom until its link is supplied. A public payroll deployment is not required to reproduce this local project.
+The required submission includes the candidate's Loom, intent.md and final directive.md, linking the runnable test project, cases/results, defect report and release checklist. Evidence is required by the brief; screenshots and browser automation recordings are optional formats. The [evidence requirement review](MustPayroll_QA/assessment/evidence-requirements.md) identifies the exact wording. The final candidate Loom and personal sign-off remain pending.
 
 ## Scope and provenance
 
-The payroll model pays the sum of approved project earnings. Taxes, deductions, salaried proration, leave, benefits, employee changes, external banking, authentication and statutory compliance are outside this exercise. NGN provides a concrete display currency; this is not payroll or legal advice. The simulated provider records notification acceptance, not verified delivery to a real inbox.
+No real funds, bank services, employee records or employer credentials are used. Taxes, statutory payroll compliance, authentication and distributed processing are outside the verified scope. Keep the unauthenticated servers on localhost.
 
-The project began from the MIT-licensed sample by Amit Rawat, pinned at upstream commit 73d83074e7ea0c40f8273455ebcb611b7088fd5a. Its original [license notice](LICENSE) is preserved. Payroll logic, local persistence, the redesigned interface and assessment evidence were added in this fork. The existing repository URL and branch name are retained to preserve its review history; the current product is MustPayroll.
-
-AI assistance was used for implementation, test design, investigation and document drafting. Aniekan must personally review the evidence, explain the decisions and record the final Loom. No live incident, measured customer loss, employer data or reviewer-assigned score is claimed.
+This MIT-licensed fork retains the original sample's [license](LICENSE) and review history. The current payroll service, interface and controlled defect were introduced for this exercise; no discovered upstream incident or production loss is claimed. AI supported implementation, testing and writing; the candidate owns personal review and final release judgment.

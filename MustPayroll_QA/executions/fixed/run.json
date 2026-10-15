@@ -1,0 +1,307 @@
+{
+  "application": "MustPayroll",
+  "variant": "fixed",
+  "generatedAt": "2026-10-15T19:00:29.718Z",
+  "buildId": "mustpayroll-0.2.0-fixed-ae0d6c08a187",
+  "directory": "../MustBank/MustPayroll_fixed",
+  "executionDirectory": "executions/fixed",
+  "runtimeSha256": "ca73d4d610877f4d413ece2f3e418c722f162b68ab4814d4a8965a3f966f5fcf",
+  "manifestSha256": "165860bd67c5490be8de6bbae5ed99275eaac9da0daca46bff6b79983d8dbd76",
+  "sourceFingerprint": "ae0d6c08a187ccdbfed9c70db2eb7912df3776035ccc71deaa39c8ae09b5ebad",
+  "verificationFingerprint": "4d63aa3791738ab30e258143dc1ddd2472cf31959bcb574c465bdefabd1caab7",
+  "testSuiteSha256": "05df1d1121ea945ba8898ec6018d0bb6fbeadbd12efd83368ea78d5d5cf74db0",
+  "catalogueSha256": "d3945f44bf8504b51a1ca110bf2270b4df46a3610ac1e79af7f3ee815d964ed0",
+  "environment": {
+    "node": "v22.21.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "chromium": "156.0.8078.4"
+  },
+  "testedUrl": "http://127.0.0.1:4184",
+  "servedBuild": {
+    "status": "ok",
+    "storage": "sqlite",
+    "application": "MustPayroll",
+    "schemaVersion": 2,
+    "build": {
+      "id": "mustpayroll-0.2.0-fixed-ae0d6c08a187",
+      "variant": "fixed",
+      "defaultPort": 4176,
+      "sourceSha256": "ae0d6c08a187ccdbfed9c70db2eb7912df3776035ccc71deaa39c8ae09b5ebad"
+    }
+  },
+  "commands": {
+    "completeVerification": "npm run verify",
+    "browserAndApi": "QUEST_BEHAVIOR=fixed npx playwright test",
+    "freshProcess": "PAYROLL_TEST_BUILD_DIR=../MustBank/MustPayroll_fixed node --test tests/service.test.mjs"
+  },
+  "exitCodes": {
+    "playwright": 0,
+    "freshProcess": 0
+  },
+  "playwrightReportSha256": "1ef3c1e5b35acb6d8a94ddbb6f56d8bdacd4e3d777b04fe96ac278c96592d8cd",
+  "total": 34,
+  "passed": 34,
+  "failed": 0,
+  "playwright": {
+    "total": 33,
+    "passed": 33,
+    "failed": 0
+  },
+  "freshProcess": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0
+  },
+  "core": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0
+  },
+  "cases": [
+    {
+      "id": "TC01",
+      "title": "Approved earnings aggregate into one payment per employee",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Exactly three payments total NGN435,000. Amara receives one NGN150,000 payment. Every payment notification is sent."
+    },
+    {
+      "id": "TC02",
+      "title": "Opening Monday midnight is included",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: The opening-boundary earning is included; recorded pay is NGN150,000."
+    },
+    {
+      "id": "TC03",
+      "title": "Following Monday midnight belongs to the next period",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: The first run pays NGN40,000 from start + last only. The NGN40,000 closing-boundary earning is paid in the next period; two payment records exist across both periods."
+    },
+    {
+      "id": "TC04",
+      "title": "Lagos offset is normalized before period selection",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Only inside qualifies. outside normalizes to the preceding Sunday; inside normalizes to opening Monday midnight. Total recorded pay is NGN150,000."
+    },
+    {
+      "id": "TC05",
+      "title": "Reimporting an identical earning never increases pay",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: One earning record remains; one payment records NGN150,000."
+    },
+    {
+      "id": "TC06",
+      "title": "Conflicting duplicate rolls back the entire import",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: HTTP 409. The new record is rolled back and the original earning remains unchanged; the list still has one earning."
+    },
+    {
+      "id": "TC07",
+      "title": "Pending approval blocks payment and leaves the period open",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: HTTP 409. The period remains open; no payment or notification exists."
+    },
+    {
+      "id": "TC08",
+      "title": "Failed payment creates no notification and can be retried",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: First attempt: zero payment, zero notification and zero provider acceptance. Retry: one NGN150,000 payment."
+    },
+    {
+      "id": "TC09",
+      "title": "Notification failure preserves the successful payment",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: The NGN150,000 payment remains recorded. One notification is pending, no provider acceptance exists, and payment_committed occurs before notification_attempted."
+    },
+    {
+      "id": "TC10",
+      "title": "Retrying after notification failure preserves the approved payroll",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Observed 1 payment(s), NGN150,000.00 recorded and 0 pending notification(s)."
+    },
+    {
+      "id": "TC11",
+      "title": "Fresh process preserves employee-period payment identity",
+      "result": "passed",
+      "framework": "Node fresh process",
+      "actual": "Observed 1 payment(s), NGN150,000.00 recorded and 0 pending notification(s)."
+    },
+    {
+      "id": "TC12",
+      "title": "Notification-only recovery never changes payment identity",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Payment objects remain unchanged, pending notification count becomes zero, and provider acceptance is exactly one."
+    },
+    {
+      "id": "TC13",
+      "title": "Interruption rolls back payment and outbox together",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "After interruption: 0 payment(s), 0 notification(s). Rollback event recorded: true."
+    },
+    {
+      "id": "TC14",
+      "title": "Lost provider acknowledgement recovers without duplicate acceptance",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Observed 1 payment(s), NGN150,000.00 recorded and 0 pending notification(s)."
+    },
+    {
+      "id": "TC15",
+      "title": "A processed period rejects new earnings and preserves approved totals",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Import returns HTTP 409. Approved and recorded payroll remain NGN150,000."
+    },
+    {
+      "id": "TC16",
+      "title": "Eight overlapping requests in one server record one payment",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Observed 1 payment(s), NGN150,000.00 recorded and 0 pending notification(s)."
+    },
+    {
+      "id": "TC17",
+      "title": "The same employee can receive a separate payment in another period",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Next-period recorded pay is NGN50,000. Two pay runs and two employee-period payment records exist."
+    },
+    {
+      "id": "TC18",
+      "title": "Invalid dates and ambiguous timestamps are rejected",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Every invalid request returns HTTP 400."
+    },
+    {
+      "id": "TC19",
+      "title": "Amounts use positive bounded whole kobo",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Invalid imports return HTTP 400. One kobo is accepted and pays NGN0.01."
+    },
+    {
+      "id": "TC20",
+      "title": "Unknown employees cannot acquire earnings or payments",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Unknown-employee import returns HTTP 400; empty approved payroll returns HTTP 409."
+    },
+    {
+      "id": "TC21",
+      "title": "Isolated workspaces do not share earnings or payment identity",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: A does not alter B. B can independently record its own NGN150,000 payment."
+    },
+    {
+      "id": "TC22",
+      "title": "Approval is explicit and replaying approval is harmless",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Approval replay is harmless; rejected approval returns HTTP 409. Only earn-001 contributes; total is NGN150,000."
+    },
+    {
+      "id": "TC23",
+      "title": "Record, approve and process earnings through the interface",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: The confirmation and resulting ledger both use NGN150,000.25."
+    },
+    {
+      "id": "TC24",
+      "title": "Cancelling payroll confirmation leaves the ledger and period unchanged",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Dialog closes, focus returns to its trigger, the period stays open and no payment is created."
+    },
+    {
+      "id": "TC25",
+      "title": "Receipt survives reload and can be copied and downloaded",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Receipt reference remains visible and unchanged. Clipboard contains that reference; downloaded receipt names Amara Okafor."
+    },
+    {
+      "id": "TC26",
+      "title": "Payment filter and CSV export contain the same employee records",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: One record is shown. Export contains Daniel and 200000.00, and excludes Amara."
+    },
+    {
+      "id": "TC27",
+      "title": "Changing pay period separates approval and payment totals",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Next-period label is 12–18 October 2026, recorded pay is NGN0.00, and one approval is pending."
+    },
+    {
+      "id": "TC28",
+      "title": "Core screens reflow at 320 pixels without page overflow",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: No route has horizontal page overflow; Pay runs navigation remains in the viewport."
+    },
+    {
+      "id": "TC29",
+      "title": "Keyboard navigation reaches content and payroll confirmation",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Skip link focuses main; route change focuses the page title; Cancel is first, Process payroll follows, and Escape restores trigger focus."
+    },
+    {
+      "id": "TC30",
+      "title": "Employee details lead to the correct earning destination",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Daniel details and destination are correct; the earning form preselects emp-002."
+    },
+    {
+      "id": "TC31",
+      "title": "Payroll screens use product language and show standard totals",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Overview shows Payroll overview and NGN435,000. No old banking, WebMCP or assessment labels appear in its rendered body."
+    },
+    {
+      "id": "TC32",
+      "title": "Notification recovery is visible and leaves the receipt unchanged",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: The payment is unchanged, pending count is zero and the completed recovery action is disabled."
+    },
+    {
+      "id": "TC33",
+      "title": "Separate tabs retain their workspace and pay period after reload",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: A keeps its own date and workspace. A shows NGN150,000 for its original period; B independently retains NGN435,000 and 13 October."
+    },
+    {
+      "id": "TC34",
+      "title": "Served build matches its package and cannot switch implementation",
+      "result": "passed",
+      "framework": "Playwright",
+      "actual": "Automated assertions passed: Served build ID and source fingerprint match the selected folder; policy-switch request returns HTTP 400."
+    }
+  ],
+  "primaryObservation": {
+    "approvedMinor": 15000000,
+    "recordedMinor": 15000000,
+    "payments": 1,
+    "pendingNotifications": 0
+  }
+}

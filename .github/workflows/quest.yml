@@ -10,13 +10,22 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: MustPayroll_QA
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '22.21.0'
           cache: npm
+          cache-dependency-path: |
+            MustPayroll_QA/package-lock.json
+            MustBank/Mustpayroll_buggy/package-lock.json
+            MustBank/MustPayroll_fixed/package-lock.json
       - run: npm ci
+      - run: npm ci --prefix ../MustBank/Mustpayroll_buggy
+      - run: npm ci --prefix ../MustBank/MustPayroll_fixed
       - run: npx playwright install --with-deps --no-shell chromium
       - run: npm run verify
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -24,10 +33,10 @@ jobs:
         with:
           name: mustpayroll-quest-evidence
           path: |
-            assessment/evidence/
-            assessment/builds/
-            qa/test-cases/
-            qa/executions/
-            builds/
-            output/playwright/
+            MustPayroll_QA/assessment/evidence/
+            MustPayroll_QA/assessment/builds/
+            MustPayroll_QA/test-cases/
+            MustPayroll_QA/executions/
+            MustBank/Mustpayroll_buggy/build-manifest.json
+            MustBank/MustPayroll_fixed/build-manifest.json
           retention-days: 14

@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aniekanetim/MustBank.git"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "name": "mustpayroll-qa",
+  "description": "External test design, automation, separate build executions and Quest handoff.",
+  "scripts": {
+    "build:pair": "node scripts/build-pair.mjs",
+    "start:pair": "node scripts/start-build.mjs both",
+    "start:buggy": "node scripts/start-build.mjs buggy",
+    "start:fixed": "node scripts/start-build.mjs fixed",
+    "test": "playwright test",
+    "test:service": "node --test tests/service.test.mjs",
+    "qa:design": "node scripts/test-suite.mjs",
+    "scenario": "node scripts/scenario.mjs",
+    "verify": "tsc --noEmit && node scripts/verify.mjs",
+    "evidence:report": "node scripts/report-evidence.mjs",
+    "reviewer:access": "node scripts/check-reviewer-access.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^22.20.5",
+    "typescript": "^5.6.3"
+  }
+}

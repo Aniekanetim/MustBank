@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-15T19:01:54.823066+00:00",
+  "checks": [
+    {
+      "applicationDirectory": "../MustBank/Mustpayroll_buggy",
+      "executionDirectory": "executions/buggy",
+      "url": "http://127.0.0.1:4175/overview",
+      "servedBuildId": "mustpayroll-0.2.0-faulty-c0f059dc3f59",
+      "executionBuildId": "mustpayroll-0.2.0-faulty-c0f059dc3f59",
+      "matches": true
+    },
+    {
+      "applicationDirectory": "../MustBank/MustPayroll_fixed",
+      "executionDirectory": "executions/fixed",
+      "url": "http://127.0.0.1:4176/overview",
+      "servedBuildId": "mustpayroll-0.2.0-fixed-ae0d6c08a187",
+      "executionBuildId": "mustpayroll-0.2.0-fixed-ae0d6c08a187",
+      "matches": true
+    }
+  ]
+}
