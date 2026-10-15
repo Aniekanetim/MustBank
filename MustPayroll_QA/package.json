@@ -21,9 +21,7 @@
     "test:service": "node --test tests/service.test.mjs",
     "qa:design": "node scripts/test-suite.mjs",
     "scenario": "node scripts/scenario.mjs",
-    "verify": "tsc --noEmit && node scripts/verify.mjs",
-    "evidence:report": "node scripts/report-evidence.mjs",
-    "reviewer:access": "node scripts/check-reviewer-access.mjs"
+    "verify": "tsc --noEmit && node scripts/verify.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1",

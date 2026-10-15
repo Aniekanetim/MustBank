@@ -1,10 +1,10 @@
-# Payroll execution comparison
+# Payroll test execution results
 
-The same suite, case IDs and positive business expectations run against two independent application folders.
+The same eight core cases and full 34-check suite run against each application. IDs, inputs, steps and expected results stay unchanged.
 
-| Build | Execution folder | Eight-case result sheet | Full result sheet | Total outcome |
+| Build | Eight completed cases | All completed cases | Execution record | Total result |
 |---|---|---|---|---|
-| [buggy app](../../MustBank/Mustpayroll_buggy) | [buggy execution](buggy/README.md) | [Core eight](buggy/core-results.csv) | [All 34](buggy/test-results.csv) | 29 pass / 5 fail |
-| [fixed app](../../MustBank/MustPayroll_fixed) | [fixed execution](fixed/README.md) | [Core eight](fixed/core-results.csv) | [All 34](fixed/test-results.csv) | 34 pass / 0 fail |
+| [buggy app](../../MustBank/Mustpayroll_buggy) | [Eight cases](buggy/core-results.csv) | [All 34](buggy/test-results.csv) | [Logs and actual results](buggy/README.md) | 29 passed / 5 failed |
+| [fixed app](../../MustBank/MustPayroll_fixed) | [Eight cases](fixed/core-results.csv) | [All 34](fixed/test-results.csv) | [Logs and actual results](fixed/README.md) | 34 passed / 0 failed |
 
-Each execution contains its Playwright HTML/JSON reports, console log, per-test artifacts, curated evidence, a separate Node fresh-process result, build identity and standard result tables. The eight-case subset is included in the 34 checks. Read [QA project organization](../README.md) and [business proof](../assessment/evidence/business-proof.md).
+Read the [defect report](../assessment/defect-report.md) and [release checklist](../assessment/release-readiness.md) for the meaning of these outcomes.

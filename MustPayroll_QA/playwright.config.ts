@@ -1,16 +1,15 @@
 import { defineConfig } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 const mode = process.env.QUEST_BEHAVIOR === 'faulty' ? 'faulty' : 'fixed';
-const pair = JSON.parse(readFileSync('assessment/builds/pair.json', 'utf8'));
+const pair = JSON.parse(readFileSync('config/builds.json', 'utf8'));
 const build = pair.builds[mode];
 
 export default defineConfig({
   testDir: './tests', testMatch: '**/*.spec.ts', fullyParallel: true,
   workers: 2, retries: 0, timeout: 30000,
-  outputDir: `${build.executionDirectory}/playwright/artifacts`,
-  reporter: [['line'], ['json', { outputFile: `${build.executionDirectory}/playwright/report.json` }],
-    ['html', { outputFolder: `${build.executionDirectory}/playwright/html-report`, open: 'never' }]],
-  use: { baseURL: 'http://127.0.0.1:4184', trace: 'retain-on-failure', screenshot: process.env.QA_CAPTURE_MEDIA === '1' ? 'only-on-failure' : 'off', viewport: { width: 1280, height: 900 } },
+  outputDir: `data/playwright/${mode}`,
+  reporter: [['line'], ['json', { outputFile: `${build.executionDirectory}/playwright/report.json` }]],
+  use: { baseURL: 'http://127.0.0.1:4184', trace: 'off', screenshot: 'off', video: 'off', viewport: { width: 1280, height: 900 } },
   projects: [{ name: 'chromium', use: { browserName: 'chromium', channel: 'chromium' } }],
   webServer: [
     { command: `node ${build.directory}/server/index.mjs`, url: 'http://127.0.0.1:4184/api/health', reuseExistingServer: false,

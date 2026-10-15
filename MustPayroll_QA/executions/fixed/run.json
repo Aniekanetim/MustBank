@@ -1,16 +1,12 @@
 {
   "application": "MustPayroll",
   "variant": "fixed",
-  "generatedAt": "2026-10-15T19:00:29.718Z",
+  "generatedAt": "2026-10-15T19:19:52.043Z",
   "buildId": "mustpayroll-0.2.0-fixed-ae0d6c08a187",
   "directory": "../MustBank/MustPayroll_fixed",
   "executionDirectory": "executions/fixed",
-  "runtimeSha256": "ca73d4d610877f4d413ece2f3e418c722f162b68ab4814d4a8965a3f966f5fcf",
-  "manifestSha256": "165860bd67c5490be8de6bbae5ed99275eaac9da0daca46bff6b79983d8dbd76",
   "sourceFingerprint": "ae0d6c08a187ccdbfed9c70db2eb7912df3776035ccc71deaa39c8ae09b5ebad",
-  "verificationFingerprint": "4d63aa3791738ab30e258143dc1ddd2472cf31959bcb574c465bdefabd1caab7",
-  "testSuiteSha256": "05df1d1121ea945ba8898ec6018d0bb6fbeadbd12efd83368ea78d5d5cf74db0",
-  "catalogueSha256": "d3945f44bf8504b51a1ca110bf2270b4df46a3610ac1e79af7f3ee815d964ed0",
+  "testSuiteSha256": "136b668803ef756597ec8fc5a8492c09161733c927f1caf285865351af3ddebb",
   "environment": {
     "node": "v22.21.0",
     "platform": "win32",
@@ -30,16 +26,12 @@
       "sourceSha256": "ae0d6c08a187ccdbfed9c70db2eb7912df3776035ccc71deaa39c8ae09b5ebad"
     }
   },
-  "commands": {
-    "completeVerification": "npm run verify",
-    "browserAndApi": "QUEST_BEHAVIOR=fixed npx playwright test",
-    "freshProcess": "PAYROLL_TEST_BUILD_DIR=../MustBank/MustPayroll_fixed node --test tests/service.test.mjs"
-  },
+  "command": "npm run verify",
   "exitCodes": {
     "playwright": 0,
     "freshProcess": 0
   },
-  "playwrightReportSha256": "1ef3c1e5b35acb6d8a94ddbb6f56d8bdacd4e3d777b04fe96ac278c96592d8cd",
+  "playwrightReportSha256": "74dc6bc0a7dcb0d224be460fbb18f8b301d417755c76a26f73b4811deca74069",
   "total": 34,
   "passed": 34,
   "failed": 0,
@@ -297,11 +289,5 @@
       "framework": "Playwright",
       "actual": "Automated assertions passed: Served build ID and source fingerprint match the selected folder; policy-switch request returns HTTP 400."
     }
-  ],
-  "primaryObservation": {
-    "approvedMinor": 15000000,
-    "recordedMinor": 15000000,
-    "payments": 1,
-    "pendingNotifications": 0
-  }
+  ]
 }

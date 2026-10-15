@@ -1,19 +1,7 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
-import { readFileSync } from 'node:fs';
-import { basename, resolve } from 'node:path';
 import { create, run, fault } from './helpers';
 
-async function screenshot(page: Page, path: string) {
-  if (process.env.QA_CAPTURE_MEDIA !== '1') return;
-  const pair = JSON.parse(readFileSync('assessment/builds/pair.json', 'utf8'));
-  const variant = process.env.QUEST_BEHAVIOR === 'faulty' ? 'faulty' : 'fixed';
-  const filename = basename(path).replace(/^(faulty|fixed)-reproduction/, 'reproduction');
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.screenshot({ path: resolve(pair.builds[variant].executionDirectory, 'supporting-media', filename), fullPage: true });
-}
-
-test.use({ video: process.env.QA_CAPTURE_MEDIA === '1' ? 'on' : 'off' });
 test('TC10 | Retrying after notification failure preserves the approved payroll', async ({ page, request }, info) => {
   const w = await create(request, 'single'); await fault(request, w.id);
   await page.goto(`/pay-runs?workspace=${w.id}`);
@@ -28,7 +16,7 @@ test('TC10 | Retrying after notification failure preserves the approved payroll'
   await expect(page.getByRole('button', { name: 'Retry pay run', exact: true })).toBeVisible();
   const result = await (await request.get(`/api/workspaces/${w.id}`)).json();
   await info.attach('observed-workspace', { body: JSON.stringify(result, null, 2), contentType: 'application/json' });
-  await screenshot(page, 'reproduction.png');
+
   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);
   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');
   expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);
@@ -48,7 +36,7 @@ test('TC23 | Record, approve and process earnings through the interface', async 
   await page.getByRole('dialog').getByRole('button', { name: 'Process payroll', exact: true }).click();
   await expect(page.getByRole('status')).toContainText('Pay run finished');
   const result = await (await request.get(`/api/workspaces/${w.id}`)).json(); expect(result.paidMinor).toBe(15000025);
-  await screenshot(page, 'payroll-pay-run.png');
+
 });
 test('TC24 | Cancelling payroll confirmation leaves the ledger and period unchanged', async ({ page, request }) => {
   const w = await create(request); await page.goto(`/pay-runs?workspace=${w.id}`);
@@ -66,7 +54,7 @@ test('TC25 | Receipt survives reload and can be copied and downloaded', async ({
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(id);
   const download = page.waitForEvent('download'); await page.getByRole('button', { name: 'Download receipt' }).click(); const file = await download;
   expect(await readFile((await file.path())!, 'utf8')).toContain('Amara Okafor');
-  await screenshot(page, 'payroll-receipt.png');
+
 });
 test('TC26 | Payment filter and CSV export contain the same employee records', async ({ page, request }) => {
   const w = await create(request, 'standard'); await run(request, w.id); await page.goto(`/payments?workspace=${w.id}`);
@@ -89,7 +77,7 @@ test('TC28 | Core screens reflow at 320 pixels without page overflow', async ({ 
     await expect(page.getByRole('navigation').getByRole('link', { name: 'Pay runs', exact: true })).toBeInViewport();
   }
   await page.goto(`/overview?workspace=${w.id}`); await expect(page.getByRole('heading', { name: 'Payroll overview' })).toBeVisible();
-  await screenshot(page, 'payroll-mobile.png');
+
 });
 test('TC29 | Keyboard navigation reaches content and payroll confirmation', async ({ page, request }) => {
   const w = await create(request); await page.goto(`/overview?workspace=${w.id}`); await expect(page.getByRole('heading', { name: 'Payroll overview' })).toBeVisible();
@@ -111,13 +99,13 @@ test('TC31 | Payroll screens use product language and show standard totals', asy
   const w = await create(request, 'standard'); await page.goto(`/overview?workspace=${w.id}`);
   await expect(page.getByRole('heading', { name: 'Payroll overview' })).toBeVisible(); await expect(page.locator('.metrics')).toContainText('₦435,000.00');
   expect(await page.locator('body').innerText()).not.toMatch(/Acme|MustBank|WebMCP|Quest|assessment|sandbox|fictional|test credits/i);
-  await screenshot(page, 'payroll-overview.png');
-  await page.getByRole('navigation').getByRole('link', { name: 'Employees', exact: true }).click(); await screenshot(page, 'payroll-employees.png');
+
+  await page.getByRole('navigation').getByRole('link', { name: 'Employees', exact: true }).click();
 });
 test('TC32 | Notification recovery is visible and leaves the receipt unchanged', async ({ page, request }) => {
   const w = await create(request); await fault(request, w.id); const first = await run(request, w.id);
   await page.goto(`/notifications?workspace=${w.id}`); await expect(page.getByText('Notification delivery unavailable. Retry the notification.')).toBeVisible();
-  await screenshot(page, 'payroll-notification-pending.png');
+
   await page.getByRole('button', { name: 'Retry pending notifications' }).click(); await expect(page.getByRole('status')).toContainText('Notification recovery finished');
   const next = await (await request.get(`/api/workspaces/${w.id}`)).json(); expect(next.payments).toEqual(first.payments); expect(next.pendingNotifications).toBe(0);
   await expect(page.getByRole('button', { name: 'Retry pending notifications' })).toBeDisabled();

@@ -22,7 +22,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "<project>/MustPayroll_QA/executions/buggy/playwright/artifacts",
+        "outputDir": "<project>/MustPayroll_QA/data/playwright/faulty",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -42,7 +42,7 @@
       {
         "grep": {},
         "grepInvert": null,
-        "outputDir": "<project>\\MustPayroll_QA\\executions\\buggy\\playwright\\artifacts",
+        "outputDir": "<project>\\MustPayroll_QA\\data\\playwright\\faulty",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -56,8 +56,9 @@
         "timeout": 30000,
         "use": {
           "baseURL": "http://127.0.0.1:4184",
-          "trace": "retain-on-failure",
+          "trace": "off",
           "screenshot": "off",
+          "video": "off",
           "viewport": {
             "width": 1280,
             "height": 900
@@ -80,13 +81,6 @@
         "json",
         {
           "outputFile": "executions/buggy/playwright/report.json"
-        }
-      ],
-      [
-        "html",
-        {
-          "outputFolder": "executions/buggy/playwright/html-report",
-          "open": "never"
         }
       ]
     ],
@@ -125,12 +119,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 557,
+                  "duration": 305,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:18.978Z",
+                  "startTime": "2026-10-15T19:18:34.016Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -165,12 +159,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 541,
+                  "duration": 463,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:18.995Z",
+                  "startTime": "2026-10-15T19:18:33.886Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -196,15 +190,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
                   "status": "passed",
                   "duration": 374,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:19.693Z",
+                  "startTime": "2026-10-15T19:18:34.472Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -230,15 +224,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 317,
+                  "duration": 510,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:19.688Z",
+                  "startTime": "2026-10-15T19:18:34.493Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -267,12 +261,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 278,
+                  "duration": 259,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:20.046Z",
+                  "startTime": "2026-10-15T19:18:34.920Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -301,12 +295,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 312,
+                  "duration": 317,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:20.194Z",
+                  "startTime": "2026-10-15T19:18:35.058Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -335,12 +329,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 192,
+                  "duration": 161,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:20.364Z",
+                  "startTime": "2026-10-15T19:18:35.234Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -369,12 +363,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 168,
+                  "duration": 120,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:20.542Z",
+                  "startTime": "2026-10-15T19:18:35.409Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -403,12 +397,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 281,
+                  "duration": 361,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:20.593Z",
+                  "startTime": "2026-10-15T19:18:35.473Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -437,12 +431,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 486,
+                  "duration": 382,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:20.744Z",
+                  "startTime": "2026-10-15T19:18:35.575Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -471,12 +465,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 693,
+                  "duration": 364,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:20.905Z",
+                  "startTime": "2026-10-15T19:18:35.907Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -505,10 +499,10 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 621,
+                  "duration": 329,
                   "error": {
-                    "message": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T18:58:21.680Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"ebf1f088-df0a-4863-81ae-ee9fe8ed37e0\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]",
-                    "stack": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T18:58:21.680Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"ebf1f088-df0a-4863-81ae-ee9fe8ed37e0\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]\n    at <project>\\MustPayroll_QA\\tests\\payroll-api.spec.ts:65:26",
+                    "message": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T19:18:36.301Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"82af9464-57fa-4552-a453-a9b700453ae2\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]",
+                    "stack": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T19:18:36.301Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"82af9464-57fa-4552-a453-a9b700453ae2\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]\n    at <project>\\MustPayroll_QA\\tests\\payroll-api.spec.ts:65:26",
                     "location": {
                       "file": "<project>\\MustPayroll_QA\\tests\\payroll-api.spec.ts",
                       "column": 26,
@@ -523,29 +517,24 @@
                         "column": 26,
                         "line": 65
                       },
-                      "message": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T18:58:21.680Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"ebf1f088-df0a-4863-81ae-ee9fe8ed37e0\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]\n\n  63 |   const w = await create(request); await fault(request, w.id, 'persistence'); const first = await run(request, w.id);\n  64 |   await info.attach('observed-TC13', { body: JSON.stringify(first), contentType: 'application/json' });\n> 65 |   expect(first.payments).toHaveLength(0); expect(first.notifications).toHaveLength(0); expect(first.events.some((e: any) => e.event === 'payment_rolled_back')).toBeTruthy();\n     |                          ^\n  66 |   const next = await run(request, w.id); expect(next.paidMinor).toBe(15000000); expect(next.payments).toHaveLength(1);\n  67 | });\n  68 | test('TC14 | Lost provider acknowledgement recovers without duplicate acceptance', async ({ request }, info) => {\n    at <project>\\MustPayroll_QA\\tests\\payroll-api.spec.ts:65:26"
+                      "message": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T19:18:36.301Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"82af9464-57fa-4552-a453-a9b700453ae2\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]\n\n  63 |   const w = await create(request); await fault(request, w.id, 'persistence'); const first = await run(request, w.id);\n  64 |   await info.attach('observed-TC13', { body: JSON.stringify(first), contentType: 'application/json' });\n> 65 |   expect(first.payments).toHaveLength(0); expect(first.notifications).toHaveLength(0); expect(first.events.some((e: any) => e.event === 'payment_rolled_back')).toBeTruthy();\n     |                          ^\n  66 |   const next = await run(request, w.id); expect(next.paidMinor).toBe(15000000); expect(next.payments).toHaveLength(1);\n  67 | });\n  68 | test('TC14 | Lost provider acknowledgement recovers without duplicate acceptance', async ({ request }, info) => {\n    at <project>\\MustPayroll_QA\\tests\\payroll-api.spec.ts:65:26"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:21.264Z",
+                  "startTime": "2026-10-15T19:18:36.013Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "observed-TC13",
                       "contentType": "application/json",
-                      "body": "eyJpZCI6ImU1YzZiYWI3LTYwZGQtNDRjZi1hZTBlLTJlNDc1ZDM0ZDkxZCIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6MX1dLCJwYXltZW50cyI6W3siaWQiOiJlYmYxZjA4OC1kZjBhLTQ4NjMtODFhZS1lZTlmZThlZDM3ZTAiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyMS42ODBaIn1dLCJub3RpZmljYXRpb25zIjpbXSwicnVucyI6W3sicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJwZXJpb2RFbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiLCJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjIxLjY1MVoiLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMH1dLCJsb2NrZWQiOnRydWUsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJwZW5kaW5nQXBwcm92YWxzIjowLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MCwiZXZlbnRzIjpbeyJldmVudCI6ImVhcm5pbmdzX3JlY29yZGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImNvdW50IjoxfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyMS40NDZaIn0seyJldmVudCI6ImZhaWx1cmVfYXJtZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsia2luZCI6InBlcnNpc3RlbmNlIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTg6NTg6MjEuNjE4WiJ9LHsiZXZlbnQiOiJwYXltZW50X2NvbW1pdHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7InBheW1lbnRJZCI6ImViZjFmMDg4LWRmMGEtNDg2My04MWFlLWVlOWZlOGVkMzdlMCIsImFtb3VudE1pbm9yIjoxNTAwMDAwMH0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTg6NTg6MjEuNzIwWiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjIxLjc2NloifV19"
+                      "body": "eyJpZCI6ImZkNzIxNjFmLThhOGEtNDU2MC1hNDA5LTM1YWM3ZjBmYjA3ZiIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6MX1dLCJwYXltZW50cyI6W3siaWQiOiI4MmFmOTQ2NC01N2ZhLTQ1NTItYTQ1My1hOWI3MDA0NTNhZTIiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozNi4zMDFaIn1dLCJub3RpZmljYXRpb25zIjpbXSwicnVucyI6W3sicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJwZXJpb2RFbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiLCJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjM2LjI3N1oiLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMH1dLCJsb2NrZWQiOnRydWUsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJwZW5kaW5nQXBwcm92YWxzIjowLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MCwiZXZlbnRzIjpbeyJldmVudCI6ImVhcm5pbmdzX3JlY29yZGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImNvdW50IjoxfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozNi4wNzdaIn0seyJldmVudCI6ImZhaWx1cmVfYXJtZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsia2luZCI6InBlcnNpc3RlbmNlIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTk6MTg6MzYuMjAyWiJ9LHsiZXZlbnQiOiJwYXltZW50X2NvbW1pdHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7InBheW1lbnRJZCI6IjgyYWY5NDY0LTU3ZmEtNDU1Mi1hNDUzLWE5YjcwMDQ1M2FlMiIsImFtb3VudE1pbm9yIjoxNTAwMDAwMH0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTk6MTg6MzYuMzE0WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjM2LjMyM1oifV19"
                     },
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "<project>\\MustPayroll_QA\\executions\\buggy\\playwright\\artifacts\\payroll-api-TC13-Interrupt-01ef8-payment-and-outbox-together-chromium\\error-context.md"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "<project>\\MustPayroll_QA\\executions\\buggy\\playwright\\artifacts\\payroll-api-TC13-Interrupt-01ef8-payment-and-outbox-together-chromium\\trace.zip"
+                      "path": "<project>\\MustPayroll_QA\\data\\playwright\\faulty\\payroll-api-TC13-Interrupt-01ef8-payment-and-outbox-together-chromium\\error-context.md"
                     }
                   ],
                   "errorLocation": {
@@ -579,7 +568,7 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "failed",
-                  "duration": 1036,
+                  "duration": 344,
                   "error": {
                     "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
                     "stack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1\n    at <project>\\MustPayroll_QA\\tests\\payroll-api.spec.ts:73:76",
@@ -603,23 +592,18 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:21.634Z",
+                  "startTime": "2026-10-15T19:18:36.319Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "observed-TC14",
                       "contentType": "application/json",
-                      "body": "eyJpZCI6IjczNTYxMGUzLWI0YTEtNGEyMC1hYmM4LWI4ZDY3YWI0ZTdhZCIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6Mn1dLCJwYXltZW50cyI6W3siaWQiOiI0MDI4NzA1Mi0xYjY2LTRjYTgtOGRlZC03NWU3MmM4ODY4YzEiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyMi4wMzhaIn0seyJpZCI6ImJkMGViYWJmLTNkMjgtNDA1MC1iOGFjLWFjZjRhNzAzY2ZmMyIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsImJhbmsiOiJNZXJpZGlhbiBCYW5rIiwiYWNjb3VudEVuZGluZyI6IjQ4MjEiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjIxLjkwM1oifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiYmJkZWRhNDYtODZmZS00YTM4LTgzMjItMzUzMWZiOTEwOTQ2IiwicGF5bWVudElkIjoiNDAyODcwNTItMWI2Ni00Y2E4LThkZWQtNzVlNzJjODg2OGMxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsInN0YXRlIjoic2VudCIsImF0dGVtcHRzIjoxLCJsYXN0RXJyb3IiOm51bGx9LHsiaWQiOiIyMGYyZTJhMy05ZjZmLTRiNDAtOTRjZS0xNzhkZmI3OGI1NzIiLCJwYXltZW50SWQiOiJiZDBlYmFiZi0zZDI4LTQwNTAtYjhhYy1hY2Y0YTcwM2NmZjMiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwic3RhdGUiOiJwZW5kaW5nIiwiYXR0ZW1wdHMiOjEsImxhc3RFcnJvciI6IkRlbGl2ZXJ5IGNvbmZpcm1hdGlvbiB1bmF2YWlsYWJsZS4gUmV0cnkgd2l0aCB0aGUgb3JpZ2luYWwgbWVzc2FnZSBpZGVudGl0eS4ifV0sInJ1bnMiOlt7InBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwicGVyaW9kRW5kIjoiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIiwic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyMS44ODlaIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDB9XSwibG9ja2VkIjp0cnVlLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwicGVuZGluZ0FwcHJvdmFscyI6MCwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjEsImV2ZW50cyI6W3siZXZlbnQiOiJlYXJuaW5nc19yZWNvcmRlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJjb3VudCI6MX0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTg6NTg6MjEuODIwWiJ9LHsiZXZlbnQiOiJmYWlsdXJlX2FybWVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImtpbmQiOiJhbWJpZ3VvdXMifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyMS44NjNaIn0seyJldmVudCI6InBheW1lbnRfY29tbWl0dGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsicGF5bWVudElkIjoiYmQwZWJhYmYtM2QyOC00MDUwLWI4YWMtYWNmNGE3MDNjZmYzIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyMS45MTdaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6e30sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTg6NTg6MjEuOTQ1WiJ9LHsiZXZlbnQiOiJub3RpZmljYXRpb25fZmFpbGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiMjBmMmUyYTMtOWY2Zi00YjQwLTk0Y2UtMTc4ZGZiNzhiNTcyIiwiZXJyb3IiOiJEZWxpdmVyeSBjb25maXJtYXRpb24gdW5hdmFpbGFibGUuIFJldHJ5IHdpdGggdGhlIG9yaWdpbmFsIG1lc3NhZ2UgaWRlbnRpdHkuIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTg6NTg6MjEuOTk1WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjIyLjAxMloifSx7ImV2ZW50IjoicGF5bWVudF9jb21taXR0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6eyJwYXltZW50SWQiOiI0MDI4NzA1Mi0xYjY2LTRjYTgtOGRlZC03NWU3MmM4ODY4YzEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDB9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjIyLjA2NFoifSx7ImV2ZW50Ijoibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7fSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyMi4wODZaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9zZW50IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiYmJkZWRhNDYtODZmZS00YTM4LTgzMjItMzUzMWZiOTEwOTQ2IiwiZXJyb3IiOm51bGx9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjIyLjE3N1oifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyMi4xODdaIn1dfQ=="
+                      "body": "eyJpZCI6IjhiZDJiNTBiLTdkY2ItNDIxYi1hMjM0LTYzZGIyOWNkZjhjZCIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6Mn1dLCJwYXltZW50cyI6W3siaWQiOiJmMjVkZDg5NS1kM2Y5LTQ1ODUtOWJhYi05MmRlMzZlNWZlMGQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozNi41NzdaIn0seyJpZCI6IjNmMGMzOGFiLTcxN2QtNDdhZi05YjhiLWUyMTM3ZWZlZTBhNSIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsImJhbmsiOiJNZXJpZGlhbiBCYW5rIiwiYWNjb3VudEVuZGluZyI6IjQ4MjEiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjM2LjQ1OVoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiNmQ4YzdhZDAtN2NkOC00ZWJiLTkxNzItNThjNWFkMzM5NWVmIiwicGF5bWVudElkIjoiZjI1ZGQ4OTUtZDNmOS00NTg1LTliYWItOTJkZTM2ZTVmZTBkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsInN0YXRlIjoic2VudCIsImF0dGVtcHRzIjoxLCJsYXN0RXJyb3IiOm51bGx9LHsiaWQiOiI1YWEwYjk3Zi0zYjU2LTRmZTAtYTQ0OS1jZmZjMTRjMTI2ZTciLCJwYXltZW50SWQiOiIzZjBjMzhhYi03MTdkLTQ3YWYtOWI4Yi1lMjEzN2VmZWUwYTUiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwic3RhdGUiOiJwZW5kaW5nIiwiYXR0ZW1wdHMiOjEsImxhc3RFcnJvciI6IkRlbGl2ZXJ5IGNvbmZpcm1hdGlvbiB1bmF2YWlsYWJsZS4gUmV0cnkgd2l0aCB0aGUgb3JpZ2luYWwgbWVzc2FnZSBpZGVudGl0eS4ifV0sInJ1bnMiOlt7InBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwicGVyaW9kRW5kIjoiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIiwic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozNi40MzlaIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDB9XSwibG9ja2VkIjp0cnVlLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwicGVuZGluZ0FwcHJvdmFscyI6MCwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjEsImV2ZW50cyI6W3siZXZlbnQiOiJlYXJuaW5nc19yZWNvcmRlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJjb3VudCI6MX0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTk6MTg6MzYuMzgxWiJ9LHsiZXZlbnQiOiJmYWlsdXJlX2FybWVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImtpbmQiOiJhbWJpZ3VvdXMifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozNi40MTZaIn0seyJldmVudCI6InBheW1lbnRfY29tbWl0dGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsicGF5bWVudElkIjoiM2YwYzM4YWItNzE3ZC00N2FmLTliOGItZTIxMzdlZmVlMGE1IiwiYW1vdW50TWlub3IiOjE1MDAwMDAwfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozNi40NzFaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6e30sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTk6MTg6MzYuNDk2WiJ9LHsiZXZlbnQiOiJub3RpZmljYXRpb25fZmFpbGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiNWFhMGI5N2YtM2I1Ni00ZmUwLWE0NDktY2ZmYzE0YzEyNmU3IiwiZXJyb3IiOiJEZWxpdmVyeSBjb25maXJtYXRpb24gdW5hdmFpbGFibGUuIFJldHJ5IHdpdGggdGhlIG9yaWdpbmFsIG1lc3NhZ2UgaWRlbnRpdHkuIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTk6MTg6MzYuNTQxWiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjM2LjU1MFoifSx7ImV2ZW50IjoicGF5bWVudF9jb21taXR0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6eyJwYXltZW50SWQiOiJmMjVkZDg5NS1kM2Y5LTQ1ODUtOWJhYi05MmRlMzZlNWZlMGQiLCJhbW91bnRNaW5vciI6MTUwMDAwMDB9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjM2LjU4N1oifSx7ImV2ZW50Ijoibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7fSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozNi42MDdaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9zZW50IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiNmQ4YzdhZDAtN2NkOC00ZWJiLTkxNzItNThjNWFkMzM5NWVmIiwiZXJyb3IiOm51bGx9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjM2LjYzOFoifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozNi42NDlaIn1dfQ=="
                     },
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "<project>\\MustPayroll_QA\\executions\\buggy\\playwright\\artifacts\\payroll-api-TC14-Lost-prov-79d31-ithout-duplicate-acceptance-chromium\\error-context.md"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "<project>\\MustPayroll_QA\\executions\\buggy\\playwright\\artifacts\\payroll-api-TC14-Lost-prov-79d31-ithout-duplicate-acceptance-chromium\\trace.zip"
+                      "path": "<project>\\MustPayroll_QA\\data\\playwright\\faulty\\payroll-api-TC14-Lost-prov-79d31-ithout-duplicate-acceptance-chromium\\error-context.md"
                     }
                   ],
                   "errorLocation": {
@@ -653,12 +637,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 377,
+                  "duration": 309,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:26.502Z",
+                  "startTime": "2026-10-15T19:18:39.275Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -687,7 +671,7 @@
                   "workerIndex": 3,
                   "parallelIndex": 1,
                   "status": "failed",
-                  "duration": 1254,
+                  "duration": 1095,
                   "error": {
                     "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 15000000\nReceived: 30000000",
                     "stack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 15000000\nReceived: 30000000\n    at <project>\\MustPayroll_QA\\tests\\payroll-api.spec.ts:84:28",
@@ -711,23 +695,18 @@
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:27.066Z",
+                  "startTime": "2026-10-15T19:18:39.578Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "observed-TC16",
                       "contentType": "application/json",
-                      "body": "eyJpZCI6IjE3NjMzMDNiLWRlYzYtNGVjMy04NzVhLWY0ZWRiNTI3ODExOCIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6Mn1dLCJwYXltZW50cyI6W3siaWQiOiJkODc3OGI2Ni0yZDIxLTQxNWEtOTk0NC0wN2U5Nzc3ODk2MDQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyNy43OTVaIn0seyJpZCI6ImEyMzFiOTVkLTExMTUtNGRhYy05NmFkLWU5NWJiNjQ2ZWZjMCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsImJhbmsiOiJNZXJpZGlhbiBCYW5rIiwiYWNjb3VudEVuZGluZyI6IjQ4MjEiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjI3LjcxNFoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiNGI3OTFkMDUtODIzMS00Yjg3LTg3Y2QtNGNlYjI0OGJiMDJmIiwicGF5bWVudElkIjoiZDg3NzhiNjYtMmQyMS00MTVhLTk5NDQtMDdlOTc3Nzg5NjA0IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsInN0YXRlIjoic2VudCIsImF0dGVtcHRzIjoxLCJsYXN0RXJyb3IiOm51bGx9LHsiaWQiOiI0NWE3NDgzYy03MDFhLTRiYjQtYjAwOS1mYjE2NDMzYTk3ZTgiLCJwYXltZW50SWQiOiJhMjMxYjk1ZC0xMTE1LTRkYWMtOTZhZC1lOTViYjY0NmVmYzAiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwic3RhdGUiOiJwZW5kaW5nIiwiYXR0ZW1wdHMiOjEsImxhc3RFcnJvciI6Ik5vdGlmaWNhdGlvbiBkZWxpdmVyeSB1bmF2YWlsYWJsZS4gUmV0cnkgdGhlIG5vdGlmaWNhdGlvbi4ifV0sInJ1bnMiOlt7InBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwicGVyaW9kRW5kIjoiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIiwic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyNy43MDNaIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDB9XSwibG9ja2VkIjp0cnVlLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwicGVuZGluZ0FwcHJvdmFscyI6MCwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjEsImV2ZW50cyI6W3siZXZlbnQiOiJlYXJuaW5nc19yZWNvcmRlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJjb3VudCI6MX0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTg6NTg6MjcuNTAwWiJ9LHsiZXZlbnQiOiJmYWlsdXJlX2FybWVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImtpbmQiOiJub3RpZmljYXRpb24ifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyNy42NTdaIn0seyJldmVudCI6InBheW1lbnRfY29tbWl0dGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsicGF5bWVudElkIjoiYTIzMWI5NWQtMTExNS00ZGFjLTk2YWQtZTk1YmI2NDZlZmMwIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyNy43MjNaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6e30sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTg6NTg6MjcuNzQyWiJ9LHsiZXZlbnQiOiJub3RpZmljYXRpb25fZmFpbGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiNDVhNzQ4M2MtNzAxYS00YmI0LWIwMDktZmIxNjQzM2E5N2U4IiwiZXJyb3IiOiJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTg6NTg6MjcuNzY4WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjI3Ljc3N1oifSx7ImV2ZW50IjoicGF5bWVudF9jb21taXR0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6eyJwYXltZW50SWQiOiJkODc3OGI2Ni0yZDIxLTQxNWEtOTk0NC0wN2U5Nzc3ODk2MDQiLCJhbW91bnRNaW5vciI6MTUwMDAwMDB9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjI3LjgyMloifSx7ImV2ZW50Ijoibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7fSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyNy44NTVaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9zZW50IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiNGI3OTFkMDUtODIzMS00Yjg3LTg3Y2QtNGNlYjI0OGJiMDJmIiwiZXJyb3IiOm51bGx9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjI3Ljg5M1oifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyNy45MDJaIn0seyJldmVudCI6InBheV9ydW5fZmluaXNoZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTg6NTg6MjcuOTMzWiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjI3Ljk1OVoifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyNy45OTJaIn0seyJldmVudCI6InBheV9ydW5fZmluaXNoZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTg6NTg6MjguMDA5WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE4OjU4OjI4LjAzMloifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxODo1ODoyOC4wNzlaIn1dfQ=="
+                      "body": "eyJpZCI6Ijg1NmU3MTEyLTA2M2EtNGZlZS05ZjdkLWFjODc5M2ZjZDFmZSIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6Mn1dLCJwYXltZW50cyI6W3siaWQiOiJkM2Q4ZGZmMS1hMWQ3LTQ0ZjgtOTQ2OS0xZjMzODg3NWExZTYiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODo0MC40MjBaIn0seyJpZCI6ImRjOGMzNGU5LTkzNzEtNGMzYS1hYjQzLWJlNTVkOThhZDUwYyIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsImJhbmsiOiJNZXJpZGlhbiBCYW5rIiwiYWNjb3VudEVuZGluZyI6IjQ4MjEiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjM5Ljk4OFoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiN2RjMTRmNTAtYjY2ZC00YzNiLTgyMGMtNjUxYzM5MjQ0NDk3IiwicGF5bWVudElkIjoiZDNkOGRmZjEtYTFkNy00NGY4LTk0NjktMWYzMzg4NzVhMWU2IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsInN0YXRlIjoic2VudCIsImF0dGVtcHRzIjoxLCJsYXN0RXJyb3IiOm51bGx9LHsiaWQiOiI2YjE3ZWFkMi1iNTNhLTRmYzktYWMzOC1iOTBhMGE3N2VhODgiLCJwYXltZW50SWQiOiJkYzhjMzRlOS05MzcxLTRjM2EtYWI0My1iZTU1ZDk4YWQ1MGMiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwic3RhdGUiOiJwZW5kaW5nIiwiYXR0ZW1wdHMiOjEsImxhc3RFcnJvciI6Ik5vdGlmaWNhdGlvbiBkZWxpdmVyeSB1bmF2YWlsYWJsZS4gUmV0cnkgdGhlIG5vdGlmaWNhdGlvbi4ifV0sInJ1bnMiOlt7InBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwicGVyaW9kRW5kIjoiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIiwic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozOS45NzhaIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDB9XSwibG9ja2VkIjp0cnVlLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwicGVuZGluZ0FwcHJvdmFscyI6MCwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjEsImV2ZW50cyI6W3siZXZlbnQiOiJlYXJuaW5nc19yZWNvcmRlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJjb3VudCI6MX0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTk6MTg6MzkuNzk4WiJ9LHsiZXZlbnQiOiJmYWlsdXJlX2FybWVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImtpbmQiOiJub3RpZmljYXRpb24ifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozOS45MjlaIn0seyJldmVudCI6InBheW1lbnRfY29tbWl0dGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsicGF5bWVudElkIjoiZGM4YzM0ZTktOTM3MS00YzNhLWFiNDMtYmU1NWQ5OGFkNTBjIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODozOS45OTlaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6e30sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTk6MTg6NDAuMDIyWiJ9LHsiZXZlbnQiOiJub3RpZmljYXRpb25fZmFpbGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiNmIxN2VhZDItYjUzYS00ZmM5LWFjMzgtYjkwYTBhNzdlYTg4IiwiZXJyb3IiOiJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTk6MTg6NDAuMDgwWiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjQwLjEwMloifSx7ImV2ZW50IjoicGF5bWVudF9jb21taXR0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6eyJwYXltZW50SWQiOiJkM2Q4ZGZmMS1hMWQ3LTQ0ZjgtOTQ2OS0xZjMzODg3NWExZTYiLCJhbW91bnRNaW5vciI6MTUwMDAwMDB9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjQwLjQ0OVoifSx7ImV2ZW50Ijoibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7fSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODo0MC41MjJaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9zZW50IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiN2RjMTRmNTAtYjY2ZC00YzNiLTgyMGMtNjUxYzM5MjQ0NDk3IiwiZXJyb3IiOm51bGx9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjQwLjYwMVoifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODo0MC42MTNaIn0seyJldmVudCI6InBheV9ydW5fZmluaXNoZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTk6MTg6NDAuNjMwWiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjQwLjY0NloifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODo0MC42NjJaIn0seyJldmVudCI6InBheV9ydW5fZmluaXNoZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMTk6MTg6NDAuNjc5WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDE5OjE4OjQwLjY5N1oifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQxOToxODo0MC43MTVaIn1dfQ=="
                     },
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "<project>\\MustPayroll_QA\\executions\\buggy\\playwright\\artifacts\\payroll-api-TC16-Eight-ove-c0335-e-server-record-one-payment-chromium\\error-context.md"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "<project>\\MustPayroll_QA\\executions\\buggy\\playwright\\artifacts\\payroll-api-TC16-Eight-ove-c0335-e-server-record-one-payment-chromium\\trace.zip"
+                      "path": "<project>\\MustPayroll_QA\\data\\playwright\\faulty\\payroll-api-TC16-Eight-ove-c0335-e-server-record-one-payment-chromium\\error-context.md"
                     }
                   ],
                   "errorLocation": {
@@ -761,12 +740,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 358,
+                  "duration": 713,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:27.292Z",
+                  "startTime": "2026-10-15T19:18:39.699Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -795,12 +774,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 500,
+                  "duration": 331,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:27.688Z",
+                  "startTime": "2026-10-15T19:18:40.458Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -829,12 +808,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 382,
+                  "duration": 273,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:28.231Z",
+                  "startTime": "2026-10-15T19:18:40.835Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -860,15 +839,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 2,
-                  "parallelIndex": 0,
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 69,
+                  "duration": 213,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:28.659Z",
+                  "startTime": "2026-10-15T19:18:46.796Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -894,15 +873,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 4,
-                  "parallelIndex": 1,
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1731,
+                  "duration": 417,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:32.176Z",
+                  "startTime": "2026-10-15T19:18:41.161Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -931,12 +910,12 @@
                   "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 263,
+                  "duration": 343,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:28.762Z",
+                  "startTime": "2026-10-15T19:18:41.622Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -970,61 +949,56 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 5,
+                  "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 5100,
+                  "duration": 4049,
                   "error": {
                     "message": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"",
-                    "stack": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"\n    at <project>\\MustPayroll_QA\\tests\\payroll-ui.spec.ts:33:98",
+                    "stack": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"\n    at <project>\\MustPayroll_QA\\tests\\payroll-ui.spec.ts:21:98",
                     "location": {
                       "file": "<project>\\MustPayroll_QA\\tests\\payroll-ui.spec.ts",
                       "column": 98,
-                      "line": 33
+                      "line": 21
                     },
-                    "snippet": "  31 |   await screenshot(page, 'reproduction.png');\n  32 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);\n> 33 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');\n     |                                                                                                  ^\n  34 |   expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);\n  35 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);\n  36 |   expect(result.notifications[0].id).toBe(first.notifications[0].id);"
+                    "snippet": "  19 |\n  20 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);\n> 21 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');\n     |                                                                                                  ^\n  22 |   expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);\n  23 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);\n  24 |   expect(result.notifications[0].id).toBe(first.notifications[0].id);"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "<project>\\MustPayroll_QA\\tests\\payroll-ui.spec.ts",
                         "column": 98,
-                        "line": 33
+                        "line": 21
                       },
-                      "message": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"\n\n  31 |   await screenshot(page, 'reproduction.png');\n  32 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);\n> 33 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');\n     |                                                                                                  ^\n  34 |   expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);\n  35 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);\n  36 |   expect(result.notifications[0].id).toBe(first.notifications[0].id);\n    at <project>\\MustPayroll_QA\\tests\\payroll-ui.spec.ts:33:98"
+                      "message": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"\n\n  19 |\n  20 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);\n> 21 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');\n     |                                                                                                  ^\n  22 |   expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);\n  23 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);\n  24 |   expect(result.notifications[0].id).toBe(first.notifications[0].id);\n    at <project>\\MustPayroll_QA\\tests\\payroll-ui.spec.ts:21:98"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:32.194Z",
+                  "startTime": "2026-10-15T19:18:42.029Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "first-attempt",
                       "contentType": "application/json",
-                      "body": "ewogICJpZCI6ICJkZmM0MGQzOS04OTRkLTRiYzktOGJiMC1mMDRlYjIwYzA5MTAiLAogICJjb21wYW55IjogIk5vcnRoc3RhciBTdHVkaW8iLAogICJjdXJyZW5jeSI6ICJOR04iLAogICJwZXJpb2QiOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgImVtcGxveWVlcyI6IFsKICAgIHsKICAgICAgImlkIjogImVtcC0wMDEiLAogICAgICAibmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicm9sZSI6ICJQcm9kdWN0IGRlc2lnbmVyIiwKICAgICAgImRlcGFydG1lbnQiOiAiRGVzaWduIiwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMiIsCiAgICAgICJuYW1lIjogIkRhbmllbCBNZW5zYWgiLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBlbmdpbmVlciIsCiAgICAgICJkZXBhcnRtZW50IjogIkVuZ2luZWVyaW5nIiwKICAgICAgImJhbmsiOiAiVW5pb24gQ29hc3QgQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjMwNjgiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMyIsCiAgICAgICJuYW1lIjogIlphcmEgQmVsbG8iLAogICAgICAicm9sZSI6ICJPcGVyYXRpb25zIGFzc29jaWF0ZSIsCiAgICAgICJkZXBhcnRtZW50IjogIk9wZXJhdGlvbnMiLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNzI5MCIKICAgIH0KICBdLAogICJlYXJuaW5ncyI6IFsKICAgIHsKICAgICAgImVhcm5pbmdJZCI6ICJlYXJuLTAwMSIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2Vla2x5IHByb2plY3QgZWFybmluZ3MiLAogICAgICAiZWFybmVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgImFtb3VudE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJzdGF0dXMiOiAiYXBwcm92ZWQiCiAgICB9CiAgXSwKICAiZW50cmllcyI6IFsKICAgIHsKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJleHBlY3RlZE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJwYWlkTWlub3IiOiAxNTAwMDAwMCwKICAgICAgImVhcm5pbmdJZHMiOiBbCiAgICAgICAgImVhcm4tMDAxIgogICAgICBdLAogICAgICAicGF5bWVudENvdW50IjogMQogICAgfQogIF0sCiAgInBheW1lbnRzIjogWwogICAgewogICAgICAiaWQiOiAiZTdlNDMyNjgtMmZlNy00M2FlLWFhNzgtMmJhYmQ1YThiZTUwIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNDgyMSIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxODo1ODozNy42MzJaIgogICAgfQogIF0sCiAgIm5vdGlmaWNhdGlvbnMiOiBbCiAgICB7CiAgICAgICJpZCI6ICIwMjY1MmEwNi02YzUzLTQyMzItOTlmNi1jYWQ2MWFlNmQ3MzQiLAogICAgICAicGF5bWVudElkIjogImU3ZTQzMjY4LTJmZTctNDNhZS1hYTc4LTJiYWJkNWE4YmU1MCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZW1wbG95ZWVOYW1lIjogIkFtYXJhIE9rYWZvciIsCiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAic3RhdGUiOiAicGVuZGluZyIsCiAgICAgICJhdHRlbXB0cyI6IDEsCiAgICAgICJsYXN0RXJyb3IiOiAiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIKICAgIH0KICBdLAogICJydW5zIjogWwogICAgewogICAgICAicGVyaW9kU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgInBlcmlvZEVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiLAogICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxODo1ODozNy42MjBaIiwKICAgICAgImV4cGVjdGVkTWlub3IiOiAxNTAwMDAwMAogICAgfQogIF0sCiAgImxvY2tlZCI6IHRydWUsCiAgImV4cGVjdGVkTWlub3IiOiAxNTAwMDAwMCwKICAicGFpZE1pbm9yIjogMTUwMDAwMDAsCiAgInBlbmRpbmdBcHByb3ZhbHMiOiAwLAogICJwZW5kaW5nTm90aWZpY2F0aW9ucyI6IDEsCiAgInByb3ZpZGVyQWNjZXB0ZWQiOiAwLAogICJldmVudHMiOiBbCiAgICB7CiAgICAgICJldmVudCI6ICJlYXJuaW5nc19yZWNvcmRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiY291bnQiOiAxCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxODo1ODozNi4wMjJaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogImZhaWx1cmVfYXJtZWQiLAogICAgICAiZW1wbG95ZWVJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImtpbmQiOiAibm90aWZpY2F0aW9uIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTg6NTg6MzYuMTExWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXltZW50X2NvbW1pdHRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJwYXltZW50SWQiOiAiZTdlNDMyNjgtMmZlNy00M2FlLWFhNzgtMmJhYmQ1YThiZTUwIiwKICAgICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTg6NTg6MzcuNjQxWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE4OjU4OjM3LjY1OVoiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAibm90aWZpY2F0aW9uX2ZhaWxlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJtZXNzYWdlSWQiOiAiMDI2NTJhMDYtNmM1My00MjMyLTk5ZjYtY2FkNjFhZTZkNzM0IiwKICAgICAgICAiZXJyb3IiOiAiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE4OjU4OjM3LjY4NloiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAicGF5X3J1bl9maW5pc2hlZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE4OjU4OjM3LjY5NloiCiAgICB9CiAgXQp9"
+                      "body": "ewogICJpZCI6ICIyMzhlNDU2Yi1jZWY3LTQwYmYtOWM4Yy0yNjE5MTIwOTIzYjAiLAogICJjb21wYW55IjogIk5vcnRoc3RhciBTdHVkaW8iLAogICJjdXJyZW5jeSI6ICJOR04iLAogICJwZXJpb2QiOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgImVtcGxveWVlcyI6IFsKICAgIHsKICAgICAgImlkIjogImVtcC0wMDEiLAogICAgICAibmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicm9sZSI6ICJQcm9kdWN0IGRlc2lnbmVyIiwKICAgICAgImRlcGFydG1lbnQiOiAiRGVzaWduIiwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMiIsCiAgICAgICJuYW1lIjogIkRhbmllbCBNZW5zYWgiLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBlbmdpbmVlciIsCiAgICAgICJkZXBhcnRtZW50IjogIkVuZ2luZWVyaW5nIiwKICAgICAgImJhbmsiOiAiVW5pb24gQ29hc3QgQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjMwNjgiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMyIsCiAgICAgICJuYW1lIjogIlphcmEgQmVsbG8iLAogICAgICAicm9sZSI6ICJPcGVyYXRpb25zIGFzc29jaWF0ZSIsCiAgICAgICJkZXBhcnRtZW50IjogIk9wZXJhdGlvbnMiLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNzI5MCIKICAgIH0KICBdLAogICJlYXJuaW5ncyI6IFsKICAgIHsKICAgICAgImVhcm5pbmdJZCI6ICJlYXJuLTAwMSIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2Vla2x5IHByb2plY3QgZWFybmluZ3MiLAogICAgICAiZWFybmVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgImFtb3VudE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJzdGF0dXMiOiAiYXBwcm92ZWQiCiAgICB9CiAgXSwKICAiZW50cmllcyI6IFsKICAgIHsKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJleHBlY3RlZE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJwYWlkTWlub3IiOiAxNTAwMDAwMCwKICAgICAgImVhcm5pbmdJZHMiOiBbCiAgICAgICAgImVhcm4tMDAxIgogICAgICBdLAogICAgICAicGF5bWVudENvdW50IjogMQogICAgfQogIF0sCiAgInBheW1lbnRzIjogWwogICAgewogICAgICAiaWQiOiAiYWZmYTRiNGUtODA2ZC00MGE5LTg5YTMtNTdjZGMzOWM4YzkzIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNDgyMSIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxOToxODo0NC45MTJaIgogICAgfQogIF0sCiAgIm5vdGlmaWNhdGlvbnMiOiBbCiAgICB7CiAgICAgICJpZCI6ICIzYmZjZjhhYi1iNDZjLTQ2NDEtOGFiYy1hZGQ3ZWRkNTQ4N2YiLAogICAgICAicGF5bWVudElkIjogImFmZmE0YjRlLTgwNmQtNDBhOS04OWEzLTU3Y2RjMzljOGM5MyIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZW1wbG95ZWVOYW1lIjogIkFtYXJhIE9rYWZvciIsCiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAic3RhdGUiOiAicGVuZGluZyIsCiAgICAgICJhdHRlbXB0cyI6IDEsCiAgICAgICJsYXN0RXJyb3IiOiAiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIKICAgIH0KICBdLAogICJydW5zIjogWwogICAgewogICAgICAicGVyaW9kU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgInBlcmlvZEVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiLAogICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxOToxODo0NC44OTlaIiwKICAgICAgImV4cGVjdGVkTWlub3IiOiAxNTAwMDAwMAogICAgfQogIF0sCiAgImxvY2tlZCI6IHRydWUsCiAgImV4cGVjdGVkTWlub3IiOiAxNTAwMDAwMCwKICAicGFpZE1pbm9yIjogMTUwMDAwMDAsCiAgInBlbmRpbmdBcHByb3ZhbHMiOiAwLAogICJwZW5kaW5nTm90aWZpY2F0aW9ucyI6IDEsCiAgInByb3ZpZGVyQWNjZXB0ZWQiOiAwLAogICJldmVudHMiOiBbCiAgICB7CiAgICAgICJldmVudCI6ICJlYXJuaW5nc19yZWNvcmRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiY291bnQiOiAxCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxOToxODo0My43MjBaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogImZhaWx1cmVfYXJtZWQiLAogICAgICAiZW1wbG95ZWVJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImtpbmQiOiAibm90aWZpY2F0aW9uIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTk6MTg6NDMuODEzWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXltZW50X2NvbW1pdHRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJwYXltZW50SWQiOiAiYWZmYTRiNGUtODA2ZC00MGE5LTg5YTMtNTdjZGMzOWM4YzkzIiwKICAgICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTk6MTg6NDQuOTgyWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE5OjE4OjQ1LjAwNloiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAibm90aWZpY2F0aW9uX2ZhaWxlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJtZXNzYWdlSWQiOiAiM2JmY2Y4YWItYjQ2Yy00NjQxLThhYmMtYWRkN2VkZDU0ODdmIiwKICAgICAgICAiZXJyb3IiOiAiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE5OjE4OjQ1LjEzM1oiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAicGF5X3J1bl9maW5pc2hlZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE5OjE4OjQ1LjE0NVoiCiAgICB9CiAgXQp9"
                     },
                     {
                       "name": "observed-workspace",
                       "contentType": "application/json",
-                      "body": "ewogICJpZCI6ICJkZmM0MGQzOS04OTRkLTRiYzktOGJiMC1mMDRlYjIwYzA5MTAiLAogICJjb21wYW55IjogIk5vcnRoc3RhciBTdHVkaW8iLAogICJjdXJyZW5jeSI6ICJOR04iLAogICJwZXJpb2QiOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgImVtcGxveWVlcyI6IFsKICAgIHsKICAgICAgImlkIjogImVtcC0wMDEiLAogICAgICAibmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicm9sZSI6ICJQcm9kdWN0IGRlc2lnbmVyIiwKICAgICAgImRlcGFydG1lbnQiOiAiRGVzaWduIiwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMiIsCiAgICAgICJuYW1lIjogIkRhbmllbCBNZW5zYWgiLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBlbmdpbmVlciIsCiAgICAgICJkZXBhcnRtZW50IjogIkVuZ2luZWVyaW5nIiwKICAgICAgImJhbmsiOiAiVW5pb24gQ29hc3QgQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjMwNjgiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMyIsCiAgICAgICJuYW1lIjogIlphcmEgQmVsbG8iLAogICAgICAicm9sZSI6ICJPcGVyYXRpb25zIGFzc29jaWF0ZSIsCiAgICAgICJkZXBhcnRtZW50IjogIk9wZXJhdGlvbnMiLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNzI5MCIKICAgIH0KICBdLAogICJlYXJuaW5ncyI6IFsKICAgIHsKICAgICAgImVhcm5pbmdJZCI6ICJlYXJuLTAwMSIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2Vla2x5IHByb2plY3QgZWFybmluZ3MiLAogICAgICAiZWFybmVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgImFtb3VudE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJzdGF0dXMiOiAiYXBwcm92ZWQiCiAgICB9CiAgXSwKICAiZW50cmllcyI6IFsKICAgIHsKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJleHBlY3RlZE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJwYWlkTWlub3IiOiAzMDAwMDAwMCwKICAgICAgImVhcm5pbmdJZHMiOiBbCiAgICAgICAgImVhcm4tMDAxIgogICAgICBdLAogICAgICAicGF5bWVudENvdW50IjogMgogICAgfQogIF0sCiAgInBheW1lbnRzIjogWwogICAgewogICAgICAiaWQiOiAiY2RiZmJjNDYtMjU0Zi00MTM1LTkzMzEtOWMzN2EyM2UxYmFhIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNDgyMSIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxODo1ODozNy45MzhaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogImU3ZTQzMjY4LTJmZTctNDNhZS1hYTc4LTJiYWJkNWE4YmU1MCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZW1wbG95ZWVOYW1lIjogIkFtYXJhIE9rYWZvciIsCiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMCwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiLAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTg6NTg6MzcuNjMyWiIKICAgIH0KICBdLAogICJub3RpZmljYXRpb25zIjogWwogICAgewogICAgICAiaWQiOiAiY2M5ZDFmZTItYjRkNC00MTJjLTkzOTktMTMwNWJmMjdmZWU5IiwKICAgICAgInBheW1lbnRJZCI6ICJjZGJmYmM0Ni0yNTRmLTQxMzUtOTMzMS05YzM3YTIzZTFiYWEiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImVtcGxveWVlTmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicGVyaW9kU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgInN0YXRlIjogInNlbnQiLAogICAgICAiYXR0ZW1wdHMiOiAxLAogICAgICAibGFzdEVycm9yIjogbnVsbAogICAgfSwKICAgIHsKICAgICAgImlkIjogIjAyNjUyYTA2LTZjNTMtNDIzMi05OWY2LWNhZDYxYWU2ZDczNCIsCiAgICAgICJwYXltZW50SWQiOiAiZTdlNDMyNjgtMmZlNy00M2FlLWFhNzgtMmJhYmQ1YThiZTUwIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJzdGF0ZSI6ICJwZW5kaW5nIiwKICAgICAgImF0dGVtcHRzIjogMSwKICAgICAgImxhc3RFcnJvciI6ICJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIgogICAgfQogIF0sCiAgInJ1bnMiOiBbCiAgICB7CiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAicGVyaW9kRW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE4OjU4OjM3LjYyMFoiLAogICAgICAiZXhwZWN0ZWRNaW5vciI6IDE1MDAwMDAwCiAgICB9CiAgXSwKICAibG9ja2VkIjogdHJ1ZSwKICAiZXhwZWN0ZWRNaW5vciI6IDE1MDAwMDAwLAogICJwYWlkTWlub3IiOiAzMDAwMDAwMCwKICAicGVuZGluZ0FwcHJvdmFscyI6IDAsCiAgInBlbmRpbmdOb3RpZmljYXRpb25zIjogMSwKICAicHJvdmlkZXJBY2NlcHRlZCI6IDEsCiAgImV2ZW50cyI6IFsKICAgIHsKICAgICAgImV2ZW50IjogImVhcm5pbmdzX3JlY29yZGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJjb3VudCI6IDEKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE4OjU4OjM2LjAyMloiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAiZmFpbHVyZV9hcm1lZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAia2luZCI6ICJub3RpZmljYXRpb24iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxODo1ODozNi4xMTFaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogInBheW1lbnRfY29tbWl0dGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgInBheW1lbnRJZCI6ICJlN2U0MzI2OC0yZmU3LTQzYWUtYWE3OC0yYmFiZDVhOGJlNTAiLAogICAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxODo1ODozNy42NDFaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTg6NTg6MzcuNjU5WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fZmFpbGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgIm1lc3NhZ2VJZCI6ICIwMjY1MmEwNi02YzUzLTQyMzItOTlmNi1jYWQ2MWFlNmQ3MzQiLAogICAgICAgICJlcnJvciI6ICJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTg6NTg6MzcuNjg2WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXlfcnVuX2ZpbmlzaGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTg6NTg6MzcuNjk2WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXltZW50X2NvbW1pdHRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJwYXltZW50SWQiOiAiY2RiZmJjNDYtMjU0Zi00MTM1LTkzMzEtOWMzN2EyM2UxYmFhIiwKICAgICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTg6NTg6MzcuOTkzWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE4OjU4OjM4LjAxM1oiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAibm90aWZpY2F0aW9uX3NlbnQiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAibWVzc2FnZUlkIjogImNjOWQxZmUyLWI0ZDQtNDEyYy05Mzk5LTEzMDViZjI3ZmVlOSIsCiAgICAgICAgImVycm9yIjogbnVsbAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTg6NTg6MzguMDUyWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXlfcnVuX2ZpbmlzaGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTg6NTg6MzguMDY0WiIKICAgIH0KICBdCn0="
+                      "body": "ewogICJpZCI6ICIyMzhlNDU2Yi1jZWY3LTQwYmYtOWM4Yy0yNjE5MTIwOTIzYjAiLAogICJjb21wYW55IjogIk5vcnRoc3RhciBTdHVkaW8iLAogICJjdXJyZW5jeSI6ICJOR04iLAogICJwZXJpb2QiOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgImVtcGxveWVlcyI6IFsKICAgIHsKICAgICAgImlkIjogImVtcC0wMDEiLAogICAgICAibmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicm9sZSI6ICJQcm9kdWN0IGRlc2lnbmVyIiwKICAgICAgImRlcGFydG1lbnQiOiAiRGVzaWduIiwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMiIsCiAgICAgICJuYW1lIjogIkRhbmllbCBNZW5zYWgiLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBlbmdpbmVlciIsCiAgICAgICJkZXBhcnRtZW50IjogIkVuZ2luZWVyaW5nIiwKICAgICAgImJhbmsiOiAiVW5pb24gQ29hc3QgQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjMwNjgiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMyIsCiAgICAgICJuYW1lIjogIlphcmEgQmVsbG8iLAogICAgICAicm9sZSI6ICJPcGVyYXRpb25zIGFzc29jaWF0ZSIsCiAgICAgICJkZXBhcnRtZW50IjogIk9wZXJhdGlvbnMiLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNzI5MCIKICAgIH0KICBdLAogICJlYXJuaW5ncyI6IFsKICAgIHsKICAgICAgImVhcm5pbmdJZCI6ICJlYXJuLTAwMSIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2Vla2x5IHByb2plY3QgZWFybmluZ3MiLAogICAgICAiZWFybmVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgImFtb3VudE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJzdGF0dXMiOiAiYXBwcm92ZWQiCiAgICB9CiAgXSwKICAiZW50cmllcyI6IFsKICAgIHsKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJleHBlY3RlZE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJwYWlkTWlub3IiOiAzMDAwMDAwMCwKICAgICAgImVhcm5pbmdJZHMiOiBbCiAgICAgICAgImVhcm4tMDAxIgogICAgICBdLAogICAgICAicGF5bWVudENvdW50IjogMgogICAgfQogIF0sCiAgInBheW1lbnRzIjogWwogICAgewogICAgICAiaWQiOiAiNGQ1MTgwMDktMmFkNy00NTI4LTg0NzYtMTNjNDAyYzNhMGU4IiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNDgyMSIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxOToxODo0Ni4yNjVaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogImFmZmE0YjRlLTgwNmQtNDBhOS04OWEzLTU3Y2RjMzljOGM5MyIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZW1wbG95ZWVOYW1lIjogIkFtYXJhIE9rYWZvciIsCiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMCwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiLAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTk6MTg6NDQuOTEyWiIKICAgIH0KICBdLAogICJub3RpZmljYXRpb25zIjogWwogICAgewogICAgICAiaWQiOiAiN2FkMjM2MzYtYmYyMy00NzM5LTlhOGItYzkzZDY3OTY5NzQ0IiwKICAgICAgInBheW1lbnRJZCI6ICI0ZDUxODAwOS0yYWQ3LTQ1MjgtODQ3Ni0xM2M0MDJjM2EwZTgiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImVtcGxveWVlTmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicGVyaW9kU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgInN0YXRlIjogInNlbnQiLAogICAgICAiYXR0ZW1wdHMiOiAxLAogICAgICAibGFzdEVycm9yIjogbnVsbAogICAgfSwKICAgIHsKICAgICAgImlkIjogIjNiZmNmOGFiLWI0NmMtNDY0MS04YWJjLWFkZDdlZGQ1NDg3ZiIsCiAgICAgICJwYXltZW50SWQiOiAiYWZmYTRiNGUtODA2ZC00MGE5LTg5YTMtNTdjZGMzOWM4YzkzIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJzdGF0ZSI6ICJwZW5kaW5nIiwKICAgICAgImF0dGVtcHRzIjogMSwKICAgICAgImxhc3RFcnJvciI6ICJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIgogICAgfQogIF0sCiAgInJ1bnMiOiBbCiAgICB7CiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAicGVyaW9kRW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE5OjE4OjQ0Ljg5OVoiLAogICAgICAiZXhwZWN0ZWRNaW5vciI6IDE1MDAwMDAwCiAgICB9CiAgXSwKICAibG9ja2VkIjogdHJ1ZSwKICAiZXhwZWN0ZWRNaW5vciI6IDE1MDAwMDAwLAogICJwYWlkTWlub3IiOiAzMDAwMDAwMCwKICAicGVuZGluZ0FwcHJvdmFscyI6IDAsCiAgInBlbmRpbmdOb3RpZmljYXRpb25zIjogMSwKICAicHJvdmlkZXJBY2NlcHRlZCI6IDEsCiAgImV2ZW50cyI6IFsKICAgIHsKICAgICAgImV2ZW50IjogImVhcm5pbmdzX3JlY29yZGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJjb3VudCI6IDEKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE5OjE4OjQzLjcyMFoiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAiZmFpbHVyZV9hcm1lZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAia2luZCI6ICJub3RpZmljYXRpb24iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxOToxODo0My44MTNaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogInBheW1lbnRfY29tbWl0dGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgInBheW1lbnRJZCI6ICJhZmZhNGI0ZS04MDZkLTQwYTktODlhMy01N2NkYzM5YzhjOTMiLAogICAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQxOToxODo0NC45ODJaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTk6MTg6NDUuMDA2WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fZmFpbGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgIm1lc3NhZ2VJZCI6ICIzYmZjZjhhYi1iNDZjLTQ2NDEtOGFiYy1hZGQ3ZWRkNTQ4N2YiLAogICAgICAgICJlcnJvciI6ICJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTk6MTg6NDUuMTMzWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXlfcnVuX2ZpbmlzaGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTk6MTg6NDUuMTQ1WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXltZW50X2NvbW1pdHRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJwYXltZW50SWQiOiAiNGQ1MTgwMDktMmFkNy00NTI4LTg0NzYtMTNjNDAyYzNhMGU4IiwKICAgICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTk6MTg6NDYuMjc1WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDE5OjE4OjQ2LjI5N1oiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAibm90aWZpY2F0aW9uX3NlbnQiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAibWVzc2FnZUlkIjogIjdhZDIzNjM2LWJmMjMtNDczOS05YThiLWM5M2Q2Nzk2OTc0NCIsCiAgICAgICAgImVycm9yIjogbnVsbAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTk6MTg6NDYuMzQ2WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXlfcnVuX2ZpbmlzaGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMTk6MTg6NDYuMzU1WiIKICAgIH0KICBdCn0="
                     },
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "<project>\\MustPayroll_QA\\executions\\buggy\\playwright\\artifacts\\payroll-ui-TC10-Retrying-a-8ba15-serves-the-approved-payroll-chromium\\error-context.md"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "<project>\\MustPayroll_QA\\executions\\buggy\\playwright\\artifacts\\payroll-ui-TC10-Retrying-a-8ba15-serves-the-approved-payroll-chromium\\trace.zip"
+                      "path": "<project>\\MustPayroll_QA\\data\\playwright\\faulty\\payroll-ui-TC10-Retrying-a-8ba15-serves-the-approved-payroll-chromium\\error-context.md"
                     }
                   ],
                   "errorLocation": {
                     "file": "<project>\\MustPayroll_QA\\tests\\payroll-ui.spec.ts",
                     "column": 98,
-                    "line": 33
+                    "line": 21
                   }
                 }
               ],
@@ -1033,7 +1007,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-72d2814b50aec8b00dd7",
           "file": "payroll-ui.spec.ts",
-          "line": 17,
+          "line": 5,
           "column": 1
         },
         {
@@ -1049,15 +1023,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 4,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 3590,
+                  "duration": 3086,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:39.457Z",
+                  "startTime": "2026-10-15T19:18:47.485Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1067,7 +1041,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-2f83ed11c543ddd9ac89",
           "file": "payroll-ui.spec.ts",
-          "line": 38,
+          "line": 26,
           "column": 1
         },
         {
@@ -1083,15 +1057,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 4,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1906,
+                  "duration": 1224,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:44.618Z",
+                  "startTime": "2026-10-15T19:18:51.820Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1101,7 +1075,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-63e56bfbe82c1531450d",
           "file": "payroll-ui.spec.ts",
-          "line": 53,
+          "line": 41,
           "column": 1
         },
         {
@@ -1117,15 +1091,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 4,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 3013,
+                  "duration": 2316,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:46.564Z",
+                  "startTime": "2026-10-15T19:18:53.113Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1135,7 +1109,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-c258e9f7231e9d4f4fb4",
           "file": "payroll-ui.spec.ts",
-          "line": 60,
+          "line": 48,
           "column": 1
         },
         {
@@ -1151,15 +1125,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 4,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 3067,
+                  "duration": 2165,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:49.620Z",
+                  "startTime": "2026-10-15T19:18:55.481Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1169,7 +1143,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-f589846a61befd81f8f8",
           "file": "payroll-ui.spec.ts",
-          "line": 71,
+          "line": 59,
           "column": 1
         },
         {
@@ -1185,15 +1159,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 4,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 2644,
+                  "duration": 1512,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:52.731Z",
+                  "startTime": "2026-10-15T19:18:57.696Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1203,7 +1177,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-314e62d49e3dfd6dc9d3",
           "file": "payroll-ui.spec.ts",
-          "line": 77,
+          "line": 65,
           "column": 1
         },
         {
@@ -1219,15 +1193,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 4,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 4279,
+                  "duration": 3590,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:55.432Z",
+                  "startTime": "2026-10-15T19:18:59.270Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1237,7 +1211,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-05f8820e47060222adb4",
           "file": "payroll-ui.spec.ts",
-          "line": 84,
+          "line": 72,
           "column": 1
         },
         {
@@ -1253,15 +1227,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
-                  "parallelIndex": 1,
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1833,
+                  "duration": 3597,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:58:59.751Z",
+                  "startTime": "2026-10-15T19:19:05.311Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1271,7 +1245,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-29ac612408d123feca10",
           "file": "payroll-ui.spec.ts",
-          "line": 94,
+          "line": 82,
           "column": 1
         },
         {
@@ -1287,15 +1261,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 4,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1376,
+                  "duration": 1237,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:59:01.621Z",
+                  "startTime": "2026-10-15T19:19:02.922Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1305,7 +1279,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-36e5d741fd462da9edb6",
           "file": "payroll-ui.spec.ts",
-          "line": 105,
+          "line": 93,
           "column": 1
         },
         {
@@ -1321,15 +1295,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 4,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 4585,
+                  "duration": 1250,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:59:03.034Z",
+                  "startTime": "2026-10-15T19:19:04.217Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1339,7 +1313,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-cdc4e7dbcfbe9eb4598b",
           "file": "payroll-ui.spec.ts",
-          "line": 110,
+          "line": 98,
           "column": 1
         },
         {
@@ -1355,15 +1329,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 4,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 4230,
+                  "duration": 2619,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:59:07.674Z",
+                  "startTime": "2026-10-15T19:19:05.516Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1373,7 +1347,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-c390d3dc3c18ebe84144",
           "file": "payroll-ui.spec.ts",
-          "line": 117,
+          "line": 105,
           "column": 1
         },
         {
@@ -1389,15 +1363,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 6,
+                  "workerIndex": 4,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 3446,
+                  "duration": 3743,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T18:59:12.015Z",
+                  "startTime": "2026-10-15T19:19:08.183Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1407,7 +1381,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-2d63f2735edbe9bcd899",
           "file": "payroll-ui.spec.ts",
-          "line": 125,
+          "line": 113,
           "column": 1
         }
       ]
@@ -1415,8 +1389,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-15T18:58:14.848Z",
-    "duration": 68232.728,
+    "startTime": "2026-10-15T19:18:29.976Z",
+    "duration": 43171.377,
     "expected": 29,
     "skipped": 0,
     "unexpected": 4,

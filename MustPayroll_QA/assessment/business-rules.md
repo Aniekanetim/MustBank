@@ -56,7 +56,7 @@ flowchart TD
 
 This diagram shows the corrected flow. On an existing run, frozen entries are reused. Pending approvals and an empty approved total block creation of a first run. Validation errors reject the request without importing a partial batch. A rejected earning is excluded; approved earnings must still produce a non-empty total before processing.
 
-The retry trigger is an explicit product action in this reference, not an autonomous worker. The faulty branch instead checks the notification-dependent completion marker at the payment-exists decision. [Observed proof](evidence/business-proof.md) shows why that distinction creates the duplicate. [Operations handoff](operations-runbook.md) explains which recovery action to choose.
+The retry trigger is an explicit product action in this reference, not an autonomous worker. The faulty branch instead checks the notification-dependent completion marker at the payment-exists decision. [The test execution results](../executions/README.md) shows why that distinction creates the duplicate. [The handoff instructions](directive.md#resultshandoff-appendix) explains which recovery action to choose.
 
 ## Account and administration assumptions
 

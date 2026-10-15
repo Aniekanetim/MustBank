@@ -1,5 +1,5 @@
 {
-  "id": "dfc40d39-894d-4bc9-8bb0-f04eb20c0910",
+  "id": "238e456b-cef7-40bf-9c8c-2619120923b0",
   "company": "Northstar Studio",
   "currency": "NGN",
   "period": {
@@ -56,20 +56,20 @@
   ],
   "payments": [
     {
-      "id": "e7e43268-2fe7-43ae-aa78-2babd5a8be50",
+      "id": "affa4b4e-806d-40a9-89a3-57cdc39c8c93",
       "employeeId": "emp-001",
       "employeeName": "Amara Okafor",
       "periodStart": "2026-10-05T00:00:00.000Z",
       "amountMinor": 15000000,
       "bank": "Meridian Bank",
       "accountEnding": "4821",
-      "createdAt": "2026-10-15T18:58:37.632Z"
+      "createdAt": "2026-10-15T19:18:44.912Z"
     }
   ],
   "notifications": [
     {
-      "id": "02652a06-6c53-4232-99f6-cad61ae6d734",
-      "paymentId": "e7e43268-2fe7-43ae-aa78-2babd5a8be50",
+      "id": "3bfcf8ab-b46c-4641-8abc-add7edd5487f",
+      "paymentId": "affa4b4e-806d-40a9-89a3-57cdc39c8c93",
       "employeeId": "emp-001",
       "employeeName": "Amara Okafor",
       "periodStart": "2026-10-05T00:00:00.000Z",
@@ -83,7 +83,7 @@
       "periodStart": "2026-10-05T00:00:00.000Z",
       "periodEnd": "2026-10-12T00:00:00.000Z",
       "scheduledFor": "2026-10-13T09:00:00.000Z",
-      "createdAt": "2026-10-15T18:58:37.620Z",
+      "createdAt": "2026-10-15T19:18:44.899Z",
       "expectedMinor": 15000000
     }
   ],
@@ -100,7 +100,7 @@
       "detail": {
         "count": 1
       },
-      "createdAt": "2026-10-15T18:58:36.022Z"
+      "createdAt": "2026-10-15T19:18:43.720Z"
     },
     {
       "event": "failure_armed",
@@ -108,31 +108,31 @@
       "detail": {
         "kind": "notification"
       },
-      "createdAt": "2026-10-15T18:58:36.111Z"
+      "createdAt": "2026-10-15T19:18:43.813Z"
     },
     {
       "event": "payment_committed",
       "employeeId": "emp-001",
       "detail": {
-        "paymentId": "e7e43268-2fe7-43ae-aa78-2babd5a8be50",
+        "paymentId": "affa4b4e-806d-40a9-89a3-57cdc39c8c93",
         "amountMinor": 15000000
       },
-      "createdAt": "2026-10-15T18:58:37.641Z"
+      "createdAt": "2026-10-15T19:18:44.982Z"
     },
     {
       "event": "notification_attempted",
       "employeeId": "emp-001",
       "detail": {},
-      "createdAt": "2026-10-15T18:58:37.659Z"
+      "createdAt": "2026-10-15T19:18:45.006Z"
     },
     {
       "event": "notification_failed",
       "employeeId": "emp-001",
       "detail": {
-        "messageId": "02652a06-6c53-4232-99f6-cad61ae6d734",
+        "messageId": "3bfcf8ab-b46c-4641-8abc-add7edd5487f",
         "error": "Notification delivery unavailable. Retry the notification."
       },
-      "createdAt": "2026-10-15T18:58:37.686Z"
+      "createdAt": "2026-10-15T19:18:45.133Z"
     },
     {
       "event": "pay_run_finished",
@@ -140,7 +140,7 @@
       "detail": {
         "scheduledFor": "2026-10-13T09:00:00.000Z"
       },
-      "createdAt": "2026-10-15T18:58:37.696Z"
+      "createdAt": "2026-10-15T19:18:45.145Z"
     }
   ]
 }

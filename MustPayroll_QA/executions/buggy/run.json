@@ -1,16 +1,12 @@
 {
   "application": "MustPayroll",
   "variant": "faulty",
-  "generatedAt": "2026-10-15T19:00:29.705Z",
+  "generatedAt": "2026-10-15T19:19:52.007Z",
   "buildId": "mustpayroll-0.2.0-faulty-c0f059dc3f59",
   "directory": "../MustBank/Mustpayroll_buggy",
   "executionDirectory": "executions/buggy",
-  "runtimeSha256": "ecae6720563a3a6f215fa4af9f33838eb6871f9109260acc485bd10a81db4fd9",
-  "manifestSha256": "1681ea3f5c4e1a8a1fec63505fd1a4ef59c5f41721c9a3ae006bc7299e8ebe79",
   "sourceFingerprint": "c0f059dc3f59daf046aa6ba741796b6568abf0fd5172752a591c800101960f41",
-  "verificationFingerprint": "4d63aa3791738ab30e258143dc1ddd2472cf31959bcb574c465bdefabd1caab7",
-  "testSuiteSha256": "05df1d1121ea945ba8898ec6018d0bb6fbeadbd12efd83368ea78d5d5cf74db0",
-  "catalogueSha256": "d3945f44bf8504b51a1ca110bf2270b4df46a3610ac1e79af7f3ee815d964ed0",
+  "testSuiteSha256": "136b668803ef756597ec8fc5a8492c09161733c927f1caf285865351af3ddebb",
   "environment": {
     "node": "v22.21.0",
     "platform": "win32",
@@ -30,16 +26,12 @@
       "sourceSha256": "c0f059dc3f59daf046aa6ba741796b6568abf0fd5172752a591c800101960f41"
     }
   },
-  "commands": {
-    "completeVerification": "npm run verify",
-    "browserAndApi": "QUEST_BEHAVIOR=faulty npx playwright test",
-    "freshProcess": "PAYROLL_TEST_BUILD_DIR=../MustBank/Mustpayroll_buggy node --test tests/service.test.mjs"
-  },
+  "command": "npm run verify",
   "exitCodes": {
     "playwright": 1,
     "freshProcess": 1
   },
-  "playwrightReportSha256": "29ebb6d0e9f5a92a5c128249cf7c7a8a128d5f35a85cafad79dabe9161c3b31d",
+  "playwrightReportSha256": "91e9c41513cb443f2759e1d20dcbd8963fe834b29632eb8e02a9e18fe3905be5",
   "total": 34,
   "passed": 29,
   "failed": 5,
@@ -149,7 +141,7 @@
       "id": "TC13",
       "title": "Interruption rolls back payment and outbox together",
       "result": "failed",
-      "error": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T18:58:21.680Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"ebf1f088-df0a-4863-81ae-ee9fe8ed37e0\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]",
+      "error": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T19:18:36.301Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"82af9464-57fa-4552-a453-a9b700453ae2\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]",
       "framework": "Playwright",
       "actual": "After interruption: 1 payment(s), 0 notification(s). Rollback event recorded: false."
     },
@@ -302,11 +294,5 @@
       "framework": "Playwright",
       "actual": "Automated assertions passed: Served build ID and source fingerprint match the selected folder; policy-switch request returns HTTP 400."
     }
-  ],
-  "primaryObservation": {
-    "approvedMinor": 15000000,
-    "recordedMinor": 30000000,
-    "payments": 2,
-    "pendingNotifications": 1
-  }
+  ]
 }

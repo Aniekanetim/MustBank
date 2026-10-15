@@ -1,88 +1,51 @@
-# Prevent duplicate employee payment during payroll recovery
-
-Application locations: [buggy folder](../../MustBank/Mustpayroll_buggy) and [fixed folder](../../MustBank/MustPayroll_fixed), with [independent run instructions](../application-builds.md). The full verification builds and tests these folders directly. Their runtime file hashes and served build IDs tie each result to its application.
+# Prevent duplicate payment during payroll recovery
 
 ## Objective
 
-Demonstrate that recovering a notification failure cannot pay an employee twice for the same approved payroll period. The employee is owed ₦150,000. After the payment succeeds and its notification fails, retrying payroll must retain the original payment and recover delivery.
+An employee is owed ₦150,000 for one approved pay period. A successful payment followed by a notification failure must remain one payment when the original pay run is retried. This investigation reproduces the duplicate-payment failure and verifies the correction using the same expectations against two independent applications.
 
-Start with the [two builds and two test records](../executions/README.md), then [intent.md](intent.md) for the choice, [the business rule and flow](business-rules.md) for the expectation, and [the generated before/after proof](evidence/business-proof.md) for the observed result. The remaining links support reproduction, release judgment and handoff.
+## Scope and business rule
 
-## Scope
+MustPayroll uses synthetic employees, approved earnings, weekly pay periods, local payment records and simulated notification delivery. It does not move real funds. The [business rules and flow](business-rules.md) define the UTC period, approval, earning IDs, amounts, payment identity, recovery and account/admin assumptions.
 
-MustPayroll is a local application for a synthetic company, Northstar Studio. The journey covers employee destinations, approved earnings, weekly pay periods, pay-run confirmation, payment records, receipts and notification recovery. The application was adapted from an MIT-licensed sample; the current payroll service and controlled defect were introduced for this assessment.
+The [buggy application](../../MustBank/Mustpayroll_buggy) deliberately preserves the selected defect. The [fixed application](../../MustBank/MustPayroll_fixed) contains the correction. Each owns its source, server, build tools and database. All testing work is outside their container, in MustPayroll_QA.
 
-The selected defect is PAY-001. Boundary handling, timezone conversion, duplicate imports, approval, partial failure and persistence are adjacent regression concerns. Taxes, statutory deductions, salaried proration, leave, employee or account changes, real funds, external banking, authentication and distributed processing are outside scope.
+Taxes, statutory deductions, employee/account changes, external banking, authentication and distributed processing are outside scope.
 
-## Requirements
+## Requirements and completion criteria
 
-1. Identify at least three plausible failures, rank their impact, likelihood or uncertainty and effort, and explain why PAY-001 takes priority. See [intent.md](intent.md).
-2. Define an equally concrete alternative to the suggested rewards flow. The [payroll rules](business-rules.md) establish eligibility, UTC boundaries, amounts, approval, immutable IDs, locked periods and account/admin assumptions.
-3. Deliver two separately runnable payroll builds: one preserving the defect and one containing the correction. Execute the same full test suite against both. Keep a separate test record for each, tied to its exact build ID and runtime file hashes.
-4. Document at least eight cases covering the happy path, cut-off, timezone, duplicates, retries and partial failure. Execute every core case against both builds with identical preconditions, steps, inputs and expected results. Record each build's actual results, status and evidence in its own completed eight-case sheet. The current [case register](test-cases.md) contains these eight core cases within a 34-check suite, which also runs against both builds.
-5. Produce an actionable [defect and root-cause report](defect-report.md), release-blocking checks, final verification evidence, remaining gaps and a [release decision](release-readiness.md).
-6. Provide accessible work links and a Loom of no more than five minutes. Aniekan must review and explain the final work; the reviewer assigns the assessment score.
+| Requirement | Completion criterion | Work |
+|---|---|---|
+| Prioritize at least three plausible failures | Compare impact, likelihood/uncertainty and effort; select one for investigation | [intent.md](intent.md) |
+| Establish the rule and map the flow | Define qualifying inputs, decisions, payment, notification, recovery and account/admin assumptions | [Rules and flow](business-rules.md) |
+| Define at least eight cases | Inputs and expected outcomes cover happy path, cut-off, timezone, duplicate input, retry and partial failure | [Eight core cases](../test-cases/core-payroll-regression.csv), [complete suite](../test-cases/payroll-test-suite.csv) |
+| Reproduce and prevent the selected failure | The same regression fails on the buggy build and passes on the fixed build; keep separate actual results | [Test project](../tests), [buggy execution](../executions/buggy/README.md), [fixed execution](../executions/fixed/README.md) |
+| Explain the defect and release blockers | Reproduction, expected/actual result, severity, cause, evidence, correction and blocking checks are actionable | [PAY-001](defect-report.md) |
+| Demonstrate the final run and judge readiness | Report results, remaining gaps, release decision and handoff | [Execution comparison](../executions/README.md), [release checklist](release-readiness.md), instructions below |
+| Submit a Loom of no more than five minutes | Candidate explains the case, verification, AI use, personal ownership and release judgment | Pending candidate recording; add its accessible URL below |
 
-## Completion criteria and current position
+## Results and verification evidence
 
-| Criterion | Result |
-|---|---|
-| Alternatives prioritized; payroll flow and business rule explicit | Complete in intent and business rules |
-| Two independently runnable application builds | Each owns its source, dependency lockfile, build tooling, compiled interface, server and database; no application or QA dependency between them |
-| Two executed test records | Complete; full 34-case suite against each application folder, with logs, build identity and observed state |
-| Controlled defect fails the original business expectation | Observed: two payments totaling ₦300,000 instead of ₦150,000 |
-| Corrected flow passes with payment identity preserved | Observed: one ₦150,000 payment and recovered notification |
-| Same eight core cases executed against each build | Buggy: 6 passed, 2 failed (TC10 and TC13). Fixed: 8 passed, 0 failed. Inputs and expected results unchanged |
-| Extended suite and final run | Buggy: 29 passed, 5 failed. Fixed: 34 passed, 0 failed. Same 33 Playwright checks plus one fresh-process check in each run |
-| Defect report, release blockers, gaps and handoff | Complete for the local reference scope |
-| Personal ownership review and final Loom | Application review reported in progress; specific checks/sign-off and final recording remain pending |
-| Submission destination, exact deadline/timezone and full weighted rubric | Conditional form fields reported by candidate; exact submission field and invitation terms remain unconfirmed |
+The same eight core cases run against both builds with unchanged IDs, steps, inputs and expected results. The full suite contains 33 Playwright checks and one separate Node fresh-process check per build. These are automated results, not a claim that the candidate manually executed them.
 
-## Results and handoff appendix
+| Build | Eight core cases | Complete suite | Completed results and execution evidence |
+|---|---|---|---|
+| Buggy | 6 passed, 2 failed: TC10 and TC13 | 29 passed, 5 failed | [Eight-case results](../executions/buggy/core-results.csv), [all results](../executions/buggy/test-results.csv), [logs and report](../executions/buggy/README.md) |
+| Fixed | 8 passed, 0 failed | 34 passed, 0 failed | [Eight-case results](../executions/fixed/core-results.csv), [all results](../executions/fixed/test-results.csv), [logs and report](../executions/fixed/README.md) |
 
-The repository remains at its existing URL so its history and draft review remain available. The current product and evidence concern payroll; previous banking results do not establish payroll correctness.
+TC10 records two payments totaling ₦300,000 in the buggy build and one original ₦150,000 payment with recovered notification in the fixed build. The [defect report](defect-report.md) links the first attempt, state after retry, failed assertion and corrected execution. Each execution record identifies its application version and environment. The six passing core cases verify surrounding business rules; all eight are not required to fail in the buggy build.
 
-| Work or evidence | Accessible link |
-|---|---|
-| Faulty application and execution record | [Buggy application folder](../../MustBank/Mustpayroll_buggy) · [faulty record](../executions/buggy/README.md) |
-| Fixed application and execution record | [Fixed application folder](../../MustBank/MustPayroll_fixed) · [fixed record](../executions/fixed/README.md) |
-| Standalone application verification | [Copied-folder execution check](evidence/independence.json) |
-| Build comparison and exact correction | [Pair manifests and hashes](builds/pair.json) · [payment-policy patch](builds/fix.patch) |
-| Runnable project and exact setup | [README](../../README.md) · [repository branch](https://github.com/Aniekanetim/MustBank/tree/quest/rewards-settlement) |
-| Test project | [Playwright cases](../tests/payroll-api.spec.ts) · [UI regression](../tests/payroll-ui.spec.ts) · [fresh-process check](../tests/service.test.mjs) |
-| Cases, inputs, expected outcomes and results | [Test register](test-cases.md) |
-| Same eight core cases, separate completed results | [Buggy eight-case sheet](../executions/buggy/core-results.csv) · [fixed eight-case sheet](../executions/fixed/core-results.csv) |
-| Business rule, flow and assumptions | [Payroll rules](business-rules.md) |
-| Actionable defect, cause and proposed correction | [PAY-001](defect-report.md) |
-| Environment, source SHA-256 fingerprints and results | [Verification summary](evidence/summary.json) |
-| Readable business result and causal comparison | [Generated proof](evidence/business-proof.md) · [machine-readable comparison](evidence/business-proof.json) |
-| First payment with failed notification | [Faulty first attempt](../executions/buggy/evidence/first-attempt.json) · [corrected first attempt](../executions/fixed/evidence/first-attempt.json) |
-| State after retry | [Faulty workspace](../executions/buggy/evidence/workspace.json) · [corrected workspace](../executions/fixed/evidence/workspace.json) |
-| Regression evidence | [Expected failure](../executions/buggy/playwright/console.log) · [corrected run](../executions/fixed/playwright/console.log) · [faulty fresh-process result](../executions/buggy/process/console.log) · [fixed fresh-process result](../executions/fixed/process/console.log) |
-| Machine-readable reports | [Faulty report](../executions/buggy/playwright/report.json) · [corrected report](../executions/fixed/playwright/report.json) |
-| Optional historical visual support | [Faulty payroll](../supporting-media/previous-run/buggy/reproduction.png) · [corrected payroll](../supporting-media/previous-run/fixed/reproduction.png) · [failure trace](../supporting-media/previous-run/buggy/PAY-001-trace.zip) |
-| Release decision and remaining gaps | [Release readiness](release-readiness.md) |
-| Operational recovery and support handoff | [Recovery runbook](operations-runbook.md) |
-| AI delegation and candidate ownership | [Activity record](ai-accountability.md) · [guided personal review](personal-review.md) |
-| Transcript expectations and payroll adaptation | [Expectation review](expectation-review.md) |
-| Anonymous reviewer access | [Checked project/evidence links](evidence/reviewer-access.json) |
-| Customer-facing workflow verification | [Interface review](ui-review.md) |
-| Reviewable change | [Draft pull request](https://github.com/Aniekanetim/MustBank/pull/1) |
-| Recording preparation | [Loom script](loom-script.md), targeting 4:30 with a 30-second buffer |
-| Final Loom | Pending candidate recording; replace this entry with an accessible link before submission |
+## Results/handoff appendix
 
-To verify independently, follow README, install Chromium, and run npm run verify. To inspect manually, start both applications and prepare a fresh example in each with npm run scenario. Use each printed workspace URL; do not reuse a previously processed workspace for a first-attempt demonstration. The fixture and ledger stay local. No confidential employer information or real employee data is included.
+1. Follow [SETUP.md](../SETUP.md) to install dependencies and start the two local applications. The [repository branch](https://github.com/Aniekanetim/MustBank/tree/quest/rewards-settlement) contains both applications and the runnable test project.
+2. From MustPayroll_QA, run npm run verify to rebuild each app and execute the shared suite against each. Inspect both completed result tables and execution logs. Unexpected failures, skips, timeouts or retries block verification.
+3. For manual reproduction, follow PAY-001 and prepare a fresh workspace in each build with the scenario commands in SETUP.md. Keep the original pay date and compare payment references before and after recovery.
+4. If a successful payment has a pending message, use Notifications to retry delivery. Preserve the original payment reference and amount. If no payment exists, retry the original pay run and verify that previously successful entries remain unchanged.
+5. If recorded pay differs from approved pay or an employee-period has duplicate payments, stop processing that workspace/period. Record the workspace, employee, original period, payment references/count/amount, notification state, attempted recovery and result. Hand the mismatch to engineering/QA for investigation and reconciliation. A manual database edit is not the demonstrated fix.
+6. Use the [release checklist and gaps](release-readiness.md) for the bounded decision. Passing this local reference does not approve real banking, tax, authentication or distributed-worker behavior.
 
-AI assistance through Codex supported implementation, test design, execution and drafting. Automated results are identified as such. Aniekan's personal review and recorded explanation are not represented as completed. This fictional Quest case does not replace any separately requested genuine portfolio cases. The 76/100 threshold is the employer's pass requirement, not a self-assigned result.
+## AI use, ownership and final submission
 
-Screenshots and automation recordings are optional supporting formats. The [source review](evidence-requirements.md) distinguishes those formats from the required defect and verification evidence. Current results come from the two execution records; older media retains its original build identity.
+Codex assisted with implementation, test design, automated execution and document drafting. Aniekan directed the payroll setting, Playwright approach, separate builds/results and submission scope, and reported reviewing the application. Specific personal defect reproduction, code review and final sign-off have not been confirmed. His Loom must accurately explain what he reviewed and owned.
 
-## Final submission checks
-
-- Complete the personal review record with actual actions and a bounded release judgment.
-- Record and check the Loom's actual duration, replace the pending link above and verify reviewer access to it.
-- Use the assessment's appropriate repository/link/upload field when the conditional form exposes it. The saved initial form shows a PDF CV input and CV-text area; that stage does not establish the final Quest submission field. Do not infer the upload destination from it.
-- Confirm the deadline/timezone, any compensation terms and any additional role-specific brief or rubric shown by the invitation/form. No follow-up message is assumed necessary if those details are supplied there.
-- Provide two to four genuine past cases separately if the broader application requests them. This synthetic exercise cannot establish those incidents or their results.
-
-The supplied transcript is the working source of truth, with the project adapted to payroll. The public repository provides the two runnable builds, two test records and supporting work and linked evidence. A live hosted payroll service is not required by the supplied brief, and this unauthenticated local application should not be deployed as a public financial service merely to make it clickable.
+**Final Loom: pending.** Replace this line with an accessible recording URL before submission and confirm that its duration is no more than five minutes. Verify reviewer access to the repository and recording, and confirm the submission field, exact deadline/timezone, compensation terms and any additional rubric provided by the form or invitation. The reviewer assigns the assessment score.

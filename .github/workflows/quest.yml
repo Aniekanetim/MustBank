@@ -1,4 +1,4 @@
-name: MustPayroll Quest evidence
+name: MustPayroll Quest verification
 on:
   push:
     branches: [main, quest/rewards-settlement]
@@ -31,12 +31,8 @@ jobs:
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
-          name: mustpayroll-quest-evidence
+          name: mustpayroll-test-results
           path: |
-            MustPayroll_QA/assessment/evidence/
-            MustPayroll_QA/assessment/builds/
             MustPayroll_QA/test-cases/
             MustPayroll_QA/executions/
-            MustBank/Mustpayroll_buggy/build-manifest.json
-            MustBank/MustPayroll_fixed/build-manifest.json
           retention-days: 14

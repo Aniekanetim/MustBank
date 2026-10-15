@@ -1,6 +1,6 @@
 # Release decision
 
-**Ready with known limitations for local assessment review.** The corrected payroll flow passes 33 Playwright browser/API checks and one fresh-process check. The selected business assertion fails against the intentionally faulty implementation and passes against the correction. [Fixed build and test record](../executions/fixed/README.md). The separate [faulty build and test record](../executions/buggy/README.md) executes the same 34 checks: 29 pass and five fail for the recorded defect paths. [Evidence summary](evidence/summary.json).
+**Ready with known limitations for local assessment review.** The corrected payroll flow passes 33 Playwright browser/API checks and one fresh-process check. The selected business assertion fails against the intentionally faulty implementation and passes against the correction. [Fixed build and test record](../executions/fixed/README.md). The separate [faulty build and test record](../executions/buggy/README.md) executes the same 34 checks: 29 pass and five fail for the recorded defect paths.
 
 The faulty behavior is **not ready**: a notification failure followed by payroll retry records ₦300,000 against ₦150,000 of approved earnings. Keep it confined to the controlled reproduction. Neither implementation is approved for live payroll use.
 
@@ -37,6 +37,6 @@ Any payment mismatch, duplicate employee-period key, notification before payment
 
 Use [README](../../README.md) to run the project and verify the correction. The [defect report](defect-report.md) gives the shortest manual reproduction. Preserve the original payment reference when recovering a notification. If a mismatch is detected, stop processing and reconcile payment records; this prototype does not implement a compensating reversal.
 
-The [generated business comparison](evidence/business-proof.md) establishes the central result without relying on test counts alone. The [operations runbook](operations-runbook.md) defines state checks, safe recovery, stop/escalation conditions and measurements that a real rollout would need. It does not claim measured support reduction.
+The first-attempt and after-retry records are linked in the [defect report](defect-report.md). The [directive handoff](directive.md#resultshandoff-appendix) explains recovery actions and when to stop processing a mismatch.
 
-Aniekan reports reviewing the application. Before submission, complete the [personal review](personal-review.md), record a Loom of no more than five minutes and add its accessible link to directive.md. The application form reportedly has conditional fields; verify the actual repository/file submission field when it appears. Confirm exact deadline/timezone and any compensation terms from the form, invitation or recruiter. The missing weighted rubric must not be invented. [Anonymous project-access results](evidence/reviewer-access.json) do not establish access to an unprovided Loom or genuine portfolio cases.
+Aniekan reports reviewing the application. Before submission, personally confirm the case and evidence, record a Loom of no more than five minutes and add its accessible link to directive.md. Verify the actual submission field, deadline/timezone and any compensation or rubric terms provided by the form or invitation. Do not claim personal execution or sign-off that has not occurred.

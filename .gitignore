@@ -12,7 +12,6 @@
 !/MustBank/Mustpayroll_buggy/dist/
 !/MustBank/MustPayroll_fixed/dist/
 **/*.log
-!/MustPayroll_QA/assessment/evidence/*.log
 !/MustPayroll_QA/executions/**/*.log
 **/*.tsbuildinfo
 **/.vite/
@@ -20,5 +19,3 @@
 **/.env.local
 **/.DS_Store
 /MustPayroll_QA/local/
-/MustPayroll_QA/executions/*/playwright/artifacts/
-/MustPayroll_QA/executions/*/playwright/html-report/

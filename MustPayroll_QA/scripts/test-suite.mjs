@@ -31,7 +31,7 @@ export function observedResult(run, c) {
 function row(catalogue, c, run) {
   const result = run?.cases.find(item => item.id === c.id);
   const steps = `Preconditions: ${c.preconditions}\n\n` + c.steps.map((step, i) => `${i + 1}. ${step}`).join('\n');
-  const evidence = c.id === 'TC11' ? 'process/console.log; process/observation.json' : 'playwright/report.json; playwright/html-report/index.html';
+  const evidence = c.id === 'TC11' ? 'process/console.log; process/observation.json' : 'playwright/report.json; playwright/console.log';
   return [c.id, c.scenario, c.title, steps, c.data, c.expected,
     run ? observedResult(run, c) : '', result ? result.result === 'passed' ? 'Pass' : 'Fail' : 'Not Run',
     `${catalogue.coreIds.includes(c.id) ? 'Core assessment case' : 'Extended regression'}; Priority: ${c.priority}; Requirement: ${c.requirement}; ${c.framework}; ${c.automation}${run ? '; Evidence: ' + evidence + (result.result === 'failed' ? '; PAY-001 investigation' : '') : '; Actual results are recorded separately for each execution.'}`];

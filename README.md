@@ -1,47 +1,37 @@
 # MustPayroll
 
-MustPayroll models approved earnings, weekly pay runs and notification recovery using synthetic employees and a local payment ledger. The buggy and fixed applications are complete, separate projects. The QA project sits beside their container.
+MustPayroll models approved earnings, weekly pay runs and notification recovery using synthetic employees and a local payment ledger. The buggy and fixed applications are independent projects; the QA work sits outside their container.
 
-~~~text
-MustBank/
-  Mustpayroll_buggy/       Independent application with the controlled defect
-  MustPayroll_fixed/      Independent application with the correction
-MustPayroll_QA/
-  test-cases/             Shared eight-case core and 34-check full suite
-  tests/                  Shared Playwright and fresh-process checks
-  scripts/                Test execution, fixtures and report generation
-  executions/buggy/       Actual results and reports for the buggy application
-  executions/fixed/       Actual results and reports for the fixed application
-  assessment/             intent.md, directive.md, defect report and handoff
-  supporting-media/       Optional historical screenshots and recordings
-~~~
+| Location | Purpose |
+|---|---|
+| [MustBank/Mustpayroll_buggy](MustBank/Mustpayroll_buggy) | Complete application preserving the controlled defect |
+| [MustBank/MustPayroll_fixed](MustBank/MustPayroll_fixed) | Complete application containing the correction |
+| [MustPayroll_QA](MustPayroll_QA/README.md) | Test cases, automation, separate execution results and assessment documents |
 
 ## Run either application
 
-Requires Node.js 22.13 or later. Each application includes its own source, server, compiled interface, dependency lockfile, build tooling and database location. Starting it uses no external dependencies or files from its sibling or the QA project.
+Requires Node.js 22.13 or later. Each application has its own source, server, payment implementation, compiled interface, build commands and database. It can start, rebuild or be copied without its sibling or the QA project.
 
-| Application | Start from this repository root | Address |
+| Application | Start from this repository root | Local URL |
 |---|---|---|
-| [Buggy application](MustBank/Mustpayroll_buggy) | npm --prefix MustBank/Mustpayroll_buggy start | http://127.0.0.1:4175/overview |
-| [Fixed application](MustBank/MustPayroll_fixed) | npm --prefix MustBank/MustPayroll_fixed start | http://127.0.0.1:4176/overview |
+| Buggy | npm --prefix MustBank/Mustpayroll_buggy start | http://127.0.0.1:4175/overview |
+| Fixed | npm --prefix MustBank/MustPayroll_fixed start | http://127.0.0.1:4176/overview |
 
-Each application can also be copied to another location and started there with npm start. No dependency installation is required to serve its compiled interface. Its own README explains independent rebuilding and development. Each writes only to its own data/payroll.sqlite by default.
+Starting uses the committed compiled interface and Node built-ins. To rebuild an application, run npm ci and npm run build inside its folder. Each keeps its own data/payroll.sqlite.
 
-## Review and reproduce the QA work
+## Assessment work
 
-Start with the [QA guide](MustPayroll_QA/README.md), [setup instructions](MustPayroll_QA/SETUP.md) and [directive](MustPayroll_QA/assessment/directive.md).
+Start with [intent.md](MustPayroll_QA/assessment/intent.md) and [directive.md](MustPayroll_QA/assessment/directive.md). The directive links the business rules and flow, runnable test project, cases/results, defect report, release checklist, verification evidence and handoff.
 
-| Target | Eight completed cases | Full execution |
+| Build | Eight completed cases | Execution record |
 |---|---|---|
-| Buggy | [Core results](MustPayroll_QA/executions/buggy/core-results.csv) | [Run record and reports](MustPayroll_QA/executions/buggy/README.md) |
-| Fixed | [Core results](MustPayroll_QA/executions/fixed/core-results.csv) | [Run record and reports](MustPayroll_QA/executions/fixed/README.md) |
+| Buggy | [Core results](MustPayroll_QA/executions/buggy/core-results.csv) | [Results and logs](MustPayroll_QA/executions/buggy/README.md) |
+| Fixed | [Core results](MustPayroll_QA/executions/fixed/core-results.csv) | [Results and logs](MustPayroll_QA/executions/fixed/README.md) |
 
-The same eight core cases run against each application with unchanged inputs and expectations. The full shared suite contains 33 Playwright checks and one separate fresh-process check per application. Run the complete verification from MustPayroll_QA after following its setup instructions.
-
-The required submission includes the candidate's Loom, intent.md and final directive.md, linking the runnable test project, cases/results, defect report and release checklist. Evidence is required by the brief; screenshots and browser automation recordings are optional formats. The [evidence requirement review](MustPayroll_QA/assessment/evidence-requirements.md) identifies the exact wording. The final candidate Loom and personal sign-off remain pending.
+The same eight core cases and full 34-check suite run against both builds. Follow [SETUP.md](MustPayroll_QA/SETUP.md) to prepare the fixture and execute the tests. The required candidate Loom is still pending in directive.md.
 
 ## Scope and provenance
 
-No real funds, bank services, employee records or employer credentials are used. Taxes, statutory payroll compliance, authentication and distributed processing are outside the verified scope. Keep the unauthenticated servers on localhost.
+No real funds, bank services, employee records or employer credentials are used. Taxes, statutory compliance, authentication and distributed processing are outside the verified scope. Keep the unauthenticated servers on localhost.
 
-This MIT-licensed fork retains the original sample's [license](LICENSE) and review history. The current payroll service, interface and controlled defect were introduced for this exercise; no discovered upstream incident or production loss is claimed. AI supported implementation, testing and writing; the candidate owns personal review and final release judgment.
+This MIT-licensed fork retains the original sample's [license](LICENSE) and review history. The payroll service, interface and controlled defect were introduced for this exercise. No discovered upstream incident or production loss is claimed. AI supported implementation, testing and writing; the candidate owns personal review and final judgment.

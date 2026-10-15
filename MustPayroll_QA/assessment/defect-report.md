@@ -6,7 +6,7 @@
 
 Amara Okafor has one approved earning of ₦150,000 inside the 5–11 October 2026 UTC period. The pay date is 13 October at 09:00 UTC. The employee is owed one ₦150,000 payment. Notification recovery must preserve it.
 
-Start the two independent application folders using the [README](../../README.md), then prepare the failing example:
+Start the two independent application folders using the [README](../../README.md), then, from MustPayroll_QA, prepare the failing example:
 
 ~~~sh
 npm run scenario -- --build faulty --fail-notification
@@ -37,7 +37,7 @@ In [the faulty payment policy](../../MustBank/Mustpayroll_buggy/server/payment-p
 
 The [separate fixed policy](../../MustBank/MustPayroll_fixed/server/payment-policy.mjs) checks the durable employee-period payment identity, reinforces it with a unique index, and commits payment plus pending notification work atomically. Notification attempts occur after commit. Retry finds the original payment and recovers the existing message. It does not create another payment.
 
-The [generated causal comparison](evidence/business-proof.md) reads the actual first-attempt and retry attachments. It confirms identical earning inputs, payment commit before the failed notification, two distinct faulty payment IDs for the same employee-period, and preservation of the complete corrected payment and original message identity. It fails to generate a successful report if those observed conditions do not hold.
+The first-attempt and after-retry records linked below show identical earning inputs, payment before notification failure, two faulty payment references for one employee-period, and preservation of the corrected payment and message identity. TC10 applies the same business expectation to both builds.
 
 Prepare the corrected example with the same earning and failure:
 
@@ -49,10 +49,10 @@ Repeat the same actions and expectation. The result is one ₦150,000 payment, u
 
 ## Evidence and release blockers
 
-[TC10](../tests/payroll-ui.spec.ts) performs the UI actions and applies the same ₦150,000 assertion to both implementations. [Faulty state](../executions/buggy/evidence/workspace.json), [corrected state](../executions/fixed/evidence/workspace.json), [expected assertion failure](../executions/buggy/playwright/console.log) make the result reviewable. The [summary](evidence/summary.json) records the assessed source fingerprints and environment.
+[TC10](../tests/payroll-ui.spec.ts) performs the UI actions and applies the same ₦150,000 assertion to both implementations. [Faulty state](../executions/buggy/evidence/workspace.json), [corrected state](../executions/fixed/evidence/workspace.json), [expected assertion failure](../executions/buggy/playwright/console.log) make the result reviewable. Each execution record identifies the tested application version and environment.
 
 Block release if retry changes an existing payment identity or amount, two fixed payments share an employee-period key, failed notification removes payment, failed payment emits a message, pre-commit interruption leaves an orphan, or period totals fail reconciliation. TC08–TC17 cover these paths, including fresh-process recovery. External banking and distributed workers require additional integration evidence before production use.
 
-After the correction, use the [operations runbook](operations-runbook.md) to choose between notification recovery and an unpaid-entry retry. Escalate a mismatch with original references and state evidence; a manual database edit is not the demonstrated fix.
+After the correction, use the [handoff instructions](directive.md#resultshandoff-appendix) to choose between notification recovery and an unpaid-entry retry. Escalate a mismatch with original references and state evidence; a manual database edit is not the demonstrated fix.
 
-The [faulty build and its full test record](../executions/buggy/README.md) and [fixed build and its full test record](../executions/fixed/README.md) contain the application-folder links, actual results, reports and observed state. Both execute the same 34 checks. The [policy patch](builds/fix.patch) isolates the correction. TC13 additionally exposes the non-atomic persistence weakness in the faulty build: an interruption leaves a payment without saved notification work. Its fixed transaction rolls both writes back.
+The [faulty build and its full test record](../executions/buggy/README.md) and [fixed build and its full test record](../executions/fixed/README.md) contain the application-folder links, actual results, reports and observed state. Both execute the same 34 checks. The linked payment-policy files show the correction. TC13 additionally exposes the non-atomic persistence weakness in the faulty build: an interruption leaves a payment without saved notification work. Its fixed transaction rolls both writes back.
