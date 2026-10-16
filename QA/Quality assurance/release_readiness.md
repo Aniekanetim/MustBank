@@ -1,11 +1,11 @@
 # Release quality gates
 
-This checklist defines the process and acceptance conditions for recommending a release. QC supplies the execution results; the [directive](../../directive.md#release-decision-and-remaining-gaps) records the actual decision and limits.
+This checklist defines the process and acceptance conditions for recommending a release. QC supplies the execution results; the [directive](../directive.md#release-decision-and-remaining-gaps) records the actual decision and limits.
 
 ## Entry criteria
 
-- The [business rules and flow](../business_rules/README.md) define the pay period, earning eligibility, payment identity, notification order, recovery and account/admin assumptions.
-- The selected risk and alternatives are explained in [intent.md](../intent/intent.md). Unknown frequency and excluded behavior remain explicit.
+- The [business rules and flow](business_rules.md) define the pay period, earning eligibility, payment identity, notification order, recovery and account/admin assumptions.
+- The selected risk and alternatives are explained in [intent.md](intent.md). Unknown frequency and excluded behavior remain explicit.
 - The buggy and fixed applications use the same synthetic fixture and business expectations. Each execution identifies the application version and environment.
 - The QC cases cover the happy path, cut-off boundary, timezone conversion, duplicate input, retry and partial failure before execution begins.
 
@@ -26,8 +26,8 @@ This checklist defines the process and acceptance conditions for recommending a 
 
 1. The corrected application passes all checks within the agreed scope. The selected regression fails on the deliberately buggy application and passes on the fixed application without changing its expectation.
 2. All eight core cases execute against both applications. Case IDs, inputs, expected results and actual results remain traceable. Unexpected failures, skips, timeouts and test retries prevent a successful verification.
-3. The [defect report](../../Quality%20Control/bug_report/PAY-001.md) explains the cause and prevention. Any payment mismatch, duplicate payment, notification before payment or orphan payment blocks release of the affected flow.
-4. The actual [QC results](../../Quality%20Control/execute_test_cases/results/README.md) support the readiness decision. Remaining gaps are recorded in the directive, and the decision is limited to verified behavior.
+3. The [defect report](../Quality%20Control/bug_report/PAY-001.md) explains the cause and prevention. Any payment mismatch, duplicate payment, notification before payment or orphan payment blocks release of the affected flow.
+4. The actual [QC results](../Quality%20Control/execute_test_cases/results/README.md) support the readiness decision. Remaining gaps are recorded in the directive, and the decision is limited to verified behavior.
 5. Candidate ownership, final Loom and submission checks are completed before the application is submitted. Automated execution does not substitute for personal sign-off.
 
 After a relevant rule or implementation change, review the affected cases and repeat verification. A passing local fixture does not approve unverified bank, tax, authentication or distributed-worker behavior.

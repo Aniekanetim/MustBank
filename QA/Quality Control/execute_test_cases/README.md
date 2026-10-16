@@ -13,6 +13,8 @@ npx playwright install --no-shell chromium
 
 This folder owns the test dependencies, Playwright configuration, page objects, execution scripts and generated results. Each application owns its source, lockfile and build/start commands. The designed case tables remain in the adjacent test_cases folder. Automation paths in those tables are relative to this execution folder.
 
+The case CSVs have ten columns with separate Preconditions and numbered Steps. Scenario is the high-level area; Test Case Desc states the specific check. Designed tables leave Actual Result blank and use NOT RUN. Executed tables report the responses and values observed in that build, with PASS or FAIL. Case observations are retained inside the existing Playwright report and structured execution record. Build identity and verification links appear in Comments.
+
 ## Execute quality control against both builds
 
 ~~~sh
@@ -52,6 +54,6 @@ Open each printed pay-run URL, process once, then retry that same run. Approved 
 
 ## Review assurance, findings and submission
 
-Start with the QA [intent.md](../../Quality%20assurance/intent/intent.md), then [directive.md](../../directive.md), [the defect](../bug_report/PAY-001.md) and [release readiness](../../Quality%20assurance/release_readiness/README.md). directive.md links the runnable project, cases, results and verification evidence. The candidate's final Loom and personal sign-off remain pending.
+Start with the QA [intent.md](../../Quality%20assurance/intent.md), then [directive.md](../../directive.md), [the defect](../bug_report/PAY-001.md) and [release readiness](../../Quality%20assurance/release_readiness.md). directive.md links the runnable project, cases, results and verification evidence. The candidate's final Loom and personal sign-off remain pending.
 
 The QA release checklist defines acceptance conditions; directive.md records the actual decision based on QC results. To update the designed case tables after editing the catalogue, run npm run qc:design.

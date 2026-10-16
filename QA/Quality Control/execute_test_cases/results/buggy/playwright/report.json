@@ -121,18 +121,23 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 78,
+                  "duration": 107,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:07.986Z",
+                  "startTime": "2026-10-16T05:04:00.272Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "served-build",
                       "contentType": "application/json",
                       "body": "eyJzdGF0dXMiOiJvayIsInN0b3JhZ2UiOiJzcWxpdGUiLCJhcHBsaWNhdGlvbiI6Ik11c3RQYXlyb2xsIiwic2NoZW1hVmVyc2lvbiI6MiwiYnVpbGQiOnsiaWQiOiJtdXN0cGF5cm9sbC0wLjIuMC1mYXVsdHktYzBmMDU5ZGMzZjU5IiwidmFyaWFudCI6ImZhdWx0eSIsImRlZmF1bHRQb3J0Ijo0MTc1LCJzb3VyY2VTaGEyNTYiOiJjMGYwNTlkYzNmNTlkYWYwNDZhYTZiYTc0MTc5NmI2NTY4YWJmMGZkNTE3Mjc1MmE1OTFjODAwMTAxOTYwZjQxIn19"
+                    },
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJzZXJ2ZWRCdWlsZCI6eyJpZCI6Im11c3RwYXlyb2xsLTAuMi4wLWZhdWx0eS1jMGYwNTlkYzNmNTkiLCJ2YXJpYW50IjoiZmF1bHR5IiwiZGVmYXVsdFBvcnQiOjQxNzUsInNvdXJjZVNoYTI1NiI6ImMwZjA1OWRjM2Y1OWRhZjA0NmFhNmJhNzQxNzk2YjY1NjhhYmYwZmQ1MTcyNzUyYTU5MWM4MDAxMDE5NjBmNDEifSwicG9saWN5U3dpdGNoU3RhdHVzIjo0MDB9"
                     }
                   ]
                 }
@@ -161,14 +166,20 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 485,
+                  "duration": 491,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:07.987Z",
+                  "startTime": "2026-10-16T05:04:00.364Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6IjhjYWJjOTgwLTljM2ItNDk5NC05MmUxLTM1ZTQ5OGViYzhjYSIsImV4cGVjdGVkTWlub3IiOjQzNTAwMDAwLCJwYWlkTWlub3IiOjQzNTAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjozLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDUiLCJhbW91bnRNaW5vciI6ODUwMDAwMCwic3RhdHVzIjoicGVuZGluZyJ9LHsiaWQiOiJlYXJuLTAwNCIsImFtb3VudE1pbm9yIjo4NTAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9LHsiaWQiOiJlYXJuLTAwMiIsImFtb3VudE1pbm9yIjozMDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9LHsiaWQiOiJlYXJuLTAwMyIsImFtb3VudE1pbm9yIjoyMDAwMDAwMCwic3RhdHVzIjoiYXBwcm92ZWQifSx7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTIwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiLCJlYXJuLTAwMiIsImVhcm4tMDAzIiwiZWFybi0wMDQiXSwicGF5bWVudHMiOlt7ImlkIjoiODVkNDk5MGUtZDNjYi00NDQ5LTkzZWEtODRhMDNiMWViNTQ2IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDMiLCJlbXBsb3llZU5hbWUiOiJaYXJhIEJlbGxvIiwiYW1vdW50TWlub3IiOjg1MDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn0seyJpZCI6IjliNjE2YTdkLTEzMGMtNDc3Ni1hOGJlLTU0OTdjMDc4NWQ1ZiIsImVtcGxveWVlSWQiOiJlbXAtMDAyIiwiZW1wbG95ZWVOYW1lIjoiRGFuaWVsIE1lbnNhaCIsImFtb3VudE1pbm9yIjoyMDAwMDAwMCwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoifSx7ImlkIjoiODRiM2JjOWYtNDQ4Yy00ZDlhLWE0NjktM2ZlODY4ZThkNWY4IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbeyJpZCI6IjAwYmI3MTlkLTYzZTQtNGFlMy1hMzVlLTJkZDJkNGY4Y2JjNiIsInBheW1lbnRJZCI6Ijg1ZDQ5OTBlLWQzY2ItNDQ0OS05M2VhLTg0YTAzYjFlYjU0NiIsInN0YXRlIjoic2VudCJ9LHsiaWQiOiI3MDZiMjllZS05M2Q2LTQ4ZTAtYjdiNC0wYzU2ZTBmNDBjZGEiLCJwYXltZW50SWQiOiI5YjYxNmE3ZC0xMzBjLTQ3NzYtYThiZS01NDk3YzA3ODVkNWYiLCJzdGF0ZSI6InNlbnQifSx7ImlkIjoiYjIzYWQxMTUtNDZjZC00MTIxLWIxYWMtMDhiOWFjNTk1YmJjIiwicGF5bWVudElkIjoiODRiM2JjOWYtNDQ4Yy00ZDlhLWE0NjktM2ZlODY4ZThkNWY4Iiwic3RhdGUiOiJzZW50In1dLCJldmVudHMiOlsiZWFybmluZ3NfcmVjb3JkZWQiLCJwYXltZW50X2NvbW1pdHRlZCIsIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJub3RpZmljYXRpb25fc2VudCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9zZW50IiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX3NlbnQiLCJwYXlfcnVuX2ZpbmlzaGVkIl19fQ=="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -176,7 +187,7 @@
           ],
           "id": "2773c42ecf68f72f6713-eee79c057f1ea82aaf33",
           "file": "payroll-api.spec.ts",
-          "line": 16,
+          "line": 18,
           "column": 1
         },
         {
@@ -195,14 +206,20 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 503,
+                  "duration": 600,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:08.166Z",
+                  "startTime": "2026-10-16T05:04:00.478Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6IjM2YjY3NGJmLWIxMjItNDI0Ny04NzM1LTk1MzE1YzVhMzlhMiIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjoxLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiZDU3NjBjZDUtMDdmNy00MWNmLTg0ODEtYjcxZmUxOTMxODY3IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbeyJpZCI6IjdlYjhmZDY2LTllNDUtNGQ5Yi05NzA2LWFmYmMzNzU4NTlmMyIsInBheW1lbnRJZCI6ImQ1NzYwY2Q1LTA3ZjctNDFjZi04NDgxLWI3MWZlMTkzMTg2NyIsInN0YXRlIjoic2VudCJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZWFybmluZ3NfcmVjb3JkZWQiLCJwYXltZW50X2NvbW1pdHRlZCIsIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJub3RpZmljYXRpb25fc2VudCIsInBheV9ydW5fZmluaXNoZWQiXX19"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -210,7 +227,7 @@
           ],
           "id": "2773c42ecf68f72f6713-90f6fa36f622922c6d21",
           "file": "payroll-api.spec.ts",
-          "line": 22,
+          "line": 25,
           "column": 1
         },
         {
@@ -229,14 +246,20 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 527,
+                  "duration": 449,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:08.580Z",
+                  "startTime": "2026-10-16T05:04:00.978Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJmaXJzdCI6eyJ3b3Jrc3BhY2VJZCI6IjY1YTA5ZTc3LTg3ZTctNGVhNC1hODZiLWU5ZmFiNmQ5MTBkMyIsImV4cGVjdGVkTWlub3IiOjQwMDAwMDAsInBhaWRNaW5vciI6NDAwMDAwMCwibG9ja2VkIjp0cnVlLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MSwicnVuQ291bnQiOjEsImVhcm5pbmdzIjpbeyJpZCI6ImVuZCIsImFtb3VudE1pbm9yIjo0MDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9LHsiaWQiOiJsYXN0IiwiYW1vdW50TWlub3IiOjMwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn0seyJpZCI6InN0YXJ0IiwiYW1vdW50TWlub3IiOjEwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn0seyJpZCI6ImJlZm9yZSIsImFtb3VudE1pbm9yIjoyMDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9XSwiZWFybmluZ0lkc0luUGVyaW9kIjpbImxhc3QiLCJzdGFydCJdLCJwYXltZW50cyI6W3siaWQiOiJiNDA5ZTljYi05ZWFjLTQwM2MtOTc3NS04MjUxNDdlOTQ1OGIiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsImFtb3VudE1pbm9yIjo0MDAwMDAwLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiJ9XSwibm90aWZpY2F0aW9ucyI6W3siaWQiOiJmYWE0MDQ1ZS00MzA4LTRmM2EtYjVmOS1kZjVkYjc2YTM1NmYiLCJwYXltZW50SWQiOiJiNDA5ZTljYi05ZWFjLTQwM2MtOTc3NS04MjUxNDdlOTQ1OGIiLCJzdGF0ZSI6InNlbnQifV0sImV2ZW50cyI6WyJlYXJuaW5nc19yZWNvcmRlZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9zZW50IiwicGF5X3J1bl9maW5pc2hlZCJdfSwiYWZ0ZXIiOnsid29ya3NwYWNlSWQiOiI2NWEwOWU3Ny04N2U3LTRlYTQtYTg2Yi1lOWZhYjZkOTEwZDMiLCJleHBlY3RlZE1pbm9yIjo0MDAwMDAwLCJwYWlkTWlub3IiOjQwMDAwMDAsImxvY2tlZCI6dHJ1ZSwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjAsInByb3ZpZGVyQWNjZXB0ZWQiOjIsInJ1bkNvdW50IjoyLCJlYXJuaW5ncyI6W3siaWQiOiJlbmQiLCJhbW91bnRNaW5vciI6NDAwMDAwMCwic3RhdHVzIjoiYXBwcm92ZWQifSx7ImlkIjoibGFzdCIsImFtb3VudE1pbm9yIjozMDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9LHsiaWQiOiJzdGFydCIsImFtb3VudE1pbm9yIjoxMDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9LHsiaWQiOiJiZWZvcmUiLCJhbW91bnRNaW5vciI6MjAwMDAwMCwic3RhdHVzIjoiYXBwcm92ZWQifV0sImVhcm5pbmdJZHNJblBlcmlvZCI6WyJlbmQiXSwicGF5bWVudHMiOlt7ImlkIjoiZjQwNGM1ZjktYTc3ZC00MTZiLWE5OTYtY2FjODE2ZjQyN2Q0IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6NDAwMDAwMCwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSx7ImlkIjoiYjQwOWU5Y2ItOWVhYy00MDNjLTk3NzUtODI1MTQ3ZTk0NThiIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6NDAwMDAwMCwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiMjZjM2Q0MTctZmVhOC00MDE1LTkzMDUtNzE2NTMxNjg4YWJmIiwicGF5bWVudElkIjoiZjQwNGM1ZjktYTc3ZC00MTZiLWE5OTYtY2FjODE2ZjQyN2Q0Iiwic3RhdGUiOiJzZW50In0seyJpZCI6ImZhYTQwNDVlLTQzMDgtNGYzYS1iNWY5LWRmNWRiNzZhMzU2ZiIsInBheW1lbnRJZCI6ImI0MDllOWNiLTllYWMtNDAzYy05Nzc1LTgyNTE0N2U5NDU4YiIsInN0YXRlIjoic2VudCJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX3NlbnQiLCJwYXlfcnVuX2ZpbmlzaGVkIiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX3NlbnQiLCJwYXlfcnVuX2ZpbmlzaGVkIl19fQ=="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -244,7 +267,7 @@
           ],
           "id": "2773c42ecf68f72f6713-cd5d899152a9b5ae1f89",
           "file": "payroll-api.spec.ts",
-          "line": 26,
+          "line": 32,
           "column": 1
         },
         {
@@ -263,14 +286,20 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 511,
+                  "duration": 435,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:08.706Z",
+                  "startTime": "2026-10-16T05:04:01.114Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6IjIyY2I2YmY1LTVmNTEtNGVjYS1iMmVlLThkYzBiYmIwZTgyOSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjoxLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiaW5zaWRlIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9LHsiaWQiOiJvdXRzaWRlIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9XSwiZWFybmluZ0lkc0luUGVyaW9kIjpbImluc2lkZSJdLCJwYXltZW50cyI6W3siaWQiOiIxNjg5YjQwMi01YTc4LTQwM2MtOGI0NS1mYmNlODAzZjNiMjIiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsImFtb3VudE1pbm9yIjoxNTAwMDAwMCwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiZTEyMmVmOWEtMGI1NS00NWQzLWExYmMtMTA1NmZjOTNjNDVhIiwicGF5bWVudElkIjoiMTY4OWI0MDItNWE3OC00MDNjLThiNDUtZmJjZTgwM2YzYjIyIiwic3RhdGUiOiJzZW50In1dLCJldmVudHMiOlsiZWFybmluZ3NfcmVjb3JkZWQiLCJlYXJuaW5nc19yZWNvcmRlZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9zZW50IiwicGF5X3J1bl9maW5pc2hlZCJdfX0="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -278,7 +307,7 @@
           ],
           "id": "2773c42ecf68f72f6713-8f3d74de2e5df49ad7e9",
           "file": "payroll-api.spec.ts",
-          "line": 31,
+          "line": 40,
           "column": 1
         },
         {
@@ -297,14 +326,20 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 268,
+                  "duration": 390,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:09.158Z",
+                  "startTime": "2026-10-16T05:04:01.470Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6IjU3OTMwODA3LWRiZWItNDE1OS04MDY0LTRlNjg5MmExMzlhMiIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjoxLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiYTFlYjdkZjItYWU3Ni00YjFhLWI4YWYtMjZjNWQxYmUxOTY0IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbeyJpZCI6IjVjZDMyNDcyLWZkNzUtNGFkOC1iOGU4LTE2MGZhMmQwY2ZmNyIsInBheW1lbnRJZCI6ImExZWI3ZGYyLWFlNzYtNGIxYS1iOGFmLTI2YzVkMWJlMTk2NCIsInN0YXRlIjoic2VudCJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZWFybmluZ3NfcmVjb3JkZWQiLCJwYXltZW50X2NvbW1pdHRlZCIsIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJub3RpZmljYXRpb25fc2VudCIsInBheV9ydW5fZmluaXNoZWQiXX19"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -312,7 +347,7 @@
           ],
           "id": "2773c42ecf68f72f6713-cff63f9cf463521efc4d",
           "file": "payroll-api.spec.ts",
-          "line": 35,
+          "line": 46,
           "column": 1
         },
         {
@@ -331,14 +366,20 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 263,
+                  "duration": 285,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:09.263Z",
+                  "startTime": "2026-10-16T05:04:01.587Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJyZXNwb25zZVN0YXR1cyI6NDA5LCJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6ImVjMjk3OTZjLTQ4MzYtNGY2ZS1iY2QwLTk5MWQ1M2RmOTU2NyIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjAsImxvY2tlZCI6ZmFsc2UsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjowLCJydW5Db3VudCI6MCwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOltdLCJub3RpZmljYXRpb25zIjpbXSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIl19fQ=="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -346,7 +387,7 @@
           ],
           "id": "2773c42ecf68f72f6713-6f75d60b00d8ee23e0b3",
           "file": "payroll-api.spec.ts",
-          "line": 39,
+          "line": 52,
           "column": 1
         },
         {
@@ -365,14 +406,20 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 187,
+                  "duration": 215,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:09.469Z",
+                  "startTime": "2026-10-16T05:04:01.898Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJyZXNwb25zZVN0YXR1cyI6NDA5LCJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6IjQ2YmVlNzQ5LTQyNzMtNDIyMi1iZGFmLTg4NjMwZDU2MTFmYyIsImV4cGVjdGVkTWlub3IiOjAsInBhaWRNaW5vciI6MCwibG9ja2VkIjpmYWxzZSwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjAsInByb3ZpZGVyQWNjZXB0ZWQiOjAsInJ1bkNvdW50IjowLCJlYXJuaW5ncyI6W3siaWQiOiJlYXJuLTAwMSIsImFtb3VudE1pbm9yIjoxNTAwMDAwMCwic3RhdHVzIjoicGVuZGluZyJ9XSwiZWFybmluZ0lkc0luUGVyaW9kIjpbXSwicGF5bWVudHMiOltdLCJub3RpZmljYXRpb25zIjpbXSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZWFybmluZ3NfcmVjb3JkZWQiXX19"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -380,7 +427,7 @@
           ],
           "id": "2773c42ecf68f72f6713-750ac7333c1c0fa7a88b",
           "file": "payroll-api.spec.ts",
-          "line": 43,
+          "line": 60,
           "column": 1
         },
         {
@@ -399,14 +446,20 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 721,
+                  "duration": 329,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:09.572Z",
+                  "startTime": "2026-10-16T05:04:01.907Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJmaXJzdCI6eyJ3b3Jrc3BhY2VJZCI6ImI0MGI0MDY3LTkwN2UtNDc0Ny04ZDI0LWRjNTk1ZWJmM2MwMyIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjAsImxvY2tlZCI6dHJ1ZSwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjAsInByb3ZpZGVyQWNjZXB0ZWQiOjAsInJ1bkNvdW50IjoxLCJlYXJuaW5ncyI6W3siaWQiOiJlYXJuLTAwMSIsImFtb3VudE1pbm9yIjoxNTAwMDAwMCwic3RhdHVzIjoiYXBwcm92ZWQifV0sImVhcm5pbmdJZHNJblBlcmlvZCI6WyJlYXJuLTAwMSJdLCJwYXltZW50cyI6W10sIm5vdGlmaWNhdGlvbnMiOltdLCJldmVudHMiOlsiZWFybmluZ3NfcmVjb3JkZWQiLCJmYWlsdXJlX2FybWVkIiwicGF5bWVudF9mYWlsZWQiLCJwYXlfcnVuX2ZpbmlzaGVkIl19LCJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6ImI0MGI0MDY3LTkwN2UtNDc0Ny04ZDI0LWRjNTk1ZWJmM2MwMyIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjoxLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiM2ZmMjBhNTctYTU1My00YzI4LTlhNmUtYjdjNDExNGNiZWMyIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbeyJpZCI6IjFjM2M4YjI4LTFlZmYtNDlkZC1iN2E5LTEwNDg0MzJlOTkxZSIsInBheW1lbnRJZCI6IjNmZjIwYTU3LWE1NTMtNGMyOC05YTZlLWI3YzQxMTRjYmVjMiIsInN0YXRlIjoic2VudCJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZmFpbHVyZV9hcm1lZCIsInBheW1lbnRfZmFpbGVkIiwicGF5X3J1bl9maW5pc2hlZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9zZW50IiwicGF5X3J1bl9maW5pc2hlZCJdfX0="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -414,7 +467,7 @@
           ],
           "id": "2773c42ecf68f72f6713-f765a49bd2ad623b4076",
           "file": "payroll-api.spec.ts",
-          "line": 48,
+          "line": 67,
           "column": 1
         },
         {
@@ -433,14 +486,20 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 745,
+                  "duration": 364,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:09.688Z",
+                  "startTime": "2026-10-16T05:04:02.154Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6ImRhNGVjNTBiLTNmMGItNGQyNS05NmM0LWMwOWIyYzg2MjZjMiIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjoxLCJwcm92aWRlckFjY2VwdGVkIjowLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiMzE0NjBiZTktMTc5Zi00NjE0LWEzODgtMTJiMDIxMDI2OGI0IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbeyJpZCI6ImVhNjc1NWU2LTgxYTUtNDQ0ZC1hYmQ2LWRhZGE3MTBjNWVkNSIsInBheW1lbnRJZCI6IjMxNDYwYmU5LTE3OWYtNDYxNC1hMzg4LTEyYjAyMTAyNjhiNCIsInN0YXRlIjoicGVuZGluZyJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZmFpbHVyZV9hcm1lZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9mYWlsZWQiLCJwYXlfcnVuX2ZpbmlzaGVkIl19fQ=="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -448,7 +507,7 @@
           ],
           "id": "2773c42ecf68f72f6713-10d55309b942bcd3bcb6",
           "file": "payroll-api.spec.ts",
-          "line": 53,
+          "line": 75,
           "column": 1
         },
         {
@@ -467,14 +526,20 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 489,
+                  "duration": 464,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:10.338Z",
+                  "startTime": "2026-10-16T05:04:02.273Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJmaXJzdCI6eyJ3b3Jrc3BhY2VJZCI6ImRiMGZkZDMxLWJjN2MtNDc5My1iMzUzLTAyNzI0OWNmOWRhOCIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjoxLCJwcm92aWRlckFjY2VwdGVkIjowLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiZTI5MDUwMjctMmMzNS00OTgwLWFlYmItZDk4ZmRmMTRjZTgyIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbeyJpZCI6IjdlNjJiMDA3LWIxNjEtNDNjZS04MjMwLWQwM2M5YmQwZTlmNyIsInBheW1lbnRJZCI6ImUyOTA1MDI3LTJjMzUtNDk4MC1hZWJiLWQ5OGZkZjE0Y2U4MiIsInN0YXRlIjoicGVuZGluZyJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZmFpbHVyZV9hcm1lZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9mYWlsZWQiLCJwYXlfcnVuX2ZpbmlzaGVkIl19LCJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6ImRiMGZkZDMxLWJjN2MtNDc5My1iMzUzLTAyNzI0OWNmOWRhOCIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjoxLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiZTI5MDUwMjctMmMzNS00OTgwLWFlYmItZDk4ZmRmMTRjZTgyIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbeyJpZCI6IjdlNjJiMDA3LWIxNjEtNDNjZS04MjMwLWQwM2M5YmQwZTlmNyIsInBheW1lbnRJZCI6ImUyOTA1MDI3LTJjMzUtNDk4MC1hZWJiLWQ5OGZkZjE0Y2U4MiIsInN0YXRlIjoic2VudCJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZmFpbHVyZV9hcm1lZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9mYWlsZWQiLCJwYXlfcnVuX2ZpbmlzaGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9zZW50Il19LCJwYXltZW50c1VuY2hhbmdlZCI6dHJ1ZX0="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -482,7 +547,7 @@
           ],
           "id": "2773c42ecf68f72f6713-19c417841d11549bb009",
           "file": "payroll-api.spec.ts",
-          "line": 58,
+          "line": 83,
           "column": 1
         },
         {
@@ -501,37 +566,42 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "failed",
-                  "duration": 561,
+                  "duration": 304,
                   "error": {
-                    "message": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T23:10:10.890Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"cc701e75-970e-4f24-bc98-8bb2c261ffee\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]",
-                    "stack": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T23:10:10.890Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"cc701e75-970e-4f24-bc98-8bb2c261ffee\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:65:26",
+                    "message": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-16T05:04:02.812Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"ac939aa0-ef3d-41ec-89da-df5a32196e6c\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]",
+                    "stack": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-16T05:04:02.812Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"ac939aa0-ef3d-41ec-89da-df5a32196e6c\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:92:26",
                     "location": {
                       "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
                       "column": 26,
-                      "line": 65
+                      "line": 92
                     },
-                    "snippet": "  63 |   const w = await create(request); await fault(request, w.id, 'persistence'); const first = await run(request, w.id);\n  64 |   await info.attach('observed-TC13', { body: JSON.stringify(first), contentType: 'application/json' });\n> 65 |   expect(first.payments).toHaveLength(0); expect(first.notifications).toHaveLength(0); expect(first.events.some((e: any) => e.event === 'payment_rolled_back')).toBeTruthy();\n     |                          ^\n  66 |   const next = await run(request, w.id); expect(next.paidMinor).toBe(15000000); expect(next.payments).toHaveLength(1);\n  67 | });\n  68 | test('TC14 | Lost provider acknowledgement recovers without duplicate acceptance', async ({ request }, info) => {"
+                    "snippet": "  90 |   await info.attach('observed-TC13', { body: JSON.stringify(first), contentType: 'application/json' });\n  91 |   observe({ first: payrollSnapshot(first) });\n> 92 |   expect(first.payments).toHaveLength(0); expect(first.notifications).toHaveLength(0); expect(first.events.some((e: any) => e.event === 'payment_rolled_back')).toBeTruthy();\n     |                          ^\n  93 |   const next = await run(request, w.id);\n  94 |   observe({ after: payrollSnapshot(next) });\n  95 |   expect(next.paidMinor).toBe(15000000); expect(next.payments).toHaveLength(1);"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
                         "column": 26,
-                        "line": 65
+                        "line": 92
                       },
-                      "message": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-15T23:10:10.890Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"cc701e75-970e-4f24-bc98-8bb2c261ffee\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]\n\n  63 |   const w = await create(request); await fault(request, w.id, 'persistence'); const first = await run(request, w.id);\n  64 |   await info.attach('observed-TC13', { body: JSON.stringify(first), contentType: 'application/json' });\n> 65 |   expect(first.payments).toHaveLength(0); expect(first.notifications).toHaveLength(0); expect(first.events.some((e: any) => e.event === 'payment_rolled_back')).toBeTruthy();\n     |                          ^\n  66 |   const next = await run(request, w.id); expect(next.paidMinor).toBe(15000000); expect(next.payments).toHaveLength(1);\n  67 | });\n  68 | test('TC14 | Lost provider acknowledgement recovers without duplicate acceptance', async ({ request }, info) => {\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:65:26"
+                      "message": "Error: expect(received).toHaveLength(expected)\n\nExpected length: 0\nReceived length: 1\nReceived array:  [{\"accountEnding\": \"4821\", \"amountMinor\": 15000000, \"bank\": \"Meridian Bank\", \"createdAt\": \"2026-10-16T05:04:02.812Z\", \"employeeId\": \"emp-001\", \"employeeName\": \"Amara Okafor\", \"id\": \"ac939aa0-ef3d-41ec-89da-df5a32196e6c\", \"periodStart\": \"2026-10-05T00:00:00.000Z\"}]\n\n  90 |   await info.attach('observed-TC13', { body: JSON.stringify(first), contentType: 'application/json' });\n  91 |   observe({ first: payrollSnapshot(first) });\n> 92 |   expect(first.payments).toHaveLength(0); expect(first.notifications).toHaveLength(0); expect(first.events.some((e: any) => e.event === 'payment_rolled_back')).toBeTruthy();\n     |                          ^\n  93 |   const next = await run(request, w.id);\n  94 |   observe({ after: payrollSnapshot(next) });\n  95 |   expect(next.paidMinor).toBe(15000000); expect(next.payments).toHaveLength(1);\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:92:26"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:10.474Z",
+                  "startTime": "2026-10-16T05:04:02.570Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "observed-TC13",
                       "contentType": "application/json",
-                      "body": "eyJpZCI6ImM1ODUzYzJiLWJjZGMtNDQ3Zi1iMTgyLWQ5ODEzMGExMDJjNiIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6MX1dLCJwYXltZW50cyI6W3siaWQiOiJjYzcwMWU3NS05NzBlLTRmMjQtYmM5OC04YmIyYzI2MWZmZWUiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxMC44OTBaIn1dLCJub3RpZmljYXRpb25zIjpbXSwicnVucyI6W3sicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJwZXJpb2RFbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiLCJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjEwLjg2OFoiLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMH1dLCJsb2NrZWQiOnRydWUsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJwZW5kaW5nQXBwcm92YWxzIjowLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MCwiZXZlbnRzIjpbeyJldmVudCI6ImVhcm5pbmdzX3JlY29yZGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImNvdW50IjoxfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxMC43NjFaIn0seyJldmVudCI6ImZhaWx1cmVfYXJtZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsia2luZCI6InBlcnNpc3RlbmNlIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjM6MTA6MTAuODQzWiJ9LHsiZXZlbnQiOiJwYXltZW50X2NvbW1pdHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7InBheW1lbnRJZCI6ImNjNzAxZTc1LTk3MGUtNGYyNC1iYzk4LThiYjJjMjYxZmZlZSIsImFtb3VudE1pbm9yIjoxNTAwMDAwMH0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjM6MTA6MTAuOTk2WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjExLjAxNloifV19"
+                      "body": "eyJpZCI6IjU4YmExODVjLWQ3MWItNGRmYS1hMGJkLTAxNjNjYjI4NmRlOCIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6MX1dLCJwYXltZW50cyI6W3siaWQiOiJhYzkzOWFhMC1lZjNkLTQxZWMtODlkYS1kZjVhMzIxOTZlNmMiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowMi44MTJaIn1dLCJub3RpZmljYXRpb25zIjpbXSwicnVucyI6W3sicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJwZXJpb2RFbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiLCJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjAyLjc3OVoiLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMH1dLCJsb2NrZWQiOnRydWUsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJwZW5kaW5nQXBwcm92YWxzIjowLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MCwiZXZlbnRzIjpbeyJldmVudCI6ImVhcm5pbmdzX3JlY29yZGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImNvdW50IjoxfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowMi42NzBaIn0seyJldmVudCI6ImZhaWx1cmVfYXJtZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsia2luZCI6InBlcnNpc3RlbmNlIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTZUMDU6MDQ6MDIuNzUxWiJ9LHsiZXZlbnQiOiJwYXltZW50X2NvbW1pdHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7InBheW1lbnRJZCI6ImFjOTM5YWEwLWVmM2QtNDFlYy04OWRhLWRmNWEzMjE5NmU2YyIsImFtb3VudE1pbm9yIjoxNTAwMDAwMH0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTZUMDU6MDQ6MDIuODIyWiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjAyLjg2MFoifV19"
+                    },
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJmaXJzdCI6eyJ3b3Jrc3BhY2VJZCI6IjU4YmExODVjLWQ3MWItNGRmYS1hMGJkLTAxNjNjYjI4NmRlOCIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjowLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiYWM5MzlhYTAtZWYzZC00MWVjLTg5ZGEtZGY1YTMyMTk2ZTZjIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbXSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZmFpbHVyZV9hcm1lZCIsInBheW1lbnRfY29tbWl0dGVkIiwicGF5X3J1bl9maW5pc2hlZCJdfX0="
                     },
                     {
                       "name": "error-context",
@@ -542,7 +612,7 @@
                   "errorLocation": {
                     "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
                     "column": 26,
-                    "line": 65
+                    "line": 92
                   }
                 }
               ],
@@ -551,7 +621,7 @@
           ],
           "id": "2773c42ecf68f72f6713-58eba721a9ec48afd3d2",
           "file": "payroll-api.spec.ts",
-          "line": 62,
+          "line": 88,
           "column": 1
         },
         {
@@ -570,37 +640,42 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 494,
+                  "duration": 412,
                   "error": {
                     "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
-                    "stack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:73:76",
+                    "stack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:104:76",
                     "location": {
                       "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
                       "column": 76,
-                      "line": 73
+                      "line": 104
                     },
-                    "snippet": "  71 |   const next = await run(request, w.id);\n  72 |   await info.attach('observed-TC14', { body: JSON.stringify(next), contentType: 'application/json' });\n> 73 |   expect(next.providerAccepted).toBe(1); expect(next.pendingNotifications).toBe(0); expect(next.payments).toHaveLength(1);\n     |                                                                            ^\n  74 | });\n  75 | test('TC15 | A processed period rejects new earnings and preserves approved totals', async ({ request }) => {\n  76 |   const w = await create(request); await run(request, w.id);"
+                    "snippet": "  102 |   await info.attach('observed-TC14', { body: JSON.stringify(next), contentType: 'application/json' });\n  103 |   observe({ after: payrollSnapshot(next) });\n> 104 |   expect(next.providerAccepted).toBe(1); expect(next.pendingNotifications).toBe(0); expect(next.payments).toHaveLength(1);\n      |                                                                            ^\n  105 | });\n  106 | test('TC15 | A processed period rejects new earnings and preserves approved totals', async ({ request, observe }) => {\n  107 |   const w = await create(request); await run(request, w.id);"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
                         "column": 76,
-                        "line": 73
+                        "line": 104
                       },
-                      "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1\n\n  71 |   const next = await run(request, w.id);\n  72 |   await info.attach('observed-TC14', { body: JSON.stringify(next), contentType: 'application/json' });\n> 73 |   expect(next.providerAccepted).toBe(1); expect(next.pendingNotifications).toBe(0); expect(next.payments).toHaveLength(1);\n     |                                                                            ^\n  74 | });\n  75 | test('TC15 | A processed period rejects new earnings and preserves approved totals', async ({ request }) => {\n  76 |   const w = await create(request); await run(request, w.id);\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:73:76"
+                      "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1\n\n  102 |   await info.attach('observed-TC14', { body: JSON.stringify(next), contentType: 'application/json' });\n  103 |   observe({ after: payrollSnapshot(next) });\n> 104 |   expect(next.providerAccepted).toBe(1); expect(next.pendingNotifications).toBe(0); expect(next.payments).toHaveLength(1);\n      |                                                                            ^\n  105 | });\n  106 | test('TC15 | A processed period rejects new earnings and preserves approved totals', async ({ request, observe }) => {\n  107 |   const w = await create(request); await run(request, w.id);\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:104:76"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:10.871Z",
+                  "startTime": "2026-10-16T05:04:02.773Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "observed-TC14",
                       "contentType": "application/json",
-                      "body": "eyJpZCI6ImJkNDUxZWMzLWYwZjUtNDk5MC04NjUwLWEyZTBkNjczZDBiYyIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6Mn1dLCJwYXltZW50cyI6W3siaWQiOiIxYTQ4NzVkZS1jMzZkLTQ0YWEtYWQ4YS04YWYyNDk0ZTJmMjAiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxMS4yODRaIn0seyJpZCI6IjRjYTIwZmQ4LThjZjctNGJmMS1hMzdkLTM1NDVjMWY4ZDIyZSIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsImJhbmsiOiJNZXJpZGlhbiBCYW5rIiwiYWNjb3VudEVuZGluZyI6IjQ4MjEiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjExLjE3MVoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiMzMyZWRmYmQtMWM0YS00NTZiLWE3MzMtOTI3NjZjZTJkZDQ0IiwicGF5bWVudElkIjoiMWE0ODc1ZGUtYzM2ZC00NGFhLWFkOGEtOGFmMjQ5NGUyZjIwIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsInN0YXRlIjoic2VudCIsImF0dGVtcHRzIjoxLCJsYXN0RXJyb3IiOm51bGx9LHsiaWQiOiJlMGNlMDQ1NS00MTYyLTQ3NGUtOTM3OC1iODJmNDlmZWY3OWEiLCJwYXltZW50SWQiOiI0Y2EyMGZkOC04Y2Y3LTRiZjEtYTM3ZC0zNTQ1YzFmOGQyMmUiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwic3RhdGUiOiJwZW5kaW5nIiwiYXR0ZW1wdHMiOjEsImxhc3RFcnJvciI6IkRlbGl2ZXJ5IGNvbmZpcm1hdGlvbiB1bmF2YWlsYWJsZS4gUmV0cnkgd2l0aCB0aGUgb3JpZ2luYWwgbWVzc2FnZSBpZGVudGl0eS4ifV0sInJ1bnMiOlt7InBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwicGVyaW9kRW5kIjoiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIiwic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxMS4xNjBaIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDB9XSwibG9ja2VkIjp0cnVlLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwicGVuZGluZ0FwcHJvdmFscyI6MCwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjEsImV2ZW50cyI6W3siZXZlbnQiOiJlYXJuaW5nc19yZWNvcmRlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJjb3VudCI6MX0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjM6MTA6MTEuMDU2WiJ9LHsiZXZlbnQiOiJmYWlsdXJlX2FybWVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImtpbmQiOiJhbWJpZ3VvdXMifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxMS4xMzdaIn0seyJldmVudCI6InBheW1lbnRfY29tbWl0dGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsicGF5bWVudElkIjoiNGNhMjBmZDgtOGNmNy00YmYxLWEzN2QtMzU0NWMxZjhkMjJlIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxMS4xODNaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6e30sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjM6MTA6MTEuMjA1WiJ9LHsiZXZlbnQiOiJub3RpZmljYXRpb25fZmFpbGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiZTBjZTA0NTUtNDE2Mi00NzRlLTkzNzgtYjgyZjQ5ZmVmNzlhIiwiZXJyb3IiOiJEZWxpdmVyeSBjb25maXJtYXRpb24gdW5hdmFpbGFibGUuIFJldHJ5IHdpdGggdGhlIG9yaWdpbmFsIG1lc3NhZ2UgaWRlbnRpdHkuIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjM6MTA6MTEuMjQ4WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjExLjI1OVoifSx7ImV2ZW50IjoicGF5bWVudF9jb21taXR0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6eyJwYXltZW50SWQiOiIxYTQ4NzVkZS1jMzZkLTQ0YWEtYWQ4YS04YWYyNDk0ZTJmMjAiLCJhbW91bnRNaW5vciI6MTUwMDAwMDB9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjExLjI5NloifSx7ImV2ZW50Ijoibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7fSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxMS4zMTVaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9zZW50IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiMzMyZWRmYmQtMWM0YS00NTZiLWE3MzMtOTI3NjZjZTJkZDQ0IiwiZXJyb3IiOm51bGx9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjExLjM0NVoifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxMS4zNTRaIn1dfQ=="
+                      "body": "eyJpZCI6ImU1MzI5OWRiLTcwMGMtNGIyNy1iODFhLWRiYjE3OGEwZDI4MSIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6Mn1dLCJwYXltZW50cyI6W3siaWQiOiI3YmYwYTI2Ni04NmRiLTRhMzMtYmM3Zi00MzUwMDNlZDBmNjUiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowMy4xMDFaIn0seyJpZCI6IjU1OWJjMmM3LThhMGUtNDhhNC1hODM5LTc1Njk5NjE4MzFlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsImJhbmsiOiJNZXJpZGlhbiBCYW5rIiwiYWNjb3VudEVuZGluZyI6IjQ4MjEiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjAyLjk5NFoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiM2I3NzhlNTQtMjFlMi00NTM0LTgwYTMtMTcwYTBkNjk0ZWE5IiwicGF5bWVudElkIjoiN2JmMGEyNjYtODZkYi00YTMzLWJjN2YtNDM1MDAzZWQwZjY1IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsInN0YXRlIjoic2VudCIsImF0dGVtcHRzIjoxLCJsYXN0RXJyb3IiOm51bGx9LHsiaWQiOiIwYTY3NWZiYy0xNDc3LTQ1ZjctOWM2YS1kNmQwNmFmYjZkY2MiLCJwYXltZW50SWQiOiI1NTliYzJjNy04YTBlLTQ4YTQtYTgzOS03NTY5OTYxODMxZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwic3RhdGUiOiJwZW5kaW5nIiwiYXR0ZW1wdHMiOjEsImxhc3RFcnJvciI6IkRlbGl2ZXJ5IGNvbmZpcm1hdGlvbiB1bmF2YWlsYWJsZS4gUmV0cnkgd2l0aCB0aGUgb3JpZ2luYWwgbWVzc2FnZSBpZGVudGl0eS4ifV0sInJ1bnMiOlt7InBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwicGVyaW9kRW5kIjoiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIiwic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowMi45ODNaIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDB9XSwibG9ja2VkIjp0cnVlLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwicGVuZGluZ0FwcHJvdmFscyI6MCwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjEsImV2ZW50cyI6W3siZXZlbnQiOiJlYXJuaW5nc19yZWNvcmRlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJjb3VudCI6MX0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTZUMDU6MDQ6MDIuOTI1WiJ9LHsiZXZlbnQiOiJmYWlsdXJlX2FybWVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImtpbmQiOiJhbWJpZ3VvdXMifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowMi45NjFaIn0seyJldmVudCI6InBheW1lbnRfY29tbWl0dGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsicGF5bWVudElkIjoiNTU5YmMyYzctOGEwZS00OGE0LWE4MzktNzU2OTk2MTgzMWVkIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowMy4wMDNaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6e30sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTZUMDU6MDQ6MDMuMDMyWiJ9LHsiZXZlbnQiOiJub3RpZmljYXRpb25fZmFpbGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiMGE2NzVmYmMtMTQ3Ny00NWY3LTljNmEtZDZkMDZhZmI2ZGNjIiwiZXJyb3IiOiJEZWxpdmVyeSBjb25maXJtYXRpb24gdW5hdmFpbGFibGUuIFJldHJ5IHdpdGggdGhlIG9yaWdpbmFsIG1lc3NhZ2UgaWRlbnRpdHkuIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTZUMDU6MDQ6MDMuMDY5WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjAzLjA3OVoifSx7ImV2ZW50IjoicGF5bWVudF9jb21taXR0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6eyJwYXltZW50SWQiOiI3YmYwYTI2Ni04NmRiLTRhMzMtYmM3Zi00MzUwMDNlZDBmNjUiLCJhbW91bnRNaW5vciI6MTUwMDAwMDB9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjAzLjExMFoifSx7ImV2ZW50Ijoibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7fSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowMy4xMjlaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9zZW50IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiM2I3NzhlNTQtMjFlMi00NTM0LTgwYTMtMTcwYTBkNjk0ZWE5IiwiZXJyb3IiOm51bGx9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjAzLjE2MFoifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowMy4xNzFaIn1dfQ=="
+                    },
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJmaXJzdCI6eyJ3b3Jrc3BhY2VJZCI6ImU1MzI5OWRiLTcwMGMtNGIyNy1iODFhLWRiYjE3OGEwZDI4MSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjoxLCJwcm92aWRlckFjY2VwdGVkIjoxLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiNTU5YmMyYzctOGEwZS00OGE0LWE4MzktNzU2OTk2MTgzMWVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbeyJpZCI6IjBhNjc1ZmJjLTE0NzctNDVmNy05YzZhLWQ2ZDA2YWZiNmRjYyIsInBheW1lbnRJZCI6IjU1OWJjMmM3LThhMGUtNDhhNC1hODM5LTc1Njk5NjE4MzFlZCIsInN0YXRlIjoicGVuZGluZyJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZmFpbHVyZV9hcm1lZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9mYWlsZWQiLCJwYXlfcnVuX2ZpbmlzaGVkIl19LCJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6ImU1MzI5OWRiLTcwMGMtNGIyNy1iODFhLWRiYjE3OGEwZDI4MSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjoxLCJwcm92aWRlckFjY2VwdGVkIjoxLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiN2JmMGEyNjYtODZkYi00YTMzLWJjN2YtNDM1MDAzZWQwZjY1IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn0seyJpZCI6IjU1OWJjMmM3LThhMGUtNDhhNC1hODM5LTc1Njk5NjE4MzFlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiJ9XSwibm90aWZpY2F0aW9ucyI6W3siaWQiOiIzYjc3OGU1NC0yMWUyLTQ1MzQtODBhMy0xNzBhMGQ2OTRlYTkiLCJwYXltZW50SWQiOiI3YmYwYTI2Ni04NmRiLTRhMzMtYmM3Zi00MzUwMDNlZDBmNjUiLCJzdGF0ZSI6InNlbnQifSx7ImlkIjoiMGE2NzVmYmMtMTQ3Ny00NWY3LTljNmEtZDZkMDZhZmI2ZGNjIiwicGF5bWVudElkIjoiNTU5YmMyYzctOGEwZS00OGE0LWE4MzktNzU2OTk2MTgzMWVkIiwic3RhdGUiOiJwZW5kaW5nIn1dLCJldmVudHMiOlsiZWFybmluZ3NfcmVjb3JkZWQiLCJmYWlsdXJlX2FybWVkIiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX2ZhaWxlZCIsInBheV9ydW5fZmluaXNoZWQiLCJwYXltZW50X2NvbW1pdHRlZCIsIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJub3RpZmljYXRpb25fc2VudCIsInBheV9ydW5fZmluaXNoZWQiXX19"
                     },
                     {
                       "name": "error-context",
@@ -611,7 +686,7 @@
                   "errorLocation": {
                     "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
                     "column": 76,
-                    "line": 73
+                    "line": 104
                   }
                 }
               ],
@@ -620,7 +695,7 @@
           ],
           "id": "2773c42ecf68f72f6713-44ecd9c8fd97926fd5e2",
           "file": "payroll-api.spec.ts",
-          "line": 68,
+          "line": 97,
           "column": 1
         },
         {
@@ -639,14 +714,20 @@
                   "workerIndex": 2,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 375,
+                  "duration": 309,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:14.673Z",
+                  "startTime": "2026-10-16T05:04:05.115Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJyZXNwb25zZVN0YXR1cyI6NDA5LCJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6Ijk4MmRhZjZmLTYyMzMtNDEwZi1iNmEwLTAxMmFjNjE4YWVmYSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjoxLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiZTk0YThhY2UtNWJjYS00NDliLTg0OGUtY2Q0MTRkOGJhNmEzIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbeyJpZCI6ImNjYmZkYWRiLTFmMDctNDk5Ny04YTU2LWE3YTA5YWFiMmM3ZSIsInBheW1lbnRJZCI6ImU5NGE4YWNlLTViY2EtNDQ5Yi04NDhlLWNkNDE0ZDhiYTZhMyIsInN0YXRlIjoic2VudCJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX3NlbnQiLCJwYXlfcnVuX2ZpbmlzaGVkIiwicGF5X3J1bl9maW5pc2hlZCJdfX0="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -654,7 +735,7 @@
           ],
           "id": "2773c42ecf68f72f6713-97d8e64bfedb972ed4ec",
           "file": "payroll-api.spec.ts",
-          "line": 75,
+          "line": 106,
           "column": 1
         },
         {
@@ -673,37 +754,42 @@
                   "workerIndex": 3,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 645,
+                  "duration": 495,
                   "error": {
                     "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 15000000\nReceived: 30000000",
-                    "stack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 15000000\nReceived: 30000000\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:84:28",
+                    "stack": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 15000000\nReceived: 30000000\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:119:28",
                     "location": {
                       "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
                       "column": 28,
-                      "line": 84
+                      "line": 119
                     },
-                    "snippet": "  82 |   const result = await (await request.get(`/api/workspaces/${w.id}`)).json();\n  83 |   await info.attach('observed-TC16', { body: JSON.stringify(result), contentType: 'application/json' });\n> 84 |   expect(result.paidMinor).toBe(15000000); expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);\n     |                            ^\n  85 | });\n  86 | test('TC17 | The same employee can receive a separate payment in another period', async ({ request }) => {\n  87 |   const w = await create(request); await run(request, w.id);"
+                    "snippet": "  117 |   await info.attach('observed-TC16', { body: JSON.stringify(result), contentType: 'application/json' });\n  118 |   observe({ after: payrollSnapshot(result) });\n> 119 |   expect(result.paidMinor).toBe(15000000); expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);\n      |                            ^\n  120 | });\n  121 | test('TC17 | The same employee can receive a separate payment in another period', async ({ request, observe }) => {\n  122 |   const w = await create(request); await run(request, w.id);"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
                         "column": 28,
-                        "line": 84
+                        "line": 119
                       },
-                      "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 15000000\nReceived: 30000000\n\n  82 |   const result = await (await request.get(`/api/workspaces/${w.id}`)).json();\n  83 |   await info.attach('observed-TC16', { body: JSON.stringify(result), contentType: 'application/json' });\n> 84 |   expect(result.paidMinor).toBe(15000000); expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);\n     |                            ^\n  85 | });\n  86 | test('TC17 | The same employee can receive a separate payment in another period', async ({ request }) => {\n  87 |   const w = await create(request); await run(request, w.id);\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:84:28"
+                      "message": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 15000000\nReceived: 30000000\n\n  117 |   await info.attach('observed-TC16', { body: JSON.stringify(result), contentType: 'application/json' });\n  118 |   observe({ after: payrollSnapshot(result) });\n> 119 |   expect(result.paidMinor).toBe(15000000); expect(result.payments).toHaveLength(1); expect(result.pendingNotifications).toBe(0);\n      |                            ^\n  120 | });\n  121 | test('TC17 | The same employee can receive a separate payment in another period', async ({ request, observe }) => {\n  122 |   const w = await create(request); await run(request, w.id);\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts:119:28"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:14.818Z",
+                  "startTime": "2026-10-16T05:04:05.275Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "observed-TC16",
                       "contentType": "application/json",
-                      "body": "eyJpZCI6IjQyOThiNDUyLWI2NjktNDZjZS1iODI0LTYxNzY4YzFkNmMzYyIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6Mn1dLCJwYXltZW50cyI6W3siaWQiOiJiZTU3YWRmZS00OWFkLTQ3NzQtYjc2ZS1lZjBiYTg5M2JkN2UiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxNS4zMzFaIn0seyJpZCI6ImVkODMzYWJjLTJhNzYtNDI4YS1hMWIxLTU1ZmQwODdhZjllYyIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsImJhbmsiOiJNZXJpZGlhbiBCYW5rIiwiYWNjb3VudEVuZGluZyI6IjQ4MjEiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjE1LjI0MVoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiMmFlOWVlNmUtMDZiZi00ZGI4LTk5NjgtYzVhZTZhNDc4NmY1IiwicGF5bWVudElkIjoiYmU1N2FkZmUtNDlhZC00Nzc0LWI3NmUtZWYwYmE4OTNiZDdlIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsInN0YXRlIjoic2VudCIsImF0dGVtcHRzIjoxLCJsYXN0RXJyb3IiOm51bGx9LHsiaWQiOiI5YjNiNmY4OC0yYWVhLTQwMGItODg5Mi1kZTE3OTNjNTBmMWEiLCJwYXltZW50SWQiOiJlZDgzM2FiYy0yYTc2LTQyOGEtYTFiMS01NWZkMDg3YWY5ZWMiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwic3RhdGUiOiJwZW5kaW5nIiwiYXR0ZW1wdHMiOjEsImxhc3RFcnJvciI6Ik5vdGlmaWNhdGlvbiBkZWxpdmVyeSB1bmF2YWlsYWJsZS4gUmV0cnkgdGhlIG5vdGlmaWNhdGlvbi4ifV0sInJ1bnMiOlt7InBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwicGVyaW9kRW5kIjoiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIiwic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxNS4yMzBaIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDB9XSwibG9ja2VkIjp0cnVlLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwicGVuZGluZ0FwcHJvdmFscyI6MCwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjEsImV2ZW50cyI6W3siZXZlbnQiOiJlYXJuaW5nc19yZWNvcmRlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJjb3VudCI6MX0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjM6MTA6MTUuMTI1WiJ9LHsiZXZlbnQiOiJmYWlsdXJlX2FybWVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImtpbmQiOiJub3RpZmljYXRpb24ifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxNS4xODBaIn0seyJldmVudCI6InBheW1lbnRfY29tbWl0dGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsicGF5bWVudElkIjoiZWQ4MzNhYmMtMmE3Ni00MjhhLWExYjEtNTVmZDA4N2FmOWVjIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxNS4yNTBaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6e30sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjM6MTA6MTUuMjcxWiJ9LHsiZXZlbnQiOiJub3RpZmljYXRpb25fZmFpbGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiOWIzYjZmODgtMmFlYS00MDBiLTg4OTItZGUxNzkzYzUwZjFhIiwiZXJyb3IiOiJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjM6MTA6MTUuMzA1WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjE1LjMxNFoifSx7ImV2ZW50IjoicGF5bWVudF9jb21taXR0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6eyJwYXltZW50SWQiOiJiZTU3YWRmZS00OWFkLTQ3NzQtYjc2ZS1lZjBiYTg5M2JkN2UiLCJhbW91bnRNaW5vciI6MTUwMDAwMDB9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjE1LjM0MFoifSx7ImV2ZW50Ijoibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7fSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxNS4zNjJaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9zZW50IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiMmFlOWVlNmUtMDZiZi00ZGI4LTk5NjgtYzVhZTZhNDc4NmY1IiwiZXJyb3IiOm51bGx9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjE1LjQwN1oifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxNS40MTdaIn0seyJldmVudCI6InBheV9ydW5fZmluaXNoZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjM6MTA6MTUuNDMxWiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjE1LjQ0OFoifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxNS40NjlaIn0seyJldmVudCI6InBheV9ydW5fZmluaXNoZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTVUMjM6MTA6MTUuNDg1WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE1VDIzOjEwOjE1LjUwMVoifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNVQyMzoxMDoxNS41MTdaIn1dfQ=="
+                      "body": "eyJpZCI6IjYzNjk3ZjkwLTAyZjgtNDZkNi04ZDJhLTExZDMwODVkYWE5NCIsImNvbXBhbnkiOiJOb3J0aHN0YXIgU3R1ZGlvIiwiY3VycmVuY3kiOiJOR04iLCJwZXJpb2QiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwic3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJlbmQiOiIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoifSwiZW1wbG95ZWVzIjpbeyJpZCI6ImVtcC0wMDEiLCJuYW1lIjoiQW1hcmEgT2thZm9yIiwicm9sZSI6IlByb2R1Y3QgZGVzaWduZXIiLCJkZXBhcnRtZW50IjoiRGVzaWduIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNDgyMSJ9LHsiaWQiOiJlbXAtMDAyIiwibmFtZSI6IkRhbmllbCBNZW5zYWgiLCJyb2xlIjoiU29mdHdhcmUgZW5naW5lZXIiLCJkZXBhcnRtZW50IjoiRW5naW5lZXJpbmciLCJiYW5rIjoiVW5pb24gQ29hc3QgQmFuayIsImFjY291bnRFbmRpbmciOiIzMDY4In0seyJpZCI6ImVtcC0wMDMiLCJuYW1lIjoiWmFyYSBCZWxsbyIsInJvbGUiOiJPcGVyYXRpb25zIGFzc29jaWF0ZSIsImRlcGFydG1lbnQiOiJPcGVyYXRpb25zIiwiYmFuayI6Ik1lcmlkaWFuIEJhbmsiLCJhY2NvdW50RW5kaW5nIjoiNzI5MCJ9XSwiZWFybmluZ3MiOlt7ImVhcm5pbmdJZCI6ImVhcm4tMDAxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXNjcmlwdGlvbiI6IldlZWtseSBwcm9qZWN0IGVhcm5pbmdzIiwiZWFybmVkQXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlbnRyaWVzIjpbeyJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJlYXJuaW5nSWRzIjpbImVhcm4tMDAxIl0sInBheW1lbnRDb3VudCI6Mn1dLCJwYXltZW50cyI6W3siaWQiOiIxMjM1NTNiMi0zYjQ4LTQxZjItYTE0ZC05ZWVlMWY0YTNiNzEiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJiYW5rIjoiTWVyaWRpYW4gQmFuayIsImFjY291bnRFbmRpbmciOiI0ODIxIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowNS42MDdaIn0seyJpZCI6IjNlOTE4OTNlLWEwNGQtNDM4MS05YTNiLTlhMWE1ODc2M2UzNCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsImJhbmsiOiJNZXJpZGlhbiBCYW5rIiwiYWNjb3VudEVuZGluZyI6IjQ4MjEiLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjA1LjUyM1oifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiYjFhYmNlMDgtNTNhZi00Y2NhLTk1NjAtYzY1OGFkNjNiN2FjIiwicGF5bWVudElkIjoiMTIzNTUzYjItM2I0OC00MWYyLWExNGQtOWVlZTFmNGEzYjcxIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsInN0YXRlIjoic2VudCIsImF0dGVtcHRzIjoxLCJsYXN0RXJyb3IiOm51bGx9LHsiaWQiOiIzMDJjNzhhYy0xZjJhLTRjZDktOWU0Mi1jYWY5NDEwODIzOWYiLCJwYXltZW50SWQiOiIzZTkxODkzZS1hMDRkLTQzODEtOWEzYi05YTFhNTg3NjNlMzQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwic3RhdGUiOiJwZW5kaW5nIiwiYXR0ZW1wdHMiOjEsImxhc3RFcnJvciI6Ik5vdGlmaWNhdGlvbiBkZWxpdmVyeSB1bmF2YWlsYWJsZS4gUmV0cnkgdGhlIG5vdGlmaWNhdGlvbi4ifV0sInJ1bnMiOlt7InBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwicGVyaW9kRW5kIjoiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIiwic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowNS41MTBaIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDB9XSwibG9ja2VkIjp0cnVlLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwicGVuZGluZ0FwcHJvdmFscyI6MCwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjEsImV2ZW50cyI6W3siZXZlbnQiOiJlYXJuaW5nc19yZWNvcmRlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJjb3VudCI6MX0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTZUMDU6MDQ6MDUuNDIxWiJ9LHsiZXZlbnQiOiJmYWlsdXJlX2FybWVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7ImtpbmQiOiJub3RpZmljYXRpb24ifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowNS40NjdaIn0seyJldmVudCI6InBheW1lbnRfY29tbWl0dGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsicGF5bWVudElkIjoiM2U5MTg5M2UtYTA0ZC00MzgxLTlhM2ItOWExYTU4NzYzZTM0IiwiYW1vdW50TWlub3IiOjE1MDAwMDAwfSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowNS41MzJaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6e30sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTZUMDU6MDQ6MDUuNTUzWiJ9LHsiZXZlbnQiOiJub3RpZmljYXRpb25fZmFpbGVkIiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiMzAyYzc4YWMtMWYyYS00Y2Q5LTllNDItY2FmOTQxMDgyMzlmIiwiZXJyb3IiOiJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTZUMDU6MDQ6MDUuNTgxWiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjA1LjU5MloifSx7ImV2ZW50IjoicGF5bWVudF9jb21taXR0ZWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImRldGFpbCI6eyJwYXltZW50SWQiOiIxMjM1NTNiMi0zYjQ4LTQxZjItYTE0ZC05ZWVlMWY0YTNiNzEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDB9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjA1LjYxN1oifSx7ImV2ZW50Ijoibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZGV0YWlsIjp7fSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowNS42MzZaIn0seyJldmVudCI6Im5vdGlmaWNhdGlvbl9zZW50IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJkZXRhaWwiOnsibWVzc2FnZUlkIjoiYjFhYmNlMDgtNTNhZi00Y2NhLTk1NjAtYzY1OGFkNjNiN2FjIiwiZXJyb3IiOm51bGx9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjA1LjY3N1oifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowNS42ODdaIn0seyJldmVudCI6InBheV9ydW5fZmluaXNoZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTZUMDU6MDQ6MDUuNzA0WiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjA1LjcxN1oifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowNS43MzFaIn0seyJldmVudCI6InBheV9ydW5fZmluaXNoZWQiLCJlbXBsb3llZUlkIjpudWxsLCJkZXRhaWwiOnsic2NoZWR1bGVkRm9yIjoiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIn0sImNyZWF0ZWRBdCI6IjIwMjYtMTAtMTZUMDU6MDQ6MDUuNzQzWiJ9LHsiZXZlbnQiOiJwYXlfcnVuX2ZpbmlzaGVkIiwiZW1wbG95ZWVJZCI6bnVsbCwiZGV0YWlsIjp7InNjaGVkdWxlZEZvciI6IjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiJ9LCJjcmVhdGVkQXQiOiIyMDI2LTEwLTE2VDA1OjA0OjA1Ljc1N1oifSx7ImV2ZW50IjoicGF5X3J1bl9maW5pc2hlZCIsImVtcGxveWVlSWQiOm51bGwsImRldGFpbCI6eyJzY2hlZHVsZWRGb3IiOiIyMDI2LTEwLTEzVDA5OjAwOjAwLjAwMFoifSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0xNlQwNTowNDowNS43NzNaIn1dfQ=="
+                    },
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJjb21wbGV0ZWRSZXF1ZXN0cyI6OCwiYWZ0ZXIiOnsid29ya3NwYWNlSWQiOiI2MzY5N2Y5MC0wMmY4LTQ2ZDYtOGQyYS0xMWQzMDg1ZGFhOTQiLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjozMDAwMDAwMCwibG9ja2VkIjp0cnVlLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MSwicHJvdmlkZXJBY2NlcHRlZCI6MSwicnVuQ291bnQiOjEsImVhcm5pbmdzIjpbeyJpZCI6ImVhcm4tMDAxIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9XSwiZWFybmluZ0lkc0luUGVyaW9kIjpbImVhcm4tMDAxIl0sInBheW1lbnRzIjpbeyJpZCI6IjEyMzU1M2IyLTNiNDgtNDFmMi1hMTRkLTllZWUxZjRhM2I3MSIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiJ9LHsiaWQiOiIzZTkxODkzZS1hMDRkLTQzODEtOWEzYi05YTFhNTg3NjNlMzQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsImFtb3VudE1pbm9yIjoxNTAwMDAwMCwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiYjFhYmNlMDgtNTNhZi00Y2NhLTk1NjAtYzY1OGFkNjNiN2FjIiwicGF5bWVudElkIjoiMTIzNTUzYjItM2I0OC00MWYyLWExNGQtOWVlZTFmNGEzYjcxIiwic3RhdGUiOiJzZW50In0seyJpZCI6IjMwMmM3OGFjLTFmMmEtNGNkOS05ZTQyLWNhZjk0MTA4MjM5ZiIsInBheW1lbnRJZCI6IjNlOTE4OTNlLWEwNGQtNDM4MS05YTNiLTlhMWE1ODc2M2UzNCIsInN0YXRlIjoicGVuZGluZyJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZmFpbHVyZV9hcm1lZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9mYWlsZWQiLCJwYXlfcnVuX2ZpbmlzaGVkIiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX3NlbnQiLCJwYXlfcnVuX2ZpbmlzaGVkIiwicGF5X3J1bl9maW5pc2hlZCIsInBheV9ydW5fZmluaXNoZWQiLCJwYXlfcnVuX2ZpbmlzaGVkIiwicGF5X3J1bl9maW5pc2hlZCIsInBheV9ydW5fZmluaXNoZWQiLCJwYXlfcnVuX2ZpbmlzaGVkIl19fQ=="
                     },
                     {
                       "name": "error-context",
@@ -714,7 +800,7 @@
                   "errorLocation": {
                     "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-api.spec.ts",
                     "column": 28,
-                    "line": 84
+                    "line": 119
                   }
                 }
               ],
@@ -723,7 +809,7 @@
           ],
           "id": "2773c42ecf68f72f6713-ae6b1d88d614e8fc39d8",
           "file": "payroll-api.spec.ts",
-          "line": 80,
+          "line": 113,
           "column": 1
         },
         {
@@ -742,14 +828,20 @@
                   "workerIndex": 2,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 691,
+                  "duration": 598,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:15.227Z",
+                  "startTime": "2026-10-16T05:04:05.508Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6IjExMjI1ZTk1LTg3M2MtNDI3MC05YWJjLWQxMTY0MDU0NTY2MiIsImV4cGVjdGVkTWlub3IiOjUwMDAwMDAsInBhaWRNaW5vciI6NTAwMDAwMCwibG9ja2VkIjp0cnVlLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MiwicnVuQ291bnQiOjIsImVhcm5pbmdzIjpbeyJpZCI6Im5leHQiLCJhbW91bnRNaW5vciI6NTAwMDAwMCwic3RhdHVzIjoiYXBwcm92ZWQifSx7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsibmV4dCJdLCJwYXltZW50cyI6W3siaWQiOiI2YmI5NDAwMy1jMDVkLTRhMDEtYTIxMS1kMWIzZGE1ODc5YWQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsImFtb3VudE1pbm9yIjo1MDAwMDAwLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiJ9LHsiaWQiOiJiNTMwZTY3Yi1jYTIzLTQzODQtYmI0MC03NTg4NDcwY2JjYzUiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsImFtb3VudE1pbm9yIjoxNTAwMDAwMCwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiNzc5OWRkMWEtMzY0MS00YTVkLTliNGUtNDNhODIxZjMwNjRjIiwicGF5bWVudElkIjoiNmJiOTQwMDMtYzA1ZC00YTAxLWEyMTEtZDFiM2RhNTg3OWFkIiwic3RhdGUiOiJzZW50In0seyJpZCI6Ijc3MDJhMTQ1LWVlNDctNDU3NC1iNTEzLTE5OTI2NzRmZTI2MSIsInBheW1lbnRJZCI6ImI1MzBlNjdiLWNhMjMtNDM4NC1iYjQwLTc1ODg0NzBjYmNjNSIsInN0YXRlIjoic2VudCJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX3NlbnQiLCJwYXlfcnVuX2ZpbmlzaGVkIiwiZWFybmluZ3NfcmVjb3JkZWQiLCJwYXltZW50X2NvbW1pdHRlZCIsIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJub3RpZmljYXRpb25fc2VudCIsInBheV9ydW5fZmluaXNoZWQiXX19"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -757,7 +849,7 @@
           ],
           "id": "2773c42ecf68f72f6713-c5d1cc27d4625ac4e9ff",
           "file": "payroll-api.spec.ts",
-          "line": 86,
+          "line": 121,
           "column": 1
         },
         {
@@ -776,14 +868,20 @@
                   "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 173,
+                  "duration": 189,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:21.820Z",
+                  "startTime": "2026-10-16T05:04:10.310Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJpbnZhbGlkVGltZXN0YW1wcyI6W3siaW5wdXQiOiIyMDI2LTEwLTA4VDEyOjAwOjAwIiwic3RhdHVzIjo0MDB9LHsiaW5wdXQiOiIyMDI2LTAyLTMwVDEyOjAwOjAwWiIsInN0YXR1cyI6NDAwfSx7ImlucHV0IjoiMjAyNi0xMC0wOFQyNTowMDowMFoiLCJzdGF0dXMiOjQwMH1dLCJzY2hlZHVsZVN0YXR1cyI6NDAwfQ=="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -791,7 +889,7 @@
           ],
           "id": "2773c42ecf68f72f6713-bf1a121061c014945eec",
           "file": "payroll-api.spec.ts",
-          "line": 91,
+          "line": 128,
           "column": 1
         },
         {
@@ -810,14 +908,20 @@
                   "workerIndex": 2,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 262,
+                  "duration": 257,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:15.979Z",
+                  "startTime": "2026-10-16T05:04:06.146Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJpbnZhbGlkQW1vdW50cyI6W3siaW5wdXQiOjAsInN0YXR1cyI6NDAwfSx7ImlucHV0IjotMSwic3RhdHVzIjo0MDB9LHsiaW5wdXQiOjEuNSwic3RhdHVzIjo0MDB9LHsiaW5wdXQiOjEwMDAwMDAwMSwic3RhdHVzIjo0MDB9LHsiaW5wdXQiOiIxNTAwMDAwMCIsInN0YXR1cyI6NDAwfV0sImFmdGVyIjp7IndvcmtzcGFjZUlkIjoiNDc5NmU1N2EtMDZhMy00OTA4LWFkZWMtYjFlODM3YmIzZmQyIiwiZXhwZWN0ZWRNaW5vciI6MSwicGFpZE1pbm9yIjoxLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjoxLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MSwic3RhdHVzIjoiYXBwcm92ZWQifV0sImVhcm5pbmdJZHNJblBlcmlvZCI6WyJlYXJuLTAwMSJdLCJwYXltZW50cyI6W3siaWQiOiIxY2EzYzNlNi0xZWU5LTQ3ZWUtYjhmMC1kZTkwODQ0MDFmYTQiLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsImFtb3VudE1pbm9yIjoxLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiJ9XSwibm90aWZpY2F0aW9ucyI6W3siaWQiOiI1ZTZkZDZiNC00MDhkLTRhOTUtOThjOC1iNDZhMThiYzYwZjMiLCJwYXltZW50SWQiOiIxY2EzYzNlNi0xZWU5LTQ3ZWUtYjhmMC1kZTkwODQ0MDFmYTQiLCJzdGF0ZSI6InNlbnQifV0sImV2ZW50cyI6WyJlYXJuaW5nc19yZWNvcmRlZCIsImVhcm5pbmdzX3JlY29yZGVkIiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX3NlbnQiLCJwYXlfcnVuX2ZpbmlzaGVkIl19fQ=="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -825,7 +929,7 @@
           ],
           "id": "2773c42ecf68f72f6713-153c9a43793cc347c40c",
           "file": "payroll-api.spec.ts",
-          "line": 96,
+          "line": 142,
           "column": 1
         },
         {
@@ -844,14 +948,20 @@
                   "workerIndex": 2,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 57,
+                  "duration": 65,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:16.289Z",
+                  "startTime": "2026-10-16T05:04:06.445Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJ1bmtub3duRW1wbG95ZWVTdGF0dXMiOjQwMCwiZW1wdHlQYXlyb2xsU3RhdHVzIjo0MDl9"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -859,7 +969,7 @@
           ],
           "id": "2773c42ecf68f72f6713-0a112e7159316e4881cc",
           "file": "payroll-api.spec.ts",
-          "line": 101,
+          "line": 157,
           "column": 1
         },
         {
@@ -878,14 +988,20 @@
                   "workerIndex": 2,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 441,
+                  "duration": 378,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:16.390Z",
+                  "startTime": "2026-10-16T05:04:06.593Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJ1bnBhaWRTZWNvbmQiOnsid29ya3NwYWNlSWQiOiIwNzdiY2RjMC0xNThmLTRlM2EtYWE3Yy1hYTlkMGE3OWVkMzYiLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjowLCJsb2NrZWQiOmZhbHNlLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MCwicnVuQ291bnQiOjAsImVhcm5pbmdzIjpbeyJpZCI6ImVhcm4tMDAxIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9XSwiZWFybmluZ0lkc0luUGVyaW9kIjpbImVhcm4tMDAxIl0sInBheW1lbnRzIjpbXSwibm90aWZpY2F0aW9ucyI6W10sImV2ZW50cyI6WyJlYXJuaW5nc19yZWNvcmRlZCJdfSwiYWZ0ZXIiOnsid29ya3NwYWNlSWQiOiIwNzdiY2RjMC0xNThmLTRlM2EtYWE3Yy1hYTlkMGE3OWVkMzYiLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjoxNTAwMDAwMCwibG9ja2VkIjp0cnVlLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MSwicnVuQ291bnQiOjEsImVhcm5pbmdzIjpbeyJpZCI6ImVhcm4tMDAxIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9XSwiZWFybmluZ0lkc0luUGVyaW9kIjpbImVhcm4tMDAxIl0sInBheW1lbnRzIjpbeyJpZCI6IjljZWNkOTA2LTI0MGYtNDQxMi1hYzcxLWQ0ZTExZTNiODYzZCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiJ9XSwibm90aWZpY2F0aW9ucyI6W3siaWQiOiJiMDE4OTRiYS1jNDg5LTQ3NmUtOTEwMS0wZDBlYzRiNDE0NDEiLCJwYXltZW50SWQiOiI5Y2VjZDkwNi0yNDBmLTQ0MTItYWM3MS1kNGUxMWUzYjg2M2QiLCJzdGF0ZSI6InNlbnQifV0sImV2ZW50cyI6WyJlYXJuaW5nc19yZWNvcmRlZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9zZW50IiwicGF5X3J1bl9maW5pc2hlZCJdfX0="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -893,7 +1009,7 @@
           ],
           "id": "2773c42ecf68f72f6713-61f43deb4bf9b3dd4e2e",
           "file": "payroll-api.spec.ts",
-          "line": 105,
+          "line": 167,
           "column": 1
         },
         {
@@ -912,14 +1028,20 @@
                   "workerIndex": 2,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 264,
+                  "duration": 268,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:16.874Z",
+                  "startTime": "2026-10-16T05:04:07.008Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJhcHByb3ZhbFN0YXRlcyI6WyJhcHByb3ZlZCIsImFwcHJvdmVkIl0sInJlamVjdGVkQXBwcm92YWxTdGF0dXMiOjQwOSwiYWZ0ZXIiOnsid29ya3NwYWNlSWQiOiJlMDExZGMyZi1lZDBlLTQ2NjEtYjQwOS04NjVmZmFkZjYzMTkiLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAwMCwicGFpZE1pbm9yIjoxNTAwMDAwMCwibG9ja2VkIjp0cnVlLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MSwicnVuQ291bnQiOjEsImVhcm5pbmdzIjpbeyJpZCI6ImVhcm4tMDAxIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJzdGF0dXMiOiJhcHByb3ZlZCJ9LHsiaWQiOiJyZWplY3RlZCIsImFtb3VudE1pbm9yIjo1MDAwMDAwLCJzdGF0dXMiOiJyZWplY3RlZCJ9XSwiZWFybmluZ0lkc0luUGVyaW9kIjpbImVhcm4tMDAxIl0sInBheW1lbnRzIjpbeyJpZCI6IjQyZGZhZGEwLWU2ZjktNDY2NS1iMDk4LTg2NDZjNzA4ZDRjZSIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiJ9XSwibm90aWZpY2F0aW9ucyI6W3siaWQiOiJhNGYyY2Y3ZS03OGUyLTRhMjAtOGQwOC01ZmQ1ODk1N2VjZjEiLCJwYXltZW50SWQiOiI0MmRmYWRhMC1lNmY5LTQ2NjUtYjA5OC04NjQ2YzcwOGQ0Y2UiLCJzdGF0ZSI6InNlbnQifV0sImV2ZW50cyI6WyJlYXJuaW5nc19yZWNvcmRlZCIsImVhcm5pbmdzX3JlY29yZGVkIiwiZWFybmluZ19hcHByb3ZlZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9zZW50IiwicGF5X3J1bl9maW5pc2hlZCJdfX0="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -927,7 +1049,7 @@
           ],
           "id": "2773c42ecf68f72f6713-ecebeb2b463e27e7051d",
           "file": "payroll-api.spec.ts",
-          "line": 110,
+          "line": 176,
           "column": 1
         }
       ]
@@ -954,42 +1076,47 @@
                   "workerIndex": 2,
                   "parallelIndex": 1,
                   "status": "failed",
-                  "duration": 3431,
+                  "duration": 2751,
                   "error": {
                     "message": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"",
-                    "stack": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts:32:98",
+                    "stack": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts:34:98",
                     "location": {
                       "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts",
                       "column": 98,
-                      "line": 32
+                      "line": 34
                     },
-                    "snippet": "  30 |\n  31 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);\n> 32 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');\n     |                                                                                                  ^\n  33 |   expect(result.payments).toHaveLength(1);\n  34 |   expect(result.pendingNotifications).toBe(0);\n  35 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);"
+                    "snippet": "  32 |   observe({ after: payrollSnapshot(result), paymentsUnchanged: JSON.stringify(first.payments) === JSON.stringify(result.payments), notificationIdUnchanged: first.notifications[0].id === result.notifications[0].id });\n  33 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);\n> 34 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');\n     |                                                                                                  ^\n  35 |   expect(result.payments).toHaveLength(1);\n  36 |   expect(result.pendingNotifications).toBe(0);\n  37 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts",
                         "column": 98,
-                        "line": 32
+                        "line": 34
                       },
-                      "message": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"\n\n  30 |\n  31 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);\n> 32 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');\n     |                                                                                                  ^\n  33 |   expect(result.payments).toHaveLength(1);\n  34 |   expect(result.pendingNotifications).toBe(0);\n  35 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts:32:98"
+                      "message": "Error: One approved employee-period payment must remain ₦150,000.00 after recovery.\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"₦150,000.00\"\nReceived: \"₦300,000.00\"\n\n  32 |   observe({ after: payrollSnapshot(result), paymentsUnchanged: JSON.stringify(first.payments) === JSON.stringify(result.payments), notificationIdUnchanged: first.notifications[0].id === result.notifications[0].id });\n  33 |   const actual = new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(result.paidMinor / 100);\n> 34 |   expect(actual, 'One approved employee-period payment must remain ₦150,000.00 after recovery.').toBe('₦150,000.00');\n     |                                                                                                  ^\n  35 |   expect(result.payments).toHaveLength(1);\n  36 |   expect(result.pendingNotifications).toBe(0);\n  37 |   expect(result.payments, 'Recovery must preserve the original payment, not replace it.').toEqual(first.payments);\n    at <project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts:34:98"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:17.234Z",
+                  "startTime": "2026-10-16T05:04:07.454Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "first-attempt",
                       "contentType": "application/json",
-                      "body": "ewogICJpZCI6ICIxZGZmNTE3Yi1jNWMxLTQzZWQtYmQ0ZS0wODRlYWMzNDc2YzMiLAogICJjb21wYW55IjogIk5vcnRoc3RhciBTdHVkaW8iLAogICJjdXJyZW5jeSI6ICJOR04iLAogICJwZXJpb2QiOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgImVtcGxveWVlcyI6IFsKICAgIHsKICAgICAgImlkIjogImVtcC0wMDEiLAogICAgICAibmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicm9sZSI6ICJQcm9kdWN0IGRlc2lnbmVyIiwKICAgICAgImRlcGFydG1lbnQiOiAiRGVzaWduIiwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMiIsCiAgICAgICJuYW1lIjogIkRhbmllbCBNZW5zYWgiLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBlbmdpbmVlciIsCiAgICAgICJkZXBhcnRtZW50IjogIkVuZ2luZWVyaW5nIiwKICAgICAgImJhbmsiOiAiVW5pb24gQ29hc3QgQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjMwNjgiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMyIsCiAgICAgICJuYW1lIjogIlphcmEgQmVsbG8iLAogICAgICAicm9sZSI6ICJPcGVyYXRpb25zIGFzc29jaWF0ZSIsCiAgICAgICJkZXBhcnRtZW50IjogIk9wZXJhdGlvbnMiLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNzI5MCIKICAgIH0KICBdLAogICJlYXJuaW5ncyI6IFsKICAgIHsKICAgICAgImVhcm5pbmdJZCI6ICJlYXJuLTAwMSIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2Vla2x5IHByb2plY3QgZWFybmluZ3MiLAogICAgICAiZWFybmVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgImFtb3VudE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJzdGF0dXMiOiAiYXBwcm92ZWQiCiAgICB9CiAgXSwKICAiZW50cmllcyI6IFsKICAgIHsKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJleHBlY3RlZE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJwYWlkTWlub3IiOiAxNTAwMDAwMCwKICAgICAgImVhcm5pbmdJZHMiOiBbCiAgICAgICAgImVhcm4tMDAxIgogICAgICBdLAogICAgICAicGF5bWVudENvdW50IjogMQogICAgfQogIF0sCiAgInBheW1lbnRzIjogWwogICAgewogICAgICAiaWQiOiAiNGE2NzE1ZTUtMjY5Ny00MTRiLWI5YzUtNTVkYWJiYzBmZmVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNDgyMSIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMzoxMDoyMS4xODJaIgogICAgfQogIF0sCiAgIm5vdGlmaWNhdGlvbnMiOiBbCiAgICB7CiAgICAgICJpZCI6ICJiMDMzMGQ5MC0xMjAwLTQwZWMtOTM0Yy0zZmMwMTkzMjIyZTEiLAogICAgICAicGF5bWVudElkIjogIjRhNjcxNWU1LTI2OTctNDE0Yi1iOWM1LTU1ZGFiYmMwZmZlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZW1wbG95ZWVOYW1lIjogIkFtYXJhIE9rYWZvciIsCiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAic3RhdGUiOiAicGVuZGluZyIsCiAgICAgICJhdHRlbXB0cyI6IDEsCiAgICAgICJsYXN0RXJyb3IiOiAiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIKICAgIH0KICBdLAogICJydW5zIjogWwogICAgewogICAgICAicGVyaW9kU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgInBlcmlvZEVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiLAogICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMzoxMDoyMS4xNjZaIiwKICAgICAgImV4cGVjdGVkTWlub3IiOiAxNTAwMDAwMAogICAgfQogIF0sCiAgImxvY2tlZCI6IHRydWUsCiAgImV4cGVjdGVkTWlub3IiOiAxNTAwMDAwMCwKICAicGFpZE1pbm9yIjogMTUwMDAwMDAsCiAgInBlbmRpbmdBcHByb3ZhbHMiOiAwLAogICJwZW5kaW5nTm90aWZpY2F0aW9ucyI6IDEsCiAgInByb3ZpZGVyQWNjZXB0ZWQiOiAwLAogICJldmVudHMiOiBbCiAgICB7CiAgICAgICJldmVudCI6ICJlYXJuaW5nc19yZWNvcmRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiY291bnQiOiAxCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMzoxMDoyMC4yODNaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogImZhaWx1cmVfYXJtZWQiLAogICAgICAiZW1wbG95ZWVJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImtpbmQiOiAibm90aWZpY2F0aW9uIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjM6MTA6MjAuMzIyWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXltZW50X2NvbW1pdHRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJwYXltZW50SWQiOiAiNGE2NzE1ZTUtMjY5Ny00MTRiLWI5YzUtNTVkYWJiYzBmZmVkIiwKICAgICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjM6MTA6MjEuMTk1WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIzOjEwOjIxLjIyMloiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAibm90aWZpY2F0aW9uX2ZhaWxlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJtZXNzYWdlSWQiOiAiYjAzMzBkOTAtMTIwMC00MGVjLTkzNGMtM2ZjMDE5MzIyMmUxIiwKICAgICAgICAiZXJyb3IiOiAiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIzOjEwOjIxLjI2MFoiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAicGF5X3J1bl9maW5pc2hlZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIzOjEwOjIxLjI3MloiCiAgICB9CiAgXQp9"
+                      "body": "ewogICJpZCI6ICJlMGJhMTJkMS1lMzFmLTRiMTgtOWJjNS00ZmNiNTZlZTcwNTAiLAogICJjb21wYW55IjogIk5vcnRoc3RhciBTdHVkaW8iLAogICJjdXJyZW5jeSI6ICJOR04iLAogICJwZXJpb2QiOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgImVtcGxveWVlcyI6IFsKICAgIHsKICAgICAgImlkIjogImVtcC0wMDEiLAogICAgICAibmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicm9sZSI6ICJQcm9kdWN0IGRlc2lnbmVyIiwKICAgICAgImRlcGFydG1lbnQiOiAiRGVzaWduIiwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMiIsCiAgICAgICJuYW1lIjogIkRhbmllbCBNZW5zYWgiLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBlbmdpbmVlciIsCiAgICAgICJkZXBhcnRtZW50IjogIkVuZ2luZWVyaW5nIiwKICAgICAgImJhbmsiOiAiVW5pb24gQ29hc3QgQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjMwNjgiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMyIsCiAgICAgICJuYW1lIjogIlphcmEgQmVsbG8iLAogICAgICAicm9sZSI6ICJPcGVyYXRpb25zIGFzc29jaWF0ZSIsCiAgICAgICJkZXBhcnRtZW50IjogIk9wZXJhdGlvbnMiLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNzI5MCIKICAgIH0KICBdLAogICJlYXJuaW5ncyI6IFsKICAgIHsKICAgICAgImVhcm5pbmdJZCI6ICJlYXJuLTAwMSIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2Vla2x5IHByb2plY3QgZWFybmluZ3MiLAogICAgICAiZWFybmVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgImFtb3VudE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJzdGF0dXMiOiAiYXBwcm92ZWQiCiAgICB9CiAgXSwKICAiZW50cmllcyI6IFsKICAgIHsKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJleHBlY3RlZE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJwYWlkTWlub3IiOiAxNTAwMDAwMCwKICAgICAgImVhcm5pbmdJZHMiOiBbCiAgICAgICAgImVhcm4tMDAxIgogICAgICBdLAogICAgICAicGF5bWVudENvdW50IjogMQogICAgfQogIF0sCiAgInBheW1lbnRzIjogWwogICAgewogICAgICAiaWQiOiAiYzg4NzdjMGQtYTAwMS00MTQ4LTk5ZWYtN2ZiYWM2MWExMzM3IiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNDgyMSIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNlQwNTowNDoxMC40MTlaIgogICAgfQogIF0sCiAgIm5vdGlmaWNhdGlvbnMiOiBbCiAgICB7CiAgICAgICJpZCI6ICI2YjJhNDAwMi04MzNhLTQzYzMtYWM2NS0zZjJhMGFkZDhjYjAiLAogICAgICAicGF5bWVudElkIjogImM4ODc3YzBkLWEwMDEtNDE0OC05OWVmLTdmYmFjNjFhMTMzNyIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZW1wbG95ZWVOYW1lIjogIkFtYXJhIE9rYWZvciIsCiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAic3RhdGUiOiAicGVuZGluZyIsCiAgICAgICJhdHRlbXB0cyI6IDEsCiAgICAgICJsYXN0RXJyb3IiOiAiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIKICAgIH0KICBdLAogICJydW5zIjogWwogICAgewogICAgICAicGVyaW9kU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgInBlcmlvZEVuZCI6ICIyMDI2LTEwLTEyVDAwOjAwOjAwLjAwMFoiLAogICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNlQwNTowNDoxMC4zOTBaIiwKICAgICAgImV4cGVjdGVkTWlub3IiOiAxNTAwMDAwMAogICAgfQogIF0sCiAgImxvY2tlZCI6IHRydWUsCiAgImV4cGVjdGVkTWlub3IiOiAxNTAwMDAwMCwKICAicGFpZE1pbm9yIjogMTUwMDAwMDAsCiAgInBlbmRpbmdBcHByb3ZhbHMiOiAwLAogICJwZW5kaW5nTm90aWZpY2F0aW9ucyI6IDEsCiAgInByb3ZpZGVyQWNjZXB0ZWQiOiAwLAogICJldmVudHMiOiBbCiAgICB7CiAgICAgICJldmVudCI6ICJlYXJuaW5nc19yZWNvcmRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAiY291bnQiOiAxCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNlQwNTowNDowOS42NDVaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogImZhaWx1cmVfYXJtZWQiLAogICAgICAiZW1wbG95ZWVJZCI6IG51bGwsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgImtpbmQiOiAibm90aWZpY2F0aW9uIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTZUMDU6MDQ6MDkuNjg1WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXltZW50X2NvbW1pdHRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJwYXltZW50SWQiOiAiYzg4NzdjMGQtYTAwMS00MTQ4LTk5ZWYtN2ZiYWM2MWExMzM3IiwKICAgICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTZUMDU6MDQ6MTAuNDM1WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE2VDA1OjA0OjEwLjQ1NVoiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAibm90aWZpY2F0aW9uX2ZhaWxlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJtZXNzYWdlSWQiOiAiNmIyYTQwMDItODMzYS00M2MzLWFjNjUtM2YyYTBhZGQ4Y2IwIiwKICAgICAgICAiZXJyb3IiOiAiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE2VDA1OjA0OjEwLjQ4OFoiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAicGF5X3J1bl9maW5pc2hlZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE2VDA1OjA0OjEwLjUwMFoiCiAgICB9CiAgXQp9"
                     },
                     {
                       "name": "observed-workspace",
                       "contentType": "application/json",
-                      "body": "ewogICJpZCI6ICIxZGZmNTE3Yi1jNWMxLTQzZWQtYmQ0ZS0wODRlYWMzNDc2YzMiLAogICJjb21wYW55IjogIk5vcnRoc3RhciBTdHVkaW8iLAogICJjdXJyZW5jeSI6ICJOR04iLAogICJwZXJpb2QiOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgImVtcGxveWVlcyI6IFsKICAgIHsKICAgICAgImlkIjogImVtcC0wMDEiLAogICAgICAibmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicm9sZSI6ICJQcm9kdWN0IGRlc2lnbmVyIiwKICAgICAgImRlcGFydG1lbnQiOiAiRGVzaWduIiwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMiIsCiAgICAgICJuYW1lIjogIkRhbmllbCBNZW5zYWgiLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBlbmdpbmVlciIsCiAgICAgICJkZXBhcnRtZW50IjogIkVuZ2luZWVyaW5nIiwKICAgICAgImJhbmsiOiAiVW5pb24gQ29hc3QgQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjMwNjgiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMyIsCiAgICAgICJuYW1lIjogIlphcmEgQmVsbG8iLAogICAgICAicm9sZSI6ICJPcGVyYXRpb25zIGFzc29jaWF0ZSIsCiAgICAgICJkZXBhcnRtZW50IjogIk9wZXJhdGlvbnMiLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNzI5MCIKICAgIH0KICBdLAogICJlYXJuaW5ncyI6IFsKICAgIHsKICAgICAgImVhcm5pbmdJZCI6ICJlYXJuLTAwMSIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2Vla2x5IHByb2plY3QgZWFybmluZ3MiLAogICAgICAiZWFybmVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgImFtb3VudE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJzdGF0dXMiOiAiYXBwcm92ZWQiCiAgICB9CiAgXSwKICAiZW50cmllcyI6IFsKICAgIHsKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJleHBlY3RlZE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJwYWlkTWlub3IiOiAzMDAwMDAwMCwKICAgICAgImVhcm5pbmdJZHMiOiBbCiAgICAgICAgImVhcm4tMDAxIgogICAgICBdLAogICAgICAicGF5bWVudENvdW50IjogMgogICAgfQogIF0sCiAgInBheW1lbnRzIjogWwogICAgewogICAgICAiaWQiOiAiMzMyZDc2NGMtZmI1My00ZDQ2LTlmNjgtYmNiMWFjYmI0YjY4IiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNDgyMSIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMzoxMDoyMi4wNDZaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogIjRhNjcxNWU1LTI2OTctNDE0Yi1iOWM1LTU1ZGFiYmMwZmZlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZW1wbG95ZWVOYW1lIjogIkFtYXJhIE9rYWZvciIsCiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMCwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiLAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjM6MTA6MjEuMTgyWiIKICAgIH0KICBdLAogICJub3RpZmljYXRpb25zIjogWwogICAgewogICAgICAiaWQiOiAiNDVlNjliOTgtMDUxMy00NjY3LWE1MjktODVmMDUzMWE4OWU2IiwKICAgICAgInBheW1lbnRJZCI6ICIzMzJkNzY0Yy1mYjUzLTRkNDYtOWY2OC1iY2IxYWNiYjRiNjgiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImVtcGxveWVlTmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicGVyaW9kU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgInN0YXRlIjogInNlbnQiLAogICAgICAiYXR0ZW1wdHMiOiAxLAogICAgICAibGFzdEVycm9yIjogbnVsbAogICAgfSwKICAgIHsKICAgICAgImlkIjogImIwMzMwZDkwLTEyMDAtNDBlYy05MzRjLTNmYzAxOTMyMjJlMSIsCiAgICAgICJwYXltZW50SWQiOiAiNGE2NzE1ZTUtMjY5Ny00MTRiLWI5YzUtNTVkYWJiYzBmZmVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJzdGF0ZSI6ICJwZW5kaW5nIiwKICAgICAgImF0dGVtcHRzIjogMSwKICAgICAgImxhc3RFcnJvciI6ICJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIgogICAgfQogIF0sCiAgInJ1bnMiOiBbCiAgICB7CiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAicGVyaW9kRW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIzOjEwOjIxLjE2NloiLAogICAgICAiZXhwZWN0ZWRNaW5vciI6IDE1MDAwMDAwCiAgICB9CiAgXSwKICAibG9ja2VkIjogdHJ1ZSwKICAiZXhwZWN0ZWRNaW5vciI6IDE1MDAwMDAwLAogICJwYWlkTWlub3IiOiAzMDAwMDAwMCwKICAicGVuZGluZ0FwcHJvdmFscyI6IDAsCiAgInBlbmRpbmdOb3RpZmljYXRpb25zIjogMSwKICAicHJvdmlkZXJBY2NlcHRlZCI6IDEsCiAgImV2ZW50cyI6IFsKICAgIHsKICAgICAgImV2ZW50IjogImVhcm5pbmdzX3JlY29yZGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJjb3VudCI6IDEKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIzOjEwOjIwLjI4M1oiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAiZmFpbHVyZV9hcm1lZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAia2luZCI6ICJub3RpZmljYXRpb24iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMzoxMDoyMC4zMjJaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogInBheW1lbnRfY29tbWl0dGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgInBheW1lbnRJZCI6ICI0YTY3MTVlNS0yNjk3LTQxNGItYjljNS01NWRhYmJjMGZmZWQiLAogICAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNVQyMzoxMDoyMS4xOTVaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjM6MTA6MjEuMjIyWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fZmFpbGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgIm1lc3NhZ2VJZCI6ICJiMDMzMGQ5MC0xMjAwLTQwZWMtOTM0Yy0zZmMwMTkzMjIyZTEiLAogICAgICAgICJlcnJvciI6ICJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjM6MTA6MjEuMjYwWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXlfcnVuX2ZpbmlzaGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjM6MTA6MjEuMjcyWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXltZW50X2NvbW1pdHRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJwYXltZW50SWQiOiAiMzMyZDc2NGMtZmI1My00ZDQ2LTlmNjgtYmNiMWFjYmI0YjY4IiwKICAgICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjM6MTA6MjIuMDc4WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE1VDIzOjEwOjIyLjEwM1oiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAibm90aWZpY2F0aW9uX3NlbnQiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAibWVzc2FnZUlkIjogIjQ1ZTY5Yjk4LTA1MTMtNDY2Ny1hNTI5LTg1ZjA1MzFhODllNiIsCiAgICAgICAgImVycm9yIjogbnVsbAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjM6MTA6MjIuMTU0WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXlfcnVuX2ZpbmlzaGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTVUMjM6MTA6MjIuMTY2WiIKICAgIH0KICBdCn0="
+                      "body": "ewogICJpZCI6ICJlMGJhMTJkMS1lMzFmLTRiMTgtOWJjNS00ZmNiNTZlZTcwNTAiLAogICJjb21wYW55IjogIk5vcnRoc3RhciBTdHVkaW8iLAogICJjdXJyZW5jeSI6ICJOR04iLAogICJwZXJpb2QiOiB7CiAgICAic2NoZWR1bGVkRm9yIjogIjIwMjYtMTAtMTNUMDk6MDA6MDAuMDAwWiIsCiAgICAic3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICJlbmQiOiAiMjAyNi0xMC0xMlQwMDowMDowMC4wMDBaIgogIH0sCiAgImVtcGxveWVlcyI6IFsKICAgIHsKICAgICAgImlkIjogImVtcC0wMDEiLAogICAgICAibmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicm9sZSI6ICJQcm9kdWN0IGRlc2lnbmVyIiwKICAgICAgImRlcGFydG1lbnQiOiAiRGVzaWduIiwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMiIsCiAgICAgICJuYW1lIjogIkRhbmllbCBNZW5zYWgiLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBlbmdpbmVlciIsCiAgICAgICJkZXBhcnRtZW50IjogIkVuZ2luZWVyaW5nIiwKICAgICAgImJhbmsiOiAiVW5pb24gQ29hc3QgQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjMwNjgiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZW1wLTAwMyIsCiAgICAgICJuYW1lIjogIlphcmEgQmVsbG8iLAogICAgICAicm9sZSI6ICJPcGVyYXRpb25zIGFzc29jaWF0ZSIsCiAgICAgICJkZXBhcnRtZW50IjogIk9wZXJhdGlvbnMiLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNzI5MCIKICAgIH0KICBdLAogICJlYXJuaW5ncyI6IFsKICAgIHsKICAgICAgImVhcm5pbmdJZCI6ICJlYXJuLTAwMSIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2Vla2x5IHByb2plY3QgZWFybmluZ3MiLAogICAgICAiZWFybmVkQXQiOiAiMjAyNi0xMC0wOFQxMjowMDowMC4wMDBaIiwKICAgICAgImFtb3VudE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJzdGF0dXMiOiAiYXBwcm92ZWQiCiAgICB9CiAgXSwKICAiZW50cmllcyI6IFsKICAgIHsKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJleHBlY3RlZE1pbm9yIjogMTUwMDAwMDAsCiAgICAgICJwYWlkTWlub3IiOiAzMDAwMDAwMCwKICAgICAgImVhcm5pbmdJZHMiOiBbCiAgICAgICAgImVhcm4tMDAxIgogICAgICBdLAogICAgICAicGF5bWVudENvdW50IjogMgogICAgfQogIF0sCiAgInBheW1lbnRzIjogWwogICAgewogICAgICAiaWQiOiAiNGYzZjZiOTYtZjQyOC00ZjljLWI5NTEtNzBlNWQxNzQ2OWE4IiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwLAogICAgICAiYmFuayI6ICJNZXJpZGlhbiBCYW5rIiwKICAgICAgImFjY291bnRFbmRpbmciOiAiNDgyMSIsCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNlQwNTowNDoxMC45MzVaIgogICAgfSwKICAgIHsKICAgICAgImlkIjogImM4ODc3YzBkLWEwMDEtNDE0OC05OWVmLTdmYmFjNjFhMTMzNyIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZW1wbG95ZWVOYW1lIjogIkFtYXJhIE9rYWZvciIsCiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMCwKICAgICAgImJhbmsiOiAiTWVyaWRpYW4gQmFuayIsCiAgICAgICJhY2NvdW50RW5kaW5nIjogIjQ4MjEiLAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTZUMDU6MDQ6MTAuNDE5WiIKICAgIH0KICBdLAogICJub3RpZmljYXRpb25zIjogWwogICAgewogICAgICAiaWQiOiAiYmFjNjIwOTUtMTA0Ny00MDY4LWJlOTgtZTljYjQ3MGM4OTdmIiwKICAgICAgInBheW1lbnRJZCI6ICI0ZjNmNmI5Ni1mNDI4LTRmOWMtYjk1MS03MGU1ZDE3NDY5YTgiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImVtcGxveWVlTmFtZSI6ICJBbWFyYSBPa2Fmb3IiLAogICAgICAicGVyaW9kU3RhcnQiOiAiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIiwKICAgICAgInN0YXRlIjogInNlbnQiLAogICAgICAiYXR0ZW1wdHMiOiAxLAogICAgICAibGFzdEVycm9yIjogbnVsbAogICAgfSwKICAgIHsKICAgICAgImlkIjogIjZiMmE0MDAyLTgzM2EtNDNjMy1hYzY1LTNmMmEwYWRkOGNiMCIsCiAgICAgICJwYXltZW50SWQiOiAiYzg4NzdjMGQtYTAwMS00MTQ4LTk5ZWYtN2ZiYWM2MWExMzM3IiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJlbXBsb3llZU5hbWUiOiAiQW1hcmEgT2thZm9yIiwKICAgICAgInBlcmlvZFN0YXJ0IjogIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJzdGF0ZSI6ICJwZW5kaW5nIiwKICAgICAgImF0dGVtcHRzIjogMSwKICAgICAgImxhc3RFcnJvciI6ICJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIgogICAgfQogIF0sCiAgInJ1bnMiOiBbCiAgICB7CiAgICAgICJwZXJpb2RTdGFydCI6ICIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoiLAogICAgICAicGVyaW9kRW5kIjogIjIwMjYtMTAtMTJUMDA6MDA6MDAuMDAwWiIsCiAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIiwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE2VDA1OjA0OjEwLjM5MFoiLAogICAgICAiZXhwZWN0ZWRNaW5vciI6IDE1MDAwMDAwCiAgICB9CiAgXSwKICAibG9ja2VkIjogdHJ1ZSwKICAiZXhwZWN0ZWRNaW5vciI6IDE1MDAwMDAwLAogICJwYWlkTWlub3IiOiAzMDAwMDAwMCwKICAicGVuZGluZ0FwcHJvdmFscyI6IDAsCiAgInBlbmRpbmdOb3RpZmljYXRpb25zIjogMSwKICAicHJvdmlkZXJBY2NlcHRlZCI6IDEsCiAgImV2ZW50cyI6IFsKICAgIHsKICAgICAgImV2ZW50IjogImVhcm5pbmdzX3JlY29yZGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJjb3VudCI6IDEKICAgICAgfSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE2VDA1OjA0OjA5LjY0NVoiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAiZmFpbHVyZV9hcm1lZCIsCiAgICAgICJlbXBsb3llZUlkIjogbnVsbCwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAia2luZCI6ICJub3RpZmljYXRpb24iCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNlQwNTowNDowOS42ODVaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogInBheW1lbnRfY29tbWl0dGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgInBheW1lbnRJZCI6ICJjODg3N2MwZC1hMDAxLTQxNDgtOTllZi03ZmJhYzYxYTEzMzciLAogICAgICAgICJhbW91bnRNaW5vciI6IDE1MDAwMDAwCiAgICAgIH0sCiAgICAgICJjcmVhdGVkQXQiOiAiMjAyNi0xMC0xNlQwNTowNDoxMC40MzVaIgogICAgfSwKICAgIHsKICAgICAgImV2ZW50IjogIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImRldGFpbCI6IHt9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTZUMDU6MDQ6MTAuNDU1WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fZmFpbGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7CiAgICAgICAgIm1lc3NhZ2VJZCI6ICI2YjJhNDAwMi04MzNhLTQzYzMtYWM2NS0zZjJhMGFkZDhjYjAiLAogICAgICAgICJlcnJvciI6ICJOb3RpZmljYXRpb24gZGVsaXZlcnkgdW5hdmFpbGFibGUuIFJldHJ5IHRoZSBub3RpZmljYXRpb24uIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTZUMDU6MDQ6MTAuNDg4WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXlfcnVuX2ZpbmlzaGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTZUMDU6MDQ6MTAuNTAwWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXltZW50X2NvbW1pdHRlZCIsCiAgICAgICJlbXBsb3llZUlkIjogImVtcC0wMDEiLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJwYXltZW50SWQiOiAiNGYzZjZiOTYtZjQyOC00ZjljLWI5NTEtNzBlNWQxNzQ2OWE4IiwKICAgICAgICAiYW1vdW50TWlub3IiOiAxNTAwMDAwMAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTZUMDU6MDQ6MTAuOTY3WiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwKICAgICAgImVtcGxveWVlSWQiOiAiZW1wLTAwMSIsCiAgICAgICJkZXRhaWwiOiB7fSwKICAgICAgImNyZWF0ZWRBdCI6ICIyMDI2LTEwLTE2VDA1OjA0OjEwLjk5NFoiCiAgICB9LAogICAgewogICAgICAiZXZlbnQiOiAibm90aWZpY2F0aW9uX3NlbnQiLAogICAgICAiZW1wbG95ZWVJZCI6ICJlbXAtMDAxIiwKICAgICAgImRldGFpbCI6IHsKICAgICAgICAibWVzc2FnZUlkIjogImJhYzYyMDk1LTEwNDctNDA2OC1iZTk4LWU5Y2I0NzBjODk3ZiIsCiAgICAgICAgImVycm9yIjogbnVsbAogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTZUMDU6MDQ6MTEuMDQxWiIKICAgIH0sCiAgICB7CiAgICAgICJldmVudCI6ICJwYXlfcnVuX2ZpbmlzaGVkIiwKICAgICAgImVtcGxveWVlSWQiOiBudWxsLAogICAgICAiZGV0YWlsIjogewogICAgICAgICJzY2hlZHVsZWRGb3IiOiAiMjAyNi0xMC0xM1QwOTowMDowMC4wMDBaIgogICAgICB9LAogICAgICAiY3JlYXRlZEF0IjogIjIwMjYtMTAtMTZUMDU6MDQ6MTEuMDUwWiIKICAgIH0KICBdCn0="
+                    },
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJmaXJzdCI6eyJ3b3Jrc3BhY2VJZCI6ImUwYmExMmQxLWUzMWYtNGIxOC05YmM1LTRmY2I1NmVlNzA1MCIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjE1MDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjoxLCJwcm92aWRlckFjY2VwdGVkIjowLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiYzg4NzdjMGQtYTAwMS00MTQ4LTk5ZWYtN2ZiYWM2MWExMzM3IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn1dLCJub3RpZmljYXRpb25zIjpbeyJpZCI6IjZiMmE0MDAyLTgzM2EtNDNjMy1hYzY1LTNmMmEwYWRkOGNiMCIsInBheW1lbnRJZCI6ImM4ODc3YzBkLWEwMDEtNDE0OC05OWVmLTdmYmFjNjFhMTMzNyIsInN0YXRlIjoicGVuZGluZyJ9XSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIiwiZmFpbHVyZV9hcm1lZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9mYWlsZWQiLCJwYXlfcnVuX2ZpbmlzaGVkIl19LCJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6ImUwYmExMmQxLWUzMWYtNGIxOC05YmM1LTRmY2I1NmVlNzA1MCIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjMwMDAwMDAwLCJsb2NrZWQiOnRydWUsInBlbmRpbmdOb3RpZmljYXRpb25zIjoxLCJwcm92aWRlckFjY2VwdGVkIjoxLCJydW5Db3VudCI6MSwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOlt7ImlkIjoiNGYzZjZiOTYtZjQyOC00ZjljLWI5NTEtNzBlNWQxNzQ2OWE4IiwiZW1wbG95ZWVJZCI6ImVtcC0wMDEiLCJlbXBsb3llZU5hbWUiOiJBbWFyYSBPa2Fmb3IiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInBlcmlvZFN0YXJ0IjoiMjAyNi0xMC0wNVQwMDowMDowMC4wMDBaIn0seyJpZCI6ImM4ODc3YzBkLWEwMDEtNDE0OC05OWVmLTdmYmFjNjFhMTMzNyIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwiYW1vdW50TWlub3IiOjE1MDAwMDAwLCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiJ9XSwibm90aWZpY2F0aW9ucyI6W3siaWQiOiJiYWM2MjA5NS0xMDQ3LTQwNjgtYmU5OC1lOWNiNDcwYzg5N2YiLCJwYXltZW50SWQiOiI0ZjNmNmI5Ni1mNDI4LTRmOWMtYjk1MS03MGU1ZDE3NDY5YTgiLCJzdGF0ZSI6InNlbnQifSx7ImlkIjoiNmIyYTQwMDItODMzYS00M2MzLWFjNjUtM2YyYTBhZGQ4Y2IwIiwicGF5bWVudElkIjoiYzg4NzdjMGQtYTAwMS00MTQ4LTk5ZWYtN2ZiYWM2MWExMzM3Iiwic3RhdGUiOiJwZW5kaW5nIn1dLCJldmVudHMiOlsiZWFybmluZ3NfcmVjb3JkZWQiLCJmYWlsdXJlX2FybWVkIiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX2ZhaWxlZCIsInBheV9ydW5fZmluaXNoZWQiLCJwYXltZW50X2NvbW1pdHRlZCIsIm5vdGlmaWNhdGlvbl9hdHRlbXB0ZWQiLCJub3RpZmljYXRpb25fc2VudCIsInBheV9ydW5fZmluaXNoZWQiXX0sInBheW1lbnRzVW5jaGFuZ2VkIjpmYWxzZSwibm90aWZpY2F0aW9uSWRVbmNoYW5nZWQiOmZhbHNlfQ=="
                     },
                     {
                       "name": "error-context",
@@ -1000,7 +1127,7 @@
                   "errorLocation": {
                     "file": "<project>\\QA\\Quality Control\\execute_test_cases\\test\\specs\\payroll-ui.spec.ts",
                     "column": 98,
-                    "line": 32
+                    "line": 34
                   }
                 }
               ],
@@ -1028,14 +1155,20 @@
                   "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2216,
+                  "duration": 2173,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:22.973Z",
+                  "startTime": "2026-10-16T05:04:11.107Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJjb25maXJtYXRpb25UZXh0IjoiUHJvY2VzcyB0aGlzIHBheXJvbGw/XG5cbjEgZW1wbG95ZWUuIEFwcHJvdmVkIHRvdGFsIOKCpjE1MCwwMDAuMjUuIFBheSBkYXRlIDEzIE9jdCAyMDI2LiBUaGUgcGVyaW9kIHdpbGwgYmUgbG9ja2VkIHdoZW4gcHJvY2Vzc2luZyBzdGFydHMuXG5cbkNhbmNlbFxuUHJvY2VzcyBwYXlyb2xsIiwiYWZ0ZXIiOnsid29ya3NwYWNlSWQiOiI0MjQyZDZlYi03ZGNmLTQ1NTUtYjcxNS02MDMwNWRhNDU3MmQiLCJleHBlY3RlZE1pbm9yIjoxNTAwMDAyNSwicGFpZE1pbm9yIjoxNTAwMDAyNSwibG9ja2VkIjp0cnVlLCJwZW5kaW5nTm90aWZpY2F0aW9ucyI6MCwicHJvdmlkZXJBY2NlcHRlZCI6MSwicnVuQ291bnQiOjEsImVhcm5pbmdzIjpbeyJpZCI6ImVhcm4tOWFjN2QxY2UtOGRkNi00YjgwLThmYWEtOGZhNmU0MzNkNjEyIiwiYW1vdW50TWlub3IiOjE1MDAwMDI1LCJzdGF0dXMiOiJhcHByb3ZlZCJ9XSwiZWFybmluZ0lkc0luUGVyaW9kIjpbImVhcm4tOWFjN2QxY2UtOGRkNi00YjgwLThmYWEtOGZhNmU0MzNkNjEyIl0sInBheW1lbnRzIjpbeyJpZCI6ImQzYjNjNDViLWY5MzAtNGQwNy1hM2E0LTgxZTVkZThiYzk4MCIsImVtcGxveWVlSWQiOiJlbXAtMDAxIiwiZW1wbG95ZWVOYW1lIjoiQW1hcmEgT2thZm9yIiwiYW1vdW50TWlub3IiOjE1MDAwMDI1LCJwZXJpb2RTdGFydCI6IjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWiJ9XSwibm90aWZpY2F0aW9ucyI6W3siaWQiOiIxMWE1ZDhkNC1kOTI1LTQ2YzAtOTBhZi0zMzcyNzM2MzNiY2IiLCJwYXltZW50SWQiOiJkM2IzYzQ1Yi1mOTMwLTRkMDctYTNhNC04MWU1ZGU4YmM5ODAiLCJzdGF0ZSI6InNlbnQifV0sImV2ZW50cyI6WyJlYXJuaW5nc19yZWNvcmRlZCIsImVhcm5pbmdzX3JlY29yZGVkIiwiZWFybmluZ19hcHByb3ZlZCIsInBheW1lbnRfY29tbWl0dGVkIiwibm90aWZpY2F0aW9uX2F0dGVtcHRlZCIsIm5vdGlmaWNhdGlvbl9zZW50IiwicGF5X3J1bl9maW5pc2hlZCJdfX0="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1043,7 +1176,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-2f83ed11c543ddd9ac89",
           "file": "payroll-ui.spec.ts",
-          "line": 39,
+          "line": 41,
           "column": 1
         },
         {
@@ -1059,17 +1192,23 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 4,
-                  "parallelIndex": 0,
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1063,
+                  "duration": 2508,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:25.992Z",
+                  "startTime": "2026-10-16T05:04:17.431Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJhZnRlciI6eyJ3b3Jrc3BhY2VJZCI6ImMzMGVmNTA4LTY4Y2YtNDRlZS1iMTMwLWU3NWQ1YWQ2ZWU1NCIsImV4cGVjdGVkTWlub3IiOjE1MDAwMDAwLCJwYWlkTWlub3IiOjAsImxvY2tlZCI6ZmFsc2UsInBlbmRpbmdOb3RpZmljYXRpb25zIjowLCJwcm92aWRlckFjY2VwdGVkIjowLCJydW5Db3VudCI6MCwiZWFybmluZ3MiOlt7ImlkIjoiZWFybi0wMDEiLCJhbW91bnRNaW5vciI6MTUwMDAwMDAsInN0YXR1cyI6ImFwcHJvdmVkIn1dLCJlYXJuaW5nSWRzSW5QZXJpb2QiOlsiZWFybi0wMDEiXSwicGF5bWVudHMiOltdLCJub3RpZmljYXRpb25zIjpbXSwiZXZlbnRzIjpbImVhcm5pbmdzX3JlY29yZGVkIl19LCJkaWFsb2dDbG9zZWQiOnRydWUsInRyaWdnZXJGb2N1c2VkIjp0cnVlfQ=="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1077,7 +1216,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-63e56bfbe82c1531450d",
           "file": "payroll-ui.spec.ts",
-          "line": 57,
+          "line": 61,
           "column": 1
         },
         {
@@ -1096,14 +1235,20 @@
                   "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1703,
+                  "duration": 1840,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:27.105Z",
+                  "startTime": "2026-10-16T05:04:14.331Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJwYXltZW50SWQiOiJhMDgxNTczMC1mNDJlLTQ1ZDctODViZi0yNzkzYTRmMTQ3NTgiLCJyZWZlcmVuY2VUZXh0IjoiYTA4MTU3MzAtZjQyZS00NWQ3LTg1YmYtMjc5M2E0ZjE0NzU4IiwiY2xpcGJvYXJkIjoiYTA4MTU3MzAtZjQyZS00NWQ3LTg1YmYtMjc5M2E0ZjE0NzU4IiwiZG93bmxvYWRUZXh0IjoiTXVzdFBheXJvbGwgcGF5bWVudCByZWNlaXB0XG5SZWZlcmVuY2U6IGEwODE1NzMwLWY0MmUtNDVkNy04NWJmLTI3OTNhNGYxNDc1OFxuRW1wbG95ZWU6IEFtYXJhIE9rYWZvclxuQW1vdW50OiDigqYxNTAsMDAwLjAwXG5QYXkgcGVyaW9kIHN0YXJ0czogNSBPY3QgMjAyNlxuQmFuazogTWVyaWRpYW4gQmFua1xuQWNjb3VudCBlbmRpbmc6IDQ4MjFcblJlY29yZGVkOiAyMDI2LTEwLTE2VDA1OjA0OjE0Ljc1MlpcblBheW1lbnQ6IFJlY29yZGVkXG5Ob3RpZmljYXRpb246IHNlbnRcbiJ9"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1111,7 +1256,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-c258e9f7231e9d4f4fb4",
           "file": "payroll-ui.spec.ts",
-          "line": 71,
+          "line": 76,
           "column": 1
         },
         {
@@ -1127,17 +1272,23 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 5,
-                  "parallelIndex": 1,
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3274,
+                  "duration": 1372,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:32.748Z",
+                  "startTime": "2026-10-16T05:04:16.213Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJ2aXNpYmxlUm93cyI6MSwiY3N2IjoiXCJSZWZlcmVuY2VcIixcIkVtcGxveWVlXCIsXCJQZXJpb2Qgc3RhcnQgKFVUQylcIixcIkFtb3VudCAoTkdOKVwiLFwiQmFua1wiLFwiQWNjb3VudCBlbmRpbmdcIixcIlJlY29yZGVkIChVVEMpXCJcclxuXCI5OWY4ZTliNi03YjE0LTQzOGYtOWM4OC1jYWI5MTBiZGQ5ZDFcIixcIkRhbmllbCBNZW5zYWhcIixcIjIwMjYtMTAtMDVUMDA6MDA6MDAuMDAwWlwiLFwiMjAwMDAwLjAwXCIsXCJVbmlvbiBDb2FzdCBCYW5rXCIsXCIzMDY4XCIsXCIyMDI2LTEwLTE2VDA1OjA0OjE2Ljc2OFpcIiJ9"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1145,7 +1296,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-f589846a61befd81f8f8",
           "file": "payroll-ui.spec.ts",
-          "line": 86,
+          "line": 94,
           "column": 1
         },
         {
@@ -1164,14 +1315,20 @@
                   "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1293,
+                  "duration": 1514,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:28.853Z",
+                  "startTime": "2026-10-16T05:04:17.626Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJwZXJpb2QiOiIxMiBPY3QgMjAyNiDigJMgMTggT2N0IDIwMjYiLCJyZWNvcmRlZFBheSI6IuKCpjAuMDAiLCJwZW5kaW5nQXBwcm92YWxzIjoiMSJ9"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1179,7 +1336,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-314e62d49e3dfd6dc9d3",
           "file": "payroll-ui.spec.ts",
-          "line": 100,
+          "line": 109,
           "column": 1
         },
         {
@@ -1198,14 +1355,20 @@
                   "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3406,
+                  "duration": 5139,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:30.187Z",
+                  "startTime": "2026-10-16T05:04:19.188Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJzY3JlZW5zIjpbeyJyb3V0ZSI6Ii9vdmVydmlldyIsImhlYWRpbmciOiJQYXlyb2xsIG92ZXJ2aWV3IiwiZml0c1ZpZXdwb3J0Ijp0cnVlLCJuYXZpZ2F0aW9uSW5WaWV3cG9ydCI6dHJ1ZX0seyJyb3V0ZSI6Ii9lbXBsb3llZXMiLCJoZWFkaW5nIjoiRW1wbG95ZWVzIiwiZml0c1ZpZXdwb3J0Ijp0cnVlLCJuYXZpZ2F0aW9uSW5WaWV3cG9ydCI6dHJ1ZX0seyJyb3V0ZSI6Ii9lbXBsb3llZXMvZW1wLTAwMSIsImhlYWRpbmciOiJBbWFyYSBPa2Fmb3IiLCJmaXRzVmlld3BvcnQiOnRydWUsIm5hdmlnYXRpb25JblZpZXdwb3J0Ijp0cnVlfSx7InJvdXRlIjoiL2Vhcm5pbmdzIiwiaGVhZGluZyI6IkVhcm5pbmdzIiwiZml0c1ZpZXdwb3J0Ijp0cnVlLCJuYXZpZ2F0aW9uSW5WaWV3cG9ydCI6dHJ1ZX0seyJyb3V0ZSI6Ii9wYXktcnVucyIsImhlYWRpbmciOiJQYXkgcnVucyIsImZpdHNWaWV3cG9ydCI6dHJ1ZSwibmF2aWdhdGlvbkluVmlld3BvcnQiOnRydWV9LHsicm91dGUiOiIvcGF5bWVudHMiLCJoZWFkaW5nIjoiUGF5bWVudHMiLCJmaXRzVmlld3BvcnQiOnRydWUsIm5hdmlnYXRpb25JblZpZXdwb3J0Ijp0cnVlfSx7InJvdXRlIjoiL25vdGlmaWNhdGlvbnMiLCJoZWFkaW5nIjoiTm90aWZpY2F0aW9ucyIsImZpdHNWaWV3cG9ydCI6dHJ1ZSwibmF2aWdhdGlvbkluVmlld3BvcnQiOnRydWV9XX0="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1213,7 +1376,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-05f8820e47060222adb4",
           "file": "payroll-ui.spec.ts",
-          "line": 112,
+          "line": 122,
           "column": 1
         },
         {
@@ -1229,17 +1392,23 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 4,
-                  "parallelIndex": 0,
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1217,
+                  "duration": 2515,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:33.634Z",
+                  "startTime": "2026-10-16T05:04:21.241Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJtYWluRm9jdXNlZCI6dHJ1ZSwicm91dGVIZWFkaW5nIjoiUGF5IHJ1bnMiLCJoZWFkaW5nRm9jdXNlZCI6dHJ1ZSwiaW5pdGlhbERpYWxvZ0ZvY3VzIjp0cnVlLCJwcm9jZXNzQnV0dG9uRm9jdXNlZCI6dHJ1ZSwidHJpZ2dlckZvY3VzUmVzdG9yZWQiOnRydWV9"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1247,7 +1416,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-29ac612408d123feca10",
           "file": "payroll-ui.spec.ts",
-          "line": 128,
+          "line": 144,
           "column": 1
         },
         {
@@ -1263,17 +1432,23 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 4,
-                  "parallelIndex": 0,
+                  "workerIndex": 5,
+                  "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 2411,
+                  "duration": 2256,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:34.903Z",
+                  "startTime": "2026-10-16T05:04:23.817Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJlbXBsb3llZU5hbWUiOiJEYW5pZWwgTWVuc2FoIiwibWFza2VkQWNjb3VudCI6IuKAouKAouKAouKAoiAzMDY4Iiwic2VsZWN0ZWRFbXBsb3llZSI6ImVtcC0wMDIifQ=="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1281,7 +1456,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-36e5d741fd462da9edb6",
           "file": "payroll-ui.spec.ts",
-          "line": 151,
+          "line": 172,
           "column": 1
         },
         {
@@ -1300,14 +1475,20 @@
                   "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1268,
+                  "duration": 2059,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:37.358Z",
+                  "startTime": "2026-10-16T05:04:24.373Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJoZWFkaW5nIjoiUGF5cm9sbCBvdmVydmlldyIsIm1ldHJpY3MiOiJBcHByb3ZlZCBwYXlyb2xsXG7igqY0MzUsMDAwLjAwXG5cbjMgZW1wbG95ZWVzIGluIHRoaXMgcGVyaW9kXG5cblBheW1lbnRzIHJlY29yZGVkXG7igqYwLjAwXG5cbkZvciB0aGUgc2VsZWN0ZWQgcGF5IHBlcmlvZFxuXG5QZW5kaW5nIGFwcHJvdmFsc1xuMFxuXG5SZXNvbHZlIGJlZm9yZSBwcm9jZXNzaW5nXG5cblBlbmRpbmcgbm90aWZpY2F0aW9uc1xuMFxuXG5BY3Jvc3MgYWxsIHBheSBwZXJpb2RzIiwibGVnYWN5TGFiZWxzRm91bmQiOltdfQ=="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1315,7 +1496,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-cdc4e7dbcfbe9eb4598b",
           "file": "payroll-ui.spec.ts",
-          "line": 163,
+          "line": 187,
           "column": 1
         },
         {
@@ -1334,14 +1515,20 @@
                   "workerIndex": 5,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 1647,
+                  "duration": 3500,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:37.856Z",
+                  "startTime": "2026-10-16T05:04:26.116Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJkZWxpdmVyeUVycm9yIjoiTm90aWZpY2F0aW9uIGRlbGl2ZXJ5IHVuYXZhaWxhYmxlLiBSZXRyeSB0aGUgbm90aWZpY2F0aW9uLiIsImZpcnN0Ijp7IndvcmtzcGFjZUlkIjoiMTg5ZDU0YzctNWUzMy00M2Q1LWI4NTktYjg2NmNkNjdiNTJmIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDAsInBhaWRNaW5vciI6MTUwMDAwMDAsImxvY2tlZCI6dHJ1ZSwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjEsInByb3ZpZGVyQWNjZXB0ZWQiOjAsInJ1bkNvdW50IjoxLCJlYXJuaW5ncyI6W3siaWQiOiJlYXJuLTAwMSIsImFtb3VudE1pbm9yIjoxNTAwMDAwMCwic3RhdHVzIjoiYXBwcm92ZWQifV0sImVhcm5pbmdJZHNJblBlcmlvZCI6WyJlYXJuLTAwMSJdLCJwYXltZW50cyI6W3siaWQiOiI1YTA5MGI3YS1kZjZjLTRjZDktYjhmZi01MWQxODlhODFlYjciLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsImFtb3VudE1pbm9yIjoxNTAwMDAwMCwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiYzI1MjE3NmEtZWEwMy00MmNkLTk1N2UtMjNjZmIyNjRlZThjIiwicGF5bWVudElkIjoiNWEwOTBiN2EtZGY2Yy00Y2Q5LWI4ZmYtNTFkMTg5YTgxZWI3Iiwic3RhdGUiOiJwZW5kaW5nIn1dLCJldmVudHMiOlsiZWFybmluZ3NfcmVjb3JkZWQiLCJmYWlsdXJlX2FybWVkIiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX2ZhaWxlZCIsInBheV9ydW5fZmluaXNoZWQiXX0sImFmdGVyIjp7IndvcmtzcGFjZUlkIjoiMTg5ZDU0YzctNWUzMy00M2Q1LWI4NTktYjg2NmNkNjdiNTJmIiwiZXhwZWN0ZWRNaW5vciI6MTUwMDAwMDAsInBhaWRNaW5vciI6MTUwMDAwMDAsImxvY2tlZCI6dHJ1ZSwicGVuZGluZ05vdGlmaWNhdGlvbnMiOjAsInByb3ZpZGVyQWNjZXB0ZWQiOjEsInJ1bkNvdW50IjoxLCJlYXJuaW5ncyI6W3siaWQiOiJlYXJuLTAwMSIsImFtb3VudE1pbm9yIjoxNTAwMDAwMCwic3RhdHVzIjoiYXBwcm92ZWQifV0sImVhcm5pbmdJZHNJblBlcmlvZCI6WyJlYXJuLTAwMSJdLCJwYXltZW50cyI6W3siaWQiOiI1YTA5MGI3YS1kZjZjLTRjZDktYjhmZi01MWQxODlhODFlYjciLCJlbXBsb3llZUlkIjoiZW1wLTAwMSIsImVtcGxveWVlTmFtZSI6IkFtYXJhIE9rYWZvciIsImFtb3VudE1pbm9yIjoxNTAwMDAwMCwicGVyaW9kU3RhcnQiOiIyMDI2LTEwLTA1VDAwOjAwOjAwLjAwMFoifV0sIm5vdGlmaWNhdGlvbnMiOlt7ImlkIjoiYzI1MjE3NmEtZWEwMy00MmNkLTk1N2UtMjNjZmIyNjRlZThjIiwicGF5bWVudElkIjoiNWEwOTBiN2EtZGY2Yy00Y2Q5LWI4ZmYtNTFkMTg5YTgxZWI3Iiwic3RhdGUiOiJzZW50In1dLCJldmVudHMiOlsiZWFybmluZ3NfcmVjb3JkZWQiLCJmYWlsdXJlX2FybWVkIiwicGF5bWVudF9jb21taXR0ZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX2ZhaWxlZCIsInBheV9ydW5fZmluaXNoZWQiLCJub3RpZmljYXRpb25fYXR0ZW1wdGVkIiwibm90aWZpY2F0aW9uX3NlbnQiXX0sInBheW1lbnRzVW5jaGFuZ2VkIjp0cnVlLCJyZWNvdmVyeU1lc3NhZ2UiOiJOb3RpZmljYXRpb24gcmVjb3ZlcnkgZmluaXNoZWQuIFJlY29yZGVkIHBheW1lbnRzIGFyZSB1bmNoYW5nZWQuIiwicmV0cnlEaXNhYmxlZCI6dHJ1ZX0="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1349,7 +1536,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-c390d3dc3c18ebe84144",
           "file": "payroll-ui.spec.ts",
-          "line": 173,
+          "line": 199,
           "column": 1
         },
         {
@@ -1368,14 +1555,20 @@
                   "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3346,
+                  "duration": 4660,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-15T23:10:38.682Z",
+                  "startTime": "2026-10-16T05:04:26.528Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "case-observation",
+                      "contentType": "application/json",
+                      "body": "eyJmaXJzdERhdGVBZnRlclJlbG9hZCI6IjIwMjYtMTAtMjAiLCJmaXJzdFBlbmRpbmdBcHByb3ZhbHMiOiIwIiwiZmlyc3RPcmlnaW5hbE1ldHJpY3MiOiJBcHByb3ZlZCBwYXlyb2xsXG7igqYxNTAsMDAwLjAwXG5cbjEgZW1wbG95ZWUgaW4gdGhpcyBwZXJpb2RcblxuUGF5bWVudHMgcmVjb3JkZWRcbuKCpjAuMDBcblxuRm9yIHRoZSBzZWxlY3RlZCBwYXkgcGVyaW9kXG5cblBlbmRpbmcgYXBwcm92YWxzXG4wXG5cblJlc29sdmUgYmVmb3JlIHByb2Nlc3NpbmdcblxuUGVuZGluZyBub3RpZmljYXRpb25zXG4wXG5cbkFjcm9zcyBhbGwgcGF5IHBlcmlvZHMiLCJzZWNvbmREYXRlQWZ0ZXJSZWxvYWQiOiIyMDI2LTEwLTEzIiwic2Vjb25kTWV0cmljcyI6IkFwcHJvdmVkIHBheXJvbGxcbuKCpjQzNSwwMDAuMDBcblxuMyBlbXBsb3llZXMgaW4gdGhpcyBwZXJpb2RcblxuUGF5bWVudHMgcmVjb3JkZWRcbuKCpjAuMDBcblxuRm9yIHRoZSBzZWxlY3RlZCBwYXkgcGVyaW9kXG5cblBlbmRpbmcgYXBwcm92YWxzXG4wXG5cblJlc29sdmUgYmVmb3JlIHByb2Nlc3NpbmdcblxuUGVuZGluZyBub3RpZmljYXRpb25zXG4wXG5cbkFjcm9zcyBhbGwgcGF5IHBlcmlvZHMifQ=="
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -1383,7 +1576,7 @@
           ],
           "id": "fc4b6c35a6c8c78127b1-2d63f2735edbe9bcd899",
           "file": "payroll-ui.spec.ts",
-          "line": 188,
+          "line": 217,
           "column": 1
         }
       ]
@@ -1391,8 +1584,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-15T23:10:04.842Z",
-    "duration": 40010.606999999996,
+    "startTime": "2026-10-16T05:03:57.629Z",
+    "duration": 35425.422,
     "expected": 29,
     "skipped": 0,
     "unexpected": 4,

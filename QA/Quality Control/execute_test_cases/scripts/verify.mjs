@@ -85,9 +85,16 @@ for (const variant of ['faulty', 'fixed']) {
   }
   assert.equal(observations.TC14.providerAccepted, 1);
   assert.equal(observations.TC14.pendingNotifications, variant === 'faulty' ? 1 : 0);
-  const cases = all.map(s => { const result = s.tests[0].results[0]; return { id: s.title.split(' | ')[0], title: s.title.split(' | ')[1], result: result.status, ...(result.error ? { error: clean(result.error.message) } : {}) }; });
+  const cases = all.map(s => {
+    const result = s.tests[0].results[0], item = attachment(s, 'case-observation');
+    assert.ok(item?.body, `Missing case observations: ${s.title}`);
+    const observation = JSON.parse(Buffer.from(item.body, 'base64').toString());
+    assert.ok(Object.keys(observation).length, `Empty case observations: ${s.title}`);
+    return { id: s.title.split(' | ')[0], title: s.title.split(' | ')[1], result: result.status, observation,
+      ...(result.error ? { error: clean(result.error.message) } : {}) };
+  });
   const processError = processExit ? `Expected 15000000 kobo after restart; observed ${processObservation.afterRestart.paidMinor} kobo and ${processObservation.afterRestart.payments.length} payments.` : undefined;
-  cases.push({ id: 'TC11', title: 'Fresh process preserves employee-period payment identity', result: processExit ? 'failed' : 'passed', ...(processError ? { error: processError } : {}) });
+  cases.push({ id: 'TC11', title: 'Fresh process preserves employee-period payment identity', result: processExit ? 'failed' : 'passed', observation: processObservation, ...(processError ? { error: processError } : {}) });
   cases.sort((a, b) => a.id.localeCompare(b.id));
   runs[variant] = { first, state, processObservation, processExit, playwrightExit, cases, servedBuild, observations };
   await writeFile(resolve(execution, 'playwright/report.json'), JSON.stringify(scrub(report), null, 2));

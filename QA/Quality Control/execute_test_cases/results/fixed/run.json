@@ -1,12 +1,12 @@
 {
   "application": "MustPayroll",
   "variant": "fixed",
-  "generatedAt": "2026-10-15T23:11:25.910Z",
+  "generatedAt": "2026-10-16T05:05:08.107Z",
   "buildId": "mustpayroll-0.2.0-fixed-ae0d6c08a187",
   "directory": "../../../MustBank/MustPayroll_fixed",
   "executionDirectory": "results/fixed",
   "sourceFingerprint": "ae0d6c08a187ccdbfed9c70db2eb7912df3776035ccc71deaa39c8ae09b5ebad",
-  "testSuiteSha256": "cda71406bb0714da29a585814a44a58764ac4f90a1e19d30e69ed87583336f4d",
+  "testSuiteSha256": "623b09bf3e04274e67b4599956454913d66e786de29137675e880081cbea47b7",
   "environment": {
     "node": "v22.21.0",
     "platform": "win32",
@@ -31,7 +31,7 @@
     "playwright": 0,
     "freshProcess": 0
   },
-  "playwrightReportSha256": "2655bc8f9324984adc44d36324ceef8681728b908ac279981b5794521ca2ee7d",
+  "playwrightReportSha256": "6b8c787de4af2ac24589a9e769a01c0eb7d6539ab27dd6ea445917960d5018b4",
   "total": 34,
   "passed": 34,
   "failed": 0,
@@ -55,239 +55,2090 @@
       "id": "TC01",
       "title": "Approved earnings aggregate into one payment per employee",
       "result": "passed",
+      "observation": {
+        "after": {
+          "workspaceId": "ca8c1737-8e25-4eee-9a7f-cc8781a033b7",
+          "expectedMinor": 43500000,
+          "paidMinor": 43500000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 3,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-005",
+              "amountMinor": 8500000,
+              "status": "pending"
+            },
+            {
+              "id": "earn-004",
+              "amountMinor": 8500000,
+              "status": "approved"
+            },
+            {
+              "id": "earn-002",
+              "amountMinor": 3000000,
+              "status": "approved"
+            },
+            {
+              "id": "earn-003",
+              "amountMinor": 20000000,
+              "status": "approved"
+            },
+            {
+              "id": "earn-001",
+              "amountMinor": 12000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001",
+            "earn-002",
+            "earn-003",
+            "earn-004"
+          ],
+          "payments": [
+            {
+              "id": "1e3514af-e184-40b6-af0d-5034207c6ae0",
+              "employeeId": "emp-003",
+              "employeeName": "Zara Bello",
+              "amountMinor": 8500000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            },
+            {
+              "id": "ca5d6986-8952-499e-94bb-44604fa640a8",
+              "employeeId": "emp-002",
+              "employeeName": "Daniel Mensah",
+              "amountMinor": 20000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            },
+            {
+              "id": "d0aac8f9-ef55-41f3-90ce-b1f769673d56",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "2abebc88-d801-4bee-884b-ba62f1d15c7d",
+              "paymentId": "1e3514af-e184-40b6-af0d-5034207c6ae0",
+              "state": "sent"
+            },
+            {
+              "id": "01f5cee1-05d4-4a45-bf5e-c26973c2f8b9",
+              "paymentId": "ca5d6986-8952-499e-94bb-44604fa640a8",
+              "state": "sent"
+            },
+            {
+              "id": "7a71de74-447f-401c-ab23-f55fb68f5a78",
+              "paymentId": "d0aac8f9-ef55-41f3-90ce-b1f769673d56",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "payment_committed",
+            "payment_committed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "notification_attempted",
+            "notification_sent",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Exactly three payments total NGN435,000. Amara receives one NGN150,000 payment. Every payment notification is sent."
+      "actual": "Approved payroll: NGN 435,000.00. Recorded payroll: NGN 435,000.00.\nPayments: Zara Bello (emp-003): NGN 85,000.00; Daniel Mensah (emp-002): NGN 200,000.00; Amara Okafor (emp-001): NGN 150,000.00.\nNotification states: sent, sent, sent."
     },
     {
       "id": "TC02",
       "title": "Opening Monday midnight is included",
       "result": "passed",
+      "observation": {
+        "after": {
+          "workspaceId": "4b97cc00-1158-46c9-8f21-84eb24c2c5a8",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "dd42aa8b-67d6-4340-b9c6-971a7e3c5593",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "02d43937-6d22-484e-bb51-0559d36fa4f2",
+              "paymentId": "dd42aa8b-67d6-4340-b9c6-971a7e3c5593",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "earnings_recorded",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: The opening-boundary earning is included; recorded pay is NGN150,000."
+      "actual": "Opening-boundary earning IDs included: earn-001.\nRecorded pay: NGN 150,000.00."
     },
     {
       "id": "TC03",
       "title": "Following Monday midnight belongs to the next period",
       "result": "passed",
+      "observation": {
+        "first": {
+          "workspaceId": "127cff64-4962-406d-8443-793b2cdb1e9e",
+          "expectedMinor": 4000000,
+          "paidMinor": 4000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "end",
+              "amountMinor": 4000000,
+              "status": "approved"
+            },
+            {
+              "id": "last",
+              "amountMinor": 3000000,
+              "status": "approved"
+            },
+            {
+              "id": "start",
+              "amountMinor": 1000000,
+              "status": "approved"
+            },
+            {
+              "id": "before",
+              "amountMinor": 2000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "last",
+            "start"
+          ],
+          "payments": [
+            {
+              "id": "764649c7-a8f1-45cd-be0b-c94bfb35d025",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 4000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "a2afe1b5-eb72-45e9-920f-88c159432b26",
+              "paymentId": "764649c7-a8f1-45cd-be0b-c94bfb35d025",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        },
+        "after": {
+          "workspaceId": "127cff64-4962-406d-8443-793b2cdb1e9e",
+          "expectedMinor": 4000000,
+          "paidMinor": 4000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 2,
+          "runCount": 2,
+          "earnings": [
+            {
+              "id": "end",
+              "amountMinor": 4000000,
+              "status": "approved"
+            },
+            {
+              "id": "last",
+              "amountMinor": 3000000,
+              "status": "approved"
+            },
+            {
+              "id": "start",
+              "amountMinor": 1000000,
+              "status": "approved"
+            },
+            {
+              "id": "before",
+              "amountMinor": 2000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "end"
+          ],
+          "payments": [
+            {
+              "id": "f4dfd4b4-bfb6-450b-a98d-d4d050e9af1b",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 4000000,
+              "periodStart": "2026-10-12T00:00:00.000Z"
+            },
+            {
+              "id": "764649c7-a8f1-45cd-be0b-c94bfb35d025",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 4000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "46e05ae7-8486-464f-9ca7-34a4274bcd33",
+              "paymentId": "f4dfd4b4-bfb6-450b-a98d-d4d050e9af1b",
+              "state": "sent"
+            },
+            {
+              "id": "a2afe1b5-eb72-45e9-920f-88c159432b26",
+              "paymentId": "764649c7-a8f1-45cd-be0b-c94bfb35d025",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: The first run pays NGN40,000 from start + last only. The NGN40,000 closing-boundary earning is paid in the next period; two payment records exist across both periods."
+      "actual": "13 October: NGN 40,000.00 recorded; included earning IDs last, start.\n20 October: NGN 40,000.00 recorded; included earning IDs end.\nPayment records across both periods: 2."
     },
     {
       "id": "TC04",
       "title": "Lagos offset is normalized before period selection",
       "result": "passed",
+      "observation": {
+        "after": {
+          "workspaceId": "cb9058c3-4052-428c-a82a-495234239f2a",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "inside",
+              "amountMinor": 15000000,
+              "status": "approved"
+            },
+            {
+              "id": "outside",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "inside"
+          ],
+          "payments": [
+            {
+              "id": "a81954aa-74d8-41a7-8906-19979e992e24",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "4312915c-2d44-4473-948d-9112fb9eb582",
+              "paymentId": "a81954aa-74d8-41a7-8906-19979e992e24",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "earnings_recorded",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Only inside qualifies. outside normalizes to the preceding Sunday; inside normalizes to opening Monday midnight. Total recorded pay is NGN150,000."
+      "actual": "Earning IDs included after UTC conversion: inside.\nRecorded pay: NGN 150,000.00."
     },
     {
       "id": "TC05",
       "title": "Reimporting an identical earning never increases pay",
       "result": "passed",
+      "observation": {
+        "after": {
+          "workspaceId": "d45151fa-8f73-4d20-9094-e1025b4e24a2",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "b26a0c6b-1c8d-4985-91f8-d49bf9f655a6",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "0327637e-9a35-46b9-b451-9eb01423a802",
+              "paymentId": "b26a0c6b-1c8d-4985-91f8-d49bf9f655a6",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "earnings_recorded",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: One earning record remains; one payment records NGN150,000."
+      "actual": "Earning records after repeated import: 1 (earn-001).\nRecorded pay: NGN 150,000.00."
     },
     {
       "id": "TC06",
       "title": "Conflicting duplicate rolls back the entire import",
       "result": "passed",
+      "observation": {
+        "responseStatus": 409,
+        "after": {
+          "workspaceId": "1251239b-5a7e-47f4-b05c-852914ecfce6",
+          "expectedMinor": 15000000,
+          "paidMinor": 0,
+          "locked": false,
+          "pendingNotifications": 0,
+          "providerAccepted": 0,
+          "runCount": 0,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [],
+          "notifications": [],
+          "events": [
+            "earnings_recorded"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: HTTP 409. The new record is rolled back and the original earning remains unchanged; the list still has one earning."
+      "actual": "Import response: HTTP 409.\nRemaining earnings: earn-001: NGN 150,000.00.\nNew earning saved: No."
     },
     {
       "id": "TC07",
       "title": "Pending approval blocks payment and leaves the period open",
       "result": "passed",
+      "observation": {
+        "responseStatus": 409,
+        "after": {
+          "workspaceId": "d527fed1-1bf1-44e4-81d2-32a83d910437",
+          "expectedMinor": 0,
+          "paidMinor": 0,
+          "locked": false,
+          "pendingNotifications": 0,
+          "providerAccepted": 0,
+          "runCount": 0,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "pending"
+            }
+          ],
+          "earningIdsInPeriod": [],
+          "payments": [],
+          "notifications": [],
+          "events": [
+            "earnings_recorded",
+            "earnings_recorded"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: HTTP 409. The period remains open; no payment or notification exists."
+      "actual": "Processing response: HTTP 409.\nPeriod locked: No. Payment records: 0. Notification records: 0."
     },
     {
       "id": "TC08",
       "title": "Failed payment creates no notification and can be retried",
       "result": "passed",
+      "observation": {
+        "first": {
+          "workspaceId": "e994747e-69d1-4ab1-8d12-52cf4b9e8237",
+          "expectedMinor": 15000000,
+          "paidMinor": 0,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 0,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [],
+          "notifications": [],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_failed",
+            "pay_run_finished"
+          ]
+        },
+        "after": {
+          "workspaceId": "e994747e-69d1-4ab1-8d12-52cf4b9e8237",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "a5dfbbfb-3037-418b-8ef1-a0d5fd19226c",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "7f7f1ce7-efad-468f-807b-0502df8a5edc",
+              "paymentId": "a5dfbbfb-3037-418b-8ef1-a0d5fd19226c",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_failed",
+            "pay_run_finished",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: First attempt: zero payment, zero notification and zero provider acceptance. Retry: one NGN150,000 payment."
+      "actual": "First attempt: 0 payment record(s), NGN 0.00 recorded pay; 0 notification(s); 0 provider acceptance(s).\nAfter retry: 1 payment record(s), NGN 150,000.00 recorded pay."
     },
     {
       "id": "TC09",
       "title": "Notification failure preserves the successful payment",
       "result": "passed",
+      "observation": {
+        "after": {
+          "workspaceId": "1d988efd-6053-41ae-8934-a6562fd13f1d",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 1,
+          "providerAccepted": 0,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "d4053f54-3a5e-4e5a-8890-51b483739ace",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "4a674bbe-c2b6-4cae-a6bf-c41d3e0059fb",
+              "paymentId": "d4053f54-3a5e-4e5a-8890-51b483739ace",
+              "state": "pending"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_failed",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: The NGN150,000 payment remains recorded. One notification is pending, no provider acceptance exists, and payment_committed occurs before notification_attempted."
+      "actual": "1 payment record(s), NGN 150,000.00 recorded pay; 1 pending notification(s); 0 provider acceptance(s).\nEvent positions: payment_committed 3, notification_attempted 4."
     },
     {
       "id": "TC10",
       "title": "Retrying after notification failure preserves the approved payroll",
       "result": "passed",
+      "observation": {
+        "first": {
+          "workspaceId": "6ab53ad9-c811-42e9-aefd-15e62396f3bc",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 1,
+          "providerAccepted": 0,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "3cfd4ca5-ae37-4834-a264-8249fbc136f7",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "34401d37-551c-4d3b-b2b5-ce8b862dd97e",
+              "paymentId": "3cfd4ca5-ae37-4834-a264-8249fbc136f7",
+              "state": "pending"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_failed",
+            "pay_run_finished"
+          ]
+        },
+        "after": {
+          "workspaceId": "6ab53ad9-c811-42e9-aefd-15e62396f3bc",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "3cfd4ca5-ae37-4834-a264-8249fbc136f7",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "34401d37-551c-4d3b-b2b5-ce8b862dd97e",
+              "paymentId": "3cfd4ca5-ae37-4834-a264-8249fbc136f7",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_failed",
+            "pay_run_finished",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        },
+        "paymentsUnchanged": true,
+        "notificationIdUnchanged": true
+      },
       "framework": "Playwright",
-      "actual": "Observed 1 payment(s), NGN150,000.00 recorded and 0 pending notification(s)."
+      "actual": "First attempt: 1 payment record(s), NGN 150,000.00 recorded pay; 1 pending notification(s).\nAfter payroll retry: 1 payment record(s), NGN 150,000.00 recorded pay; 0 pending notification(s).\nPayment list unchanged: Yes. Original payment reference still present: Yes.\nNotification records after retry: 1. Original notification still present: Yes."
     },
     {
       "id": "TC11",
       "title": "Fresh process preserves employee-period payment identity",
       "result": "passed",
+      "observation": {
+        "first": {
+          "id": "d4952038-f6ba-4a69-a869-69c34dc5b1f6",
+          "company": "Northstar Studio",
+          "currency": "NGN",
+          "period": {
+            "scheduledFor": "2026-10-13T09:00:00.000Z",
+            "start": "2026-10-05T00:00:00.000Z",
+            "end": "2026-10-12T00:00:00.000Z"
+          },
+          "employees": [
+            {
+              "id": "emp-001",
+              "name": "Amara Okafor",
+              "role": "Product designer",
+              "department": "Design",
+              "bank": "Meridian Bank",
+              "accountEnding": "4821"
+            },
+            {
+              "id": "emp-002",
+              "name": "Daniel Mensah",
+              "role": "Software engineer",
+              "department": "Engineering",
+              "bank": "Union Coast Bank",
+              "accountEnding": "3068"
+            },
+            {
+              "id": "emp-003",
+              "name": "Zara Bello",
+              "role": "Operations associate",
+              "department": "Operations",
+              "bank": "Meridian Bank",
+              "accountEnding": "7290"
+            }
+          ],
+          "earnings": [
+            {
+              "earningId": "earn-001",
+              "employeeId": "emp-001",
+              "description": "Weekly project earnings",
+              "earnedAt": "2026-10-08T12:00:00.000Z",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "entries": [
+            {
+              "employeeId": "emp-001",
+              "expectedMinor": 15000000,
+              "paidMinor": 15000000,
+              "earningIds": [
+                "earn-001"
+              ],
+              "paymentCount": 1
+            }
+          ],
+          "payments": [
+            {
+              "id": "a1496ee1-06c6-4cb3-8fef-012515523468",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "periodStart": "2026-10-05T00:00:00.000Z",
+              "amountMinor": 15000000,
+              "bank": "Meridian Bank",
+              "accountEnding": "4821",
+              "createdAt": "2026-10-16T05:04:33.718Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "952d99f9-d38f-4749-94d3-59af7f9c4618",
+              "paymentId": "a1496ee1-06c6-4cb3-8fef-012515523468",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "periodStart": "2026-10-05T00:00:00.000Z",
+              "state": "pending",
+              "attempts": 1,
+              "lastError": "Notification delivery unavailable. Retry the notification."
+            }
+          ],
+          "runs": [
+            {
+              "periodStart": "2026-10-05T00:00:00.000Z",
+              "periodEnd": "2026-10-12T00:00:00.000Z",
+              "scheduledFor": "2026-10-13T09:00:00.000Z",
+              "createdAt": "2026-10-16T05:04:33.702Z",
+              "expectedMinor": 15000000
+            }
+          ],
+          "locked": true,
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "pendingApprovals": 0,
+          "pendingNotifications": 1,
+          "providerAccepted": 0,
+          "events": [
+            {
+              "event": "earnings_recorded",
+              "employeeId": null,
+              "detail": {
+                "count": 1
+              },
+              "createdAt": "2026-10-16T05:04:33.651Z"
+            },
+            {
+              "event": "failure_armed",
+              "employeeId": null,
+              "detail": {
+                "kind": "notification"
+              },
+              "createdAt": "2026-10-16T05:04:33.687Z"
+            },
+            {
+              "event": "payment_committed",
+              "employeeId": "emp-001",
+              "detail": {
+                "paymentId": "a1496ee1-06c6-4cb3-8fef-012515523468",
+                "amountMinor": 15000000
+              },
+              "createdAt": "2026-10-16T05:04:33.733Z"
+            },
+            {
+              "event": "notification_attempted",
+              "employeeId": "emp-001",
+              "detail": {},
+              "createdAt": "2026-10-16T05:04:33.745Z"
+            },
+            {
+              "event": "notification_failed",
+              "employeeId": "emp-001",
+              "detail": {
+                "messageId": "952d99f9-d38f-4749-94d3-59af7f9c4618",
+                "error": "Notification delivery unavailable. Retry the notification."
+              },
+              "createdAt": "2026-10-16T05:04:33.774Z"
+            },
+            {
+              "event": "pay_run_finished",
+              "employeeId": null,
+              "detail": {
+                "scheduledFor": "2026-10-13T09:00:00.000Z"
+              },
+              "createdAt": "2026-10-16T05:04:33.791Z"
+            }
+          ]
+        },
+        "afterRestart": {
+          "id": "d4952038-f6ba-4a69-a869-69c34dc5b1f6",
+          "company": "Northstar Studio",
+          "currency": "NGN",
+          "period": {
+            "scheduledFor": "2026-10-13T09:00:00.000Z",
+            "start": "2026-10-05T00:00:00.000Z",
+            "end": "2026-10-12T00:00:00.000Z"
+          },
+          "employees": [
+            {
+              "id": "emp-001",
+              "name": "Amara Okafor",
+              "role": "Product designer",
+              "department": "Design",
+              "bank": "Meridian Bank",
+              "accountEnding": "4821"
+            },
+            {
+              "id": "emp-002",
+              "name": "Daniel Mensah",
+              "role": "Software engineer",
+              "department": "Engineering",
+              "bank": "Union Coast Bank",
+              "accountEnding": "3068"
+            },
+            {
+              "id": "emp-003",
+              "name": "Zara Bello",
+              "role": "Operations associate",
+              "department": "Operations",
+              "bank": "Meridian Bank",
+              "accountEnding": "7290"
+            }
+          ],
+          "earnings": [
+            {
+              "earningId": "earn-001",
+              "employeeId": "emp-001",
+              "description": "Weekly project earnings",
+              "earnedAt": "2026-10-08T12:00:00.000Z",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "entries": [
+            {
+              "employeeId": "emp-001",
+              "expectedMinor": 15000000,
+              "paidMinor": 15000000,
+              "earningIds": [
+                "earn-001"
+              ],
+              "paymentCount": 1
+            }
+          ],
+          "payments": [
+            {
+              "id": "a1496ee1-06c6-4cb3-8fef-012515523468",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "periodStart": "2026-10-05T00:00:00.000Z",
+              "amountMinor": 15000000,
+              "bank": "Meridian Bank",
+              "accountEnding": "4821",
+              "createdAt": "2026-10-16T05:04:33.718Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "952d99f9-d38f-4749-94d3-59af7f9c4618",
+              "paymentId": "a1496ee1-06c6-4cb3-8fef-012515523468",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "periodStart": "2026-10-05T00:00:00.000Z",
+              "state": "sent",
+              "attempts": 2,
+              "lastError": null
+            }
+          ],
+          "runs": [
+            {
+              "periodStart": "2026-10-05T00:00:00.000Z",
+              "periodEnd": "2026-10-12T00:00:00.000Z",
+              "scheduledFor": "2026-10-13T09:00:00.000Z",
+              "createdAt": "2026-10-16T05:04:33.702Z",
+              "expectedMinor": 15000000
+            }
+          ],
+          "locked": true,
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "pendingApprovals": 0,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "events": [
+            {
+              "event": "earnings_recorded",
+              "employeeId": null,
+              "detail": {
+                "count": 1
+              },
+              "createdAt": "2026-10-16T05:04:33.651Z"
+            },
+            {
+              "event": "failure_armed",
+              "employeeId": null,
+              "detail": {
+                "kind": "notification"
+              },
+              "createdAt": "2026-10-16T05:04:33.687Z"
+            },
+            {
+              "event": "payment_committed",
+              "employeeId": "emp-001",
+              "detail": {
+                "paymentId": "a1496ee1-06c6-4cb3-8fef-012515523468",
+                "amountMinor": 15000000
+              },
+              "createdAt": "2026-10-16T05:04:33.733Z"
+            },
+            {
+              "event": "notification_attempted",
+              "employeeId": "emp-001",
+              "detail": {},
+              "createdAt": "2026-10-16T05:04:33.745Z"
+            },
+            {
+              "event": "notification_failed",
+              "employeeId": "emp-001",
+              "detail": {
+                "messageId": "952d99f9-d38f-4749-94d3-59af7f9c4618",
+                "error": "Notification delivery unavailable. Retry the notification."
+              },
+              "createdAt": "2026-10-16T05:04:33.774Z"
+            },
+            {
+              "event": "pay_run_finished",
+              "employeeId": null,
+              "detail": {
+                "scheduledFor": "2026-10-13T09:00:00.000Z"
+              },
+              "createdAt": "2026-10-16T05:04:33.791Z"
+            },
+            {
+              "event": "notification_attempted",
+              "employeeId": "emp-001",
+              "detail": {},
+              "createdAt": "2026-10-16T05:04:34.322Z"
+            },
+            {
+              "event": "notification_sent",
+              "employeeId": "emp-001",
+              "detail": {
+                "messageId": "952d99f9-d38f-4749-94d3-59af7f9c4618",
+                "error": null
+              },
+              "createdAt": "2026-10-16T05:04:34.363Z"
+            },
+            {
+              "event": "pay_run_finished",
+              "employeeId": null,
+              "detail": {
+                "scheduledFor": "2026-10-13T09:00:00.000Z"
+              },
+              "createdAt": "2026-10-16T05:04:34.383Z"
+            }
+          ]
+        }
+      },
       "framework": "Node fresh process",
-      "actual": "Observed 1 payment(s), NGN150,000.00 recorded and 0 pending notification(s)."
+      "actual": "Before close: 1 payment record(s), NGN 150,000.00 recorded pay; 1 pending notification(s).\nFresh process after retry: 1 payment record(s), NGN 150,000.00 recorded pay; 0 pending notification(s).\nOriginal payment reference still present: Yes."
     },
     {
       "id": "TC12",
       "title": "Notification-only recovery never changes payment identity",
       "result": "passed",
+      "observation": {
+        "first": {
+          "workspaceId": "25adbec6-e997-4e57-a64d-008347dda699",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 1,
+          "providerAccepted": 0,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "de6e0fb9-1491-4c2b-a013-f6835a25aa6a",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "00f07f02-04f4-4be3-88e7-12c821cd9e7b",
+              "paymentId": "de6e0fb9-1491-4c2b-a013-f6835a25aa6a",
+              "state": "pending"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_failed",
+            "pay_run_finished"
+          ]
+        },
+        "after": {
+          "workspaceId": "25adbec6-e997-4e57-a64d-008347dda699",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "de6e0fb9-1491-4c2b-a013-f6835a25aa6a",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "00f07f02-04f4-4be3-88e7-12c821cd9e7b",
+              "paymentId": "de6e0fb9-1491-4c2b-a013-f6835a25aa6a",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_failed",
+            "pay_run_finished",
+            "notification_attempted",
+            "notification_sent"
+          ]
+        },
+        "paymentsUnchanged": true
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Payment objects remain unchanged, pending notification count becomes zero, and provider acceptance is exactly one."
+      "actual": "After notification-only recovery: 1 payment record(s), NGN 150,000.00 recorded pay; 0 pending notification(s); 1 provider acceptance(s).\nComplete original payments array preserved: Yes."
     },
     {
       "id": "TC13",
       "title": "Interruption rolls back payment and outbox together",
       "result": "passed",
+      "observation": {
+        "first": {
+          "workspaceId": "5858bf65-09af-4d80-b27b-cfc98c2ff99a",
+          "expectedMinor": 15000000,
+          "paidMinor": 0,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 0,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [],
+          "notifications": [],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_rolled_back",
+            "pay_run_finished"
+          ]
+        },
+        "after": {
+          "workspaceId": "5858bf65-09af-4d80-b27b-cfc98c2ff99a",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "5b929ecc-a44b-4d89-a503-6cca3926869e",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "bc44d389-a020-4c69-9db9-ca800d536d66",
+              "paymentId": "5b929ecc-a44b-4d89-a503-6cca3926869e",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_rolled_back",
+            "pay_run_finished",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "After interruption: 0 payment(s), 0 notification(s). Rollback event recorded: true."
+      "actual": "After interruption: 0 payment record(s), 0 notification record(s). Rollback event recorded: Yes.\nAfter retry: 1 payment record(s), NGN 150,000.00 recorded pay."
     },
     {
       "id": "TC14",
       "title": "Lost provider acknowledgement recovers without duplicate acceptance",
       "result": "passed",
+      "observation": {
+        "first": {
+          "workspaceId": "cb39aabc-53e6-4102-a659-0a593af4e360",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 1,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "5087010f-37c5-4dc5-91e8-9a3ea345b3cd",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "e3f3608a-881d-4ca4-aee7-c8d88f99f1ea",
+              "paymentId": "5087010f-37c5-4dc5-91e8-9a3ea345b3cd",
+              "state": "pending"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_failed",
+            "pay_run_finished"
+          ]
+        },
+        "after": {
+          "workspaceId": "cb39aabc-53e6-4102-a659-0a593af4e360",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "5087010f-37c5-4dc5-91e8-9a3ea345b3cd",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "e3f3608a-881d-4ca4-aee7-c8d88f99f1ea",
+              "paymentId": "5087010f-37c5-4dc5-91e8-9a3ea345b3cd",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_failed",
+            "pay_run_finished",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Observed 1 payment(s), NGN150,000.00 recorded and 0 pending notification(s)."
+      "actual": "First attempt: 1 provider acceptance(s); 1 pending notification(s).\nAfter retry: 1 payment record(s), NGN 150,000.00 recorded pay; 1 provider acceptance(s); 0 pending notification(s)."
     },
     {
       "id": "TC15",
       "title": "A processed period rejects new earnings and preserves approved totals",
       "result": "passed",
+      "observation": {
+        "responseStatus": 409,
+        "after": {
+          "workspaceId": "e91c6e8e-42df-451c-bbc8-ea6a579394ed",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "750055c7-41e4-4ab1-978c-a74919e3b337",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "3be41b53-c58b-418d-a9c9-43840ccf5b86",
+              "paymentId": "750055c7-41e4-4ab1-978c-a74919e3b337",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Import returns HTTP 409. Approved and recorded payroll remain NGN150,000."
+      "actual": "Late-earning import: HTTP 409.\nAfter retry, approved pay: NGN 150,000.00; recorded pay: NGN 150,000.00."
     },
     {
       "id": "TC16",
       "title": "Eight overlapping requests in one server record one payment",
       "result": "passed",
+      "observation": {
+        "completedRequests": 8,
+        "after": {
+          "workspaceId": "b3d04f64-446a-4b2a-b77d-ff520373093d",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "120fa1ce-2d2c-4c22-8eee-3ce5462b1c4c",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "e2f6d18c-44ae-46b8-b574-1d80be84a96a",
+              "paymentId": "120fa1ce-2d2c-4c22-8eee-3ce5462b1c4c",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_failed",
+            "pay_run_finished",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished",
+            "pay_run_finished",
+            "pay_run_finished",
+            "pay_run_finished",
+            "pay_run_finished",
+            "pay_run_finished",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Observed 1 payment(s), NGN150,000.00 recorded and 0 pending notification(s)."
+      "actual": "Completed overlapping requests: 8.\nFinal state: 1 payment record(s), NGN 150,000.00 recorded pay; 0 pending notification(s)."
     },
     {
       "id": "TC17",
       "title": "The same employee can receive a separate payment in another period",
       "result": "passed",
+      "observation": {
+        "after": {
+          "workspaceId": "6c173f74-6172-4805-81ca-2824f4a58658",
+          "expectedMinor": 5000000,
+          "paidMinor": 5000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 2,
+          "runCount": 2,
+          "earnings": [
+            {
+              "id": "next",
+              "amountMinor": 5000000,
+              "status": "approved"
+            },
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "next"
+          ],
+          "payments": [
+            {
+              "id": "78a02d5d-5a8a-4719-87fe-3cf56978495f",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 5000000,
+              "periodStart": "2026-10-12T00:00:00.000Z"
+            },
+            {
+              "id": "127f3e27-24d4-43d7-87ad-9b4776de832e",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "a9d4086e-3eb7-4019-b664-57f5149dc4df",
+              "paymentId": "78a02d5d-5a8a-4719-87fe-3cf56978495f",
+              "state": "sent"
+            },
+            {
+              "id": "f6d44143-8efa-421a-b233-665685dc30d6",
+              "paymentId": "127f3e27-24d4-43d7-87ad-9b4776de832e",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished",
+            "earnings_recorded",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Next-period recorded pay is NGN50,000. Two pay runs and two employee-period payment records exist."
+      "actual": "20 October recorded pay: NGN 50,000.00.\nAcross both periods: 2 pay runs and 2 payment records. Payment period starts: 2026-10-12T00:00:00.000Z, 2026-10-05T00:00:00.000Z."
     },
     {
       "id": "TC18",
       "title": "Invalid dates and ambiguous timestamps are rejected",
       "result": "passed",
+      "observation": {
+        "invalidTimestamps": [
+          {
+            "input": "2026-10-08T12:00:00",
+            "status": 400
+          },
+          {
+            "input": "2026-02-30T12:00:00Z",
+            "status": 400
+          },
+          {
+            "input": "2026-10-08T25:00:00Z",
+            "status": 400
+          }
+        ],
+        "scheduleStatus": 400
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Every invalid request returns HTTP 400."
+      "actual": "2026-10-08T12:00:00: HTTP 400\n2026-02-30T12:00:00Z: HTTP 400\n2026-10-08T25:00:00Z: HTTP 400\nWednesday pay-run request: HTTP 400."
     },
     {
       "id": "TC19",
       "title": "Amounts use positive bounded whole kobo",
       "result": "passed",
+      "observation": {
+        "invalidAmounts": [
+          {
+            "input": 0,
+            "status": 400
+          },
+          {
+            "input": -1,
+            "status": 400
+          },
+          {
+            "input": 1.5,
+            "status": 400
+          },
+          {
+            "input": 100000001,
+            "status": 400
+          },
+          {
+            "input": "15000000",
+            "status": 400
+          }
+        ],
+        "after": {
+          "workspaceId": "b2f3437d-d421-4ece-b7e0-ffed00f05924",
+          "expectedMinor": 1,
+          "paidMinor": 1,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 1,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "e784643f-0ca9-4fc2-8ba2-fd51b86c1078",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 1,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "22c82f76-79ce-4cfe-9c67-558640e8ecb0",
+              "paymentId": "e784643f-0ca9-4fc2-8ba2-fd51b86c1078",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "earnings_recorded",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Invalid imports return HTTP 400. One kobo is accepted and pays NGN0.01."
+      "actual": "amountMinor 0: HTTP 400\namountMinor -1: HTTP 400\namountMinor 1.5: HTTP 400\namountMinor 100000001: HTTP 400\namountMinor \"15000000\": HTTP 400\nValid one-kobo earning: 1 kobo recorded (NGN 0.01)."
     },
     {
       "id": "TC20",
       "title": "Unknown employees cannot acquire earnings or payments",
       "result": "passed",
+      "observation": {
+        "unknownEmployeeStatus": 400,
+        "emptyPayrollStatus": 409
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Unknown-employee import returns HTTP 400; empty approved payroll returns HTTP 409."
+      "actual": "Unknown-employee import: HTTP 400.\nEmpty approved payroll: HTTP 409."
     },
     {
       "id": "TC21",
       "title": "Isolated workspaces do not share earnings or payment identity",
       "result": "passed",
+      "observation": {
+        "unpaidSecond": {
+          "workspaceId": "0599b540-089b-447a-9960-dc62639d1d2b",
+          "expectedMinor": 15000000,
+          "paidMinor": 0,
+          "locked": false,
+          "pendingNotifications": 0,
+          "providerAccepted": 0,
+          "runCount": 0,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [],
+          "notifications": [],
+          "events": [
+            "earnings_recorded"
+          ]
+        },
+        "after": {
+          "workspaceId": "0599b540-089b-447a-9960-dc62639d1d2b",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "8a2ea956-02ac-448a-9c4e-1cdb22facdc9",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "401006f7-e87b-440f-be99-e6260bdce12b",
+              "paymentId": "8a2ea956-02ac-448a-9c4e-1cdb22facdc9",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: A does not alter B. B can independently record its own NGN150,000 payment."
+      "actual": "Workspace B after processing A: 0 payment record(s).\nAfter independently processing B: 1 payment record(s), NGN 150,000.00 recorded pay."
     },
     {
       "id": "TC22",
       "title": "Approval is explicit and replaying approval is harmless",
       "result": "passed",
+      "observation": {
+        "approvalStates": [
+          "approved",
+          "approved"
+        ],
+        "rejectedApprovalStatus": 409,
+        "after": {
+          "workspaceId": "25081a14-7817-46fc-a085-e140e0cebc12",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            },
+            {
+              "id": "rejected",
+              "amountMinor": 5000000,
+              "status": "rejected"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "1c5665bb-33f4-47b6-a5ec-324c62065114",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "5d82a847-0d83-4d74-a235-a4062f74fa8b",
+              "paymentId": "1c5665bb-33f4-47b6-a5ec-324c62065114",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "earnings_recorded",
+            "earning_approved",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Approval replay is harmless; rejected approval returns HTTP 409. Only earn-001 contributes; total is NGN150,000."
+      "actual": "Approval states after first request and replay: approved, approved. Rejected-earning approval: HTTP 409.\nIncluded earning IDs: earn-001. Recorded pay: NGN 150,000.00."
     },
     {
       "id": "TC23",
       "title": "Record, approve and process earnings through the interface",
       "result": "passed",
+      "observation": {
+        "confirmationText": "Process this payroll?\n\n1 employee. Approved total ₦150,000.25. Pay date 13 Oct 2026. The period will be locked when processing starts.\n\nCancel\nProcess payroll",
+        "after": {
+          "workspaceId": "0989a67a-e9bf-45f1-beb3-d84e65792268",
+          "expectedMinor": 15000025,
+          "paidMinor": 15000025,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-baca0ff1-38ba-4c88-a647-03236b4eb03f",
+              "amountMinor": 15000025,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-baca0ff1-38ba-4c88-a647-03236b4eb03f"
+          ],
+          "payments": [
+            {
+              "id": "c1481f3d-0b95-4421-bca9-876fb62adb3e",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000025,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "e556ffa5-6d39-4e3f-8d8d-03ba45d2b868",
+              "paymentId": "c1481f3d-0b95-4421-bca9-876fb62adb3e",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "earnings_recorded",
+            "earning_approved",
+            "payment_committed",
+            "notification_attempted",
+            "notification_sent",
+            "pay_run_finished"
+          ]
+        }
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: The confirmation and resulting ledger both use NGN150,000.25."
+      "actual": "Confirmation displayed ₦150,000.25..\nRecorded payroll: 15000025 kobo (NGN 150,000.25)."
     },
     {
       "id": "TC24",
       "title": "Cancelling payroll confirmation leaves the ledger and period unchanged",
       "result": "passed",
+      "observation": {
+        "after": {
+          "workspaceId": "d98bb680-a4c8-49b1-ad39-c49acff45a1f",
+          "expectedMinor": 15000000,
+          "paidMinor": 0,
+          "locked": false,
+          "pendingNotifications": 0,
+          "providerAccepted": 0,
+          "runCount": 0,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [],
+          "notifications": [],
+          "events": [
+            "earnings_recorded"
+          ]
+        },
+        "dialogClosed": true,
+        "triggerFocused": true
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Dialog closes, focus returns to its trigger, the period stays open and no payment is created."
+      "actual": "Dialog closed: Yes. Focus returned to the processing trigger: Yes.\nPeriod locked: No. Payment records: 0."
     },
     {
       "id": "TC25",
       "title": "Receipt survives reload and can be copied and downloaded",
       "result": "passed",
+      "observation": {
+        "paymentId": "53e51f61-8d5e-4207-9567-01da606b864b",
+        "referenceText": "53e51f61-8d5e-4207-9567-01da606b864b",
+        "clipboard": "53e51f61-8d5e-4207-9567-01da606b864b",
+        "downloadText": "MustPayroll payment receipt\nReference: 53e51f61-8d5e-4207-9567-01da606b864b\nEmployee: Amara Okafor\nAmount: ₦150,000.00\nPay period starts: 5 Oct 2026\nBank: Meridian Bank\nAccount ending: 4821\nRecorded: 2026-10-16T05:04:50.435Z\nPayment: Recorded\nNotification: sent\n"
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Receipt reference remains visible and unchanged. Clipboard contains that reference; downloaded receipt names Amara Okafor."
+      "actual": "Payment reference after reload: 53e51f61-8d5e-4207-9567-01da606b864b.\nClipboard matched that reference: Yes. Downloaded receipt contained Amara Okafor: Yes."
     },
     {
       "id": "TC26",
       "title": "Payment filter and CSV export contain the same employee records",
       "result": "passed",
+      "observation": {
+        "visibleRows": 1,
+        "csv": "\"Reference\",\"Employee\",\"Period start (UTC)\",\"Amount (NGN)\",\"Bank\",\"Account ending\",\"Recorded (UTC)\"\r\n\"53d0f689-5647-4300-9a2b-b000aefd106c\",\"Daniel Mensah\",\"2026-10-05T00:00:00.000Z\",\"200000.00\",\"Union Coast Bank\",\"3068\",\"2026-10-16T05:04:51.187Z\""
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: One record is shown. Export contains Daniel and 200000.00, and excludes Amara."
+      "actual": "Visible filtered rows: 1.\nExport contained Daniel Mensah: Yes; amount 200000.00: Yes; Amara Okafor: No."
     },
     {
       "id": "TC27",
       "title": "Changing pay period separates approval and payment totals",
       "result": "passed",
+      "observation": {
+        "period": "12 Oct 2026 – 18 Oct 2026",
+        "recordedPay": "₦0.00",
+        "pendingApprovals": "1"
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Next-period label is 12–18 October 2026, recorded pay is NGN0.00, and one approval is pending."
+      "actual": "Selected period: 12 Oct 2026 – 18 Oct 2026.\nPayments recorded: ₦0.00. Pending approvals: 1."
     },
     {
       "id": "TC28",
       "title": "Core screens reflow at 320 pixels without page overflow",
       "result": "passed",
+      "observation": {
+        "screens": [
+          {
+            "route": "/overview",
+            "heading": "Payroll overview",
+            "fitsViewport": true,
+            "navigationInViewport": true
+          },
+          {
+            "route": "/employees",
+            "heading": "Employees",
+            "fitsViewport": true,
+            "navigationInViewport": true
+          },
+          {
+            "route": "/employees/emp-001",
+            "heading": "Amara Okafor",
+            "fitsViewport": true,
+            "navigationInViewport": true
+          },
+          {
+            "route": "/earnings",
+            "heading": "Earnings",
+            "fitsViewport": true,
+            "navigationInViewport": true
+          },
+          {
+            "route": "/pay-runs",
+            "heading": "Pay runs",
+            "fitsViewport": true,
+            "navigationInViewport": true
+          },
+          {
+            "route": "/payments",
+            "heading": "Payments",
+            "fitsViewport": true,
+            "navigationInViewport": true
+          },
+          {
+            "route": "/notifications",
+            "heading": "Notifications",
+            "fitsViewport": true,
+            "navigationInViewport": true
+          }
+        ]
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: No route has horizontal page overflow; Pay runs navigation remains in the viewport."
+      "actual": "Routes inspected: 7.\nRoutes with horizontal page overflow: 0. Pay runs navigation fully in viewport: 7/7 routes.\nLoaded headings: Payroll overview; Employees; Amara Okafor; Earnings; Pay runs; Payments; Notifications."
     },
     {
       "id": "TC29",
       "title": "Keyboard navigation reaches content and payroll confirmation",
       "result": "passed",
+      "observation": {
+        "mainFocused": true,
+        "routeHeading": "Pay runs",
+        "headingFocused": true,
+        "initialDialogFocus": true,
+        "processButtonFocused": true,
+        "triggerFocusRestored": true
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Skip link focuses main; route change focuses the page title; Cancel is first, Process payroll follows, and Escape restores trigger focus."
+      "actual": "Skip link focused main: Yes. Route heading was Pay runs; heading received focus: Yes.\nCancel received initial dialog focus: Yes; Process payroll received the next Tab focus: Yes; Escape restored trigger focus: Yes."
     },
     {
       "id": "TC30",
       "title": "Employee details lead to the correct earning destination",
       "result": "passed",
+      "observation": {
+        "employeeName": "Daniel Mensah",
+        "maskedAccount": "•••• 3068",
+        "selectedEmployee": "emp-002"
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Daniel details and destination are correct; the earning form preselects emp-002."
+      "actual": "Employee details: Daniel Mensah. Masked account: •••• 3068.\nEmployee selected on the earning form: emp-002."
     },
     {
       "id": "TC31",
       "title": "Payroll screens use product language and show standard totals",
       "result": "passed",
+      "observation": {
+        "heading": "Payroll overview",
+        "metrics": "Approved payroll\n₦435,000.00\n\n3 employees in this period\n\nPayments recorded\n₦0.00\n\nFor the selected pay period\n\nPending approvals\n0\n\nResolve before processing\n\nPending notifications\n0\n\nAcross all pay periods",
+        "legacyLabelsFound": []
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Overview shows Payroll overview and NGN435,000. No old banking, WebMCP or assessment labels appear in its rendered body."
+      "actual": "Overview heading: Payroll overview. Payroll amount displayed: ₦435,000.00.\nLegacy-label matches in rendered text: 0."
     },
     {
       "id": "TC32",
       "title": "Notification recovery is visible and leaves the receipt unchanged",
       "result": "passed",
+      "observation": {
+        "deliveryError": "Notification delivery unavailable. Retry the notification.",
+        "first": {
+          "workspaceId": "b72d776b-28ef-4244-9529-e1f3ee39d259",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 1,
+          "providerAccepted": 0,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "5e6716cc-da12-4d7e-941f-05631ccbc57e",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "20448aef-7f22-46a6-864e-db8551388d71",
+              "paymentId": "5e6716cc-da12-4d7e-941f-05631ccbc57e",
+              "state": "pending"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_failed",
+            "pay_run_finished"
+          ]
+        },
+        "after": {
+          "workspaceId": "b72d776b-28ef-4244-9529-e1f3ee39d259",
+          "expectedMinor": 15000000,
+          "paidMinor": 15000000,
+          "locked": true,
+          "pendingNotifications": 0,
+          "providerAccepted": 1,
+          "runCount": 1,
+          "earnings": [
+            {
+              "id": "earn-001",
+              "amountMinor": 15000000,
+              "status": "approved"
+            }
+          ],
+          "earningIdsInPeriod": [
+            "earn-001"
+          ],
+          "payments": [
+            {
+              "id": "5e6716cc-da12-4d7e-941f-05631ccbc57e",
+              "employeeId": "emp-001",
+              "employeeName": "Amara Okafor",
+              "amountMinor": 15000000,
+              "periodStart": "2026-10-05T00:00:00.000Z"
+            }
+          ],
+          "notifications": [
+            {
+              "id": "20448aef-7f22-46a6-864e-db8551388d71",
+              "paymentId": "5e6716cc-da12-4d7e-941f-05631ccbc57e",
+              "state": "sent"
+            }
+          ],
+          "events": [
+            "earnings_recorded",
+            "failure_armed",
+            "payment_committed",
+            "notification_attempted",
+            "notification_failed",
+            "pay_run_finished",
+            "notification_attempted",
+            "notification_sent"
+          ]
+        },
+        "paymentsUnchanged": true,
+        "recoveryMessage": "Notification recovery finished. Recorded payments are unchanged.",
+        "retryDisabled": true
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: The payment is unchanged, pending count is zero and the completed recovery action is disabled."
+      "actual": "Initial delivery message: Notification delivery unavailable. Retry the notification.\nAfter recovery: 1 payment record(s), NGN 150,000.00 recorded pay; 0 pending notification(s). Complete payments array unchanged: Yes.\nRecovery message: Notification recovery finished. Recorded payments are unchanged. Retry button disabled: Yes."
     },
     {
       "id": "TC33",
       "title": "Separate tabs retain their workspace and pay period after reload",
       "result": "passed",
+      "observation": {
+        "firstDateAfterReload": "2026-10-20",
+        "firstPendingApprovals": "0",
+        "firstOriginalMetrics": "Approved payroll\n₦150,000.00\n\n1 employee in this period\n\nPayments recorded\n₦0.00\n\nFor the selected pay period\n\nPending approvals\n0\n\nResolve before processing\n\nPending notifications\n0\n\nAcross all pay periods",
+        "secondDateAfterReload": "2026-10-13",
+        "secondMetrics": "Approved payroll\n₦435,000.00\n\n3 employees in this period\n\nPayments recorded\n₦0.00\n\nFor the selected pay period\n\nPending approvals\n0\n\nResolve before processing\n\nPending notifications\n0\n\nAcross all pay periods"
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: A keeps its own date and workspace. A shows NGN150,000 for its original period; B independently retains NGN435,000 and 13 October."
+      "actual": "Tab A after reload: pay date 2026-10-20, pending approvals 0. After selecting its original period, A displayed ₦150,000.00.\nTab B after reload: pay date 2026-10-13; displayed ₦435,000.00."
     },
     {
       "id": "TC34",
       "title": "Served build matches its package and cannot switch implementation",
       "result": "passed",
+      "observation": {
+        "servedBuild": {
+          "id": "mustpayroll-0.2.0-fixed-ae0d6c08a187",
+          "variant": "fixed",
+          "defaultPort": 4176,
+          "sourceSha256": "ae0d6c08a187ccdbfed9c70db2eb7912df3776035ccc71deaa39c8ae09b5ebad"
+        },
+        "policySwitchStatus": 400
+      },
       "framework": "Playwright",
-      "actual": "Automated assertions passed: Served build ID and source fingerprint match the selected folder; policy-switch request returns HTTP 400."
+      "actual": "Served build ID: mustpayroll-0.2.0-fixed-ae0d6c08a187.\nServed source fingerprint: ae0d6c08a187ccdbfed9c70db2eb7912df3776035ccc71deaa39c8ae09b5ebad.\nOpposite-policy workspace request: HTTP 400."
     }
   ]
 }

@@ -1,47 +1,100 @@
-﻿"MustPayroll buggy execution. Build: mustpayroll-0.2.0-faulty-c0f059dc3f59. Automated test URL: http://127.0.0.1:4184.","","","","","","","",""
-"TC ID","Test Scenario","Test Case","Test Steps","Test Data","Expected Result","Actual Result","Status","Comment / Screenshot"
-"TC01","Approved payroll","Aggregate approved earnings once per employee","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: standard.
-
-1. Create a standard workspace.
-2. Process the 13 October pay run.
-3. Read the payment ledger and notification states.","Amara: NGN120,000 + NGN30,000; Daniel: NGN200,000; Zara: NGN85,000. All approved.","Exactly three payments total NGN435,000. Amara receives one NGN150,000 payment. Every payment notification is sent.","Automated assertions passed: Exactly three payments total NGN435,000. Amara receives one NGN150,000 payment. Every payment notification is sent.","Pass","Core assessment case; Priority: Critical; Requirement: Approved earnings and aggregation; Playwright; test/specs/payroll-api.spec.ts; Evidence: playwright/report.json; playwright/console.log"
-"TC03","Closing cut-off","Defer the excluded closing-boundary earning to the next period","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: boundaries.
-
-1. Create the boundaries workspace.
-2. Process the 13 October run and inspect selected earning IDs.
-3. Process the 20 October run.
-4. Compare the period totals and payment count.","Opening boundary: NGN10,000; before opening: NGN20,000; just before closing: NGN30,000; exactly 2026-10-12T00:00:00Z: NGN40,000.","The first run pays NGN40,000 from start + last only. The NGN40,000 closing-boundary earning is paid in the next period; two payment records exist across both periods.","Automated assertions passed: The first run pays NGN40,000 from start + last only. The NGN40,000 closing-boundary earning is paid in the next period; two payment records exist across both periods.","Pass","Core assessment case; Priority: Critical; Requirement: UTC period selection; Playwright; test/specs/payroll-api.spec.ts; Evidence: playwright/report.json; playwright/console.log"
-"TC04","Timezone conversion","Normalize Lagos timestamps before selecting earnings","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: empty.
-
-1. Import both offset-aware earnings.
-2. Process the 13 October run.
-3. Inspect earning IDs included in the employee payment.","outside: 2026-10-05T00:30:00+01:00; inside: 2026-10-05T01:00:00+01:00. Each approved for 15000000 kobo.","Only inside qualifies. outside normalizes to the preceding Sunday; inside normalizes to opening Monday midnight. Total recorded pay is NGN150,000.","Automated assertions passed: Only inside qualifies. outside normalizes to the preceding Sunday; inside normalizes to opening Monday midnight. Total recorded pay is NGN150,000.","Pass","Core assessment case; Priority: Critical; Requirement: Explicit timezone normalization; Playwright; test/specs/payroll-api.spec.ts; Evidence: playwright/report.json; playwright/console.log"
-"TC05","Duplicate input","Do not increase payroll when an identical earning is reimported","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.
-
-1. Reimport the same earning twice using its original ID and values.
-2. Process the pay run.
-3. Count earnings and inspect recorded pay.","Existing earn-001, emp-001, approved, 2026-10-08T12:00:00Z, 15000000 kobo. Import two identical copies.","One earning record remains; one payment records NGN150,000.","Automated assertions passed: One earning record remains; one payment records NGN150,000.","Pass","Core assessment case; Priority: Critical; Requirement: Immutable earning identity; Playwright; test/specs/payroll-api.spec.ts; Evidence: playwright/report.json; playwright/console.log"
-"TC08","Payment failure","Create no notification when payment fails, then recover safely","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.
-
-1. Arm the payout fault through the local fixture API.
-2. Process the pay run.
-3. Inspect payments, notifications and provider acceptance.
-4. Retry the original run and inspect the ledger.","One approved NGN150,000 earning; one-shot payout failure before ledger write.","First attempt: zero payment, zero notification and zero provider acceptance. Retry: one NGN150,000 payment.","Automated assertions passed: First attempt: zero payment, zero notification and zero provider acceptance. Retry: one NGN150,000 payment.","Pass","Core assessment case; Priority: Critical; Requirement: Payment before notification; Playwright; test/specs/payroll-api.spec.ts; Evidence: playwright/report.json; playwright/console.log"
-"TC09","Notification partial failure","Retain a successful payment when notification delivery fails","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.
-
-1. Arm the notification fault through the local fixture API.
-2. Process the pay run once.
-3. Inspect the ledger, pending notification and event order.","One approved NGN150,000 earning; one-shot notification failure before provider acceptance.","The NGN150,000 payment remains recorded. One notification is pending, no provider acceptance exists, and payment_committed occurs before notification_attempted.","Automated assertions passed: The NGN150,000 payment remains recorded. One notification is pending, no provider acceptance exists, and payment_committed occurs before notification_attempted.","Pass","Core assessment case; Priority: Critical; Requirement: Notification does not reverse payment; Playwright; test/specs/payroll-api.spec.ts; Evidence: playwright/report.json; playwright/console.log"
-"TC10","Pay-run retry","Preserve one payment when retrying after notification failure","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.
-
-1. Arm the notification fault and open the printed workspace pay-run URL.
-2. Select Review and process payroll, then confirm Process payroll.
-3. Record the first payment reference and pending message ID.
-4. Select Retry pay run and confirm.
-5. Compare pay amount, payment count, original payment object and message identity.","One approved NGN150,000 earning; one-shot notification failure. UI path: Pay runs.","Exactly one NGN150,000 payment remains, with the complete original payment object unchanged. The original notification ID is retained and its pending work is recovered.","Observed 2 payment(s), NGN300,000.00 recorded and 1 pending notification(s).","Fail","Core assessment case; Priority: Critical; Requirement: PAY-001 duplicate-payment regression; Playwright; test/specs/payroll-ui.spec.ts; Evidence: playwright/report.json; playwright/console.log; PAY-001 investigation"
-"TC13","Persistence interruption","Commit payment and notification work atomically","Preconditions: An isolated workspace in the selected build. Pay date 2026-10-13 09:00 UTC; period [2026-10-05 00:00 UTC, 2026-10-12 00:00 UTC). Employee emp-001 is Amara Okafor. Starting fixture: single.
-
-1. Arm the persistence fault.
-2. Process once and inspect both tables and rollback event.
-3. Retry the original run after the fault is consumed.
-4. Inspect the recovered payment count and amount.","One approved NGN150,000 earning; one-shot interruption after payment insert and before notification-work insert.","Interrupted transaction leaves zero payments and zero notifications and records payment_rolled_back. Retry creates exactly one NGN150,000 payment.","After interruption: 1 payment(s), 0 notification(s). Rollback event recorded: false.","Fail","Core assessment case; Priority: Critical; Requirement: Atomic payment and outbox; Playwright; test/specs/payroll-api.spec.ts; Evidence: playwright/report.json; playwright/console.log; PAY-001 investigation"
+﻿"TC ID","Scenario","Test Case Desc","Preconditions","Steps","Test Data","Expected Result","Actual Result","Status","Comments"
+"TC01","Payroll calculation","Verify that approved earnings are added once per employee and paid as three employee-period payments","Selected build is running locally: buggy http://127.0.0.1:4175 or fixed http://127.0.0.1:4176. Automation serves the selected build on port 4184. Seeded employees and bank destinations are unchanged. Use fresh workspaces that are not reused by other cases.","1. POST /api/workspaces with {""fixture"":""standard""}. Confirm HTTP 201 and save the returned id as {id} for every subsequent request.
+2. Send POST /api/workspaces/{id}/run with {""scheduledFor"":""2026-10-13T09:00:00.000Z""}.
+3. Inspect expectedMinor, paidMinor, payments and notifications in the response.
+4. Find the payment for emp-001 and compare its amount with Amara's two approved earnings.","Amara: NGN120,000 + NGN30,000; Daniel: NGN200,000; Zara: NGN85,000. All approved.","Approved and recorded payroll each total NGN 435,000.00. There are three payments: Amara NGN 150,000.00, Daniel NGN 200,000.00 and Zara NGN 85,000.00. All three payment notifications have state sent.","Approved payroll: NGN 435,000.00. Recorded payroll: NGN 435,000.00.
+Payments: Zara Bello (emp-003): NGN 85,000.00; Daniel Mensah (emp-002): NGN 200,000.00; Amara Okafor (emp-001): NGN 150,000.00.
+Notification states: sent, sent, sent.","PASS","Core assessment case; Priority: Critical; Requirement: Approved earnings and aggregation; Playwright; test/specs/payroll-api.spec.ts#TC01; Build: mustpayroll-0.2.0-faulty-c0f059dc3f59; Evidence: playwright/report.json; playwright/console.log"
+"TC03","Pay-period cut-offs","Verify that the closing Monday 00:00:00 UTC earning is excluded from the first period and paid in the next period","Selected build is running locally: buggy http://127.0.0.1:4175 or fixed http://127.0.0.1:4176. Automation serves the selected build on port 4184. Seeded employees and bank destinations are unchanged. Use fresh workspaces that are not reused by other cases.","1. POST /api/workspaces with {""fixture"":""boundaries""}. Confirm HTTP 201 and save the returned id as {id} for every subsequent request.
+2. Send POST /api/workspaces/{id}/run with {""scheduledFor"":""2026-10-13T09:00:00.000Z""}.
+3. Record paidMinor and entries[0].earningIds for the first period.
+4. Send POST /api/workspaces/{id}/run with {""scheduledFor"":""2026-10-20T09:00:00.000Z""} to the same workspace.
+5. Read the second period's paidMinor and the complete payment list.","Fixture boundaries, all approved for emp-001:
+start: 2026-10-05T00:00:00Z, 1000000 kobo (NGN 10,000).
+before: 2026-10-05T00:30:00+01:00, 2000000 kobo (NGN 20,000).
+last: 2026-10-11T23:59:59Z, 3000000 kobo (NGN 30,000).
+end: 2026-10-12T00:00:00Z, 4000000 kobo (NGN 40,000).","For 13 October, only start and last are included and recorded pay is NGN 40,000.00. The end earning belongs to the 20 October run, which also records NGN 40,000.00. Two payment records exist across the two periods.","13 October: NGN 40,000.00 recorded; included earning IDs last, start.
+20 October: NGN 40,000.00 recorded; included earning IDs end.
+Payment records across both periods: 2.","PASS","Core assessment case; Priority: Critical; Requirement: UTC period selection; Playwright; test/specs/payroll-api.spec.ts#TC03; Build: mustpayroll-0.2.0-faulty-c0f059dc3f59; Evidence: playwright/report.json; playwright/console.log"
+"TC04","Timezone handling","Verify that UTC conversion excludes 00:30 at +01:00 and includes 01:00 at +01:00 on opening Monday","Selected build is running locally: buggy http://127.0.0.1:4175 or fixed http://127.0.0.1:4176. Automation serves the selected build on port 4184. Seeded employees and bank destinations are unchanged. Use fresh workspaces that are not reused by other cases.","1. POST /api/workspaces with {""fixture"":""empty""}. Confirm HTTP 201 and save the returned id as {id} for every subsequent request.
+2. Import the two approved records in Test Data in one POST /api/workspaces/{id}/earnings request.
+3. Send POST /api/workspaces/{id}/run with {""scheduledFor"":""2026-10-13T09:00:00.000Z""}.
+4. Inspect recorded pay and the earning IDs contributing to the employee's run entry.","outside: 2026-10-05T00:30:00+01:00; inside: 2026-10-05T01:00:00+01:00. Each approved for 15000000 kobo.
+Import payload:
+{
+  ""earnings"": [
+    {
+      ""earningId"": ""outside"",
+      ""employeeId"": ""emp-001"",
+      ""description"": ""Weekly project earnings"",
+      ""earnedAt"": ""2026-10-05T00:30:00+01:00"",
+      ""amountMinor"": 15000000,
+      ""status"": ""approved""
+    },
+    {
+      ""earningId"": ""inside"",
+      ""employeeId"": ""emp-001"",
+      ""description"": ""Weekly project earnings"",
+      ""earnedAt"": ""2026-10-05T01:00:00+01:00"",
+      ""amountMinor"": 15000000,
+      ""status"": ""approved""
+    }
+  ]
+}","outside converts to 4 October 23:30 UTC and is excluded. inside converts to 5 October 00:00 UTC and is included. Only inside contributes; recorded pay is NGN 150,000.00.","Earning IDs included after UTC conversion: inside.
+Recorded pay: NGN 150,000.00.","PASS","Core assessment case; Priority: Critical; Requirement: Explicit timezone normalization; Playwright; test/specs/payroll-api.spec.ts#TC04; Build: mustpayroll-0.2.0-faulty-c0f059dc3f59; Evidence: playwright/report.json; playwright/console.log"
+"TC05","Earning import integrity","Verify that reimporting the same earning ID with identical data leaves one earning and one payable amount","Selected build is running locally: buggy http://127.0.0.1:4175 or fixed http://127.0.0.1:4176. Automation serves the selected build on port 4184. Seeded employees and bank destinations are unchanged. Use fresh workspaces that are not reused by other cases.","1. POST /api/workspaces with {""fixture"":""single""}. Confirm HTTP 201 and save the returned id as {id} for every subsequent request.
+2. POST /api/workspaces/{id}/earnings with two identical copies of the existing earn-001 record in the earnings array.
+3. Send POST /api/workspaces/{id}/run with {""scheduledFor"":""2026-10-13T09:00:00.000Z""}.
+4. Count earning records and inspect recorded pay in the response.","Existing earn-001, emp-001, approved, 2026-10-08T12:00:00Z, 15000000 kobo. Import two identical copies.
+Import payload:
+{
+  ""earnings"": [
+    {
+      ""earningId"": ""earn-001"",
+      ""employeeId"": ""emp-001"",
+      ""description"": ""Weekly project earnings"",
+      ""earnedAt"": ""2026-10-08T12:00:00Z"",
+      ""amountMinor"": 15000000,
+      ""status"": ""approved""
+    },
+    {
+      ""earningId"": ""earn-001"",
+      ""employeeId"": ""emp-001"",
+      ""description"": ""Weekly project earnings"",
+      ""earnedAt"": ""2026-10-08T12:00:00Z"",
+      ""amountMinor"": 15000000,
+      ""status"": ""approved""
+    }
+  ]
+}","The workspace still has one earning record, earn-001. The duplicates do not increase recorded pay, which remains NGN 150,000.00.","Earning records after repeated import: 1 (earn-001).
+Recorded pay: NGN 150,000.00.","PASS","Core assessment case; Priority: Critical; Requirement: Immutable earning identity; Playwright; test/specs/payroll-api.spec.ts#TC05; Build: mustpayroll-0.2.0-faulty-c0f059dc3f59; Evidence: playwright/report.json; playwright/console.log"
+"TC08","Payment failure and recovery","Verify that a failed payment sends no notification and a retry records one payment for the original amount","Selected build is running locally: buggy http://127.0.0.1:4175 or fixed http://127.0.0.1:4176. Automation serves the selected build on port 4184. Seeded employees and bank destinations are unchanged. Use fresh workspaces that are not reused by other cases.","1. POST /api/workspaces with {""fixture"":""single""}. Confirm HTTP 201 and save the returned id as {id} for every subsequent request.
+2. POST /api/workspaces/{id}/faults with {""kind"":""payout""} to arm one local, single-use failure.
+3. Send POST /api/workspaces/{id}/run with {""scheduledFor"":""2026-10-13T09:00:00.000Z""}.
+4. Record the first response's payments, paidMinor, notifications and providerAccepted.
+5. Send the identical POST /api/workspaces/{id}/run with {""scheduledFor"":""2026-10-13T09:00:00.000Z""} after the single-use failure has been consumed.
+6. Count payments and read paidMinor after retry.","One approved NGN150,000 earning; one-shot payout failure before ledger write.","First attempt: no payment, NGN 0.00 recorded, no notification and no provider acceptance. Retry: exactly one payment records NGN 150,000.00.","First attempt: 0 payment record(s), NGN 0.00 recorded pay; 0 notification(s); 0 provider acceptance(s).
+After retry: 1 payment record(s), NGN 150,000.00 recorded pay.","PASS","Core assessment case; Priority: Critical; Requirement: Payment before notification; Playwright; test/specs/payroll-api.spec.ts#TC08; Build: mustpayroll-0.2.0-faulty-c0f059dc3f59; Evidence: playwright/report.json; playwright/console.log"
+"TC09","Notification delivery","Verify that notification failure leaves the successful payment intact and occurs after the payment commit","Selected build is running locally: buggy http://127.0.0.1:4175 or fixed http://127.0.0.1:4176. Automation serves the selected build on port 4184. Seeded employees and bank destinations are unchanged. Use fresh workspaces that are not reused by other cases.","1. POST /api/workspaces with {""fixture"":""single""}. Confirm HTTP 201 and save the returned id as {id} for every subsequent request.
+2. POST /api/workspaces/{id}/faults with {""kind"":""notification""} to arm one local, single-use failure.
+3. Send POST /api/workspaces/{id}/run with {""scheduledFor"":""2026-10-13T09:00:00.000Z""} once.
+4. Inspect payments, paidMinor, pendingNotifications and providerAccepted.
+5. In events, compare the positions of payment_committed and notification_attempted; do not retry in this case.","One approved NGN150,000 earning; one-shot notification failure before provider acceptance.","The successful NGN 150,000.00 payment remains recorded. One notification is pending and providerAccepted is 0. payment_committed occurs before notification_attempted.","1 payment record(s), NGN 150,000.00 recorded pay; 1 pending notification(s); 0 provider acceptance(s).
+Event positions: payment_committed 3, notification_attempted 4.","PASS","Core assessment case; Priority: Critical; Requirement: Notification does not reverse payment; Playwright; test/specs/payroll-api.spec.ts#TC09; Build: mustpayroll-0.2.0-faulty-c0f059dc3f59; Evidence: playwright/report.json; playwright/console.log"
+"TC10","Payroll recovery","Verify that retrying a paid run after notification failure preserves the original payment amount, payment object and message ID","Selected build is running locally: buggy http://127.0.0.1:4175 or fixed http://127.0.0.1:4176. Automation serves the selected build on port 4184. Seeded employees and bank destinations are unchanged. Use fresh workspaces that are not reused by other cases.","1. POST /api/workspaces with {""fixture"":""single""}. Confirm HTTP 201 and save the returned id as {id} for every subsequent request.
+2. POST /api/workspaces/{id}/faults with {""kind"":""notification""} to arm one local, single-use failure.
+3. Open /pay-runs?workspace={id} in the selected application and keep pay date 13 October 2026.
+4. Select Review and process payroll, then Process payroll in the confirmation dialog. Wait for Pay run finished.
+5. Send GET /api/workspaces/{id}. Save the complete first payment object and notification ID; confirm NGN 150,000.00 recorded and one pending notification.
+6. On Pay runs, select Retry pay run and confirm Retry pay run in the dialog.
+7. After processing finishes, send GET /api/workspaces/{id} again. Compare payment count, total, the complete saved payment object and the original notification ID.","One approved NGN150,000 earning; one-shot notification failure. UI path: Pay runs.","After retry, exactly one payment records NGN 150,000.00. The complete original payment object and notification ID are unchanged. The pending notification count becomes 0.","First attempt: 1 payment record(s), NGN 150,000.00 recorded pay; 1 pending notification(s).
+After payroll retry: 2 payment record(s), NGN 300,000.00 recorded pay; 1 pending notification(s).
+Payment list unchanged: No. Original payment reference still present: Yes.
+Notification records after retry: 2. Original notification still present: Yes.","FAIL","Core assessment case; Priority: Critical; Requirement: PAY-001 duplicate-payment regression; Playwright; test/specs/payroll-ui.spec.ts#TC10; Build: mustpayroll-0.2.0-faulty-c0f059dc3f59; Evidence: playwright/report.json; playwright/console.log; PAY-001 investigation"
+"TC13","Payment persistence","Verify that an interruption before notification-work insertion rolls back the payment and permits a clean retry","Selected build is running locally: buggy http://127.0.0.1:4175 or fixed http://127.0.0.1:4176. Automation serves the selected build on port 4184. Seeded employees and bank destinations are unchanged. Use fresh workspaces that are not reused by other cases.","1. POST /api/workspaces with {""fixture"":""single""}. Confirm HTTP 201 and save the returned id as {id} for every subsequent request.
+2. POST /api/workspaces/{id}/faults with {""kind"":""persistence""} to arm one local, single-use failure.
+3. Send POST /api/workspaces/{id}/run with {""scheduledFor"":""2026-10-13T09:00:00.000Z""} to interrupt after payment insertion and before notification-work insertion.
+4. Inspect both payments and notifications and look for payment_rolled_back in events.
+5. Send the identical POST /api/workspaces/{id}/run request again after the single-use fault has been consumed.
+6. Count the recovered payment records and inspect paidMinor.","One approved NGN150,000 earning; one-shot interruption after payment insert and before notification-work insert.","Immediately after interruption, payments and notifications are both empty and payment_rolled_back is recorded. A subsequent retry creates exactly one NGN 150,000.00 payment.","After interruption: 1 payment record(s), 0 notification record(s). Rollback event recorded: No.
+The rollback assertion failed; the subsequent retry step was not executed.","FAIL","Core assessment case; Priority: Critical; Requirement: Atomic payment and outbox; Playwright; test/specs/payroll-api.spec.ts#TC13; Build: mustpayroll-0.2.0-faulty-c0f059dc3f59; Evidence: playwright/report.json; playwright/console.log; PAY-001 investigation"

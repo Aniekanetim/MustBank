@@ -20,7 +20,7 @@
 5. Retrying payroll recovers unpaid entries and pending messages. Notification-only recovery dispatches existing message work without creating payments.
 6. The simulated notification provider accepts one identity per workspace, period and employee. A lost acknowledgment can be retried without a second acceptance. This is a fixture guarantee, not a claim about a real provider or real inbox delivery.
 
-The fault under investigation changes step 2: it treats successful notification as proof that payroll is complete. After notification failure, a payment exists but the completion marker is absent. Retrying therefore records a second payment. See the [defect report](../../Quality%20Control/bug_report/PAY-001.md).
+The fault under investigation changes step 2: it treats successful notification as proof that payroll is complete. After notification failure, a payment exists but the completion marker is absent. Retrying therefore records a second payment. See the [defect report](../Quality%20Control/bug_report/PAY-001.md).
 
 ## Decision flow
 
@@ -56,7 +56,7 @@ flowchart TD
 
 This diagram shows the corrected flow. On an existing run, frozen entries are reused. Pending approvals and an empty approved total block creation of a first run. Validation errors reject the request without importing a partial batch. A rejected earning is excluded; approved earnings must still produce a non-empty total before processing.
 
-The retry trigger is an explicit product action in this reference, not an autonomous worker. The faulty branch instead checks the notification-dependent completion marker at the payment-exists decision. [The test execution results](../../Quality%20Control/execute_test_cases/results/README.md) shows why that distinction creates the duplicate. [The handoff instructions](../../directive.md#resultshandoff-appendix) explains which recovery action to choose.
+The retry trigger is an explicit product action in this reference, not an autonomous worker. The faulty branch instead checks the notification-dependent completion marker at the payment-exists decision. [The test execution results](../Quality%20Control/execute_test_cases/results/README.md) shows why that distinction creates the duplicate. [The handoff instructions](../directive.md#resultshandoff-appendix) explains which recovery action to choose.
 
 ## Account and administration assumptions
 

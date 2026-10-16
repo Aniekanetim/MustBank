@@ -6,7 +6,7 @@ An employee is owed ₦150,000 for one approved pay period. A successful payment
 
 ## Scope and business rule
 
-MustPayroll uses synthetic employees, approved earnings, weekly pay periods, local payment records and simulated notification delivery. It does not move real funds. The [business rules and flow](Quality%20assurance/business_rules/README.md) define the UTC period, approval, earning IDs, amounts, payment identity, recovery and account/admin assumptions.
+MustPayroll uses synthetic employees, approved earnings, weekly pay periods, local payment records and simulated notification delivery. It does not move real funds. The [business rules and flow](Quality%20assurance/business_rules.md) define the UTC period, approval, earning IDs, amounts, payment identity, recovery and account/admin assumptions.
 
 The [buggy application](../MustBank/Mustpayroll_buggy) deliberately preserves the selected defect. The [fixed application](../MustBank/MustPayroll_fixed) contains the correction. Each owns its source, server, build tools and database. All testing work is outside their container, in QA.
 
@@ -22,12 +22,12 @@ The Quality assurance folder owns those process and acceptance definitions. The 
 
 | Requirement | Completion criterion | Work |
 |---|---|---|
-| Prioritize at least three plausible failures | Compare impact, likelihood/uncertainty and effort; select one for investigation | [intent.md](Quality%20assurance/intent/intent.md) |
-| Establish the rule and map the flow | Define qualifying inputs, decisions, payment, notification, recovery and account/admin assumptions | [Rules and flow](Quality%20assurance/business_rules/README.md) |
+| Prioritize at least three plausible failures | Compare impact, likelihood/uncertainty and effort; select one for investigation | [intent.md](Quality%20assurance/intent.md) |
+| Establish the rule and map the flow | Define qualifying inputs, decisions, payment, notification, recovery and account/admin assumptions | [Rules and flow](Quality%20assurance/business_rules.md) |
 | Define at least eight cases | Inputs and expected outcomes cover happy path, cut-off, timezone, duplicate input, retry and partial failure | [Eight core cases](Quality%20Control/test_cases/core-payroll-regression.csv), [complete suite](Quality%20Control/test_cases/payroll-test-suite.csv) |
 | Reproduce and prevent the selected failure | The same regression fails on the buggy build and passes on the fixed build; keep separate actual results | [Test project](Quality%20Control/execute_test_cases/test), [buggy execution](Quality%20Control/execute_test_cases/results/buggy/README.md), [fixed execution](Quality%20Control/execute_test_cases/results/fixed/README.md) |
 | Explain the defect and release blockers | Reproduction, expected/actual result, severity, cause, evidence, correction and blocking checks are actionable | [PAY-001](Quality%20Control/bug_report/PAY-001.md) |
-| Demonstrate the final run and judge readiness | Report results, remaining gaps, release decision and handoff | [Execution comparison](Quality%20Control/execute_test_cases/results/README.md), [release checklist](Quality%20assurance/release_readiness/README.md), instructions below |
+| Demonstrate the final run and judge readiness | Report results, remaining gaps, release decision and handoff | [Execution comparison](Quality%20Control/execute_test_cases/results/README.md), [release checklist](Quality%20assurance/release_readiness.md), instructions below |
 | Submit a Loom of no more than five minutes | Candidate explains the case, verification, AI use, personal ownership and release judgment | Pending candidate recording; add its accessible URL below |
 
 ## Quality control results and verification evidence
@@ -43,7 +43,7 @@ TC10 records two payments totaling ₦300,000 in the buggy build and one origina
 
 ## Release decision and remaining gaps
 
-**Fixed application: ready with known limitations for local assessment review. Buggy application: not ready for release of the affected payroll flow.** The fixed result meets the [QA release gates](Quality%20assurance/release_readiness/README.md) within the tested local scope. The buggy retry still records two payments against one approved employee-period.
+**Fixed application: ready with known limitations for local assessment review. Buggy application: not ready for release of the affected payroll flow.** The fixed result meets the [QA release gates](Quality%20assurance/release_readiness.md) within the tested local scope. The buggy retry still records two payments against one approved employee-period.
 
 This decision is based on automated QC results and does not represent candidate personal sign-off or approval for live payroll.
 
@@ -63,7 +63,7 @@ This decision is based on automated QC results and does not represent candidate 
 3. For manual reproduction, follow PAY-001 and prepare a fresh workspace in each build with the scenario commands in the execution guide. Keep the original pay date and compare payment references before and after recovery.
 4. If a successful payment has a pending message, use Notifications to retry delivery. Preserve the original payment reference and amount. If no payment exists, retry the original pay run and verify that previously successful entries remain unchanged.
 5. If recorded pay differs from approved pay or an employee-period has duplicate payments, stop processing that workspace/period. Record the workspace, employee, original period, payment references/count/amount, notification state, attempted recovery and result. Hand the mismatch to engineering/QA for investigation and reconciliation. A manual database edit is not the demonstrated fix.
-6. Use the [QA release checklist](Quality%20assurance/release_readiness/README.md) and the decision above for handoff. Passing this local reference does not approve real banking, tax, authentication or distributed-worker behavior.
+6. Use the [QA release checklist](Quality%20assurance/release_readiness.md) and the decision above for handoff. Passing this local reference does not approve real banking, tax, authentication or distributed-worker behavior.
 
 ## AI use, ownership and final submission
 

@@ -27,6 +27,6 @@ The application is a local, inspectable project adapted from an MIT-licensed fou
 
 ## What the deliverables should communicate
 
-The reader should understand **the rule, the failure, the cause, the prevention, the verification and the release decision**, in that order. [directive.md](../../directive.md) links each claim to the runnable project and evidence. AI assistance is disclosed; Aniekan's personal review and recorded explanation remain necessary for submission.
+The reader should understand **the rule, the failure, the cause, the prevention, the verification and the release decision**, in that order. [directive.md](../directive.md) links each claim to the runnable project and evidence. AI assistance is disclosed; Aniekan's personal review and recorded explanation remain necessary for submission.
 
-The practical outcome is safe recovery: an operator can resolve a pending notification through the product while the original employee payment remains unchanged. The [two execution records](../../Quality%20Control/execute_test_cases/results/README.md) establish that result in the local fixture. A real reduction in repeated support requests would need a baseline and comparable follow-up data; no such result is claimed here.
+The practical outcome is safe recovery: an operator can resolve a pending notification through the product while the original employee payment remains unchanged. The [two execution records](../Quality%20Control/execute_test_cases/results/README.md) establish that result in the local fixture. A real reduction in repeated support requests would need a baseline and comparable follow-up data; no such result is claimed here.

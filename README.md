@@ -21,7 +21,7 @@ Starting uses the committed compiled interface and Node built-ins. To rebuild an
 
 ## Assessment work
 
-Start with [intent.md](QA/Quality%20assurance/intent/intent.md) and [directive.md](QA/directive.md). The directive links the business rules and flow, runnable test project, cases/results, defect report, release checklist, verification evidence and handoff.
+Start with [intent.md](QA/Quality%20assurance/intent.md) and [directive.md](QA/directive.md). The directive links the business rules and flow, runnable test project, cases/results, defect report, release checklist, verification evidence and handoff.
 
 | Build | Eight completed cases | Execution record |
 |---|---|---|
