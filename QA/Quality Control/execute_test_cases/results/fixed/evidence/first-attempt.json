@@ -1,0 +1,146 @@
+{
+  "id": "6ab53ad9-c811-42e9-aefd-15e62396f3bc",
+  "company": "Northstar Studio",
+  "currency": "NGN",
+  "period": {
+    "scheduledFor": "2026-10-13T09:00:00.000Z",
+    "start": "2026-10-05T00:00:00.000Z",
+    "end": "2026-10-12T00:00:00.000Z"
+  },
+  "employees": [
+    {
+      "id": "emp-001",
+      "name": "Amara Okafor",
+      "role": "Product designer",
+      "department": "Design",
+      "bank": "Meridian Bank",
+      "accountEnding": "4821"
+    },
+    {
+      "id": "emp-002",
+      "name": "Daniel Mensah",
+      "role": "Software engineer",
+      "department": "Engineering",
+      "bank": "Union Coast Bank",
+      "accountEnding": "3068"
+    },
+    {
+      "id": "emp-003",
+      "name": "Zara Bello",
+      "role": "Operations associate",
+      "department": "Operations",
+      "bank": "Meridian Bank",
+      "accountEnding": "7290"
+    }
+  ],
+  "earnings": [
+    {
+      "earningId": "earn-001",
+      "employeeId": "emp-001",
+      "description": "Weekly project earnings",
+      "earnedAt": "2026-10-08T12:00:00.000Z",
+      "amountMinor": 15000000,
+      "status": "approved"
+    }
+  ],
+  "entries": [
+    {
+      "employeeId": "emp-001",
+      "expectedMinor": 15000000,
+      "paidMinor": 15000000,
+      "earningIds": [
+        "earn-001"
+      ],
+      "paymentCount": 1
+    }
+  ],
+  "payments": [
+    {
+      "id": "3cfd4ca5-ae37-4834-a264-8249fbc136f7",
+      "employeeId": "emp-001",
+      "employeeName": "Amara Okafor",
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "amountMinor": 15000000,
+      "bank": "Meridian Bank",
+      "accountEnding": "4821",
+      "createdAt": "2026-10-16T05:04:48.091Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "34401d37-551c-4d3b-b2b5-ce8b862dd97e",
+      "paymentId": "3cfd4ca5-ae37-4834-a264-8249fbc136f7",
+      "employeeId": "emp-001",
+      "employeeName": "Amara Okafor",
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "state": "pending",
+      "attempts": 1,
+      "lastError": "Notification delivery unavailable. Retry the notification."
+    }
+  ],
+  "runs": [
+    {
+      "periodStart": "2026-10-05T00:00:00.000Z",
+      "periodEnd": "2026-10-12T00:00:00.000Z",
+      "scheduledFor": "2026-10-13T09:00:00.000Z",
+      "createdAt": "2026-10-16T05:04:48.074Z",
+      "expectedMinor": 15000000
+    }
+  ],
+  "locked": true,
+  "expectedMinor": 15000000,
+  "paidMinor": 15000000,
+  "pendingApprovals": 0,
+  "pendingNotifications": 1,
+  "providerAccepted": 0,
+  "events": [
+    {
+      "event": "earnings_recorded",
+      "employeeId": null,
+      "detail": {
+        "count": 1
+      },
+      "createdAt": "2026-10-16T05:04:46.959Z"
+    },
+    {
+      "event": "failure_armed",
+      "employeeId": null,
+      "detail": {
+        "kind": "notification"
+      },
+      "createdAt": "2026-10-16T05:04:47.137Z"
+    },
+    {
+      "event": "payment_committed",
+      "employeeId": "emp-001",
+      "detail": {
+        "paymentId": "3cfd4ca5-ae37-4834-a264-8249fbc136f7",
+        "amountMinor": 15000000
+      },
+      "createdAt": "2026-10-16T05:04:48.108Z"
+    },
+    {
+      "event": "notification_attempted",
+      "employeeId": "emp-001",
+      "detail": {},
+      "createdAt": "2026-10-16T05:04:48.121Z"
+    },
+    {
+      "event": "notification_failed",
+      "employeeId": "emp-001",
+      "detail": {
+        "messageId": "34401d37-551c-4d3b-b2b5-ce8b862dd97e",
+        "error": "Notification delivery unavailable. Retry the notification."
+      },
+      "createdAt": "2026-10-16T05:04:48.156Z"
+    },
+    {
+      "event": "pay_run_finished",
+      "employeeId": null,
+      "detail": {
+        "scheduledFor": "2026-10-13T09:00:00.000Z"
+      },
+      "createdAt": "2026-10-16T05:04:48.170Z"
+    }
+  ]
+}
